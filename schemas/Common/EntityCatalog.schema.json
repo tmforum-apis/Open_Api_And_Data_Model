@@ -1,52 +1,66 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "EntityCatalog.schema.json",
-    "title": "EntityCatalog",
-    "definitions": {
-        "EntityCatalog": {
-            "$id": "#EntityCatalog",
-            "description": "The root entity for entity catalog management. An entity catalog can be defined as a collection of entity catalog items and arranging them in a particular manner based on the need.\nIn comparison to Product, Service and Resource catalogs, the entity catalog is intended for the purpose of providing any SID entity to consumers via a catalog, with its specification and policy providing governance over its content. Even Entity catalog may have an overlap with Product, Service or Resource catalog, it does not replace them. It is primarily intended to address those SID entities which may not be addressed by any of Product, Service or Resource catalog.\nAn entity catalog comprises of a list of RootEntities made available through EntityCatalogItems. This API addresses only RootEntity extended items as EntitySpecification. An entity catalog typically includes name, description and time period that it is valid for.",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "Description of this catalog"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Unique reference of the catalog"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the Catalog"
-                },
-                "lastUpdate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date and time of the last update"
-                },
-                "lifecycleStatus": {
-                    "type": "string",
-                    "description": "Used to indicate the current lifecycle status"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the catalog"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The period for which the catalog is valid"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "Catalog version"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "EntityCatalog.schema.json",
+  "title": "EntityCatalog",
+  "definitions": {
+    "EntityCatalog": {
+      "$id": "#EntityCatalog",
+      "description": "The root entity for entity catalog management. An entity catalog can be defined as a collection of entity catalog items and arranging them in a particular manner based on the need.\nIn comparison to Product, Service and Resource catalogs, the entity catalog is intended for the purpose of providing any SID entity to consumers via a catalog, with its specification and policy providing governance over its content. Even Entity catalog may have an overlap with Product, Service or Resource catalog, it does not replace them. It is primarily intended to address those SID entities which may not be addressed by any of Product, Service or Resource catalog.\nAn entity catalog comprises of a list of RootEntities made available through EntityCatalogItems. This API addresses only RootEntity extended items as EntitySpecification. An entity catalog typically includes name, description and time period that it is valid for.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of this catalog"
+        },
+        "href": {
+          "type": "string",
+          "description": "Unique reference of the catalog"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the Catalog"
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time of the last update"
+        },
+        "lifecycleStatus": {
+          "type": "string",
+          "description": "Used to indicate the current lifecycle status"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the catalog"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which the catalog is valid"
+        },
+        "relatedParty": {
+          "type": "array",
+          "description": "The parties who are involved or have an interest in this catalog",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
+        },
+        "category": {
+          "type": "array",
+          "description": "The categories used in this catalog",
+          "items": {
+            "$ref": "../Common/EntityCategoryRef.schema.json#EntityCategoryRef"
+          }
+        },
+        "version": {
+          "type": "string",
+          "description": "Catalog version"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

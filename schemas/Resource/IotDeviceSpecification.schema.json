@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://fiware.github.io/dataModels/specs/Device/Device/schema.json",
+  "title": "IotDeviceSpecification",
+  "description": "#TODO",
+  "definitions": {
+    "IotDeviceSpecification": {
+      "$id": "#IotDeviceSpecification",
+      "description": "#TODO",
+      "type": "object",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Resource/ResourceSpecification.json#ResourceSpecification"
+        }
+      ]
+    }
+  }
+}

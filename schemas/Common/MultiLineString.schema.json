@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "MultiLineString.schema.json",
+  "title": "MultiLineString",
+  "definitions": {
+    "MultiLineString": {
+      "$id": "#MultiLineString",
+      "description": "A collection of distinct LineStrings",
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "MultiLineString"
+          ]
+        },
+        "coordinates": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/GeoJSON.schema.json#lineString"
+          }
+        }
+      },
+      "type": "object"
+    }
+  }
+}

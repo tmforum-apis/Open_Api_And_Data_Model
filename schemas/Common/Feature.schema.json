@@ -1,0 +1,54 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "Feature.schema.json",
+	"title": "Feature",
+	"definitions": {
+		"Feature": {
+			"$id": "#Feature",
+			"description": "Configuration feature.",
+			"type": "object",
+			"properties": {
+				"id": {
+					"description": "Unique identifier of the feature.",
+					"type": "string"
+				},
+				"name": {
+					"description": "This is the name for the feature.",
+					"type": "string"
+				},
+				"isBundle": {
+					"description": "True if this is a feature group. Default is false.",
+					"type": "boolean"
+				},
+				"featureRelationship": {
+					"type": "array",
+					"items": {
+						"$ref": "FeatureRelationship.schema.json#/definitions/FeatureRelationship"
+					}
+				},
+				"constraint": {
+					"description": "This is a list of feature constraints.",
+					"type": "array",
+					"items": {
+						"$ref": "../Common/ConstraintRef.schema.json#ConstraintRef"
+					}
+				},
+				"isEnabled": {
+					"description": "True if this feature is enabled. Default is true.",
+					"type": "boolean"
+				},
+				"featureCharacteristic": {
+					"description": "This is a list of Characteristics for a particular feature.",
+					"type": "array",
+					"items": {
+						"$ref": "Characteristic.schema.json#/definitions/Characteristic"
+					}
+				}
+			},
+			"required": [
+				"name",
+				"featureCharacteristic"
+			]
+		}
+	}
+}

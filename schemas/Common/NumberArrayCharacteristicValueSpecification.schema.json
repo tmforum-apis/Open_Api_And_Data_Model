@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "NumberArrayCharacteristicValueSpecification.schema.json",
+    "title": "NumberArrayCharacteristicValueSpecification",
+    "definitions": {
+        "NumberArrayCharacteristicValueSpecification": {
+            "$id": "#NumberArrayCharacteristicValueSpecification",
+            "description": "A specification for a characteristic for which the value is a number array with no specific format ",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+			"allOf": [
+                {
+                    "$ref": "CharacteristicValueSpecification.schema.json#CharacteristicValueSpecification"
+                }
+            ]
+        }
+    }
+}

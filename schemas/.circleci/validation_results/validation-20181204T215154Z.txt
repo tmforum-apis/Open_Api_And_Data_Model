@@ -1,9 +1,0 @@
-SCHEMA VALIDATION
-=================
-# schemas     : 349 files processed
-# errors      : 0
-# validate ok : 349
-# issues      : 0 files / 0 issues
-
-total time: 3.04 seconds
-

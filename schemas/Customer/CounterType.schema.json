@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CounterType.schema.json",
+    "title": "CounterType",
+    "definitions": {
+        "CounterType": {
+            "$id": "#CounterType",
+            "type": "string",
+            "description": "Valid values for this type" ,
+            "enum": [
+                "balanceTransfer",
+		"balanceAdjust",
+		"outOfBucket",
+		"balanceUsage"
+            ]
+        }
+    }
+}

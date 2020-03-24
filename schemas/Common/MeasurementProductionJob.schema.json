@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "MeasurementProductionJob.schema.json",
+    "title": "MeasurementProductionJob",
+    "definitions": {
+        "MeasurementProductionJob": {
+            "description": "",
+            "allOf": [
+                {
+                    "$ref": "MeasurementJob.schema.json#/definitions/MeasurementJob"
+                },
+                {
+                    "type": "object",
+                    "properties": {}
+                }
+            ]
+        }
+    }
+}

@@ -1,92 +1,92 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "SettlementNoteAdvice.schema.json",
-    "title": "SettlementNoteAdvice",
-    "definitions": {
-        "SettlementNoteAdvice": {
-            "$id": "#SettlementNoteAdvice",
-            "description": "The settlement is about transferring money receiving by a CSP to a partner. The settlement is notified to the partner with a settlement note advice containing details in settlement lines.",
-            "type": "object",
-            "properties": {
-                "currencyCode": {
-                    "type": "string",
-                    "description": "A string used as a code for specifying the currency associated to the given amounts. The ISO4217 norm uses 3 letters to define the currency (for example USD for US dollar or EUR for Euro)."
-                },
-                "date": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Creation date of the settlement note advice"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "A free description text"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the settlement note advice"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "A unique identifier for the settlement note advice"
-                },
-                "issuerTaxRegistration": {
-                    "type": "string",
-                    "description": "Tax registration number of the issuer"
-                },
-                "paymentDueDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date at which the due amount should have been paid to the partner"
-                },
-                "receiverTaxRegistration": {
-                    "type": "string",
-                    "description": "Tax registration number of the receiver"
-                },
-                "taxDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date of the tax"
-                },
-                "taxExcludedAmount": {
-                    "type": "number",
-                    "format": "float",
-                    "description": "All taxes excluded amount (expressed in the given currency)"
-                },
-                "taxIncludedAmount": {
-                    "type": "number",
-                    "format": "float",
-                    "description": "All taxes included amount (expressed in the given currency)"
-                },
-                "settlementMethod": {
-                    "$ref": "../Customer/SettlementMethod.schema.json#SettlementMethod"
-                },
-                "settlementNoteImage": {
-                    "$ref": "../Customer/SettlementNoteImage.schema.json#SettlementNoteImage"
-                },
-                "receiver": {
-                    "$ref": "../EngagedParty/PartyRef.schema.json#PartyRef"
-                },
-                "taxItem": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/TaxItem.schema.json#TaxItem"
-                    }
-                },
-                "issuer": {
-                    "$ref": "../EngagedParty/PartyRef.schema.json#PartyRef"
-                },
-                "settlementNoteItem": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/SettlementNoteItem.schema.json#SettlementNoteItem"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "SettlementNoteAdvice.schema.json",
+  "title": "SettlementNoteAdvice",
+  "definitions": {
+    "SettlementNoteAdvice": {
+      "$id": "#SettlementNoteAdvice",
+      "description": "The settlement is about transferring money receiving by a CSP to a partner. The settlement is notified to the partner with a settlement note advice containing details in settlement lines.",
+      "type": "object",
+      "properties": {
+        "currencyCode": {
+          "type": "string",
+          "description": "A string used as a code for specifying the currency associated to the given amounts. The ISO4217 norm uses 3 letters to define the currency (for example USD for US dollar or EUR for Euro)."
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation date of the settlement note advice"
+        },
+        "description": {
+          "type": "string",
+          "description": "A free description text"
+        },
+        "href": {
+          "type": "string",
+          "description": "Reference of the settlement note advice"
+        },
+        "id": {
+          "type": "string",
+          "description": "A unique identifier for the settlement note advice"
+        },
+        "issuerTaxRegistration": {
+          "type": "string",
+          "description": "Tax registration number of the issuer"
+        },
+        "paymentDueDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date at which the due amount should have been paid to the partner"
+        },
+        "receiverTaxRegistration": {
+          "type": "string",
+          "description": "Tax registration number of the receiver"
+        },
+        "taxDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date of the tax"
+        },
+        "taxExcludedAmount": {
+          "type": "number",
+          "format": "float",
+          "description": "All taxes excluded amount (expressed in the given currency)"
+        },
+        "taxIncludedAmount": {
+          "type": "number",
+          "format": "float",
+          "description": "All taxes included amount (expressed in the given currency)"
+        },
+        "settlementMethod": {
+          "$ref": "../Customer/SettlementMethod.schema.json#SettlementMethod"
+        },
+        "settlementNoteImage": {
+          "$ref": "../Customer/SettlementNoteImage.schema.json#SettlementNoteImage"
+        },
+        "receiver": {
+          "$ref": "../EngagedParty/PartyRef.schema.json#PartyRef"
+        },
+        "taxItem": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/TaxItem.schema.json#TaxItem"
+          }
+        },
+        "issuer": {
+          "$ref": "../EngagedParty/PartyRef.schema.json#PartyRef"
+        },
+        "settlementNoteItem": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/SettlementNoteItem.schema.json#SettlementNoteItem"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

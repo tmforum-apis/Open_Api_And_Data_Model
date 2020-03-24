@@ -1,26 +1,23 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "StringCharacteristic.schema.json",
-    "title": "StringCharacteristic",
-    "definitions": {
-        "StringCharacteristic": {
-            "$id": "#StringCharacteristic",
-            "description": "A characteristic which value is a string",
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "description": "Name of the characteristic"
-                },
-                "valueType": {
-                    "type": "string",
-                    "description": "Data type of the value of the characteristic"
-                },
-                "value": {
-                    "type": "string",
-                    "description": "Value of the characteristic"
-                }
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "StringCharacteristic.schema.json",
+  "title": "StringCharacteristic",
+  "definitions": {
+    "StringCharacteristic": {
+      "$id": "#StringCharacteristic",
+      "description": "A characteristic which value is a string",
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "description": "Value of the characteristic"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "Characteristic.schema.json#Characteristic"
+        }
+      ]
     }
+  }
 }

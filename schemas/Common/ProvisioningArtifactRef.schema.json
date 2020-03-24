@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ProvisioningArtifactRef.schema.json",
+  "title": "ProvisioningArtifactRef",
+  "definitions": {
+    "ProvisioningArtifactRef": {
+      "$id": "#ProvisioningArtifactRef",
+      "type": "object",
+      "description": "A reference to a managed provisioning artifact resource",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        }
+      ]
+    }
+  }
+}

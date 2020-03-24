@@ -1,35 +1,35 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ImpactEntityRef.schema.json",
-    "title": "ImpactEntityRef",
-    "definitions": {
-        "ImpactEntityRef": {
-            "$id": "#ImpactEntityRef",
-            "description": "Defines the entities (product, service, resource, and other related objects) which will be impacted while the change \nrequest is executed.",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "Description and analysis of the impact of the change request on the Product, Service or Resource."
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Hyperlink to access the impacted party, it could be a party reference or a party role reference."
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of impacted entity."
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ImpactEntityRef.schema.json",
+  "title": "ImpactEntityRef",
+  "definitions": {
+    "ImpactEntityRef": {
+      "$id": "#ImpactEntityRef",
+      "description": "Defines the entities (product, service, resource, and other related objects) which will be impacted while the change \nrequest is executed.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description and analysis of the impact of the change request on the Product, Service or Resource."
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink to access the impacted party, it could be a party reference or a party role reference."
+        },
+        "id": {
+          "type": "string",
+          "description": "Identifier of impacted entity."
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

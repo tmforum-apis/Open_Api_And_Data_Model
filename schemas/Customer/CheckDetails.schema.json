@@ -1,40 +1,40 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "CheckDetails.schema.json",
-    "title": "CheckDetails",
-    "definitions": {
-        "CheckDetails": {
-            "$id": "#CheckDetails",
-            "description": "Detailed information of a check",
-            "type": "object",
-            "properties": {
-                "bank": {
-                    "type": "string",
-                    "description": "Bank performing the payment of the check"
-                },
-                "code": {
-                    "type": "string",
-                    "description": "Unique identifier of the check"
-                },
-                "date": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date when the check was signed"
-                },
-                "drawer": {
-                    "type": "string",
-                    "description": "Person or entity writing the check"
-                },
-                "payee": {
-                    "type": "string",
-                    "description": "Person or entity the check is addressed to"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "CheckDetails.schema.json",
+  "title": "CheckDetails",
+  "definitions": {
+    "CheckDetails": {
+      "$id": "#CheckDetails",
+      "description": "Detailed information of a check",
+      "type": "object",
+      "properties": {
+        "bank": {
+          "type": "string",
+          "description": "Bank performing the payment of the check"
+        },
+        "code": {
+          "type": "string",
+          "description": "Unique identifier of the check"
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the check was signed"
+        },
+        "drawer": {
+          "type": "string",
+          "description": "Person or entity writing the check"
+        },
+        "payee": {
+          "type": "string",
+          "description": "Person or entity the check is addressed to"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "RatingBillingPostpaidXDRSa.Analytics.schema.json",
+    "title": "RatingBillingPostpaidXDRSa.Analytics",
+    "definitions": {
+        "RatingBillingPostpaidXDRSa.Analytics": {
+            "$id": "#RatingBillingPostpaidXDRSa.Analytics",
+            "type": "object",
+            "properties": {}
+        },
+              "allOf": [{"$ref": "../Common/Entity.schema.json#Extensible"}]
+    }
+}

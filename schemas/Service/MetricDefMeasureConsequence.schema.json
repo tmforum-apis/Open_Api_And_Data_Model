@@ -1,39 +1,39 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "MetricDefMeasureConsequence.schema.json",
-    "title": "MetricDefMeasureConsequence",
-    "definitions": {
-        "MetricDefMeasureConsequence": {
-            "$id": "#MetricDefMeasureConsequence",
-            "description": "A MetricDefMeasureConsequence defines the action (prescribed action or notification) to take when a \nMetricDefMeasureThresholdRule is crossed.",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "A narrative that explains in detail what the consequence is."
-                },
-                "name": {
-                    "type": "string",
-                    "description": "A word, term, or phrase by which a \nMetricDefMeasureConsequence is known and distinguished from other MetricDefMeasureConsequences."
-                },
-                "prescribeAction": {
-                    "type": "string",
-                    "description": "Recommended remedy for a violated threshold. This could be \nthe hyperlink to the action."
-                },
-                "repeatAction": {
-                    "type": "boolean",
-                    "description": "An indicator used to specify that a consequence should cease \nbeing applied if a value is in the same range as the previous value or continue being applied if a value is in the same range as the previous value. \nIf the repeatAction is True, if the consequence is always applied as soon as the MetricMeasure value is in the range of values and if the repeatAction is False, the consequence is applied only if the previous MetricMeasure value was not in the same range."
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "A valid duration of a thing."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "MetricDefMeasureConsequence.schema.json",
+  "title": "MetricDefMeasureConsequence",
+  "definitions": {
+    "MetricDefMeasureConsequence": {
+      "$id": "#MetricDefMeasureConsequence",
+      "description": "A MetricDefMeasureConsequence defines the action (prescribed action or notification) to take when a \nMetricDefMeasureThresholdRule is crossed.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "A narrative that explains in detail what the consequence is."
+        },
+        "name": {
+          "type": "string",
+          "description": "A word, term, or phrase by which a \nMetricDefMeasureConsequence is known and distinguished from other MetricDefMeasureConsequences."
+        },
+        "prescribeAction": {
+          "type": "string",
+          "description": "Recommended remedy for a violated threshold. This could be \nthe hyperlink to the action."
+        },
+        "repeatAction": {
+          "type": "boolean",
+          "description": "An indicator used to specify that a consequence should cease \nbeing applied if a value is in the same range as the previous value or continue being applied if a value is in the same range as the previous value. \nIf the repeatAction is True, if the consequence is always applied as soon as the MetricMeasure value is in the range of values and if the repeatAction is False, the consequence is applied only if the previous MetricMeasure value was not in the same range."
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "A valid duration of a thing."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

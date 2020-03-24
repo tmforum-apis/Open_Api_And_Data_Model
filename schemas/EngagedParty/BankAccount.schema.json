@@ -1,35 +1,35 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "BankAccount.schema.json",
-    "title": "BankAccount",
-    "definitions": {
-        "BankAccount": {
-            "$id": "#BankAccount",
-            "description": "Describes the information of a bank account",
-            "type": "object",
-            "properties": {
-                "accountHolder": {
-                    "type": "string",
-                    "description": "Name of the holder of the bank account"
-                },
-                "BIC": {
-                    "type": "string",
-                    "description": "Identifier of the bank according to its international code"
-                },
-                "domiciliation": {
-                    "type": "string",
-                    "description": "Address of the bank agency which manages the bank account"
-                },
-                "IBAN": {
-                    "type": "string",
-                    "description": "International Bank Account Number"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BankAccount.schema.json",
+  "title": "BankAccount",
+  "definitions": {
+    "BankAccount": {
+      "$id": "#BankAccount",
+      "description": "Describes the information of a bank account",
+      "type": "object",
+      "properties": {
+        "accountHolder": {
+          "type": "string",
+          "description": "Name of the holder of the bank account"
+        },
+        "BIC": {
+          "type": "string",
+          "description": "Identifier of the bank according to its international code"
+        },
+        "domiciliation": {
+          "type": "string",
+          "description": "Address of the bank agency which manages the bank account"
+        },
+        "IBAN": {
+          "type": "string",
+          "description": "International Bank Account Number"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

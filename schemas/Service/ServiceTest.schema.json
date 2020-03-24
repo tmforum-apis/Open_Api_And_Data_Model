@@ -1,75 +1,75 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ServiceTest.schema.json",
-    "title": "ServiceTest",
-    "definitions": {
-        "ServiceTest": {
-            "$id": "#ServiceTest",
-            "description": "A service test is an entity that exists for a controlled test invocation on a service. The service \ntest is executed according to a schedule and contains service test configuration parameters that are to be \napplied at execution time, and service test measures that result.",
-            "type": "object",
-            "properties": {
-                "characteristic": {
-                    "type": "array",
-                    "description": "List of characteristics with values that define the test run",
-                    "items": {
-                        "$ref": "../Common/Characteristic.schema.json#Characteristic"
-                    }
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Description of the service test"
-                },
-                "endDateTime": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "The end date and time of the service test"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Hyperlink to access the service test"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "The identifier of the service test"
-                },
-                "mode": {
-                    "type": "string",
-                    "description": "An indication of whether the service test is running in \n\"PROACTIVE\" or \"ONDEMAND\" mode"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "The name of the service test"
-                },
-                "relatedService": {
-                    "description": "The actual service being tested",
-                    "$ref": "../Service/ServiceRef.schema.json#ServiceRef"
-                },
-                "startDateTime": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "The start date and time of the service test."
-                },
-                "state": {
-                    "type": "string",
-                    "description": "The actual state the service test is in"
-                },
-                "testMeasure": {
-                    "type": "array",
-                    "description": "The results of the test in terms of the measured metrics",
-                    "items": {
-                        "$ref": "../Service/TestMeasure.schema.json#TestMeasure"
-                    }
-                },
-                "testSpecification": {
-                    "description": "The specification for this test",
-                    "$ref": "../Service/ServiceTestSpecificationRef.schema.json#ServiceTestSpecificationRef"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ServiceTest.schema.json",
+  "title": "ServiceTest",
+  "definitions": {
+    "ServiceTest": {
+      "$id": "#ServiceTest",
+      "description": "A service test is an entity that exists for a controlled test invocation on a service. The service \ntest is executed according to a schedule and contains service test configuration parameters that are to be \napplied at execution time, and service test measures that result.",
+      "type": "object",
+      "properties": {
+        "characteristic": {
+          "type": "array",
+          "description": "List of characteristics with values that define the test run",
+          "items": {
+            "$ref": "../Common/Characteristic.schema.json#Characteristic"
+          }
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the service test"
+        },
+        "endDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The end date and time of the service test"
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink to access the service test"
+        },
+        "id": {
+          "type": "string",
+          "description": "The identifier of the service test"
+        },
+        "mode": {
+          "type": "string",
+          "description": "An indication of whether the service test is running in \n\"PROACTIVE\" or \"ONDEMAND\" mode"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the service test"
+        },
+        "relatedService": {
+          "description": "The actual service being tested",
+          "$ref": "../Service/ServiceRef.schema.json#ServiceRef"
+        },
+        "startDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The start date and time of the service test."
+        },
+        "state": {
+          "type": "string",
+          "description": "The actual state the service test is in"
+        },
+        "testMeasure": {
+          "type": "array",
+          "description": "The results of the test in terms of the measured metrics",
+          "items": {
+            "$ref": "../Service/TestMeasure.schema.json#TestMeasure"
+          }
+        },
+        "testSpecification": {
+          "description": "The specification for this test",
+          "$ref": "../Service/ServiceTestSpecificationRef.schema.json#ServiceTestSpecificationRef"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

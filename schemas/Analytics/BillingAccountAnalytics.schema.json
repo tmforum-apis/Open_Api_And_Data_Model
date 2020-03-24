@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BillingAccountAnalytics.schema.json",
+    "title": "BillingAccountAnalytics",
+    "definitions": {
+        "BillingAccountAnalytics": {
+            "$id": "#BillingAccountAnalytics",
+            "type": "object",
+            "properties": {
+                "accountStatusDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Status last change date"
+                },
+                "accountCreationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Account creation Date"
+                },
+                "customerStatusDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when status was set or changed last time"
+                },
+                "customerCreationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when customer was created"
+                },
+                "customerBirthDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date of birth"
+                },
+                "arpuAmount": {
+                    "$ref": "../Common/Money.schema.json"
+                },
+                "dataCreationTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data creation (e.g. system dump creation, event generation\u2026)"
+                },
+                "runTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data upload run"
+                },
+                "validFromTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for business validity of entity record"
+                }
+            },
+              "allOf": [{"$ref": "../Common/Entity.schema.json#Extensible"}]
+        }
+    }
+}

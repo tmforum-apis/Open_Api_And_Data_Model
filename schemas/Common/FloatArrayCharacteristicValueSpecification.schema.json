@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "FloatArrayCharacteristicValueSpecification.schema.json",
+    "title": "FloatArrayCharacteristicValueSpecification",
+    "definitions": {
+        "FloatArrayCharacteristicValueSpecification": {
+            "$id": "#FloatArrayCharacteristicValueSpecification",
+            "description": "A specification for a characteristic for which the value is a number array of format floating point",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "type": "number",
+                        "format": "float"
+                    }
+                }
+            },
+			"allOf": [
+                {
+                    "$ref": "CharacteristicValueSpecification.schema.json#CharacteristicValueSpecification"
+                }
+            ]
+        }
+    }
+}

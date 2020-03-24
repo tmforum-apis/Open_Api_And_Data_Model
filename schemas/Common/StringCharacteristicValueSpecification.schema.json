@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "StringCharacteristicValueSpecification.schema.json",
+    "title": "StringCharacteristicValueSpecification",
+    "definitions": {
+        "StringCharacteristicValueSpecification": {
+            "$id": "#StringCharacteristicValueSpecification",
+            "description": "A specification for a characteristic for which the value is a string",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "string",
+                    "description": "Value of the characteristic"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "CharacteristicValueSpecification.schema.json#CharacteristicValueSpecification"
+                }
+            ]
+        }
+    }
+}

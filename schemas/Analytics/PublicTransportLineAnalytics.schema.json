@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PublicTransportLineAnalytics.schema.json",
+    "title": "PublicTransportLineAnalytics",
+    "definitions": {
+        "PublicTransportLineAnalytics": {
+            "$id": "#PublicTransportLineAnalytics",
+            "type": "object",
+            "properties": {
+                "lineStartHour": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the last daily ride (23:59 if it is o-24 service)"
+                },
+                "dataCreationTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data creation (e.g. system dump creation, event generation\u2026)"
+                },
+                "runTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data upload run"
+                },
+                "validFromTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for business validity of entity record"
+                }
+            }
+        },
+              "allOf": [{"$ref": "../Common/Entity.schema.json#Extensible"}]
+    }
+}

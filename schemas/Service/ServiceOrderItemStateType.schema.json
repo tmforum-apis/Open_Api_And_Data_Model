@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceOrderItemStateType.schema.json",
+    "title": "ServiceOrderItemStateType",
+    "definitions": {
+        "ServiceOrderItemStateType": {
+            "$id": "#ServiceOrderItemStateType",
+            "type": "string",
+            "description": "Possible values for the state of the order item",
+            "enum": [
+                "acknowledged",
+                "rejected",
+                "pending",
+                "held",
+                "inProgress",
+                "cancelled",
+                "completed",
+                "failed",
+                "assessingCancellation",
+                "pendingCancellation"
+            ]
+        }
+    }
+}

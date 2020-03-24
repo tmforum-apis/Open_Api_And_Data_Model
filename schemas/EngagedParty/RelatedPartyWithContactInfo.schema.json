@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "RelatedPartyWithContactInfo.schema.json",
+  "title": "RelatedPartyWithContactInfo",
+  "definitions": {
+    "RelatedPartyWithContactInfo": {
+      "$id": "#RelatedPartyWithContactInfo",
+      "type": "object",
+      "description": "Related party specialization that includes contact information",
+      "properties": {
+        "contact": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/ContactMedium.schema.json#ContactMedium"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+        }
+      ]
+    }
+  }
+}

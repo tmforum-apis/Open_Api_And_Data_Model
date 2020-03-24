@@ -1,35 +1,48 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "GeographicLocation.schema.json",
-    "title": "GeographicLocation",
-    "definitions": {
-        "GeographicLocation": {
-            "$id": "#GeographicLocation",
-            "description": "A GeographicLocation allows to describe through coordinate(s) a point, a line or a space",
-            "type": "object",
-            "properties": {
-                "accuracy": {
-                    "type": "string"
-                },
-                "geometryType": {
-                    "type": "string",
-                    "description": "Type allows to describe the GeoLocation form: it could be a point, a line, a polygon, a cylinder, etc"
-                },
-                "spatialRef": {
-                    "type": "string"
-                },
-                "geometry": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/GeographicPoint.schema.json#GeographicPoint"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Place.schema.json#Place"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "GeographicLocation.schema.json",
+  "title": "GeographicLocation",
+  "definitions": {
+    "GeographicLocation": {
+      "$id": "#GeographicLocation",
+      "type": "object",
+      "description": "A GeographicLocation is a pure-virtual super-class to the GeoJSON-aligned geometries of Point (addresses and locations), MultiPoint, LineString (streets, highways and boundaries), MultiLineString and Polygon (countries, provinces, tracts of land). Use the @type attribute to specify which of these is being specified by the geometry attribute.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the geographic location"
+        },
+        "href": {
+          "type": "string",
+          "description": "An URI used to access to the geographic location resource"
+        },
+        "@type": {
+          "type": "string",
+          "enum": [
+            "GeoJsonPoint",
+            "GeoJsonMultiPoint",
+            "GeoJsonLineString",
+            "GeoJsonMultiLineString",
+            "GeoJsonPolygon"
+          ],
+          "description": "The name of the GeoJSON structure used in the geometry attribute"
+        },
+        "bbox": {
+          "type": "array",
+          "description": "A bounding box array that contains the geometry. The axes order follows the axes order of the geometry",
+          "items": {
+            "type": "number"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Place.schema.json#Place"
+        }
+      ],
+      "required": [
+        "@type"
+      ]
     }
+  }
 }

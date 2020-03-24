@@ -4,35 +4,16 @@
     "title": "PaymentMethodRefOrValue",
     "definitions": {
         "PaymentMethodRefOrValue": {
-            "$id": "#PaymentMethodRefOrValue",
             "description": "link to the resource that holds information about the payment mean used to complete the operation",
-            "properties": {
-                "details": {
-                    "description": "The list of parameters depends on the type of payment method",
-                    "$ref": "../EngagedParty/RelatedPartyRef.schema.json#RelatedPartyRef"
+            "properties": {},
+            "allOf": [
+                {
+                    "$ref": "../Customer/PaymentMethodRef.schema.json#PaymentMethodRef"
                 },
-                "href": {
-                    "type": "string",
-                    "description": "A resource URI pointing to the resource in the OB that stores the channel information"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier for the channel entity"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the channel"
-                },
-                "type": {
-                    "type": "string",
-                    "description": "Type of payment method (bankcard, voucher, �)"
+                {
+                    "$ref": "../Customer/PaymentMethod.schema.json#PaymentMethod"
                 }
-            },
-            "required": [
-                "id",
-                "href"
-            ],
-            "type": "object"
+            ]
         }
     }
 }

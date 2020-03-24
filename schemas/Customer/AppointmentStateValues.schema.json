@@ -1,19 +1,19 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "AppointmentStateValues.schema.json",
-    "title": "AppointmentStateValues",
-    "definitions": {
-        "AppointmentStateValues": {
-            "$id": "#AppointmentStateValues",
-            "type": "string",
-            "description": "",
-            "enum": [
-                "initialized",
-                "confirmed",
-                "cancelled",
-                "completed",
-                "failed"
-            ]
-        }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AppointmentStateValues.schema.json",
+  "title": "AppointmentStateValues",
+  "definitions": {
+    "AppointmentStateValues": {
+      "$id": "#AppointmentStateValues",
+      "type": "string",
+      "description": "",
+      "enum": [
+        "initialized",
+        "confirmed",
+        "cancelled",
+        "completed",
+        "failed"
+      ]
     }
+  }
 }

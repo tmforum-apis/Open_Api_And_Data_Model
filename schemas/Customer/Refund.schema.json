@@ -1,0 +1,88 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Refund.schema.json",
+    "title": "Refund",
+    "definitions": {
+        "Refund": {
+            "$id": "#Refund",
+            "required": [
+                "paymentMethod",
+                "account"
+            ],
+            "description": "The Refund resource represents a performed Refund. It contains both information about the refund and the payment method used to perform it.",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of Refund"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hypertext Reference of the refund"
+                },
+                "correlatorId": {
+                    "type": "string",
+                    "description": "Unique identifier in the client for the refund in case it is needed to correlate"
+                },
+                "refundDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the refund was performed"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Screen name of the refund"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Text describing the contents of the refund"
+                },
+                "authorizationCode": {
+                    "type": "string",
+                    "description": "Authorization code retrieved from an external payment gateway that could be used for conciliation"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of the refund"
+                },
+                "statusDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the status was recorded"
+                },
+                "amount": {
+                    "$ref": "../Common/Money.schema.json#Money",
+                    "description": "Amount to be refunded (net of taxes)"
+                },
+                "taxAmount": {
+                    "$ref": "../Common/Money.schema.json#Money",
+                    "description": "Tax applied"
+                },
+                "totalAmount": {
+                    "$ref": "../Common/Money.schema.json#Money",
+                    "description": "Amount to be paid (including taxes)"
+                },
+                "channel": {
+                    "$ref": "../Customer/ChannelRef.schema.json#ChannelRef"
+                },
+                "payment": {
+                    "$ref": "../Customer/PaymentRef.schema.json#PaymentRef"
+                },
+                "requestor": {
+                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                },
+                "paymentMethod": {
+                    "$ref": "../Customer/PaymentMethodRefOrValue.schema.json#PaymentMethodRefOrValue"
+                },
+                "account": {
+                    "$ref": "../EngagedParty/AccountRef.schema.json#AccountRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

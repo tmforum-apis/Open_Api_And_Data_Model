@@ -1,39 +1,39 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ServiceCandidateRef.schema.json",
-    "title": "ServiceCandidateRef",
-    "definitions": {
-        "ServiceCandidateRef": {
-            "$id": "#ServiceCandidateRef",
-            "description": "ServiceCandidate reference. ServiceCandidate is an entity that makes a ServiceSpecification available to a catalog.",
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "Unique reference of the service candidate"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the service candidate"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the service candidate"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "Version of the service candidate"
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ServiceCandidateRef.schema.json",
+  "title": "ServiceCandidateRef",
+  "definitions": {
+    "ServiceCandidateRef": {
+      "$id": "#ServiceCandidateRef",
+      "description": "ServiceCandidate reference. ServiceCandidate is an entity that makes a ServiceSpecification available to a catalog.",
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "Unique reference of the service candidate"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the service candidate"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the service candidate"
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the service candidate"
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

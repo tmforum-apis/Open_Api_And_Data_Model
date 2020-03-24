@@ -1,38 +1,38 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Skill.schema.json",
-    "title": "Skill",
-    "definitions": {
-        "Skill": {
-            "$id": "#Skill",
-            "type": "object",
-            "description": "Skills evaluated for an individual with a level and possibly with a limited validity when an obsolescence is defined (Ex: the first-aid certificate first level is limited to one year and an update training is required each year to keep the level).",
-            "properties": {
-                "skillCode": {
-                    "type": "string",
-                    "description": "Code of the skill"
-                },
-                "skillName": {
-                    "type": "string",
-                    "description": "Name of the skill such as Java language,…"
-                },
-                "evaluatedLevel": {
-                    "type": "string",
-                    "description": "Level of expertise in a skill evaluated for an individual"
-                },
-                "comment": {
-                    "type": "string",
-                    "description": "A free text comment linked to the evaluation done"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Skill.schema.json",
+  "title": "Skill",
+  "definitions": {
+    "Skill": {
+      "$id": "#Skill",
+      "type": "object",
+      "description": "Skills evaluated for an individual with a level and possibly with a limited validity when an obsolescence is defined (Ex: the first-aid certificate first level is limited to one year and an update training is required each year to keep the level).",
+      "properties": {
+        "skillCode": {
+          "type": "string",
+          "description": "Code of the skill"
+        },
+        "skillName": {
+          "type": "string",
+          "description": "Name of the skill such as Java language,…"
+        },
+        "evaluatedLevel": {
+          "type": "string",
+          "description": "Level of expertise in a skill evaluated for an individual"
+        },
+        "comment": {
+          "type": "string",
+          "description": "A free text comment linked to the evaluation done"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

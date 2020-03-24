@@ -1,26 +1,26 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "LoyaltyEventType.schema.json",
-    "title": "LoyaltyEventType",
-    "definitions": {
-        "LoyaltyEventType": {
-            "$id": "#LoyaltyEventType",
-            "description": "An event type used to match filter incoming loyalty events.",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier for the loyalty event type."
-                },
-                "href": {
-                    "type": "string",
-                    "description": "A reference to the loyalty event type."
-                },
-                "eventType": {
-                    "type": "string",
-                    "description": "The type of loyalty event expected to trigger the loyalty rule evaluation, e.g. a CustomerOrder or an Invoice. The eventType should be unique to prevent existing resources not being reused. An eventType that already exists will result in a 422 error."
-                }
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "LoyaltyEventType.schema.json",
+  "title": "LoyaltyEventType",
+  "definitions": {
+    "LoyaltyEventType": {
+      "$id": "#LoyaltyEventType",
+      "description": "An event type used to match filter incoming loyalty events.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the loyalty event type."
+        },
+        "href": {
+          "type": "string",
+          "description": "A reference to the loyalty event type."
+        },
+        "eventType": {
+          "type": "string",
+          "description": "The type of loyalty event expected to trigger the loyalty rule evaluation, e.g. a CustomerOrder or an Invoice. The eventType should be unique to prevent existing resources not being reused. An eventType that already exists will result in a 422 error."
         }
+      }
     }
+  }
 }

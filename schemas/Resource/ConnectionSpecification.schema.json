@@ -1,0 +1,46 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ConnectionSpecification.schema.json",
+    "title": "ConnectionSpecification",
+    "definitions": {
+        "ConnectionSpecification": {
+            "$id": "#ConnectionSpecification",
+            "description": "A specification for an edge in a resource graph.",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "Unique identifier for graph edge specification.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Descriptive name for graph edge specification.",
+                    "type": "string"
+                },
+                "associationType": {
+                    "description": "Association type.",
+                    "type": "string",
+                    "enum": [
+                        "pointtoPoint",
+                        "pointtoMultipoint"
+                    ]
+                },
+                "endpointSpecification": {
+                    "description": "Specifications for resource graph vertices connected by this edge.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "EndpointSpecificationRef.schema.json#/definitions/EndpointSpecificationRef"
+                    }
+                }
+            },
+            "required": [
+                "associationType",
+                "endpointSpecification"
+            ],
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

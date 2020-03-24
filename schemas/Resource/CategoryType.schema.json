@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "CategoryType.schema.json",
+  "title": "CategoryType",
+  "definitions": {
+    "CategoryType": {
+      "$id": "#CategoryType",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "sensor",
+          "actuator",
+          "meter",
+          "HVAC",
+          "network",
+          "multimedia",
+          "implement",
+          "irrSystem",
+          "irrSection",
+          "endgun"
+        ]
+      }
+    }
+  }
+}

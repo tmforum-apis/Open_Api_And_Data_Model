@@ -1,64 +1,64 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "BalanceDeduct.schema.json",
-    "title": "BalanceDeduct",
-    "definitions": {
-        "BalanceDeduct": {
-            "$id": "#BalanceDeduct",
-            "description": "The Balance Deduct task resource is a detailed description of deduction operation. If balanceReserve Resource ID is contained in the deduct request message, the reserved balance will be performed deduct operation (if part of the reserved balance is deducted, the remain amount will be released); if balanceReserve Resource ID is not contained in the deduct request message, the balance will be deducted directly.",
-            "type": "object",
-            "properties": {
-                "confirmationDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date when the deduction was confirmed in the server"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Description of the deduct  operation"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "A resource URI pointing to the resource in the OB that stores the detailed information about a deduction"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique Identifier within the server for the deduction  operation request"
-                },
-                "requestedDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date when the deduction request was received in the server"
-                },
-                "status": {
-                    "type": "string",
-                    "description": "Status of the deduction operation"
-                },
-                "deductType": {
-                    "type": "string",
-                    "description": "A preconfigured value that describes a deduct type which determines the prepay balance bucket in which the deduct is done"
-                },
-                "relatedParty": {
-                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                },
-                "product": {
-                    "$ref": "../Product/ProductRef.schema.json#ProductRef"
-                },
-                "balanceReserve": {
-                    "$ref": "../Customer/BalanceReserveRef.schema.json#BalanceReserveRef"
-                },
-                "requestor": {
-                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                },
-                "partyAccount": {
-                    "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BalanceDeduct.schema.json",
+  "title": "BalanceDeduct",
+  "definitions": {
+    "BalanceDeduct": {
+      "$id": "#BalanceDeduct",
+      "description": "The Balance Deduct task resource is a detailed description of deduction operation. If balanceReserve Resource ID is contained in the deduct request message, the reserved balance will be performed deduct operation (if part of the reserved balance is deducted, the remain amount will be released); if balanceReserve Resource ID is not contained in the deduct request message, the balance will be deducted directly.",
+      "type": "object",
+      "properties": {
+        "confirmationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the deduction was confirmed in the server"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the deduct  operation"
+        },
+        "href": {
+          "type": "string",
+          "description": "A resource URI pointing to the resource in the OB that stores the detailed information about a deduction"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique Identifier within the server for the deduction  operation request"
+        },
+        "requestedDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the deduction request was received in the server"
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of the deduction operation"
+        },
+        "deductType": {
+          "type": "string",
+          "description": "A preconfigured value that describes a deduct type which determines the prepay balance bucket in which the deduct is done"
+        },
+        "relatedParty": {
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+        },
+        "product": {
+          "$ref": "../Product/ProductRef.schema.json#ProductRef"
+        },
+        "balanceReserve": {
+          "$ref": "../Customer/BalanceReserveRef.schema.json#BalanceReserveRef"
+        },
+        "requestor": {
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+        },
+        "partyAccount": {
+          "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

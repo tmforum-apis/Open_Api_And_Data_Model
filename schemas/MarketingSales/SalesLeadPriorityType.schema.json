@@ -1,17 +1,17 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "SalesLeadPriorityType.schema.json",
-    "title": "SalesLeadPriorityType",
-    "definitions": {
-        "SalesLeadPriorityType": {
-            "$id": "#SalesLeadPriorityType",
-            "type": "string",
-            "description": "Urgency of working this salesLead",
-            "enum": [
-                "low",
-                "medium",
-                "high"
-            ]
-        }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "SalesLeadPriorityType.schema.json",
+  "title": "SalesLeadPriorityType",
+  "definitions": {
+    "SalesLeadPriorityType": {
+      "$id": "#SalesLeadPriorityType",
+      "type": "string",
+      "description": "Urgency of working this salesLead",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
     }
+  }
 }

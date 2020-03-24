@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TestResult.schema.json",
+  "title": "TestResult",
+  "definitions": {
+    "TestResult": {
+      "$id": "#TestResult",
+      "type": "object",
+      "description": "Base schema for test results",
+      "required": [
+        "testExecution"
+      ],
+      "properties": {
+        "testExecution": {
+          "$ref": "../Common/TestExecution.schema.json#TestExecution"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Resource/ResourceEntity.schema.json#ResourceEntity"
+        }
+      ]
+    }
+  }
+}

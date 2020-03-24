@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PartyPrivacyProfileSpecificationCharacteristic.schema.json",
+  "title": "PartyPrivacyProfileSpecificationCharacteristic",
+  "definitions": {
+    "PartyPrivacyProfileSpecificationCharacteristic": {
+      "$id": "#PartyPrivacyProfileSpecificationCharacteristic",
+      "description": "A characteristic of the party privacy profile, whose value(s) would be supplied at runtime. For example, email address",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the characteristic"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the characteristic"
+        },
+        "criticalityLevel": {
+          "type": "string",
+          "description": "Level of criticality for this characteristic of personal identifiable information (e.g. in terms of the damage if this item was breached), such as low, medium, high."
+        },
+        "privacyUsagePurpose": {
+          "type": "string",
+          "description": "Defines the purpose authorized or refused for the characteristic (e.g. ADMIN, INFORMATION, MARKETING, RESEARCH)."
+        },
+        "privacyType": {
+          "type": "string",
+          "description": "Type of privacy (e.g. Internal Purpose, External Purpose, Internal Retention, External Retention)"
+        },
+        "allowedRole": {
+          "type": "array",
+          "description": "A list of roles in the organization who are allowed access to this characteristic",
+          "items": {
+            "$ref": "../EngagedParty/RoleSpecification.schema.json#RoleSpecification"
+          }
+        },
+        "partyPrivacyProfileSpecCharacteristicValue": {
+          "type": "array",
+          "description": "List of values that can be assigned to this characteristic at runtime",
+          "items": {
+            "$ref": "../Common/SpecificationCharacteristicValue.schema.json#SpecificationCharacteristicValue"
+          }
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period of time for which this characteristic specification is valid."
+        }
+      }
+    }
+  }
+}

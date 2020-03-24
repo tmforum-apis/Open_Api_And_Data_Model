@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AlarmedObject.schema.json",
+  "title": "AlarmedObject",
+  "definitions": {
+    "AlarmedObject": {
+      "$id": "#AlarmedObject",
+      "type": "object",
+      "description": "Identifies the managed object instance associated with the alarm.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The identifier of the managed object associated with the event."
+        },
+        "href": {
+          "type": "string",
+          "description": "A reference to the managed object associated with the event."
+        }
+      }
+    }
+  }
+}

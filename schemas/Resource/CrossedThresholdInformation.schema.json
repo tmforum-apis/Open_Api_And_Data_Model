@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "CrossedThresholdInformation.schema.json",
+  "title": "CrossedThresholdInformation",
+  "definitions": {
+    "CrossedThresholdInformation": {
+      "$id": "#CrossedThresholdInformation",
+      "type": "object",
+      "description": "Identifies the details of the threshold that has been crossed.",
+      "properties": {
+        "threshold": {
+          "$ref": "../Resource/ThresholdRef.schema.json#ThresholdRef"
+        },
+        "direction": {
+          "type": "string",
+          "description": "Indicates the threshold crossing direction: up or down."
+        },
+        "granularity": {
+          "type": "string",
+          "description": "Indicates the granularity at which the indicator is evaluated for threshold crossing"
+        },
+        "indicatorName": {
+          "type": "string",
+          "description": "Indicates the name of indicator which crossed the threshold."
+        },
+        "indicatorUnit": {
+          "type": "string",
+          "description": "Indicates the unit of the measurement of the indicator corresponding to the threshold that has been crossed."
+        },
+        "observedValue": {
+          "type": "string",
+          "description": "Indicates the value of the indicator which crossed the threshold."
+        },
+        "thresholdCrossingDescription": {
+          "type": "string",
+          "description": "Indicates further information on the threshold crossing alarm."
+        }
+      }
+    }
+  }
+}

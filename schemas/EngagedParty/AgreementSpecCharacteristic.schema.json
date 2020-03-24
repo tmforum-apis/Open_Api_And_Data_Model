@@ -1,45 +1,45 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "AgreementSpecCharacteristic.schema.json",
-    "title": "AgreementSpecCharacteristic",
-    "definitions": {
-        "AgreementSpecCharacteristic": {
-            "$id": "#AgreementSpecCharacteristic",
-            "description": "A characteristic quality or distinctive feature of an agreement.",
-            "type": "object",
-            "properties": {
-                "configurable": {
-                    "type": "boolean",
-                    "description": "If true, the Boolean indicates that the characteristic is configurable"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "A narrative that explains in detail what the characteristic is"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the characteristic being specified."
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The period for which the specification characteristic is valid"
-                },
-                "valueType": {
-                    "type": "string",
-                    "description": "A kind of value that the characteristic can take on, such as numeric, text and so forth"
-                },
-                "specCharacteristicValue": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/AgreementSpecCharacteristicValue.schema.json#AgreementSpecCharacteristicValue"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AgreementSpecCharacteristic.schema.json",
+  "title": "AgreementSpecCharacteristic",
+  "definitions": {
+    "AgreementSpecCharacteristic": {
+      "$id": "#AgreementSpecCharacteristic",
+      "description": "A characteristic quality or distinctive feature of an agreement.",
+      "type": "object",
+      "properties": {
+        "configurable": {
+          "type": "boolean",
+          "description": "If true, the Boolean indicates that the characteristic is configurable"
+        },
+        "description": {
+          "type": "string",
+          "description": "A narrative that explains in detail what the characteristic is"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the characteristic being specified."
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which the specification characteristic is valid"
+        },
+        "valueType": {
+          "type": "string",
+          "description": "A kind of value that the characteristic can take on, such as numeric, text and so forth"
+        },
+        "specCharacteristicValue": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/AgreementSpecCharacteristicValue.schema.json#AgreementSpecCharacteristicValue"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

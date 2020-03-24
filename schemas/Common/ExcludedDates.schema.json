@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ExcludedDates.schema.json",
+  "title": "ExcludedDates",
+  "definitions": {
+    "ExcludedDates": {
+      "$id": "#ExcludedDates",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "dates": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

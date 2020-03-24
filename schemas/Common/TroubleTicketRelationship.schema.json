@@ -1,34 +1,35 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "TroubleTicketRelationship.schema.json",
-    "title": "TroubleTicketRelationship",
-    "definitions": {
-        "TroubleTicketRelationship": {
-            "type": "object",
-            "description": "Represents a relationship between trouble Trouble Tickets",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the Trouble Ticket"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the Trouble Ticket"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the Trouble Ticket"
-                },
-                "relationshipType": {
-                    "type": "string",
-                    "description": "Type of the  Trouble Ticket relationship can be isChiled, dependent etc..."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "Entity.schema.json#/Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TroubleTicketRelationship.schema.json",
+  "title": "TroubleTicketRelationship",
+  "definitions": {
+    "TroubleTicketRelationship": {
+      "$id": "#TroubleTicketRelationship",
+      "type": "object",
+      "description": "Represents a relationship between trouble Trouble Tickets",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the Trouble Ticket"
+        },
+        "href": {
+          "type": "string",
+          "description": "Reference of the Trouble Ticket"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the Trouble Ticket"
+        },
+        "relationshipType": {
+          "type": "string",
+          "description": "Type of the  Trouble Ticket relationship can be isChiled, dependent etc..."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

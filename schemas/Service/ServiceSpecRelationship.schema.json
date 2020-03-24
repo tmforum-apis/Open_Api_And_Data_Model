@@ -1,43 +1,43 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ServiceSpecRelationship.schema.json",
-    "title": "ServiceSpecRelationship",
-    "definitions": {
-        "ServiceSpecRelationship": {
-            "$id": "#ServiceSpecRelationship",
-            "description": "A migration, substitution, dependency or exclusivity relationship between/among service specifications.",
-            "type": "object",
-            "properties": {
-                "relationshipType": {
-                    "type": "string",
-                    "description": "Type of relationship such as migration, substitution, dependency, exclusivity"
-                },
-                "role": {
-                    "type": "string",
-                    "description": "The association role for this service specification"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the target serviceSpecification"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the target serviceSpecification"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "The name given to the target service specification instance"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The period for which the serviceSpecRelationship is valid"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ServiceSpecRelationship.schema.json",
+  "title": "ServiceSpecRelationship",
+  "definitions": {
+    "ServiceSpecRelationship": {
+      "$id": "#ServiceSpecRelationship",
+      "description": "A migration, substitution, dependency or exclusivity relationship between/among service specifications.",
+      "type": "object",
+      "properties": {
+        "relationshipType": {
+          "type": "string",
+          "description": "Type of relationship such as migration, substitution, dependency, exclusivity"
+        },
+        "role": {
+          "type": "string",
+          "description": "The association role for this service specification"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the target serviceSpecification"
+        },
+        "href": {
+          "type": "string",
+          "description": "Reference of the target serviceSpecification"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name given to the target service specification instance"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which the serviceSpecRelationship is valid"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

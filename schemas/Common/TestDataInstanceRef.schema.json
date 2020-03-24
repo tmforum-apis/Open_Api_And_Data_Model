@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TestDataInstanceRef.schema.json",
+  "title": "TestDataInstanceRef",
+  "definitions": {
+    "TestDataInstanceRef": {
+      "$id": "#TestDataInstanceRef",
+      "type": "object",
+      "description": "A reference to a managed test data instance resource",
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        }
+      ]
+    }
+  }
+}

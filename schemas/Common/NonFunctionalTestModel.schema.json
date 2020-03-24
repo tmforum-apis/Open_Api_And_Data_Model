@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "NonFunctionalTestModel.schema.json",
+  "title": "NonFunctionalTestModel",
+  "definitions": {
+    "NonFunctionalTestModel": {
+      "$id": "#NonFunctionalTestModel",
+      "type": "object",
+      "description": "A managed non-functional test model resource",
+      "required": [
+        "nonFunctionalTestModelDefinition"
+      ],
+      "properties": {
+        "nonFunctionalTestModelDefinition": {
+          "$ref": "../Common/NonFunctionalTestModelDefinition.schema.json#NonFunctionalTestModelDefinition"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/ManagedArtifact.schema.json#ManagedArtifact"
+        }
+      ]
+    }
+  }
+}

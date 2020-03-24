@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "CommunicationMessageStateType.schema.json",
+  "title": "CommunicationMessageStateType",
+  "definitions": {
+    "CommunicationMessageStateType": {
+      "$id": "#CommunicationMessageStateType",
+      "description": "Communication message state type",
+      "type": "string",
+      "enum": [
+        "initial",
+        "inProgress",
+        "completed",
+        "cancelled",
+        "failed"
+      ]
+    }
+  }
+}

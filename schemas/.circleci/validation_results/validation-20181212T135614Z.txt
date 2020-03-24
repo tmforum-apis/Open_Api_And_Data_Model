@@ -1,3 +1,0 @@
-SCHEMA VALIDATION
-=================
-error: TypeError: Cannot read property 'length' of undefined

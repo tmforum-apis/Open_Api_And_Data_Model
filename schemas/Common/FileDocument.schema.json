@@ -1,40 +1,40 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "FileDocument.schema.json",
-    "title": "FileDocument",
-    "definitions": {
-        "FileDocument": {
-            "$id": "#FileDocument",
-            "description": "A document accompanying an entity",
-            "type": "object",
-            "properties": {
-                "downloadUrl": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "URL where the document could be downloaded"
-                },
-                "fileType": {
-                    "type": "string",
-                    "description": "Document file format of the file : csv, pdf, xls, txt... for example"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Document name"
-                },
-                "size": {
-                    "type": "integer",
-                    "description": "Document file size  (by default in bytes)"
-                },
-                "sizeUnit": {
-                    "type": "integer",
-                    "description": "Size unit (in bytes by default)"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "FileDocument.schema.json",
+  "title": "FileDocument",
+  "definitions": {
+    "FileDocument": {
+      "$id": "#FileDocument",
+      "description": "A document accompanying an entity",
+      "type": "object",
+      "properties": {
+        "downloadUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL where the document could be downloaded"
+        },
+        "fileType": {
+          "type": "string",
+          "description": "Document file format of the file : csv, pdf, xls, txt... for example"
+        },
+        "name": {
+          "type": "string",
+          "description": "Document name"
+        },
+        "size": {
+          "type": "integer",
+          "description": "Document file size  (by default in bytes)"
+        },
+        "sizeUnit": {
+          "type": "integer",
+          "description": "Size unit (in bytes by default)"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

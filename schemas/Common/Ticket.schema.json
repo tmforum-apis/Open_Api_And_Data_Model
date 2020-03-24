@@ -1,96 +1,96 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Ticket.schema.json",
-    "title": "Ticket",
-    "definitions": {
-        "Ticket": {
-            "$id": "#Ticket",
-            "description": "A trouble ticket represents a record used for reporting and managing the resolution of resource problems",
-            "type": "object",
-            "properties": {
-                "correlationId": {
-                    "type": "string",
-                    "description": "Additional identifier coming from an external system"
-                },
-                "creationDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "The date on which the trouble was discovered"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Description of the trouble"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the trouble ticket"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the trouble ticket"
-                },
-                "resolutionDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "The date on which the service was brought back to its original condition"
-                },
-                "severity": {
-                    "type": "string",
-                    "description": "The severity of the trouble. It can be for example : minor, major, critical"
-                },
-                "status": {
-                    "type": "string",
-                    "description": "The current status of the Trouble Ticket"
-                },
-                "statusChangeDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "The date of state change"
-                },
-                "statusChangeReason": {
-                    "type": "string",
-                    "description": "The reason of state change"
-                },
-                "subStatus": {
-                    "type": "string",
-                    "description": "The current sub status of the Trouble Ticket"
-                },
-                "targetResolutionDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Foreseen trouble resolution date"
-                },
-                "ticketType": {
-                    "type": "string",
-                    "description": "Type of trouble ticket"
-                },
-                "relatedObject": {
-                    "type": "array",
-                    "description": "Any object(s) associated with this trouble ticket",
-                    "items": {
-                        "$ref": "../Common/RelatedObject.schema.json#RelatedObject"
-                    }
-                },
-                "note": {
-                    "type": "array",
-                    "description": "Any note(s) associated with this trouble ticket",
-                    "items": {
-                        "$ref": "../Common/Note.schema.json#Note"
-                    }
-                },
-                "relatedParty": {
-                    "type": "array",
-                    "description": "Any Party/Parties associated with this trouble ticket",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Ticket.schema.json",
+  "title": "Ticket",
+  "definitions": {
+    "Ticket": {
+      "$id": "#Ticket",
+      "description": "A trouble ticket represents a record used for reporting and managing the resolution of resource problems",
+      "type": "object",
+      "properties": {
+        "correlationId": {
+          "type": "string",
+          "description": "Additional identifier coming from an external system"
+        },
+        "creationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date on which the trouble was discovered"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the trouble"
+        },
+        "href": {
+          "type": "string",
+          "description": "Reference of the trouble ticket"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the trouble ticket"
+        },
+        "resolutionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date on which the service was brought back to its original condition"
+        },
+        "severity": {
+          "type": "string",
+          "description": "The severity of the trouble. It can be for example : minor, major, critical"
+        },
+        "status": {
+          "type": "string",
+          "description": "The current status of the Trouble Ticket"
+        },
+        "statusChangeDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date of state change"
+        },
+        "statusChangeReason": {
+          "type": "string",
+          "description": "The reason of state change"
+        },
+        "subStatus": {
+          "type": "string",
+          "description": "The current sub status of the Trouble Ticket"
+        },
+        "targetResolutionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Foreseen trouble resolution date"
+        },
+        "ticketType": {
+          "type": "string",
+          "description": "Type of trouble ticket"
+        },
+        "relatedObject": {
+          "type": "array",
+          "description": "Any object(s) associated with this trouble ticket",
+          "items": {
+            "$ref": "../Common/RelatedObject.schema.json#RelatedObject"
+          }
+        },
+        "note": {
+          "type": "array",
+          "description": "Any note(s) associated with this trouble ticket",
+          "items": {
+            "$ref": "../Common/Note.schema.json#Note"
+          }
+        },
+        "relatedParty": {
+          "type": "array",
+          "description": "Any Party/Parties associated with this trouble ticket",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

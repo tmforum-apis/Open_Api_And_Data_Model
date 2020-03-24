@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "GeneralTestArtifactDefinition.schema.json",
+  "title": "GeneralTestArtifactDefinition",
+  "definitions": {
+    "GeneralTestArtifactDefinition": {
+      "$id": "#GeneralTestArtifactDefinition",
+      "type": "object",
+      "description": "General test artifact definition",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/Attachment.schema.json#Attachment"
+        }
+      ]
+    }
+  }
+}

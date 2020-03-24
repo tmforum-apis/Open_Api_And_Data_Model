@@ -1,60 +1,74 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "EntityCategory.schema.json",
-    "title": "EntityCategory",
-    "definitions": {
-        "EntityCategory": {
-            "$id": "#EntityCategory",
-            "description": "The (entity) category resource is used to group entity catalog items in logical containers. Categories can contain other categories.",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "Description of the category"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Hyperlink reference to the category"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the category"
-                },
-                "isRoot": {
-                    "type": "boolean",
-                    "description": "If true, this Boolean indicates that the category is a root of categories"
-                },
-                "lastUpdate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date and time of the last update"
-                },
-                "lifecycleStatus": {
-                    "type": "string",
-                    "description": "Used to indicate the current lifecycle status"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the category"
-                },
-                "parentId": {
-                    "type": "string",
-                    "description": "Unique identifier of the parent category"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The period for which the category is valid"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "Category version"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "EntityCategory.schema.json",
+  "title": "EntityCategory",
+  "definitions": {
+    "EntityCategory": {
+      "$id": "#EntityCategory",
+      "description": "The (entity) category resource is used to group entity catalog items in logical containers. Categories can contain other categories.\nResource IDs for categories are strings and are defined by the catalog application.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of the category"
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink reference to the category"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the category"
+        },
+        "isRoot": {
+          "type": "boolean",
+          "description": "If true, this Boolean indicates that the category is a root of categories"
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time of the last update"
+        },
+        "lifecycleStatus": {
+          "type": "string",
+          "description": "Used to indicate the current lifecycle status"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the category"
+        },
+        "parentId": {
+          "type": "string",
+          "description": "Unique identifier of the parent category"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which the category is valid"
+        },
+        "childCategory": {
+          "type": "array",
+          "description": "The child category(ies) if any, contained in this category",
+          "items": {
+            "$ref": "../Common/EntityCategoryRef.schema.json#EntityCategoryRef"
+          }
+        },
+        "entityCatalogItem": {
+          "type": "array",
+          "description": "The catalog items referred to by this category",
+          "items": {
+            "$ref": "../Common/EntityCatalogItemRef.schema.json#EntityCatalogItemRef"
+          }
+        },
+        "version": {
+          "type": "string",
+          "description": "Category version"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

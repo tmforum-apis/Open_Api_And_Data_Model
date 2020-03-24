@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TestCaseExecutionRefOrValue.schema.json",
+  "title": "TestCaseExecutionRefOrValue",
+  "definitions": {
+    "TestCaseExecutionRefOrValue": {
+      "$id": "#TestCaseExecutionRefOrValue",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "../Common/TestCaseExecution.schema.json#TestCaseExecution"
+        },
+        {
+          "$ref": "../Common/TestCaseExecutionRef.schema.json#TestCaseExecutionRef"
+        }
+      ]
+    }
+  }
+}

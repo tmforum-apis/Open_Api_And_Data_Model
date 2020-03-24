@@ -1,83 +1,90 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "BucketBalance.schema.json",
-    "title": "BucketBalance",
-    "definitions": {
-        "BucketBalance": {
-            "$id": "#BucketBalance",
-            "description": "Represents and tracks the amount remained or owed for a certain type of service by certain customer",
-            "properties": {
-                "bucketType": {
-                    "type": "string",
-                    "description": "Type of prepay balance bucket (e.g.: promotion, deposit, bonus, data, voice, or any other service type)"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Text describing the contents of the balance managed by the bucket"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "A resource URI pointing to the resource in the OB that stores the detailed information for the bucket"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique Identifier within the server for the bucket"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Friendly name to identify the bucket"
-                },
-                "partyAccount": {
-                    "description": "A reference to the account that owns the bucket",
-                    "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef"
-                },
-                "product": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Product/ProductRef.schema.json#ProductRef"
-                    },
-                    "description": "A reference to the product whose consumption is managed by the bucket. This is an array to allow scenarios where a given bucket is shared between different products."
-                },
-                "realizingResource": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Resource/ResourceRef.schema.json#ResourceRef"
-                    },
-                    "description": "A reference to the resource that realizes a product. This is an array to allow scenarios where a given bucket is shared between different resources."
-                },
-                "relatedParty": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                    },
-                    "description": "Used to provide information about any other entity with relation to the balance, for instance to define customer hierarchy for the balance (e.g.: customerId, userId, )"
-                },
-                "remainedAmount": {
-                    "description": "Amount remained in the bucket",
-                    "$ref": "../Common/QuantityType.schema.json#QuantityType"
-                },
-                "reservedAmount": {
-                    "description": "Indicate the reserved amount on the bucket",
-                    "$ref": "../Common/QuantityType.schema.json#QuantityType"
-                },
-                "status": {
-                    "type": "string",
-                    "description": "Status for the balance (active, expired, suspended)"
-                },
-                "validFor": {
-                    "description": "The period for which the balance in the bucket is valid",
-                    "$ref": "../Common/TimePeriodType.schema.json#TimePeriodType"
-                }
-            },
-            "required": [
-                "id",
-                "href",
-                "bucketType",
-                "validFor",
-                "status",
-                "product"
-            ],
-            "type": "object"
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BucketBalance.schema.json",
+  "title": "BucketBalance",
+  "definitions": {
+    "BucketBalance": {
+      "$id": "#BucketBalance",
+      "type": "object",
+      "description": "Represents and tracks the amount remained or owed for a certain type of service by certain customer",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Type of prepay balance bucket (e.g.: promotion, deposit, bonus, data, voice, or any other service type)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Text describing the contents of the balance managed by the bucket"
+        },
+        "href": {
+          "type": "string",
+          "description": "A resource URI pointing to the resource in the OB that stores the detailed information for the bucket"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique Identifier within the server for the bucket"
+        },
+        "name": {
+          "type": "string",
+          "description": "Friendly name to identify the bucket"
+        },
+        "partyAccount": {
+          "description": "A reference to the account that owns the bucket",
+          "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef",
+          "minItems": 1,
+          "maxItems": 1
+        },
+        "product": {
+          "type": "array",
+          "items": {
+            "$ref": "../Product/ProductRef.schema.json#ProductRef"
+          },
+          "description": "A reference to the product whose consumption is managed by the bucket. This is an array to allow scenarios where a given bucket is shared between different products."
+        },
+        "realizingResource": {
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/ResourceRef.schema.json#ResourceRef"
+          },
+          "description": "A reference to the resource that realizes a product. This is an array to allow scenarios where a given bucket is shared between different resources."
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          },
+          "description": "Used to provide information about any other entity with relation to the balance, for instance to define customer hierarchy for the balance (e.g.: customerId, userId, )"
+        },
+        "amount": {
+          "description": "Amount remained in the bucket",
+          "$ref": "../Common/Quantity.schema.json#Quantity"
+        },
+        "reservedAmount": {
+          "description": "Indicate the reserved amount on the bucket",
+          "$ref": "../Common/Quantity.schema.json#Quantity"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "cancelled",
+            "in_progress",
+            "confirmed"
+          ],
+          "description": "Status for the balance (active, expired, suspended)"
+        },
+        "validFor": {
+          "description": "The period for which the balance in the bucket is valid",
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
         }
+      },
+      "required": [
+        "id",
+        "href",
+        "bucketType",
+        "validFor",
+        "status",
+        "product"
+      ]
     }
+  }
 }

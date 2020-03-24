@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Comment.schema.json",
+  "title": "Comment",
+  "definitions": {
+    "Comment": {
+      "$id": "#Comment",
+      "type": "object",
+      "description": "Indicates the comments entered on the alarm.",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Indicates the user commenting the alarm."
+        },
+        "systemId": {
+          "type": "string",
+          "description": "Indicates the system identifier on which the client set the comment."
+        },
+        "time": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Indicates the time commenting the alarm"
+        },
+        "comment": {
+          "type": "string",
+          "description": "Indicates the text of the comment."
+        }
+      }
+    }
+  }
+}

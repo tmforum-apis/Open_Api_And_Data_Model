@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "RiskAssessmentResult.schema.json",
+    "title": "RiskAssessmentResult",
+    "definitions": {
+        "RiskAssessmentResult": {
+            "$id": "#RiskAssessmentResult",
+            "description": "This resource reflects the risk assessment",
+            "type": "object",
+            "properties": {
+                "overallScore": {
+                    "type": "number", 
+                    "format": "float",
+                    "description": "An overall assessment of the risk, composed from the individual scores",
+                    "minItems": 1
+                },
+                "score": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "RiskScore.schema.json#RiskScore"
+                    },                        
+                    "description": "Additional characteristics for which the risk might be assessed, optional input to the task"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#Extensible"
+                }
+            ]
+        }
+    }
+}

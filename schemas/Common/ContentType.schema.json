@@ -1,30 +1,30 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ContentType.schema.json",
-    "title": "Base64 content structure.",
-    "definitions": {
-        "ContentType": {
-            "$id": "#ContentType",
-            "type": "object",
-            "description": "Base64 content structure.",
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "description": "Content type."
-                },
-                "contentEncoding": {
-                    "type": "string",
-                    "format": "byte",
-                    "description": "Base64 encoded content."
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Content description."
-                }
-            },
-            "required": [
-                "contentEncoding"
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ContentType.schema.json",
+  "title": "ContentType",
+  "definitions": {
+    "ContentType": {
+      "$id": "#ContentType",
+      "type": "object",
+      "description": "Base64 content structure.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Content type."
+        },
+        "contentEncoding": {
+          "type": "string",
+          "format": "byte",
+          "description": "Base64 encoded content."
+        },
+        "description": {
+          "type": "string",
+          "description": "Content description."
         }
+      },
+      "required": [
+        "contentEncoding"
+      ]
     }
+  }
 }

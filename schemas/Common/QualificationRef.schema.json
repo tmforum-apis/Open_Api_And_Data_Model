@@ -1,23 +1,23 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "QualificationRef.schema.json",
-    "title": "QualificationRef",
-    "definitions": {
-        "QualificationRef": {
-            "$id": "#QualificationRef",
-            "type": "object",
-            "description": "It could be a serviceQualification or a productOfferingQualification that has been executed previously and captured in the productOrder to provide eligibility information",
-            "properties": {
-                "qualificationItemId": {
-                    "type": "string",
-                    "description": "Id of an item of a qualification"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "QualificationRef.schema.json",
+  "title": "QualificationRef",
+  "definitions": {
+    "QualificationRef": {
+      "$id": "#QualificationRef",
+      "type": "object",
+      "description": "It could be a serviceQualification or a productOfferingQualification that has been executed previously and captured in the productOrder to provide eligibility information",
+      "properties": {
+        "qualificationItemId": {
+          "type": "string",
+          "description": "Id of an item of a qualification"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        }
+      ]
     }
+  }
 }

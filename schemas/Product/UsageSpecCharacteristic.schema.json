@@ -1,37 +1,37 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "UsageSpecCharacteristic.schema.json",
-    "title": "UsageSpecCharacteristic",
-    "definitions": {
-        "UsageSpecCharacteristic": {
-            "$id": "#UsageSpecCharacteristic",
-            "description": "A detailed description of an attribute that defines a particular type of usage, described by its name, category, type, presence and a set of allowed values",
-            "type": "object",
-            "properties": {
-                "configurable": {
-                    "type": "boolean",
-                    "description": "Boolean indicating if usageSpecCharacteristic is configurable or not"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "A narrative that explains in detail what the usage specification characteristic is"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "The name of the usage specification characteristic"
-                },
-                "usageSpecCharacteristicValue": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Product/UsageSpecCharacteristicValue.schema.json#UsageSpecCharacteristicValue"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "UsageSpecCharacteristic.schema.json",
+  "title": "UsageSpecCharacteristic",
+  "definitions": {
+    "UsageSpecCharacteristic": {
+      "$id": "#UsageSpecCharacteristic",
+      "description": "A detailed description of an attribute that defines a particular type of usage, described by its name, category, type, presence and a set of allowed values",
+      "type": "object",
+      "properties": {
+        "configurable": {
+          "type": "boolean",
+          "description": "Boolean indicating if usageSpecCharacteristic is configurable or not"
+        },
+        "description": {
+          "type": "string",
+          "description": "A narrative that explains in detail what the usage specification characteristic is"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the usage specification characteristic"
+        },
+        "usageSpecCharacteristicValue": {
+          "type": "array",
+          "items": {
+            "$ref": "../Product/UsageSpecCharacteristicValue.schema.json#UsageSpecCharacteristicValue"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

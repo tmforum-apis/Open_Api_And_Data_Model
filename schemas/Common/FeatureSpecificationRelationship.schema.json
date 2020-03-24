@@ -1,0 +1,49 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "FeatureSpecificationRelationship.schema.json",
+	"title": "FeatureSpecificationRelationship",
+	"definitions": {
+		"FeatureSpecificationRelationship": {
+			"$id": "#FeatureSpecificationRelationship",
+			"description": "Relationship between feature specifications",
+			"type": "object",
+			"properties": {
+				"relationshipType": {
+					"description": "This is the type of the feature specification relationship.",
+					"type": "string",
+					"enum": [
+						"excluded",
+						"includes",
+						"may include",
+						"requires"
+					]
+				},
+				"featureId": {
+					"description": "Unique identifier of the target feature specification.",
+					"type": "string"
+				},
+                "parentSpecificationId": {
+                    "type": "string", 
+                    "description": "Unique identifier of the parent specification containing the target feature"
+                }, 
+                "parentSpecificationHref": {
+                    "type": "string", 
+                    "format": "uri",
+                    "description": "Hyperlink reference to the parent specification containing the target feature"
+                }, 
+				"name": {
+					"description": "This is the name of the target feature specification.",
+					"type": "string"
+				},
+				"validFor": {
+					"description": "The period for which this feature spoecification relationship is valid.",
+					"$ref": "../Common/TimePeriod.schema.json#TimePeriod"
+				}
+			},
+			"required": [
+				"relationshipType",
+				"name"
+			]
+		}
+	}
+}

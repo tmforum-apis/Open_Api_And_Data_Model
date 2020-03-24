@@ -1,35 +1,48 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "PromotionCriteria.schema.json",
-    "title": "PromotionCriteria",
-    "definitions": {
-        "PromotionCriteria": {
-            "$id": "#PromotionCriteria",
-            "description": "Criteria of the promotion.",
-            "type": "object",
-            "properties": {
-                "criteriaOperator": {
-                    "type": "string",
-                    "description": "The logic expression including parameter and operator. including:=,>,<,>=,<=,<>"
-                },
-                "criteriaPara": {
-                    "type": "string",
-                    "description": "The parameter (factor) of the criteria.The basic factors are abstracted from these data sources. There are several detail parameters ."
-                },
-                "criteriaValue": {
-                    "type": "string",
-                    "description": "The value is filled for the comparison of the criteria."
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PromotionCriteria.schema.json",
+  "title": "PromotionCriteria",
+  "definitions": {
+    "PromotionCriteria": {
+      "$id": "#PromotionCriteria",
+      "type": "object",
+      "description": "Criteria of the promotion.",
+      "properties": {
+        "@baseType": {
+          "type": "string",
+          "description": "The base type for use in polymorphic collections"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "description": "A link to the schema describing a resource (for type extension)."
+        },
+        "@type": {
+          "type": "string",
+          "description": "The class type of the actual resource (for type extension)."
+        },
+        "criteriaOperator": {
+          "type": "string",
+          "description": "The logic expression including parameter and operator. includeing:=,&gt;,&lt;,&gt;=,&lt;=,&lt;&gt;"
+        },
+        "criteriaPara": {
+          "type": "string",
+          "description": "The parameter (factor) of the criteria.The basic factors are abstracted from these data sources.There are several detail parameters ."
+        },
+        "criteriaValue": {
+          "type": "string",
+          "description": "The value is filled for the comparison of the criteria."
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier."
         }
+      },
+      "required": [
+        "id",
+        "criteriaOperator",
+        "criteriaPara",
+        "criteriaValue"
+      ]
     }
+  }
 }

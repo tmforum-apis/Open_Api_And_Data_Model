@@ -1,57 +1,57 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "LoyaltyProgramProduct.schema.json",
-    "title": "LoyaltyProgramProduct",
-    "definitions": {
-        "LoyaltyProgramProduct": {
-            "$id": "#LoyaltyProgramProduct",
-            "description": "An instance of a loyalty program specification, linked to a specified loyalty member.",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier for the loyalty program product."
-                },
-                "href": {
-                    "type": "string",
-                    "description": "A reference to the loyalty account."
-                },
-                "name": {
-                    "type": "string",
-                    "description": "A word, term, or phrase by which the product is known and distinguished from other products."
-                },
-                "description": {
-                    "type": "string",
-                    "description": "An explanation of what the product is."
-                },
-                "productStatus": {
-                    "type": "string",
-                    "description": "The condition of the product, such as planned, designed, activated, disconnected."
-                },
-                "characteristic": {
-                    "type": "array",
-                    "description": "Name value pairs of product characteristics.",
-                    "items": {
-                        "$ref": "../Common/Characteristic.schema.json#Characteristic"
-                    }
-                },
-                "loyaltyProgramProductSpec": {
-                    "type": "object",
-                    "$ref": "../Product/LoyaltyProgramProductSpecRef.schema.json#LoyaltyProgramProductSpecRef"
-                },
-                "loyaltyAccount": {
-                    "type": "object",
-                    "$ref": "../Product/LoyaltyAccountRef.schema.json#LoyaltyAccountRef"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "LoyaltyProgramProduct.schema.json",
+  "title": "LoyaltyProgramProduct",
+  "definitions": {
+    "LoyaltyProgramProduct": {
+      "$id": "#LoyaltyProgramProduct",
+      "description": "An instance of a loyalty program specification, linked to a specified loyalty member.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the loyalty program product."
+        },
+        "href": {
+          "type": "string",
+          "description": "A reference to the loyalty account."
+        },
+        "name": {
+          "type": "string",
+          "description": "A word, term, or phrase by which the product is known and distinguished from other products."
+        },
+        "description": {
+          "type": "string",
+          "description": "An explanation of what the product is."
+        },
+        "productStatus": {
+          "type": "string",
+          "description": "The condition of the product, such as planned, designed, activated, disconnected."
+        },
+        "characteristic": {
+          "type": "array",
+          "description": "Name value pairs of product characteristics.",
+          "items": {
+            "$ref": "../Common/Characteristic.schema.json#Characteristic"
+          }
+        },
+        "loyaltyProgramProductSpec": {
+          "type": "object",
+          "$ref": "../Product/LoyaltyProgramProductSpecRef.schema.json#LoyaltyProgramProductSpecRef"
+        },
+        "loyaltyAccount": {
+          "type": "object",
+          "$ref": "../Product/LoyaltyAccountRef.schema.json#LoyaltyAccountRef"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

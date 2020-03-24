@@ -1,27 +1,27 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "EligibilityUnavailabilityReason.schema.json",
-    "title": "EligibilityUnavailabilityReason",
-    "definitions": {
-        "EligibilityUnavailabilityReason": {
-            "$id": "#EligibilityUnavailabilityReason",
-            "description": "Reason for eligibility result if the productOfferingQualification result is no (meaning the productOffering or productSpec is not available).",
-            "type": "object",
-            "properties": {
-                "code": {
-                    "type": "string",
-                    "description": "Unavailability reason code."
-                },
-                "label": {
-                    "type": "string",
-                    "description": "Unavailability reason label."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "EligibilityUnavailabilityReason.schema.json",
+  "title": "EligibilityUnavailabilityReason",
+  "definitions": {
+    "EligibilityUnavailabilityReason": {
+      "$id": "#EligibilityUnavailabilityReason",
+      "description": "Reason for eligibility result if the productOfferingQualification result is no (meaning the productOffering or productSpec is not available).",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Unavailability reason code."
+        },
+        "label": {
+          "type": "string",
+          "description": "Unavailability reason label."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

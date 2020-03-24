@@ -1,0 +1,158 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PaymentAnalytics.schema.json",
+    "title": "PaymentAnalytics",
+    "definitions": {
+        "PaymentAnalytics": {
+            "$id": "#PaymentAnalytics",
+            "type": "object",
+            "properties": {
+                "paymentDueAmount": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Payment due amount"
+                },
+                "paymentDueDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Payment due date"
+                },
+                "paymentPaidAmount": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Payment paid amount"
+                },
+                "paymentPaidDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Payment paid date"
+                },
+                "paymentPaidPostingDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Posting date for payment paid"
+                },
+                "paymentPaidValueDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Value date for payment paid"
+                },
+                "paymentPaidDiscountAmount": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Cash discount granted for clearing"
+                },
+                "bankCountryCode": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Bank country key"
+                },
+                "bankNumber": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Bank number"
+                },
+                "bankAccountNumber": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Bank account number"
+                },
+                "iban": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "IBAN (International Bank Account Number)"
+                },
+                "swift": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "SWIFT Code / Bank Identifier Code (BIC)"
+                },
+                "paymentCardNumber": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Payment card number"
+                },
+                "paymentCardValidFromDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Payment card valid from"
+                },
+                "paymentCardValidToDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Payment card valid to"
+                },
+                "paymentCardAuthorizationNumber": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Payment card authorization number"
+                },
+                "paymentCardAuthorizationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Payment card authorization date"
+                },
+                "checkNumber": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Check number"
+                },
+                "paymentInstallmentNumber": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Payment number within payments associated with the same installment"
+                },
+                "invoiceReferenceIssueDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date of invoice associated with this payment"
+                },
+                "customerStatusDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when status was set or changed last time"
+                },
+                "customerCreationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when customer was created"
+                },
+                "customerBirthDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date of birth"
+                },
+                "arpuAmount": {
+                    "$ref": "../Common/Money.schema.json"
+                },
+                "accountStatusDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Status last change date"
+                },
+                "accountCreationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Account creation Date"
+                },
+                "dataCreationTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data creation (e.g. system dump creation, event generation\u2026)"
+                },
+                "runTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data upload run"
+                },
+                "validFromTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for business validity of entity record"
+                }
+            },
+            
+            "allOf": [{"$ref": "../Common/Entity.schema.json#Extensible"}]
+        }
+    }
+}

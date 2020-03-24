@@ -1,120 +1,120 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "SalesLead.schema.json",
-    "title": "SalesLead",
-    "definitions": {
-        "SalesLead": {
-            "$id": "#SalesLead",
-            "description": "A Sales Lead is the identification of a person or organization that has an interest in the goods and/or services provided in the prospect of them becoming Customers with one or more Subscriptions.",
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the salesLead"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the salesLead"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the salesLead"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Unique description of the salesLead"
-                },
-                "status": {
-                    "$ref": "../MarketingSales/SalesLeadStateType.schema.json#SalesLeadStateType"
-                },
-                "statusChangeDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date and time of the last update"
-                },
-                "creationDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date and time of the salesLead creation"
-                },
-                "referredDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date when the prospect information was received (for example, from a trade show)."
-                },
-                "statusChangeReason": {
-                    "type": "string",
-                    "description": "Reason why the status has changed"
-                },
-                "type": {
-                    "type": "string",
-                    "description": "Indicates the nature of the salesLead"
-                },
-                "rating": {
-                    "type": "string",
-                    "description": "Identifies the potential of a salesLead for becoming a sale. Usual ratings for qualified leads are: hot, warm, cold."
-                },
-                "priority": {
-                    "$ref": "../MarketingSales/SalesLeadPriorityType.schema.json#SalesLeadPriorityType"
-                },
-                "estimatedRevenue": {
-                    "$ref": "../Common/Money.schema.json#Money",
-                    "description": "Estimation of the revenue if the salesLead turns into a sale."
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The period for which the salesLead is valid"
-                },
-                "marketingCampaign": {
-                    "$ref": "../MarketingSales/MarketingCampaignRef.schema.json#MarketingCampaignRef",
-                    "description": "Campaign represents the carrier-initiated marketing activity which aims at the better recognition about its brand and offerings by the market."
-                },
-                "marketSegment": {
-                    "$ref": "../MarketingSales/MarketSegmentRef.schema.json#MarketSegmentRef",
-                    "description": "MarketSegment reference. A Market Segment is a grouping of Parties, GeographicAreas, SalesChannels, and so forth. MarketSegments are the target of MarketingCampaigns, ProductOfferings, ProductPromotions, ProductPlacements, and ProductPrograms from both internal and external (Competitors, and other Providers) perspective."
-                },
-                "channel": {
-                    "$ref": "../Common/ChannelRef.schema.json#ChannelRef"
-                },
-                "productOffering": {
-                    "$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef"
-                },
-                "relatedParty": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                    }
-                },
-                "prospectContact": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/ContactMedium.schema.json#ContactMedium"
-                    }
-                },
-                "productSpecification": {
-                    "$ref": "../Product/ProductSpecificationRef.schema.json#ProductSpecificationRef"
-                },
-                "category": {
-                    "$ref": "../Product/CategoryRef.schema.json#CategoryRef"
-                },
-                "salesOpportunity": {
-                    "$ref": "../MarketingSales/SalesOpportunityRef.schema.json#SalesOpportunityRef"
-                },
-                "product": {
-                    "$ref": "../Product/ProductRef.schema.json#ProductRef"
-                },
-                "note": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/Note.schema.json#Note"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "SalesLead.schema.json",
+  "title": "SalesLead",
+  "definitions": {
+    "SalesLead": {
+      "$id": "#SalesLead",
+      "description": "A Sales Lead is the identification of a person or organization that has an interest in the goods and/or services provided in the prospect of them becoming Customers with one or more Subscriptions.",
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "Reference of the salesLead"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the salesLead"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the salesLead"
+        },
+        "description": {
+          "type": "string",
+          "description": "Unique description of the salesLead"
+        },
+        "status": {
+          "$ref": "../MarketingSales/SalesLeadStateType.schema.json#SalesLeadStateType"
+        },
+        "statusChangeDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time of the last update"
+        },
+        "creationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time of the salesLead creation"
+        },
+        "referredDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the prospect information was received (for example, from a trade show)."
+        },
+        "statusChangeReason": {
+          "type": "string",
+          "description": "Reason why the status has changed"
+        },
+        "type": {
+          "type": "string",
+          "description": "Indicates the nature of the salesLead"
+        },
+        "rating": {
+          "type": "string",
+          "description": "Identifies the potential of a salesLead for becoming a sale. Usual ratings for qualified leads are: hot, warm, cold."
+        },
+        "priority": {
+          "$ref": "../MarketingSales/SalesLeadPriorityType.schema.json#SalesLeadPriorityType"
+        },
+        "estimatedRevenue": {
+          "$ref": "../Common/Money.schema.json#Money",
+          "description": "Estimation of the revenue if the salesLead turns into a sale."
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which the salesLead is valid"
+        },
+        "marketingCampaign": {
+          "$ref": "../MarketingSales/MarketingCampaignRef.schema.json#MarketingCampaignRef",
+          "description": "Campaign represents the carrier-initiated marketing activity which aims at the better recognition about its brand and offerings by the market."
+        },
+        "marketSegment": {
+          "$ref": "../MarketingSales/MarketSegmentRef.schema.json#MarketSegmentRef",
+          "description": "MarketSegment reference. A Market Segment is a grouping of Parties, GeographicAreas, SalesChannels, and so forth. MarketSegments are the target of MarketingCampaigns, ProductOfferings, ProductPromotions, ProductPlacements, and ProductPrograms from both internal and external (Competitors, and other Providers) perspective."
+        },
+        "channel": {
+          "$ref": "../Common/ChannelRef.schema.json#ChannelRef"
+        },
+        "productOffering": {
+          "$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef"
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
+        },
+        "prospectContact": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/ContactMedium.schema.json#ContactMedium"
+          }
+        },
+        "productSpecification": {
+          "$ref": "../Product/ProductSpecificationRef.schema.json#ProductSpecificationRef"
+        },
+        "category": {
+          "$ref": "../Product/CategoryRef.schema.json#CategoryRef"
+        },
+        "salesOpportunity": {
+          "$ref": "../MarketingSales/SalesOpportunityRef.schema.json#SalesOpportunityRef"
+        },
+        "product": {
+          "$ref": "../Product/ProductRef.schema.json#ProductRef"
+        },
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/Note.schema.json#Note"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

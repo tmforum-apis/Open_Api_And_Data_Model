@@ -1,12 +1,12 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "BalanceAdjustment.schema.json",
-    "title": "BalanceAdjustment",
-    "definitions": {
-        "BalanceAdjustment": {
-            "$id": "#BalanceAdjustment",
-            "description": "#TODO",
-            "type": "object"
-        }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BalanceAdjustment.schema.json",
+  "title": "BalanceAdjustment",
+  "definitions": {
+    "BalanceAdjustment": {
+      "$id": "#BalanceAdjustment",
+      "description": "#TODO",
+      "type": "object"
     }
+  }
 }

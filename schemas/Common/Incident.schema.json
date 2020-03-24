@@ -1,27 +1,27 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Incident.schema.json",
-    "title": "Incident",
-    "definitions": {
-        "Incident": {
-            "$id": "#Incident",
-            "description": "An Incident is a record of an event that has altered the operational state of a entity (Resource, Service or Customers Product)",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "The description of the incident."
-                },
-                "name": {
-                    "type": "string",
-                    "description": "The name of the incident."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Incident.schema.json",
+  "title": "Incident",
+  "definitions": {
+    "Incident": {
+      "$id": "#Incident",
+      "description": "An Incident is a record of an event that has altered the operational state of a entity (Resource, Service or Customers Product)",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "The description of the incident."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the incident."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

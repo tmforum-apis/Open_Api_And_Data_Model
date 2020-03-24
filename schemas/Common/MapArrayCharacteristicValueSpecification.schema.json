@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "MapArrayCharacteristicValueSpecification.schema.json",
+    "title": "MapArrayCharacteristicValueSpecification",
+    "definitions": {
+        "MapArrayCharacteristicValueSpecification": {
+            "$id": "#MapArrayCharacteristicValueSpecification",
+            "description": "A specification for a characteristic for which the value is an array of mapped objects",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "value": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            },
+			"allOf": [
+                {
+                    "$ref": "CharacteristicValueSpecification.schema.json#CharacteristicValueSpecification"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "IotDevice.schema.json",
+  "title": "IotDevice",
+  "description": "An apparatus (hardware + software + firmware) intended to accomplish a particular task (sensing the environment, actuating, etc.).",
+  "definitions": {
+    "IotDevice": {
+      "$id": "#IotDevice",
+      "description": "#TODO",
+      "type": "object",
+      "properties": {
+        "dataAccessEndPoint": {
+          "type": "array",
+          "items": {
+            "$ref": "DataAccessEndpoint.schema.json#DataAccessEndpoint"
+          }
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/CategoryType.schema.json#CategoryType"
+          }
+        },
+        "location": {
+          "$ref": "GeoLocation.schema.json#GeoLocation"
+        },
+        "configuration": {
+          "ref": "Configuration.schema.json#Configuration"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Resource/Device.json#Device"
+        }
+      ],
+      "required": [
+        "id",
+        "type",
+        "category",
+        "controlledProperty"
+      ]
+    }
+  }
+}

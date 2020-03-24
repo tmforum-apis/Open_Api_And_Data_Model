@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "FeatureSpecification.schema.json",
+    "title": "FeatureSpecification",
+    "definitions": {
+        "FeatureSpecification": {
+            "$id": "#FeatureSpecification",
+            "description": "Specification for resource, service or product features", 
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string", 
+                    "description": "Identifier of the feature specification. Must be locally unique within the containing specification, thus allowing direct access to the feature spec."
+                }, 
+                "version": {
+                    "type": "string", 
+                    "description": "Version of the feature specification"
+                }, 
+                "name": {
+                    "type": "string", 
+                    "description": "Unique name given to the feature specification"
+                }, 
+                "isBundle": {
+                    "type": "boolean", 
+                    "description": "A flag indicating if this is a feature group (true) or not (false)"
+                }, 
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod", 
+                    "description": "The period for which this feature specification is valid"
+                }, 
+				"featureSpecRelationship": {
+					"description": "A dependency, exclusivity or aggratation relationship between/among feature specifications.",
+					"type": "array",
+					"items": {
+						"$ref": "../Common/FeatureSpecificationRelationship.schema.json#FeatureSpecificationRelationship"
+					}
+				},
+				"constraint": {
+					"description": "This is a list of feature constraints",
+					"type": "array",
+					"items": {
+						"$ref": "../Common/ConstraintRef.schema.json#ConstraintRef"
+					}
+				},
+                "isEnabled": {
+                    "type": "boolean", 
+                    "description": "A flag indicating if the feature is enabled (true) or not (false)"
+                },
+				"featureSpecCharacteristic": {
+					"description": "This is a list of characteristics for a particular feature",
+					"type": "array",
+					"items": {
+						"$ref": "../Common/FeatureSpecificationCharacteristic.schema.json#/definitions/FeatureSpecificationCharacteristic"
+					}
+				}
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,90 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "OrderLineItemAnalytics.schema.json",
+    "title": "OrderLineItemAnalytics",
+    "definitions": {
+        "OrderLineItemAnalytics": {
+            "$id": "#OrderLineItemAnalytics",
+            "type": "object",
+            "properties": {
+                "orderTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "time the order was placed"
+                },
+                "totalQuantity": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "A line item might include several items of the same type, e.g. 5 iPhone X"
+                },
+                "statusSubmittedQuantity": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "The number of items in this line item in submitted status"
+                },
+                "statusProvisionedQuantity": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "The number of items in this line item in provisioned status"
+                },
+                "statusActivatedQuantity": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "The number of items in this line item in activated status"
+                },
+                "statusDeliveredQuantity": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "The number of items in this line item in delivered status"
+                },
+                "statusReturnedQuantity": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "The number of items in this line item in returned status"
+                },
+                "statusCanceledQuantity": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "The number of items in this line item in cancelled status"
+                },
+                "statusFailureQuantity": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "The number of items in this line item in failure status"
+                },
+                "statusUpdateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "when the status was last updated"
+                },
+                "priceChargeTotalAmt": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Offering Recurrent amount"
+                },
+                "priceChargeTotalOcAmt": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Offering One time amount"
+                },
+                "dataCreationTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data creation (e.g. system dump creation, event generation\u2026)"
+                },
+                "runTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data upload run"
+                },
+                "validFromTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for business validity of entity record"
+                }
+            },
+            
+            "allOf": [{"$ref": "../Common/Entity.schema.json#Extensible"}]
+        }
+    }
+}

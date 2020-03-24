@@ -1,69 +1,69 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Recommendation.schema.json",
-    "title": "Recommendation",
-    "definitions": {
-        "Recommendation": {
-            "$id": "#Recommendation",
-            "description": "Recommendation API is used to recommend offering quickly based on the history and real-time context of customer. It is a real-time and personalized recommendation API. It is usually provided by e-commerce or BSS, CRM system in omni-channel.",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Hypertext Reference of the recommendation"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of recommendation"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of recommendation"
-                },
-                "recommendationType": {
-                    "type": "string",
-                    "description": "The type of recommendation"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The period in which the recommendation is valid"
-                },
-                "order": {
-                    "$ref": "../Customer/ProductOrderRef.schema.json#ProductOrderRef"
-                },
-                "location": {
-                    "$ref": "../Common/GeographicLocationRef.schema.json#GeographicLocationRef",
-                    "description": "The geographic location which the recommendation is related to"
-                },
-                "channel": {
-                    "$ref": "../Common/ChannelRef.schema.json#ChannelRef"
-                },
-                "category": {
-                    "$ref": "../Product/CategoryRef.schema.json#CategoryRef",
-                    "description": "The category for grouping recommendations"
-                },
-                "shoppingCart": {
-                    "$ref": "../Customer/ShoppingCartRef.schema.json#ShoppingCartRef",
-                    "description": "The shopping cart which the recommendation is related to"
-                },
-                "party": {
-                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                },
-                "item": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Product/RecommendationItem.schema.json#RecommendationItem"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Recommendation.schema.json",
+  "title": "Recommendation",
+  "definitions": {
+    "Recommendation": {
+      "$id": "#Recommendation",
+      "description": "Recommendation API is used to recommend offering quickly based on the history and real-time context of customer. It is a real-time and personalized recommendation API. It is usually provided by e-commerce or BSS, CRM system in omni-channel.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string",
+          "description": "Hypertext Reference of the recommendation"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of recommendation"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of recommendation"
+        },
+        "recommendationType": {
+          "type": "string",
+          "description": "The type of recommendation"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period in which the recommendation is valid"
+        },
+        "order": {
+          "$ref": "../Customer/ProductOrderRef.schema.json#ProductOrderRef"
+        },
+        "location": {
+          "$ref": "../Common/GeographicLocationRef.schema.json#GeographicLocationRef",
+          "description": "The geographic location which the recommendation is related to"
+        },
+        "channel": {
+          "$ref": "../Common/ChannelRef.schema.json#ChannelRef"
+        },
+        "category": {
+          "$ref": "../Product/CategoryRef.schema.json#CategoryRef",
+          "description": "The category for grouping recommendations"
+        },
+        "shoppingCart": {
+          "$ref": "../Customer/ShoppingCartRef.schema.json#ShoppingCartRef",
+          "description": "The shopping cart which the recommendation is related to"
+        },
+        "party": {
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+        },
+        "item": {
+          "type": "array",
+          "items": {
+            "$ref": "../Product/RecommendationItem.schema.json#RecommendationItem"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

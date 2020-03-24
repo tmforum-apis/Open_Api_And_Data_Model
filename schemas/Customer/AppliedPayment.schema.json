@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AppliedPayment.schema.json",
+  "title": "AppliedPayment",
+  "definitions": {
+    "AppliedPayment": {
+      "$id": "#AppliedPayment",
+      "type": "object",
+      "description": "The applied payment is the result of lettering process. It enables to assign automatically or manually part of incoming payment amount to a bill.",
+      "properties": {
+        "appliedAmount": {
+          "$ref": "../Common/Money.schema.json#Money"
+        },
+        "payment": {
+          "$ref": "../Customer/PaymentRef.schema.json#PaymentRef"
+        }
+      }
+    }
+  }
+}

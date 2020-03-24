@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "GeoJsonLineString.schema.json",
+  "title": "GeoJsonLineString",
+  "definitions": {
+    "GeoJsonLineString": {
+      "$id": "#GeoJsonLineString",
+      "type": "object",
+      "description": "Container for GeoJson LineString: A collection of Points forming a connected line",
+      "required": [
+        "@type",
+        "geoJson"
+      ],
+      "properties": {
+        "@type": {
+          "type": "string",
+          "enum": [
+            "GeoJsonLineString"
+          ],
+          "description": "The name of the GeoJSON structure used in the geometry attribute"
+        },
+        "geoJson": {
+          "$ref": "../Common/LineString.schema.json#LineString"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/GeographicLocation.schema.json#GeographicLocation"
+        }
+      ]
+    }
+  }
+}

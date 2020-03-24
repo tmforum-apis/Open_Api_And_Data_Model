@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CostOwnerType.schema.json",
+    "title": "CostOwnerType",
+    "definitions": {
+        "CostOwnerType": {
+            "$id": "#CostOwnerType",
+            "type": "string",
+            "description": "Valid values for this type" ,
+            "enum": [
+                "originator",
+                "receiver"
+            ]
+        }
+    }
+}

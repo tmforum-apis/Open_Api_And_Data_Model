@@ -1,107 +1,107 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "PhysicalResource.schema.json",
-    "title": "PhysicalResource",
-    "definitions": {
-        "PhysicalResource": {
-            "$id": "#PhysicalResource",
-            "description": "Physical resource is a type of resource that describes the common set of attributes shared by all concrete physical resources (e.g. EQUIPMENT) in the inventory.",
-            "type": "object",
-            "properties": {
-                "manufactureDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "This is a string attribute that defines the date of manufacture of this item in the fixed format \"dd/mm/yyyy\". This is an optional attribute."
-                },
-                "powerState": {
-                    "type": "string",
-                    "description": "This defines the current power status of the hardware item. Values include:\n\n  0:  Unknown\n  1:  Not Applicable\n  2:  No Power Applied\n  3: Full Power Applied\n  4:  Power Save - Normal\n  5:  Power Save - Degraded\n  6:  Power Save - Standby\n  7:  Power Save - Critical\n  8:  Power Save - Low Power Mode\n  9:  Power Save - Unknown\n 10: Power Cycle\n 11: Power Warning\n 12: Power Off"
-                },
-                "serialNumber": {
-                    "type": "string",
-                    "description": "This is a string that represents a manufacturer-allocated number used to identify different instances of the same hardware item. The ModelNumber and PartNumber attributes are used to identify different types of hardware items. This is a REQUIRED attribute."
-                },
-                "versionNumber": {
-                    "type": "string",
-                    "description": "This is a string that identifies the version of this object. This is an optional attribute."
-                },
-                "category": {
-                    "type": "string",
-                    "description": "Category of the concrete resource. e.g Gold, Silver for MSISDN concrete resource"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "free-text description of the resource"
-                },
-                "endDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "A date time( DateTime). The date till the resource is effective"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "The URI for the object itself."
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of an instance of the resource. Required to be unique within the resource type.  Used in URIs as the identifier for specific instances of a type."
-                },
-                "lifecycleState": {
-                    "type": "string",
-                    "description": "The life cycle state of the resource."
-                },
-                "name": {
-                    "type": "string",
-                    "description": "A string used to give a name to the resource"
-                },
-                "startDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "A date time( DateTime). The date from which the resource is effective"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "A field that identifies the specific version of an instance of a resource."
-                },
-                "resourceRelationship": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Resource/ResourceRelationship.schema.json#ResourceRelationship"
-                    }
-                },
-                "characteristic": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Resource/ResourceCharacteristic.schema.json#ResourceCharacteristic"
-                    }
-                },
-                "place": {
-                    "$ref": "../Common/Place.schema.json#Place"
-                },
-                "partyRole": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/PartyRoleRef.schema.json#PartyRoleRef"
-                    }
-                },
-                "relatedParty": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                    }
-                },
-                "note": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/Note.schema.json#Note"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PhysicalResource.schema.json",
+  "title": "PhysicalResource",
+  "definitions": {
+    "PhysicalResource": {
+      "$id": "#PhysicalResource",
+      "description": "Physical resource is a type of resource that describes the common set of attributes shared by all concrete physical resources (e.g. EQUIPMENT) in the inventory.",
+      "type": "object",
+      "properties": {
+        "manufactureDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "This is a string attribute that defines the date of manufacture of this item in the fixed format \"dd/mm/yyyy\". This is an optional attribute."
+        },
+        "powerState": {
+          "type": "string",
+          "description": "This defines the current power status of the hardware item. Values include:\n\n  0:  Unknown\n  1:  Not Applicable\n  2:  No Power Applied\n  3: Full Power Applied\n  4:  Power Save - Normal\n  5:  Power Save - Degraded\n  6:  Power Save - Standby\n  7:  Power Save - Critical\n  8:  Power Save - Low Power Mode\n  9:  Power Save - Unknown\n 10: Power Cycle\n 11: Power Warning\n 12: Power Off"
+        },
+        "serialNumber": {
+          "type": "string",
+          "description": "This is a string that represents a manufacturer-allocated number used to identify different instances of the same hardware item. The ModelNumber and PartNumber attributes are used to identify different types of hardware items. This is a REQUIRED attribute."
+        },
+        "versionNumber": {
+          "type": "string",
+          "description": "This is a string that identifies the version of this object. This is an optional attribute."
+        },
+        "category": {
+          "type": "string",
+          "description": "Category of the concrete resource. e.g Gold, Silver for MSISDN concrete resource"
+        },
+        "description": {
+          "type": "string",
+          "description": "free-text description of the resource"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "A date time( DateTime). The date till the resource is effective"
+        },
+        "href": {
+          "type": "string",
+          "description": "The URI for the object itself."
+        },
+        "id": {
+          "type": "string",
+          "description": "Identifier of an instance of the resource. Required to be unique within the resource type.  Used in URIs as the identifier for specific instances of a type."
+        },
+        "lifecycleState": {
+          "type": "string",
+          "description": "The life cycle state of the resource."
+        },
+        "name": {
+          "type": "string",
+          "description": "A string used to give a name to the resource"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "A date time( DateTime). The date from which the resource is effective"
+        },
+        "version": {
+          "type": "string",
+          "description": "A field that identifies the specific version of an instance of a resource."
+        },
+        "resourceRelationship": {
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/ResourceRelationship.schema.json#ResourceRelationship"
+          }
+        },
+        "characteristic": {
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/ResourceCharacteristic.schema.json#ResourceCharacteristic"
+          }
+        },
+        "place": {
+          "$ref": "../Common/Place.schema.json#Place"
+        },
+        "partyRole": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/PartyRoleRef.schema.json#PartyRoleRef"
+          }
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
+        },
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/Note.schema.json#Note"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

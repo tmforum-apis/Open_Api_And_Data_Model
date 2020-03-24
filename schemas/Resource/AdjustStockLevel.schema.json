@@ -1,0 +1,61 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AdjustStockLevel.schema.json",
+    "title": "AdjustStockLevel",
+    "definitions": {
+        "AdjustStockLevel": {
+            "$id": "#AdjustStockLevel",
+            "description": "AdjustStockLevel is used to log and execute stock level change",
+            "type": "object",
+            "required": ["stockLevelTarget"],
+            "properties": {
+                "description": {
+                    "description": "Free-text description of the AdjustStockLevel",
+                    "type": "string"
+                },
+                "creationDate": {
+                    "description": "Date when the AdjustStockLevel was created (whatever its status).",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "requestedStockLevelDate": {
+                    "description": "Date when the AdjustStockLevel was created (whatever its status).",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "completedStockLevelDate": {
+                    "description": "Date when the AdjustStockLevel was created (whatever its status).",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "id": {
+                    "description": "Unique identifier of the AdjustStockLevel",
+                    "type": "string"
+                },
+                "adjustReason": {
+                    "description": "A reason for this adjustment like theft or wastage.",
+                    "type": "string"
+                },
+                "href": {
+                    "description": "Reference of the AdjustStockItemLevel",
+                    "type": "string"
+                },
+                "state": {
+                    "$ref": "TaskStateType.schema.json#/definitions/TaskStateType",
+                    "description": "State of the AdjustStockLevel (acknowledged, inProgress, terminatedWithError, done)"
+                },
+                "adjustStockLevelQuantity": {
+                    "$ref": "Quantity.schema.json#/definitions/Quantity"
+                },
+                "stockLevelTarget": {
+                        "$ref": "StockLevelRef.schema.json#/definitions/StockLevelRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#/Entity"
+                }
+            ]
+        }
+    }
+}

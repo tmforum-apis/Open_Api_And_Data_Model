@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PartyPrivacyAgreement.schema.json",
+  "title": "PartyPrivacyAgreement",
+  "definitions": {
+    "PartyPrivacyAgreement": {
+      "$id": "#PartyPrivacyAgreement",
+      "type": "object",
+      "description": "A specific type of agreement that formalizes the privacy profiles requested for a party",
+      "properties": {
+        "partyPrivacyProfile": {
+          "type": "array",
+          "description": "The privacy profiles that are the subject of the agreement",
+          "items": {
+            "$ref": "../EngagedParty/PartyPrivacyProfileRef.schema.json#PartyPrivacyProfileRef"
+          }
+        },
+        "partyPrivacyProfileCharacteristic": {
+          "type": "array",
+          "description": "A list of (typically) high criticality characteristics whose chosen privacy rules are included in the agreement",
+          "items": {
+            "$ref": "../EngagedParty/PartyPrivacyProfileCharacteristic.schema.json#PartyPrivacyProfileCharacteristic"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../EngagedParty/Agreement.schema.json#Agreement"
+        }
+      ]
+    }
+  }
+}

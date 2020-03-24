@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "NumberArrayCharacteristic.schema.json",
+    "title": "NumberArrayCharacteristic",
+    "definitions": {
+        "NumberArrayCharacteristic": {
+            "$id": "#NumberArrayCharacteristic",
+            "description": "A characteristic which the value is a number array",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+			"allOf": [
+                {
+                    "$ref": "Characteristic.schema.json#Characteristic"
+                }
+            ]
+        }
+    }
+}

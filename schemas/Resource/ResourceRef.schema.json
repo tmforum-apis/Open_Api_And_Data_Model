@@ -1,26 +1,26 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ResourceRef.schema.json",
-    "title": "ResourceRef",
-    "definitions": {
-        "ResourceRef": {
-            "$id": "#ResourceRef",
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "description": "Name of the resource"
-                },
-                "value": {
-                    "type": "string",
-                    "description": "The resource value that can be used to identify a resource with a public key (e.g.: a tel nr, an msisdn)"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ResourceRef.schema.json",
+  "title": "ResourceRef",
+  "definitions": {
+    "ResourceRef": {
+      "$id": "#ResourceRef",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the resource"
+        },
+        "value": {
+          "type": "string",
+          "description": "The resource value that can be used to identify a resource with a public key (e.g.: a tel nr, an msisdn)"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        }
+      ]
     }
+  }
 }

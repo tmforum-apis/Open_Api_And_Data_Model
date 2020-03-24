@@ -1,36 +1,36 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "CalendarPeriod.schema.json",
-    "title": "CalendarPeriod",
-    "definitions": {
-        "CalendarPeriod": {
-            "$id": "#CalendarPeriod",
-            "type": "object",
-            "properties": {
-                "day": {
-                    "type": "string",
-                    "description": "Day where the calendar status applies (e.g.: monday, mon-to-fri, weekdays, weekend, all week, ...)"
-                },
-                "status": {
-                    "type": "string",
-                    "description": "Indication of the availability of the site (e.g.: open)"
-                },
-                "timeZone": {
-                    "type": "string",
-                    "description": "Indication of the timezone applicable to the calendar information (e.g.: Paris, GMT+1)"
-                },
-                "hourPeriod": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/HourPeriod.schema.json#HourPeriod"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "CalendarPeriod.schema.json",
+  "title": "CalendarPeriod",
+  "definitions": {
+    "CalendarPeriod": {
+      "$id": "#CalendarPeriod",
+      "type": "object",
+      "properties": {
+        "day": {
+          "type": "string",
+          "description": "Day where the calendar status applies (e.g.: monday, mon-to-fri, weekdays, weekend, all week, ...)"
+        },
+        "status": {
+          "type": "string",
+          "description": "Indication of the availability of the site (e.g.: open)"
+        },
+        "timeZone": {
+          "type": "string",
+          "description": "Indication of the timezone applicable to the calendar information (e.g.: Paris, GMT+1)"
+        },
+        "hourPeriod": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/HourPeriod.schema.json#HourPeriod"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

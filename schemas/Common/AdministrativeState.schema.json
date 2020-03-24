@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AdministrativeState.schema.json",
+  "title": "AdministrativeState",
+  "definitions": {
+    "AdministrativeState": {
+      "$id": "#AdministrativeState",
+      "description": "This is enumeration for Administrative state",
+      "type": "string",
+      "enum": [
+        "locked",
+        "unlocked"
+      ]
+    }
+  }
+}

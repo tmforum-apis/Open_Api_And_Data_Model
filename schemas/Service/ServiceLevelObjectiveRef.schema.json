@@ -1,31 +1,31 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ServiceLevelObjectiveRef.schema.json",
-    "title": "ServiceLevelObjectiveRef",
-    "definitions": {
-        "ServiceLevelObjectiveRef": {
-            "$id": "#ServiceLevelObjectiveRef",
-            "description": "A set of Service Level Objectives that are contained in the Service Level Specification.",
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "The hyperlink to access a service level object."
-                },
-                "id": {
-                    "type": "string",
-                    "description": "The identifier of a service level object."
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ServiceLevelObjectiveRef.schema.json",
+  "title": "ServiceLevelObjectiveRef",
+  "definitions": {
+    "ServiceLevelObjectiveRef": {
+      "$id": "#ServiceLevelObjectiveRef",
+      "description": "A set of Service Level Objectives that are contained in the Service Level Specification.",
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "The hyperlink to access a service level object."
+        },
+        "id": {
+          "type": "string",
+          "description": "The identifier of a service level object."
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

@@ -1,27 +1,27 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "LoyaltyProgramMemberRef.schema.json",
-    "title": "LoyaltyProgramMemberRef",
-    "definitions": {
-        "LoyaltyProgramMemberRef": {
-            "$id": "#LoyaltyProgramMemberRef",
-            "description": "Reference to a loyalty member.",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier for the loyalty program member."
-                },
-                "href": {
-                    "type": "string",
-                    "description": "A reference to the loyalty program member."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "LoyaltyProgramMemberRef.schema.json",
+  "title": "LoyaltyProgramMemberRef",
+  "definitions": {
+    "LoyaltyProgramMemberRef": {
+      "$id": "#LoyaltyProgramMemberRef",
+      "description": "Reference to a loyalty member.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the loyalty program member."
+        },
+        "href": {
+          "type": "string",
+          "description": "A reference to the loyalty program member."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

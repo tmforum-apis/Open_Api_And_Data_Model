@@ -1,39 +1,17 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Rule.schema.json",
-    "title": "Rule",
-    "definitions": {
-        "Rule": {
-            "$id": "#Rule",
-            "type": "object",
-            "properties": {
-                "consequence": {
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "metric": {
-                    "type": "string"
-                },
-                "operator": {
-                    "type": "string"
-                },
-                "referenceValue": {
-                    "type": "string"
-                },
-                "tolerance": {
-                    "type": "string"
-                },
-                "unit": {
-                    "type": "string"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Rule.schema.json",
+  "title": "Rule",
+  "definitions": {
+    "Rule": {
+      "type": "object",
+      "$id": "#Rule",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.json#Entity"
         }
+      ]
     }
+  }
 }

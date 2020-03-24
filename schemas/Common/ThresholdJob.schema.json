@@ -1,0 +1,54 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ThresholdJob.schema.json",
+    "title": "ThresholdJob",
+    "definitions": {
+        "ThresholdJob": {
+            "type": "object",
+            "properties": {
+                "adminState": {
+                    "type": "string",
+                    "enum": [
+                        0,
+                        2,
+                        1
+                    ]
+                },
+                "creationTime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "executionState": {
+                    "type": "string"
+                },
+                "granularity": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "jobPriority": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "lastModifiedTime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "monitoredObjectsCriteria": {
+                    "type": "string"
+                },
+                "performanceThreshold": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "scheduleDefinition": {
+                    "type": "string"
+                },
+                "trackingRecord": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

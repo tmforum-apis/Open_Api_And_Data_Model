@@ -1,0 +1,59 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PurchaseActivityAnalytics.schema.json",
+    "title": "PurchaseActivityAnalytics",
+    "definitions": {
+        "PurchaseActivityAnalytics": {
+            "$id": "#PurchaseActivityAnalytics",
+            "type": "object",
+            "properties": {
+                "purchaseTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "time the purchase occurred"
+                },
+                "rentalExpiryDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "date of rental expiring"
+                },
+                "purchaseFinalAmount": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Amount of purchase that was invoiced (including tax)"
+                },
+                "purchaseDiscountAmount": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Amount of discount (from catalogue price)"
+                },
+                "purchaseCataloguePrice": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "The catalogue price (excluding Tax)"
+                },
+                "purchaseTaxAmount": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Amount of tax included in the final amount"
+                },
+                "dataCreationTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data creation (e.g. system dump creation, event generation\u2026)"
+                },
+                "runTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data upload run"
+                },
+                "validFromTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for business validity of entity record"
+                }
+            },
+              "allOf": [{"$ref": "../Common/Entity.schema.json#Extensible"}]
+        }
+    }
+}

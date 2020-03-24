@@ -1,0 +1,93 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CustomerHealthStatsAnalytics.schema.json",
+    "title": "CustomerHealthStatsAnalytics",
+    "definitions": {
+        "CustomerHealthStatsAnalytics": {
+            "$id": "#CustomerHealthStatsAnalytics",
+            "type": "object",
+            "properties": {
+                "dateOfBirthDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date of birth"
+                },
+                "bodyWeightKg": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "the weight of people in kg"
+                },
+                "bodyHeightCm": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "the height of people in cm"
+                },
+                "weightHeightReadingDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when test or reading was taken"
+                },
+                "bpReadingDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when test or reading was taken"
+                },
+                "restingHeartRateBpm": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Resting heart rate in beats per minute (BPM)"
+                },
+                "heartRateReadingDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when test or reading was taken"
+                },
+                "bodyTemperatureCelsius": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Body temperature in Celsius"
+                },
+                "bodyTempReadingDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when test or reading was taken"
+                },
+                "bloodSugarReadingDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when test or reading was taken"
+                },
+                "cholesterolReadingDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when test or reading was taken"
+                },
+                "restingRespirationRateBpm": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Number of breaths while resting in breaths per minute (BPM)"
+                },
+                "respirationReadingDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when test or reading was taken"
+                },
+                "dataCreationTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data creation (e.g. system dump creation, event generation\u2026)"
+                },
+                "runTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data upload run"
+                },
+                "validFromTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for business validity of entity record"
+                }
+            },"allOf": [{"$ref": "../Common/Entity.schema.json#Extensible"}]
+        }
+    }
+}

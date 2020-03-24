@@ -1,18 +1,18 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "CalendarEventRef.schema.json",
-    "title": "CalendarEventRef",
-    "definitions": {
-        "CalendarEventRef": {
-            "$id": "#CalendarEventRef",
-            "type": "object",
-            "description": "Reference of a CalendarEvent",
-            "properties": {},
-            "allOf": [
-                {
-                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "CalendarEventRef.schema.json",
+  "title": "CalendarEventRef",
+  "definitions": {
+    "CalendarEventRef": {
+      "$id": "#CalendarEventRef",
+      "type": "object",
+      "description": "Reference of a CalendarEvent",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
         }
+      ]
     }
+  }
 }

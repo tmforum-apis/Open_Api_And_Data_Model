@@ -1,18 +1,18 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ProductOfferingQualificationStateType.schema.json",
-    "title": "ProductOfferingQualificationStateType",
-    "definitions": {
-        "ProductOfferingQualificationStateType": {
-            "$id": "#ProductOfferingQualificationStateType",
-            "type": "string",
-            "description": "Possible values for the state of the product offering qualification & item",
-            "enum": [
-                "acknowledged",
-                "terminatedWithError",
-                "inProgress",
-                "done"
-            ]
-        }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ProductOfferingQualificationStateType.schema.json",
+  "title": "ProductOfferingQualificationStateType",
+  "definitions": {
+    "ProductOfferingQualificationStateType": {
+      "$id": "#ProductOfferingQualificationStateType",
+      "type": "string",
+      "description": "Possible values for the state of the product offering qualification & item",
+      "enum": [
+        "acknowledged",
+        "terminatedWithError",
+        "inProgress",
+        "done"
+      ]
     }
+  }
 }

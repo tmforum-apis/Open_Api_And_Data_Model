@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "RelatedServiceOrderItem.schema.json",
+    "title": "RelatedServiceOrderItem",
+    "definitions": {
+        "RelatedServiceOrderItem": {
+            "type": "object",
+            "description": "RelatedServiceOrderItem (a ServiceOrder item) .The service order item which triggered service creation/change/termination.",
+            "required": ["orderItemId","serviceOrderId"],
+            "properties": {
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                },
+                "serviceOrderHref": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "serviceOrderId": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "itemAction": {
+                    "$ref": "OrderItemActionType.schema.json#/definitions/OrderItemActionType",
+                    "description": "Action of the order item for this service"
+                },
+                "itemId": {
+                    "type": "string",
+                    "description": "Identifier of the order item where the service was managed"
+                },
+                "role": {
+                    "type": "string",
+                    "description": "role of the service order item for this service"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#/Entity"
+                }
+            ]
+        }
+    }
+}

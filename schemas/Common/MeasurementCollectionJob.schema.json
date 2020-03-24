@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "MeasurementCollectionJob.schema.json",
+  "title": "MeasurementCollectionJob",
+  "definitions": {
+    "MeasurementCollectionJob": {
+      "description": "Used to control the periodic collection of performance indicators, implemented as a sub-entity of the PM Measurement Job.",
+      "allOf": [
+        {
+          "$ref": "MeasurementJob.schema.json#/definitions/MeasurementJob"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "outputFormat": {
+              "type": "string"
+            },
+            "reportingPeriod": {
+              "$ref": "#/definitions/ReportingPeriod"
+            },
+            "measurementProductionJob": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MeasurementProductionJob"
+              },
+              "minItems": 0
+            }
+          }
+        }
+      ]
+    }
+  }
+}

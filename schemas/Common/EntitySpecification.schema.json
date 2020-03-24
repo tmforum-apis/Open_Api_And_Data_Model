@@ -1,73 +1,84 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "EntitySpecification.schema.json",
-    "title": "EntitySpecification",
-    "definitions": {
-        "EntitySpecification": {
-            "$id": "#EntitySpecification",
-            "description": "EntitySpecification is a class that offers characteristics to describe a type of entity. Entities are generic constructs that may be used to describe bespoke business entities that are not effectively covered by the existing SID model.",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "Description of this REST resource"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Hyperlink reference to this REST resource"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of this REST resource"
-                },
-                "lastUpdate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date and time of the last update of this REST resource"
-                },
-                "lifecycleStatus": {
-                    "type": "string",
-                    "description": "Used to indicate the current lifecycle status of this catalog item"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name given to this REST resource"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The period for which this REST resource is valid"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "Entity specification version"
-                },
-                "attachment": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/EntityAttachment.schema.json#EntityAttachment"
-                    }
-                },
-                "entitySchema": {
-                    "$ref": "../Common/EntitySchemaRef.schema.json#EntitySchemaRef"
-                },
-                "specCharacteristic": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/SpecCharacteristic.schema.json#SpecCharacteristic"
-                    }
-                },
-                "relatedParty": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "EntitySpecification.schema.json",
+  "title": "EntitySpecification",
+  "definitions": {
+    "EntitySpecification": {
+      "$id": "#EntitySpecification",
+      "description": "EntitySpecification is a class that offers characteristics to describe a type of entity. Entities are generic constructs that may be used to describe bespoke business entities that are not effectively covered by the existing SID model.\nFunctionally, the entity specification acts as a template by which entities may be instantiated and described. By sharing the same specification, these entities would therefore share the same set of characteristics.\nNote: The ‘configurable’ attribute on the specCharacteristics determines if an entity instantiated from the entity specification can override the value of the attribute. When set to false, the entity instance may not define a value that differs from the value in the specification.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of this REST resource"
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink reference to this REST resource"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of this REST resource"
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time of the last update of this REST resource"
+        },
+        "lifecycleStatus": {
+          "type": "string",
+          "description": "Used to indicate the current lifecycle status of this catalog item"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name given to this REST resource"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which this REST resource is valid"
+        },
+        "version": {
+          "type": "string",
+          "description": "Entity specification version"
+        },
+        "attachment": {
+          "type": "array",
+          "description": "Attachments that may be of relevance to this specification, such as picture, document, media",
+          "items": {
+            "$ref": "../Common/Attachment.schema.json#Attachment"
+          }
+        },
+        "entitySchema": {
+          "description": "Pointer to a schema that defines the entity",
+          "$ref": "../Common/EntitySchemaRef.schema.json#EntitySchemaRef"
+        },
+        "specCharacteristic": {
+          "type": "array",
+          "description": "List of characteristics that the entity can take",
+          "items": {
+            "$ref": "../Common/SpecificationCharacteristic.schema.json#SpecificationCharacteristic"
+          }
+        },
+        "relatedParty": {
+          "type": "array",
+          "description": "Parties who manage or otherwise have an interest in this entity specification",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
+        },
+        "entitySpecRelationship": {
+          "type": "array",
+          "description": "Relationship to another entity specification, might be dependency, substitution, etc.",
+          "items": {
+            "$ref": "../Common/EntitySpecificationRelationship.schema.json#EntitySpecificationRelationship"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PerformanceConsequence.schema.json",
+    "title": "PerformanceConsequence",
+    "definitions": {
+        "PerformanceConsequence": {
+            "type": "object",
+            "description": "A Consequence can be applied as a result of a threshold crossing or a threshold ceasing to be crossed",
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "alarmSpecification": {
+                    "$ref": "PerformanceAlarmSpecification.schema.json#/definitions/PerformanceAlarmSpecification"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "prescribedAction": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

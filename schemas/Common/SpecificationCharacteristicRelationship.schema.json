@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "SpecificationCharacteristicRelationship.schema.json",
+  "title": "SpecificationCharacteristicRelationship",
+  "definitions": {
+    "SpecificationCharacteristicRelationship": {
+      "$id": "#SpecificationCharacteristicRelationship",
+      "description": "An aggregation, migration, substitution, dependency or exclusivity relationship between/among productSpecCharacteristics.",
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "Hyperlink reference to the target SpecificationCharacteristic"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the target SpecificationCharacteristic"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the target SpecificationCharacteristic"
+        },
+        "relationshipType": {
+          "type": "string",
+          "description": "Type of relationship such as aggregation, migration, substitution, dependency, exclusivity"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which the SpecificationCharacteristicRelationship is valid"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

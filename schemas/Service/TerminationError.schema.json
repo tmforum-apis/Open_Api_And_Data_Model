@@ -1,22 +1,22 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "TerminationError.schema.json",
-    "title": "TerminationError",
-    "definitions": {
-        "TerminationError": {
-            "$id": "#TerminationError",
-            "description": "This indicates an error that caused a qualificationItem to be terminated.",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the termination error"
-                },
-                "value": {
-                    "type": "string",
-                    "description": "Text to describe the termination error - for example: Unable to proceed to qualification because incomplete information provided"
-                }
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TerminationError.schema.json",
+  "title": "TerminationError",
+  "definitions": {
+    "TerminationError": {
+      "$id": "#TerminationError",
+      "description": "This indicates an error that caused a qualificationItem to be terminated.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the termination error"
+        },
+        "value": {
+          "type": "string",
+          "description": "Text to describe the termination error - for example: Unable to proceed to qualification because incomplete information provided"
         }
+      }
     }
+  }
 }

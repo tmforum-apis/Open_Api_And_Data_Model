@@ -1,53 +1,57 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "GeographicAddressValidation.schema.json",
-    "title": "GeographicAddressValidation",
-    "definitions": {
-        "GeographicAddressValidation": {
-            "$id": "#GeographicAddressValidation",
-            "description": "This resource is used to manage address validation request and response",
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "An URI used to access to the address validation resource"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the Address Validation"
-                },
-                "provideAlternative": {
-                    "type": "boolean",
-                    "description": "Indicator provided by the requester to specify if alternate addresses must be provided in case of partial or fail result."
-                },
-                "status": {
-                    "type": "string",
-                    "description": "Status of the address validation (inProgress, terminatedWithError, done)"
-                },
-                "validationDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date when the address validation is performed"
-                },
-                "validationResult": {
-                    "type": "string",
-                    "description": "Result of the address validation (success, partial, fail)"
-                },
-                "validAddress": {
-                    "$ref": "../Common/GeographicAddress.schema.json#GeographicAddress"
-                },
-                "alternateGeographicAddress": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/GeographicAddress.schema.json#GeographicAddress"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "GeographicAddressValidation.schema.json",
+  "title": "GeographicAddressValidation",
+  "definitions": {
+    "GeographicAddressValidation": {
+      "$id": "#GeographicAddressValidation",
+      "description": "This resource is used to manage address validation request and response",
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "An URI used to access to the address validation resource"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the Address Validation"
+        },
+        "provideAlternative": {
+          "type": "boolean",
+          "description": "Indicator provided by the requester to specify if alternate addresses must be provided in case of partial or fail result."
+        },
+        "state": {
+          "$ref": "../Common/TaskStateType.schema.json#TaskStateType"
+        },
+        "validationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the address validation is performed"
+        },
+        "validationResult": {
+          "type": "string",
+          "description": "Result of the address validation (success, partial, fails)"
+        },
+        "submittedGeographicAddress": {
+          "$ref": "../Common/GeographicAddress.schema.json#GeographicAddress",
+          "description": "the address as submitted to validation"
+        },
+        "validGeographicAddress": {
+          "$ref": "../Common/GeographicAddress.schema.json#GeographicAddress",
+          "description": "the correct form of the validated address in case of validation success"
+        },
+        "alternateGeographicAddress": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/GeographicAddress.schema.json#GeographicAddress"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

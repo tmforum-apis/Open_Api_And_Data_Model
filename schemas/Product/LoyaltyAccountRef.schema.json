@@ -1,22 +1,22 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "LoyaltyAccountRef.schema.json",
-    "title": "LoyaltyAccountRef",
-    "definitions": {
-        "LoyaltyAccountRef": {
-            "$id": "#LoyaltyAccountRef",
-            "description": "Reference to a loyalty account.",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier for the account."
-                },
-                "href": {
-                    "type": "string",
-                    "description": "A reference to the loyalty member’s loyalty account."
-                }
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "LoyaltyAccountRef.schema.json",
+  "title": "LoyaltyAccountRef",
+  "definitions": {
+    "LoyaltyAccountRef": {
+      "$id": "#LoyaltyAccountRef",
+      "description": "Reference to a loyalty account.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the account."
+        },
+        "href": {
+          "type": "string",
+          "description": "A reference to the loyalty members loyalty account."
         }
+      }
     }
+  }
 }

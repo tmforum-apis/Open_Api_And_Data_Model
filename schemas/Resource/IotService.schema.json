@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "IotService.schema.json",
+  "title": "IotService",
+  "definitions": {
+    "IotService": {
+      "$id": "#IotService",
+      "description": "#TODO",
+      "type": "object",
+      "properties": {
+        "dataAccessEndPoint": {
+          "$ref": "DataAccessEndpoint.schema.json#DataAccessEndpoint"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Service/Service.schema.json#Service"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PartyRoleProductOfferingRiskAssessment.schema.json",
+    "title": "PartyRoleProductOfferingRiskAssessment",
+    "definitions": {
+        "PartyRoleProductOfferingRiskAssessment": {
+            "$id": "#PartyRoleProductOfferingRiskAssessment",
+            "description": "This is a task resource allowing assessment of the risks associated with a party or party role that considers acquiring a specific product offering",
+            "type": "object",
+            "required" : [
+                "partyRole",
+                "productOffering"
+            ],
+            "properties": {
+                "partyRole": {
+                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedPartyRef",
+                    "description": "The party or party role for which the assessment is to be carried out, must be supplied as input to the task, with the attribute id populated"
+                },
+                "productOffering": {
+                    "$ref": "../Product/ProductOfferingRef.json#ProductOfferingRef",
+                    "description": "The product offering for which the assessment is to be carried out, must be supplied as input to the task, with the attribute id populated"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "RiskAssessment.schema.json#RiskAssessment"
+                }
+            ]
+        }
+    }
+}

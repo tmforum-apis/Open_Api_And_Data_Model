@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ScheduleDefinition.schema.json",
+  "title": "ScheduleDefinition",
+  "definitions": {
+    "ScheduleDefinition": {
+      "$id": "#ScheduleDefinition",
+      "description": "The schedule definition for running jobs.",
+      "type": "object",
+      "properties": {
+        "scheduleDefinitionStartTime": {
+          "description": "The Start time of the Schedule Definition",
+          "type": "string",
+          "format": "date-time"
+        },
+        "scheduleDefinitionEndTime": {
+          "description": "The Endtime of the Schedule Definition. If the attribute is empty the Schedule run forever, not having a time constraint.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "recurringFrequency": {
+          "description": "A recurring frequency to run a job within day that is included in schedule definition, for example: every 5 minutes, 15 minute, 30 minutes, 1 hour",
+          "type": "string"
+        },
+        "excludedDates": {
+          "description": "A list of specific dates that should be excluded from the Schedule Definition.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ExcludedDates"
+          }
+        },
+        "scheduleDefinitionHoursRange": {
+          "description": "A list of time ranges within a specific day that the schedule will be active on, for example 08:00-12:00, 16:00-19:00.",
+          "type": "string"
+        },
+        "WeeklyScheduledDefinition": {
+          "description": "The weekly schedule is used to define a schedule that is based on the days of the week, e.g. a schedule that will be active only on Monday and Tuesday.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DaysOfWeekRecurrence"
+          }
+        },
+        "monthlyScheduleDaysOfMonthDefinition": {
+          "description": "The schedule definition for running the threshold job",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledDates"
+          }
+        },
+        "MonthlyScheduleDaysOfWeekDefinition": {
+          "$ref": "#/definitions/MonthlyScheduleDaysOfWeekDefinition"
+        },
+        "dateScheduleDefintion": {
+          "description": "The date schedule is used to define a schedule that is based on specific dates, such as December 31st 2015, Feberaury 28th 2013",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduledDates"
+          }
+        }
+      }
+    }
+  }
+}

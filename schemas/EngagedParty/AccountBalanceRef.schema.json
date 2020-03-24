@@ -1,35 +1,35 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "AccountBalanceRef.schema.json",
-    "title": "AccountBalanceRef",
-    "definitions": {
-        "AccountBalanceRef": {
-            "$id": "#AccountBalanceRef",
-            "description": "Balances linked to the account",
-            "type": "object",
-            "properties": {
-                "amount": {
-                    "$ref": "../Common/Money.schema.json#Money",
-                    "description": "Balance amount"
-                },
-                "status": {
-                    "type": "string",
-                    "description": "The condition of the account balance, such as due, paid, in arrears."
-                },
-                "balanceType": {
-                    "type": "string",
-                    "description": "Type of the balance : deposit balance, disputed balance, loyalty balance, receivable balance..."
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AccountBalanceRef.schema.json",
+  "title": "AccountBalanceRef",
+  "definitions": {
+    "AccountBalanceRef": {
+      "$id": "#AccountBalanceRef",
+      "description": "Balances linked to the account",
+      "type": "object",
+      "properties": {
+        "amount": {
+          "$ref": "../Common/Money.schema.json#Money",
+          "description": "Balance amount"
+        },
+        "status": {
+          "type": "string",
+          "description": "The condition of the account balance, such as due, paid, in arrears."
+        },
+        "balanceType": {
+          "type": "string",
+          "description": "Type of the balance : deposit balance, disputed balance, loyalty balance, receivable balance..."
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

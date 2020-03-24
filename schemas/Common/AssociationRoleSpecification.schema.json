@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AssociationRoleSpecification.schema.json",
+  "title": "AssociationRoleSpecification",
+  "definitions": {
+    "AssociationRoleSpecification": {
+      "$id": "#AssociationRoleSpecification",
+      "description": "This embedded object represents the role and type of each entity involved in a relationship.",
+      "type": "object",
+      "properties": {
+        "aggregation": {
+          "description": "A flag indicates that if this role is an aggregation or a simple relationship",
+          "type": "string"
+        },
+        "defaultQuantity": {
+          "description": "Default quantity of the association role",
+          "type": "integer"
+        },
+        "entityType": {
+          "description": "The target (root) entity type associated with this role",
+          "type": "string"
+        },
+        "isNavigable": {
+          "description": "A flag indicating if access from the other end of association is allowed or not",
+          "type": "boolean"
+        },
+        "isSource": {
+          "description": "A flag indicating if the participant involved in a uni-directional relationship is the source or not. This flag is true If the association is bi-directional",
+          "type": "boolean"
+        },
+        "maxQuantity": {
+          "description": "Maximum allowed quantity of the association role",
+          "type": "integer"
+        },
+        "minQuantity": {
+          "description": "Minimum allowed quantity of the association role",
+          "type": "integer"
+        },
+        "role": {
+          "description": "The association role of this relationship participant",
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

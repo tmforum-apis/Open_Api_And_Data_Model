@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CharacteristicSpecificationBase.schema.json",
+    "title": "CharacteristicSpecificationBase",
+    "definitions": {
+        "CharacteristicSpecificationBase": {
+            "$id": "#CharacteristicSpecificationBase",
+            "description": "This class defines a characteristic specification.", 
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string", 
+                    "description": "A word, term, or phrase by which this characteristic specification is known and distinguished from other characteristic specifications."
+                }, 
+                "id": {
+                    "type": "string", 
+                    "description": "Unique ID for the characteristic"
+                }, 
+                "description": {
+                    "type": "string", 
+                    "description": "A narrative that explains the CharacteristicSpecification."
+                }, 
+                "valueType": {
+                    "type": "string", 
+                    "description": "A kind of value that the characteristic can take on, such as numeric, text and so forth"
+                }, 
+                "configurable": {
+                    "type": "boolean", 
+                    "description": "If true, the Boolean indicates that the target Characteristic is configurable"
+                }, 
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period of time for which a characteristic is applicable."
+                }, 
+                "minCardinality": {
+                    "type": "integer", 
+                    "description": "The minimum number of instances a CharacteristicValue can take on. For example, zero to five phone numbers in a group calling plan, where zero is the value for the minCardinality."
+                }, 
+                "maxCardinality": {
+                    "type": "integer", 
+                    "description": "The maximum number of instances a CharacteristicValue can take on. For example, zero to five phone numbers in a group calling plan, where five is the value for the maxCardinality."
+                }, 
+                "isUnique": {
+                    "type": "boolean", 
+                    "description": "An indicator that specifies if a value is unique for the specification. Possible values are; \"unique while value is in effect\" and \"unique whether value is in effect or not\""
+                }, 
+                "regex": {
+                    "type": "string", 
+                    "description": "A rule or principle represented in regular expression used to derive the value of a characteristic value."
+                }, 
+                "extensible": {
+                    "type": "boolean", 
+                    "description": "An indicator that specifies that the values for the characteristic can be extended by adding new values when instantiating a characteristic for a resource."
+                }, 
+                "@valueSchemaLocation": {
+                    "type": "string",
+                    "description": "This (optional) field provides a link to the schema describing the value type."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#Extensible"
+                }
+            ]
+        }
+    }
+}

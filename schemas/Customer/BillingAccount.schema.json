@@ -1,22 +1,27 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "BillingAccount.schema.json",
-    "title": "BillingAccount",
-    "definitions": {
-        "BillingAccount": {
-            "$id": "#BillingAccount",
-            "description": "A party account used for billing purposes. It includes a description of the bill structure (frequency, presentation media, format and so on). It is a specialization of entity PartyAccount.",
-            "type": "object",
-            "required": [
-                "name",
-                "relatedParty"
-            ],
-            "properties": {},
-            "allOf": [
-                {
-                    "$ref": "../EngagedParty/PartyAccount.schema.json#PartyAccount"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BillingAccount.schema.json",
+  "title": "BillingAccount",
+  "definitions": {
+    "BillingAccount": {
+      "$id": "#BillingAccount",
+      "description": "A party account used for billing purposes. It includes a description of the bill structure (frequency, presentation media, format and so on). It is a specialization of entity PartyAccount.",
+      "type": "object",
+      "required": [
+        "name",
+        "relatedParty"
+      ],
+      "properties": {
+        "ratingType": {
+          "type": "string",
+          "description": "Indicates whether the account follows a specific payment option such as prepaid or postpaid"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../EngagedParty/PartyAccount.schema.json#PartyAccount"
+        }
+      ]
     }
+  }
 }

@@ -4,23 +4,29 @@
     "title": "ServiceRelationship",
     "definitions": {
         "ServiceRelationship": {
-            "$id": "#ServiceRelationship",
-            "description": "Describes links with services of the same category (useful for bundled services)",
             "type": "object",
-            "required": [
-                "relationshipType",
-                "service"
-            ],
             "properties": {
                 "relationshipType": {
-                    "type": "string",
-                    "description": "The type of relationship (e.g. depends on, enables)"
+                    "type": "string"
+                },
+                "ServiceRelationshipCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Characteristic.schema.json#/definitions/Characteristic"
+                    }
                 },
                 "service": {
-                    "description": "The service being referred to",
-                    "$ref": "../Service/ServiceRef.schema.json#ServiceRef"
+                    "$ref": "../Service/ServiceRefOrValue.schema.json#ServiceRefOrValue"
                 }
-            }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ],
+            "required": [
+                "relationshipType"
+            ]
         }
     }
 }

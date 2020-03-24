@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "RiskAssessment.schema.json",
+    "title": "RiskAssessment",
+    "definitions": {
+        "RiskAssessment": {
+            "$id": "#RiskAssessment",
+            "description": "This is a generalized task resource allowing assessment of risks - it is expected that the resource will be specialized to reflect specific risks, such as risks associated with a party, or with an order, etc.",
+            "type": "object",
+            "required" : [
+                "productOrder"
+            ],
+            "properties": {
+                "place": {
+                    "$ref": "../Common/RelatedPlace.schema.json#RelatedPlace",
+                    "description": "The place for which the risk is assessed, this is optional input to the task"
+                },
+                "characteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Characteristic.schema.json#Characteristic"
+                    },                        
+                    "description": "Additional characteristics for which the risk might be assessed, optional input to the task"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The status of the risk assessment, such as Succeeded, In Progress, Failed, output from the task"
+                },
+                "riskAssessmentResult": {
+                    "$ref": "RiskAssessmentResult.schema.json#RiskAssessmentResult",
+                    "description": "The result of the risk assessment, output from the task"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Addressable.schema.json#Addressable"
+                },
+                {
+                    "$ref": "../Common/Extensible.schema.json#Extensible"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "NonFunctionalTestExecutionRefOrValue.schema.json",
+  "title": "NonFunctionalTestExecutionRefOrValue",
+  "definitions": {
+    "NonFunctionalTestExecutionRefOrValue": {
+      "$id": "#NonFunctionalTestExecutionRefOrValue",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "../Common/NonFunctionalTestExecution.schema.json#NonFunctionalTestExecution"
+        },
+        {
+          "$ref": "../Common/NonFunctionalTestExecutionRef.schema.json#NonFunctionalTestExecutionRef"
+        }
+      ]
+    }
+  }
+}

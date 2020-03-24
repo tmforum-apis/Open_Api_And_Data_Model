@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "SpecificationCharacteristicValue.schema.json",
+  "title": "SpecificationCharacteristicValue",
+  "definitions": {
+    "SpecificationCharacteristicValue": {
+      "$id": "#SpecificationCharacteristicValue",
+      "description": "A number or text that can be assigned to a SpecificationCharacteristic",
+      "type": "object",
+      "properties": {
+        "isDefault": {
+          "type": "boolean",
+          "description": "If true, the Boolean Indicates if the value is the default value for a characteristic"
+        },
+        "rangeInterval": {
+          "type": "string",
+          "description": "An indicator that specifies the inclusion or exclusion of the valueFrom and valueTo attributes. If applicable, possible values are \"open\", \"closed\", \"closedBottom\" and \"closedTop\"."
+        },
+        "regex": {
+          "type": "string",
+          "description": "A regular expression constraint for given value"
+        },
+        "unitOfMeasure": {
+          "type": "string",
+          "description": "unit of measure for the valueCould be minutes, GB, etc"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which this object is valid"
+        },
+        "value": {
+          "$ref": "../Common/Any.schema.json#Any",
+          "description": "the  value that the characteristic can take on."
+        },
+        "valueFrom": {
+          "type": "integer",
+          "description": "The low range value that a characteristic can take on"
+        },
+        "valueTo": {
+          "type": "integer",
+          "description": "The upper range value that a characteristic can take on"
+        },
+        "valueType": {
+          "type": "string",
+          "description": "A kind of value that the characteristic value can take on, such as numeric, text and so forth"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

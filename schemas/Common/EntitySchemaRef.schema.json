@@ -1,23 +1,22 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "EntitySchemaRef.schema.json",
-    "title": "EntitySchemaRef",
-    "definitions": {
-        "EntitySchemaRef": {
-            "$id": "#EntitySchemaRef",
-            "description": "The reference object to the schema and type of target entity which is described by an entity specification",
-            "type": "object",
-            "properties": {
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "EntitySchemaRef.schema.json",
+  "title": "EntitySchemaRef",
+  "definitions": {
+    "EntitySchemaRef": {
+      "$id": "#EntitySchemaRef",
+      "description": "The reference object to the schema and type of target entity which is described by an entity specification",
+      "type": "object",
+      "properties": {
+        "@schemaLocation": {
+          "type": "string",
+          "description": "This field provides a link to the schema describing the target entity"
+        },
+        "@type": {
+          "type": "string",
+          "description": "Class type of the target entity"
         }
+      }
     }
+  }
 }

@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ReserveBalance.schema.json",
+    "title": "ReserveBalance",
+    "definitions": {
+        "ReserveBalance": {
+            "$id": "#ReserveBalance",
+            "description": "The ReserveBalance resource allows adjustments to be made to the original BalanceTopup eg increment the amount, alter the recharge periodicity",
+            "properties": {
+	    },
+            "allOf": [
+                {
+                    "$ref": "Action.schema.json#Action"
+                }]
+	}
+    }
+}

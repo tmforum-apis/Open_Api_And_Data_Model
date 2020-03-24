@@ -1,27 +1,27 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "RelatedObject.schema.json",
-    "title": "RelatedObject",
-    "definitions": {
-        "RelatedObject": {
-            "$id": "#RelatedObject",
-            "description": "Defines objects linked with trouble ticket.",
-            "type": "object",
-            "properties": {
-                "involvement": {
-                    "type": "string",
-                    "description": "Consequence of the ticket on the related object (for instance disputed, adjusted...)"
-                },
-                "reference": {
-                    "type": "string",
-                    "description": "Reference of object"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "RelatedObject.schema.json",
+  "title": "RelatedObject",
+  "definitions": {
+    "RelatedObject": {
+      "$id": "#RelatedObject",
+      "description": "Defines objects linked with trouble ticket.",
+      "type": "object",
+      "properties": {
+        "involvement": {
+          "type": "string",
+          "description": "Consequence of the ticket on the related object (for instance disputed, adjusted...)"
+        },
+        "reference": {
+          "type": "string",
+          "description": "Reference of object"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

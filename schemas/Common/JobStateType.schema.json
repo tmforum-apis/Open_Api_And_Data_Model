@@ -1,18 +1,18 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "JobStateType.schema.json",
-    "title": "JobStateType",
-    "definitions": {
-        "JobStateType": {
-            "$id": "#JobStateType",
-            "type": "string",
-            "description": "Valid values for the state of a batch job (e.g. catalog import)",
-            "enum": [
-                "Not Started",
-                "Running",
-                "Succeeded",
-                "Failed"
-            ]
-        }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "JobStateType.schema.json",
+  "title": "JobStateType",
+  "definitions": {
+    "JobStateType": {
+      "$id": "#JobStateType",
+      "type": "string",
+      "description": "Valid values for the state of a batch job (e.g. catalog import)",
+      "enum": [
+        "Not Started",
+        "Running",
+        "Succeeded",
+        "Failed"
+      ]
     }
+  }
 }

@@ -1,96 +1,97 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Appointment.schema.json",
-    "title": "Appointment",
-    "definitions": {
-        "Appointment": {
-            "$id": "#Appointment",
-            "type": "object",
-            "description": "An Appointment is an arrangement to do something or meet someone at a particular time, at a place (for face to face appointment) or in a contact medium (for phone appointment).",
-            "properties": {
-                "attachment": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
-                    }
-                },
-                "calendarEvent": {
-                    "$ref": "../Common/CalendarEventRef.schema.json#CalendarEventRef",
-                    "description": "A calendar event reference (CalendarEventRef). The appointment is associated with a calendar event (an happening at a point of time) associated to a calendar entry."
-                },
-                "category": {
-                    "type": "string",
-                    "description": "Business category : intervention for example or to be more precise after SalesIntervention, orderDeliveryIntervention,..."
-                },
-                "contactMedium": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/ContactMedium.schema.json#ContactMedium"
-                    }
-                },
-                "creationDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Appointment creation date"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Short free text describing the appointment"
-                },
-                "externalId": {
-                    "type": "string",
-                    "description": "External reference known by the customer"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Unique URI used to access to the appointment resource"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the appointment"
-                },
-                "lastUpdate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date of last appointment update"
-                },
-                "note": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/Note.schema.json#Note"
-                    }
-                },
-                "relatedPlace": {
-                    "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue",
-                    "description": "Related place defines (by reference or value) the place where the appointment will take place."
-                },
-                "relatedEntity": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/RelatedEntity.schema.json#RelatedEntity"
-                    }
-                },
-                "relatedParty": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                    }
-                },
-                "status": {
-                    "$ref": "../Customer/AppointmentStateType.schema.json#AppointmentStateType"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ],
-            "required": [
-                "validFor"
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Appointment.schema.json",
+  "title": "Appointment",
+  "definitions": {
+    "Appointment": {
+      "$id": "#Appointment",
+      "type": "object",
+      "description": "An Appointment is an arrangement to do something or meet someone at a particular time, at a place (for face to face appointment) or in a contact medium (for phone appointment).",
+      "properties": {
+        "attachment": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
+          }
+        },
+        "calendarEvent": {
+          "$ref": "../Common/CalendarEventRef.schema.json#CalendarEventRef",
+          "description": "A calendar event reference (CalendarEventRef). The appointment is associated with a calendar event (an happening at a point of time) associated to a calendar entry."
+        },
+        "category": {
+          "type": "string",
+          "description": "Business category : intervention for example or to be more precise after SalesIntervention, orderDeliveryIntervention,..."
+        },
+        "contactMedium": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/ContactMedium.schema.json#ContactMedium"
+          }
+        },
+        "creationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Appointment creation date"
+        },
+        "description": {
+          "type": "string",
+          "description": "Short free text describing the appointment"
+        },
+        "externalId": {
+          "type": "string",
+          "description": "External reference known by the customer"
+        },
+        "href": {
+          "type": "string",
+          "description": "Unique URI used to access to the appointment resource"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the appointment"
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date of last appointment update"
+        },
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/Note.schema.json#Note"
+          }
+        },
+        "relatedPlace": {
+          "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue",
+          "description": "Related place defines (by reference or value) the place where the appointment will take place."
+        },
+        "relatedEntity": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/RelatedEntity.schema.json#RelatedEntity"
+          }
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
+        },
+        "status": {
+          "$ref": "../Customer/AppointmentStateType.schema.json#AppointmentStateType"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "A time period (TimePeriod). Appointment beginning date time and end date time."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ],
+      "required": [
+        "validFor"
+      ]
     }
+  }
 }

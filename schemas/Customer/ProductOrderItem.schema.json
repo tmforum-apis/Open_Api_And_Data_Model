@@ -1,95 +1,95 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ProductOrderItem.schema.json",
-    "title": "ProductOrderItem",
-    "definitions": {
-        "ProductOrderItem": {
-            "$id": "#ProductOrderItem",
-            "type": "object",
-            "description": "An identified part of the order. A product order is decomposed into one or more order items.",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of the line item (generally it is a sequence number 01, 02, 03, ...)"
-                },
-                "quantity": {
-                    "type": "integer",
-                    "description": "Quantity ordered"
-                },
-                "action": {
-                    "$ref": "../Customer/OrderItemActionType.schema.json#OrderItemActionType",
-                    "description": "The action to be carried out on the Product. Can be: add, modify, delete, noChange"
-                },
-                "appointment": {
-                    "$ref": "../Customer/AppointmentRef.schema.json#AppointmentRef"
-                },
-                "billingAccount": {
-                    "$ref": "../Customer/BillingAccountRef.schema.json#BillingAccountRef"
-                },
-                "itemPrice": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/OrderPrice.schema.json#OrderPrice"
-                    }
-                },
-                "itemTerm": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/OrderTerm.schema.json#OrderTerm"
-                    }
-                },
-                "itemTotalPrice": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/OrderPrice.schema.json#OrderPrice"
-                    }
-                },
-                "payment": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/PaymentRef.schema.json#PaymentRef"
-                    }
-                },
-                "product": {
-                    "$ref": "../Product/ProductRefOrValue.schema.json#ProductRefOrValue"
-                },
-                "productOffering": {
-                    "$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef"
-                },
-                "productOfferingQualificationItem": {
-                    "$ref": "../Product/ProductOfferingQualificationItemRef.schema.json#ProductOfferingQualificationItemRef"
-                },
-                "quoteItem": {
-                    "$ref": "../Customer/QuoteItemRef.schema.json#QuoteItemRef"
-                },
-                "productOrderItem": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/ProductOrderItem.schema.json#ProductOrderItem"
-                    }
-                },
-                "productOrderItemRelationship": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/OrderItemRelationship.schema.json#OrderItemRelationship"
-                    }
-                },
-                "qualification": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Product/ProductOfferingQualificationRef.schema.json#ProductOfferingQualificationRef"
-                    }
-                },
-                "state": {
-                    "$ref": "../Customer/ProductOrderItemStateType.schema.json#ProductOrderItemStateType",
-                    "description": "State of the order item : described in the state machine diagram"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ProductOrderItem.schema.json",
+  "title": "ProductOrderItem",
+  "definitions": {
+    "ProductOrderItem": {
+      "$id": "#ProductOrderItem",
+      "type": "object",
+      "description": "An identified part of the order. A product order is decomposed into one or more order items.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identifier of the line item (generally it is a sequence number 01, 02, 03, ...)"
+        },
+        "quantity": {
+          "type": "integer",
+          "description": "Quantity ordered"
+        },
+        "action": {
+          "$ref": "../Customer/OrderItemActionType.schema.json#OrderItemActionType",
+          "description": "The action to be carried out on the Product. Can be: add, modify, delete, noChange"
+        },
+        "appointment": {
+          "$ref": "../Customer/AppointmentRef.schema.json#AppointmentRef"
+        },
+        "billingAccount": {
+          "$ref": "../Customer/BillingAccountRef.schema.json#BillingAccountRef"
+        },
+        "itemPrice": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/OrderPrice.schema.json#OrderPrice"
+          }
+        },
+        "itemTerm": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/OrderTerm.schema.json#OrderTerm"
+          }
+        },
+        "itemTotalPrice": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/OrderPrice.schema.json#OrderPrice"
+          }
+        },
+        "payment": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/PaymentRef.schema.json#PaymentRef"
+          }
+        },
+        "product": {
+          "$ref": "../Product/ProductRefOrValue.schema.json#ProductRefOrValue"
+        },
+        "productOffering": {
+          "$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef"
+        },
+        "productOfferingQualificationItem": {
+          "$ref": "../Product/ProductOfferingQualificationItemRef.schema.json#ProductOfferingQualificationItemRef"
+        },
+        "quoteItem": {
+          "$ref": "../Customer/QuoteItemRef.schema.json#QuoteItemRef"
+        },
+        "productOrderItem": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/ProductOrderItem.schema.json#ProductOrderItem"
+          }
+        },
+        "productOrderItemRelationship": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/OrderItemRelationship.schema.json#OrderItemRelationship"
+          }
+        },
+        "qualification": {
+          "type": "array",
+          "items": {
+            "$ref": "../Product/ProductOfferingQualificationRef.schema.json#ProductOfferingQualificationRef"
+          }
+        },
+        "state": {
+          "$ref": "../Customer/ProductOrderItemStateType.schema.json#ProductOrderItemStateType",
+          "description": "State of the order item : described in the state machine diagram"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

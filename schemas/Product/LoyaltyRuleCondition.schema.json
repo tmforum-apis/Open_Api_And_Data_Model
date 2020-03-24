@@ -1,22 +1,22 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "LoyaltyRuleCondition.schema.json",
-    "title": "LoyaltyRuleCondition",
-    "definitions": {
-        "LoyaltyRuleCondition": {
-            "$id": "#LoyaltyRuleCondition",
-            "description": "Resource containing a the ID of a condition to link to a loyalty rule.",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier for the loyalty condition."
-                },
-                "href": {
-                    "type": "string",
-                    "description": "A reference to the loyalty condition."
-                }
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "LoyaltyRuleCondition.schema.json",
+  "title": "LoyaltyRuleCondition",
+  "definitions": {
+    "LoyaltyRuleCondition": {
+      "$id": "#LoyaltyRuleCondition",
+      "description": "Resource containing a the ID of a condition to link to a loyalty rule.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the loyalty condition."
+        },
+        "href": {
+          "type": "string",
+          "description": "A reference to the loyalty condition."
         }
+      }
     }
+  }
 }

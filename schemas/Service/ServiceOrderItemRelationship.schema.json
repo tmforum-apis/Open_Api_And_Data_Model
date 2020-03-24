@@ -7,14 +7,11 @@
             "$id": "#ServiceOrderItemRelationship",
             "type": "object",
             "description": "Linked service order item to the one containing this attribute",
-            "required": [
-                "id",
-                "relationshipType"
-            ],
+            "required": ["id", "relationshipType"],
             "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of a service order item"
+                "orderItem": {
+                    "description": "A service order item in relationship with this order item",
+                    "$ref": "../Service/ServiceOrderItemRef.schema.json#/definitions/ServiceOrderItemRef"
                 },
                 "relationshipType": {
                     "type": "string",

@@ -1,0 +1,82 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceCategory.schema.json",
+    "title": "ResourceCategory",
+    "definitions": {
+        "ResourceCategory": {
+            "$id": "#ResourceCategory",
+            "type": "object", 
+            "description": "The (resource) category resource is used to group resource candidates in logical containers. Categories can contain other categories.", 
+            "properties": {
+                "id": {
+                    "type": "string", 
+                    "description": "Unique identifier of the category"
+                }, 
+                "href": {
+                    "type": "string", 
+                    "format": "uri",
+                    "description": "Hyperlink reference to the category"
+                }, 
+                "name": {
+                    "type": "string", 
+                    "description": "Name of the category"
+                }, 
+                "description": {
+                    "type": "string", 
+                    "description": "Description of the category"
+                }, 
+                "version": {
+                    "type": "string", 
+                    "description": "Category version"
+                }, 
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod", 
+                    "description": "The period for which the category is valid"
+                }, 
+                "lifecycleStatus": {
+                    "type": "string", 
+                    "description": "Used to indicate the current lifecycle status"
+                }, 
+                "lastUpdate": {
+                    "type": "string", 
+                    "format": "date-time", 
+                    "description": "Date and time of the last update"
+                }, 
+                "parentId": {
+                    "type": "string", 
+                    "description": "Unique identifier of the parent category"
+                }, 
+                "isRoot": {
+                    "type": "boolean", 
+                    "description": "If true, this Boolean indicates that the category is a root of categories"
+                }, 
+                "category": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "ResourceCategoryRef.schema.json#ResourceCategoryRef"
+                    }, 
+                    "description": "The category resource is used to group product offerings, service and resource candidates in logical containers. Categories can contain other (sub-)categories and/or product offerings."
+                }, 
+                "resourceCandidate": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "ResourceCandidateRef.schema.json#ResourceCandidateRef"
+                    },
+                    "description": "List of resource candidates accessible via this category"
+                }, 
+                "relatedParty": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    },
+                    "description": "List of parties involved in this category"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

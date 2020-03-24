@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceFunctionSpecification.schema.json",
+    "title": "ResourceFunctionSpecification",
+    "definitions": {
+        "ResourceFunctionSpecification": {
+            "$id": "#ResourceFunctionSpecification",
+            "description": "Specifies a function as a behavior to transform inputs of any nature into outputs of any nature independently from the way it is provided, for example a Medium to Large Enterprise Firewall.",
+            "type": "object",
+            "properties": {
+                "connectionPointSpecification": {
+                    "type": "array",
+                    "description": "External connection point specifications. These are the service access points (SAP) where inputs and outputs of the function are available.",
+                    "items": {
+                        "$ref": "ConnectionPointSpecificationRef.schema.json#/definitions/ConnectionPointSpecificationRef"
+                    }
+                },
+                "connectivitySpecification": {
+                    "type": "array",
+                    "description": "Internal connectivity potential specifications.",
+                    "items": {
+                        "$ref": "ResourceGraphSpecification.schema.json#/definitions/ResourceGraphSpecification"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "LogicalResourceSpecification.schema.json#LogicalResourceSpecification"
+                }
+            ]
+        }
+    }
+}

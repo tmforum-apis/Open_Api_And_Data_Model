@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "CharacteristicRelationship.schema.json",
+  "title": "CharacteristicRelationship",
+  "definitions": {
+    "CharacteristicRelationship": {
+      "$id": "#CharacteristicRelationship",
+      "description": "Another Characteristic that is related to the current Characteristic;",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the characteristic"
+        },
+        "relationshipType": {
+          "type": "string",
+          "description": "The type of relationship"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "TargetResourceSchema.schema.json",
+    "title": "TargetResourceSchema",
+    "definitions": {
+        "TargetResourceSchema": {
+            "$id": "#TargetResourceSchema",
+            "type": "object",
+            "description": "The reference object to the schema and type of target resource which is described by resource specification",
+            "properties": {
+                "@type": {
+                    "type": "string", 
+                    "description": "Class type of the target resource"
+                }, 
+                "@schemaLocation": {
+                    "type": "string", 
+                    "format": "uri",
+                    "description": "This field provides a link to the schema describing the target resource"
+                }
+            },
+			"required": ["@type", "@schemaLocation"]
+        }
+    }
+}

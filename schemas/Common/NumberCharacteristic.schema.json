@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "NumberCharacteristic.schema.json",
+    "title": "NumberCharacteristic",
+    "definitions": {
+        "NumberCharacteristic": {
+            "$id": "NumberCharacteristic",
+            "description": "A characteristic which value is a number",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "number",
+                    "description": "Value of the characteristic"
+                }
+            },
+			"allOf": [
+                {
+                    "$ref": "Characteristic.schema.json#Characteristic"
+                }
+            ]
+        }
+    }
+}

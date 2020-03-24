@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ExecutionStateType.schema.json",
+  "title": "ExecutionStateType",
+  "definitions": {
+    "ExecutionStateType": {
+      "$id": "#ExecutionStateType",
+      "type": "string",
+      "description": "Possible values for the state of the execution",
+      "enum": [
+        "acknowledged",
+        "rejected",
+        "pending",
+        "inProgress",
+        "cancelled",
+        "completed",
+        "failed"
+      ]
+    }
+  }
+}

@@ -1,18 +1,18 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "CashDetails.schema.json",
-    "title": "CashDetails",
-    "definitions": {
-        "CashDetails": {
-            "$id": "#CashDetails",
-            "description": "Cash has no additional data, but it could be extended to add information (e.g.: the cashier who took the payment, the person who paid, etc)",
-            "type": "object",
-            "properties": {},
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "CashDetails.schema.json",
+  "title": "CashDetails",
+  "definitions": {
+    "CashDetails": {
+      "$id": "#CashDetails",
+      "description": "Cash has no additional data, but it could be extended to add information (e.g.: the cashier who took the payment, the person who paid, etc)",
+      "type": "object",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
         }
+      ]
     }
+  }
 }

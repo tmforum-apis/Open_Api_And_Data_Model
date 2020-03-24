@@ -1,17 +1,17 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "IndividualStateType.schema.json",
-    "title": "IndividualStateType",
-    "definitions": {
-        "IndividualStateType": {
-            "$id": "#IndividualStateType",
-            "type": "string",
-            "description": "Valid values for the lifecycle state of the individual",
-            "enum": [
-                "initialized",
-                "validated",
-                "deceaded"
-            ]
-        }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "IndividualStateType.schema.json",
+  "title": "IndividualStateType",
+  "definitions": {
+    "IndividualStateType": {
+      "$id": "#IndividualStateType",
+      "type": "string",
+      "description": "Valid values for the lifecycle state of the individual",
+      "enum": [
+        "initialized",
+        "validated",
+        "deceaded"
+      ]
     }
+  }
 }

@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "MapCharacteristic.schema.json",
+    "title": "MapCharacteristic",
+    "definitions": {
+        "MapCharacteristic": {
+            "$id": "#MapCharacteristic",
+            "description": "A characteristic which value is a mapped object",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "object"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Characteristic.schema.json#Characteristic"
+                }
+            ]
+        }
+    }
+}

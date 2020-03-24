@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CharacteristicSpecification.schema.json",
+    "title": "CharacteristicSpecification",
+    "definitions": {
+        "CharacteristicSpecification": {
+            "$id": "#CharacteristicSpecification",
+            "description": "This class defines a characteristic specification.", 
+            "type": "object",
+            "properties": {
+                "charSpecRelationship": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "../Common/CharacteristicSpecificationRelationship.schema.json#CharacteristicSpecificationRelationship"
+                    },
+                    "description": "An aggregation, migration, substitution, dependency or exclusivity relationship between/among Specification Characteristics."
+                }, 
+                "characteristicValueSpecification": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "../Common/CharacteristicValueSpecification.schema.json#CharacteristicValueSpecification"
+                    },
+                    "description": "A CharacteristicValueSpecification object is used to define a set of attributes, each of which can be assigned to a corresponding set of attributes in a CharacteristicSpecification object. The values of the attributes in the CharacteristicValueSpecification object describe the values of the attributes that a corresponding Characteristic object can take on."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/CharacteristicSpecificationBase.schema.json#CharacteristicSpecificationBase"
+                }
+            ]
+        }
+    }
+}

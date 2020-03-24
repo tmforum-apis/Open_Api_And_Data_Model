@@ -1,70 +1,73 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Catalog.schema.json",
-    "title": "Catalog",
-    "definitions": {
-        "Catalog": {
-            "$id": "#Catalog",
-            "description": "A collection of Product Offerings, intended for a specific DistributionChannel, enhanced with additional information such as SLA parameters, invoicing and shipping details",
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "Unique reference of the catalog"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the Catalog"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Description of this catalog"
-                },
-                "lastUpdate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date and time of the last update"
-                },
-                "lifecycleStatus": {
-                    "type": "string",
-                    "description": "Used to indicate the current lifecycle status"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the catalog"
-                },
-                "catalogType": {
-                    "type": "string",
-                    "description": "Indicates if the catalog is a product, service or resource catalog"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The period for which the catalog is valid"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "Catalog version"
-                },
-                "relatedParty": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                    },
-                    "description": "List of parties involved in this catalog"
-                },
-                "category": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Product/CategoryRef.schema.json#CategoryRef"
-                    },
-                    "description": "List of root categories contained in this catalog"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Catalog.schema.json",
+  "title": "Catalog",
+  "definitions": {
+    "Catalog": {
+      "$id": "#Catalog",
+      "description": "A collection of Product Offerings, intended for a specific DistributionChannel, enhanced with additional information such as SLA parameters, invoicing and shipping details",
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "Unique reference of the catalog"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the Catalog"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of this catalog"
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time of the last update"
+        },
+        "lifecycleStatus": {
+          "type": "string",
+          "description": "Used to indicate the current lifecycle status"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the catalog"
+        },
+        "catalogType": {
+          "type": "string",
+          "description": "Indicates if the catalog is a product, service or resource catalog"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which the catalog is valid"
+        },
+        "version": {
+          "type": "string",
+          "description": "Catalog version"
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          },
+          "description": "List of parties involved in this catalog"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "../Product/CategoryRef.schema.json#CategoryRef"
+          },
+          "description": "List of root categories contained in this catalog"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Addressable.schema.json#Addressable"
+        },
+        {
+          "$ref": "../Common/Extensible.schema.json#Extensible"
+        }
+      ]
     }
+  }
 }

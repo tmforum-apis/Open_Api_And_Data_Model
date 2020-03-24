@@ -1,50 +1,50 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ServiceLevelSpecParameter.schema.json",
-    "title": "ServiceLevelSpecParameter",
-    "definitions": {
-        "ServiceLevelSpecParameter": {
-            "$id": "#ServiceLevelSpecParameter",
-            "description": "Service Level Specification parameters can be one of two types. A Key Quality Indicator (KQI) \nprovides a measurement of a specific aspect of the performance of a Product (i.e., Product \nSpecification, Product Offering, or Product) or a Service (i.e., Service Specification or Service).",
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "description": "The name of the parameter"
-                },
-                "serviceParmCategory": {
-                    "type": "string",
-                    "description": "A string that specifies whether the Service Level Specification Parameter is technology specific, service specific, or technology/service independent"
-                },
-                "serviceParmPerspective": {
-                    "type": "string",
-                    "description": "A string that specifies whether the Service Level Specification Parameter represents a single user instance parameter or a parameter that represents an aggregation"
-                },
-                "transformationAlgorithmOfKQI": {
-                    "type": "string",
-                    "description": "The description of a logical step-by-step procedure used to calculate the value of a KQI"
-                },
-                "parameterType": {
-                    "type": "string",
-                    "description": "Types of Service Level Specification parameters are KQI or KPI"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "A valid duration of a thing"
-                },
-                "relatedEntity": {
-                    "type": "array",
-                    "description": "A list of entities related to this parameter",
-                    "items": {
-                        "$ref": "../Common/RelatedEntityRef.schema.json#RelatedEntityRef"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ServiceLevelSpecParameter.schema.json",
+  "title": "ServiceLevelSpecParameter",
+  "definitions": {
+    "ServiceLevelSpecParameter": {
+      "$id": "#ServiceLevelSpecParameter",
+      "description": "Service Level Specification parameters can be one of two types. A Key Quality Indicator (KQI) \nprovides a measurement of a specific aspect of the performance of a Product (i.e., Product \nSpecification, Product Offering, or Product) or a Service (i.e., Service Specification or Service).",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the parameter"
+        },
+        "serviceParmCategory": {
+          "type": "string",
+          "description": "A string that specifies whether the Service Level Specification Parameter is technology specific, service specific, or technology/service independent"
+        },
+        "serviceParmPerspective": {
+          "type": "string",
+          "description": "A string that specifies whether the Service Level Specification Parameter represents a single user instance parameter or a parameter that represents an aggregation"
+        },
+        "transformationAlgorithmOfKQI": {
+          "type": "string",
+          "description": "The description of a logical step-by-step procedure used to calculate the value of a KQI"
+        },
+        "parameterType": {
+          "type": "string",
+          "description": "Types of Service Level Specification parameters are KQI or KPI"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "A valid duration of a thing"
+        },
+        "relatedEntity": {
+          "type": "array",
+          "description": "A list of entities related to this parameter",
+          "items": {
+            "$ref": "../Common/RelatedEntityRef.schema.json#RelatedEntityRef"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

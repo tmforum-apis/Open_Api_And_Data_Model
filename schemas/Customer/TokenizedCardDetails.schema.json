@@ -1,43 +1,43 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "TokenizedCardDetails.schema.json",
-    "title": "TokenizedCardDetails",
-    "definitions": {
-        "TokenizedCardDetails": {
-            "$id": "#TokenizedCardDetails",
-            "description": "Detailed information for a stored tokenized card",
-            "type": "object",
-            "properties": {
-                "brand": {
-                    "type": "string",
-                    "description": "Card brand. Might be used for display purposes"
-                },
-                "issuer": {
-                    "type": "string",
-                    "description": "Whoever issued the token"
-                },
-                "lastFourDigits": {
-                    "type": "string",
-                    "description": "Last four digits of the credit card. Might be used for display purposes"
-                },
-                "token": {
-                    "type": "string",
-                    "description": "The token itself"
-                },
-                "tokenType": {
-                    "type": "string",
-                    "description": "Token type (e.g.: emv)"
-                },
-                "cardType": {
-                    "type": "string",
-                    "description": "Card type. Might be used for display purposes"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TokenizedCardDetails.schema.json",
+  "title": "TokenizedCardDetails",
+  "definitions": {
+    "TokenizedCardDetails": {
+      "$id": "#TokenizedCardDetails",
+      "description": "Detailed information for a stored tokenized card",
+      "type": "object",
+      "properties": {
+        "brand": {
+          "type": "string",
+          "description": "Card brand. Might be used for display purposes"
+        },
+        "issuer": {
+          "type": "string",
+          "description": "Whoever issued the token"
+        },
+        "lastFourDigits": {
+          "type": "string",
+          "description": "Last four digits of the credit card. Might be used for display purposes"
+        },
+        "token": {
+          "type": "string",
+          "description": "The token itself"
+        },
+        "tokenType": {
+          "type": "string",
+          "description": "Token type (e.g.: emv)"
+        },
+        "cardType": {
+          "type": "string",
+          "description": "Card type. Might be used for display purposes"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

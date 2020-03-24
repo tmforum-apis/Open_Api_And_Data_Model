@@ -1,52 +1,47 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "BalanceUnreserve.schema.json",
-    "title": "BalanceUnreserve",
-    "definitions": {
-        "BalanceUnreserve": {
-            "$id": "#BalanceUnreserve",
-            "description": "The Balance Unreserve Operation resource is a detailed description of a balance unreserve operation requested over a subscription",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "Description of the unreserve operation"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "A resource URI pointing to the resource in the OB that stores the detailed information about a unreserve"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique Identifier within the server for the unreserve operation request"
-                },
-                "requestedDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date when the unreserve request was received in the server"
-                },
-                "status": {
-                    "type": "string",
-                    "description": "Status of the unreserve operation"
-                },
-                "balanceReserve": {
-                    "$ref": "../Customer/BalanceReserveRef.schema.json#BalanceReserveRef"
-                },
-                "relatedParty": {
-                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                },
-                "requestor": {
-                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                },
-                "product": {
-                    "$ref": "../Product/ProductRef.schema.json#ProductRef"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BalanceUnreserve.schema.json",
+  "title": "BalanceUnreserve",
+  "definitions": {
+    "BalanceUnreserve": {
+      "$id": "#BalanceUnreserve",
+      "description": "The Balance Unreserve Operation resource is a detailed description of a balance unreserve operation requested over a subscription",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of the unreserve operation"
+        },
+        "href": {
+          "type": "string",
+          "description": "A resource URI pointing to the resource in the OB that stores the detailed information about a unreserve"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique Identifier within the server for the unreserve operation request"
+        },
+        "balanceReserve": {
+          "$ref": "../Customer/BalanceReserveRef.schema.json#BalanceReserveRef"
+        },
+        "bucketBalance": {
+          "description": "A reference to the bucket involved in the balance-related operation",
+          "$ref": "../Customer/BucketBalanceRef.schema.json#BucketBalanceRef"
+        },
+        "relatedParty": {
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+        },
+        "requestor": {
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+        },
+        "product": {
+          "$ref": "../Product/ProductRef.schema.json#ProductRef"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Customer/BalanceAction.schema.json#BalanceAction"
+        }
+      ]
     }
+  }
 }

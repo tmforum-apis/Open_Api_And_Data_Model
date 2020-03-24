@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Attribute.schema.json",
+  "title": "Attribute",
+  "definitions": {
+    "Attribute": {
+      "$id": "#Attribute",
+      "type": "object",
+      "properties": {
+        "characteristic": {
+          "$ref": "../Common/Characteristic.schema.json#Characteristic"
+        },
+        "description": {
+          "$ref": "../Common/Multilingual.schema.json#Multilingual"
+        }
+      }
+    }
+  }
+}

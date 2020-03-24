@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CancelOrder.schema.json",
+    "title": "CancelOrder",
+    "definitions": {
+        "CancelOrder": {
+            "$id": "#CancelOrder",
+            "description": "A Order cancel is a type of task which  can  be used to place a request to cancel an order",
+            "type": "object",
+            "properties": {
+                "requestedCancellationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the submitter wants the order to be cancelled"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink to access the cancellation request"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "id of the cancellation request (this is not an order id)"
+                },
+                "effectiveCancellationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order is cancelled."
+                },
+                "cancellationReason": {
+                    "type": "string",
+                    "description": "Reason why the order is cancelled."
+                },               
+                "state": {
+                    "description": "Tracks the lifecycle status of the cancellation request, such as Acknowledged, Rejected, InProgress, Pending and so on.",
+                    "$ref": "../Common/TaskStateType.schema.json#TaskStateType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

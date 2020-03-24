@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BucketRef.schema.json",
+    "title": "BucketRef",
+    "definitions": {
+        "BucketRef": {
+            "$id": "#BucketRef",
+            "description": "link to the resource that holds bucket information",
+            "type": "object",
+            "properties": {
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
+                }
+            ]
+
+	}
+    }
+}

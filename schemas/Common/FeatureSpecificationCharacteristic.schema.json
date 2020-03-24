@@ -1,0 +1,37 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "FeatureSpecificationCharacteristic.schema.json",
+	"title": "FeatureSpecificationCharacteristic",
+	"definitions": {
+		"FeatureSpecificationCharacteristic": {
+			"$id": "#FeatureSpecificationCharacteristic",
+			"description": "Configuration feature characteristic specification.",
+			"type": "object",
+			"properties": {
+				"featureSpecCharRelationship": {
+					"description": "An aggregation, migration, substitution, dependency or exclusivity relationship between/among feature characteristics.",
+					"type": "array", 
+					"items": {
+						"$ref": "FeatureSpecificationCharacteristicRelationship.schema.json#FeatureSpecificationCharacteristicRelationship"
+					}
+				}, 
+				"featureSpecCharacteristicValue": {
+					"description": "Used to define a set of attributes, each of which can be assigned to a corresponding set of attributes in a FeatureCharacteristic object.",
+					"type": "array", 
+					"items": {
+						"$ref": "CharacteristicValueSpecification.schema.json#CharacteristicValueSpecification"
+					}
+				}
+			},
+			"allOf": [
+				{
+                    "$ref": "../Common/CharacteristicSpecificationBase.schema.json#CharacteristicSpecificationBase"
+				}
+			],
+			"required": [
+				"name",
+				"value"
+			]
+		}
+	}
+}

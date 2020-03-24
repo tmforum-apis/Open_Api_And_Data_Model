@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BooleanCharacteristic.schema.json",
+    "title": "BooleanCharacteristic",
+    "definitions": {
+        "BooleanCharacteristic": {
+            "$id": "BooleanCharacteristic",
+            "description": "A characteristic which value is a boolean",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "boolean",
+                    "description": "Value of the characteristic"
+                }
+            },
+			"allOf": [
+                {
+                    "$ref": "Characteristic.schema.json#Characteristic"
+                }
+            ]
+        }
+    }
+}

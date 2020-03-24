@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PerformanceIndicatorSpecification.schema.json",
+  "title": "PerformanceIndicatorSpecification",
+  "definitions": {
+    "PerformanceIndicatorSpecification": {
+      "$id": "#PerformanceIndicatorSpecification",
+      "description": "Holds the definition of the requested Performance indicator including: its name, value type, collection type, description and units.",
+      "type": "object",
+      "properties": {
+        "ID": {
+          "description": "A unique identifier for the PerformanceIndicatorSpecification.",
+          "type": "string"
+        },
+        "name": {
+          "description": "A word, term, or phrase by which a PerformanceIndicatorSpecification is known and distinguished from other PerformanceIndicatorSpecifications.",
+          "type": "string"
+        },
+        "description": {
+          "description": "A narrative that explains in detail what the PerformanceIndicatorSpecification is.",
+          "type": "string"
+        },
+        "perspective": {
+          "description": "The point of view for the PerformanceIndicatorSpecification, such as a single user instance or aggregation.",
+          "type": "string"
+        },
+        "indicatorCategory": {
+          "description": "A grouping or set of PerformanceIndicatorSpecifications that are classified together because of common characteristics, such as technology specific, service specific, or technology/service independent.",
+          "type": "string"
+        },
+        "indicatorType": {
+          "description": "A kind of value that the PerformanceIndicator can take; double float,int, string.",
+          "$ref": "#/definitions/IndicatorType"
+        },
+        "derivationAlgorithm": {
+          "description": "A step-by-step procedure used to calculate the value of PerformanceIndicator.",
+          "type": "string"
+        },
+        "derivationMethod": {
+          "description": "For simple calculations, the method used to calculate the value of a PerformanceIndicator, such as average, minimum, maximum, sum and so forth.",
+          "type": "string"
+        },
+        "validFor": {
+          "description": "The period of time during which the PerformanceIndicatorSpecification is applicable.",
+          "$ref": "#/definitions/TimePeriod"
+        },
+        "collectionType": {
+          "description": "The type of collection: gauge, cumulative,delta,discrete event,status inspection. Indicators can be produced using these methods.",
+          "$ref": "#/definitions/CollectionType"
+        },
+        "indicatorUnit": {
+          "description": "The unit by which the indicator is measured. For example, seconds, KBs, rate per second, etc.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ID",
+        "name",
+        "valueType",
+        "collectionType"
+      ]
+    }
+  }
+}

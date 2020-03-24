@@ -1,39 +1,39 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "PartyCreditProfile.schema.json",
-    "title": "PartyCreditProfile",
-    "definitions": {
-        "PartyCreditProfile": {
-            "$id": "#PartyCreditProfile",
-            "type": "object",
-            "description": "An individual might be evaluated for its worthiness and this evaluation might be based on a credit rating given by a credit agency.",
-            "properties": {
-                "creditAgencyName": {
-                    "type": "string",
-                    "description": "Name of the credit agency giving the score"
-                },
-                "creditAgencyType": {
-                    "type": "string",
-                    "description": "Type of the credit agency giving the score"
-                },
-                "ratingReference": {
-                    "type": "string",
-                    "description": "Reference corresponding to the credit rating"
-                },
-                "ratingScore": {
-                    "type": "integer",
-                    "format": "int32",
-                    "description": "A measure of a party’s creditworthiness calculated on the basis of a combination of factors such as their income and credit history"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PartyCreditProfile.schema.json",
+  "title": "PartyCreditProfile",
+  "definitions": {
+    "PartyCreditProfile": {
+      "$id": "#PartyCreditProfile",
+      "type": "object",
+      "description": "An individual might be evaluated for its worthiness and this evaluation might be based on a credit rating given by a credit agency.",
+      "properties": {
+        "creditAgencyName": {
+          "type": "string",
+          "description": "Name of the credit agency giving the score"
+        },
+        "creditAgencyType": {
+          "type": "string",
+          "description": "Type of the credit agency giving the score"
+        },
+        "ratingReference": {
+          "type": "string",
+          "description": "Reference corresponding to the credit rating"
+        },
+        "ratingScore": {
+          "type": "integer",
+          "format": "int32",
+          "description": "A measure of a party’s creditworthiness calculated on the basis of a combination of factors such as their income and credit history"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "GeneralTestArtifact.schema.json",
+  "title": "GeneralTestArtifact",
+  "definitions": {
+    "GeneralTestArtifact": {
+      "$id": "#GeneralTestArtifact",
+      "type": "object",
+      "description": "A managed general test artifact resource",
+      "required": [
+        "generalTestArtifactDefinition"
+      ],
+      "properties": {
+        "generalArtifactDefinition": {
+          "$ref": "../Common/GeneralTestArtifactDefinition.schema.json#GeneralTestArtifactDefinition"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/ManagedArtifact.schema.json#ManagedArtifact"
+        }
+      ]
+    }
+  }
+}

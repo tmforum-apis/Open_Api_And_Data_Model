@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "UserRoleRef.schema.json",
+    "title": "UserRoleRef",
+    "definitions": {
+        "UserRoleRef": {
+            "$id": "#UserRoleRef",
+            "description": "A UserRoleRef is a detailed information concerning an individual access entitlement.",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Hypertext Reference of the user role."
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the user role"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

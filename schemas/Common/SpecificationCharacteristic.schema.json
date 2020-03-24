@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "SpecificationCharacteristic.schema.json",
+  "title": "SpecificationCharacteristic",
+  "definitions": {
+    "SpecificationCharacteristic": {
+      "$id": "#SpecificationCharacteristic",
+      "description": "A characteristic quality or distinctive feature of a Specification.  The characteristic can be take on a discrete value, such as color, can take on a range of values, (for example, sensitivity of 100-240 mV), or can be derived from a formula (for example, usage time (hrs) = 30 - talk time *3). Certain characteristics, such as color, may be configured during the ordering or some other process.",
+      "type": "object",
+      "properties": {
+        "configurable": {
+          "type": "boolean",
+          "description": "If true, the Boolean indicates that the SpecificationCharacteristic is configurable"
+        },
+        "description": {
+          "type": "string",
+          "description": "A narrative that explains in detail what the SpecificationCharacteristic is"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the SpecificationCharacteristic"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which the productSpecificationCharacteristic is valid"
+        },
+        "valueType": {
+          "type": "string",
+          "description": "A kind of value that the characteristic can take on, such as numeric, text and so forth"
+        },
+        "specCharacteristicValue": {
+          "type": "array",
+          "description": "The value or values that this characteristic can take on",
+          "items": {
+            "$ref": "../Common/SpecificationCharacteristicValue.schema.json#SpecificationCharacteristicValue"
+          }
+        },
+        "specCharRelationship": {
+          "type": "array",
+          "description": "Relationship to other characteristics, such as dependency (the value that this characteristic can take may be limited by the value of the related characteristic)",
+          "items": {
+            "$ref": "../Common/SpecificationCharacteristicRelationship.schema.json#SpecificationCharacteristicRelationship"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

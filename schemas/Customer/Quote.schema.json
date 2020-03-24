@@ -1,147 +1,147 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Quote.schema.json",
-    "title": "Quote",
-    "definitions": {
-        "Quote": {
-            "$id": "#Quote",
-            "type": "object",
-            "required": [
-                "quoteItem"
-            ],
-            "description": "Quote can be used to negotiate service and product acquisition or modification between a customer and a service provider. Quote contain list of quote items, a reference to customer (partyRole), a list of productOffering and attached prices and conditions.",
-            "properties": {
-                "agreement": {
-                    "type": "array",
-                    "description": "A reference to an agreement defining the context of the quote",
-                    "items": {
-                        "$ref": "../EngagedParty/AgreementRef.schema.json#AgreementRef"
-                    }
-                },
-                "billingAccount": {
-                    "type": "array",
-                    "description": "A reference to a billing account to provide quote context information ",
-                    "items": {
-                        "$ref": "../Customer/BillingAccountRef.schema.json#BillingAccountRef"
-                    }
-                },
-                "category": {
-                    "type": "string",
-                    "description": "Used to categorize the quote from a business perspective that can be useful for the CRM system (e.g. \"enterprise\", \"residential\", ...)"
-                },
-                "contactMedium": {
-                    "type": "array",
-                    "description": "Information contact related to the quote requester",
-                    "items": {
-                        "$ref": "../Common/ContactMedium.schema.json#ContactMedium"
-                    }
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Description of the quote"
-                },
-                "effectiveQuoteCompletionDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date when the quote has been completed"
-                },
-                "expectedFulfillmentStartDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "this is the date wished by the requester to have the requested quote item delivered"
-                },
-                "expectedQuoteCompletionDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "This is expected date - from quote supplier - to be able to send back  a response for this quote"
-                },
-                "externalId": {
-                    "type": "string",
-                    "description": "ID given by the consumer and only understandable by him (to facilitate his searches afterwards)"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Hyperlink to access the quote"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier - attributed by quoting system"
-                },
-                "instantSyncQuote": {
-                    "type": "boolean",
-                    "description": "An indicator which when the value is \"true\" means that requester expects to get quoting result immediately in the response. If the indicator is true then the response code of 200 indicates the operation is successful otherwise a task is created with a response 201. "
-                },
-                "note": {
-                    "type": "array",
-                    "description": "Free form text associated with the quote",
-                    "items": {
-                        "$ref": "../Common/Note.schema.json#Note"
-                    }
-                },
-                "authorization": {
-                    "type": "array",
-                    "description": "An authorization provided for the quote",
-                    "items": {
-                        "$ref": "../Customer/Authorization.schema.json#Authorization"
-                    }
-                },
-                "quoteDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date and time when the quote was created"
-                },
-                "quoteItem": {
-                    "type": "array",
-                    "description": "An item of the quote - it is used to descirbe an operation on a product to be quoted",
-                    "items": {
-                        "$ref": "../Customer/QuoteItem.schema.json#QuoteItem"
-                    },
-                    "minItems": 1
-                },
-                "quoteTotalPrice": {
-                    "type": "array",
-                    "description": "Quote total price",
-                    "items": {
-                        "$ref": "../Customer/QuotePrice.schema.json#QuotePrice"
-                    }
-                },
-                "relatedParty": {
-                    "type": "array",
-                    "description": "A reference to a party playing a role in this quote (customer, seller, requester, etc.)",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                    }
-                },
-                "productOfferingQualification": {
-                    "type": "array",
-                    "description": "A reference to a previously done product offering qualification",
-                    "items": {
-                        "$ref": "../Product/ProductOfferingQualificationRef.schema.json#ProductOfferingQualificationRef"
-                    }
-                },
-                "requestedQuoteCompletionDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "This is requested date - from quote requester - to get a complete response for this quote"
-                },
-                "state": {
-                    "$ref": "../Product/QuoteStateType.schema.json#QuoteStateType",
-                    "description": "State of the quote : described in the state-machine diagram"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "Quote validity period"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "Quote version - if the customer rejected the quote but  negotiations still open a new version of the quote is managed"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Quote.schema.json",
+  "title": "Quote",
+  "definitions": {
+    "Quote": {
+      "$id": "#Quote",
+      "type": "object",
+      "required": [
+        "quoteItem"
+      ],
+      "description": "Quote can be used to negotiate service and product acquisition or modification between a customer and a service provider. Quote contain list of quote items, a reference to customer (partyRole), a list of productOffering and attached prices and conditions.",
+      "properties": {
+        "agreement": {
+          "type": "array",
+          "description": "A reference to an agreement defining the context of the quote",
+          "items": {
+            "$ref": "../EngagedParty/AgreementRef.schema.json#AgreementRef"
+          }
+        },
+        "billingAccount": {
+          "type": "array",
+          "description": "A reference to a billing account to provide quote context information ",
+          "items": {
+            "$ref": "../Customer/BillingAccountRef.schema.json#BillingAccountRef"
+          }
+        },
+        "category": {
+          "type": "string",
+          "description": "Used to categorize the quote from a business perspective that can be useful for the CRM system (e.g. \"enterprise\", \"residential\", ...)"
+        },
+        "contactMedium": {
+          "type": "array",
+          "description": "Information contact related to the quote requester",
+          "items": {
+            "$ref": "../Common/ContactMedium.schema.json#ContactMedium"
+          }
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the quote"
+        },
+        "effectiveQuoteCompletionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the quote has been completed"
+        },
+        "expectedFulfillmentStartDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "this is the date wished by the requester to have the requested quote item delivered"
+        },
+        "expectedQuoteCompletionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "This is expected date - from quote supplier - to be able to send back  a response for this quote"
+        },
+        "externalId": {
+          "type": "string",
+          "description": "ID given by the consumer and only understandable by him (to facilitate his searches afterwards)"
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink to access the quote"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier - attributed by quoting system"
+        },
+        "instantSyncQuote": {
+          "type": "boolean",
+          "description": "An indicator which when the value is \"true\" means that requester expects to get quoting result immediately in the response. If the indicator is true then the response code of 200 indicates the operation is successful otherwise a task is created with a response 201. "
+        },
+        "note": {
+          "type": "array",
+          "description": "Free form text associated with the quote",
+          "items": {
+            "$ref": "../Common/Note.schema.json#Note"
+          }
+        },
+        "authorization": {
+          "type": "array",
+          "description": "An authorization provided for the quote",
+          "items": {
+            "$ref": "../Customer/Authorization.schema.json#Authorization"
+          }
+        },
+        "quoteDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time when the quote was created"
+        },
+        "quoteItem": {
+          "type": "array",
+          "description": "An item of the quote - it is used to descirbe an operation on a product to be quoted",
+          "items": {
+            "$ref": "../Customer/QuoteItem.schema.json#QuoteItem"
+          },
+          "minItems": 1
+        },
+        "quoteTotalPrice": {
+          "type": "array",
+          "description": "Quote total price",
+          "items": {
+            "$ref": "../Customer/QuotePrice.schema.json#QuotePrice"
+          }
+        },
+        "relatedParty": {
+          "type": "array",
+          "description": "A reference to a party playing a role in this quote (customer, seller, requester, etc.)",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
+        },
+        "productOfferingQualification": {
+          "type": "array",
+          "description": "A reference to a previously done product offering qualification",
+          "items": {
+            "$ref": "../Product/ProductOfferingQualificationRef.schema.json#ProductOfferingQualificationRef"
+          }
+        },
+        "requestedQuoteCompletionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "This is requested date - from quote requester - to get a complete response for this quote"
+        },
+        "state": {
+          "$ref": "../Product/QuoteStateType.schema.json#QuoteStateType",
+          "description": "State of the quote : described in the state-machine diagram"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "Quote validity period"
+        },
+        "version": {
+          "type": "string",
+          "description": "Quote version - if the customer rejected the quote but  negotiations still open a new version of the quote is managed"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

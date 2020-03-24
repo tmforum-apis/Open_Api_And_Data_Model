@@ -1,12 +1,97 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "BalanceTopup.schema.json",
-    "title": "BalanceTopup",
-    "definitions": {
-        "BalanceTopup": {
-            "$id": "#BalanceTopup",
-            "description": "#TODO",
-            "type": "object"
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BalanceTopup.schema.json",
+  "title": "BalanceTopup",
+  "definitions": {
+    "BalanceTopup": {
+      "$id": "#BalanceTopup",
+      "description": "Represents a detailed description of a recharge operation requested over a bucket (defined by a specific product or reference to a product (i.e.: a commercial id such as an msisidn) and a service type)",
+      "properties": {
+        "bucket": {
+          "description": "A reference to the bucket impacted by the request. This is used in scenarios where the requestor knows beforehand the bucket that is going to be impacted instead of just referring to the commercial identifier of the impacted product and the type of bucket created under that product",
+          "$ref": "../Customer/BucketBalanceRef.schema.json#BucketBalanceRef"
+        },
+        "amount": {
+          "description": "Amount (can be monetary or non-monetary) to be recharged in the bucket",
+          "$ref": "../Common/Quantity.schema.json#Quantity"
+        },
+        "channel": {
+          "description": "Indicator for the channel used to request the top-up operation. Structure including at least attribute �name�",
+          "$ref": "../Common/ChannelRef.schema.json#ChannelRef"
+        },
+        "product": {
+          "description": "A reference to the product related to the bucket that is impacted by the balance related operation",
+          "$ref": "../Product/ProductRef.schema.json#ProductRef"
+        },
+        "type": {
+          "type": "string",
+          "description": "A preconfigured value that describes a TopUp type which determines the prepay balance bucket in which the top-up is done (national-voice, roaming-voice, promotional-voice, data, ....)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the recharge operation"
+        },
+        "href": {
+          "type": "string",
+          "description": "A resource URI pointing to the resource in the OB that stores the detailed information. This is typically the resource url to retrieve individual top-up operation details"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique Identifier within the server for the recharge operation request"
+        },
+        "isAutoTopup": {
+          "type": "boolean",
+          "description": "Indicates if the topup requested is an autotopup (to be processed periodically)"
+        },
+        "nrOfPeriods": {
+          "type": "integer",
+          "description": "For autotopup indicates the number of occurrences of the period the recharge operation must be executed. If not included then no limit is set to stop the executionof the topup every period"
+        },
+        "partyAccount": {
+          "description": "A reference to the account that owns the bucket impacted by the balance related operation",
+          "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef"
+        },
+        "paymentMethod": {
+          "description": "Payment method used for the recharge operation (e.g.: cash, credit card, �). Structure including at least attribute �name�. Notice that the use of a voucher can be managed as a specific methodtype, where he voucher code can be passed as value.",
+          "$ref": "../Customer/PaymentMethodRef.schema.json#PaymentMethodRef"
+        },
+        "recurringPeriod": {
+          "type": "string",
+          "description": "For autotopup indicates the periodicity for the recharge operation (monthly, weekly, )"
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          },
+          "description": "Used to provide information about any other entity with relation to the operation"
+        },
+        "requestor": {
+          "description": "Identifier for the user/customer/entity that performs the top-up action. This can be used to indicate the identifier of an agent that performs the operation on behalf of a user via a customer service channel. Structure including at least attributes �role� and �name�.",
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+        },
+        "voucher": {
+          "type": "string",
+          "description": "Identifier for the voucher when the topup can be perfomed by this means (referenced by a voucher based payment mean). This attribute is left in this release to keep compatibility with previous version and for implementations that do not relay on paymentMethods. A voucher can be managed as a specific methodtype, where he voucher code can be passed as value."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Customer/BalanceAction.schema.json#BalanceAction"
+        }
+      ],
+      "required": [
+        "id",
+        "href",
+        "validFor",
+        "requestedDate",
+        "confirmationDate",
+        "status",
+        "type",
+        "channel",
+        "amount"
+      ],
+      "type": "object"
     }
+  }
 }

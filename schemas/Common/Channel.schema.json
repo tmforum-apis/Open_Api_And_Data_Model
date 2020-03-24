@@ -1,31 +1,31 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Channel.schema.json",
-    "title": "Channel",
-    "definitions": {
-        "Channel": {
-            "$id": "#Channel",
-            "description": "The channel to which the resource reference to. e.g. channel for selling product offerings, channel for opening a trouble ticket etc..",
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the channel"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the channel"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the channel"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Channel.schema.json",
+  "title": "Channel",
+  "definitions": {
+    "Channel": {
+      "$id": "#Channel",
+      "description": "The channel to which the resource reference to. e.g. channel for selling product offerings, channel for opening a trouble ticket etc..",
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "Reference of the channel"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the channel"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the channel"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

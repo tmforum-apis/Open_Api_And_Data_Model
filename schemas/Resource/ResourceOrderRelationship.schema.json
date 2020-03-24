@@ -1,28 +1,28 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ResourceOrderRelationship.schema.json",
-    "title": "ResourceOrderRelationship",
-    "definitions": {
-        "ResourceOrderRelationship": {
-            "$id": "#ResourceOrderRelationship",
-            "type": "object",
-            "properties": {
-                "relationshipType": {
-                    "type": "string",
-                    "description": "The type of related order item, such as [dependency] if the order item needs to be [not started] until another order item is complete; [cross-reference] to keep track of the source order (service order)"
-                },
-                "resourceOrder": {
-                    "$ref": "../Resource/ResourceOrderRef.schema.json#ResourceOrderRef"
-                },
-                "serviceOrder": {
-                    "$ref": "../Service/ServiceOrderRef.schema.json#ServiceOrderRef"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ResourceOrderRelationship.schema.json",
+  "title": "ResourceOrderRelationship",
+  "definitions": {
+    "ResourceOrderRelationship": {
+      "$id": "#ResourceOrderRelationship",
+      "type": "object",
+      "properties": {
+        "relationshipType": {
+          "type": "string",
+          "description": "The type of related order item, such as [dependency] if the order item needs to be [not started] until another order item is complete; [cross-reference] to keep track of the source order (service order)"
+        },
+        "resourceOrder": {
+          "$ref": "../Resource/ResourceOrderRef.schema.json#ResourceOrderRef"
+        },
+        "serviceOrder": {
+          "$ref": "../Service/ServiceOrderRef.schema.json#ServiceOrderRef"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

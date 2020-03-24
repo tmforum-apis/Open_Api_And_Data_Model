@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AdhocCollection.schema.json",
+  "title": "AdhocCollection",
+  "definitions": {
+    "AdhocCollection": {
+      "$id": "AdhocCollection",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "consumingApplicationId": {
+          "type": "string"
+        },
+        "producingApplicationId": {
+          "type": "string"
+        },
+        "granulatiry": {
+          "$ref": "#/definitions/Granularity"
+        },
+        "outputFormat": {
+          "type": "string"
+        },
+        "collectionPeriod": {
+          "$ref": "#/definitions/TimePeriod"
+        },
+        "monitoredInstancesCriteria": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MonitoredInstancesCriteria"
+          },
+          "minItems": 0,
+          "maxItems": 1
+        },
+        "monitoredClassCriteria": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MonitoredClassCriteria"
+          },
+          "minItems": 0,
+          "maxItems": 1
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "ManagementJob.schema.json#/definitions/ManagementJob"
+        }
+      ]
+    }
+  }
+}

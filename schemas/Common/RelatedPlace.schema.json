@@ -1,35 +1,35 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "RelatedPlace.schema.json",
-    "title": "RelatedPlace",
-    "definitions": {
-        "RelatedPlace": {
-            "$id": "#RelatedPlace",
-            "description": "A  Place and an associated role as installation adress, delivery address, etc....",
-            "type": "object",
-            "properties": {
-                "role": {
-                    "type": "string",
-                    "description": "Role of the place, such as: [home delivery], [shop retrieval])"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Unique reference of the place"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the place"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "A user-friendly name for the place, such as [Paris Store], [London Store], [Main Home]"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "RelatedPlace.schema.json",
+  "title": "RelatedPlace",
+  "definitions": {
+    "RelatedPlace": {
+      "$id": "#RelatedPlace",
+      "description": "A  Place and an associated role as installation adress, delivery address, etc....",
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string",
+          "description": "Role of the place, such as: [home delivery], [shop retrieval])"
+        },
+        "href": {
+          "type": "string",
+          "description": "Unique reference of the place"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the place"
+        },
+        "name": {
+          "type": "string",
+          "description": "A user-friendly name for the place, such as [Paris Store], [London Store], [Main Home]"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

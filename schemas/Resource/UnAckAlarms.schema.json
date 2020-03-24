@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "UnAckAlarms.schema.json",
+  "title": "UnAckAlarms",
+  "definitions": {
+    "UnAckAlarms": {
+      "$id": "#UnAckAlarms",
+      "description": "Task resource for unacknowledge alarms operation",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The identifier of the task",
+          "type": "string"
+        },
+        "href": {
+          "description": "A reference to the task",
+          "type": "string"
+        },
+        "state": {
+          "description": "Current state of the operation task",
+          "type": "string",
+          "enum": [
+            "acknowledged",
+            "terminatedWithError",
+            "inProgress",
+            "done",
+            "cancel",
+            "canceled"
+          ]
+        },
+        "ackSystemId": {
+          "description": "Name of the unacknowledging system",
+          "type": "string"
+        },
+        "ackUserId": {
+          "description": "Name of the unacknowledging user",
+          "type": "string"
+        },
+        "ackTime": {
+          "description": "Time of the unacknowledgement",
+          "type": "string",
+          "format": "date-time"
+        },
+        "alarmPattern": {
+          "description": "Alarm patterns to match target alarms. An alarm will match if all of the sttributes in any of the patterns compare equal to those attributes of the alarm.",
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/Alarm.schema.json#Alarm"
+          }
+        },
+        "unAckedAlarm": {
+          "description": "The successfully unacknowledged alarms",
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/AlarmRefOrValue.schema.json#AlarmRefOrValue"
+          }
+        }
+      }
+    }
+  }
+}

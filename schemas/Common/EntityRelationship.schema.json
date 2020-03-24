@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "EntityRelationship.schema.json",
+  "title": "EntityRelationship",
+  "definitions": {
+    "EntityRelationship": {
+      "$id": "#EntityRelationship",
+      "description": "A uni-directionmal relationship from this entity to a target entity instance",
+      "type": "object",
+      "required": [
+        "relationshipType",
+        "entity"
+      ],
+      "properties": {
+        
+        "entity": {
+          "description": "The entity being referred to",
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        },
+        "role": {
+          "type": "string",
+          "description": "The association role for this entity"
+        },
+        "relationshipType": {
+          "type": "string",
+          "description": "Type of relationship such as containment, substitution, dependency, exclusivity"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which the entityRelationship is valid"
+        },
+        "associationSpec": {
+          "$ref": "../Common/AssociationSpecRef.schema.json#AssociationSpecRef"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

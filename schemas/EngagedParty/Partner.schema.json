@@ -1,94 +1,94 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Partner.schema.json",
-    "title": "Partner",
-    "definitions": {
-        "Partner": {
-            "$id": "#Partner",
-            "description": "The part played by a party in a given context.",
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "Url used to reference the partner."
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier for Partners"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "A word, term, or phrase by which the Partner is known and distinguished from other Partners."
-                },
-                "status": {
-                    "type": "string",
-                    "description": "Used to track the lifecycle status of the partner."
-                },
-                "statusReason": {
-                    "type": "string",
-                    "description": "A string providing an explanation on the value of the status lifecycle. For instance if the status is Rejected, statusReason will provide the reason for rejection."
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The time period that the Partner is valid for."
-                },
-                "engagedParty": {
-                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty",
-                    "description": "The reference to the party engaged in this partnership."
-                },
-                "account": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/AccountRef.schema.json#AccountRef"
-                    }
-                },
-                "paymentMethod": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/PaymentMethodRef.schema.json#PaymentMethodRef"
-                    }
-                },
-                "contactMedium": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/ContactMedium.schema.json#ContactMedium"
-                    }
-                },
-                "characteristic": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/Characteristic.schema.json#Characteristic"
-                    },
-                    "description": "Describes the characteristic of a partner."
-                },
-                "creditProfile": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/CreditProfile.schema.json#CreditProfile"
-                    }
-                },
-                "agreement": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/AgreementRef.schema.json#AgreementRef"
-                    }
-                },
-                "relatedParty": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ],
-            "required": [
-                "name",
-                "engagedParty"
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Partner.schema.json",
+  "title": "Partner",
+  "definitions": {
+    "Partner": {
+      "$id": "#Partner",
+      "description": "The part played by a party in a given context.",
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "Url used to reference the partner."
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for Partners"
+        },
+        "name": {
+          "type": "string",
+          "description": "A word, term, or phrase by which the Partner is known and distinguished from other Partners."
+        },
+        "status": {
+          "type": "string",
+          "description": "Used to track the lifecycle status of the partner."
+        },
+        "statusReason": {
+          "type": "string",
+          "description": "A string providing an explanation on the value of the status lifecycle. For instance if the status is Rejected, statusReason will provide the reason for rejection."
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The time period that the Partner is valid for."
+        },
+        "engagedParty": {
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty",
+          "description": "The reference to the party engaged in this partnership."
+        },
+        "account": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/AccountRef.schema.json#AccountRef"
+          }
+        },
+        "paymentMethod": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/PaymentMethodRef.schema.json#PaymentMethodRef"
+          }
+        },
+        "contactMedium": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/ContactMedium.schema.json#ContactMedium"
+          }
+        },
+        "characteristic": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/Characteristic.schema.json#Characteristic"
+          },
+          "description": "Describes the characteristic of a partner."
+        },
+        "creditProfile": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/CreditProfile.schema.json#CreditProfile"
+          }
+        },
+        "agreement": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/AgreementRef.schema.json#AgreementRef"
+          }
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ],
+      "required": [
+        "name",
+        "engagedParty"
+      ]
     }
+  }
 }

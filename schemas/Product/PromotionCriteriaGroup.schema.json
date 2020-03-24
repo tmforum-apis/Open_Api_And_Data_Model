@@ -1,37 +1,49 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "PromotionCriteriaGroup.schema.json",
-    "title": "PromotionCriteriaGroup",
-    "definitions": {
-        "PromotionCriteriaGroup": {
-            "$id": "#PromotionCriteriaGroup",
-            "description": "The group of the criteria of the promotion. The logical relationship between different groups is decided by the relationTypeInGroup.",
-            "type": "object",
-            "properties": {
-                "groupName": {
-                    "type": "string",
-                    "description": "Name of the group."
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique Identifier"
-                },
-                "relationTypeInGroup": {
-                    "type": "string",
-                    "description": "AND/OR,The logical relation type amongst the various criteria inside a promotion criteria group."
-                },
-                "criteria": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Product/PromotionCriteria.schema.json#PromotionCriteria"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PromotionCriteriaGroup.schema.json",
+  "title": "PromotionCriteriaGroup",
+  "definitions": {
+    "PromotionCriteriaGroup": {
+      "$id": "#PromotionCriteriaGroup",
+      "type": "object",
+      "description": "The group of the criteria of the promotion. The logical relationship between different groups is decided by the relationTypeInGroup.",
+      "properties": {
+        "@baseType": {
+          "type": "string",
+          "description": "The base type for use in polymorphic collections"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "description": "A link to the schema describing a resource (for type extension)."
+        },
+        "@type": {
+          "type": "string",
+          "description": "The class type of the actual resource (for type extension)."
+        },
+        "criteria": {
+          "type": "array",
+          "items": {
+            "$ref": "../Product/PromotionCriteria.schema.json#PromotionCriteria"
+          }
+        },
+        "groupName": {
+          "type": "string",
+          "description": "Name of the group."
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique Identifier"
+        },
+        "relationTypeInGroup": {
+          "type": "string",
+          "description": "AND/OR,The logical relation type amongst the various criteria inside a promotion criteria group."
         }
+      },
+      "required": [
+        "id",
+        "relationTypeInGroup",
+        "groupName"
+      ]
     }
+  }
 }

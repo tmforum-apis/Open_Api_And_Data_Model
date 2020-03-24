@@ -1,32 +1,32 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Record.schema.json",
-    "title": "Record",
-    "definitions": {
-        "Record": {
-            "$id": "#Record",
-            "description": "A record in a worklog.",
-            "type": "object",
-            "properties": {
-                "dateTime": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "The date time that a record is generated."
-                },
-                "description": {
-                    "type": "string",
-                    "description": "The detail description in a record."
-                },
-                "supportPerson": {
-                    "type": "string",
-                    "description": "The person who logged that record."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Record.schema.json",
+  "title": "Record",
+  "definitions": {
+    "Record": {
+      "$id": "#Record",
+      "description": "A record in a worklog.",
+      "type": "object",
+      "properties": {
+        "dateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date time that a record is generated."
+        },
+        "description": {
+          "type": "string",
+          "description": "The detail description in a record."
+        },
+        "supportPerson": {
+          "type": "string",
+          "description": "The person who logged that record."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

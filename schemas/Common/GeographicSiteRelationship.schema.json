@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "GeographicSiteRelationship.schema.json",
+  "title": "GeographicSiteRelationship",
+  "definitions": {
+    "GeographicSiteRelationship": {
+      "$id": "#GeographicSiteRelationship",
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "Reference of the related geographic site"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the related site entity within the server"
+        },
+        "role": {
+          "type": "string",
+          "description": "Role of the related site in the relationship"
+        },
+        "relationshipType": {
+          "type": "string",
+          "description": "Type of relationship"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "Validity for the relationship"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

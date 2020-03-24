@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "UsageType.schema.json",
+    "title": "UsageType",
+    "definitions": {
+        "UsageType": {
+            "$id": "#UsageType",
+            "type": "string",
+            "description": "Valid values for the usage type are",
+            "enum": [
+                "monetary",
+		"voice",
+		"data",
+		"sms",
+		"other"
+            ]
+        }
+    }
+}

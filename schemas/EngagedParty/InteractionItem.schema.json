@@ -1,0 +1,68 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "InteractionItem.schema.json",
+    "title": "InteractionItem",
+    "definitions": {
+        "InteractionItem": {
+            "$id": "#InteractionItem",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the interaction item"
+                },
+                "itemDate": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "Moment this item is referred"
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "Reason why this item is referred"
+                },
+                "resolution": {
+                    "type": "string",
+                    "description": "Resolution of the interaction item"
+                },
+				"creationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the interaction item is created in the system"
+                },
+                "item": {
+                    "$ref": "../Common/RelatedEntity.schema.json#RelatedEntityRefOrValue",
+					"description": "RelatedEntity defines a reference to any entity. It uses polymorphism in order to let the API client know how to treat the element, as the entity type is not known beforehand."
+                },
+                "channel": {
+                    "type": "array",
+                    "items": {
+						"$ref": "../Common/Channel.schema.json#RelatedChannel"
+					},
+					"description": "Where the interaction took place (e.g.: web, mobile app, store, kiosk, etc.)"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    }
+                },
+                "attachment": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
+                    }
+                }, 
+                "note": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "../Common/Note.schema.json#Note"
+                    }
+                }
+            },
+            "allOf": [
+                {	
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

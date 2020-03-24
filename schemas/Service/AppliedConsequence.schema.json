@@ -1,35 +1,35 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "AppliedConsequence.schema.json",
-    "title": "AppliedConsequence",
-    "definitions": {
-        "AppliedConsequence": {
-            "$id": "#AppliedConsequence",
-            "type": "object",
-            "description": "An Applied Consequence defines the action (prescribed action or notification) to take when a \nMeasureThresholdRuleViolation occurs.",
-            "properties": {
-                "appliedAction": {
-                    "type": "string",
-                    "description": "The action for a violated threshold. This could be a hyperlink to \nthe action."
-                },
-                "description": {
-                    "type": "string",
-                    "description": "A narrative that explains in detail what the consequence is."
-                },
-                "name": {
-                    "type": "string",
-                    "description": "A word, term, or phrase by which Consequence is known and \ndistinguished from other MetricDefMeasureConsequences."
-                },
-                "repeatAction": {
-                    "type": "boolean",
-                    "description": "An indicator used to specify that a consequence should cease \nbeing applied if a value is in the same range as the previous value or continue being applied if a value is in the same range as the previous value.  \nIf the repeatAction is True, if the consequence is always applied as soon as the MetricMeasure value is in the range of values and if the repeatAction is False, the consequence is applied only if the previous MetricMeasure value was not in the same range."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AppliedConsequence.schema.json",
+  "title": "AppliedConsequence",
+  "definitions": {
+    "AppliedConsequence": {
+      "$id": "#AppliedConsequence",
+      "type": "object",
+      "description": "An Applied Consequence defines the action (prescribed action or notification) to take when a \nMeasureThresholdRuleViolation occurs.",
+      "properties": {
+        "appliedAction": {
+          "type": "string",
+          "description": "The action for a violated threshold. This could be a hyperlink to \nthe action."
+        },
+        "description": {
+          "type": "string",
+          "description": "A narrative that explains in detail what the consequence is."
+        },
+        "name": {
+          "type": "string",
+          "description": "A word, term, or phrase by which Consequence is known and \ndistinguished from other MetricDefMeasureConsequences."
+        },
+        "repeatAction": {
+          "type": "boolean",
+          "description": "An indicator used to specify that a consequence should cease \nbeing applied if a value is in the same range as the previous value or continue being applied if a value is in the same range as the previous value.  \nIf the repeatAction is True, if the consequence is always applied as soon as the MetricMeasure value is in the range of values and if the repeatAction is False, the consequence is applied only if the previous MetricMeasure value was not in the same range."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

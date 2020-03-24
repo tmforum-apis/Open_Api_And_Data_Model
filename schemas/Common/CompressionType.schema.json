@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "CompressionType.schema.json",
+  "title": "CompressionType",
+  "definitions": {
+    "CompressionType": {
+      "$id": "CompressionType",
+      "description": "File compression type.",
+      "type": "object",
+      "properties": {
+        "compressionEnumType": {
+          "$ref": "CompressionEnumType.schema.json#/definitions/CompressionEnumType"
+        }
+      }
+    }
+  }
+}

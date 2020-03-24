@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PackingEnumType.schema.json",
+  "title": "PackingEnumType",
+  "definitions": {
+    "PackingEnumType": {
+      "$id": "PackingEnumType",
+      "description": "Enumeration of supported packing/packaging. All extensions allowed.",
+      "type": "string",
+      "enum": [
+        "NO_PACKING",
+        "GZIP",
+        "TAR",
+        "VENDOR_EXT",
+        "MINOR_EXT"
+      ]
+    }
+  }
+}

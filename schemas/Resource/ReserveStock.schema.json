@@ -1,0 +1,77 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ReserveStock.schema.json",
+    "title": "ReserveStock",
+    "definitions": {
+        "ReserveStock": {
+            "$id": "#ReserveStock",
+            "description": "ReserveStock is used to request a stock reservation",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "Unique identifier of the ReserveStock",
+                    "type": "string"
+                },
+                "href": {
+                    "description": "Reference of the ReserveStock",
+                    "type": "string"
+                },
+                "creationDate": {
+                    "description": "Date when the ReserveStock was created (whatever its status).",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "requiredAvailabilityDate": {
+                    "description": "Requested product availability date for the reservation.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "reserveStockState": {
+                    "$ref": "TaskStateType.schema.json#/definitions/TaskStateType",
+                    "description": "State of the StockReservation (acknowledged, inProgress, failed, done, cancelled)"
+                },
+                "reserveStockItem": {
+                    "type": "array",
+                    "description": "A list of stock item reservation ",
+                    "items": {
+                        "$ref": "../Resource/ReserveStockItem.schema.json#/definitions/ReserveStockItem"
+                    }
+                },
+                "relatedEntity": {
+                    "type": "array",
+                    "description": "A list of related  entity in relationship with this stock reservation ",
+                    "items": {
+                        "$ref": "../Common/RelatedEntity.schema.json#/definitions/RelatedEntity"
+                    }
+                },
+                "channel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "ChannelRef.schema.json#/definitions/ChannelRef"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "description": "A list of related party references (RelatedParty [*]). A related party defines party or party role linked to a specific entity",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+                    }
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                     "description": "Reservation validity period"
+                },
+                "place": {
+                    "description": "Used to define a place where the stock must be reserved",
+                        "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue"
+                }
+
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#/Entity"
+                }
+            ]
+        }
+    }
+}

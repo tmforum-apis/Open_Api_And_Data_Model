@@ -1,55 +1,55 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "OtherName.schema.json",
-    "title": "OtherName",
-    "definitions": {
-        "OtherName": {
-            "$id": "#OtherName",
-            "description": "To keep track of other names (for example the old name of a woman before marriage or an artist name)",
-            "type": "object",
-            "properties": {
-                "familyName": {
-                    "type": "string",
-                    "description": "Last name"
-                },
-                "formattedName": {
-                    "type": "string",
-                    "description": "A formatted name useful for specific contexts (chinese, japanese, korean...)"
-                },
-                "fullName": {
-                    "type": "string",
-                    "description": "Full name flatten (first, middle, and last name)"
-                },
-                "givenName": {
-                    "type": "string",
-                    "description": "First name"
-                },
-                "middleName": {
-                    "type": "string",
-                    "description": "Middle name"
-                },
-                "nameType": {
-                    "type": "string",
-                    "description": "Co., Inc., Ltd., Plc., Gmbh."
-                },
-                "title": {
-                    "type": "string",
-                    "description": "useful for titles (aristocratic, social...) Dr, Pr, Sir..."
-                },
-                "tradingName": {
-                    "type": "string",
-                    "description": "The name that the organization trades under"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The period for which the other name is valid"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "OtherName.schema.json",
+  "title": "OtherName",
+  "definitions": {
+    "OtherName": {
+      "$id": "#OtherName",
+      "description": "To keep track of other names (for example the old name of a woman before marriage or an artist name)",
+      "type": "object",
+      "properties": {
+        "familyName": {
+          "type": "string",
+          "description": "Last name"
+        },
+        "formattedName": {
+          "type": "string",
+          "description": "A formatted name useful for specific contexts (chinese, japanese, korean...)"
+        },
+        "fullName": {
+          "type": "string",
+          "description": "Full name flatten (first, middle, and last name)"
+        },
+        "givenName": {
+          "type": "string",
+          "description": "First name"
+        },
+        "middleName": {
+          "type": "string",
+          "description": "Middle name"
+        },
+        "nameType": {
+          "type": "string",
+          "description": "Co., Inc., Ltd., Plc., Gmbh."
+        },
+        "title": {
+          "type": "string",
+          "description": "useful for titles (aristocratic, social...) Dr, Pr, Sir..."
+        },
+        "tradingName": {
+          "type": "string",
+          "description": "The name that the organization trades under"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which the other name is valid"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

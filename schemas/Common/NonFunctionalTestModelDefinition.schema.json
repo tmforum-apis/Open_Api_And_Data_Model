@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "NonFunctionalTestModelDefinition.schema.json",
+  "title": "NonFunctionalTestModelDefinition",
+  "definitions": {
+    "NonFunctionalTestModelDefinition": {
+      "$id": "#NonFunctionalTestModelDefinition",
+      "type": "object",
+      "description": "Non-functional test model definition",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/Attachment.schema.json#Attachment"
+        }
+      ]
+    }
+  }
+}

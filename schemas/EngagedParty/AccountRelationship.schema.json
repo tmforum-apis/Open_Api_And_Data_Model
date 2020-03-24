@@ -1,33 +1,33 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "AccountRelationship.schema.json",
-    "title": "AccountRelationship",
-    "definitions": {
-        "AccountRelationship": {
-            "$id": "#AccountRelationship",
-            "description": "Significant connection between accounts. For instance an aggregating account for a list of shop branches each having its own billing account.",
-            "type": "object",
-            "required": [
-                "relationshipType"
-            ],
-            "properties": {
-                "relationshipType": {
-                    "type": "string",
-                    "description": "Type of relationship"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "Validity period of that relationship"
-                },
-                "account": {
-                    "$ref": "../EngagedParty/AccountRef.schema.json#AccountRef"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AccountRelationship.schema.json",
+  "title": "AccountRelationship",
+  "definitions": {
+    "AccountRelationship": {
+      "$id": "#AccountRelationship",
+      "description": "Significant connection between accounts. For instance an aggregating account for a list of shop branches each having its own billing account.",
+      "type": "object",
+      "required": [
+        "relationshipType"
+      ],
+      "properties": {
+        "relationshipType": {
+          "type": "string",
+          "description": "Type of relationship"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "Validity period of that relationship"
+        },
+        "account": {
+          "$ref": "../EngagedParty/AccountRef.schema.json#AccountRef"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

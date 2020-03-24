@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BillCycle.schema.json",
+  "title": "BillCycle",
+  "definitions": {
+    "BillCycle": {
+      "$id": "#BillCycle",
+      "type": "object",
+      "description": "A detailed description of a billing cycle and the various sub steps of a billing cycle.",
+      "properties": {
+        "billingDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The billing/settlement date."
+        },
+        "billingPeriod": {
+          "type": "string",
+          "description": "A billing time period. It is e.g. the concrete expressed month. Example: 'March'."
+        },
+        "chargeDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date through when a payment method (e.g. credit card,...) will be activated."
+        },
+        "creditDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date through which credits previously received by the billing system are displeyed on the bill."
+        },
+        "description": {
+          "type": "string",
+          "description": "An explanation regarding this billing cycle. If necessary."
+        },
+        "href": {
+          "type": "string",
+          "description": "Reference of the billing cycle"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the billing cycle."
+        },
+        "mailingDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Customer bill mailing date."
+        },
+        "name": {
+          "type": "string",
+          "description": "A short descriptive name of the actual billing cycle"
+        },
+        "paymentDueDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date, when the payment is due."
+        },
+        "BillCycleSpecification": {
+          "$ref": "../Customer/BillCycleSpecificationRef.schema.json#BillCycleSpecificationRef"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which the billing cycle is valid (expressed in a formal formatted way)"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

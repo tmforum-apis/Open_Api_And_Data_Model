@@ -1,74 +1,74 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ServiceCategory.schema.json",
-    "title": "ServiceCategory",
-    "definitions": {
-        "ServiceCategory": {
-            "$id": "#ServiceCategory",
-            "description": "The (service) category resource is used to group service candidates in logical containers. Categories can contain other categories.",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the category"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the category"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the category"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Description of the category"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "ServiceCategory version"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The period for which the category is valid"
-                },
-                "lifecycleStatus": {
-                    "type": "string",
-                    "description": "Used to indicate the current lifecycle status"
-                },
-                "lastUpdate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date and time of the last update"
-                },
-                "parentId": {
-                    "type": "string",
-                    "description": "Unique identifier of the parent category"
-                },
-                "isRoot": {
-                    "type": "boolean",
-                    "description": "If true, this Boolean indicates that the category is a root of categories"
-                },
-                "serviceCandidate": {
-                    "type": "array",
-                    "description": "List of service candidates associated with this category",
-                    "items": {
-                        "$ref": "../Service/ServiceCandidateRef.schema.json#ServiceCandidateRef"
-                    }
-                },
-                "category": {
-                    "type": "array",
-                    "description": "List of child categories in the tree for in this category",
-                    "items": {
-                        "$ref": "../Service/ServiceCategoryRef.schema.json#ServiceCategoryRef"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ServiceCategory.schema.json",
+  "title": "ServiceCategory",
+  "definitions": {
+    "ServiceCategory": {
+      "$id": "#ServiceCategory",
+      "description": "The (service) category resource is used to group service candidates in logical containers. Categories can contain other categories.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the category"
+        },
+        "href": {
+          "type": "string",
+          "description": "Reference of the category"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the category"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the category"
+        },
+        "version": {
+          "type": "string",
+          "description": "ServiceCategory version"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which the category is valid"
+        },
+        "lifecycleStatus": {
+          "type": "string",
+          "description": "Used to indicate the current lifecycle status"
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time of the last update"
+        },
+        "parentId": {
+          "type": "string",
+          "description": "Unique identifier of the parent category"
+        },
+        "isRoot": {
+          "type": "boolean",
+          "description": "If true, this Boolean indicates that the category is a root of categories"
+        },
+        "serviceCandidate": {
+          "type": "array",
+          "description": "List of service candidates associated with this category",
+          "items": {
+            "$ref": "../Service/ServiceCandidateRef.schema.json#ServiceCandidateRef"
+          }
+        },
+        "category": {
+          "type": "array",
+          "description": "List of child categories in the tree for in this category",
+          "items": {
+            "$ref": "../Service/ServiceCategoryRef.schema.json#ServiceCategoryRef"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

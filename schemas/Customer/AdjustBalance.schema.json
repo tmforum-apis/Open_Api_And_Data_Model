@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AdjustBalance.schema.json",
+    "title": "AdjustBalance",
+    "definitions": {
+        "AdjustBalance": {
+            "$id": "#AdjustBalance",
+            "description": "The AdjustBalance resource allows adjustments to be made to the original BalanceTopup eg increment the amount, alter the recharge periodicity",
+            "properties": {
+                "adjustType": {
+                    "description": "valid values are RecurringCharge or OneTimeCharge",
+                    "$ref": "AdjustType.schema.json#AdjustType"
+                }
+	    },
+            "allOf": [
+                {
+                    "$ref": "Action.schema.json#Action"
+                }]
+	}
+    }
+}

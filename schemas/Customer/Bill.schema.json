@@ -1,118 +1,118 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Bill.schema.json",
-    "title": "Bill",
-    "definitions": {
-        "Bill": {
-            "$id": "#Bill",
-            "description": "The Bill entity is used to model a bill (aka an invoice). It represents a total amount due for all products during the billing period and all significant date.",
-            "type": "object",
-            "properties": {
-                "amountDue": {
-                    "$ref": "../Common/Money.schema.json#Money",
-                    "description": "Amount due for this bill expressed in the given currency"
-                },
-                "billDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Bill date"
-                },
-                "billingPeriod": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "Billing period of the bill (used for onCycle bill only)"
-                },
-                "billNo": {
-                    "type": "string",
-                    "description": "Bill reference known by the customer or the party and displayed on the bill. Could be different from the id."
-                },
-                "category": {
-                    "type": "string",
-                    "description": "Category of the bill produced : normal, duplicate, interim, last, trial customer or credit note"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Bill unique reference"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Bill unique identifier"
-                },
-                "lastUpdate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date of bill last update"
-                },
-                "nextBillDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Approximate date of  the next bill production given for information (only used for onCycle bill)"
-                },
-                "paymentDueDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date at which the amount due should have been paid"
-                },
-                "remainingAmount": {
-                    "$ref": "../Common/Money.schema.json#Money",
-                    "description": "Remaining amount to be paid for this bill expressed in the given currency"
-                },
-                "runType": {
-                    "type": "string",
-                    "description": "onCycle (a bill can be created as a result of a cycle run) or offCycle (a bill can be created as a result of other events such as customer request or account close)"
-                },
-                "state": {
-                    "type": "string",
-                    "description": "State that a bill could take during its lifecycle : New, Validated, On Hold, Sent, Partially paid or Settled"
-                },
-                "taxExcludedAmount": {
-                    "$ref": "../Common/Money.schema.json#Money",
-                    "description": "Total tax excluded amount expressed in the given currency"
-                },
-                "taxIncludedAmount": {
-                    "$ref": "../Common/Money.schema.json#Money",
-                    "description": "Total tax included amount expressed in the given"
-                },
-                "billDocument": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/FileDocument.schema.json#FileDocument"
-                    },
-                    "description": "Document(s) associated to the bill"
-                },
-                "paymentItem": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/PaymentItem.schema.json#PaymentItem"
-                    },
-                    "description": "Payment items already lettered on this bill."
-                },
-                "billingAccount": {
-                    "$ref": "../Customer/BillingAccountRef.schema.json#BillingAccountRef"
-                },
-                "taxItem": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/TaxItem.schema.json#TaxItem"
-                    }
-                },
-                "paymentMethod": {
-                    "$ref": "../Customer/PaymentMethodRef.schema.json#PaymentMethodRef"
-                },
-                "relatedParty": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                    }
-                },
-                "financialAccount": {
-                    "$ref": "../EngagedParty/FinancialAccountRef.schema.json#FinancialAccountRef"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Bill.schema.json",
+  "title": "Bill",
+  "definitions": {
+    "Bill": {
+      "$id": "#Bill",
+      "description": "The Bill entity is used to model a bill (aka an invoice). It represents a total amount due for all products during the billing period and all significant date.",
+      "type": "object",
+      "properties": {
+        "amountDue": {
+          "$ref": "../Common/Money.schema.json#Money",
+          "description": "Amount due for this bill expressed in the given currency"
+        },
+        "billDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Bill date"
+        },
+        "billingPeriod": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "Billing period of the bill (used for onCycle bill only)"
+        },
+        "billNo": {
+          "type": "string",
+          "description": "Bill reference known by the customer or the party and displayed on the bill. Could be different from the id."
+        },
+        "category": {
+          "type": "string",
+          "description": "Category of the bill produced : normal, duplicate, interim, last, trial customer or credit note"
+        },
+        "href": {
+          "type": "string",
+          "description": "Bill unique reference"
+        },
+        "id": {
+          "type": "string",
+          "description": "Bill unique identifier"
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date of bill last update"
+        },
+        "nextBillDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Approximate date of  the next bill production given for information (only used for onCycle bill)"
+        },
+        "paymentDueDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date at which the amount due should have been paid"
+        },
+        "remainingAmount": {
+          "$ref": "../Common/Money.schema.json#Money",
+          "description": "Remaining amount to be paid for this bill expressed in the given currency"
+        },
+        "runType": {
+          "type": "string",
+          "description": "onCycle (a bill can be created as a result of a cycle run) or offCycle (a bill can be created as a result of other events such as customer request or account close)"
+        },
+        "state": {
+          "type": "string",
+          "description": "State that a bill could take during its lifecycle : New, Validated, On Hold, Sent, Partially paid or Settled"
+        },
+        "taxExcludedAmount": {
+          "$ref": "../Common/Money.schema.json#Money",
+          "description": "Total tax excluded amount expressed in the given currency"
+        },
+        "taxIncludedAmount": {
+          "$ref": "../Common/Money.schema.json#Money",
+          "description": "Total tax included amount expressed in the given"
+        },
+        "billDocument": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/FileDocument.schema.json#FileDocument"
+          },
+          "description": "Document(s) associated to the bill"
+        },
+        "paymentItem": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/PaymentItem.schema.json#PaymentItem"
+          },
+          "description": "Payment items already lettered on this bill."
+        },
+        "billingAccount": {
+          "$ref": "../Customer/BillingAccountRef.schema.json#BillingAccountRef"
+        },
+        "taxItem": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/TaxItem.schema.json#TaxItem"
+          }
+        },
+        "paymentMethod": {
+          "$ref": "../Customer/PaymentMethodRef.schema.json#PaymentMethodRef"
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
+        },
+        "financialAccount": {
+          "$ref": "../EngagedParty/FinancialAccountRef.schema.json#FinancialAccountRef"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

@@ -1,36 +1,36 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "AccountBalance.schema.json",
-    "title": "AccountBalance",
-    "definitions": {
-        "AccountBalance": {
-            "$id": "#AccountBalance",
-            "description": "Balances linked to the account",
-            "type": "object",
-            "required": [
-                "amount",
-                "balanceType",
-                "validFor"
-            ],
-            "properties": {
-                "amount": {
-                    "$ref": "../Common/Money.schema.json#Money",
-                    "description": "Balance amount"
-                },
-                "balanceType": {
-                    "type": "string",
-                    "description": "Type of the balance : deposit balance, disputed balance, loyalty balance, receivable balance..."
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "Balance validity period"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AccountBalance.schema.json",
+  "title": "AccountBalance",
+  "definitions": {
+    "AccountBalance": {
+      "$id": "#AccountBalance",
+      "description": "Balances linked to the account",
+      "type": "object",
+      "required": [
+        "amount",
+        "balanceType",
+        "validFor"
+      ],
+      "properties": {
+        "amount": {
+          "$ref": "../Common/Money.schema.json#Money",
+          "description": "Balance amount"
+        },
+        "balanceType": {
+          "type": "string",
+          "description": "Type of the balance : deposit balance, disputed balance, loyalty balance, receivable balance..."
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "Balance validity period"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

@@ -24,7 +24,7 @@
                     "type": "string",
                     "description": "Friendly name assigned to the payment method"
                 },
-                "preferred": {
+                "isPreferred": {
                     "type": "boolean",
                     "description": "If the method is the preferred one by the owner. Typically used when querying for the payment methods of a specific customer or account"
                 },

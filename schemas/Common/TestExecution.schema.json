@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TestExecution.schema.json",
+  "title": "TestExecution",
+  "definitions": {
+    "TestExecution": {
+      "$id": "#TestExecution",
+      "type": "object",
+      "description": "The base for all Test Execution resources",
+      "required": [
+        "testEnvironmentProvisioningExecution"
+      ],
+      "properties": {
+        "testEnvironmentProvisioningExecution": {
+          "$ref": "../Common/TestEnvironmentProvisioningExecution.schema.json#TestEnvironmentProvisioningExecution"
+        },
+        "testDataInstance": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/TestDataInstanceRef.schema.json#TestDataInstanceRef"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Execution.schema.json#Execution"
+        }
+      ]
+    }
+  }
+}

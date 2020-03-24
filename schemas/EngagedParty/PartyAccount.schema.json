@@ -1,42 +1,42 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "PartyAccount.schema.json",
-    "title": "PartyAccount",
-    "definitions": {
-        "PartyAccount": {
-            "$id": "#PartyAccount",
-            "description": "Account used for billing or for settlement purposes concerning a given party (an organization or an individual). It is a specialization of entity Account.",
-            "type": "object",
-            "required": [
-                "name",
-                "relatedParty"
-            ],
-            "properties": {
-                "paymentStatus": {
-                    "type": "string",
-                    "description": "The condition of the account, such as due, paid, in arrears."
-                },
-                "billStructure": {
-                    "$ref": "../Customer/BillStructure.schema.json#BillStructure"
-                },
-                "paymentPlan": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/PaymentPlan.schema.json#PaymentPlan"
-                    }
-                },
-                "financialAccount": {
-                    "$ref": "../EngagedParty/FinancialAccountRef.schema.json#FinancialAccountRef"
-                },
-                "defaultPaymentMethod": {
-                    "$ref": "../Customer/PaymentMethodRef.schema.json#PaymentMethodRef"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../EngagedParty/Account.schema.json#Account"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PartyAccount.schema.json",
+  "title": "PartyAccount",
+  "definitions": {
+    "PartyAccount": {
+      "$id": "#PartyAccount",
+      "description": "Account used for billing or for settlement purposes concerning a given party (an organization or an individual). It is a specialization of entity Account.",
+      "type": "object",
+      "required": [
+        "name",
+        "relatedParty"
+      ],
+      "properties": {
+        "paymentStatus": {
+          "type": "string",
+          "description": "The condition of the account, such as due, paid, in arrears."
+        },
+        "billStructure": {
+          "$ref": "../Customer/BillStructure.schema.json#BillStructure"
+        },
+        "paymentPlan": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/PaymentPlan.schema.json#PaymentPlan"
+          }
+        },
+        "financialAccount": {
+          "$ref": "../EngagedParty/FinancialAccountRef.schema.json#FinancialAccountRef"
+        },
+        "defaultPaymentMethod": {
+          "$ref": "../Customer/PaymentMethodRef.schema.json#PaymentMethodRef"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../EngagedParty/Account.schema.json#Account"
+        }
+      ]
     }
+  }
 }

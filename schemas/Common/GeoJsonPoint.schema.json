@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "GeoJsonPoint.schema.json",
+  "title": "GeoJsonPoint",
+  "definitions": {
+    "GeoJsonPoint": {
+      "$id": "#GeoJsonPoint",
+      "type": "object",
+      "description": "Container for a GeoJSON Point: A single position",
+      "required": [
+        "@type",
+        "geoJson"
+      ],
+      "properties": {
+        "@type": {
+          "type": "string",
+          "enum": [
+            "GeoJsonPoint"
+          ],
+          "description": "The name of the GeoJSON structure used in the geometry attribute"
+        },
+        "geoJson": {
+          "$ref": "../Common/Point.schema.json#Point"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/GeographicLocation.schema.json#GeographicLocation"
+        }
+      ]
+    }
+  }
+}

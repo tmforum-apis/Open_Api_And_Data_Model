@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#", 
+    "$id": "GeographicLocationRefOrValue.schema.json", 
+    "title": "GeographicLocationRefOrValue", 
+    "definitions": {
+        "GeographicLocationRefOrValue": {
+            "$id": "#GeographicLocationRefOrValue", 
+            "type": "object", 
+            "description": "A GeographicLocation is a pure-virtual super-class to the GeoJSON-aligned geometries of Point (addresses and locations), MultiPoint, LineString (streets, highways and boundaries), MultiLineString and Polygon (countries, provinces, tracts of land). Use the @type attribute to specify which of these is being specified by the geometry attribute.", 
+            "properties": {
+            },
+            "allOf": [
+                {
+                  "$ref": "GeographicLocationRef.schema.json#GeographicLocationRef"
+                },
+                {
+                  "$ref": "GeographicLocation.schema.json#GeographicLocation"
+                }
+            ]
+        }
+    }
+}

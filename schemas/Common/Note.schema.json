@@ -1,36 +1,36 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Note.schema.json",
-    "title": "Note",
-    "definitions": {
-        "Note": {
-            "$id": "#Note",
-            "description": "Extra information about a given entity",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of the note within its containing entity (may or may not be globally unique, depending on provider implementation)"
-                },
-                "author": {
-                    "type": "string",
-                    "description": "Author of the note"
-                },
-                "date": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date of the note"
-                },
-                "text": {
-                    "type": "string",
-                    "description": "Text of the note"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Note.schema.json",
+  "title": "Note",
+  "definitions": {
+    "Note": {
+      "$id": "#Note",
+      "description": "Extra information about a given entity",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identifier of the note within its containing entity (may or may not be globally unique, depending on provider implementation)"
+        },
+        "author": {
+          "type": "string",
+          "description": "Author of the note"
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date of the note"
+        },
+        "text": {
+          "type": "string",
+          "description": "Text of the note"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

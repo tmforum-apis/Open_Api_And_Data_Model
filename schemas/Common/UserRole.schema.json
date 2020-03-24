@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "UserRole.schema.json",
+    "title": "UserRole",
+    "definitions": {
+        "UserRole": {
+            "$id": "#UserRole",
+            "description": "A UserRole defines access levels to operate over a given function that can be included in an asset.",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the userRole"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Unique URI used to access to the userRole resource"
+                },
+                "involvementRole": {
+                    "type": "string",
+                    "description": "Indication of the part that a user plays in its involvement with a manageable asset (product, service or resource)"
+                },
+                "entitlement": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Entitlement.schema.json#Entitlement"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

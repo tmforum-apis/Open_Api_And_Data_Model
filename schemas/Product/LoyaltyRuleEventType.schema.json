@@ -1,22 +1,22 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "LoyaltyRuleEventType.schema.json",
-    "title": "LoyaltyRuleEventType",
-    "definitions": {
-        "LoyaltyRuleEventType": {
-            "$id": "#LoyaltyRuleEventType",
-            "description": "Resource containing a the ID of a event type to link to a loyalty rule.",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier for the loyalty event type."
-                },
-                "href": {
-                    "type": "string",
-                    "description": "A reference to the loyalty event type."
-                }
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "LoyaltyRuleEventType.schema.json",
+  "title": "LoyaltyRuleEventType",
+  "definitions": {
+    "LoyaltyRuleEventType": {
+      "$id": "#LoyaltyRuleEventType",
+      "description": "Resource containing a the ID of a event type to link to a loyalty rule.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the loyalty event type."
+        },
+        "href": {
+          "type": "string",
+          "description": "A reference to the loyalty event type."
         }
+      }
     }
+  }
 }

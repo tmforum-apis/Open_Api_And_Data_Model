@@ -1,117 +1,120 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ProductSpecification.schema.json",
-    "title": "ProductSpecification",
-    "definitions": {
-        "ProductSpecification": {
-            "$id": "#ProductSpecification",
-            "description": "Is a detailed description of a tangible or intangible object made available externally in the form of a ProductOffering to customers or other parties playing a party role.",
-            "type": "object",
-            "properties": {
-                "brand": {
-                    "type": "string",
-                    "description": "The manufacturer or trademark of the specification"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "A narrative that explains in detail what the product specification is"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the product specification"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the product specification"
-                },
-                "isBundle": {
-                    "type": "boolean",
-                    "description": "isBundle determines whether a productSpecification represents a single productSpecification (false), or a bundle of productSpecification (true)."
-                },
-                "lastUpdate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date and time of the last update"
-                },
-                "lifecycleStatus": {
-                    "type": "string",
-                    "description": "Used to indicate the current lifecycle status"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the product specification"
-                },
-                "productNumber": {
-                    "type": "string",
-                    "description": "An identification number assigned to uniquely identity the specification"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The period for which the product specification is valid"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "Product specification version"
-                },
-                "relatedParty": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                    },
-                    "description": "A related party defines party or party role linked to a specific entity."
-                },
-                "productSpecCharacteristic": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Product/ProductSpecificationCharacteristic.schema.json#ProductSpecificationCharacteristic"
-                    },
-                    "description": "A characteristic quality or distinctive feature of a ProductSpecification.  The characteristic can be take on a discrete value, such as color, can take on a range of values, (for example, sensitivity of 100-240 mV), or can be derived from a formula (for example, usage time (hrs) = 30 - talk time *3). Certain characteristics, such as color, may be configured during the ordering or some other process."
-                },
-                "serviceSpecification": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Service/ServiceSpecificationRef.schema.json#ServiceSpecificationRef"
-                    },
-                    "description": "ServiceSpecification(s) required to realize a ProductSpecification."
-                },
-                "productSpecificationRelationship": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Product/ProductSpecificationRelationship.schema.json#ProductSpecificationRelationship"
-                    },
-                    "description": "A migration, substitution, dependency or exclusivity relationship between/among product specifications."
-                },
-                "resourceSpecification": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Resource/ResourceSpecificationRef.schema.json#ResourceSpecificationRef"
-                    },
-                    "description": "The ResourceSpecification is required to realize a ProductSpecification."
-                },
-                "attachment": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
-                    },
-                    "description": "Complements the description of an element (for instance a product) through video, pictures..."
-                },
-                "bundledProductSpecification": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Product/BundledProductSpecification.schema.json#BundledProductSpecification"
-                    },
-                    "description": "A type of ProductSpecification that belongs to a grouping of ProductSpecifications made available to the market. It inherits of all attributes of ProductSpecification."
-                },
-                "targetProductSchema": {
-                    "description": "A target product schema reference. The reference object to the schema and type of target product which is described by product specification.",
-                    "$ref": "../Product/TargetProductSchema.schema.json#TargetProductSchema"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ProductSpecification.schema.json",
+  "title": "ProductSpecification",
+  "definitions": {
+    "ProductSpecification": {
+      "$id": "#ProductSpecification",
+      "description": "Is a detailed description of a tangible or intangible object made available externally in the form of a ProductOffering to customers or other parties playing a party role.",
+      "type": "object",
+      "properties": {
+        "brand": {
+          "type": "string",
+          "description": "The manufacturer or trademark of the specification"
+        },
+        "description": {
+          "type": "string",
+          "description": "A narrative that explains in detail what the product specification is"
+        },
+        "href": {
+          "type": "string",
+          "description": "Reference of the product specification"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the product specification"
+        },
+        "isBundle": {
+          "type": "boolean",
+          "description": "isBundle determines whether a productSpecification represents a single productSpecification (false), or a bundle of productSpecification (true)."
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time of the last update"
+        },
+        "lifecycleStatus": {
+          "type": "string",
+          "description": "Used to indicate the current lifecycle status"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the product specification"
+        },
+        "productNumber": {
+          "type": "string",
+          "description": "An identification number assigned to uniquely identity the specification"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which the product specification is valid"
+        },
+        "version": {
+          "type": "string",
+          "description": "Product specification version"
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          },
+          "description": "A related party defines party or party role linked to a specific entity."
+        },
+        "productSpecCharacteristic": {
+          "type": "array",
+          "items": {
+            "$ref": "../Product/ProductSpecificationCharacteristic.schema.json#ProductSpecificationCharacteristic"
+          },
+          "description": "A characteristic quality or distinctive feature of a ProductSpecification.  The characteristic can be take on a discrete value, such as color, can take on a range of values, (for example, sensitivity of 100-240 mV), or can be derived from a formula (for example, usage time (hrs) = 30 - talk time *3). Certain characteristics, such as color, may be configured during the ordering or some other process."
+        },
+        "serviceSpecification": {
+          "type": "array",
+          "items": {
+            "$ref": "../Service/ServiceSpecificationRef.schema.json#ServiceSpecificationRef"
+          },
+          "description": "ServiceSpecification(s) required to realize a ProductSpecification."
+        },
+        "productSpecificationRelationship": {
+          "type": "array",
+          "items": {
+            "$ref": "../Product/ProductSpecificationRelationship.schema.json#ProductSpecificationRelationship"
+          },
+          "description": "A migration, substitution, dependency or exclusivity relationship between/among product specifications."
+        },
+        "resourceSpecification": {
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/ResourceSpecificationRef.schema.json#ResourceSpecificationRef"
+          },
+          "description": "The ResourceSpecification is required to realize a ProductSpecification."
+        },
+        "attachment": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
+          },
+          "description": "Complements the description of an element (for instance a product) through video, pictures..."
+        },
+        "bundledProductSpecification": {
+          "type": "array",
+          "items": {
+            "$ref": "../Product/BundledProductSpecification.schema.json#BundledProductSpecification"
+          },
+          "description": "A type of ProductSpecification that belongs to a grouping of ProductSpecifications made available to the market. It inherits of all attributes of ProductSpecification."
+        },
+        "targetProductSchema": {
+          "description": "A target product schema reference. The reference object to the schema and type of target product which is described by product specification.",
+          "$ref": "../Product/TargetProductSchema.schema.json#TargetProductSchema"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Addressable.schema.json#Addressable"
+        },
+        {
+          "$ref": "../Common/Extensible.schema.json#Extensible"
+        }
+      ]
     }
+  }
 }

@@ -1,27 +1,27 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "AgreementSpecificationRef.schema.json",
-    "title": "AgreementSpecificationRef",
-    "definitions": {
-        "AgreementSpecificationRef": {
-            "$id": "#AgreementSpecificationRef",
-            "description": "AgreementSpecification reference. An AgreementSpecification represents a template of an agreement that can be used when establishing partnerships.",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "A narrative that explains in detail what the agreement specification is about."
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the agreement specification"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AgreementSpecificationRef.schema.json",
+  "title": "AgreementSpecificationRef",
+  "definitions": {
+    "AgreementSpecificationRef": {
+      "$id": "#AgreementSpecificationRef",
+      "description": "Agreement specification reference. An AgreementSpecification represents a template of an agreement that can be used when establishing partnerships.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "A narrative that explains in detail what the agreement specification is about."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the agreement specification"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        }
+      ]
     }
+  }
 }

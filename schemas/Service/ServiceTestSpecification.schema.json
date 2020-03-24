@@ -1,54 +1,54 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ServiceTestSpecification.schema.json",
-    "title": "ServiceTestSpecification",
-    "definitions": {
-        "ServiceTestSpecification": {
-            "$id": "#ServiceTestSpecification",
-            "description": "The service test specification describes the service test in terms of parameters to be configured and \nmeasures to be taken.",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "Description of a service test specification."
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Hyperlink to access a service test specification."
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of a service test specification."
-                },
-                "version": {
-                    "type": "string",
-                    "description": "Version of a service test specification "
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of a service test specification."
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The period of time for which this specification is valid"
-                },
-                "testMeasureDefinition": {
-                    "type": "array",
-                    "description": "A list of definitions for the measurements for the test defined by this specification",
-                    "items": {
-                        "$ref": "../Service/TestMeasureDefinition.schema.json#TestMeasureDefinition"
-                    }
-                },
-                "relatedServiceSpecification": {
-                    "$ref": "../Service/ServiceSpecificationRef.schema.json#ServiceSpecificationRef",
-                    "description": "The related service specification."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ServiceTestSpecification.schema.json",
+  "title": "ServiceTestSpecification",
+  "definitions": {
+    "ServiceTestSpecification": {
+      "$id": "#ServiceTestSpecification",
+      "description": "The service test specification describes the service test in terms of parameters to be configured and \nmeasures to be taken.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of a service test specification."
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink to access a service test specification."
+        },
+        "id": {
+          "type": "string",
+          "description": "Identifier of a service test specification."
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of a service test specification "
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of a service test specification."
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period of time for which this specification is valid"
+        },
+        "testMeasureDefinition": {
+          "type": "array",
+          "description": "A list of definitions for the measurements for the test defined by this specification",
+          "items": {
+            "$ref": "../Service/TestMeasureDefinition.schema.json#TestMeasureDefinition"
+          }
+        },
+        "relatedServiceSpecification": {
+          "$ref": "../Service/ServiceSpecificationRef.schema.json#ServiceSpecificationRef",
+          "description": "The related service specification."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

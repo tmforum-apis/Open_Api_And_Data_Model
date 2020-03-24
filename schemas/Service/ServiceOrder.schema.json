@@ -7,6 +7,15 @@
             "$id": "#ServiceOrder",
             "type": "object",
             "properties": {
+                "cancellationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order is cancelled. This is used when order is cancelled. "
+                },
+                "cancellationReason": {
+                    "type": "string",
+                    "description": "Reason why the order is cancelled. This is used when order is cancelled. "
+                },
                 "category": {
                     "type": "string",
                     "description": "Used to categorize the order, useful for the OM system, such as: Broadband, TVOption"
@@ -29,6 +38,13 @@
                     "type": "string",
                     "description": "ID given by the consumer to facilitate searches"
                 },
+                "externalReference": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "../Common/ExternalReference.schema.json#/definitions/ExternalReference"
+                    }
+                },
                 "href": {
                     "type": "string",
                     "description": "Hyperlink to access the order"
@@ -41,7 +57,7 @@
                     "type": "array",
                     "description": "Extra-information about the order; e.g. useful to add extra delivery information that could be useful for a human process",
                     "items": {
-                        "$ref": "../Common/Note.schema.json#Note"
+                        "$ref": "../Common/Note.schema.json#/definitions/Note"
                     }
                 },
                 "notificationContact": {
@@ -52,19 +68,19 @@
                     "type": "string",
                     "format": "date-time"
                 },
-                "orderItem": {
+                "serviceOrderItem": {
                     "type": "array",
                     "minItems": 1,
                     "description": "A list of service order items to be processed by this order",
                     "items": {
-                        "$ref": "../Service/ServiceOrderItem.schema.json#ServiceOrderItem"
+                        "$ref": "ServiceOrderItem.schema.json#/definitions/ServiceOrderItem"
                     }
                 },
                 "orderRelationship": {
                     "type": "array",
                     "description": "A list of service orders related to this order (e.g. prerequisite, dependent on)",
                     "items": {
-                        "$ref": "../Service/ServiceOrderRelationship.schema.json#ServiceOrderRelationship"
+                        "$ref": "ServiceOrderRelationship.schema.json#/definitions/ServiceOrderRelationship"
                     }
                 },
                 "priority": {
@@ -75,7 +91,7 @@
                     "type": "array",
                     "description": "A list of parties which are involved in this order and the role they are playing",
                     "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
                     }
                 },
                 "requestedCompletionDate": {
@@ -95,7 +111,7 @@
                 },
                 "state": {
                     "description": "State of the order: described in the state-machine diagram",
-                    "$ref": "../Service/ServiceOrderStateType.schema.json#ServiceOrderStateType"
+                    "$ref": "ServiceOrderStateType.schema.json#/definitions/ServiceOrderStateType"
                 }
             },
             "allOf": [
