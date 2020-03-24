@@ -1,0 +1,185 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ChangeRequest.schema.json",
+    "title": "ChangeRequest",
+    "definitions": {
+        "ChangeRequest": {
+            "$id": "#ChangeRequest",
+            "description": "Change Request is a type of request which can be used for the management and control of Change Management \nprocess between a customer and a service provider or between a service provider and a partner and vice versa.",
+            "type": "object",
+            "properties": {
+                "actualEndTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time when the change implementation actually finished"
+                },
+                "actualStartTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time when the change implementation actually started"
+                },
+                "budget": {
+                    "type": "string",
+                    "description": "The budget reserved for the change"
+                },
+                "channel": {
+                    "type": "string",
+                    "description": "A channel represents the way the Change Request was created"
+                },
+                "completionDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time when the change request is confirmed to be completed"
+                },
+                "currency": {
+                    "type": "string",
+                    "description": "The used currency related with cost"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the change request"
+                },
+                "externalId": {
+                    "type": "string",
+                    "description": "ID given by the requestor to facilitate the relationship set up and subsequent searches"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink to access a change request"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of a Change Request. It is created on repository side (a Change Management system)"
+                },
+                "impact": {
+                    "type": "string",
+                    "description": "Indicates the impact of this change"
+                },
+                "plannedEndTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time when the change implementation is planned to be finished"
+                },
+                "plannedStartTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time when the change implementation is planned to be started"
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "Used by consumers to prioritize a change request in Change Management system"
+                },
+                "requestDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time when the change request is raised"
+                },
+                "requestType": {
+                    "type": "string",
+                    "description": "Indicates the type of the change request"
+                },
+                "risk": {
+                    "type": "string",
+                    "description": "The risk to implement this change request"
+                },
+                "riskMitigationPlan": {
+                    "type": "string",
+                    "description": "The risk mitigation plan"
+                },
+                "riskValue": {
+                    "type": "string",
+                    "description": "The additional cost if the risk will happen"
+                },
+                "scheduledDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time that the schedule is made"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of the change request and its sub-state"
+                },
+                "attachment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Attachment.schema.json#Attachment"
+                    },
+                    "description": "The attachments of the communication message (when it is email type)"
+                },
+                "workLog": {
+                    "$ref": "../Common/WorkLog.schema.json#WorkLog"
+                },
+                "incident": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Incident.schema.json#Incident"
+                    }
+                },
+                "changeRequestSpecification": {
+                    "$ref": "../Common/ChangeRequestSpecification.schema.json#ChangeRequestSpecification"
+                },
+                "impactEntity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/ImpactEntityRef.schema.json#ImpactEntityRef"
+                    }
+                },
+                "changeRequestCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/ChangeRequestCharacteristic.schema.json#ChangeRequestCharacteristic"
+                    }
+                },
+                "targetEntity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/TargetEntityRef.schema.json#TargetEntityRef"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    },
+                    "description": "The parties involved in the change request"
+                },
+                "resolution": {
+                    "$ref": "../Common/Resolution.schema.json#Resolution"
+                },
+                "sla": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/SLARef.schema.json#SLARef"
+                    }
+                },
+                "relateChangeRequest": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/RelatedChangeRequestRef.schema.json#RelatedChangeRequestRef"
+                    }
+                },
+                "category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/CategoryRef.schema.json#CategoryRef"
+                    }
+                },
+                "note": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Note.schema.json#Note"
+                    }
+                },
+                "location": {
+                    "$ref": "../Common/GeographicAddressRef.schema.json#GeographicAddressRef",
+                    "description": "The place at which the change request occurred"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

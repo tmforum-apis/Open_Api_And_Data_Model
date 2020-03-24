@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceOrderItem.schema.json",
+    "title": "ServiceOrderItem",
+    "definitions": {
+        "ServiceOrderItem": {
+            "$id": "#ServiceOrderItem",
+            "type": "object",
+            "required": [
+                "id",
+                "action"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the individual line item"
+                },
+                "action": {
+                    "description": "The action to be carried out on the Service. Can be: add, modify, delete, noChange",
+                    "$ref": "../Service/ServiceOrderActionType.schema.json#ServiceOrderActionType"
+                },
+                "state": {
+                    "description": "State of the order item: described in the state machine diagram. This is the requested state.",
+                    "$ref": "../Service/ServiceOrderStateType.schema.json#ServiceOrderStateType"
+                },
+                "service": {
+                    "description": "The Service to be acted on by the order item",
+                    "$ref": "../Service/BaseService.schema.json#BaseService"
+                },
+                "appointment": {
+                    "description": "An appointment that was set up with a related party for this order item",
+                    "$ref": "../Customer/AppointmentRef.schema.json#AppointmentRef"
+                },
+                "serviceOrderItemRelationship": {
+                    "type": "array",
+                    "description": "A list of order items related to this order item",
+                    "items": {
+                        "$ref": "../Customer/OrderItemRelationship.schema.json#OrderItemRelationship"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

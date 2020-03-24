@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProductPrice.schema.json",
+    "title": "ProductPrice",
+    "definitions": {
+        "ProductPrice": {
+            "$id": "#ProductPrice",
+            "description": "An amount, usually of money, that represents the actual price paid by a Customer for a purchase, a rent or a lease of a Product. The price is valid for a defined period of time.",
+            "type": "object",
+            "required": [
+                "priceType",
+                "price"
+            ],
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "A narrative that explains in detail the semantics of this product price."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A short descriptive name such as \"Subscription price\"."
+                },
+                "productOfferingPrice": {
+                    "$ref": "../Product/ProductOfferingPriceRef.schema.json#ProductOfferingPriceRef"
+                },
+                "billingAccount": {
+                    "$ref": "../Customer/BillingAccountRef.schema.json#BillingAccountRef"
+                },
+                "priceType": {
+                    "type": "string",
+                    "description": "A category that describes the price, such as recurring, discount, allowance, penalty, and so forth."
+                },
+                "recurringChargePeriod": {
+                    "type": "string",
+                    "description": "Could be month, week..."
+                },
+                "unitOfMeasure": {
+                    "type": "string",
+                    "description": "Could be minutes, GB..."
+                },
+                "productPriceAlteration": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/PriceAlteration.schema.json#PriceAlteration"
+                    }
+                },
+                "price": {
+                    "$ref": "../Customer/Price.schema.json#Price"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

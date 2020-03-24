@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProductSpecCharRelationship.schema.json",
+    "title": "ProductSpecCharRelationship",
+    "definitions": {
+        "ProductSpecCharRelationship": {
+            "$id": "#ProductSpecCharRelationship",
+            "description": "An aggregation, migration, substitution, dependency or exclusivity relationship between/among productSpecCharacteristics.",
+            "type": "object",
+            "properties": {
+                "relationshipType": {
+                    "type": "string",
+                    "description": "Type of relationship such as aggregation, migration, substitution, dependency, exclusivity"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which the productSpecCharRelationship is valid"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

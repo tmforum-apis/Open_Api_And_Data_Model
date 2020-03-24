@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Duration.schema.json",
+    "title": "Duration",
+    "definitions": {
+        "Duration": {
+            "$id": "#Duration",
+            "type": "object",
+            "description": "A time interval in a given unit of time",
+            "properties": {
+                "amount": {
+                    "type": "integer",
+                    "description": "Time interval (number of seconds, minutes, hours, etc.)"
+                },
+                "units": {
+                    "type": "string",
+                    "description": "Unit of time (seconds, minutes, hours, etc.)"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BalanceReserve.schema.json",
+    "title": "BalanceReserve",
+    "definitions": {
+        "BalanceReserve": {
+            "$id": "#BalanceReserve",
+            "description": "The Balance Reserve Operation resource is a detailed description of a balance reserve operation requested over a subscription",
+            "type": "object",
+            "properties": {
+                "confirmationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the reserve request was confirmed in the server"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the reserve operation"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "A resource URI pointing to the resource in the OB that stores the detailed information about a reserve"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique Identifier within the server for the reserve operation request"
+                },
+                "isAutoDeduct": {
+                    "type": "boolean",
+                    "description": "Indicates if the reserved balance is auto deducted after a time period"
+                },
+                "remainedAmount": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "Amount (can be monetary or non-monetary) to be remained in the bucket"
+                },
+                "requestedDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the reserve request was received in the server"
+                },
+                "reservedAmount": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "Amount (can be monetary or non-monetary) to be reserved in the bucket"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of the reserve operation"
+                },
+                "reserveType": {
+                    "type": "string",
+                    "description": "A preconfigured value that describes a reserve type which determines the prepay balance bucket in which the reserve is done"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "Indicates if the reserved balance is auto deducted after a time period"
+                },
+                "requestor": {
+                    "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef"
+                },
+                "product": {
+                    "$ref": "../Product/ProductRef.schema.json#ProductRef"
+                },
+                "relatedParty": {
+                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                },
+                "partyAccount": {
+                    "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

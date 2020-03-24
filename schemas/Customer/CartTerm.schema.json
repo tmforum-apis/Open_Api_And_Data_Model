@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CartTerm.schema.json",
+    "title": "CartTerm",
+    "definitions": {
+        "CartTerm": {
+            "$id": "#CartTerm",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "duration": {
+                    "$ref": "../Common/Quantity.schema.json#Quantity"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

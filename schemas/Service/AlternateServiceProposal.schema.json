@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AlternateServiceProposal.schema.json",
+    "title": "AlternateServiceProposal",
+    "definitions": {
+        "AlternateServiceProposal": {
+            "$id": "#AlternateServiceProposal",
+            "description": "Alternate service proposal is used when the requested service is not available with characteristic and date asked for. An alternate proposal could be a distinct serviceSpecification close to requested one or same as requested but with a different activation date",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "Identifier of a alternate service proposal",
+                    "type": "string"
+                },
+                "alternateServiceAvailabilityDate": {
+                    "description": "Alternate availability date in case seller is not able to meet requested expected availability date for the service",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "alternateService": {
+                    "$ref": "ServiceRestriction.schema.json#/definitions/ServiceRestriction"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

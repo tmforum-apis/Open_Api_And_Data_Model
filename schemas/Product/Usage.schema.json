@@ -1,0 +1,65 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Usage.schema.json",
+    "title": "Usage",
+    "definitions": {
+        "Usage": {
+            "$id": "#Usage",
+            "description": "An occurrence of employing a Product, Service, or Resource for its intended purpose, which is of interest to the business and can have charges applied to it. It is comprised of characteristics, which represent attributes of usage.",
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date of usage"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of usage"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of usage"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Usage unique identifier"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of usage"
+                },
+                "usageType": {
+                    "type": "string",
+                    "description": "Type of usage"
+                },
+                "usageSpecification": {
+                    "$ref": "../Product/UsageSpecificationRef.schema.json#UsageSpecificationRef"
+                },
+                "usageCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/UsageCharacteristic.schema.json#UsageCharacteristic"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    }
+                },
+                "ratedProductUsage": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/RatedProductUsage.schema.json#RatedProductUsage"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

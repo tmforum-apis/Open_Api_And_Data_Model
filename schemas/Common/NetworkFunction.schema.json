@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "NetworkFunction.schema.json",
+    "title": "NetworkFunction",
+    "definitions": {
+        "NetworkFunction": {
+            "$id": "#NetworkFunction",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Organization.schema.json",
+    "title": "Organization",
+    "definitions": {
+        "Organization": {
+            "$id": "#Organization",
+            "type": "object",
+            "description": "Organization represents a group of people identified by shared interests or purpose. Examples include business, department and enterprise. Because of the complex nature of many businesses, both organizations and organization units are represented by the same data.",
+            "properties": {
+                "isLegalEntity": {
+                    "type": "boolean",
+                    "description": "If value is true, the organization is a legal entity known by a national referential."
+                },
+                "isHeadOffice": {
+                    "type": "boolean",
+                    "description": "If value is true, the organization is the head office"
+                },
+                "organizationType": {
+                    "type": "string",
+                    "description": "Type of Organization (company, department...)"
+                },
+                "tradingName": {
+                    "type": "string",
+                    "description": "Name that the organization (unit) trades under"
+                },
+                "existsDuring": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Organization name (department name for example)"
+                },
+                "nameType": {
+                    "type": "string",
+                    "description": "Type of the name : Co, Inc, Ltd,…"
+                },
+                "status": {
+                    "description": "Status of the organization",
+                    "$ref": "../EngagedParty/OrganizationStateType.schema.json#OrganizationStateType"
+                },
+                "otherName": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/OtherNameOrganization.schema.json#OtherNameOrganization"
+                    }
+                },
+                "organizationIdentification": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/OrganizationIdentification.schema.json#OrganizationIdentification"
+                    }
+                },
+                "organizationChildRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/OrganizationChildRelationship.schema.json#OrganizationChildRelationship"
+                    }
+                },
+                "organizationParentRelationship": {
+                    "$ref": "../EngagedParty/OrganizationParentRelationship.schema.json#OrganizationParentRelationship"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../EngagedParty/Party.schema.json#Party"
+                },
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ],
+            "required": [
+                "id"
+            ]
+        }
+    }
+}

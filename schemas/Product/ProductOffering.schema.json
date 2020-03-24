@@ -1,0 +1,150 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProductOffering.schema.json",
+    "title": "ProductOffering",
+    "definitions": {
+        "ProductOffering": {
+            "$id": "#ProductOffering",
+            "description": "Represents entities that are orderable from the provider of the catalog, this resource includes pricing information.",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the productOffering"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the ProductOffering"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the productOffering"
+                },
+                "isBundle": {
+                    "type": "boolean",
+                    "description": "isBundle determines whether a productOffering represents a single productOffering (false), or a bundle of productOfferings (true)."
+                },
+                "isSellable": {
+                    "type": "boolean",
+                    "description": "A flag indicating if this product offer can be sold stand-alone for sale or not. If this flag is false it indicates that the offer can only be sold within a bundle."
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time of the last update"
+                },
+                "lifecycleStatus": {
+                    "type": "string",
+                    "description": "Used to indicate the current lifecycle status"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the productOffering"
+                },
+                "statusReason": {
+                    "type": "string",
+                    "description": "A string providing a complementary information on the value of the lifecycle status attribute."
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which the productOffering is valid"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "ProductOffering version"
+                },
+                "place": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/PlaceRef.schema.json#PlaceRef"
+                    },
+                    "description": "Place defines the places where the products are sold or delivered."
+                },
+                "serviceLevelAgreement": {
+                    "$ref": "../EngagedParty/SLARef.schema.json#SLARef",
+                    "description": "A service level agreement (SLA) is a type of agreement that represents a formal negotiated agreement between two parties designed to create a common understanding about products, services, priorities, responsibilities, and so forth. The SLA is a set of appropriate procedures and targets formally or informally agreed between parties in order to achieve and maintain specified Quality of Service."
+                },
+                "productSpecification": {
+                    "$ref": "../Product/ProductSpecificationRef.schema.json#ProductSpecificationRef",
+                    "description": "A ProductSpecification is a detailed description of a tangible or intangible object made available externally in the form of a ProductOffering to customers or other parties playing a party role."
+                },
+                "channel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/ChannelRef.schema.json#ChannelRef"
+                    },
+                    "description": "The channel defines the channel for selling product offerings."
+                },
+                "serviceCandidate": {
+                    "$ref": "../Service/ServiceCandidateRef.schema.json#ServiceCandidateRef",
+                    "description": "ServiceCandidate is an entity that makes a ServiceSpecification available to a catalog."
+                },
+                "category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/CategoryRef.schema.json#CategoryRef"
+                    },
+                    "description": "The category resource is used to group product offerings, service and resource candidates in logical containers. Categories can contain other categories and/or product offerings, resource or service candidates."
+                },
+                "resourceCandidate": {
+                    "$ref": "../Resource/ResourceCandidateRef.schema.json#ResourceCandidateRef",
+                    "description": "A resource candidate is an entity that makes a ResourceSpecification available to a catalog."
+                },
+                "productOfferingTerm": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/ProductOfferingTerm.schema.json#ProductOfferingTerm"
+                    },
+                    "description": "A condition under which a ProductOffering is made available to Customers. For instance, a productOffering can be offered with multiple commitment periods."
+                },
+                "productOfferingPrice": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/ProductOfferingPriceRef.schema.json#ProductOfferingPriceRef"
+                    },
+                    "description": "An amount, usually of money, that is asked for or allowed when a ProductOffering is bought, rented, or leased. The price is valid for a defined period of time and may not represent the actual price paid by a customer."
+                },
+                "agreement": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/AgreementRef.schema.json#AgreementRef"
+                    },
+                    "description": "An agreement represents a contract or arrangement, either written or verbal and sometimes enforceable by law, such as a service level agreement or a customer price agreement. An agreement involves a number of other business entities, such as products, services, and resources and/or their specifications."
+                },
+                "attachment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
+                    },
+                    "description": "Complements the description of an element (for instance a product) through video, pictures..."
+                },
+                "marketSegment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../MarketingSales/MarketSegmentRef.schema.json#MarketSegmentRef"
+                    },
+                    "description": "provides references to the corresponding market segment as target of product offerings. A market segment is grouping of Parties, GeographicAreas, SalesChannels, and so forth."
+                },
+                "bundledProductOffering": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/BundledProductOffering.schema.json#BundledProductOffering"
+                    },
+                    "description": "A type of ProductOffering that belongs to a grouping of ProductOfferings made available to the market. It inherits of all attributes of ProductOffering."
+                },
+                "prodSpecCharValueUse": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/ProductSpecificationCharacteristicValueUse.schema.json#ProductSpecificationCharacteristicValueUse"
+                    },
+                    "description": "A use of the ProductSpecificationCharacteristicValue by a ProductOffering to which additional properties (attributes) apply or override the properties of similar properties contained in ProductSpecificationCharacteristicValue. It should be noted that characteristics which their value(s) addressed by this object must exist in corresponding product specification. The available characteristic values for a ProductSpecificationCharacteristic in a Product specification can be modified at the ProductOffering level. For example, a characteristic 'Color' might have values White, Blue, Green, and Red. But, the list of values can be restricted to e.g. White and Blue in an associated product offering. It should be noted that the list of values in 'ProductSpecificationCharacteristicValueUse' is a strict subset of the list of values as defined in the corresponding product specification characteristics."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

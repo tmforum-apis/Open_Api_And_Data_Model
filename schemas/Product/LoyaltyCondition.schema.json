@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "LoyaltyCondition.schema.json",
+    "title": "LoyaltyCondition",
+    "definitions": {
+        "LoyaltyCondition": {
+            "$id": "#LoyaltyCondition",
+            "description": "A condition, comprised of a attribute that will be tested against a value.",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier for the loyalty condition."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "A reference to the loyalty event type."
+                },
+                "attribute": {
+                    "type": "string",
+                    "description": "The attribute to evaluate."
+                },
+                "operator": {
+                    "type": "string",
+                    "description": "Comparison operator to be used in the evaluation."
+                },
+                "value": {
+                    "type": "string",
+                    "description": "The value of the attribute to be evaluated."
+                }
+            }
+        }
+    }
+}

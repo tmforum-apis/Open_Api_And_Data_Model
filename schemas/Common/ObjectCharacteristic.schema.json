@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ObjectCharacteristic.schema.json",
+    "title": "ObjectCharacteristic",
+    "definitions": {
+        "ObjectCharacteristic": {
+            "$id": "#ObjectCharacteristic",
+            "description": "A characteristic which value is an object",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of the characteristic"
+                },
+                "valueType": {
+                    "type": "string",
+                    "description": "Data type of the value of the characteristic"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Value of the characteristic"
+                }
+            }
+        }
+    }
+}

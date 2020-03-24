@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ChannelRef.schema.json",
+    "title": "ChannelRef",
+    "definitions": {
+        "ChannelRef": {
+            "$id": "#ChannelRef",
+            "type": "object",
+            "description": "The channel to which the resource reference to. e.g. channel for selling product offerings, channel for opening a trouble ticket etc..",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of the channel."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
+                }
+            ]
+        }
+    }
+}

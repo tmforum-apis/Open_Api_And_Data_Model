@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "IntegerCharacteristic.schema.json",
+    "title": "IntegerCharacteristic",
+    "definitions": {
+        "IntegerCharacteristic": {
+            "$id": "#IntegerCharacteristic",
+            "description": "A characteristic which value is a integer number",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of the characteristic"
+                },
+                "valueType": {
+                    "type": "string",
+                    "description": "Data type of the value of the characteristic"
+                },
+                "value": {
+                    "type": "integer",
+                    "description": "Value of the characteristic"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AgreementAttachment.schema.json",
+    "title": "AgreementAttachment",
+    "definitions": {
+        "AgreementAttachment": {
+            "$id": "#AgreementAttachment",
+            "description": "Represents a complementary piece of information to describe the agreement. Could be a document, picture, a video or any kind of multimedia content.",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the attachment"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the attachment"
+                },
+                "attachmentType": {
+                    "type": "string",
+                    "description": "The type of attachment, such as video, picture"
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Uniform Resource Locator, is a web page address (a subset of URI)"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

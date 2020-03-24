@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "UsageVolumeProductRef.schema.json",
+    "title": "UsageVolumeProductRef",
+    "definitions": {
+        "UsageVolumeProductRef": {
+            "$id": "#UsageVolumeProductRef",
+            "type": "object",
+            "description": "Reference of a bucket",
+            "properties": {
+                "@referredType": {
+                    "type": "string",
+                    "description": "Generic attribute indicating the name of the class type of the referred resource entity"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the bucket"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Bucket name"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

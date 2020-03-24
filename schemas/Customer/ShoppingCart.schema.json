@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ShoppingCart.schema.json",
+    "title": "ShoppingCart",
+    "definitions": {
+        "ShoppingCart": {
+            "$id": "#ShoppingCart",
+            "description": "Shopping Cart resource is used for the temporarily selection and reservation of product offerings in e-commerce, call center and retail purchase. Shopping cart supports purchase of both physical and digital goods and service (e.g. handset, telecom network service). Shopping Cart contain list of cart items, a reference to customer (partyRole) or contact medium in case customer not exist, and the total items price including promotions",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink to access the shopping cart"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier created on provider side (e.g. Order Capture system)"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which the shopping cart is valid (e.g. 90 if no activity or 7 days if cart is empty)"
+                },
+                "contactMedium": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/ContactMedium.schema.json#ContactMedium"
+                    }
+                },
+                "cartTotalPrice": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/CartPrice.schema.json#CartPrice"
+                    },
+                    "description": "Total amount of the shopping cart, usually of money, that represents the actual price paid by the Customer for cart (considering only \"Active\" cart items)"
+                },
+                "cartItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/CartItem.schema.json#CartItem"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

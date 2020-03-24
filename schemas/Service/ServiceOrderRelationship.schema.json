@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceOrderRelationship.schema.json",
+    "title": "ServiceOrderRelationship",
+    "definitions": {
+        "ServiceOrderRelationship": {
+            "$id": "#ServiceOrderRelationship",
+            "type": "object",
+            "description": "Linked service order to the one containing this attribute",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "@referredType": {
+                    "type": "string",
+                    "description": "The entity type of the related order"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "A hyperlink to the related order"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "The id of the related order"
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "The type of related order, such as: [dependency] if the order needs to be [not started] until another order item is complete (a service order in this case) or [cross-ref] to keep track of the source order (a productOrder)"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,93 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceOrder.schema.json",
+    "title": "ResourceOrder",
+    "definitions": {
+        "ResourceOrder": {
+            "$id": "#ResourceOrder",
+            "description": "A Resource Order is a request to provision a set of Resources (logical and physical) triggered by the request to provision a Service through a Service Order",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "type": "string",
+                    "description": "Used to categorize the order from a business perspective that can be useful for the OM system."
+                },
+                "completionDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order was completed"
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "ID given by the consumer and only understandable by him (to facilitate his searches afterwards)"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "free-text description of the Resource Order"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink to access the order"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of an instance of the Resource Order. Required to be unique within the resource type.  Used in URIs as the identifier for specific instances of a type."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A string used to give a name to the Resource Order"
+                },
+                "orderDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order was created"
+                },
+                "priority": {
+                    "type": "integer",
+                    "description": "A way that can be used by consumers to prioritize orders in OM system (from 0 to 4 : 0 is the highest priority, and 4 the lowest)"
+                },
+                "requestedCompletionDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Requested delivery date from the requestor perspective"
+                },
+                "requestedStartDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Order start date wished by the requestor"
+                },
+                "state": {
+                    "type": "string",
+                    "description": "The life cycle state of the resource."
+                },
+                "orderType": {
+                    "type": "string",
+                    "description": "Name of the Resource Order type"
+                },
+                "orderRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Resource/ResourceOrderRelationship.schema.json#ResourceOrderRelationship"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    }
+                },
+                "note": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Note.schema.json#Note"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

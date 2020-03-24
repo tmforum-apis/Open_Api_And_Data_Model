@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Service.schema.json",
+    "title": "Service",
+    "definitions": {
+        "Service": {
+            "$id": "#Service",
+            "description": "Service is a base class for defining the Service hierarchy. All Services are characterized as either being possibly visible and usable by a Customer or not. This gives rise to the two subclasses of Service: CustomerFacingService and ResourceFacingService.",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "Free-text description of the service",
+                    "type": "string"
+                },
+                "isServiceEnabled": {
+                    "type": "boolean",
+                    "description": "If FALSE, this particular Service has NOT been enabled for use"
+                },
+                "hasStarted": {
+                    "type": "boolean",
+                    "description": "If TRUE, this Service has already been started"
+                },
+                "startMode": {
+                    "type": "string",
+                    "description": "This attribute is an enumerated integer that indicates how the Service is started, such as: 0: Unknown; 1: Automatically by the managed environment; 2: Automatically by the owning device; 3: Manually by the Provider of the Service; 4: Manually by a Customer of the Provider; 5: Any of the above"
+                },
+                "isStateful": {
+                    "type": "boolean",
+                    "description": "If TRUE, this Service can be changed without affecting any other services"
+                },
+                "serviceDate": {
+                    "description": "Date when the service was created (whatever its status).",
+                    "type": "string"
+                },
+                "startDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the service starts"
+                },
+                "endDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the service ends"
+                },
+                "serviceOrder": {
+                    "type": "array",
+                    "description": "A list of service orders related to this service",
+                    "items": {
+                        "$ref": "../Service/ServiceOrderRef.schema.json#ServiceOrderRef"
+                    }
+                },
+                "note": {
+                    "type": "array",
+                    "description": "A list of notes made on this service",
+                    "items": {
+                        "$ref": "../Common/Note.schema.json#Note"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Service/BaseService.schema.json#BaseService"
+                }
+            ]
+        }
+    }
+}

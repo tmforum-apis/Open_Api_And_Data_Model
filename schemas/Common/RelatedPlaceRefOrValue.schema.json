@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "RelatedPlaceRefOrValue.schema.json",
+    "title": "RelatedPlaceRefOrValue",
+    "definitions": {
+        "RelatedPlaceRefOrValue": {
+            "$id": "#RelatedPlaceRefOrValue",
+            "description": "Related Entity reference. A related place defines a place described by reference or by value linked to a specific entity. The polymorphic attributes @type, @schemaLocation & @referredType are related to the place entity and not the RelatedPlaceRefOrValue class itself",
+            "type": "object",
+            "properties": {
+                "role": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "role"
+            ],
+            "allOf": [
+                {
+                    "$ref": "../Common/PlaceRef.schema.json#PlaceRef"
+                },
+                {
+                    "$ref": "../Common/Place.schema.json#Place"
+                }
+            ]
+        }
+    }
+}

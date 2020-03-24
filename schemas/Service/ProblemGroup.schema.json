@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProblemGroup.schema.json",
+    "title": "ProblemGroup",
+    "definitions": {
+        "ProblemGroup": {
+            "$id": "#ProblemGroup",
+            "description": "Task resource that requests Service Problems to be grouped together into a parent and set of children",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Reference to this task resource"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of this task resource"
+                },
+                "childProblem": {
+                    "type": "array",
+                    "description": "List of problems to be grouped under a parent problem",
+                    "items": {
+                        "$ref": "../Service/ServiceProblemRef.schema.json#ServiceProblemRef"
+                    }
+                },
+                "parentProblem": {
+                    "description": "The parent problem to which the problems are to be grouped",
+                    "$ref": "../Service/ServiceProblemRef.schema.json#ServiceProblemRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

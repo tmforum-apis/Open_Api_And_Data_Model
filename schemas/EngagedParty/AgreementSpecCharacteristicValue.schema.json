@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AgreementSpecCharacteristicValue.schema.json",
+    "title": "AgreementSpecCharacteristicValue",
+    "definitions": {
+        "AgreementSpecCharacteristicValue": {
+            "$id": "#AgreementSpecCharacteristicValue",
+            "description": "A number or text that can be assigned to an agreement specification characteristic.",
+            "type": "object",
+            "properties": {
+                "default": {
+                    "type": "boolean",
+                    "description": "Indicates if the value is the default value for a characteristic"
+                },
+                "unitOfMeasure": {
+                    "type": "string",
+                    "description": "Unit of measure for the characteristic, such as minutes, gigabytes (GB) and so on."
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period of time for which a value is applicable"
+                },
+                "value": {
+                    "$ref": "../Common/Any.schema.json#Any",
+                    "description": "A discrete value that the characteristic can take on"
+                },
+                "valueFrom": {
+                    "type": "string",
+                    "description": "The low range value that a characteristic can take on"
+                },
+                "valueTo": {
+                    "type": "string",
+                    "description": "The upper range value that a characteristic can take on"
+                },
+                "valueType": {
+                    "type": "string",
+                    "description": "A kind of value that the characteristic can take on, such as numeric, text, and so forth"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

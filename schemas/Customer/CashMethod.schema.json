@@ -1,0 +1,61 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CashMethod.schema.json",
+    "title": "CashMethod",
+    "definitions": {
+        "CashMethod": {
+            "$id": "#CashMethod",
+            "type": "object",
+            "properties": {
+                "details": {
+                    "$ref": "../Customer/CashDetails.schema.json#CashDetails"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Text describing the contents of the payment method"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "A resource URI pointing to the resource in the server that stores the detailed information. This is typically the resource url to retrieve individual details for the specific payment method"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique Identifier within the server for the payment method."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Friendly name assigned to the payment method"
+                },
+                "preferred": {
+                    "type": "boolean",
+                    "description": "If the method is the preferred one by the owner. Typically used when querying for the payment methods of a specific customer or account"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "statusDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "Date interval in which the payment method is valid"
+                },
+                "relatedParty": {
+                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                },
+                "account": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/AccountRef.schema.json#AccountRef"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

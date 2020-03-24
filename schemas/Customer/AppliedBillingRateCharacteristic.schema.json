@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AppliedBillingRateCharacteristic.schema.json",
+    "title": "AppliedBillingRateCharacteristic",
+    "definitions": {
+        "AppliedBillingRateCharacteristic": {
+            "$id": "#AppliedBillingRateCharacteristic",
+            "description": "An applied billing rate has dynamic characteristics according to the its type (characteristics are based on the service type, line of business or on others parameters)",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Characteristic name"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Value affected to the characteristic"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Receiver.schema.json",
+    "title": "Receiver",
+    "definitions": {
+        "Receiver": {
+            "$id": "#Receiver",
+            "description": "Receivers of the communication message.",
+            "type": "object",
+            "properties": {
+                "appUserId": {
+                    "type": "string",
+                    "description": "ID of the mobile app user"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "Receiver address of email, if the communication type is email"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "ID of the receiver"
+                },
+                "ip": {
+                    "type": "string",
+                    "description": "IP address of the receiver"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the receiver"
+                },
+                "phoneNumber": {
+                    "type": "string",
+                    "description": "Phone number of the receiver, if the communication type is SMS."
+                },
+                "party": {
+                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

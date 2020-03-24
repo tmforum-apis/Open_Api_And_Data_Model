@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProductOfferingPriceRelationship.schema.json",
+    "title": "ProductOfferingPriceRelationship",
+    "definitions": {
+        "ProductOfferingPriceRelationship": {
+            "$id": "#ProductOfferingPriceRelationship",
+            "type": "object",
+            "description": "Describes a non-composite relationship between product offering prices. For example one price might be an discount alteration for another price.",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "hyperlink reference of the associated product offering price"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the associated product offering price"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the associated product offering price"
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "type of the relationship, for example override, discount, etc."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "QuoteItemStateType.schema.json",
+    "title": "QuoteItemStateType",
+    "definitions": {
+        "QuoteItemStateType": {
+            "$id": "#QuoteItemStateType",
+            "type": "string",
+            "description": "Possible values for the state of the quote item",
+            "enum": [
+                "rejected",
+                "pending",
+                "inProgress",
+                "approved"
+            ]
+        }
+    }
+}

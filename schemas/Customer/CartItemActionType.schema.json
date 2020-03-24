@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CartItemActionType.schema.json",
+    "title": "CartItemActionType",
+    "definitions": {
+        "CartItemActionType": {
+            "$id": "#CartItemActionType",
+            "description": "action to be performed on the product",
+            "type": "string",
+            "enum": [
+                "add",
+                "modify",
+                "delete",
+                "noChange"
+            ]
+        }
+    }
+}

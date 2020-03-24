@@ -1,0 +1,52 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BankCardDetails.schema.json",
+    "title": "BankCardDetails",
+    "definitions": {
+        "BankCardDetails": {
+            "$id": "#BankCardDetails",
+            "description": "Detailed information for a bank card",
+            "type": "object",
+            "properties": {
+                "bank": {
+                    "type": "string",
+                    "description": "Bank that issued the card"
+                },
+                "brand": {
+                    "type": "string",
+                    "description": "Card brand, such as Visa, MasterCard, AmericanExpress"
+                },
+                "cardNumber": {
+                    "type": "string",
+                    "description": "Credit long card number"
+                },
+                "cvv": {
+                    "type": "string",
+                    "description": "The security code (e.g.: CVV, CVV2) of the card"
+                },
+                "expirationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Expiration date of the card"
+                },
+                "lastFourDigits": {
+                    "type": "string",
+                    "description": "Last four digits of the credit card"
+                },
+                "nameOnCard": {
+                    "type": "string",
+                    "description": "Name on the card"
+                },
+                "cardType": {
+                    "type": "string",
+                    "description": "Type of the card, such as Credit, Debit"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

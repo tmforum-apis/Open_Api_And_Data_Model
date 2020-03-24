@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "TestMeasureDefinition.schema.json",
+    "title": "TestMeasureDefinition",
+    "definitions": {
+        "TestMeasureDefinition": {
+            "$id": "#TestMeasureDefinition",
+            "description": "A TestMeasureDefinition specifies a measure of a specific aspect of a product, service, or resource test, such as lost packets or connectivity status",
+            "type": "object",
+            "properties": {
+                "captureFrequency": {
+                    "type": "string",
+                    "description": "The frequency of capture for the metric. Note: This may be replaced by a set of entities similar to the Performance Monitoring"
+                },
+                "captureMethod": {
+                    "type": "string",
+                    "description": "The method used to capture the Metric. Note: This may be replaced by a set of entities similar to the Performance Monitoring"
+                },
+                "capturePeriod": {
+                    "$ref": "../Common/Duration.schema.json#Duration",
+                    "description": "A period of the capture"
+                },
+                "metricDescription": {
+                    "type": "string",
+                    "description": "Brief description of the metric"
+                },
+                "metricHref": {
+                    "type": "string",
+                    "description": "Hyperlink to access a metric for detail information"
+                },
+                "metricName": {
+                    "type": "string",
+                    "description": "The name of a metric that in the test measure"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the TestMeasureDefinition"
+                },
+                "unitOfMeasure": {
+                    "type": "string",
+                    "description": "Name of a service test specification"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The time period for which this definition is valid"
+                },
+                "valueType": {
+                    "type": "string",
+                    "description": "A kind of value that the Metric value can take on, such as numeric, text, and so forth"
+                },
+                "thresholdRule": {
+                    "type": "array",
+                    "description": "The rule(s) associated with the measure threshold",
+                    "items": {
+                        "$ref": "../Service/MetricDefMeasureThresholdRule.schema.json#MetricDefMeasureThresholdRule"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

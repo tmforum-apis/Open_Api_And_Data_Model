@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BalanceTransfer.schema.json",
+    "title": "BalanceTransfer",
+    "definitions": {
+        "BalanceTransfer": {
+            "$id": "#BalanceTransfer",
+            "description": "#TODO",
+            "type": "object"
+        }
+    }
+}

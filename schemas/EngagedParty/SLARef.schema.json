@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "SLARef.schema.json",
+    "title": "SLARef",
+    "definitions": {
+        "SLARef": {
+            "$id": "#SLARef",
+            "description": "ServiceLevelAgreement reference: A service level agreement (SLA) is a type of agreement that represents a formal negotiated agreement between two parties designed to create a common understanding about products, services, priorities, responsibilities, and so forth. The SLA is a set of appropriate procedures and targets formally or informally agreed between parties in order to achieve and maintain specified Quality of Service.",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the service level agreement"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of service level agreement"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the service level agreement"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

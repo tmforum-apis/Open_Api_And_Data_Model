@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Street.schema.json",
+    "title": "Street",
+    "definitions": {
+        "Street": {
+            "$id": "#Street",
+            "description": "A street is a road in a city or locality that has buildings that are usually close together along one or both sides",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the Street"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The defined name of the street"
+                },
+                "streetType": {
+                    "type": "string",
+                    "description": "Alley, avenue, etc."
+                },
+                "characteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/LocationCharacteristic.schema.json#LocationCharacteristic"
+                    }
+                },
+                "address": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/AddressRef.schema.json#AddressRef"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

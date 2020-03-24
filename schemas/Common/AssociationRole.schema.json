@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AssociationRole.schema.json",
+    "title": "AssociationRole",
+    "definitions": {
+        "AssociationRole": {
+            "$id": "#AssociationRole",
+            "description": "This embedded object represents the role and type of each entity involved in a relationship.",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink reference to the endpoint plays this association role"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "The identifier of the endpoint plays this role"
+                },
+                "isSource": {
+                    "type": "boolean",
+                    "description": "A flag indicating if the participant involved in a uni-directional relationship is the source or not. this flag is true If the association is bi-directional (both end points are navigable)"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the endpoint which plays this association role"
+                },
+                "role": {
+                    "type": "string",
+                    "description": "The association role of this relationship participant as defined in the associationRoleSpec"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

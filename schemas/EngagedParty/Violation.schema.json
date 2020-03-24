@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Violation.schema.json",
+    "title": "Violation",
+    "definitions": {
+        "Violation": {
+            "$id": "#Violation",
+            "type": "object",
+            "properties": {
+                "actualValue": {
+                    "type": "string"
+                },
+                "comment": {
+                    "type": "string"
+                },
+                "consequence": {
+                    "type": "string"
+                },
+                "operator": {
+                    "type": "string"
+                },
+                "referenceValue": {
+                    "type": "string"
+                },
+                "tolerance": {
+                    "type": "string"
+                },
+                "unit": {
+                    "type": "string"
+                },
+                "violationAverage": {
+                    "type": "string"
+                },
+                "attachment": {
+                    "$ref": "../Common/AttachmentRef.schema.json#AttachmentRef"
+                },
+                "rule": {
+                    "$ref": "../EngagedParty/RuleRef.schema.json#RuleRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

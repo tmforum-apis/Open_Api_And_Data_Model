@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceCandidate.schema.json",
+    "title": "ServiceCandidate",
+    "definitions": {
+        "ServiceCandidate": {
+            "$id": "#ServiceCandidate",
+            "description": "ServiceCandidate is an entity that makes a service specification available to a catalog. A\nServiceCandidate and its associated service specification may be published - made visible - in any number of service catalogs, or in none. One service specification can be composed of other service specifications.",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of this REST resource"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink reference to this REST resource"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name given to this REST resource"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of this REST resource"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "the version of service candidate"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which this REST resource is valid"
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time of the last update of this REST resource"
+                },
+                "lifecycleStatus": {
+                    "type": "string",
+                    "description": "Used to indicate the current lifecycle status of the service candidate."
+                },
+                "category": {
+                    "type": "array",
+                    "description": "List of categories for this candidate",
+                    "items": {
+                        "$ref": "../Service/ServiceCategoryRef.schema.json#ServiceCategoryRef"
+                    }
+                },
+                "serviceSpecification": {
+                    "description": "The service specification implied by this candidate",
+                    "$ref": "../Service/ServiceSpecificationRef.schema.json#ServiceSpecificationRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

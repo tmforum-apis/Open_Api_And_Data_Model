@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "RetrieveLocationRelation.schema.json",
+    "title": "RetrieveLocationRelation",
+    "definitions": {
+        "RetrieveLocationRelation": {
+            "$id": "#RetrieveLocationRelation",
+            "type": "object",
+            "properties": {
+                "distance": {
+                    "type": "string"
+                },
+                "href": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "time": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "intersection": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/GeographicLocation.schema.json#GeographicLocation"
+                    }
+                },
+                "location": {
+                    "$ref": "../Common/GeographicLocationRef.schema.json#GeographicLocationRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

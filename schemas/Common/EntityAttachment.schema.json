@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "EntityAttachment.schema.json",
+    "title": "EntityAttachment",
+    "definitions": {
+        "EntityAttachment": {
+            "$id": "#EntityAttachment",
+            "description": "Complements the description of an entity through video, pictures...",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "A narrative text describing the content of the attachment"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the attachment"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the attachment"
+                },
+                "mimeType": {
+                    "type": "string",
+                    "description": "Attachment mime type such as extension file for video, picture and document"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "name given to the attachment"
+                },
+                "uri": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Uniform Resource Identifier (URI) of the attachment"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which this attachment is valid"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

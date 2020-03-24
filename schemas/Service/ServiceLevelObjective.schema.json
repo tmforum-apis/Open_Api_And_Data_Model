@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceLevelObjective.schema.json",
+    "title": "ServiceLevelObjective",
+    "definitions": {
+        "ServiceLevelObjective": {
+            "$id": "#ServiceLevelObjective",
+            "description": "Service level objectives are defined in terms of parameters and metrics, thresholds, and tolerances \nassociated with the parameters.",
+            "type": "object",
+            "properties": {
+                "conformanceComparator": {
+                    "type": "string",
+                    "description": "An operator that specifies whether a Service Level Objective is \nviolated above or below the conformanceTarget."
+                },
+                "conformancePeriod": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "An interval of time during which the Conformance Target must be measured."
+                },
+                "conformanceTarget": {
+                    "type": "string",
+                    "description": "A value used to determine if Service Level Objective is met. \nThe data type should be adjusted case by case."
+                },
+                "graceTimes": {
+                    "type": "string",
+                    "description": "The number of times an objective can remain un-updated without \na violation of a Service Level Agreement in reference to a measurement period and/or Service Level Agreement reporting period."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "The hyperlink to access a service level objective."
+                },
+                "id": {
+                    "type": "string",
+                    "description": "The identifier of a service level objectives."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the service level objectives."
+                },
+                "thresholdTarget": {
+                    "type": "string",
+                    "description": "A value that used to specify when a warning should be used \nthat indicates an objective is danger of not being met. Notice, the data type should be adjusted case by case."
+                },
+                "tolerancePeriod": {
+                    "description": "A value that specifies the allowable time variation of a conformance",
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
+                },
+                "toleranceTarget": {
+                    "type": "string",
+                    "description": "A value that specifies the allowable variation of a conformance \nTarget. The data type should be adjusted case by case."
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "A valid duration of a thing."
+                },
+                "serviceLevelSpecParameter": {
+                    "description": "A parameter for this objective",
+                    "$ref": "../Service/ServiceLevelSpecParameter.schema.json#ServiceLevelSpecParameter"
+                },
+                "serviceLevelSpecConsequence": {
+                    "type": "array",
+                    "description": "A list of consequences for this objective.",
+                    "items": {
+                        "$ref": "../Service/ServiceLevelSpecConsequence.schema.json#ServiceLevelSpecConsequence"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

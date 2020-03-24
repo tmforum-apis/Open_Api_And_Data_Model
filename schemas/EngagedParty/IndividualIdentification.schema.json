@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "IndividualIdentification.schema.json",
+    "title": "IndividualIdentification",
+    "definitions": {
+        "IndividualIdentification": {
+            "$id": "#IndividualIdentification",
+            "description": "Represents our registration of information used as proof of identity by an individual (passport, national identity card, drivers license, social security number, birth certificate)",
+            "type": "object",
+            "properties": {
+                "identificationId": {
+                    "type": "string",
+                    "description": "Identifier"
+                },
+                "issuingAuthority": {
+                    "type": "string",
+                    "description": "Authority which has issued the identifier, such as: social security, town hall"
+                },
+                "issuingDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date at which the identifier was issued"
+                },
+                "identificationType": {
+                    "type": "string",
+                    "description": "Identification type (passport, national identity card, drivers license, social security number, birth certificate)"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which the identification information is valid."
+                },
+                "attachment": {
+                    "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

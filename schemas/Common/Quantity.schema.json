@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Quantity.schema.json",
+    "title": "Quantity",
+    "definitions": {
+        "Quantity": {
+            "$id": "#Quantity",
+            "type": "object",
+            "description": "An amount in a given unit",
+            "properties": {
+                "amount": {
+                    "type": "number",
+                    "format": "float",
+                    "default": 1,
+                    "description": "Numeric value in a given unit"
+                },
+                "units": {
+                    "type": "string",
+                    "description": "Unit"
+                }
+            }
+        }
+    }
+}

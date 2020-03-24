@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceCharacteristic.schema.json",
+    "title": "ResourceCharacteristic",
+    "definitions": {
+        "ResourceCharacteristic": {
+            "$id": "#ResourceCharacteristic",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "name of the characteristic"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "value of the characteristic"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

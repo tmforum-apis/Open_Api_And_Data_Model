@@ -1,0 +1,46 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "EntitySpecRelationship.schema.json",
+    "title": "EntitySpecRelationship",
+    "definitions": {
+        "EntitySpecRelationship": {
+            "$id": "#EntitySpecRelationship",
+            "description": "A migration, substitution, dependency or exclusivity relationship between/among entity specifications.",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the target EntitySpecification"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of target EntitySpecification"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name given to the target entity specification instance"
+                },
+                "role": {
+                    "type": "string",
+                    "description": "The association role for this entity specification"
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "Type of relationship such as migration, substitution, dependency, exclusivity"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which the entitySpecRelationship is valid"
+                },
+                "associationSpec": {
+                    "$ref": "../Common/AssociationSpecRef.schema.json#AssociationSpecRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

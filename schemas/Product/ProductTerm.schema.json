@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProductTerm.schema.json",
+    "title": "ProductTerm",
+    "definitions": {
+        "ProductTerm": {
+            "$id": "#ProductTerm",
+            "description": "Description of a productTerm linked to this product. This represent a commitment with a duration",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the productTerm"
+                },
+                "duration": {
+                    "$ref": "../Common/Quantity.schema.json#Quantity",
+                    "description": "Duration of the productTerm"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "productTerm validity period"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the productTerm"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

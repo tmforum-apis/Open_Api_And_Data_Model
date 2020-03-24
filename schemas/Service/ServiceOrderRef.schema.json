@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceOrderRef.schema.json",
+    "title": "ServiceOrderRef",
+    "definitions": {
+        "ServiceOrderRef": {
+            "$id": "#ServiceOrderRef",
+            "description": "Service Order reference. Useful to understand the which was the Service order through which the service was instantiated in the service inventory",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the Service Order"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the Service Order"
+                },
+                "serviceOrderItemId": {
+                    "type": "string",
+                    "description": "Unique identifier of the Service Order Item within a service order, not populated if this is a reference to a service order"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

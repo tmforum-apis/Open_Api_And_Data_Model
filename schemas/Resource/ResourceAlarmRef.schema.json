@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceAlarmRef.schema.json",
+    "title": "ResourceAlarmRef",
+    "definitions": {
+        "ResourceAlarmRef": {
+            "$id": "#ResourceAlarmRef",
+            "type": "object",
+            "description": "A set of alarm ids identifying the alarms that are underlying this problem.",
+            "properties": {
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                },
+                "changeRequest": {
+                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the Alarm"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the Alarm"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

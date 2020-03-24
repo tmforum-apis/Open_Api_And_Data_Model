@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BillPresentationMediaRefOrValue.schema.json",
+    "title": "BillPresentationMediaRefOrValue",
+    "definitions": {
+        "BillPresentationMediaRefOrValue": {
+            "$id": "#BillPresentationMediaRefOrValue",
+            "description": "An attachment by value or by reference.",
+            "type": "object",
+            "properties": {},
+            "required": [
+                "role"
+            ],
+            "allOf": [
+                {
+                    "$ref": "../Customer/BillPresentationMediaRef.schema.json#BillPresentationMediaRef"
+                },
+                {
+                    "$ref": "../Customer/BillPresentationMedia.schema.json#BillPresentationMedia"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "EntitySpecificationRef.schema.json",
+    "title": "EntitySpecificationRef",
+    "definitions": {
+        "EntitySpecificationRef": {
+            "$id": "#EntitySpecificationRef",
+            "description": "reference to an EntitySpecification object",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink reference to the target EntitySpecification"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "reference id to the target EntitySpecification"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name given to the EntitySpecification"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "EntitySpecification version"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

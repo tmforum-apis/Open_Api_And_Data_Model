@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "TaskFlowStateType.schema.json",
+    "title": "TaskFlowStateType",
+    "definitions": {
+        "TaskFlowStateType": {
+            "$id": "#TaskFlowStateType",
+            "type": "string",
+            "description": "Valid values for the lifecycle state of the taskFlow",
+            "enum": [
+                "new",
+                "active",
+                "hold",
+                "cancelled",
+                "completed"
+            ]
+        }
+    }
+}

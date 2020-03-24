@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "GeographicPoint.schema.json",
+    "title": "GeographicPoint",
+    "definitions": {
+        "GeographicPoint": {
+            "$id": "#GeographicPoint",
+            "description": "A GeographicPoint defines a geographic point through coordinates.",
+            "type": "object",
+            "properties": {
+                "x": {
+                    "type": "string",
+                    "description": "x coordinate (usually latitude)"
+                },
+                "y": {
+                    "type": "string",
+                    "description": "y coordinate (usually longitude)"
+                },
+                "z": {
+                    "type": "string",
+                    "description": "z coordinate (usually elevation)"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "TimeSlot.schema.json",
+    "title": "TimeSlot",
+    "definitions": {
+        "TimeSlot": {
+            "$id": "#TimeSlot",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the TimeSlot"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the TimeSlot"
+                },
+                "relatedParty": {
+                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty",
+                    "description": "RelatedParty reference. A related party defines party or party role linked to a specific entity."
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "Start date and end date of the timeSlot"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

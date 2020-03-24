@@ -1,0 +1,90 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Resource.schema.json",
+    "title": "Resource",
+    "definitions": {
+        "Resource": {
+            "$id": "#Resource",
+            "description": "Resource is an abstract entity that describes the common set of attributes shared by all concrete resources (e.g. TPE, EQUIPMENT) in the inventory.",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "type": "string",
+                    "description": "Category of the concrete resource. e.g Gold, Silver for MSISDN concrete resource"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "free-text description of the resource"
+                },
+                "endDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "A date time( DateTime). The date till the resource is effective"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "The URI for the object itself."
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of an instance of the resource. Required to be unique within the resource type.  Used in URIs as the identifier for specific instances of a type."
+                },
+                "lifecycleState": {
+                    "type": "string",
+                    "description": "The life cycle state of the resource."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A string used to give a name to the resource"
+                },
+                "startDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "A date time( DateTime). The date from which the resource is effective"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "A field that identifies the specific version of an instance of a resource."
+                },
+                "resourceRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Resource/ResourceRelationship.schema.json#ResourceRelationship"
+                    }
+                },
+                "characteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Resource/ResourceCharacteristic.schema.json#ResourceCharacteristic"
+                    }
+                },
+                "place": {
+                    "$ref": "../Common/Place.schema.json#Place"
+                },
+                "partyRole": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/PartyRoleRef.schema.json#PartyRoleRef"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    }
+                },
+                "note": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Note.schema.json#Note"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

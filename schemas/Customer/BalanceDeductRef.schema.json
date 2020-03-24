@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BalanceDeductRef.schema.json",
+    "title": "BalanceDeductRef",
+    "definitions": {
+        "BalanceDeductRef": {
+            "$id": "#BalanceDeductRef",
+            "description": "the resource that deduct balance information",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "A resource URI pointing to the resource in the OB that stores the balance information for a subscription"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier for the balancededuct entity"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

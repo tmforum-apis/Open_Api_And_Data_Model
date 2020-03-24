@@ -1,0 +1,73 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "EntitySpecification.schema.json",
+    "title": "EntitySpecification",
+    "definitions": {
+        "EntitySpecification": {
+            "$id": "#EntitySpecification",
+            "description": "EntitySpecification is a class that offers characteristics to describe a type of entity. Entities are generic constructs that may be used to describe bespoke business entities that are not effectively covered by the existing SID model.",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of this REST resource"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink reference to this REST resource"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of this REST resource"
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time of the last update of this REST resource"
+                },
+                "lifecycleStatus": {
+                    "type": "string",
+                    "description": "Used to indicate the current lifecycle status of this catalog item"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name given to this REST resource"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which this REST resource is valid"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "Entity specification version"
+                },
+                "attachment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/EntityAttachment.schema.json#EntityAttachment"
+                    }
+                },
+                "entitySchema": {
+                    "$ref": "../Common/EntitySchemaRef.schema.json#EntitySchemaRef"
+                },
+                "specCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/SpecCharacteristic.schema.json#SpecCharacteristic"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "SettlementAccount.schema.json",
+    "title": "SettlementAccount",
+    "definitions": {
+        "SettlementAccount": {
+            "$id": "#SettlementAccount",
+            "description": "A party account used for settlement purposes. It includes a description of the bill structure (frequency, presentation media, format and so on). It is a specialization of entity PartyAccount.",
+            "type": "object",
+            "required": [
+                "name",
+                "relatedParty"
+            ],
+            "properties": {},
+            "allOf": [
+                {
+                    "$ref": "../EngagedParty/PartyAccount.schema.json#PartyAccount"
+                }
+            ]
+        }
+    }
+}

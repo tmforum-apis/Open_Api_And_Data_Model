@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Topic.schema.json",
+    "title": "Topic",
+    "definitions": {
+        "Topic": {
+            "$id": "#Topic",
+            "description": "Is a event channel provided by the Event Streaming API",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "use to identify grouping of events, per domain, per event types, per access control-right and so on."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "headerQuery": {
+                    "type": "string",
+                    "description": "is the filter that will be applied on the Event header properties."
+                },
+                "contentQuery": {
+                    "type": "string",
+                    "description": "is the filter that will be applied on the content of the Event."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

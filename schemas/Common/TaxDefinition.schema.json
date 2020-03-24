@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "TaxDefinition.schema.json",
+    "title": "TaxDefinition",
+    "definitions": {
+        "TaxDefinition": {
+            "$id": "#TaxDefinition",
+            "type": "object",
+            "description": "Reference of a tax definition. A tax is levied by an authorized tax jurisdiction. There are many different types of tax (Federal Tax levied by the US Government, State Tax levied by the State of California,…).",
+            "properties": {
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the tax."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Tax name."
+                },
+                "taxType": {
+                    "type": "string",
+                    "description": "Type of  the tax."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

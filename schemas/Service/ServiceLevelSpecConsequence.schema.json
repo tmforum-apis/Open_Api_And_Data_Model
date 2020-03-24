@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceLevelSpecConsequence.schema.json",
+    "title": "ServiceLevelSpecConsequence",
+    "definitions": {
+        "ServiceLevelSpecConsequence": {
+            "$id": "#ServiceLevelSpecConsequence",
+            "description": "Some consequences for the provider of the Service are resulted when the service level objective\ndoes not meet.",
+            "type": "object",
+            "properties": {
+                "prescribedAction": {
+                    "type": "string",
+                    "description": "Recommended remedy for a violated Service Level Objective. \nThis could be a hyperlink to the recommended action."
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "A valid duration of a thing."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

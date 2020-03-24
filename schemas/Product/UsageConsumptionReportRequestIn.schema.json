@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "UsageConsumptionReportRequestIn.schema.json",
+    "title": "UsageConsumptionReportRequestIn",
+    "definitions": {
+        "UsageConsumptionReportRequestIn": {
+            "$id": "#UsageConsumptionReportRequestIn",
+            "type": "object",
+            "description": "An UsageConsumptionReportRequest allows to manage the calculation request of an usage consumption report",
+            "properties": {
+                "bucket": {
+                    "type": "array",
+                    "description": "Reference of the buckets for which the usage consumption report is requested",
+                    "items": {
+                        "$ref": "../Product/UsageVolumeProductRef.schema.json#UsageVolumeProductRef"
+                    }
+                },
+                "product": {
+                    "$ref": "../Product/NetworkProductRef.schema.json#NetworkProductRef",
+                    "description": "Network product reference for which the usage consumption report is requested"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "description": "Reference and role of the related parties for which the usage consumption report is requested",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    }
+                },
+                "validPeriod": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "Validity period"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceOrderItemRef.schema.json",
+    "title": "ResourceOrderItemRef",
+    "definitions": {
+        "ResourceOrderItemRef": {
+            "$id": "#ResourceOrderItemRef",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the line item (generally it is a sequence number 01, 02, 03, ...)"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

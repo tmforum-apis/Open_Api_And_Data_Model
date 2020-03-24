@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "RelatedParty.schema.json",
+    "title": "RelatedParty",
+    "definitions": {
+        "RelatedParty": {
+            "$id": "#RelatedParty",
+            "description": "Related Entity reference. A related party defines party or party role linked to a specific entity.",
+            "type": "object",
+            "required": [
+                "id",
+                "@referredType"
+            ],
+            "properties": {
+                "role": {
+                    "type": "string",
+                    "description": "Role played by the related party"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
+                }
+            ]
+        }
+    }
+}

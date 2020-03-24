@@ -1,0 +1,95 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceQualification.schema.json",
+    "title": "ServiceQualification",
+    "definitions": {
+        "ServiceQualification": {
+            "$id": "#ServiceQualification",
+            "type": "object",
+            "description": "ServiceQualification is used to perform a technical eligibility. It allows to retrieve a list of services that are technically available in the context of the interaction (place, party, service characteristics, ...).",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the serviceQualification"
+                },
+                "effectiveQualificationDate": {
+                    "type": "string",
+                    "description": "Effective date to serviceQualification completion",
+                    "format": "date-time"
+                },
+                "estimatedResponseDate": {
+                    "type": "string",
+                    "description": "Date when the requester expect to provide an answer for the qualification request.",
+                    "format": "date-time"
+                },
+                "expectedQualificationDate": {
+                    "type": "string",
+                    "description": "A date (DateTime). Deadline date when the requester expected a qualification answer.",
+                    "format": "date-time"
+                },
+                "expirationDate": {
+                    "type": "string",
+                    "description": "Date when the qualification response expires",
+                    "format": "date-time"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink to access the serviceQualification"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the serviceQualification resource"
+                },
+                "provideAlternative": {
+                    "type": "boolean",
+                    "description": "When the value is TRUE means that alternative solutions should be provided"
+                },
+                "provideOnlyAvailable": {
+                    "type": "boolean",
+                    "description": "When the value is TRUE means that only available service must be listed in the response"
+                },
+                "provideUnavailabilityReason": {
+                    "type": "boolean",
+                    "description": "When the value is TRUE means that unavailability reason are expected for non available service."
+                },
+                "serviceQualificationDate": {
+                    "type": "string",
+                    "description": "Date when the serviceQualification was submitted",
+                    "format": "date-time"
+                },
+                "state": {
+                    "type": "string",
+                    "description": "State of the serviceQualification (acknowledged, inProgress, terminatedWithError, done)"
+                },
+                "serviceQualificationItem": {
+                    "type": "array",
+                    "description": "A list of service qualification items.",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "../Service/ServiceQualificationItem.schema.json#ServiceQualificationItem"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "description": "A list of related party references, defines party or party role linked to this request.",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    }
+                },
+                "externalId": {
+                    "description": "Identifier provided by the requester",
+                    "type": "string"
+                },
+                "qualificationResult": {
+                    "description": "Qualification result for this serviceQualification. It could be:  qualified (all qualification item are qualified), alternate (At least one item alternate and no item with  unqualified), unqualified (At least one item unqualified)",
+                    "type": "string"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

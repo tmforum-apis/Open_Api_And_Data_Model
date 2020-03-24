@@ -1,0 +1,62 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "MeasureThresholdRuleViolation.schema.json",
+    "title": "MeasureThresholdRuleViolation",
+    "definitions": {
+        "MeasureThresholdRuleViolation": {
+            "$id": "#MeasureThresholdRuleViolation",
+            "description": "A measureThresholdRuleViolation is a violation of a rule that defines the in the \nMericDefMeasureThresholdRule.",
+            "type": "object",
+            "properties": {
+                "conformanceComparatorLower": {
+                    "type": "string",
+                    "description": "An operator that when applied on a value specifies whether a \nthreshold is crossed or ceased to be crossed. This operator is used to compare with the conformanceTargetLower."
+                },
+                "conformanceComparatorUpper": {
+                    "type": "string",
+                    "description": "An operator that when applied on a value specifies whether a \nthreshold is crossed or ceased to be crossed. This operator is used to compare with the conformanceTargetUpper."
+                },
+                "conformanceTargetLower": {
+                    "type": "string",
+                    "description": "A value used to determine if the threshold is crossed or ceases \nto be crossed. It represents the lower limit. The value should be less than the conformanceTargetUpper. The conformance comparators should also be logically defined so as to not lead to a logically impossible condition."
+                },
+                "conformanceTargetUpper": {
+                    "type": "string",
+                    "description": "A value used to determine if the threshold is crossed or ceases \nto be crossed. It represents the Upper limit. The value should be greater than the conformanceTargetLower. The conformance comparators should also be logically defined so as to not lead to a logically impossible condition."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description for the MetricDefMeasureThresholdRule ."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name for the MetricDefMeasureThresholdRule ."
+                },
+                "numberOfAllowedCrossing": {
+                    "type": "integer",
+                    "description": "The number of allowed crossing occurrences in reference to the \ntolerancePeriod without a consequence being initiated."
+                },
+                "thresholdRuleSeverity": {
+                    "type": "string",
+                    "description": "A threshold can be generated in different severity levels. A \ncrossing for each level may require a different condition and possibly trigger a different consequence."
+                },
+                "tolerancePeriod": {
+                    "description": "An interval of time of allowed crossing occurrences before a \nconsequence being initiated.",
+                    "$ref": "../Common/Duration.schema.json#Duration"
+                },
+                "appliedConsequence": {
+                    "type": "array",
+                    "description": "An Applied Consequence defines the action (prescribed action or notification) to take when a MeasureThresholdRuleViolation occurs.",
+                    "items": {
+                        "$ref": "../Service/AppliedConsequence.schema.json#AppliedConsequence"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

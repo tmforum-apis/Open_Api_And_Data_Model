@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "TaskFlowRef.schema.json",
+    "title": "TaskFlowRef",
+    "definitions": {
+        "TaskFlowRef": {
+            "$id": "#TaskFlowRef",
+            "type": "object",
+            "properties": {
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

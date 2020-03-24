@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "LoyaltyEventTypeRef.schema.json",
+    "title": "LoyaltyEventTypeRef",
+    "definitions": {
+        "LoyaltyEventTypeRef": {
+            "$id": "#LoyaltyEventTypeRef",
+            "description": "A reference to a loyalty event type.",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier for the loyalty event type."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "A reference to the loyalty event type."
+                }
+            }
+        }
+    }
+}

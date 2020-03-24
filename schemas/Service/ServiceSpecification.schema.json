@@ -1,0 +1,102 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceSpecification.schema.json",
+    "title": "ServiceSpecification",
+    "definitions": {
+        "ServiceSpecification": {
+            "$id": "#ServiceSpecification",
+            "description": "ServiceSpecification is a class that offers characteristics to describe a type of service.\nFunctionally, it acts as a template by which Services may be instantiated. By sharing the same  specification, these services would therefore share the same set of characteristics.",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the service specification"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the service specification"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the service specification"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A narrative that explains in detail what the service specification is"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "Service specification version"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which the service specification is valid"
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time of the last update of the service specification"
+                },
+                "lifecycleStatus": {
+                    "type": "string",
+                    "description": "Used to indicate the current lifecycle status of the service specification"
+                },
+                "isBundle": {
+                    "type": "boolean",
+                    "description": "isBundle determines whether a ServiceSpecification represents a single ServiceSpecification (false), or a bundle of ServiceSpecification (true)."
+                },
+                "resourceSpecification": {
+                    "type": "array",
+                    "description": "A list of resource specification references (ResourceSpecificationRef [*]). The ResourceSpecification is required for a service specification with type ResourceFacingServiceSpecification (RFSS).",
+                    "items": {
+                        "$ref": "../Resource/ResourceSpecificationRef.schema.json#ResourceSpecificationRef"
+                    }
+                },
+                "attachment": {
+                    "type": "array",
+                    "description": "A list of attachments (Attachment [*]). Complements the description of the specification through video, pictures...",
+                    "items": {
+                        "$ref": "../Common/AttachmentRef.schema.json#AttachmentRef"
+                    }
+                },
+                "serviceSpecCharacteristic": {
+                    "type": "array",
+                    "description": "A list of service spec characteristics (ServiceSpecCharacteristic [*]). This class represents the key features of this service specification.",
+                    "items": {
+                        "$ref": "../Service/ServiceSpecCharacteristic.schema.json#ServiceSpecCharacteristic"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "description": "A list of related party references (RelatedParty [*]). A related party defines party or party role linked to a specific entity.",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    }
+                },
+                "serviceSpecRelationship": {
+                    "type": "array",
+                    "description": "A list of service specifications related to this specification, e.g. migration, substitution, dependency or exclusivity relationship",
+                    "items": {
+                        "$ref": "../Service/ServiceSpecRelationship.schema.json#ServiceSpecRelationship"
+                    }
+                },
+                "serviceLevelSpecification": {
+                    "type": "array",
+                    "description": "A list of service level specifications related to this service specification, and which will need to be satisifiable for corresponding service instances; e.g. Gold, Platinum",
+                    "items": {
+                        "$ref": "../Service/ServiceLevelSpecificationRef.schema.json#ServiceLevelSpecificationRef"
+                    }
+                },
+                "targetServiceSchema": {
+                    "description": "A target service schema reference (TargetServiceSchemaRef). The reference object to the schema and type of target service which is described by service specification.",
+                    "$ref": "../Service/TargetServiceSchema.schema.json#TargetServiceSchema"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

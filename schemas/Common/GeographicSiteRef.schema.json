@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "GeographicSiteRef.schema.json",
+    "title": "GeographicSiteRef",
+    "definitions": {
+        "GeographicSiteRef": {
+            "$id": "#GeographicSiteRef",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

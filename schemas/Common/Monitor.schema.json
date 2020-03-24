@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Monitor.schema.json",
+    "title": "Monitor",
+    "definitions": {
+        "Monitor": {
+            "$id": "#Monitor",
+            "type": "object",
+            "description": "Monitoring of resources",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "reference to this monitor"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of an instance of the monitor. Required to be unique within the resource type.  Used in URIs as the identifier for specific instances of a type"
+                },
+                "request": {
+                    "description": "Represents the request",
+                    "$ref": "../Common/Request.schema.json#Request"
+                },
+                "response": {
+                    "description": "Represents the response",
+                    "$ref": "../Common/Response.schema.json#Response"
+                },
+                "sourceHref": {
+                    "type": "string",
+                    "description": "The monitored resource href"
+                },
+                "state": {
+                    "type": "string",
+                    "description": "The Monitor state of the resource.  InProgress, InError, Completed"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

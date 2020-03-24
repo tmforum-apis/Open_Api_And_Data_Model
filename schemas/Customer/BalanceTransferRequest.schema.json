@@ -1,0 +1,100 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BalanceTransferRequest.schema.json",
+    "title": "BalanceTransferRequest",
+    "definitions": {
+        "BalanceTransferRequest": {
+            "$id": "#BalanceTransferRequest",
+            "description": "The BalanceTransfer resource is a detailed description of credit transfer operation requested between two buckets (reference to products owned by customers and consuming credit when using a service).",
+            "properties": {
+                "bucket": {
+                    "description": "A reference to the bucket impacted by the request. This is used in scenarios where the requestor knows beforehand the bucket that is going to be impacted instead of just referring to the commercial identifier of the impacted product and the type of bucket created under that product",
+                    "$ref": "../Customer/BucketBalanceRef.schema.json#BucketBalanceRef"
+                },
+                "confirmationDate": {
+                    "type": "string",
+                    "description": "Date when the transfer was confirmed in the server"
+                },
+                "costOwner": {
+                    "type": "string",
+                    "description": "Indicates the entity responsible to assume the cost of the transfer operation",
+                    "enum": [
+                        "originator",
+                        "receiver"
+                    ]
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the transfer operation"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "A resource URI pointing to the resource in the OB that stores the detailed information. This is typically the resource url to retrieve individual transfer operation details"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique Identifier within the server for the balance transfer operation request."
+                },
+                "partyAccount": {
+                    "description": "A reference to the account that owns the bucket impacted by the balance related operation",
+                    "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef"
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "Text describing the reason for the adjustment"
+                },
+                "receiver": {
+                    "description": "Identifier for the user/customer/entity that receives the transfer action when it is required to indicate additional customer hierarchy information regarding the entity receiving the balance transfer",
+                    "$ref": "../EngagedParty/RelatedPartyRef.schema.json#RelatedPartyRef"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedPartyRef.schema.json#RelatedPartyRef"
+                    },
+                    "description": "Used to provide information about any other entity with relation to the operation"
+                },
+                "requestedDate": {
+                    "type": "string",
+                    "description": "Date when the transfer request was received in the server"
+                },
+                "requestor": {
+                    "description": "Identifier for the user/customer/entity that performs the top-up action. This can be used to indicate the identifier of an agent that performs the operation on behalf of a user via a customer service channel. Structure including at least attributes �role� and �name�.",
+                    "$ref": "../EngagedParty/RelatedPartyRef.schema.json#RelatedPartyRef"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of the top-up.",
+                    "enum": [
+                        "confirmed",
+                        "cancelled",
+                        "in progress"
+                    ]
+                },
+                "targetType": {
+                    "type": "string",
+                    "description": "Intended for scenarios where the transfer is done from one bucket type to another (from voice to data). A preconfigured value that describes a Transfer type which determines the prepay balance bucket in which the transfer is done"
+                },
+                "transferCost": {
+                    "description": "Associated cost to be charged for the transfer operation (can be monetary or non-monetary)",
+                    "$ref": "../Common/QuantityType.schema.json#QuantityType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Customer/BalanceTransferBody.schema.json#BalanceTransferBody"
+                }
+            ],
+            "required": [
+                "id",
+                "href",
+                "reason",
+                "requestedDate",
+                "confirmationDate",
+                "status",
+                "product"
+            ],
+            "type": "object"
+        }
+    }
+}

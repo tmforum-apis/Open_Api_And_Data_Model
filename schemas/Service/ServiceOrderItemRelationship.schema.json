@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceOrderItemRelationship.schema.json",
+    "title": "ServiceOrderItemRelationship",
+    "definitions": {
+        "ServiceOrderItemRelationship": {
+            "$id": "#ServiceOrderItemRelationship",
+            "type": "object",
+            "description": "Linked service order item to the one containing this attribute",
+            "required": [
+                "id",
+                "relationshipType"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a service order item"
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "The type of related order item, can be: dependency if the order item needs to be not started until another order item is complete"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

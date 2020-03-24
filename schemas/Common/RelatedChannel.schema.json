@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "RelatedChannel.schema.json",
+    "title": "RelatedChannel",
+    "definitions": {
+        "RelatedChannel": {
+            "$id": "#RelatedChannel",
+            "type": "object",
+            "description": "Related channel to another entity. May be online web, mobile app, social ,etc.",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of the channel."
+                },
+                "role": {
+                    "type": "string",
+                    "description": "Role playing by the channel."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
+                }
+            ]
+        }
+    }
+}

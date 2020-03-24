@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceRelationship.schema.json",
+    "title": "ServiceRelationship",
+    "definitions": {
+        "ServiceRelationship": {
+            "$id": "#ServiceRelationship",
+            "description": "Describes links with services of the same category (useful for bundled services)",
+            "type": "object",
+            "required": [
+                "relationshipType",
+                "service"
+            ],
+            "properties": {
+                "relationshipType": {
+                    "type": "string",
+                    "description": "The type of relationship (e.g. depends on, enables)"
+                },
+                "service": {
+                    "description": "The service being referred to",
+                    "$ref": "../Service/ServiceRef.schema.json#ServiceRef"
+                }
+            }
+        }
+    }
+}

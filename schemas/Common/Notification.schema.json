@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Notification.schema.json",
+    "title": "Notification",
+    "definitions": {
+        "Notification": {
+            "$id": "#Notification",
+            "description": "The notification is sent to each listener who has subscribed to receive it.",
+            "type": "object",
+            "properties": {
+                "eventId": {
+                    "type": "string",
+                    "description": "Identifier of the event"
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Creation date of the event"
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "Type of event"
+                },
+                "fieldPath": {
+                    "type": "string",
+                    "description": "details which field is missing, its structure is quite similar to GET filter criteria"
+                },
+                "resourcePath": {
+                    "type": "string",
+                    "description": "To indicate which entity is concerned"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

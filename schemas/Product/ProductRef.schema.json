@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProductRef.schema.json",
+    "title": "ProductRef",
+    "definitions": {
+        "ProductRef": {
+            "$id": "#ProductRef",
+            "type": "object",
+            "properties": {},
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
+                }
+            ]
+        }
+    }
+}

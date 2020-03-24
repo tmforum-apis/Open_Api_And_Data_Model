@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ImportJob.schema.json",
+    "title": "ImportJob",
+    "definitions": {
+        "ImportJob": {
+            "$id": "#ImportJob",
+            "description": "Represents a task used to import resources from a file",
+            "type": "object",
+            "properties": {
+                "completionDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date at which the job was completed"
+                },
+                "contentType": {
+                    "type": "string",
+                    "description": "Indicates the format of the imported data"
+                },
+                "creationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date at which the job was created"
+                },
+                "errorLog": {
+                    "type": "string",
+                    "description": "Reason for failure if status is failed"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the import job"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the import job"
+                },
+                "path": {
+                    "type": "string",
+                    "description": "URL of the root resource where the content of the file specified by the import job must be applied"
+                },
+                "status": {
+                    "description": "Status of the import job (not started, running, succeeded, failed)",
+                    "$ref": "../Common/JobStateType.schema.json#JobStateType"
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URL of the file containing the data to be imported"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

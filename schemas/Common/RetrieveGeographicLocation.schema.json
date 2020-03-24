@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "RetrieveGeographicLocation.schema.json",
+    "title": "RetrieveGeographicLocation",
+    "definitions": {
+        "RetrieveGeographicLocation": {
+            "$id": "#RetrieveGeographicLocation",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "requestedAccuracy": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "time": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "geographicLocation": {
+                    "$ref": "../Common/GeographicLocation.schema.json#GeographicLocation"
+                },
+                "thing": {
+                    "$ref": "../Common/Object.schema.json#Object"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BasePlusEvent.schema.json",
+    "title": "BasePlusEvent",
+    "definitions": {
+        "BasePlusEvent": {
+            "$id": "#BasePlusEvent",
+            "description": "Base event with common attributes.",
+            "type": "object",
+            "properties": {
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                },
+                "fieldPath": {
+                    "type": "string",
+                    "description": "The path identifying the object field concerned by this notification."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

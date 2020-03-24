@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "QuantityType.schema.json",
+    "title": "QuantityType",
+    "definitions": {
+        "QuantityType": {
+            "$id": "#QuantityType",
+            "description": "Representation of a quantity of something. I can also be used to represent a quantity range",
+            "properties": {
+                "amount": {
+                    "type": "number",
+                    "format": "decimal",
+                    "description": "Measured amount"
+                },
+                "units": {
+                    "type": "string",
+                    "description": "Units the quantity is measured in"
+                }
+            },
+            "required": [
+                "units",
+                "amount"
+            ],
+            "type": "object"
+        }
+    }
+}

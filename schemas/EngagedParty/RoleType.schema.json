@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "RoleType.schema.json",
+    "title": "RoleType",
+    "definitions": {
+        "RoleType": {
+            "$id": "#RoleType",
+            "description": "A RoleType represents the type of a PartyRole, defined in the context of a given type of partnership, such as Buyer, Seller.",
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "An explanatory text documenting the role type"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the role type."
+                },
+                "requiresBilling": {
+                    "type": "boolean",
+                    "description": "Indicates whether billing operations will be associated to parties playing the role"
+                },
+                "requiresSettlement": {
+                    "type": "boolean",
+                    "description": "Indicates whether settlement operations will be associated to parties playing the role"
+                },
+                "agreementSpecification": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/AgreementSpecificationRef.schema.json#AgreementSpecificationRef"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

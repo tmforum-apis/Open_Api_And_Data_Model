@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "FirstAlert.schema.json",
+    "title": "FirstAlert",
+    "definitions": {
+        "FirstAlert": {
+            "$id": "#FirstAlert",
+            "type": "object",
+            "description": "Indicates what first alerted the system to the problem. It is not the root cause of the Service Problem. Examples: Threshold crossing alert",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the object"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the object"
+                },
+                "alertType": {
+                    "type": "string",
+                    "description": "Type of the object"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

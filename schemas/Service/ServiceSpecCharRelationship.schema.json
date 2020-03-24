@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceSpecCharRelationship.schema.json",
+    "title": "ServiceSpecCharRelationship",
+    "definitions": {
+        "ServiceSpecCharRelationship": {
+            "$id": "#ServiceSpecCharRelationship",
+            "description": "An aggregation, migration, substitution, dependency or exclusivity relationship between/among serviceSpecCharacteristics.",
+            "type": "object",
+            "properties": {
+                "relationshipType": {
+                    "type": "string",
+                    "description": "Type of relationship such as aggregation, migration, substitution, dependency, exclusivity"
+                },
+                "role": {
+                    "type": "string",
+                    "description": "The association role for this service specification"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the target specification"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink reference to the target specification"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the target  characteristic"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which the serviceSpecCharRelationship is valid"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

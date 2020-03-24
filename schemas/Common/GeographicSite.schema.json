@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "GeographicSite.schema.json",
+    "title": "GeographicSite",
+    "definitions": {
+        "GeographicSite": {
+            "$id": "#GeographicSite",
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "description": "A code that may be used for some addressing schemes eg: [ANSI T1.253-1999]"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Text describing additional information regarding the site"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "An URI used to access to the site"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the site within the server"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name that the site is known by"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The condition of the GeographicSite, such as active, inactive, planned address"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    }
+                },
+                "calendar": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/CalendarPeriod.schema.json#CalendarPeriod"
+                    }
+                },
+                "geographicLocation": {
+                    "$ref": "../Common/GeographicLocation.schema.json#GeographicLocation"
+                },
+                "address": {
+                    "$ref": "../Common/GeographicAddress.schema.json#GeographicAddress"
+                },
+                "siteRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/SiteRelationship.schema.json#SiteRelationship"
+                    }
+                },
+                "role": {
+                    "type": "string",
+                    "description": "Role of the place, such as: [home delivery], [shop retrieval])"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

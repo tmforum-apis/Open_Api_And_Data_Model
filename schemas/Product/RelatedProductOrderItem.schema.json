@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "RelatedProductOrderItem.schema.json",
+    "title": "RelatedProductOrderItem",
+    "definitions": {
+        "RelatedProductOrderItem": {
+            "$id": "#RelatedProductOrderItem",
+            "type": "object",
+            "description": "RelatedProductOrderItem (ProductOrder item) .The product order item which triggered product creation/change/termination.",
+            "required": [
+                "orderItemId",
+                "productOrderId"
+            ],
+            "properties": {
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                },
+                "productOrderHref": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "productOrderId": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "orderItemAction": {
+                    "type": "string",
+                    "description": "Action of the order item for this product"
+                },
+                "orderItemId": {
+                    "type": "string",
+                    "description": "Identifier of the order item where the product was managed"
+                },
+                "role": {
+                    "type": "string",
+                    "description": "role of the product order item for this product"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

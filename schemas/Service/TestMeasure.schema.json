@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "TestMeasure.schema.json",
+    "title": "TestMeasure",
+    "definitions": {
+        "TestMeasure": {
+            "$id": "#TestMeasure",
+            "description": "A TestMeasure specifies a measure of a specific aspect of a product, service, or resource test, such as lost packets or connectivity status",
+            "type": "object",
+            "properties": {
+                "accuracy": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "The number of digits of accuracy captured for associated Metrics"
+                },
+                "captureDateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date and time that the metric was captured"
+                },
+                "captureMethod": {
+                    "type": "string",
+                    "description": "The method used to capture the Metrics (This may be replaced by a set of entities similar to the Performance Monitoring Ref)"
+                },
+                "metricDescription": {
+                    "type": "string",
+                    "description": "Brief description of the metric"
+                },
+                "metricHref": {
+                    "type": "string",
+                    "description": "Hyperlink to access a metric for detail information"
+                },
+                "metricName": {
+                    "type": "string",
+                    "description": "The name of the metric"
+                },
+                "ruleViolation": {
+                    "type": "array",
+                    "description": "A list of rules that were violated in this test measure",
+                    "items": {
+                        "$ref": "../Service/MeasureThresholdRuleViolation.schema.json#MeasureThresholdRuleViolation"
+                    }
+                },
+                "unitOfMeasure": {
+                    "type": "string",
+                    "description": "The unit of measure for the metric values, such as meters, cubic yards, kilograms [ISO 1000]."
+                },
+                "value": {
+                    "description": "The value of Metric in the test. This also could be a document to record all values captured during the service test",
+                    "$ref": "../Common/Characteristic.schema.json#Characteristic"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

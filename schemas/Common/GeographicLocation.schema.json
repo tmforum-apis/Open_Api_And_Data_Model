@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "GeographicLocation.schema.json",
+    "title": "GeographicLocation",
+    "definitions": {
+        "GeographicLocation": {
+            "$id": "#GeographicLocation",
+            "description": "A GeographicLocation allows to describe through coordinate(s) a point, a line or a space",
+            "type": "object",
+            "properties": {
+                "accuracy": {
+                    "type": "string"
+                },
+                "geometryType": {
+                    "type": "string",
+                    "description": "Type allows to describe the GeoLocation form: it could be a point, a line, a polygon, a cylinder, etc"
+                },
+                "spatialRef": {
+                    "type": "string"
+                },
+                "geometry": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/GeographicPoint.schema.json#GeographicPoint"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Place.schema.json#Place"
+                }
+            ]
+        }
+    }
+}

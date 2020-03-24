@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BalanceTransferBody.schema.json",
+    "title": "BalanceTransferBody",
+    "definitions": {
+        "BalanceTransferBody": {
+            "$id": "#BalanceTransferBody",
+            "properties": {
+                "amount": {
+                    "description": "Amount (can be monetary or non-monetary) to be transferred",
+                    "$ref": "../Common/QuantityType.schema.json#QuantityType"
+                },
+                "channel": {
+                    "description": "Indicator for the channel used to request the top-up operation. Structure including at least attribute �name�",
+                    "$ref": "../Common/ChannelRef.schema.json#ChannelRef"
+                },
+                "product": {
+                    "description": "A reference to the product related to the bucket that is impacted by the balance related operation",
+                    "$ref": "../Product/ProductRef.schema.json#ProductRef"
+                },
+                "targetId": {
+                    "type": "string",
+                    "description": "Identifier for the entity that receives the transfer (reference to a product via a commercial identifier such as an msisidn that relates to an internal product id)"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "A preconfigured value that describes a TopUp type which determines the prepay balance bucket in which the top-up is done (national-voice, roaming-voice, promotional-voice, data, ....)"
+                }
+            },
+            "required": [
+                "type",
+                "channel",
+                "targetId",
+                "amount"
+            ],
+            "type": "object"
+        }
+    }
+}

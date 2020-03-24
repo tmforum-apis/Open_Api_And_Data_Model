@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PromotionPattern.schema.json",
+    "title": "PromotionPattern",
+    "definitions": {
+        "PromotionPattern": {
+            "$id": "#PromotionPattern",
+            "description": "Detailed pattern of the promotion.The pattern decides the conditions of promotion and the benefit of the promotion to be given to the eligible customer.",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name"
+                },
+                "priority": {
+                    "type": "integer",
+                    "description": "Priority. Smaller number means high."
+                },
+                "relationTypeAmongGroup": {
+                    "type": "string",
+                    "description": "AND/OR ,The logical relation type amongst the promotion criteria group."
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period  for which the promotion pattern  is valid."
+                },
+                "action": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/PromotionAction.schema.json#PromotionAction"
+                    }
+                },
+                "criteriaGroup": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/PromotionCriteriaGroup.schema.json#PromotionCriteriaGroup"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

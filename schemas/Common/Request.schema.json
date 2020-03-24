@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Request.schema.json",
+    "title": "Request",
+    "definitions": {
+        "Request": {
+            "$id": "#Request",
+            "type": "object",
+            "description": "A response to a request",
+            "properties": {
+                "body": {
+                    "description": "The body of the request. For example for an HTTP request might contain content of a form .",
+                    "type": "string"
+                },
+                "header": {
+                    "type": "array",
+                    "description": "Items included in the header of the request. For example for an HTTP request might contain requested locale, basic authentication.",
+                    "items": {
+                        "$ref": "../Common/HeaderItem.schema.json#HeaderItem"
+                    },
+                    "title": "header"
+                },
+                "method": {
+                    "description": "The protocol of the request, e.g. http",
+                    "type": "string"
+                },
+                "to": {
+                    "description": "The target of the request, e.g. a URL for an HTTP request",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "body",
+                "header"
+            ]
+        }
+    }
+}

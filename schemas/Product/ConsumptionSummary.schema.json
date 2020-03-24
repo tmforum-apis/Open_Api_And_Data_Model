@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ConsumptionSummary.schema.json",
+    "title": "ConsumptionSummary",
+    "definitions": {
+        "ConsumptionSummary": {
+            "$id": "#ConsumptionSummary",
+            "type": "object",
+            "description": "The consumption counters (called ConsumptionSummary in the SID model) detail for example the different kind of consumption done on the bucket.",
+            "properties": {
+                "consumptionPeriod": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "Consumption counter period between a start date time and an end date time. For prepaid bucket, the period of counters is between the start date of the bucket and the effective date of the usage consumption report generation. For postpaid bucket, the period of counters is between the last bill date and the effective date of the usage consumption report generation."
+                },
+                "counterType": {
+                    "type": "string",
+                    "description": "Type of the consumption counter. We can give for example a counter of the used value for a bucket (counterType=used for example) or the value of the consumption done out of the bucket(s) (counterType=outOfBucket for example)"
+                },
+                "level": {
+                    "type": "string",
+                    "description": "Counter level. The counter can be given globally for the bucket or detailed by user or by network product for example in case of shared bucket"
+                },
+                "product": {
+                    "$ref": "../Product/NetworkProductRef.schema.json#NetworkProductRef",
+                    "description": "Public identifier associated to the product for which the consumption counter is detailed. If the level of the counter is global (i.e. concerning all the network products), the list of them is not specified. It can be found through the network products listed in the bucket sub-resource"
+                },
+                "user": {
+                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty",
+                    "description": "Reference of the user for which the consumption counter is detailed. If the level of the counter is global (i.e. concerning all the users), the list of them is not specified. It can be found through the users listed in the network products of the bucket sub-resource"
+                },
+                "value": {
+                    "$ref": "../Common/Quantity.schema.json#Quantity",
+                    "description": "Numeric value of the bucket counter in a given unit"
+                },
+                "valueName": {
+                    "type": "string",
+                    "description": "Value of the counter in a formatted string used for display needs for example"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "LoyaltyProgramProductRef.schema.json",
+    "title": "LoyaltyProgramProductRef",
+    "definitions": {
+        "LoyaltyProgramProductRef": {
+            "$id": "#LoyaltyProgramProductRef",
+            "type": "object",
+            "description": "A reference to a loyalty product.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier for the loyalty program product."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "A reference to the loyalty program product."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

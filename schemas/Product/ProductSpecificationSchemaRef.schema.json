@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProductSpecificationSchemaRef.schema.json",
+    "title": "ProductSpecificationSchemaRef",
+    "definitions": {
+        "ProductSpecificationSchemaRef": {
+            "$id": "#ProductSpecificationSchemaRef",
+            "description": "ProductSpecification description could be done with schema use. This information allows to retrieve schema type and location",
+            "type": "object",
+            "properties": {
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AccountDirectDetails.schema.json",
+    "title": "AccountDirectDetails",
+    "definitions": {
+        "AccountDirectDetails": {
+            "$id": "#AccountDirectDetails",
+            "type": "object",
+            "properties": {
+                "account": {
+                    "$ref": "../EngagedParty/AccountRef.schema.json#AccountRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

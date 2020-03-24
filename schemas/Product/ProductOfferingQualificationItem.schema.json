@@ -1,0 +1,75 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProductOfferingQualificationItem.schema.json",
+    "title": "ProductOfferingQualificationItem",
+    "definitions": {
+        "ProductOfferingQualificationItem": {
+            "$id": "#ProductOfferingQualificationItem",
+            "type": "object",
+            "properties": {
+                "expectedActivationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the requester look for productOfferingQualification activation"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Id of the productOfferingQualification item"
+                },
+                "action": {
+                    "description": "Can be \"add\" / \"modify\" / \"no_change\"/ \"delete\" - by default add is considered",
+                    "$ref": "../Product/ProductActionType.schema.json#ProductActionType"
+                },
+                "qualificationItemResult": {
+                    "type": "string",
+                    "description": "Qualification result for this productOfferingQualification item. It could be:\n\n qualified (request productOffering or productSpecification are available), \n unqualified (requested not available and not alternate available),\n alternate (requested not available but proposal available)\n"
+                },
+                "state": {
+                    "description": "State of the productOfferingQualification item defined in the state engine",
+                    "$ref": "../Common/TaskStateType.schema.json#TaskStateType"
+                },
+                "eligibilityUnavailabilityReason": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/EligibilityUnavailabilityReason.schema.json#EligibilityUnavailabilityReason"
+                    }
+                },
+                "qualificationItemRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/QualificationItemRelationship.schema.json#QualificationItemRelationship"
+                    }
+                },
+                "note": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Note.schema.json#Note"
+                    }
+                },
+                "product": {
+                    "$ref": "../Product/ProductRefOrValue.schema.json#ProductRefOrValue"
+                },
+                "terminationError": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Service/TerminationError.schema.json#TerminationError"
+                    }
+                },
+                "productOffering": {
+                    "$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef"
+                },
+                "alternateProductOfferingProposal": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/AlternateProductOfferingProposal.schema.json#AlternateProductOfferingProposal"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

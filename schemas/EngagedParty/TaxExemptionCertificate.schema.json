@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "TaxExemptionCertificate.schema.json",
+    "title": "TaxExemptionCertificate",
+    "definitions": {
+        "TaxExemptionCertificate": {
+            "$id": "#TaxExemptionCertificate",
+            "type": "object",
+            "description": "A tax exemption certificate represents a tax exemption granted to a party (individual or organization) by a tax jurisdiction which may be a city, state, country,... An exemption has a certificate identifier (received from the jurisdiction that levied the tax) and a validity period. An exemption is per tax types and determines for each type of tax what portion of the tax is exempted (partial by percentage or complete) via the tax definition.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the certificate of the tax exemption"
+                },
+                "taxDefinition": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/TaxDefinition.schema.json#TaxDefinition"
+                    }
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
+                },
+                "attachment": {
+                    "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

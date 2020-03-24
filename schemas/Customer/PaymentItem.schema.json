@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PaymentItem.schema.json",
+    "title": "PaymentItem",
+    "definitions": {
+        "PaymentItem": {
+            "$id": "#PaymentItem",
+            "description": "The paymentItem is the result of lettering process. It enables to assign automatically or manually part of incoming payment amount to a bill",
+            "type": "object",
+            "properties": {
+                "appliedAmount": {
+                    "$ref": "../Common/Money.schema.json#Money",
+                    "description": "Part of a payment amount lettered to the customer bill"
+                },
+                "payment": {
+                    "$ref": "../Customer/PaymentRef.schema.json#PaymentRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

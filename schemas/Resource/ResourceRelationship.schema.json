@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceRelationship.schema.json",
+    "title": "ResourceRelationship",
+    "definitions": {
+        "ResourceRelationship": {
+            "$id": "#ResourceRelationship",
+            "description": "Describes links between resources",
+            "type": "object",
+            "properties": {
+                "relationshipType": {
+                    "type": "string",
+                    "description": "Semantic of the relationship"
+                },
+                "resource": {
+                    "$ref": "../Resource/ResourceRef.schema.json#ResourceRef",
+                    "description": "A reference to the resource"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

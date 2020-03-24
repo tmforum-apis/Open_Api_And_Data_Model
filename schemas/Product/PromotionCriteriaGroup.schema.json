@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PromotionCriteriaGroup.schema.json",
+    "title": "PromotionCriteriaGroup",
+    "definitions": {
+        "PromotionCriteriaGroup": {
+            "$id": "#PromotionCriteriaGroup",
+            "description": "The group of the criteria of the promotion. The logical relationship between different groups is decided by the relationTypeInGroup.",
+            "type": "object",
+            "properties": {
+                "groupName": {
+                    "type": "string",
+                    "description": "Name of the group."
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique Identifier"
+                },
+                "relationTypeInGroup": {
+                    "type": "string",
+                    "description": "AND/OR,The logical relation type amongst the various criteria inside a promotion criteria group."
+                },
+                "criteria": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/PromotionCriteria.schema.json#PromotionCriteria"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

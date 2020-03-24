@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProductStatusType.schema.json",
+    "title": "ProductStatusType",
+    "definitions": {
+        "ProductStatusType": {
+            "$id": "#ProductStatusType",
+            "type": "string",
+            "description": "Possible values for the status of the product",
+            "enum": [
+                "created",
+                "pendingActive",
+                "cancelled",
+                "active",
+                "pendingTerminate",
+                "terminated",
+                "suspended",
+                "aborted "
+            ]
+        }
+    }
+}

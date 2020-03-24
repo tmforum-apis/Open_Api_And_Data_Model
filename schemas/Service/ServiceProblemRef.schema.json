@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceProblemRef.schema.json",
+    "title": "ServiceProblemRef",
+    "definitions": {
+        "ServiceProblemRef": {
+            "$id": "#ServiceProblemRef",
+            "type": "object",
+            "properties": {
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "Additional identifier coming from an external system"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the Problem"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the Problem"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

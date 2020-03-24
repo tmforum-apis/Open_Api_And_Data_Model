@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AppliedPartyBillingRate.schema.json",
+    "title": "AppliedPartyBillingRate",
+    "definitions": {
+        "AppliedPartyBillingRate": {
+            "$id": "#AppliedPartyBillingRate",
+            "description": "An applied billing rate presented on a party bill. It is created before or during the billing process.",
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Creation date of the applied billing charge"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Additional data to be displayed on the bill for this applied billing charge"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the applied billing charge"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the applied billing charge"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the applied billing rate"
+                },
+                "taxExcludedAmount": {
+                    "$ref": "../Common/Money.schema.json#Money",
+                    "description": "Tax excluded amount to be charged on the bill (expresses in the given currency) for this applied billing rate"
+                },
+                "taxIncludedAmount": {
+                    "$ref": "../Common/Money.schema.json#Money",
+                    "description": "All taxes included amount to be charged on the bill (expressed in the given currency) for this applied billing rate"
+                },
+                "rateType": {
+                    "type": "string",
+                    "description": "Type of the applied billing rate : appliedBillingCharge (any kind of charge except taxation charges : recurringCharge, oneTimeCharge, usageCharge),  appliedBillingCredit (any kind of credit : rebate or productAlteration) or appliedPenaltyCharge (penalty charges such as late fees, payment rejection fees,...)"
+                },
+                "appliedTax": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/AppliedBillingTaxRate.schema.json#AppliedBillingTaxRate"
+                    }
+                },
+                "bill": {
+                    "$ref": "../Customer/BillRef.schema.json#BillRef"
+                },
+                "characteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/AppliedBillingRateCharacteristic.schema.json#AppliedBillingRateCharacteristic"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

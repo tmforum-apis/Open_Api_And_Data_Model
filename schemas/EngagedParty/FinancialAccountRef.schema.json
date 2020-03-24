@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "FinancialAccountRef.schema.json",
+    "title": "FinancialAccountRef",
+    "definitions": {
+        "FinancialAccountRef": {
+            "$id": "#FinancialAccountRef",
+            "description": "AccountReceivable reference. An account of money owed by a party to another entity in exchange for goods or services that have been delivered or used. An account receivable aggregates the amounts of one or more party accounts (billing or settlement) owned by a given party.",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Unique reference of the account"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the account"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the account"
+                },
+                "accountBalance": {
+                    "$ref": "../EngagedParty/AccountBalance.schema.json#AccountBalance"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

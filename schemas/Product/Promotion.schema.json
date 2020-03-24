@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Promotion.schema.json",
+    "title": "Promotion",
+    "definitions": {
+        "Promotion": {
+            "$id": "#Promotion",
+            "description": "Promotion Resource is used to provide the additional discount, voucher, bonus or gift to the customer who meets the pre-defined criteria. Using promotion, the enterprise is able to attract the users and encourage more consumption, especially continuous purchases.   Normally Promotion is not regarded as one type of product or product offering. It is often applied when the customer buys the product offerings with the price or amount surpassing the certain limit.",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of Promotion"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink to access the Promotion"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the Promotion"
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Latest update date of the Promotion"
+                },
+                "lifecycleStatus": {
+                    "type": "string",
+                    "description": "Status of the Promotion, including Draft/Test/WaitForApproval/Release/Suspend/Retirement"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the Promotion"
+                },
+                "promotionType": {
+                    "type": "string",
+                    "description": "Type of the Promotion. The basic type is Award/Discount/Reduction. More types can be extended in future"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which the Promotion is valid"
+                },
+                "pattern": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/PromotionPattern.schema.json#PromotionPattern"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

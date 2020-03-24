@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AppointmentStateType.schema.json",
+    "title": "AppointmentStateType",
+    "definitions": {
+        "AppointmentStateType": {
+            "$id": "#AppointmentStateType",
+            "type": "string",
+            "description": "Valid values for the lifecycle state of the appointment",
+            "enum": [
+                "initialized",
+                "confirmed",
+                "cancelled",
+                "completed",
+                "failed"
+            ]
+        }
+    }
+}

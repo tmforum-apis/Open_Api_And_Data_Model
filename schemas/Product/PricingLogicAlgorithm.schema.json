@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PricingLogicAlgorithm.schema.json",
+    "title": "PricingLogicAlgorithm",
+    "definitions": {
+        "PricingLogicAlgorithm": {
+            "$id": "#PricingLogicAlgorithm",
+            "type": "object",
+            "description": "The PricingLogicAlgorithm entity represents an instantiation of an interface specification to external rating function (without a modeled bahavior in SID). Some of the parameters of the interface definiition may be already set (such as price per unit) and some may be gathered during the rating process from the event (such as call duration) or from ProductCharacteristicValues (such as assigned bandwidth)",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the PricingLogicAlgorithm"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "hyperlink reference of this PricingLogicAlgorithm"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "unique id of the PricingLogicAlgorithm"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name given to the PricingLogicAlgorithm"
+                },
+                "plaSpecId": {
+                    "type": "string",
+                    "description": "id of corresponding PricingLogicAlgorithm specification"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which the PricingLogicAlgorithm is valid"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

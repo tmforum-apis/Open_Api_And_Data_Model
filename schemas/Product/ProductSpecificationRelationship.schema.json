@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProductSpecificationRelationship.schema.json",
+    "title": "ProductSpecificationRelationship",
+    "definitions": {
+        "ProductSpecificationRelationship": {
+            "$id": "#ProductSpecificationRelationship",
+            "description": "A migration, substitution, dependency or exclusivity relationship between/among product specifications.",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the productSpecification"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the productSpecification"
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "Type of relationship such as migration, substitution, dependency, exclusivity"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which the productSpecificationRelationship is valid"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

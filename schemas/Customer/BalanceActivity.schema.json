@@ -1,0 +1,65 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BalanceActivity.schema.json",
+    "title": "BalanceActivity",
+    "definitions": {
+        "BalanceActivity": {
+            "$id": "#BalanceActivity",
+            "description": "The BalanceActivity resource is a detailed description of a specific balance-related action that has happened over a given bucket balance. Typically a recharge/transfer/adjustment request creates one activity, but a request for an auto-topup operation actually triggers multiple periodic balance-related activities.",
+            "properties": {
+                "action": {
+                    "description": "A reference to the balance-related operation that triggered the action",
+                    "$ref": "../Customer/BalanceActionRequestRef.schema.json#BalanceActionRequestRef"
+                },
+                "amount": {
+                    "description": "Amount (can be monetary or non-monetary) that was involved in the balance operation",
+                    "$ref": "../Common/QuantityType.schema.json#QuantityType"
+                },
+                "amountAfter": {
+                    "description": "Remained amount in the bucket involved in the operation after it took place",
+                    "$ref": "../Common/QuantityType.schema.json#QuantityType"
+                },
+                "amountBefore": {
+                    "description": "Remained amount in the bucket involved in the operation before it took place",
+                    "$ref": "../Common/QuantityType.schema.json#QuantityType"
+                },
+                "bucketBalance": {
+                    "description": "A reference to the bucket involved in the balance-related operation",
+                    "$ref": "../Customer/BucketBalanceRef.schema.json#BucketBalanceRef"
+                },
+                "date": {
+                    "type": "string",
+                    "description": "Date when the balance related operation took place"
+                },
+                "partyAccount": {
+                    "description": "A reference to the account that owns the bucket impacted by the balance activity",
+                    "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef"
+                },
+                "product": {
+                    "description": "A reference to the product related to the bucket that is impacted by the balance activity",
+                    "$ref": "../Product/ProductRef.schema.json#ProductRef"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedPartyRef.schema.json#RelatedPartyRef"
+                    },
+                    "description": "Used to provide information about any other entity with relation to the balance activity"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "A preconfigured value that describes a type of balance-related performed (topup, transfer, adjustment)"
+                }
+            },
+            "required": [
+                "type",
+                "date",
+                "action",
+                "amount",
+                "bucketBalance",
+                "product"
+            ],
+            "type": "object"
+        }
+    }
+}

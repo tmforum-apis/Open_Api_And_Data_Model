@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ChangeRequestSpecification.schema.json",
+    "title": "ChangeRequestSpecification",
+    "definitions": {
+        "ChangeRequestSpecification": {
+            "$id": "#ChangeRequestSpecification",
+            "description": "Defines a set of attributes related to Change Request.",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the specification"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink to access the specification."
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the specification."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the specification."
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

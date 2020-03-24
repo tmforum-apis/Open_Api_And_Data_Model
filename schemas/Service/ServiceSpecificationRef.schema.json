@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceSpecificationRef.schema.json",
+    "title": "ServiceSpecificationRef",
+    "definitions": {
+        "ServiceSpecificationRef": {
+            "$id": "#ServiceSpecificationRef",
+            "description": "Service specification reference: ServiceSpecification(s) required to realize a ProductSpecification.",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the service specification"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the serviceSpecification"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the requiredServiceSpecification"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "Service specification version"
+                },
+                "targetServiceSchema": {
+                    "description": "A target service schema reference (TargetServiceSchemaRef). The reference object to the schema and type of target service which is described by service specification.",
+                    "$ref": "../Service/TargetServiceSchema.schema.json#TargetServiceSchema"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

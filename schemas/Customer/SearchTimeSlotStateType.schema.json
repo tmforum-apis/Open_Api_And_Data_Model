@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "SearchTimeSlotStateType.schema.json",
+    "title": "SearchTimeSlotStateType",
+    "definitions": {
+        "SearchTimeSlotStateType": {
+            "$id": "#SearchTimeSlotStateType",
+            "type": "string",
+            "description": "Valid values for the lifecycle state of the searchTimeSlot",
+            "enum": [
+                "inProgress",
+                "done",
+                "rejected",
+                "terminatedWithError"
+            ]
+        }
+    }
+}

@@ -1,0 +1,80 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Attachment.schema.json",
+    "title": "Attachment",
+    "definitions": {
+        "Attachment": {
+            "$id": "#Attachment",
+            "description": "Complements the description of an element (for instance a product) through video, pictures...",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier for this particular attachment",
+                    "examples": [
+                        "4aafacbd-11ff-4dc8-b445-305f2215715f",
+                        "2334bc59-726e-4d34-ab96-f50e0561412f"
+                    ]
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URI for this Attachment",
+                    "examples": [
+                        "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f"
+                    ]
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the attachment"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A narrative text describing the content of the attachment",
+                    "examples": [
+                        "Photograph of the Product",
+                        "Explanation Video"
+                    ]
+                },
+                "attachmentType": {
+                    "type": "string",
+                    "description": "Attachment type such as video, picture",
+                    "examples": [
+                        "video",
+                        "picture"
+                    ]
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Uniform Resource Locator, is a web page address (a subset of URI)",
+                    "examples": [
+                        "http://host/Content/4aafacbd-11ff-4dc8-b445-305f2215715f"
+                    ]
+                },
+                "mimeType": {
+                    "type": "string",
+                    "description": "Attachment mime type such as extension file for video, picture and document"
+                },
+                "content": {
+                    "type": "string",
+                    "format": "base64",
+                    "description": "The actual contents of the attachment object, if embedded, encoded as base64"
+                },
+                "size": {
+                    "$ref": "../Common/Quantity.schema.json#Quantity",
+                    "description": "The size of the attachment."
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period of time for which the attachment is valid"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

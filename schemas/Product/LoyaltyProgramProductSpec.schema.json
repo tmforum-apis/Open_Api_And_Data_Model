@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "LoyaltyProgramProductSpec.schema.json",
+    "title": "LoyaltyProgramProductSpec",
+    "definitions": {
+        "LoyaltyProgramProductSpec": {
+            "$id": "#LoyaltyProgramProductSpec",
+            "type": "object",
+            "description": "A reference to a loyalty program specification.",
+            "properties": {
+                "brand": {
+                    "type": "string",
+                    "description": "The manufacturer or trademark of the specification."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A narrative that explains in detail what the product specification is."
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier for the product specification."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "A reference to the product specification."
+                },
+                "lifeCycleStatus": {
+                    "type": "string",
+                    "description": "The condition of the product specification, such as active, inactive, planned."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the product specification."
+                },
+                "needsLoyaltyAccount": {
+                    "type": "boolean",
+                    "description": "A narrative that explains in detail what the product specification is."
+                },
+                "productNumber": {
+                    "type": "string",
+                    "productNumber": "An identification number assigned to uniquely identify the specification."
+                },
+                "ValidFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BillingAccountRef.schema.json",
+    "title": "BillingAccountRef",
+    "definitions": {
+        "BillingAccountRef": {
+            "$id": "#BillingAccountRef",
+            "description": "BillingAccount reference. A BillingAccount is a detailed description of a bill structure.",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the billing account"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the billing account"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the billing account"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

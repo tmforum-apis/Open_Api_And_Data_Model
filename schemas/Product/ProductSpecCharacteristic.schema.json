@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProductSpecCharacteristic.schema.json",
+    "title": "ProductSpecCharacteristic",
+    "definitions": {
+        "ProductSpecCharacteristic": {
+            "$id": "#ProductSpecCharacteristic",
+            "description": "A characteristic quality or distinctive feature of a ProductSpecification.  The characteristic can be take on a discrete value, such as color, can take on a range of values, (for example, sensitivity of 100-240 mV), or can be derived from a formula (for example, usage time (hrs) = 30 - talk time *3). Certain characteristics, such as color, may be configured during the ordering or some other process.",
+            "type": "object",
+            "properties": {
+                "configurable": {
+                    "type": "boolean",
+                    "description": "If true, the Boolean indicates that the productSpecCharacteristic is configurable"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A narrative that explains in detail what the productSpecCharacteristic is"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the productSpecCharacteristic"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which the productSpecCharacteristic is valid"
+                },
+                "valueType": {
+                    "type": "string",
+                    "description": "A kind of value that the characteristic can take on, such as numeric, text and so forth"
+                },
+                "productSpecCharRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/ProductSpecCharRelationship.schema.json#ProductSpecCharRelationship"
+                    }
+                },
+                "productSpecCharacteristicValue": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/ProductSpecCharacteristicValue.schema.json#ProductSpecCharacteristicValue"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

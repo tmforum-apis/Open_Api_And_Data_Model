@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Error.schema.json",
+    "title": "Error",
+    "definitions": {
+        "Error": {
+            "$id": "#Error",
+            "description": "Used when an API throws an Error, typically with a HTTP error response-code (3xx, 4xx, 5xx)",
+            "type": "object",
+            "required": [
+                "code",
+                "reason"
+            ],
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "description": "Application relevant detail, defined in the API or a common list",
+                    "examples": [
+                        "1",
+                        "2"
+                    ]
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "Explanation of the reason for the error which can be shown to a client user",
+                    "examples": [
+                        "This customer does not exist",
+                        "The service is not available at this location"
+                    ]
+                },
+                "message": {
+                    "type": "string",
+                    "description": "More details and corrective actions related to the error which can be shown to a client user",
+                    "examples": [
+                        "Please use a valid password",
+                        "Please enter a smaller quantity"
+                    ]
+                },
+                "status": {
+                    "type": "string",
+                    "description": "HTTP Error code extension",
+                    "examples": [
+                        "400-2",
+                        "500-4"
+                    ]
+                },
+                "referenceError": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URI of documentation describing the error",
+                    "examples": [
+                        "https://docs.microsoft.com/en-us/windows/desktop/wmdm/error-codes",
+                        "https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
+                    ]
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

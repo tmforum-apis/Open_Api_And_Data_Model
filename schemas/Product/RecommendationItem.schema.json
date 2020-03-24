@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "RecommendationItem.schema.json",
+    "title": "RecommendationItem",
+    "definitions": {
+        "RecommendationItem": {
+            "$id": "#RecommendationItem",
+            "description": "A list of recommendation items. Every item is a product offering and its rank.",
+            "type": "object",
+            "properties": {
+                "priority": {
+                    "type": "integer",
+                    "description": "The rank of the list of recommended offering."
+                },
+                "offering": {
+                    "$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef",
+                    "description": "Recommended product offering"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

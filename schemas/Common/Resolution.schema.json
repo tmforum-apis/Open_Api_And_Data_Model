@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Resolution.schema.json",
+    "title": "Resolution",
+    "definitions": {
+        "Resolution": {
+            "$id": "#Resolution",
+            "description": "The way one or more change request has been implementation through a direct remedy or task",
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "description": "The resolutions code, it can be configured as a multiple level hierarchy"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "The description of the resolution"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the resolution"
+                },
+                "task": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Task.schema.json#Task"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

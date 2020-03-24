@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "TicketRelationship.schema.json",
+    "title": "TicketRelationship",
+    "definitions": {
+        "TicketRelationship": {
+            "$id": "#TicketRelationship",
+            "type": "object",
+            "description": "Represents a relationship between trouble tickets",
+            "properties": {
+                "relationshipType": {
+                    "type": "string",
+                    "description": "Type of the trouble ticket relationship can be isChiled, dependent etc..."
+                },
+                "product": {
+                    "$ref": "../Common/TroubleTicketRef.schema.json#TroubleTicketRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

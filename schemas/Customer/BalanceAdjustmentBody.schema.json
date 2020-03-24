@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BalanceAdjustmentBody.schema.json",
+    "title": "BalanceAdjustmentBody",
+    "definitions": {
+        "BalanceAdjustmentBody": {
+            "$id": "#BalanceAdjustmentBody",
+            "properties": {
+                "amount": {
+                    "description": "Amount (can be monetary or non-monetary) to be recharged in the bucket. It could refer to positive (increment) or negative (decrement) values",
+                    "$ref": "../Common/QuantityType.schema.json#QuantityType"
+                },
+                "product": {
+                    "description": "A reference to the product related to the bucket that is impacted by the balance related operation",
+                    "$ref": "../Product/ProductRef.schema.json#ProductRef"
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "Text describing the reason for the adjustment"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "A preconfigured value that describes a TopUp type which determines the prepay balance bucket in which the top-up is done (national-voice, roaming-voice, promotional-voice, data, ....)"
+                }
+            },
+            "required": [
+                "type",
+                "reason",
+                "amount"
+            ],
+            "type": "object"
+        }
+    }
+}

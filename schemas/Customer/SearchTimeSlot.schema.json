@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "SearchTimeSlot.schema.json",
+    "title": "SearchTimeSlot",
+    "definitions": {
+        "SearchTimeSlot": {
+            "$id": "#SearchTimeSlot",
+            "type": "object",
+            "description": "This task resource is used to retrieve available time slots. One of this available time slot is after used to create or reschedule an appointment",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the search time slot request"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference to access the search time slot resource"
+                },
+                "status": {
+                    "type": "string",
+                    "$ref": "../Customer/SearchTimeSlotStateType.schema.json#SearchTimeSlotStateType"
+                },
+                "searchDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the search time slot is performed"
+                },
+                "searchResult": {
+                    "type": "string",
+                    "description": "Result of the search time slot (success or fail for example)"
+                },
+                "requestedTimeSlot": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/TimeSlot.schema.json#TimeSlot"
+                    }
+                },
+                "availableTimeSlot": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/TimeSlot.schema.json#TimeSlot"
+                    }
+                },
+                "relatedParty": {
+                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty",
+                    "description": "RelatedParty reference. A related party defines party or party role linked to a specific entity."
+                },
+                "relatedEntity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/RelatedEntity.schema.json#RelatedEntity"
+                    }
+                },
+                "relatedPlace": {
+                    "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue",
+                    "description": "Related place defines (by reference or value) the place where the appointment will take place."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

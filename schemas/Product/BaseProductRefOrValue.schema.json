@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BaseProductRefOrValue.schema.json",
+    "title": "BaseProductRefOrValue",
+    "definitions": {
+        "BaseProductRefOrValue": {
+            "$id": "#BaseProductRefOrValue",
+            "description": "In the context of a product order or a product offering qualification, this data structure captures the product information useful to order or qualified  an existing subscribed product or to a new one. This is a subset of relevant product attributes for ordering and qualification",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the product"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the product"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "This is the name of the product."
+                },
+                "productCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Characteristic.schema.json#Characteristic"
+                    }
+                },
+                "realizingResource": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Resource/ResourceRef.schema.json#ResourceRef"
+                    }
+                },
+                "realizingService": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Service/ServiceRef.schema.json#ServiceRef"
+                    }
+                },
+                "isBundle": {
+                    "type": "boolean",
+                    "description": "If true, the product is a ProductBundle which is an instantiation of a BundledProductOffering. If false, the product is a ProductComponent which is an instantiation of a SimpleProductOffering."
+                },
+                "productRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/ProductRelationship.schema.json#ProductRelationship"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    }
+                },
+                "productSpecification": {
+                    "$ref": "../Product/ProductSpecificationRef.schema.json#ProductSpecificationRef"
+                },
+                "relatedPlace": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

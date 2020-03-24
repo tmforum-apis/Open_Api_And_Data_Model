@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "OrganizationStateType.schema.json",
+    "title": "OrganizationStateType",
+    "definitions": {
+        "OrganizationStateType": {
+            "$id": "#OrganizationStateType",
+            "type": "string",
+            "description": "Valid values for the lifecycle state of the organization",
+            "enum": [
+                "initialized",
+                "validated",
+                "closed"
+            ]
+        }
+    }
+}

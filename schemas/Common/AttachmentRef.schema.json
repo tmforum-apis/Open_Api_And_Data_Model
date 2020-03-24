@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AttachmentRef.schema.json",
+    "title": "AttachmentRef",
+    "definitions": {
+        "AttachmentRef": {
+            "$id": "#AttachmentRef",
+            "description": "Attachment reference. An attachment complements the description of an element (for instance a product) through video, pictures",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "A narrative text describing the content of the attachment"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "URL serving as reference for the attachment resource",
+                    "format": "uri"
+                },
+                "id": {
+                    "description": "Unique-Identifier for this attachment",
+                    "type": "string"
+                },
+                "url": {
+                    "description": "Link to the attachment media/content",
+                    "type": "string",
+                    "format": "uri"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
+                }
+            ]
+        }
+    }
+}

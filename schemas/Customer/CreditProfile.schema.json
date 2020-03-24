@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CreditProfile.schema.json",
+    "title": "CreditProfile",
+    "definitions": {
+        "CreditProfile": {
+            "$id": "#CreditProfile",
+            "description": "Credit profile for the party (containing credit scoring, ...). By default only the current credit profile  is retrieved. It can be used as a list to give the party credit profiles history, the first one in the list will be the current one.",
+            "type": "object",
+            "properties": {
+                "creditProfileDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date the profile was established"
+                },
+                "creditRiskRating": {
+                    "type": "integer",
+                    "description": "This is an integer whose value is used to rate the risk"
+                },
+                "creditScore": {
+                    "type": "integer",
+                    "description": "A measure of a person or organizations creditworthiness calculated on the basis of a combination of factors such as their income and credit history"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which the profile is valid"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

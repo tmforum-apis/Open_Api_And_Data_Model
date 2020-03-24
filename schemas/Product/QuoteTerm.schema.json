@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "QuoteTerm.schema.json",
+    "title": "QuoteTerm",
+    "definitions": {
+        "QuoteTerm": {
+            "$id": "#QuoteTerm",
+            "description": "Description of  aproduct Term linked to this quoteItem. This represent a commitment with a duration",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the quoteTerm"
+                },
+                "duration": {
+                    "$ref": "../Common/Quantity.schema.json#Quantity",
+                    "description": "Duration of the Term associated with this item"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the quoteTerm"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

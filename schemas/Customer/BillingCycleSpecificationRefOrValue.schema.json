@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BillingCycleSpecificationRefOrValue.schema.json",
+    "title": "BillingCycleSpecificationRefOrValue",
+    "definitions": {
+        "BillingCycleSpecificationRefOrValue": {
+            "$id": "#BillingCycleSpecificationRefOrValue",
+            "description": "An attachment by value or by reference.",
+            "type": "object",
+            "properties": {},
+            "required": [
+                "role"
+            ],
+            "allOf": [
+                {
+                    "$ref": "../Customer/BillingCycleSpecificationRef.schema.json#BillingCycleSpecificationRef"
+                },
+                {
+                    "$ref": "../Customer/BillingCycleSpecification.schema.json#BillingCycleSpecification"
+                }
+            ]
+        }
+    }
+}

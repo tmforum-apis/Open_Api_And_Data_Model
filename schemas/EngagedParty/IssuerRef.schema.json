@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "IssuerRef.schema.json",
+    "title": "IssuerRef",
+    "definitions": {
+        "IssuerRef": {
+            "$id": "#IssuerRef",
+            "description": "Issuer reference. The issuer is the party role who will issue the settlement note.",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the issuer"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the issuer"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "RelatedEntityRef.schema.json",
+    "title": "RelatedEntityRef",
+    "definitions": {
+        "RelatedEntityRef": {
+            "$id": "#RelatedEntityRef",
+            "description": "A reference to an entity, where the type of the entity is not known in advance.",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "The hyperlink to access an entity."
+                },
+                "id": {
+                    "type": "string",
+                    "description": "The identifier of an entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of an entity."
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

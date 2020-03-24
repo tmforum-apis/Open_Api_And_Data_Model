@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Category.schema.json",
+    "title": "Category",
+    "definitions": {
+        "Category": {
+            "$id": "#Category",
+            "type": "object",
+            "description": "The category resource is used to group product offerings, service and resource candidates in logical containers. Categories can contain other categories and/or product offerings, resource or service candidates.",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the category"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the category"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the category"
+                },
+                "isRoot": {
+                    "type": "boolean",
+                    "description": "If true, this Boolean indicates that the category is a root of categories"
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time of the last update"
+                },
+                "lifecycleStatus": {
+                    "type": "string",
+                    "description": "Used to indicate the current lifecycle status"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the category"
+                },
+                "parentId": {
+                    "type": "string",
+                    "description": "Unique identifier of the parent category"
+                },
+                "productOffering": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef"
+                    },
+                    "description": "A product offering represents entities that are orderable from the provider of the catalog, this resource includes pricing information."
+                },
+                "subCategory": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/CategoryRef.schema.json#CategoryRef"
+                    },
+                    "description": "The category resource is used to group product offerings, service and resource candidates in logical containers. Categories can contain other (sub-)categories and/or product offerings."
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which the category is valid"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "Category version"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProductSpecCharacteristicValue.schema.json",
+    "title": "ProductSpecCharacteristicValue",
+    "definitions": {
+        "ProductSpecCharacteristicValue": {
+            "$id": "#ProductSpecCharacteristicValue",
+            "description": "A number or text that can be assigned to a ProductSpecCharacteristic.",
+            "type": "object",
+            "properties": {
+                "default": {
+                    "type": "boolean",
+                    "description": "Indicates if the value is the default value for a characteristic"
+                },
+                "unitOfMeasure": {
+                    "type": "string",
+                    "description": "Could be minutes, GB..."
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period of time for which a value is applicable"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "A discrete value that the characteristic can take on"
+                },
+                "valueFrom": {
+                    "type": "string",
+                    "description": "The low range value that a characteristic can take on"
+                },
+                "valueTo": {
+                    "type": "string",
+                    "description": "The upper range value that a characteristic can take on"
+                },
+                "valueType": {
+                    "type": "string",
+                    "description": "A kind of value that the characteristic can take on, such as numeric, text, and so forth"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "MediumCharacteristic.schema.json",
+    "title": "MediumCharacteristic",
+    "definitions": {
+        "MediumCharacteristic": {
+            "$id": "#MediumCharacteristic",
+            "type": "object",
+            "description": "Describes the contact medium characteristics that could be used to contact a party (an individual or an organization)",
+            "properties": {
+                "city": {
+                    "type": "string",
+                    "description": "The city"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "The country"
+                },
+                "emailAddress": {
+                    "type": "string",
+                    "description": "Full email address in standard format"
+                },
+                "faxNumber": {
+                    "type": "string",
+                    "description": "The fax number of the contact"
+                },
+                "contactType": {
+                    "type": "string",
+                    "description": "The type of contact, for example: phone number such as mobile, fixed home, fixed office. postal address such as shipping instalation…"
+                },
+                "socialNetworkId": {
+                    "type": "string",
+                    "description": "Identifier as a member of a social network"
+                },
+                "phoneNumber": {
+                    "type": "string",
+                    "description": "The primary phone number of the contact"
+                },
+                "postCode": {
+                    "type": "string",
+                    "description": "Postcode"
+                },
+                "stateOrProvince": {
+                    "type": "string",
+                    "description": "State or province"
+                },
+                "street1": {
+                    "type": "string",
+                    "description": "Describes the street"
+                },
+                "street2": {
+                    "type": "string",
+                    "description": "Complementary street description"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

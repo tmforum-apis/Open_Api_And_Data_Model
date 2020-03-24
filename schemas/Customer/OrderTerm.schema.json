@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "OrderTerm.schema.json",
+    "title": "OrderTerm",
+    "definitions": {
+        "OrderTerm": {
+            "$id": "#OrderTerm",
+            "description": "Description of a productTerm linked to this orderItem. This represent a commitment with a duration",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the productOrderTerm"
+                },
+                "duration": {
+                    "$ref": "../Common/Quantity.schema.json#Quantity",
+                    "description": "Duration of the productOrderTerm"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the productOrderTerm"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BalanceTopup.schema.json",
+    "title": "BalanceTopup",
+    "definitions": {
+        "BalanceTopup": {
+            "$id": "#BalanceTopup",
+            "description": "#TODO",
+            "type": "object"
+        }
+    }
+}

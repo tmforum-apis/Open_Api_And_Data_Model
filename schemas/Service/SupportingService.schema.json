@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "SupportingService.schema.json",
+    "title": "SupportingService",
+    "definitions": {
+        "SupportingService": {
+            "$id": "#SupportingService",
+            "description": "A collection of services that support this service (links between CFS -> RFS)",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "type": "string",
+                    "description": "Category of the supporting service"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the supporting service"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the supporting service"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the supporting service"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceLevelSpecification.schema.json",
+    "title": "ServiceLevelSpecification",
+    "definitions": {
+        "ServiceLevelSpecification": {
+            "$id": "#ServiceLevelSpecification",
+            "description": "A Service Level Specification represents a pre-defined or negotiated set of Service Level \nObjectives. In addition, certain consequences are associated with not meeting the Service Level \nObjectives. Service Level Agreements are expressed in terms of Service Level Specifications.",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "A brief introduction of a service level specification."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "The hyperlink to access a service level specification."
+                },
+                "id": {
+                    "type": "string",
+                    "description": "The identifier to a service level specification."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of Service Level Specification"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "A valid duration of a thing."
+                },
+                "relatedServiceLevelObjective": {
+                    "type": "array",
+                    "description": "A list of objectives related to this service level specification",
+                    "items": {
+                        "$ref": "../Service/ServiceLevelObjectiveRef.schema.json#ServiceLevelObjectiveRef"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

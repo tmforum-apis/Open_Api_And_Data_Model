@@ -1,0 +1,87 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AgreementSpecification.schema.json",
+    "title": "AgreementSpecification",
+    "definitions": {
+        "AgreementSpecification": {
+            "$id": "#AgreementSpecification",
+            "description": "A template of an agreement that can be used when establishing partnerships",
+            "type": "object",
+            "required": [
+                "name",
+                "attachment"
+            ],
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "A narrative that explains in detail what the agreement specification is about"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the agreement specification"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the agreement specification"
+                },
+                "isBundle": {
+                    "type": "boolean",
+                    "description": "If true, this agreement specification is a grouping of other agreement specifications. The list of bundled agreement specifications is provided by the specificationRelationship property"
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time of the last update"
+                },
+                "lifecycleStatus": {
+                    "type": "string",
+                    "description": "Indicates the current lifecycle status"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the agreement specification"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which the agreement specification is valid"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "Agreement specification version"
+                },
+                "serviceCategory": {
+                    "$ref": "../Product/CategoryRef.schema.json#CategoryRef"
+                },
+                "specificationCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/AgreementSpecCharacteristic.schema.json#AgreementSpecCharacteristic"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    }
+                },
+                "attachment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
+                    }
+                },
+                "specificationRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/AgreementSpecificationRelationship.schema.json#AgreementSpecificationRelationship"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

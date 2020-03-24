@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceOfferingQualificationRef.schema.json",
+    "title": "ServiceOfferingQualificationRef",
+    "definitions": {
+        "ServiceOfferingQualificationRef": {
+            "$id": "#ServiceOfferingQualificationRef",
+            "description": "It could be a serviceQualification or a productOfferingQualification that has been executed previously and captured in the productOrder to provide eligibility information",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "href of the qualification"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of a pre-existing qualification"
+                },
+                "qualificationItemId": {
+                    "type": "string",
+                    "description": "Id of an item of a qualification"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
+                }
+            ]
+        }
+    }
+}

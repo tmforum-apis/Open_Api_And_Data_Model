@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BundledProductOfferingRef.schema.json",
+    "title": "BundledProductOfferingRef",
+    "definitions": {
+        "BundledProductOfferingRef": {
+            "$id": "#BundledProductOfferingRef",
+            "description": "BundledProductOffering Reference. A type of ProductOffering that belongs to a grouping of ProductOfferings made available to the market. It inherits of all attributes of ProductOffering.",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the product offering"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the product offering"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the product offering"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
+                }
+            ]
+        }
+    }
+}

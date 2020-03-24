@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "SpecCharacteristic.schema.json",
+    "title": "SpecCharacteristic",
+    "definitions": {
+        "SpecCharacteristic": {
+            "$id": "#SpecCharacteristic",
+            "description": "A characteristic quality or distinctive feature of a Specification.  The characteristic can be take on a discrete value, such as color, can take on a range of values, (for example, sensitivity of 100-240 mV), or can be derived from a formula (for example, usage time (hrs) = 30 - talk time *3). Certain characteristics, such as color, may be configured during the ordering or some other process.",
+            "type": "object",
+            "properties": {
+                "configurable": {
+                    "type": "boolean",
+                    "description": "If true, the Boolean indicates that the SpecCharacteristic is configurable"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A narrative that explains in detail what the SpecCharacteristic is"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the SpecCharacteristic"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which the productSpecCharacteristic is valid"
+                },
+                "valueType": {
+                    "type": "string",
+                    "description": "A kind of value that the characteristic can take on, such as numeric, text and so forth"
+                },
+                "specCharacteristicValue": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/SpecCharacteristicValue.schema.json#SpecCharacteristicValue"
+                    }
+                },
+                "specCharRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/SpecCharRelationship.schema.json#SpecCharRelationship"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,97 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CommunicationMessage.schema.json",
+    "title": "CommunicationMessage",
+    "definitions": {
+        "CommunicationMessage": {
+            "$id": "#CommunicationMessage",
+            "description": "Communication message means a notification approach in the format of a message which can be dispatched (sent) to the certain user by the system with the content which can be felt and understood by the recipient. The user can be either a final customer or a customer service agent. The message can reach the customer in different interaction channels, including: email, short message, mobile app notification (push).",
+            "type": "object",
+            "properties": {
+                "callbackFlag": {
+                    "type": "boolean",
+                    "description": "Do you want a callback on delivery of communication message?"
+                },
+                "content": {
+                    "type": "string",
+                    "description": "The content of the communication message"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description for the whole object"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hypertext Reference of the Communication Message"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of Communication Message"
+                },
+                "logFlag": {
+                    "type": "boolean"
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "The priority of the communication message.\nSmall number means higher priority."
+                },
+                "sendTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time of sending communication message"
+                },
+                "sendTimeComplete": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time of completion of sending communication message"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of communication message"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The title of the message, necessary for the email and mobile app push"
+                },
+                "tryTimes": {
+                    "type": "integer",
+                    "description": "How many times do you want to retry the delivery of this message?"
+                },
+                "messageType": {
+                    "type": "string",
+                    "description": "The type of message, such as: SMS, Email, Mobile app push notification"
+                },
+                "attachment": {
+                    "type": "array",
+                    "description": "Any attachment associated with this message",
+                    "items": {
+                        "$ref": "../Common/Attachment.schema.json#Attachment"
+                    }
+                },
+                "receiver": {
+                    "type": "array",
+                    "description": "The receiver(s) of this message",
+                    "items": {
+                        "$ref": "../Common/Receiver.schema.json#Receiver"
+                    }
+                },
+                "sender": {
+                    "$ref": "../Common/Sender.schema.json#Sender",
+                    "description": "The sender of this message"
+                },
+                "characteristic": {
+                    "type": "array",
+                    "description": "Any additional characteristic(s) of this message",
+                    "items": {
+                        "$ref": "../Common/CommunicationRequestCharacteristic.schema.json#CommunicationRequestCharacteristic"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}
