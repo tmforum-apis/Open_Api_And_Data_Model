@@ -1,0 +1,14 @@
+{
+    "category": "Gold",
+    "description": "This is a temperature sensor using CoAP and 6LoWPAN.",
+    "endDate": "2019-05-13T00:00",
+    "href": "https://host:port/tmf-api/iotDevice/v1/iotDevice/temp_3",
+    "id": "3",
+    "lifecycleState": "InService",
+    "name": "temp_3",
+    "startDate": "2019-05-03T00:00",
+    "value": "0041227744222",
+    "version": "1.0",
+    "apiType": "NGSI",
+    "uri": "https://host:port/tmf-api/iotDevice/v1/iotDevice/temp_3/dataAccessEndpoint/3"
+}

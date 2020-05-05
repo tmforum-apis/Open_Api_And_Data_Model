@@ -1,0 +1,30 @@
+{
+  "id": "622815ac-5811-4cb6-b608-5b28d5d73a8d",
+  "href": "/tmf-api/testExecution/v1/testEnvironmentProvisioningExecution/622815ac-5811-4cb6-b608-5b28d5d73a8d",
+  "dataCorrelationId": "29d7832e-9970-4af8-8d80-19444e1973ea",
+  "testEnvironmentAllocationExecution": {
+    "dataCorrelationId": "aac9969d-219d-4ff1-b256-1765dcf9b342",
+    "resourceManagerUrl": "https://myserver.com/resourceManager",
+    "testScenario": {
+      "id": "e37a0d02-a222-44d3-9d38-bae1d899ccfb",
+      "href": "/tmf-api/testScenario/v1/testScenario/e37a0d02-a222-44d3-9d38-bae1d899ccfb",
+      "@referredType": "TestScenario"
+    },
+    "concreteResourceMapping": [
+      {
+        "abstractResource": "phone",
+        "concreteResources": [
+          {
+            "name": "iPhone_1289"
+          }
+        ]
+      }
+    ],
+    "state": "completed",
+    "@baseType": "Execution",
+    "@type": "TestEnvironmentAllocationExecution"
+  },
+  "state": "completed",
+  "@baseType": "Execution",
+  "@type": "TestEnvironmentProvisioningExecution"
+}

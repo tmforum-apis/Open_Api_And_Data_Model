@@ -1,0 +1,12 @@
+{
+    "correlationId": "423",
+    "description": "This  iot management event ...",
+    "domain": "a string ...",
+    "eventId": "536",
+    "eventTime": "2019-10-03T00:00",
+    "eventType": "a string ...",
+    "priority": "a string ...",
+    "timeOcurred": "2019-10-03T00:00",
+    "title": "a string ...",
+    "event": {}
+}

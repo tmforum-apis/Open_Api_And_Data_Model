@@ -1,0 +1,51 @@
+{
+    "address": {
+        "id": "1a2b3c",
+        "href": "https://host:port/location/geographicAddress/1a2b3c",
+        "streetNr": "1",
+        "streetName": "UnterDenLinden",
+        "city": "Berlin",
+        "country": "Germany",
+        "postcode": "10117",
+        "@type": "GeographicAddress",
+        "geographicLocation":
+        {
+            "id": "afuih78g"
+        }
+    },
+    "birthdate": "1970-11-02",
+    "email": "jane.doe@email.com",
+    "email_verified": true,
+    "family_name": "Doe",
+    "gender": "female",
+    "given_name": "Jane",
+    "legalId": [
+        {}
+    ],
+    "locale": "en",
+    "middle_name": "Mary",
+    "name": "Jane Mary Doe",
+    "nickname": "JaneDoe",
+    "phone_number": "+1 (425) 555-1212",
+    "phone_number_verified": true,
+    "picture": "https://some.url.com/janeDoe.jpg",
+    "preferred_username": "janeDoe",
+    "profile": "https://my.blog.com/janeDoe",
+    "sub": "a066ffd5-f685-43bc-ad57-bfb7639decb0",
+    "userAssets": [{
+        "id": "2289c5f7-7e14-41a5-a71d-5ba811618ad0",
+        "assetType": "landline",
+        "entityType": "service",
+        "role": "authorizedUser",
+        "entitlement": [{
+            "action": "string",
+            "function": "string"
+        }],
+        "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/UserAsser.schema.json",
+        "@type": "UserAsset"
+    }],
+    "website": "https://janedoe.com",
+    "zoneinfo": "America/Los_Angeles",
+    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/UserInfo.schema.json",
+    "@type": "UserInfo"
+}

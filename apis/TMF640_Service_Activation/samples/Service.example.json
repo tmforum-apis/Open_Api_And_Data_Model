@@ -1,0 +1,132 @@
+{
+  "id": "123-456",
+  "href": "http://serverlocation:port/serviceActivationConfiguration/v4/service/123-456",
+  "category": "MobileService",
+  "description": "Mobile Line ",
+  "hasStarted": true,
+  "isBundle": false,
+  "isServiceEnabled": true,
+  "isStateful": true,
+  "serviceDate": "020-04-01T12:15:39.434Z",
+  "startDate": "2020-04-03T12:15:39.434Z",
+  "feature": [
+    {
+      "id": "1",
+      "isBundle": false,
+      "isEnabled": true,
+      "name": "Voice",
+      "featureCharacteristic": [
+        {
+          "id": "1",
+          "name": "VoiceFeatureCharacteristic",
+          "valueType": "object",
+          "value": [
+            {
+              "voiceStandard": "enable",
+              "voWifi": "disable",
+              "roaming": "enable",
+              "@schemaLocation": ".../serviceSpecification/11/featureSpecification/1/VoiceFeatureCharacteristic.json",
+              "@type": "VoiceFeatureCharacteristic"
+            }
+          ],
+          "@type": "FeatureCharacteristic"
+        }
+      ],
+      "@type": "Feature"
+    },
+    {
+      "id": "2",
+      "isEnabled": false,
+      "name": "Data",
+      "featureCharacteristic": [
+        {
+          "id": "75",
+          "name": "isGreen",
+          "valueType": "string",
+          "value": "enable"
+        }
+      ],
+      "@type": "Feature"
+    },
+    {
+      "id": "3",
+      "isEnabled": true,
+      "name": "Messaging",
+      "featureCharacteristic": [
+        {
+          "id": "74",
+          "name": "incomingSMS",
+          "valueType": "string",
+          "value": "enable"
+        },
+        {
+          "id": "73",
+          "name": "outgoingSMS",
+          "valueType": "string",
+          "value": "enable"
+        }
+      ],
+      "@type": "Feature"
+    }
+  ],
+  "relatedParty": [
+    {
+      "id": "78",
+      "href": "..../partyManagement/v4/organization/78",
+      "name": "TMF Telco",
+      "role": "Service Provider",
+      "@referredType": "Organization"
+    },
+    {
+      "id": "12",
+      "href": "..../partyManagement/v4/individual/12",
+      "name": "Jean Pontus",
+      "role": "user",
+      "@referredType": "Individual"
+    }
+  ],
+  "serviceCharacteristic": [
+    {
+      "id": "89",
+      "name": "MSISDN",
+      "valueType": "string",
+      "value": "415-275-7439"
+    }
+  ],
+  "serviceSpecification": {
+    "id": "cfs45",
+    "href": ".../serviceCatalog/v4/serviceSpecification/cfs45",
+    "name": "c_Mobile",
+    "@type": "serviceSpecification",
+    "@referredType": "ServiceSpecification"
+  },
+  "state": "active",
+  "supportingService": [
+    {
+      "serviceSpecification": {
+        "id": "cfs89",
+        "href": ".../serviceCatalog/v4/serviceSpecification/cfs89",
+        "name": "c_MobileSupport",
+        "@type": "serviceSpecification",
+        "@referredType": "ServiceSpecification"
+      },
+      "serviceCharacteristic": [
+        {
+          "id": "sd-8",
+          "name": "IMSI",
+          "valueType": "string",
+          "value": "228 01 21 76510739 "
+        }
+      ],
+      "state": "active",
+      "@type": "Service"
+    },
+    {
+      "id": "741-853",
+      "href": "http://serverlocation:port/serviceActivationConfiguration/v4/service/741-853",
+      "@referredType": "Service",
+      "@type": "ServiceRef"
+    }
+  ],
+  "@type": "Service"
+}

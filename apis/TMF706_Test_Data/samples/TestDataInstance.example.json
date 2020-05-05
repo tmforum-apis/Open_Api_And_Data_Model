@@ -1,0 +1,17 @@
+{
+  "id": "aac9969d-219d-4ff1-b256-1765dcf9b342",
+  "href": "http://myservice.com/resource-path",
+  "description": "Input parameters for test case 1 execution",
+  "version": "1.2.3",
+  "versionDescription": "This version does foo",
+  "state": "completed",
+  "testDataInstanceDefinition": {
+    "id": "4aafacbd-11ff-4dc8-b445-305f2215715f",
+    "href": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
+    "attachmentType": "json",
+    "content": {
+      "arg1": "sample value"
+    },
+    "mimeType": "application/json"
+  }
+}

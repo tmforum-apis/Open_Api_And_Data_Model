@@ -1,0 +1,25 @@
+{
+    "id": "48c76edf-31fc-4f2b-a409-1e80c8b13124",
+    "href": "/tmf-api/testExecution/v1/testCaseExecution/48c76edf-31fc-4f2b-a409-1e80c8b13124",
+    "dataCorrelationId": "aac9969d-219d-4ff1-b256-1765dcf9b342",
+    "testSuite": {
+        "id": "43c936fb-e1f8-4ca0-adce-2ce587b11490",
+        "href": "/tmf-api/testCase/v1/testSuite/43c936fb-e1f8-4ca0-adce-2ce587b11490",
+        "@referredType": "TestSuite"
+    },
+    "generalArtifacts": [
+        {
+            "id": "ea2cad99-f498-4d7c-b0b5-90dd2be99414",
+            "href": "/tmf-api/generalArtifact/v1/generalArtifact/ea2cad99-f498-4d7c-b0b5-90dd2be99414",
+            "@referredType": "GeneralArtifact"
+        }
+    ],
+    "testDataInstances": [
+        {
+            "id": "a5ea5329-a1b9-484e-9029-830102633d65",
+            "href": "/tmf-api/testData/v1/testDataInstance/a5ea5329-a1b9-484e-9029-830102633d65",
+            "@referredType": "TestDataInstance"
+        }
+    ],
+    "state": "completed"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "aac9969d-219d-4ff1-b256-1765dcf9b342",
+  "href": "http://myservice.com/resource-path",
+  "description": "Sample test scenario 1",
+  "version": "1.2.3",
+  "versionDescription": "This version does foo",
+  "testScenarioDefinition": {
+    "mimeType": "string",
+    "name": "tmf-vtp"
+  }
+}

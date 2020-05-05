@@ -1,0 +1,41 @@
+{
+	"id": "1a2b3c",
+	"href": "https://host:port/location/geographicAddressValidation/1a2b3c",
+	"provideAlternative": "true",
+	"status": "done",
+	"validationDate": "2017-05-03T00:00",
+	"validationResult" : "partial",
+	"submittedGeographicAddress": {
+		"streetNr": "151",
+		"streetName": "Landgrabenweg",
+		"postcode": "53227",
+		"postcodeExtension": "1",
+		"city": "Bonn",
+		"stateOrProvince": "NRW",
+		"country": "Germany",
+		"@type": "FieldedAddress",
+		"@baseTtype": "GeographicAddress",
+		"@schemaLocation": "http://github.com/MEF-GIT/FieldedAddress.json"
+	},
+	"alternateGeographicAddress": [
+		{
+			"id": "9912",
+			"href": "https://host:port/location/geographicAddress/9912",
+			"streetNr": "151",
+			"streetNrSuffix": "Erstbau",
+			"streetName": "Landgrabenweg",
+			"streetType": "road",
+			"streetSuffix": "",
+			"postcode": "53227",
+			"locality": "Beuel",
+			"city": "Bonn",
+			"stateOrProvince": "NRW",
+			"country": "Germany",
+			"geographicLocationRefOrValue": {
+				"id": "9597",
+				"href": "https://host:port/location/geographicLocation/9597"
+			}
+		}
+	]
+}
+

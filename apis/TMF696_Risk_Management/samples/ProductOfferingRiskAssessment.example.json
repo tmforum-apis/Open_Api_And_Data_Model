@@ -1,0 +1,39 @@
+{
+    "status": "Completed", 
+    "validFor": {
+        "startDateTime": "2017-08-23T00:00", 
+        "endDateTime": "2018-03-25T00:00"
+    }, 
+    "characteristic": [
+        {
+            "name": "Color",
+            "valueType": "string",
+            "value": "black"
+        }
+    ],
+    "productOffering": {
+        "id": "5677885"
+    },
+    "place": {
+        "@type": "GeographicalAddress",
+        "role": "home address",
+        "id": "234546467567231"
+    },
+    "riskAssessmentResult": {
+        "overallScore": 19,
+        "score": [
+            {
+                "score": 20,
+                "riskName": "FraudRisk"
+            },
+            {
+                "score": 7,
+                "riskName": "BadPaymentRisk"
+            },
+            {
+                "score": 5,
+                "riskName": "CreditGamingRisk"
+            }
+        ]
+    }
+}

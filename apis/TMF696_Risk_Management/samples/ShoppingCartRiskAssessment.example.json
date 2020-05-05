@@ -1,0 +1,46 @@
+{
+    "status": "Completed", 
+    "validFor": {
+        "startDateTime": "2017-08-23T00:00", 
+        "endDateTime": "2018-03-25T00:00"
+    }, 
+    "characteristic": [
+        {
+            "name": "ContactPersonName",
+            "valueType": "string",
+            "value": "David Alexander"
+        }
+    ],
+    "partyRole": {
+        "id": "22556513347332"
+    },
+    "shoppingCart": {
+        "id": "267734"
+    },
+    "place": {
+        "@type": "GeographicalAddress",
+        "role": "home address",
+        "id": "234546467567334"
+    },
+    "riskAssessmentResult": {
+        "overallScore": 12,
+        "score": [
+            {
+                "score": 0,
+                "riskName": "PartyRoleIDConfidenceRisk"
+            },
+            {
+                "score": 10,
+                "riskName": "FraudRisk"
+            },
+            {
+                "score": 13,
+                "riskName": "BadPaymentRisk"
+            },
+            {
+                "score": 9,
+                "riskName": "CreditGamingRisk"
+            }
+        ]
+    }
+}

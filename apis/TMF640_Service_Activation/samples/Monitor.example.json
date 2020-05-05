@@ -1,0 +1,28 @@
+{
+    "id": "44555",
+    "href": "https://serverlocation:port/ServiceActivationAndConfiguration/v4/monitor/44555",
+    "state": "completed",
+    "request": {
+        "method": "POST",
+        "to": "http://serverlocation:port/serviceActivationConfiguration/v4/service/",
+        "body": "Active Mobile Line",
+        "header": [
+            {
+                "name": "locale",
+                "value": "en-us"
+            }
+        ]
+    },
+    "response": {
+        "statusCode": "201",
+        "body": "Actived Mobile Line",
+        "header": [
+            {
+                "name": "locale",
+                "value": "en-us"
+            }
+        ]
+    },
+    "sourceHref": "http://serverlocation:port/serviceActivationConfiguration/v4/service/123-456",
+    "@type": "Monitor"
+}

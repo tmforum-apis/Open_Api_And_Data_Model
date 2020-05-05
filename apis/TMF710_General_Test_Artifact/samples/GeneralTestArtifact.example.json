@@ -1,0 +1,42 @@
+{
+  "id": "aac9969d-219d-4ff1-b256-1765dcf9b342",
+  "href": "https:/host:port/tmf-api/generalartifact/v1/aac9969d-219d-4ff1-b256-1765dcf9b342",
+  "description": "Sample test artifact",
+  "version": "1.2.3",
+  "relatedParty": [
+    {
+      "name": "testUser1",
+      "role": "Owner",
+      "contact": [
+        {
+          "mediumType": "email",
+          "characteristic": {
+            "emailAddress": "testUser1@abc.com"
+          }
+        }
+      ]
+    }
+  ],
+  "attributes": [
+    {
+      "name": "name",
+      "valueType": "string",
+      "value": "test"
+    },
+    {
+      "name": "category",
+      "valueType": "string",
+      "value": "vnf"
+    },
+    {
+      "name": "checksum",
+      "valueType": "string",
+      "value": "BC1A4D958133CAE622EAC4F6B845D78D"
+    }
+  ],
+  "generalArtifactDefinition": {
+    "attachmentType": "zip",
+    "content": "<BASE64 of test case>",
+    "mimeType": "binary"
+  }
+}

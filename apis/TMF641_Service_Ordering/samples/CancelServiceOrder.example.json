@@ -1,0 +1,14 @@
+{
+  "id": "789-fsds5-kjp",
+  "href": "https://host:port/serviceOrdering/v4/cancelServiceOrder/789-fsds5-kjp",
+  "cancellationReason": "Duplicate service order",
+  "effectiveCancellationDate": "2019-04-30T12:58:35.489Z",
+  "requestedCancellationDate": "2019-04-30T12:56:21.931Z",
+  "serviceOrder": {
+    "id": "45f-98f-ss45",
+    "href": "https://host:port/serviceOrdering/v4/serviceOrder/45f-98f-ss45",
+    "@referredType": "ServiceOrder"
+  },
+  "state": "done",
+  "@type": "CancelServiceOrder"
+}

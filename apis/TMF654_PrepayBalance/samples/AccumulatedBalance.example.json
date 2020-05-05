@@ -1,0 +1,41 @@
+{
+    "bucket": [
+     {
+      "id": "11",
+      "href": "/prepayBalanceManagement/v4/bucket/11"
+     }
+    ],
+    "description": "an accumulation of balances",
+    "href": "/prepayBalanceManagmenet/v4/accumulatedBalance/6956",
+    "id": "6956",
+    "logicalResource": {
+        "id": "22", 
+        "href": "/resourceInventoryManagement/v4/logicalResource/22",
+       "@type": "MSISDN",
+       "value": "07645233482"
+    },
+    "name": "accumulatedBalance",
+    "partyAccount": {
+       "id": "acc1",
+       "href": "/accountManagement/v4/account/acc1"
+    },
+    "product": [
+     {
+       "id": "prd1",
+       "href": "/productInventory/v4/product/prd1"
+     }
+    ],
+    "relatedParty": [
+     {
+      "id": "5",
+      "href": "/partyManagement/customer/22",
+      "name": "jerry lewis",
+      "role": "customer"
+	
+     }
+    ],
+    "totalBalance": {
+      "amount": 900,
+      "units": "MB" 
+    }
+}

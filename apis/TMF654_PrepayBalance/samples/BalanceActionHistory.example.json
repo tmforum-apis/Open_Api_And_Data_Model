@@ -1,0 +1,71 @@
+{
+    "id": "55",
+    "href": "/prepayBalanceManagement/v4/balanceActionHistory/4",
+    "description": "depends on the action. There are 4 types: TopupBalance,AdjustBalance,TransferBalance and ReserveBalance",
+   "amount": {
+      "amount": 50,
+      "units": "EUR"
+    },
+    "isAutopTopup": true,
+    "numberOfPeriods": 2,
+    "recurringPeriod": "monthly",
+    "usageType": "monetary",
+    "adjustType": "oneTime", 
+    "reason": "depends on the action type. refer to the description field",
+    "bucket": {
+      "id": "11",
+      "href": "/prepayBalanceManagement/v4/bucket/11"
+     },
+    "product": {
+       "id": "prd1",
+       "href": "/productInventory/v4/product/prd1"
+    },
+    "partyAccount": {
+       "id": "acc1",
+       "href": "/accountManagement/v4/account/acc1"
+    },
+    "paymentMethod": {
+        "id": "22",
+        "href": "/paymentMethods/v1/paymentMethod/2",
+        "type": "credit-card"
+    },
+    "channel": {
+      "id": "99",
+      "href": "/channel/99",
+      "name": "WEB"
+    },
+    "logicalResource": {
+       "@type": "MSISDN",
+       "value": "07645233482"
+    },
+    "costOwner": "originator",
+    "transferCost": {
+       "unit": "Euro",
+       "value": 1.5
+    },
+    "receiverBucketUsageType": "monetary", 
+    "receiverBucket": {
+       "id": "11",
+       "href": "/prepayBalanceManagement/v4/bucket/22"
+    },
+    "relatedParty": [{
+      "id": "5",
+      "href": "/partyManagement/customer/22",
+      "name": "jerry lewis",
+      "role": "customer"
+    }],
+    "requestor": {
+      "id": "55",
+      "href": "/partyManagement/v4/customer/agent1",
+      "name": "jim jordan",
+      "role": "agent"
+    },
+    "voucher": "XS23DXADS",
+    "status": "confirmed",
+    "requestedDate": "1985-04-11T23:20:50.52Z",
+    "confirmationDate": "1985-04-12T23:20:50.52Z",
+    "validFor": {
+      "endDateTime": "1985-04-12T23:20:50.52Z",
+      "startDateTime": "1985-04-12T23:20:50.52Z"
+    }
+  }
