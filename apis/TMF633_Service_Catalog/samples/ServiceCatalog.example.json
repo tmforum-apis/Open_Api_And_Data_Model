@@ -1,0 +1,31 @@
+{
+    "id": "3830", 
+    "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/serviceCatalog/3830", 
+    "name": "Catalog Wholesale Business", 
+    "description": "This service catalog describes services that address the wholesale business segment.", 
+    "version": "1.0", 
+    "validFor": {
+        "startDateTime": "2017-08-29T00:00", 
+        "endDateTime": "2018-03-25T00:00"
+    }, 
+    "lastUpdate": "2017-08-27T00:00", 
+    "lifecycleStatus": "Active",
+    "relatedParty": [
+        {
+            "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/organization/3426", 
+            "id": "3426", 
+            "name": "Broadly Broad Ltd", 
+            "role": "vendor"
+        }
+    ], 
+    "category": [
+        {
+            "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/category/7752", 
+            "id": "7752", 
+            "name": "IoT"
+        }
+    ],
+    "@type": "ServiceCatalog", 
+    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Service/ServiceCatalog.schema.json ", 
+    "@baseType": "Catalog" 
+}

@@ -1,0 +1,75 @@
+{
+    "description": "a service description",
+    "href": "https://mycsp.com:8080/tmf-api/serviceTestManagement/v4/serviceTestSpecification/12",
+    "id": "12",
+    "version": "1.0",
+    "name": "monkey test",
+    "validFor": {
+        "endDateTime": "2017-03-01T00:00:00",
+        "startDateTime": "2016-03-01T00:00:00"
+    },
+    "testMeasureDefinition": [
+        {
+            "captureFrequency": "once",
+            "captureMethod": "automatic capture by instrument",
+            "metricDescription": "This is the flow speed in a service",
+            "metricHref": "https://mycsp.com:8080/tmf-api/metricManagement/v4/metric/21",
+            "metricName": "Flow speed",
+            "name": "Definition of Flow speed",
+            "unitOfMeasure": "A second",
+            "valueType": "bits",
+            "capturePeriod": {
+                "amount": "5",
+                "units": "seconds"
+            },
+            "thresholdRule": [
+                {
+                    "conformanceTargetUpper": "2500",
+                    "conformanceComparatorUpper": "greater than ",
+                    "description": "This speed is greater than the target upper",
+                    "name": "tooMuchTraffic",
+                    "numberOfAllowedCrossing": 0, 
+                    "thresholdRuleSeverity": "1",
+                    "tolerancePeriod": {
+                        "amount": "15",
+                        "units": "minutes"
+                    },
+                    "consequence": [
+                        {
+                            "prescribeAction": "sendWarning",
+                            "description": "send a warning to the system",
+                            "name": "sendWarning",
+                            "repeatAction": false,
+                            "validFor": {
+                                "endDateTime": "2017-03-01T00:00:00",
+                                "startDateTime": "2016-03-01T00:00:00"
+                            }
+                        },
+                        {
+                            "prescribeAction": "generateReport",
+                            "description": "generate a waring report ",
+                            "name": "generateReport",
+                            "repeatAction": false,
+                            "validFor": {
+                                "endDateTime": "2017-03-01T00:00:00",
+                                "startDateTime": "2016-03-01T00:00:00"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "validFor": {
+                "endDateTime": "2017-03-01T00:00:00",
+                "startDateTime": "2016-03-01T00:00:00"
+            }
+        }
+    ],
+    "relatedServiceSpecification": {
+        "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/serviceSpecification/31", 
+        "id": "31", 
+        "@referredType": "vCPEServiceSpecification"
+    },
+    "@baseType" : "ServiceTestSpecification",
+    "@type" : "PerformanceTestSpecification",
+    "@schemaLocation" : "https://mycsp.com:8080/tmf-api/schema/service/PerformanceTestSpecification.schema.json"
+}

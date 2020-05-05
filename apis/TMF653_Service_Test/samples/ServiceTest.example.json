@@ -1,0 +1,77 @@
+{
+    "href": "https://mycsp.com:8080/tmf-api/serviceTestManagement/v4/serviceTest/3112", 
+    "id": "3112", 
+    "description:": "This service test is a simple one", 
+    "endDateTime": "2016-03-02T24:00:00", 
+    "mode": "PROACTIVE",
+    "startDateTime": "2016-03-02T00:00:00",
+    "state": "Completed",
+    "relatedService": {
+        "href": "https://mycsp.com:8080/tmf-api/serviceManagement/v4/service/21", 
+        "id": "21", 
+        "name": "gameService"
+    },
+    "testSpecification":{
+        "href": "https://mycsp.com:8080/tmf-api/serviceTestManagement/v4/serviceTestSpecification/22",
+        "id": "22",
+        "@referredType": "PerformanceTestSpecification"
+    },
+    "characteristic": [
+        {
+            "name": "number",
+            "valueType" : "integer",
+            "value": 3
+        },
+        {
+            "name": "restart",
+            "valueType" : "boolean",
+            "value": true
+        }
+    ],
+    "testMeasure": [
+        {
+            "accuracy": 0.0001,
+            "captureDateTime": "2016-03-02T11:12:00",
+            "captureMethod": "automatic capture by instrument",
+            "metricDescription": "This is the flow speed in a service",
+            "metricHref": "https://mycsp.com:8080/tmf-api/metricManagement/v4/metric/21",
+            "metricName": "Flow speed",
+            "unitOfMeasure": "A second",
+            "value": {
+                "valueType": "bits",
+                "value":
+                {
+                    "@type": "integer",
+                    "value": 3000
+                }
+            },
+            "ruleViolation": [
+                {
+                    "conformanceTargetUpper": "2500",
+                    "conformanceComparatorUpper": "greater than ",
+                    "description": "This speed is greater than the target upper",
+                    "name": "tooMuchTraffic",
+                    "numberOfAllowedCrossing": 0, 
+                    "thresholdRuleSeverity": "1",
+                    "appliedConsequence": [
+                        {
+                            "appliedAction": "sendWarning",
+                            "description": "send a warning to the system",
+                            "name": "sendWarning",
+                            "repeatAction": false
+                        },
+                        {
+                            "appliedAction": "generateReport",
+                            "description": "generate a waring report ",
+                            "name": "generateReport",
+                            "repeatAction": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "@type": "PerformanceTest",
+    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Service/PerformanceTest.schema.json",
+    "@baseType": "ServiceTest"
+}

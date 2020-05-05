@@ -1,0 +1,34 @@
+{
+    "id": "1708", 
+    "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/serviceCategory/1708", 
+    "name": "Cloud Services", 
+    "description": "A category to hold all available cloud service offers", 
+    "version": "1.0", 
+    "validFor": {
+        "startDateTime": "2017-08-24T00:00", 
+        "endDateTime": "2018-03-25T00:00"
+    }, 
+    "lifecycleStatus": "Active", 
+    "lastUpdate": "2017-08-27T00:00", 
+    "isRoot": true, 
+    "serviceCandidate": [
+        {
+            "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/serviceCandidate/5850", 
+            "id": "5850", 
+            "name": "Speed Max", 
+            "version": "1.1", 
+            "@referredType": "ServiceCandidate"
+        }
+    ], 
+    "category": [
+        {
+            "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/category/6086", 
+            "id": "6086", 
+            "name": "Cloud", 
+            "@referredType": "ServiceCategory"
+        }
+    ],
+    "@type": "ServiceCategory", 
+    "@schemalLocation": "https://mycsp.com:8080/tmf-api/schema/Service/ServiceCategory.schema.json", 
+    "@baseType": "Category" 
+}
