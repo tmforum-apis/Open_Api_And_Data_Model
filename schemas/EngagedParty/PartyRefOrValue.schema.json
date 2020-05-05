@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PartyRefOrValue.schema.json",
+    "title": "PartyRefOrValue",
+    "definitions": {
+        "PartyRefOrValue": {
+            "$id": "#PartyRefOrValue",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "../EngagedParty/Party.schema.json#/definitions/Party"
+                },
+                {
+                    "$ref": "../EngagedParty/PartyRef.schema.json#/definitions/PartyRef"
+                }
+            ]
+        }
+    }
+}

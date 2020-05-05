@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ReportingPeriod.schema.json",
+  "title": "ReportingPeriod",
+  "definitions": {
+    "ReportingPeriod": {
+      "$id": "#ReportingPeriod",
+      "type": "string",
+      "description": "Possible values for the reporting period",
+      "enum": [
+        "r_1mn",
+        "r_5mn",
+        "r_15mn",
+        "r_30mn",
+        "r_1h",
+        "r_24h",
+        "na"
+      ]
+    }
+  }
+}

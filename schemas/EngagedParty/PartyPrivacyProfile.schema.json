@@ -54,16 +54,13 @@
         },
         "status": {
           "type": "string",
-          "description": "The status of this profile (such as agreed, created, terminated, etc.)"
+          "description": "The status of this profile (for example: created, terminated, etc.)"
         },
         "validFor": {
           "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
           "description": "The period of time for which this profile is valid, depending on regulations or business consideration the profile may expire and need to be renegotiated."
         }
       },
-      "required": [
-        "agreedByParty"
-      ],
       "allOf": [
         {
           "$ref": "../Common/Entity.schema.json#Entity"

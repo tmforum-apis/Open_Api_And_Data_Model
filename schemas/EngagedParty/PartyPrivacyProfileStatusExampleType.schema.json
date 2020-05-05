@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PartyPrivacyProfileStatusExampleType.schema.json",
+    "title": "PartyPrivacyProfileStatusExampleType",
+    "definitions": {
+        "PartyPrivacyProfileStatusExampleType": {
+            "$id": "#PartyPrivacyProfileStatusExampleType",
+            "type": "string",
+            "description": "Possible values for the status of party privacy profile (for example: created, terminated)",
+            "enum": [
+                "created",
+                "terminated"
+            ]
+        }
+    }
+}

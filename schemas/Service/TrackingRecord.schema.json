@@ -38,9 +38,12 @@
         }
       },
       "allOf": [
-        {
-          "$ref": "../Common/Entity.schema.json#Entity"
-        }
+                {
+                  "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
+                },
+                {
+                  "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                } 
       ]
     }
   }

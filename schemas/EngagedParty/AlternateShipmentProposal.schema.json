@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AlternateShipmentProposal.schema.json",
+    "title": "AlternateShipmentProposal",
+    "definitions": {
+        "AlternateShipmentProposal": {
+            "$id": "#AlternateShipmentProposal",
+            "type": "object",
+            "description": "Alternate shipment proposal is used when the requested shipment is not valid as specified in the request. An alternate proposal could be a distinct shipmentSpecification close to the requested one or the same specification as requested but with a different carrier or shipping options",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of an alternate shipment proposal"
+                },
+                "alternateShipmentDeliveryDate": {
+                    "type": "string",
+                    "description": "Alternate delivery date in case the carrier is not able to meet requested expected delivery date for the shipment",
+                    "format": "date-time"
+                },
+                "alternateShipment": {
+                    "$ref": "../EngagedParty/ShipmentRefOrValue.schema.json#/definitions/ShipmentRefOrValue"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
+        }
+    }
+}

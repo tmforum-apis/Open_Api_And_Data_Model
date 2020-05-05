@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ShipmentQualificationItemRelationship.schema.json",
+    "title": "ShipmentQualificationItemRelationship",
+    "definitions": {
+        "ShipmentQualificationItemRelationship": {
+            "$id": "#ShipmentQualificationItemRelationship",
+            "type": "object",
+            "description": "Structure used to describe relationship between shipmentQualification items from the same shipmentQualification .",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Id of the shipmentQualificationItem (from the same shipmentQualificationItem )."
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "Type of relationship (ex: reliesOn, connectedTo, etc...)"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
+        }
+    }
+}

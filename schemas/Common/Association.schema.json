@@ -5,20 +5,12 @@
   "definitions": {
     "Association": {
       "$id": "#Association",
-      "description": "Association is the class that describe a relationship between two or more entity specifications based on a given association specification. The role and type of each endpoint in the relationship is given by an association role. The type of endpoints in the relationship should match the ones as defined in the corresponding association role specification. A relationship between entity specifications may be governed by conditions and rules which are addressed by constraint references in this resource. Constraints for a relationship may include new rules and conditions in addition to those defined for the corresponding association specification",
+      "description": "Association is the class that describes a relationship between two or more entities or entity specifications based on a given association specification. The role of each endpoint in the relationship is given by an association role. The type of endpoints in the relationship should match the ones as defined in the corresponding association role specification. A relationship between entity specifications may be governed by conditions and rules which are addressed by constraint references in this resource. Constraints for a relationship may include new rules and conditions in addition to those defined for the corresponding association specification",
       "type": "object",
       "properties": {
         "description": {
           "type": "string",
           "description": "Description of the association"
-        },
-        "href": {
-          "type": "string",
-          "description": "Hyperlink reference to this association"
-        },
-        "id": {
-          "type": "string",
-          "description": "unique identifier of the association"
         },
         "lastUpdate": {
           "type": "string",
@@ -42,29 +34,31 @@
           "description": "Version of this REST resource"
         },
         "associationSpec": {
-          "$ref": "../Common/AssociationSpecificationRef.schema.json#AssociationSpecificationRef",
+          "$ref": "../Common/AssociationSpecificationRef.schema.json#/definitions/AssociationSpecificationRef",
           "description": "The specification of this association"
         },
         "associationRole": {
           "type": "array",
           "items": {
-            "$ref": "../Common/AssociationRole.schema.json#AssociationRole"
+            "$ref": "../Common/AssociationRole.schema.json#/definitions/AssociationRole"
           },
           "minItems": 2,
-          "maxItems": 4,
-          "description": "The role of this association"
+          "description": "The end point roles of this association"
         },
         "constraint": {
           "description": "Any constraints in this association",
           "type": "array",
           "items": {
-            "$ref": "../Common/ConstraintRef.schema.json#ConstraintRef"
+            "$ref": "../Common/ConstraintRef.schema.json#/definitions/ConstraintRef"
           }
         }
       },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
+          "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
+        },
+        {
+          "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
         }
       ]
     }

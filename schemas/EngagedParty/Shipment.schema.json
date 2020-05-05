@@ -1,0 +1,122 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Shipment.schema.json",
+    "title": "Shipment",
+    "definitions": {
+        "Shipment": {
+            "$id": "#Shipment",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the shipment"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the shipment"
+                },
+                "orderDate": {
+                    "type": "string",
+                    "description": "Is the date when the shipment order was created",
+                    "format": "date-time"
+                },
+                "completionDate": {
+                    "type": "string",
+                    "description": "Date when the order was completed",
+                    "format": "date-time"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Is the description of the shipment. It could be the same as the description of the shipment specification."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the shipment. It could be the same as the name of the shipment specification."
+                },
+                "shipmentTrackingCode": {
+                    "type": "string"
+                },
+                "deliveryDate": {
+                    "type": "string",
+                    "description": "Is the date at which the shipment was completed (customer has taken ownership of the package)",
+                    "format": "date-time"
+                },
+                "deliveryInstruction": {
+                    "type": "string",
+                    "description": "Is the description of the shipment. It could be the same as the description of the shipment specification."
+                },
+                "deliveryTimeSlot": {
+                    "$ref": "../Common/TimePeriod.schema.json#/definitions/TimePeriod"
+                },
+                "placeFrom": {
+                    "$ref": "../Common/PlaceRefOrValue.schema.json#/definitions/PlaceRefOrValue"
+                },
+                "placeTo": {
+                    "$ref": "../Common/PlaceRefOrValue.schema.json#/definitions/PlaceRefOrValue"
+                },
+                "shipmentCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Characteristic.schema.json#/definitions/Characteristic"
+                    }
+                },
+                "weight": {
+                    "$ref": "../Common/Quantity.schema.json#/definitions/Quantity"
+                },
+                "note": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Note.schema.json#/definitions/Note"
+                    }
+                },
+                "agreement": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/AgreementRef.schema.json#/definitions/AgreementRef"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+                    }
+                },
+                "billingAccount": {
+                    "$ref": "../Customer/BillingAccountRef.schema.json#/definitions/BillingAccountRef"
+                },
+                "shipmentTracking": {
+                    "$ref": "../EngagedParty/ShipmentTrackingRef.schema.json#/definitions/ShipmentTrackingRef"
+                },
+                "state": {
+                    "$ref": "../EngagedParty/ShipmentStateType.schema.json#/definitions/ShipmentStateType"
+                },
+                "shipmentItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/ShipmentItem.schema.json#/definitions/ShipmentItem"
+                    }
+                },
+                "shipmentOrderItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedShipmentOrderItem.schema.json#/definitions/RelatedShipmentOrderItem"
+                    }
+                },
+                "shipmentPrice": {
+                    "$ref": "../EngagedParty/ShipmentPrice.schema.json#/definitions/ShipmentPrice"
+                },
+                "shipmentSpecification": {
+                    "$ref": "../EngagedParty/ShipmentSpecificationRefOrValue.schema.json#/definitions/ShipmentSpecificationRefOrValue"
+                },
+                "carrier": {
+                    "$ref": "../EngagedParty/PartyRefOrValue.schema.json#/definitions/PartyRefOrValue"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#/definitions/Entity"
+                }
+            ]
+        }
+    }
+}

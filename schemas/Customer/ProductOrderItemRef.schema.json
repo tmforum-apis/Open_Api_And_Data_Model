@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProductOrderItemRef.schema.json",
+    "title": "ProductOrderItemRef",
+    "definitions": {
+        "ProductOrderItemRef": {
+            "$id": "#ProductOrderItemRef",
+            "type": "object",
+            "description": "Reference to an order item that can typically be queried with another API.",
+            "required": [
+                "productOrderId"
+            ],
+            "properties": {
+                "productOrderId": {
+                    "type": "string",
+                    "description": "Identifier of the order of which the item is a part of"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#/definitions/EntityRef"
+                }
+            ]
+        }
+    }
+}

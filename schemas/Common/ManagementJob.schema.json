@@ -49,7 +49,12 @@
           "minItems": 0,
           "maxItems": 1
         }
-      }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
   }
 }

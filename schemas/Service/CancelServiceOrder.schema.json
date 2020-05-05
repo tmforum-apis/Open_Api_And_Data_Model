@@ -9,7 +9,7 @@
             "type": "object",
             "required": ["ServiceOrder"],
             "properties": {
-                "ServiceOrder": {
+                "serviceOrder": {
                         "$ref": "../Service/ServiceOrderRef.schema.json#ServiceOrderRef"
                 }
             },

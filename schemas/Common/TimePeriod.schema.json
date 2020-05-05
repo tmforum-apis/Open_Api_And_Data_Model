@@ -9,7 +9,7 @@
       "type": "object",
       "properties": {
         "startDateTime": {
-          "description": "Start of the time period, using IETC-RFC-3339 format. If you define a start, you must also define an end",
+          "description": "Start of the time period, using IETC-RFC-3339 format",
           "type": "string",
           "format": "date-time",
           "examples": [

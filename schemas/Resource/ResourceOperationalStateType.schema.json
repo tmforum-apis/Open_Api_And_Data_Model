@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#", 
+    "$id": "ResourceOperationalStateType.schema.json", 
+    "title": "ResourceOperationalStateType", 
+    "definitions": {
+        "ResourceOperationalStateType": {
+	        "id": "#ResourceOperationalStateType",
+            "type": "string", 
+            "description": "ResourceOperationalStateType enumerations", 
+            "enum": [
+                "enable", 
+                "disable"
+            ]
+        }
+    }
+}

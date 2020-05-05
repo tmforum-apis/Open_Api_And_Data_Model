@@ -9,7 +9,7 @@
                 "relationshipType": {
                     "type": "string"
                 },
-                "ServiceRelationshipCharacteristic": {
+                "serviceRelationshipCharacteristic": {
                     "type": "array",
                     "items": {
                         "$ref": "Characteristic.schema.json#/definitions/Characteristic"

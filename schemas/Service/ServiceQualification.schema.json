@@ -25,6 +25,10 @@
                     "description": "Effective date to serviceQualification completion", 
                     "format": "date-time"
                 },
+                "instantSyncQualification": {
+                    "type": "boolean",
+                    "description": "An indicator which when the value is \"true\" means that requester expects to get qualifcation result immediately in the response. If the indicator is true then the response code of 200 indicates the operation is successful otherwise a task is created with a response 201."
+                   },
                 "estimatedResponseDate": {
                     "type": "string",
                     "description": "Date when the requester expect to provide an answer for the qualification request.", 

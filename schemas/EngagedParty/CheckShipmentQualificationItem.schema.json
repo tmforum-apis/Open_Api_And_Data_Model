@@ -1,0 +1,62 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CheckShipmentQualificationItem.schema.json",
+    "title": "CheckShipmentQualificationItem",
+    "definitions": {
+        "CheckShipmentQualificationItem": {
+            "$id": "#CheckShipmentQualificationItem",
+            "type": "object",
+            "description": "A ShipmentQualificationItem relates to a specific shipment being checked in a qualification operation.",
+            "properties": {
+                "qualificationResult": {
+                    "type": "string",
+                    "description": "Qualification result for shipmentQualification item. It could be: - qualified (requested shipment is valid), - unqualified (requested shipment not valid and not alternative available), - alternate (requested shipment not valid but alternate proposal available)"
+                },
+                "state": {
+                    "type": "string",
+                    "description": "State of the qualification item (acknowledged, inProgress, terminatedWithError, done)"
+                },
+                "terminationError": {
+                    "type": "array",
+                    "description": "If qualificationItem has not been done properly this lists the error(s) that caused termination of the qualification.",
+                    "items": {
+                        "$ref": "../Service/TerminationError.schema.json#/definitions/TerminationError"
+                    }
+                },
+                "qualificationRelationship": {
+                    "type": "array",
+                    "description": "Structure used to describe relationship between shipementQualification item from the same shipementQualification .",
+                    "items": {
+                        "$ref": "../Service/ServiceQualificationRelationship.schema.json#/definitions/ServiceQualificationRelationship"
+                    }
+                },
+                "qualificationItemRelationship": {
+                    "type": "array",
+                    "description": "A list of qualification item relationships used to describe relationship between shipmentQualification item from the same shipmentQualification.",
+                    "items": {
+                        "$ref": "../EngagedParty/ShipmentQualificationItemRelationship.schema.json#/definitions/ShipmentQualificationItemRelationship"
+                    }
+                },
+                "eligibilityUnavailabilityReason": {
+                    "type": "array",
+                    "description": "A list of eligibility unavailability reasons. Reason for eligibility result if the shipmentQualification result is no (meaning the shipment is not valid).",
+                    "items": {
+                        "$ref": "../EngagedParty/ShipmentEligibilityUnavailabilityReason.schema.json#/definitions/ShipmentEligibilityUnavailabilityReason"
+                    }
+                },
+                "alternateShipmentProposal": {
+                    "type": "array",
+                    "description": "Alternate shipment proposal is used when the requested shipment is not valid as specified in the request. An alternate proposal could be a distinct shipmentSpecification close to the requested one or the same specification as requested but with a different carrier or shipping options",
+                    "items": {
+                        "$ref": "../EngagedParty/AlternateShipmentProposal.schema.json#/definitions/AlternateShipmentProposal"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../EngagedParty/ShipmentQualificationItem.schema.json#/definitions/ShipmentQualificationItem"
+                }
+            ]
+        }
+    }
+}

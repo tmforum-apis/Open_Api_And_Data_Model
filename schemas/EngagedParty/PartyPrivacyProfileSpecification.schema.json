@@ -35,7 +35,7 @@
         },
         "status": {
           "type": "string",
-          "description": "Lifecycle status of the specification (e.g. In Design, Active, Rejected, Retired)"
+          "description": "Lifecycle status of the specification (for example: In Design, Active, Rejected, Retired)"
         },
         "name": {
           "type": "string",

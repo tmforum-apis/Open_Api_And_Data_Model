@@ -16,6 +16,10 @@
                     "type": "boolean", 
                     "description": "If true, the Boolean Indicates if the value is the default value for a characteristic"
                 }, 
+                "value": {
+                    "$ref": "../Common/Any.schema.json#/definitions/Any",
+                    "description": "A discrete value that the characteristic can take on, or the actual value of the characteristic"
+                }, 
                 "unitOfMeasure": {
                     "type": "string", 
                     "description": "A length, surface, volume, dry measure, liquid measure, money, weight, time, and the like. In general, a determinate quantity or magnitude of the kind designated, taken as a standard of comparison for others of the same kind, in assigning to them numerical values, as 1 foot, 1 yard, 1 mile, 1 square foot."
@@ -43,7 +47,7 @@
             },
             "allOf": [
                 {
-                    "$ref": "../Common/Extensible.schema.json#Extensible"
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
                 }
             ]
         }

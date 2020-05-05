@@ -1,0 +1,154 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceOrder.schema.json",
+    "title": "ServiceOrder",
+    "definitions": {
+        "ShipmentOrder": {
+            "$id": "#ServiceOrder",
+            "type": "object",
+            "required": [
+                "shipmentOrderItem"
+            ],
+            "properties": {
+                "cancellationDate": {
+                    "type": "string",
+                    "description": "Date when the order is cancelled. This is used when order is cancelled. ",
+                    "format": "date-time"
+                },
+                "cancellationReason": {
+                    "type": "string",
+                    "description": "Reason why the order is cancelled. This is used when order is cancelled. "
+                },
+                "category": {
+                    "type": "string",
+                    "description": "Used to categorize the order from a business perspective that can be useful for the OM system (e.g. \"enterprise\", \"residential\", ...)"
+                },
+                "completionDate": {
+                    "type": "string",
+                    "description": "Date when the order was completed",
+                    "format": "date-time"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A free-text description of the order"
+                },
+                "expectedCompletionDate": {
+                    "type": "string",
+                    "description": "Expected completion date amended by the provider",
+                    "format": "date-time"
+                },
+                "externalId": {
+                    "type": "string",
+                    "description": "ID given by the consumer to facilitate searches"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink to access the order"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "ID created on repository side"
+                },
+                "notificationContact": {
+                    "type": "string",
+                    "description": "Contact attached to the order to send back information regarding this order"
+                },
+                "orderDate": {
+                    "type": "string",
+                    "description": "Date when the order was created",
+                    "format": "date-time"
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A way that can be used by consumers to prioritize orders in OM system (from 0 to 4 : 0 is the highest priority, and 4 the lowest)"
+                },
+                "requestedCompletionDate": {
+                    "type": "string",
+                    "description": "Requested completion date from the requestors perspective",
+                    "format": "date-time"
+                },
+                "requestedStartDate": {
+                    "type": "string",
+                    "description": "Order fulfillment start date wished by the requestor. This is used when, for any reason, requestor cannot allow provider to begin to operationally begin the fulfillment before a date.",
+                    "format": "date-time"
+                },
+                "startDate": {
+                    "type": "string",
+                    "description": "Date when the order started",
+                    "format": "date-time"
+                },
+                "stateChangeDate": {
+                    "type": "string",
+                    "description": "Last change date of the order state.",
+                    "format": "date-time"
+                },
+                "agreement": {
+                    "type": "array",
+                    "description": "A reference to an agreement defined in the context of the work order",
+                    "items": {
+                        "$ref": "../EngagedParty/AgreementRef.schema.json#/definitions/AgreementRef"
+                    }
+                },
+                "billingAccount": {
+                    "$ref": "../Customer/BillingAccountRef.schema.json#/definitions/BillingAccountRef"
+                },
+                "channel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/RelatedChannel.schema.json#/definitions/RelatedChannel"
+                    }
+                },
+                "note": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Note.schema.json#/definitions/Note"
+                    }
+                },
+                "shipmentOrderRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/OrderRelationship.schema.json#/definitions/OrderRelationship"
+                    }
+                },
+                "orderTotalPrice": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/OrderPrice.schema.json#/definitions/OrderPrice"
+                    }
+                },
+                "payment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/PaymentRef.schema.json#/definitions/PaymentRef"
+                    }
+                },
+                "placeFrom": {
+                    "$ref": "../Common/PlaceRefOrValue.schema.json#/definitions/PlaceRefOrValue"
+                },
+                "placeTo": {
+                    "$ref": "../Common/PlaceRefOrValue.schema.json#/definitions/PlaceRefOrValue"
+                },
+                "productOrder": {
+                    "$ref": "../Customer/ProductOrderRef.schema.json#/definitions/ProductOrderRef"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+                    }
+                },
+                "state": {
+                    "$ref": "../EngagedParty/ShipmentOrderStateType.schema.json#/definitions/ShipmentOrderStateType"
+                },
+                "shipmentOrderItem": {
+                    "$ref": "../EngagedParty/ProductOrderItem.schema.json#/definitions/ShipmentOrderItem"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#/definitions/Entity"
+                }
+            ]
+        }
+    }
+}

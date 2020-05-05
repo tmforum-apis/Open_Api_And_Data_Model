@@ -26,7 +26,8 @@
           "description": "A list of specific dates that should be excluded from the Schedule Definition.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ExcludedDates"
+            "type":"string",
+            "format":"date-time"
           }
         },
         "scheduleDefinitionHoursRange": {
@@ -42,9 +43,10 @@
         },
         "monthlyScheduleDaysOfMonthDefinition": {
           "description": "The schedule definition for running the threshold job",
-          "type": "array",
+          "type":"array",
           "items": {
-            "$ref": "#/definitions/ScheduledDates"
+            "type":"string",
+            "format":"date-time"
           }
         },
         "MonthlyScheduleDaysOfWeekDefinition": {
@@ -54,10 +56,16 @@
           "description": "The date schedule is used to define a schedule that is based on specific dates, such as December 31st 2015, Feberaury 28th 2013",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ScheduledDates"
+            "type":"string",
+            "format":"date-time"
           }
         }
-      }
+      },
+      "allOf": [
+        {
+           "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        } 
+      ]
     }
   }
 }

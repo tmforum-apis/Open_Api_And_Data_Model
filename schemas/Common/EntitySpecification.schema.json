@@ -12,14 +12,6 @@
           "type": "string",
           "description": "Description of this REST resource"
         },
-        "href": {
-          "type": "string",
-          "description": "Hyperlink reference to this REST resource"
-        },
-        "id": {
-          "type": "string",
-          "description": "Unique identifier of this REST resource"
-        },
         "lastUpdate": {
           "type": "string",
           "format": "date-time",
@@ -33,6 +25,10 @@
           "type": "string",
           "description": "Name given to this REST resource"
         },
+        "isBundle": {
+          "type": "boolean",
+          "description": "isBundle determines whether an EntitySpecification represents a single EntitySpecification (false), or a bundle of EntitySpecifications (true)."
+        },
         "validFor": {
           "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
           "description": "The period for which this REST resource is valid"
@@ -45,38 +41,48 @@
           "type": "array",
           "description": "Attachments that may be of relevance to this specification, such as picture, document, media",
           "items": {
-            "$ref": "../Common/Attachment.schema.json#Attachment"
+            "$ref": "../Common/AttachmentRefOrValue.schema.json#/definitions/AttachmentRefOrValue"
           }
         },
-        "entitySchema": {
-          "description": "Pointer to a schema that defines the entity",
-          "$ref": "../Common/EntitySchemaRef.schema.json#EntitySchemaRef"
+        "targetEntitySchema": {
+          "description": "Pointer to a schema that defines the target entity",
+          "$ref": "../Common/TargetEntitySchema.schema.json#/definitions/TargetEntitySchema"
         },
         "specCharacteristic": {
           "type": "array",
           "description": "List of characteristics that the entity can take",
           "items": {
-            "$ref": "../Common/SpecificationCharacteristic.schema.json#SpecificationCharacteristic"
+            "$ref": "../Common/CharacteristicSpecification.schema.json#/definitions/CharacteristicSpecification"
           }
         },
         "relatedParty": {
           "type": "array",
           "description": "Parties who manage or otherwise have an interest in this entity specification",
           "items": {
-            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+            "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
           }
         },
+        "constraint": {
+					"description": "This is a list of constraint references applied to this specification",
+					"type": "array",
+					"items": {
+						"$ref": "../Common/ConstraintRef.schema.json#/definitions/ConstraintRef"
+					}
+				},
         "entitySpecRelationship": {
           "type": "array",
           "description": "Relationship to another entity specification, might be dependency, substitution, etc.",
           "items": {
-            "$ref": "../Common/EntitySpecificationRelationship.schema.json#EntitySpecificationRelationship"
+            "$ref": "../Common/EntitySpecificationRelationship.schema.json#/definitions/EntitySpecificationRelationship"
           }
         }
       },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
+          "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
+        },
+        {
+          "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
         }
       ]
     }

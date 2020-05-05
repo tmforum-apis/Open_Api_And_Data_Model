@@ -9,7 +9,8 @@
       "properties": {
         "relationshipType": {
           "type": "string",
-          "description": "The type of related order item, such as [dependency] if the order item needs to be [not started] until another order item is complete; [cross-reference] to keep track of the source order (service order)"
+          "description": "The type of related order item, such as [dependency] if the order item needs to be held until another order item is complete; [cross-reference] to keep track of the source order (service order)",
+          "examples": [ "dependency", "cross-reference" ]
         },
         "resourceOrder": {
           "$ref": "../Resource/ResourceOrderRef.schema.json#ResourceOrderRef"

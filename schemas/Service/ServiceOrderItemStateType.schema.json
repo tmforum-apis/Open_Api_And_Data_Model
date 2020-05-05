@@ -17,7 +17,8 @@
                 "completed",
                 "failed",
                 "assessingCancellation",
-                "pendingCancellation"
+                "pendingCancellation",
+                "partial"
             ]
         }
     }

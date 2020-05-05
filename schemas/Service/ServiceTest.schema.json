@@ -24,18 +24,14 @@
           "format": "date-time",
           "description": "The end date and time of the service test"
         },
-        "href": {
-          "type": "string",
-          "description": "Hyperlink to access the service test"
-        },
-        "id": {
-          "type": "string",
-          "description": "The identifier of the service test"
-        },
         "mode": {
           "type": "string",
           "description": "An indication of whether the service test is running in \n\"PROACTIVE\" or \"ONDEMAND\" mode"
         },
+         "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The validity time for the test results"
+        },       
         "name": {
           "type": "string",
           "description": "The name of the service test"
@@ -43,6 +39,13 @@
         "relatedService": {
           "description": "The actual service being tested",
           "$ref": "../Service/ServiceRef.schema.json#ServiceRef"
+        },
+        "relatedParty": {
+          "type": "array",
+          "description": "Party related to the test",
+          "items": {
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
         },
         "startDateTime": {
           "type": "string",
@@ -67,7 +70,10 @@
       },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
+           "$ref": "../Common/Extensible.schema.json#Extensible"
+        },
+        {
+           "$ref": "../Common/Addressable.schema.json#Addressable"
         }
       ]
     }

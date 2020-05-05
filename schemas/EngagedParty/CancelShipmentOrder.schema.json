@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CancelShipmentOrder.schema.json",
+    "title": "CancelShipmentOrder",
+    "definitions": {
+        "CancelShipmentOrder": {
+            "$id": "#CancelShipmentOrder",
+            "type": "object",
+            "required": [
+                "shipmentOrder"
+            ],
+            "properties": {
+                "shipmentOrder": {
+                    "$ref": "../EngagedParty/ShipmentOrderRef.schema.json#/definitions/ShipmentOrderRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/CancelOrder.schema.json#/definitions/CancelOrder"
+                }
+            ]
+        }
+    }
+}

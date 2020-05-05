@@ -46,7 +46,7 @@
                     "type": "array",
                     "description": "A list of service order items related to this service",
                     "items": {
-                        "$ref": "RelatedServiceOrderItem.schema.json#/definitions/RelatedServiceOrderItem"
+                        "$ref": "../Service/RelatedServiceOrderItem.schema.json#/definitions/RelatedServiceOrderItem"
                     }
                 },
                 "note": {
@@ -78,7 +78,7 @@
                 },
                 "state": {
                     "description": "The life cycle state of the service, such as designed, reserved, active, etc...",
-                    "$ref": "ServiceStateType.schema.json#/definitions/ServiceStateType"
+                    "$ref": "../Service/ServiceStateType.schema.json#/definitions/ServiceStateType"
                 },
                 "category": {
                     "type": "string",
@@ -111,7 +111,7 @@
                 },
                 "serviceRelationship": {
                     "type": "array",
-                    "description": "A list of service relationships (ServiceRelationship [*]). Describes links with other service(s) in the inventory (useful for describing relies-on, relies-from between CFS for example).",
+                    "description": "A list of service relationships (ServiceRelationship [*]). Describes links with other service(s) in the inventory.",
                     "items": {
                         "$ref": "../Service/ServiceRelationship.schema.json#/definitions/ServiceRelationship"
                     }

@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CancelResourceOrder.schema.json",
+    "title": "CancelResourceOrder",
+    "definitions": {
+        "CancelResourceOrder": {
+            "$id": "#CancelResourceOrder",
+            "description": "Request for cancellation an existing resource order",
+            "type": "object",
+            "required": ["resourceOrder"],
+            "properties": {
+                "resourceOrder": {
+                        "$ref": "../Resource/ResourceOrderRef.schema.json#ResourceOrderRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#CancelOrder"
+                }
+            ]
+        }
+    }
+}

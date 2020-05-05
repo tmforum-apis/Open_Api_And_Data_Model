@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ShipmentItem.schema.json",
+    "title": "ShipmentItem",
+    "definitions": {
+        "ShipmentItem": {
+            "$id": "#ShipmentItem",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the individual shipment line item"
+                },
+                "quantity": {
+                    "type": "number",
+                    "description": "Identifier of the individual shipment line item",
+                    "format": "integer"
+                },
+                "resource": {
+                    "$ref": "../Resource/ResourceRefOrValue.schema.json#/definitions/ResourceRefOrValue"
+                },
+                "product": {
+                    "$ref": "../Product/ProductRefOrValue.schema.json#/definitions/ProductRefOrValue"
+                },
+                "weight": {
+                    "$ref": "../Common/Quantity.schema.json#/definitions/Quantity"
+                },
+                "productStockReservation": {
+                    "$ref": "../Product/ProductStockReservationRef.schema.json#/definitions/ProductStockReservationRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
+        }
+    }
+}

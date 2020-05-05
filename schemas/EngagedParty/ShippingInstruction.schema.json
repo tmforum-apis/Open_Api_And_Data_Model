@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ShippingInstruction.schema.json",
+  "title": "ShippingInstruction",
+  "definitions": {
+    "ShippingInstruction": {
+      "$id": "#ShippingInstruction",
+      "description": "Instructions and details for the carrier",
+      "type": "object",
+      "properties": {
+            "shippingType":{
+              "type":"string",
+              "description":"The shipping type, e.g. thick_envelope, small_flat_rate_box, large_package, etc."
+            },
+            "carrierId":{
+              "type":"string",
+              "description":"The carrier identifier"
+            },
+            "carrierServiceCode":{
+              "type":"string",
+              "description":"The service code used by the carrier to ship the package, royal mail ground, royal mail first class, etc"
+            },
+            "deliverySpeed":{
+              "type":"string",
+              "description":"Shipping delivery speed, same day, next day, next business day, etc"
+            },
+            "deliveryAttempts":{
+              "type":"integer",
+              "description":"Shipping delivery attempts that should be performed"
+            },
+            "shippingInstructionCharacteristic":{
+              "description":"Additional shipping characteristics that maybe specific to one or another carrier",
+              "$ref":"../Common/Characteristic.schema.json#Characteristic"
+            },
+            "warehouseId":{
+              "type":"string",
+              "description":"The identification of the warehouse that the shipment is being shipped from."
+            },
+            "receiptConfirmation":{
+              "type":"string",
+              "description":"Delivery confirmation required for the shipment (none, signature, over18Signature)"
+            }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

@@ -16,6 +16,11 @@
           "$ref": "#/definitions/PerformanceIndicatorSpecification"
         }
       },
+      "allOf": [
+        {
+           "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        } 
+      ],
       "required":[
         "name"
       ]

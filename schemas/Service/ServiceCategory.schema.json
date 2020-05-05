@@ -8,14 +8,6 @@
       "description": "The (service) category resource is used to group service candidates in logical containers. Categories can contain other categories.",
       "type": "object",
       "properties": {
-        "id": {
-          "type": "string",
-          "description": "Unique identifier of the category"
-        },
-        "href": {
-          "type": "string",
-          "description": "Reference of the category"
-        },
         "name": {
           "type": "string",
           "description": "Name of the category"
@@ -53,21 +45,24 @@
           "type": "array",
           "description": "List of service candidates associated with this category",
           "items": {
-            "$ref": "../Service/ServiceCandidateRef.schema.json#ServiceCandidateRef"
+            "$ref": "../Service/ServiceCandidateRef.schema.json#/definitions/ServiceCandidateRef"
           }
         },
         "category": {
           "type": "array",
           "description": "List of child categories in the tree for in this category",
           "items": {
-            "$ref": "../Service/ServiceCategoryRef.schema.json#ServiceCategoryRef"
+            "$ref": "../Service/ServiceCategoryRef.schema.json#/definitions/ServiceCategoryRef"
           }
         }
       },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
-        }
+          "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
+        },
+        {
+          "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        }   
       ]
     }
   }

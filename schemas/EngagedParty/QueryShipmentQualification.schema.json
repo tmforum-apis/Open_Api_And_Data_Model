@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "QueryShipmentQualification.schema.json",
+    "title": "QueryShipmentQualification",
+    "definitions": {
+        "QueryShipmentQualification": {
+            "$id": "#QueryShipmentQualification",
+            "type": "object",
+            "description": "QueryShipmentQualification is used to retrieve a list of shipments that are valid in the context of the interaction (place, party, shipment parameters, ...).",
+            "properties": {
+                "queryShipmentQualificationDate": {
+                    "type": "string",
+                    "description": "Date when the shipmentQualification was submitted",
+                    "format": "date-time"
+                },
+                "shipmentQualificationItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/ShipmentQualificationItem.schema.json#/definitions/ShipmentQualificationItem"
+                    }
+                },
+                "searchCriteria": {
+                    "$ref": "../EngagedParty/ShipmentQualificationItem.schema.json#/definitions/ShipmentQualificationItem"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../EngagedParty/ShipmentQualification.schema.json#/definitions/ShipmentQualification"
+                }
+            ]
+        }
+    }
+}

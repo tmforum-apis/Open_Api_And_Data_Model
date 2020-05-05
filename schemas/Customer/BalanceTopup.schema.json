@@ -45,7 +45,7 @@
         },
         "nrOfPeriods": {
           "type": "integer",
-          "description": "For autotopup indicates the number of occurrences of the period the recharge operation must be executed. If not included then no limit is set to stop the executionof the topup every period"
+          "description": "For autotopup indicates the number of occurrences of the period the recharge operation must be executed. If not included then no limit is set to stop the execution of the topup every period"
         },
         "partyAccount": {
           "description": "A reference to the account that owns the bucket impacted by the balance related operation",

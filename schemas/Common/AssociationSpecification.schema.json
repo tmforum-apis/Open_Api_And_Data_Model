@@ -12,14 +12,6 @@
           "type": "string",
           "description": "Description of the specification"
         },
-        "href": {
-          "type": "string",
-          "description": "Hyperlink reference to this specification"
-        },
-        "id": {
-          "type": "string",
-          "description": "unique identifier of the association specification"
-        },
         "lastUpdate": {
           "type": "string",
           "format": "date-time",
@@ -45,20 +37,24 @@
           "type": "array",
           "description": "Constraints relating to this association",
           "items": {
-            "$ref": "../Common/ConstraintRef.schema.json#ConstraintRef"
+            "$ref": "../Common/ConstraintRef.schema.json#/definitions/ConstraintRef"
           }
         },
         "associationRoleSpec": {
           "type": "array",
           "description": "Role specifications for this association",
+          "minItems": 2,
           "items": {
-            "$ref": "../Common/AssociationRoleSpecification.schema.json#AssociationRoleSpecification"
+            "$ref": "../Common/AssociationRoleSpecification.schema.json#/definitions/AssociationRoleSpecification"
           }
         }
       },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
+          "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
+        },
+        {
+          "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
         }
       ]
     }

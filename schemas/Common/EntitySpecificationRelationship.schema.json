@@ -7,19 +7,8 @@
       "$id": "#EntitySpecificationRelationship",
       "description": "A migration, substitution, dependency or exclusivity relationship between/among entity specifications.",
       "type": "object",
+      "required": ["relationshipType"],
       "properties": {
-        "href": {
-          "type": "string",
-          "description": "Reference of the target EntitySpecification"
-        },
-        "id": {
-          "type": "string",
-          "description": "Unique identifier of target EntitySpecification"
-        },
-        "name": {
-          "type": "string",
-          "description": "The name given to the target entity specification instance"
-        },
         "role": {
           "type": "string",
           "description": "The association role for this entity specification"
@@ -39,7 +28,7 @@
       },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
+          "$ref": "../Common/EntityRef.schema.json#/definitions/EntityRef"
         }
       ]
     }

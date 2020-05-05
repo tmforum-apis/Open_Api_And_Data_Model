@@ -35,9 +35,7 @@
           }
         },
         "state": {
-          "type": "ManagedArtifactStateType",
-          "description": "The state of the artifact",
-          "example": "stable"
+          "$ref": "../Common/ManagedArtifactStateType.schema.json#ManagedArtifactStateType"
         },
         "agreement": {
           "$ref": "TestAgreement.schema.json#/definitions/TestAgreement"

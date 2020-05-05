@@ -1,0 +1,71 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "Scale.schema.json",
+	"title": "Scale",
+	"definitions": {
+		"Scale": {
+			"$id": "#Scale",
+			"description": "Task Resource used to request scaling of a Resource Function",
+			"type": "object",
+			"properties": {
+				"id": {
+					"description": "Unique identifier of the Scale task resource",
+					"type": "string"
+				},
+				"href": {
+					"description": "Reference to the Scale task resource",
+					"type": "string"
+				},
+				"name": {
+					"description": "Name of the Scale task resource",
+					"type": "string"
+				},
+				"resourceFunction": {
+					"description": "Reference to the Resource Function that needs to be scaled",
+					"$ref": "../Resource/ResourceFunctionRef.schema.json#/definitions/ResourceFunctionRef"
+				},
+				"scaleType": {
+					"description": "Type of scaling requested",
+					"type": "string",
+					"enum": [
+						"Scale Out",
+						"Scale Up",
+						"Scale In",
+						"Scale Down"
+					]
+				},
+				"aspectId": {
+					"description": "Scaling aspect is the dimension along which the Resource Function needs to be scaled. The id of the aspect is provided here",
+					"type": "string"
+				},
+				"numberOfSteps": {
+					"description": "Number of scaling steps in the direction indicated by type of scale",
+					"type": "integer",
+					"format": "int64",
+					"example": 2
+				},
+				"schedule": {
+					"description": "Schedule for the scale. If not provided then needs to be actioned immediately",
+					"type": "array",
+					"items": {
+						"$ref": "../Resource/ScheduleRef.schema.json#/definitions/ScheduleRef"
+					}
+				},
+				"state": {
+					"description": "Tracks the lifecycle status of the migrate request.",
+					"$ref": "../Common/TaskStateType.schema.json#/definitions/TaskStateType"
+				}
+			},
+			"required": [
+				"resourceFunction",
+				"scaleType",
+				"numberOfSteps"
+			],
+			"allOf": [
+				{
+					"$ref": "../Common/Entity.schema.json#/definitions/Entity"
+				}
+			]
+		}
+	}
+}

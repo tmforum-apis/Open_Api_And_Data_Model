@@ -8,14 +8,6 @@
       "description": "ServiceCandidate is an entity that makes a service specification available to a catalog. A\nServiceCandidate and its associated service specification may be published - made visible - in any number of service catalogs, or in none. One service specification can be composed of other service specifications.",
       "type": "object",
       "properties": {
-        "id": {
-          "type": "string",
-          "description": "Unique identifier of this REST resource"
-        },
-        "href": {
-          "type": "string",
-          "description": "Hyperlink reference to this REST resource"
-        },
         "name": {
           "type": "string",
           "description": "Name given to this REST resource"
@@ -45,18 +37,21 @@
           "type": "array",
           "description": "List of categories for this candidate",
           "items": {
-            "$ref": "../Service/ServiceCategoryRef.schema.json#ServiceCategoryRef"
+            "$ref": "../Service/ServiceCategoryRef.schema.json#/definitions/ServiceCategoryRef"
           }
         },
         "serviceSpecification": {
           "description": "The service specification implied by this candidate",
-          "$ref": "../Service/ServiceSpecificationRef.schema.json#ServiceSpecificationRef"
+          "$ref": "../Service/ServiceSpecificationRef.schema.json#/definitions/ServiceSpecificationRef"
         }
       },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
-        }
+          "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
+        },
+        {
+          "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        }   
       ]
     }
   }

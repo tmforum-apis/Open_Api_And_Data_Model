@@ -1,0 +1,98 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "Migrate.schema.json",
+	"title": "Migrate",
+	"definitions": {
+		"Migrate": {
+			"$id": "#Migrate",
+			"description": "Task resource used to request migration of the Resource Function",
+			"type": "object",
+			"properties": {
+				"id": {
+					"description": "Unique identifier of the Migrate task resource",
+					"type": "string"
+				},
+				"href": {
+					"description": "Reference to the Migrate task resource",
+					"type": "string",
+					"format": "uri"
+				},
+				"name": {
+					"description": "Name of the Migrate task resource",
+					"type": "string"
+				},
+				"resourceFunction": {
+					"description": "Reference to the Resource Function that needs to be migrated",
+					"$ref": "../Resource/ResourceFunctionRef.schema.json#/definitions/ResourceFunctionRef"
+				},
+				"cause": {
+					"description": "Reason why migration is being requested",
+					"type": "string"
+				},
+				"adminStateModification": {
+					"description": "SubState required before migrate is carried out",
+					"type": "string",
+					"enum": [
+						"locked",
+						"unlocked",
+						"shuttingDown"
+					]
+				},
+				"removeConnectionPoint": {
+					"description": "Connection points to be removed when function is migrated",
+					"type": "array",
+					"items": {
+						"$ref": "../Resource/ConnectionPointRef.schema.json#/definitions/ConnectionPointRef"
+					}
+				},
+				"addConnectionPoint": {
+					"description": "Connection points to be added when function is migrated",
+					"type": "array",
+					"items": {
+						"$ref": "../Resource/ConnectionPointRef.schema.json#/definitions/ConnectionPointRef"
+					}
+				},
+				"priority": {
+					"description": "Priority of the migrate operation",
+					"type": "integer",
+					"format": "int64"
+				},
+				"startTime": {
+					"description": "The time when the migration needs to commence. This allows a delay to be added",
+					"type": "string"
+				},
+				"completionMode": {
+					"description": "In what mode is the migrate operation to be performed",
+					"type": "string",
+					"enum": [
+						"bestEffort",
+						"atomic"
+					]
+				},
+				"place": {
+					"$ref": "../Common/PlaceRef.schema.json#/definitions/PlaceRef"
+				},
+				"characteristics": {
+					"description": "Additional attributes to pass to the migrate operation",
+					"type": "array",
+					"items": {
+						"$ref": "../Common/Characteristic.schema.json#/definitions/Characteristic"
+					}
+				},
+				"state": {
+					"description": "Tracks the lifecycle status of the migrate request.",
+					"$ref": "../Common/TaskStateType.schema.json#/definitions/TaskStateType"
+				}
+			},
+			"allOf": [
+				{
+					"$ref": "../Common/Entity.schema.json#/definitions/Entity"
+				}
+			],
+			"required": [
+				"resourceFunction",
+				"cause"
+			]
+		}
+	}
+}

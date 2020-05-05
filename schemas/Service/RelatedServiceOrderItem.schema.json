@@ -6,7 +6,7 @@
         "RelatedServiceOrderItem": {
             "type": "object",
             "description": "RelatedServiceOrderItem (a ServiceOrder item) .The service order item which triggered service creation/change/termination.",
-            "required": ["orderItemId","serviceOrderId"],
+            "required": ["itemId","serviceOrderId"],
             "properties": {
                 "@referredType": {
                     "type": "string",

@@ -11,7 +11,8 @@
           "$ref": "../Common/Characteristic.schema.json#Characteristic"
         },
         "description": {
-          "$ref": "../Common/Multilingual.schema.json#Multilingual"
+          "type": "string",
+          "description": "The attribute description"
         }
       }
     }

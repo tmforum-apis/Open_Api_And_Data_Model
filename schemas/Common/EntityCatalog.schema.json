@@ -12,14 +12,6 @@
           "type": "string",
           "description": "Description of this catalog"
         },
-        "href": {
-          "type": "string",
-          "description": "Unique reference of the catalog"
-        },
-        "id": {
-          "type": "string",
-          "description": "Unique identifier of the Catalog"
-        },
         "lastUpdate": {
           "type": "string",
           "format": "date-time",
@@ -41,14 +33,14 @@
           "type": "array",
           "description": "The parties who are involved or have an interest in this catalog",
           "items": {
-            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+            "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
           }
         },
         "category": {
           "type": "array",
           "description": "The categories used in this catalog",
           "items": {
-            "$ref": "../Common/EntityCategoryRef.schema.json#EntityCategoryRef"
+            "$ref": "../Common/EntityCategoryRef.schema.json#/definitions/EntityCategoryRef"
           }
         },
         "version": {
@@ -58,7 +50,10 @@
       },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
+          "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
+        },
+        {
+          "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
         }
       ]
     }

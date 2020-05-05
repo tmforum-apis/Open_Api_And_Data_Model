@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ShipmentSpecificationRef.schema.json",
+    "title": "ShipmentSpecificationRef",
+    "definitions": {
+        "ShipmentSpecificationRef": {
+            "$id": "#ShipmentSpecificationRef",
+            "type": "object",
+            "description": "Shipment specification reference",
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#/definitions/EntityRef"
+                }
+            ]
+        }
+    }
+}

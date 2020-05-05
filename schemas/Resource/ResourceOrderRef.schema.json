@@ -7,17 +7,19 @@
       "$id": "#ResourceOrderRef",
       "type": "object",
       "properties": {
-        "href": {
-          "type": "string",
-          "description": "Hyperlink to access the related Resource Order"
-        },
         "id": {
           "type": "string",
-          "description": "The unique identifier of the related resource order"
+          "description": "The unique identifier of the related resource order",
+          "examples": [ "fde8c6a47450" ]
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink to access the related Resource Order",
+          "examples": [ "http://host/resourceOrder/fde8c6a47450" ]
         },
         "@referredType": {
           "type": "string",
-          "description": "The actual type of the target instance when needed for disambiguation."
+          "description": "The actual type of the target instance when needed for disambiguation"
         }
       },
       "allOf": [

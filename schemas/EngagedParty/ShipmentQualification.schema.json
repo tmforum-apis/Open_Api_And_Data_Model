@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ShipmentQualification.schema.json",
+    "title": "ShipmentQualification",
+    "definitions": {
+        "ShipmentQualification": {
+            "$id": "#ShipmentQualification",
+            "type": "object",
+            "description": "ShipmentQualification is used to perform a validation on shipment parameters and options, in relation to a specific carrier.",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the qualification"
+                },
+                "effectiveQualificationDate": {
+                    "type": "string",
+                    "description": "Effective date to qualification completion",
+                    "format": "date-time"
+                },
+                "estimatedResponseDate": {
+                    "type": "string",
+                    "description": "Date when the requester expect to provide an answer for the qualification request.",
+                    "format": "date-time"
+                },
+                "expectedQualificationDate": {
+                    "type": "string",
+                    "description": "A date (DateTime). Deadline date when the requester expected a qualification answer.",
+                    "format": "date-time"
+                },
+                "expirationDate": {
+                    "type": "string",
+                    "description": "Date when the qualification response expires",
+                    "format": "date-time"
+                },
+                "externalId": {
+                    "type": "string",
+                    "description": "Identifier provided by the requester"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "description": "A list of related party references, defines party or party role linked to this request.",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+                    }
+                },
+                "state": {
+                    "description": "State of the shipmentQualification (acknowledged, inProgress, terminatedWithError, done)",
+                    "$ref": "../Common/TaskStateType.schema.json#/definitions/TaskStateType"
+                },
+                "placeFrom": {
+                    "$ref": "../Common/PlaceRefOrValue.schema.json#/definitions/PlaceRefOrValue"
+                },
+                "placeTo": {
+                    "$ref": "../Common/PlaceRefOrValue.schema.json#/definitions/PlaceRefOrValue"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#/definitions/Entity"
+                }
+            ]
+        }
+    }
+}

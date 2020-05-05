@@ -8,15 +8,15 @@
       "description": "Sampling rate of the collection or production of performance indicators.",
       "type": "string",
       "enum": [
-        "G_1MN",
-        "G_5MN",
-        "G_15MN",
-        "G_30MN",
-        "G_1H",
-        "G_24H",
-        "G_1M",
-        "G_1Y",
-        "NA"
+        "g_1mn",
+        "g_5mn",
+        "g_15mn",
+        "g_30mn",
+        "g_1h",
+        "g_24h",
+        "g_1m",
+        "g_1y",
+        "na"
       ]
     }
   }

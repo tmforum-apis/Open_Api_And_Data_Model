@@ -10,12 +10,14 @@
             "properties": {
                 "id": {
                     "type": "string", 
-                    "description": "Unique identifier of this REST resource"
+                    "description": "Unique identifier of this REST resource",
+                    "examples": [ "6c088cf7f1bc" ]
                 }, 
                 "href": {
                     "type": "string", 
                     "format": "uri",
-                    "description": "Hyperlink reference to this REST resource"
+                    "description": "Hyperlink reference to this REST resource",
+                    "examples": [ "http://host/resourceSpecification/6c088cf7f1bc" ]
                 }, 
                 "name": {
                     "type": "string", 

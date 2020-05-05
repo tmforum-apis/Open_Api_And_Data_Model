@@ -11,7 +11,7 @@
         "category": {
           "type": "array",
           "items": {
-            "$ref": "../Service/ServiceCategoryRef.schema.json#ServiceCategoryRef"
+            "$ref": "../Service/ServiceCategoryRef.schema.json#/definitions/ServiceCategoryRef"
           },
           "description": "List of service categories associated with this catalog"
         },
@@ -19,19 +19,11 @@
           "type": "string",
           "description": "Description of this catalog"
         },
-        "href": {
-          "type": "string",
-          "description": "Unique reference of the service catalog"
-        },
-        "id": {
-          "type": "string",
-          "description": "Unique identifier of the ServiceCatalog"
-        },
         "lastUpdate": {
           "type": "string",
           "format": "date-time",
           "description": "Date and time of the last update"
-        },
+        },  
         "lifecycleStatus": {
           "type": "string",
           "description": "Used to indicate the current lifecycle status"
@@ -43,7 +35,7 @@
         "relatedParty": {
           "type": "array",
           "items": {
-            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+            "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
           },
           "description": "List of parties or party roles related to this category"
         },
@@ -58,8 +50,11 @@
       },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
-        }
+          "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
+        },
+        {
+          "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        }   
       ]
     }
   }

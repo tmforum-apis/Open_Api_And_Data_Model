@@ -6,7 +6,7 @@
     "ManagedArtifactStateType": {
       "$id": "#ManagedArtifactStateType",
       "type": "string",
-      "description": "Possible values for the state of the managed artifact",
+      "description": "Possible values for the state of a managed artifact: 'incomplete', 'beta', 'stable', 'deprecated'",
       "enum": [
         "incomplete",
         "beta",

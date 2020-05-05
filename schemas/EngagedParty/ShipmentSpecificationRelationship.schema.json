@@ -1,0 +1,42 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ShipmentSpecificationRelationship.schema.json",
+    "title": "ShipmentSpecificationRelationship",
+    "definitions": {
+        "ShipmentSpecificationRelationship": {
+            "$id": "#ShipmentSpecificationRelationship",
+            "type": "object",
+            "description": "A migration, substitution, dependency or exclusivity relationship between/among entity specifications.",
+            "required": [
+                "relationshipType"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The name given to the target entity specification instance"
+                },
+                "role": {
+                    "type": "string",
+                    "description": "The association role for this entity specification"
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "Type of relationship such as migration, substitution, dependency, exclusivity"
+                },
+                "associationSpec": {
+                    "description": "A specification for an association used by this relationship\r\n",
+                    "$ref": "../Common/AssociationSpecificationRef.schema.json#/definitions/AssociationSpecificationRef"
+                },
+                "validFor": {
+                    "description": "The period for which this REST resource is valid",
+                    "$ref": "../Common/TimePeriod.schema.json#/definitions/TimePeriod"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#/definitions/Entity"
+                }
+            ]
+        }
+    }
+}

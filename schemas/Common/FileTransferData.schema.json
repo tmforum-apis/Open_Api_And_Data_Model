@@ -28,7 +28,10 @@
       "allOf": [
         {
           "$ref": "ProtocolTransferData.schema.json#/definitions/ProtocolTransferData"
-        }
+        },
+                {
+           "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        } 
       ]
     }
   }

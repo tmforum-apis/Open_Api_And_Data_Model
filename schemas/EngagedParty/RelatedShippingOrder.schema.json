@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "RelatedShippingOrder.schema.json",
+  "title": "RelatedShippingOrder",
+  "definitions": {
+    "RelatedShippingOrder": {
+      "$id": "#RelatedShippingOrder",
+      "description": "A related shipping order addressable entity",
+      "type": "object",
+      "properties": {
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Addressable"
+        }
+      ]
+    }
+  }
+}

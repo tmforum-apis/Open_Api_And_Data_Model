@@ -43,7 +43,13 @@
       "allOf": [
         {
           "$ref": "ManagementJob.schema.json#/definitions/ManagementJob"
-        }
+        },
+        {
+          "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
+        },
+        {
+           "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        } 
       ]
     }
   }

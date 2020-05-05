@@ -12,14 +12,6 @@
           "type": "string",
           "description": "Description of this REST resource"
         },
-        "href": {
-          "type": "string",
-          "description": "Hyperlink reference to this REST resource"
-        },
-        "id": {
-          "type": "string",
-          "description": "Unique identifier of this REST resource"
-        },
         "lastUpdate": {
           "type": "string",
           "format": "date-time",
@@ -40,16 +32,13 @@
         "category": {
           "type": "array",
           "items": {
-            "$ref": "../Common/EntityCategoryRef.schema.json#EntityCategoryRef",
+            "$ref": "../Common/EntityCategoryRef.schema.json#/definitions/EntityCategoryRef",
             "description": "The category(ies) if any that refer to this catalog item"
           }
         },
         "specification": {
-          "type": "array",
-          "items": {
-            "$ref": "../Common/EntitySpecificationRef.schema.json#EntitySpecificationRef",
-            "description": "The category(ies) if any that refer to this catalog item"
-          }
+          "description": "The specification implied by this candidate",
+          "$ref": "../Common/EntitySpecificationRef.schema.json#/definitions/EntitySpecificationRef"
         },
         "version": {
           "type": "string",
@@ -58,7 +47,10 @@
       },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
+          "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
+        },
+        {
+          "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
         }
       ]
     }

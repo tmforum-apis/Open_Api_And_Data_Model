@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ShippingOrder.schema.json",
+  "title": "ShippingOrder",
+  "definitions": {
+    "ShippingOrder": {
+      "$id": "#ShippingOrder",
+      "type": "object",
+      "description": "A Shipping Order is a document used by a business to specify what items are to be transferred from a storage location or warehouse to which person and to which new location. A Shipping Order can typically be sent along with a shipment of goods so that the person receiving them can verify that the document correctly reflects the items that they actually received.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identifier of the Shipping Order"
+        },
+        "href": {
+          "type": "string",
+          "description": "Shipping Order unique reference"
+        },
+        "externalIdentifier": {
+          "type": "array",
+          "description": "An identification of an entity that is owned by or originates in a software system different from the current system, for example a ProductOrder handed off from a commerce platform into an order handling system. The structure identifies the system itself, the nature of the entity within the system (e.g. class name) and the unique ID of the entity within the system. It is anticipated that multiple external IDs can be held for a single entity, e.g. if the entity passed through multiple systems on the way to the current system. In this case the consumer is expected to sequence the IDs in the array in reverse order of provenance, i.e. most recent system first in the list.",
+          "items": {
+            "$ref": "../Common/ExternalIdentifier.schema.json#ExternalIdentifier"
+          }
+        },
+        "systemId": {
+          "type": "string",
+          "description": "Describes the system Id from which the action was done"
+        },
+        "state":{
+          "type":"string",
+          "enum": ["acknowledged", "inProgress", "scheduledForDelivery", "dispatched", "inTransit", "delivered", "cancelled", "suspended", "returned", "failure", "unknown"],
+          "description":"The possible shipment status values"
+        },
+        "relatedParty":{
+          "$ref":"../EngagedParty/RelatedPartyWithContactInfo.schema.json#RelatedPartyWithContactInfo"
+        },
+        "productOrder":{
+          "$ref":"../Customer/ProductOrderRef.schema.json#ProductOrderRef"
+        },
+        "relatedShippingOrder": {
+          "$ref": "../EngagedParty/RelatedShippingOrder.schema.json#RelatedShippingOrder"
+        },
+        "shippingInstruction":{
+          "$ref": "../EngagedParty/ShippingInstruction.schema.json#ShippingInstruction"
+        },
+        "note": {
+          "type": "array",
+          "description": "A list of notes made on this shipping order",
+          "items": {
+            "$ref": "../Common/Note.schema.json#Note"
+          }
+        },
+        "shipmentTracking":{
+          "$ref":"../Common/ShipmentTrackingRef.schema.json#ShipmentTrackingRef"
+        },
+        "expectedDeliveryDate":{
+          "type": "string",
+          "format": "date-time",
+          "description": "The date that the shipment will be delivered" 
+        },
+        "actualDeliveryDate":{
+          "type": "string",
+          "format": "date-time",
+          "description": "The actual date that the shipment was delivered" 
+        },  
+        "requestedDeliveryDate":{
+          "type": "string",
+          "format": "date-time",
+          "description": "The date requester by the sender for shipment delivery" 
+        },   
+        "collectionDate":{
+          "type": "string",
+          "format": "date-time",
+          "description": "The date the package was collected from the carrier (Collection scenario) " 
+        },
+        "orderItem": {
+          "type": "array",
+          "description": "List of shipping content items",
+          "items": {
+            "$ref": "../EngagedParty/ShippingOrderItem.schema.json#ShippingOrderItem"
+          }
+        },
+        "packageType": {
+          "type": "string",
+          "description": "The package type. It is used as an indication for the shipping partner about the parcel overall type(envelope, pacakge, large package, heavy package)"
+        },
+        "weight": {
+          "$ref":"../Common/Quantity.schema.json#Quantity",
+          "description":"The package weight"
+        },
+        "insuredValue":{
+          "$ref":"../Common/Money.schema.json#Money",
+          "description":"The insured value of the shipment"
+        },
+        "labelMessage":{
+          "type":"string",
+          "description":"Messages that are printed on the package"
+        },
+        "shippingOrderCharacteristic":{
+          "$ref":"../Common/Characteristic.schema.json#Characteristic"
+        },
+         "paymentMethod": {
+          "description": "Payment method used for the recharge operation (e.g.: cash, credit card, ). Structure including at least attribute name. Notice that the use of a voucher can be managed as a specific methodtype, where he voucher code can be passed as value.",
+          "$ref": "../Customer/PaymentMethodRef.schema.json#PaymentMethodRef"
+        }
+      },
+      "allOf": [
+        {
+          "$ref":"../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

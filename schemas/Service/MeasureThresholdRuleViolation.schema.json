@@ -40,6 +40,10 @@
           "type": "string",
           "description": "A threshold can be generated in different severity levels. A \ncrossing for each level may require a different condition and possibly trigger a different consequence."
         },
+        "conformanceTargetExact": {
+          "description" : "to cater for values that are not numerical test metrics (e.g. a DSL line can be Synchronised or Unsynchronised. If the latter, the test should result in a rule violation).The allowed value can contain a REGEX string.",
+          "type": "string"
+        },
         "tolerancePeriod": {
           "description": "An interval of time of allowed crossing occurrences before a \nconsequence being initiated.",
           "$ref": "../Common/Duration.schema.json#Duration"
@@ -54,7 +58,7 @@
       },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
+           "$ref": "../Common/Extensible.schema.json#Extensible"
         }
       ]
     }

@@ -6,7 +6,7 @@
         "PartyInteractionStatusExampleType": {
             "$id": "#PartyInteractionStatusExampleType",
             "type": "string",
-            "description": "Possible values for the status of party interaction",
+            "description": "Possible values for the status of party interaction (for example: open,inProgress,completed)",
             "enum": [
                 "open",
                 "inProgress",

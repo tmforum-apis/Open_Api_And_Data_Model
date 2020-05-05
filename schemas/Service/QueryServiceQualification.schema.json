@@ -6,7 +6,6 @@
         "QueryServiceQualification": {
             "$id": "#QueryServiceQualification",
             "type": "object",
-            "required": ["searchCriteria"],
             "description": "QueryServiceQualification is used to retrieve a list of services that are technically available in the context of the interaction (place, party, service characteristics, ...).",
             "properties": {
                 "searchCriteria": {
@@ -16,7 +15,6 @@
                 "serviceQualificationItem": {
                     "type": "array",
                     "description": "A list of service qualification items.",
-     	            "minItems" : 1,
                     "items": {
                         "$ref": "ServiceQualificationItem.schema.json#ServiceQualificationItem"
                     }

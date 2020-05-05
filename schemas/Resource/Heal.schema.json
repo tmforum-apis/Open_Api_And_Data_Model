@@ -1,0 +1,76 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "Heal.schema.json",
+	"title": "Heal",
+	"definitions": {
+		"Heal": {
+			"$id": "#Heal",
+			"description": "Task Resource used to request healing of a Resource Function",
+			"type": "object",
+			"properties": {
+				"id": {
+					"description": "Unique identifier of the Heal task resource",
+					"type": "string"
+				},
+				"href": {
+					"description": "Reference to the Heal task resource",
+					"type": "string",
+					"format": "uri"
+				},
+				"name": {
+					"description": "Name of the Heal task resource",
+					"type": "string"
+				},
+				"resourceFunction": {
+					"description": "Reference to the Resource Function that needs to be healed",
+					"$ref": "../Resource/ResourceFunctionRef.schema.json#/definitions/ResourceFunctionRef"
+				},
+				"cause": {
+					"description": "Reason why healing is being requested",
+					"type": "string"
+				},
+				"degreeOfHealing": {
+					"description": "Indicates the degree of healing required",
+					"type": "string",
+					"enum": [
+						"Complete - Restore to state before failure",
+						"Complete - Heal based on latest QOS values",
+						"Complete - Restore to instatiation state", "Partial"
+					]
+				},
+				"healAction": {
+					"description": "Exact action to be taken as part of the heal process or a pointer to a script to be run",
+					"type": "string"
+				},
+				"healPolicy": {
+					"$ref": "../Resource/HealPolicyRef.schema.json#/definitions/HealPolicyRef"
+				},
+				"startTime": {
+					"description": "The time when the heal action needs to commence. This allows a delay to be added",
+					"type": "string"
+				},
+				"additionalParms": {
+					"description": "Additional parameters to be sent to the heal action as name value pairs",
+					"type": "array",
+					"items": {
+						"$ref": "../Common/Characteristic.schema.json#/definitions/Characteristic"
+					}
+				},
+				"state": {
+					"description": "Tracks the lifecycle status of the migrate request.",
+					"$ref": "../Common/TaskStateType.schema.json#/definitions/TaskStateType"
+				}
+			},
+			"allOf": [
+				{
+					"$ref": "../Common/Entity.schema.json#/definitions/Entity"
+				}
+			],
+			"required": [
+				"resourceFunction",
+				"cause",
+				"degreeOfHealing"
+			]
+		}
+	}
+}

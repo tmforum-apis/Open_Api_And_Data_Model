@@ -10,6 +10,7 @@
       "properties": {
         "href": {
           "type": "string",
+          "format": "uri",
           "description": "Hyperlink reference"
         },
         "id": {

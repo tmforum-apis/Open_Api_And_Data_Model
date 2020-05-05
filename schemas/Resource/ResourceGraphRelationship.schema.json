@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceGraphRelationship.schema.json",
+    "title": "ResourceGraphRelationship",
+    "definitions": {
+        "ResourceGraphRelationship": {
+            "$id": "#ResourceGraphRelationship",
+            "description": "Describes links between resource graphs.",
+            "type": "object",
+            "properties": {
+                "relationshipType": {
+                    "description": "Semantic of the relationship.",
+                    "type": "string",
+                    "enum": [
+                        "adjacency",
+                        "connectivity"
+                    ]
+                },
+                "resourceGraph": {
+                    "description": "A reference to the related resource graph.",
+                    "$ref": "../Resource/ResourceGraphRef.schema.json#/definitions/ResourceGraphRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#/definitions/Entity"
+                }
+            ]
+        }
+    }
+}

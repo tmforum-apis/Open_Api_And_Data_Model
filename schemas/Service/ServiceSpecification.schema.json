@@ -10,21 +10,13 @@
                 "attachment": {
                     "type": "array",
                     "items": {
-                        "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
+                        "$ref": "../Common/AttachmentRefOrValue.schema.json#/definitions/AttachmentRefOrValue"
                     },
                     "description": "A list of attachments (Attachment [*]). Complements the description of the specification through video, pictures..."
                 },
                 "description": {
                     "type": "string",
                     "description": "A narrative that explains in detail what the service specification is"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the service specification"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the service specification"
                 },
                 "isBundle": {
                     "type": "boolean",
@@ -46,42 +38,42 @@
                 "relatedParty": {
                     "type": "array",
                     "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
                     },
                     "description": "A list of related party references (RelatedParty [*]). A related party defines party or party role linked to a specific entity."
                 },
                 "resourceSpecification": {
                     "type": "array",
                     "items": {
-                        "$ref": "../Resource/ResourceSpecificationRef.schema.json#ResourceSpecificationRef"
+                        "$ref": "../Resource/ResourceSpecificationRef.schema.json#/definitions/ResourceSpecificationRef"
                     },
                     "description": "A list of resource specification references (ResourceSpecificationRef [*]). The ResourceSpecification is required for a service specification with type ResourceFacingServiceSpecification (RFSS)."
                 },
                 "serviceLevelSpecification": {
                     "type": "array",
                     "items": {
-                        "$ref": "../Service/ServiceLevelSpecificationRef.schema.json#ServiceLevelSpecificationRef"
+                        "$ref": "../Service/ServiceLevelSpecificationRef.schema.json#/definitions/ServiceLevelSpecificationRef"
                     },
                     "description": "A list of service level specifications related to this service specification, and which will need to be satisifiable for corresponding service instances; e.g. Gold, Platinum"
                 },
                 "serviceSpecCharacteristic": {
                     "type": "array",
                     "items": {
-                        "$ref": "../Common/CharacteristicSpecification.schema.json#CharacteristicSpecification"
+                        "$ref": "../Common/CharacteristicSpecification.schema.json#/definitions/CharacteristicSpecification"
                     },
                     "description": "A list of service spec characteristics (ServiceSpecCharacteristic [*]). This class represents the key features of this service specification."
                 },
                 "serviceSpecRelationship": {
                     "type": "array",
                     "items": {
-                        "$ref": "../Service/ServiceSpecRelationship.schema.json#ServiceSpecRelationship"
+                        "$ref": "../Service/ServiceSpecRelationship.schema.json#/definitions/ServiceSpecRelationship"
                     },
                     "description": "A list of service specifications related to this specification, e.g. migration, substitution, dependency or exclusivity relationship"
                 },
                 "entitySpecRelationship": {
                     "type": "array",
                     "items": {
-                        "$ref": "../Common/EntitySpecRelationship.schema.json#EntitySpecRelationship"
+                        "$ref": "../Common/EntitySpecificationRelationship.schema.json#/definitions/EntitySpecificationRelationship"
                     },
                     "description": "A list of entity specifications related to this specification with given role, e.g. dependency on test specification, usage specification and so on"
                 },
@@ -89,11 +81,11 @@
                     "type": "array", 
                     "description": "A list of Features for this specification.",
                     "items": {
-                        "$ref": "../Common/FeatureSpecification.schema.json#FeatureSpecification"
+                        "$ref": "../Common/FeatureSpecification.schema.json#/definitions/FeatureSpecification"
                     }
                 }, 
                 "targetServiceSchema": {
-                    "$ref": "../Service/TargetServiceSchema.schema.json#TargetServiceSchema",
+                    "$ref": "../Service/TargetServiceSchema.schema.json#/definitions/TargetServiceSchema",
                     "description": "A target service schema reference (TargetServiceSchemaRef). The reference object to the schema and type of target service which is described by service specification."
                 },
                 "validFor": {
@@ -107,9 +99,12 @@
             },
             "allOf": [
                 {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+                  "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
+                },
+                {
+                  "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }   
+              ]
         }
     }
 }

@@ -11,11 +11,15 @@
                 "migratesTo",
                 "migratesFrom",
                 "reliesOn",
-                "reliesFrom",
                 "bundles",
                 "bundledBy",
                 "enables",
-                "enabledBy"
+                "root",
+                "dependsOn",
+                "hostedOn",
+                "connectsOn",
+                "attachesTo",
+                "routesTo"
             ]
         }
     }

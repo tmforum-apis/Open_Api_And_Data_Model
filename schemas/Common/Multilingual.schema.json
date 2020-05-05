@@ -5,7 +5,7 @@
   "definitions": {
     "Multilingual": {
       "$id": "#Multilingual",
-      "description": "Serialization format for JADL multilingual text",
+      "description": "Serialization format for multilingual text",
       "type": "object",
       "propertyNames": {
         "$ref": "#/definitions/supportedLanguages"

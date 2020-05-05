@@ -12,26 +12,6 @@
           "type": "string",
           "description": "Description of a service test specification."
         },
-        "href": {
-          "type": "string",
-          "description": "Hyperlink to access a service test specification."
-        },
-        "id": {
-          "type": "string",
-          "description": "Identifier of a service test specification."
-        },
-        "version": {
-          "type": "string",
-          "description": "Version of a service test specification "
-        },
-        "name": {
-          "type": "string",
-          "description": "Name of a service test specification."
-        },
-        "validFor": {
-          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-          "description": "The period of time for which this specification is valid"
-        },
         "testMeasureDefinition": {
           "type": "array",
           "description": "A list of definitions for the measurements for the test defined by this specification",
@@ -40,13 +20,23 @@
           }
         },
         "relatedServiceSpecification": {
-          "$ref": "../Service/ServiceSpecificationRef.schema.json#ServiceSpecificationRef",
-          "description": "The related service specification."
-        }
+          "type": "array",
+          "description": "The related service specification may relate to more than one service specification.",
+          "items":{
+          "$ref": "../Service/ServiceSpecificationRef.schema.json#ServiceSpecificationRef"
+          }
+        },
+        "serviceTestSpecRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Service/ServiceTestSpecRelationship.schema.json#ServiceTestSpecRelationship"
+                    },
+                    "description": "A list of service test specifications related to this specification e.g. dependency, substitution"
+                }
       },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
+           "$ref": "../Common/EntitySpecification.schema.json#EntitySpecification"
         }
       ]
     }

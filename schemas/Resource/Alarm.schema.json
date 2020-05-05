@@ -35,7 +35,7 @@
         },
         "state": {
           "type": "string",
-          "description": "Defines the alarm state during its life cycle",
+          "description": "Defines the alarm state during its life cycle (raised | updated | cleared).",
           "enum": [
             "raised",
             "updated",
@@ -43,20 +43,10 @@
           ]
         },
         "alarmType": {
-          "type": "string",
-          "description": "Categorize the alarm. Should be one of the values defined in X.733 8.1.1 or 3GPP TS 32.111-2 Annex A:\n\tCommunications Alarm\n\tProcessing Error Alarm\n\tEnvironmental Alarm\n\tQuality of Service Alarm\n\tEquipment Alarm\n\tIntegrity Violation\n\tOperational Violation\n\tPhysical Violation\n\tSecurity Service or Mechanism Violation\n\tTime Domain Violation"
+          "$ref": "../Resource/AlarmType.schema.json#AlarmType"
         },
         "perceivedSeverity": {
-          "type": "string",
-          "description": "Lists the possible severities that can be allocated to an Alarm. The values are consistent with ITU-T Recommendation X.733.\nOnce an alarm has been cleared, its perceived severity is set to 'cleared' and can no longer be set.",
-          "enum": [
-            "critical",
-            "major",
-            "minor",
-            "warning",
-            "indeterminate",
-            "cleared"
-          ]
+          "$ref": "../Resource/PerceivedSeverity.schema.json#PerceivedSeverity"
         },
         "probableCause": {
           "type": "string",
@@ -107,7 +97,7 @@
         },
         "ackState": {
           "type": "string",
-          "description": "Provides the Acknowledgement State of the alarm",
+          "description": "Provides the Acknowledgement State of the alarm (unacknowledged | acknowledged).",
           "enum": [
             "unacknowledged",
             "acknowledged"

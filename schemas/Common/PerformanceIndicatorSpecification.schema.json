@@ -8,7 +8,7 @@
       "description": "Holds the definition of the requested Performance indicator including: its name, value type, collection type, description and units.",
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "description": "A unique identifier for the PerformanceIndicatorSpecification.",
           "type": "string"
         },
@@ -53,11 +53,13 @@
           "type": "string"
         }
       },
-      "required": [
-        "ID",
-        "name",
-        "valueType",
-        "collectionType"
+      "allOf": [
+        {
+          "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
+        },
+        {
+           "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        } 
       ]
     }
   }

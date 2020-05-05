@@ -7,6 +7,7 @@
       "$id": "#MEntity",
       "description": "MEntity represents an entity that describes the common set of attributes shared by all concrete entities (e.g. Resource, Service, ..) in the Entity Inventory.",
       "type": "object",
+      "required": ["name"],
       "properties": {
         "description": {
           "type": "string",
@@ -21,14 +22,6 @@
           "type": "string",
           "format": "date-time",
           "description": "A date time( DateTime). The date till the entity is effective"
-        },
-        "href": {
-          "type": "string",
-          "description": "The URI for the object itself."
-        },
-        "id": {
-          "type": "string",
-          "description": "Identifier of an instance of the entity. Required to be unique within the entity type.  Used in URIs as the identifier for specific instances of a type."
         },
         "isBundle": {
           "type": "boolean",
@@ -97,7 +90,7 @@
       },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
+          "$ref": "../Common/Entity.schema.json#/definitions/Entity"
         }
       ]
     }
