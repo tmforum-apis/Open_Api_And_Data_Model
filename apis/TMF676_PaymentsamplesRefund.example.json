@@ -1,0 +1,59 @@
+{
+    "id": "23456",
+    "href": "https://host:port/paymentManagement/v4/refund/23456",
+    "name": "Example of a Refund resource",
+    "description": "Refund due to order 666 cancellation",
+    "correlatorId": "67890",
+    "refundDate": "2020-01-11T12:06:38.230Z",
+    "status": "authorized",
+    "statusDate": "2020-01-11T12:10:38.230Z",
+    "@type": "refund",
+    "amount": {
+        "unit": "EUR",
+        "value": 4
+    },
+    "taxAmount": {
+        "unit": "EUR",
+        "value": 0.64
+    },
+    "totalAmount": {
+        "unit": "EUR",
+        "value": 4.64
+    },
+    "channel": {
+        "id": "channel1",
+        "name": "WEB Portal"
+    },
+    "account": {
+        "id": "44444",
+        "href": "https://host:port/accountManagement/v4/account/44444",
+        "name": "Telco fusion account",
+        "description": "Michel Valette's telco account",
+        "@referredType": "PartyAccount"
+    },
+    "paymentMethod": {
+        "description": "bank card",
+        "@type": "bankCard",
+        "brand": "MasterCard",
+        "type": "Debit",
+        "cardNumber": "00000000000000000",
+        "expirationDate": "2025-01-01T12:00:00",
+        "cvv": "123",
+        "nameOnCard": "Mr Michel Valette",
+        "bank": "Imaginary Bank.inc"
+    },
+    "payment": {
+        "id": "12345",
+        "href": "https://host:port/paymentManagement/v4/payment/12345",
+        "name": "Some payment",
+        "description": "Payment related to this refund",
+        "@type": "PaymentRef"
+    },
+    "requestor": {
+        "id": "1234567890",
+        "href": "https://host:port/partyManagement/v4/individual/1234567890",
+        "role": "premium client advisor",
+        "name": "Jean-Claude Dusse",
+        "@referredType": "Individual"
+    }
+}

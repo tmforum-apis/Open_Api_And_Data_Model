@@ -830,6 +830,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "@baseType": {
@@ -1049,6 +1050,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -1583,6 +1585,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -1673,6 +1676,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -1719,7 +1723,7 @@
                     "example": "1985-04-12T23:20:50.52Z",
                     "type": "string",
                     "format": "date-time",
-                    "description": "Start of the time period, using IETC-RFC-3339 format. If you define a start, you must also define an end"
+                    "description": "Start of the time period, using IETC-RFC-3339 format"
                 },
                 "@baseType": {
                     "type": "string",

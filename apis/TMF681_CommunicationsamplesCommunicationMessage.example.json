@@ -1,0 +1,47 @@
+{
+    "id": "1708",
+    "href": "https://serverlocation/tmf-api/communicationManagement/v4/communicationMessage/1708",
+    "subject": "News: the latest promotion for you",
+    "scheduledSendTime": "2020-02-10T00:00:00+01:00",
+    "state": "initial",
+    "description": "this is communication message for promotion",
+    "content": "Dear $Parameter1, Here is the information of the promotion $Parameter2",
+    "messageType": "SMS",
+    "characteristic": [
+        {
+            "name": "$Parameter1",
+            "value": "Mr. Jones",
+            "valueType": "string"      
+        },
+        {
+            "name": "$Parameter2",
+            "value": "4G_LTE Discount 30%",
+            "valueType": "string"    
+        }
+    ],
+    "attachment": [
+        {
+            "url": "https://serverlocation/files/1",
+            "name": "File_XYZ_001"
+        }
+    ],
+    "sender": {
+        "id": "10099",
+        "name": "ABC Company",
+        "phoneNumber": "10086"
+    },
+    "receiver": [
+        {
+            "id": "10234",
+            "name": "Customer",
+            "phoneNumber": "008613811112222",
+            "party": {
+                "id": "991",
+                "href": "https://serverlocation/tmf-api/partyManagement/v4/individual/1",
+                "role": "customer",
+                "name": "John White",
+                "@referredType": "Individual"
+            }
+        }
+    ]
+}

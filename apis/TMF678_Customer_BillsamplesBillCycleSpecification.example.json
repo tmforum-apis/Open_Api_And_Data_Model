@@ -1,0 +1,14 @@
+{
+	"id": "BCSPEC-M",
+	"href": "http://server:port/tmf-api/Customer_Bill_Management/v4/billCycleSpecification/BCSPEC-M",
+	"name": "regular on cycle bill specification",
+	"billingDateShift": 0,
+	"billingPeriod": "monthly",
+	"chargeDateOffset": 5,
+	"creditDateOffset": 14,
+	"description": "Regular monthly bill cycle specification.",
+	"frequency": "a string ...",
+	"mailingDateOffset": 1,
+	"paymentDueDateOffset": 6,
+	"validFor": {}
+}

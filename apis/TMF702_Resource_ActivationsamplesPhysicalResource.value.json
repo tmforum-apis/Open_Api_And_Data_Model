@@ -1,0 +1,79 @@
+{
+    "id": "45",
+    "href": "https:/host:port/tmf-api/Resource/v1/Resource?PhysicalResource=45",
+    "description": "This  physical resource ...",
+    "category": "Category 1",
+    "startOperatingDate": "2020-07-04T00:00",
+    "endOperatingDate": "2022-07-04T00:00",
+    "name": "a string ...",
+    "administrativeState": "unlock",
+    "operationalState": "disable",
+    "usageState": "idle",
+    "resourceStatus": "available",
+    "version": "v1",
+    "manufactureDate": "2007-04-12T00:00",
+    "powerState": "a string ...",
+    "resourceSpecification": {
+	"id": "6",
+	"href": " http://server:port/resourceCatalogManagement/resourceSpecification/6",
+	"@type": "PhysicalResourceSpecification"
+	},
+    "serialNumber": "123456745644",
+    "versionNumber": "11",
+    "characteristic": [
+        {
+	  "name": "physicalPort",
+	  "value": {
+	  "@type": physicalPort",
+	  "name": "LAN Port",
+	  "isActive": true
+	  },
+	  "@schemaLocation": "//host:port/schema/physicalPort.yml"
+	},
+	  {
+	    "name": "color",
+	    "value": "red"
+	  }
+	}
+    ],
+    "note": [
+        {"text": "something about this resource"}
+    ],
+    "place": {
+	  "id": "1979",
+	  "href": "https://host:port/genericCommon/place/1979",
+    	  "name": "Main Office",
+	  "role": "default delivery"
+	},
+    "relatedParty": [
+        {
+	  "role": "Manufacturer",
+	  "id": "43",	
+	  "href": "http://serverlocation:port/PartyManagement/individual/43"
+	}
+    ],
+    "resourceRelationship": [
+        {
+	    "type": "requires",
+	    "resource": {
+	    "id": "46",
+	    "href": " http://server:port/resourceInventoryManagement/logicalResource/46"
+	},
+	"resourceRelationshipCharacteristic": [{
+	"name": "priority",
+	"value": 2
+	},
+	{
+	"name": "accuracy",
+		"value": {
+		"@type": "accuracy",
+		"unit": "second",
+		"amount": "5"
+	},
+	"@schemaLocation": "//http:server:port//resourceInventoryManagement/schema/accurancy.json"
+	}
+    ],
+    "@type": "Equipment",
+    "@schemaLocation": "http://xx/Equipment.schema.json",
+    "@baseType": "PhysicalResource"    
+}

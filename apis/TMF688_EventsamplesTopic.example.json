@@ -1,0 +1,7 @@
+{
+    "name": "AlarmManagement-Paris", 
+    "headerQuery" :   "eventType=AlarmCreateNotification&domain=Paris",
+    "contentQuery": "event.alarm.perceivedSeverity=CRITICAL",
+    "id": "AlarmTopic"
+  
+}

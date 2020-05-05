@@ -1,0 +1,5 @@
+{
+    "callback": "http://www.tmforum.org/aListener",
+    "id": "5880",
+    "query": "event.alarm.alarmType=QualityOfServiceAlarm"
+}

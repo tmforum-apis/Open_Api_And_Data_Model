@@ -1,0 +1,637 @@
+{
+	"id": "5fc91de8-88be-4c7c-8b3c-e08ccc53b889",
+	"href": "/resourceCatalog/resourceSpecification/5fc91de8-88be-4c7c-8b3c-e08ccc53b889",
+	"name": "Medium to Large Enterprise Firewall - Model 134985.3",
+	"description": "This is a type of firewall to be used for our medium to large enterprise customers",
+	"@type": "ResourceFunctionSpecification",
+	"@schemaLocation": "/resourceCatalog/schema/ResourceFunctionSpecification.schema.json",
+	"@baseType": "LogicalResourceSpecification",
+	"version": "0.1.0",
+	"validFor": {
+		"startDateTime": "2020-03-16T00:00",
+		"endDateTime": "2021-06-14T00:00:00-04:00"
+	},
+	"lastUpdate": "2020-03-16T00:00",
+	"lifecycleStatus": "Active",
+	"isBundle": false,
+	"category": "Security",
+	"targetResourceSchema": {
+		"@type": "ResourceFunction",
+		"@schemaLocation": "/resourceFunctionActivation/schema/ResourceFunction.schema.json "
+	},
+	"relatedParty": [
+		{
+			"id": "e39b8eb3-1bfb-44f3-b3cc-519bb7444538",
+			"href": "/partyManagement/organization/e39b8eb3-1bfb-44f3-b3cc-519bb7444538",
+			"role": "Supplier",
+			"name": "Firewall Express",
+			"validFor": {
+				"startDateTime": "2019-08-05T00:00",
+				"endDateTime": "2021-08-05T00:00"
+			}
+		}
+	],
+	"resourceSpecCharacteristic": [
+		{
+			"name": "OperatingSystem",
+			"id": "cf021203-00e1-4a3e-a7c1-6f4944ecf5d9",
+			"description": "Operating System",
+			"valueType": "string",
+			"configurable": true,
+			"validFor": {
+				"startDateTime": "2020-08-12T00:00",
+				"endDateTime": "2021-03-07T00:00"
+			},
+			"minCardinality": 1,
+			"maxCardinality": 3,
+			"isUnique": true,
+			"extensible": false,
+			"resourceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+					"value": "Android KitKat",
+					"validFor": {
+						"startDateTime": "2020-08-06T00:00",
+						"endDateTime": "2021-03-07T00:00"
+					}
+				},
+				{
+					"isDefault": false,
+					"value": " Windows 10",
+					"validFor": {
+						"startDateTime": "2020-08-06T00:00",
+						"endDateTime": "2021-03-07T00:00"
+					}
+				},
+				{
+					"isDefault": false,
+					"value": " macOS 10.12.5",
+					"validFor": {
+						"startDateTime": "2020-08-06T00:00",
+						"endDateTime": "2021-03-07T00:00"
+					}
+				}
+			]
+		},
+		{
+			"id": "dba800f7-badf-45ae-a433-7783f92f91a8",
+			"name": "MaxTraffic",
+			"description": "Max Traffic size in GBs/sec",
+			"valueType": "number",
+			"configurable": true,
+			"minCardinality": 0,
+			"maxCardinality": 1,
+			"extensible": true,
+			"validFor": {
+				"startDateTime": "2020-06-14T16:42:23-04:00"
+			},
+			"resourceSpecCharacteristicValue": [
+				{
+				"value": 25
+				}
+			]
+		},
+		{
+			"id": "f3064035-7e43-4004-bebd-d179e06b7b11",
+			"name": "keywords",
+			"description": "Keywords",
+			"valueType": "string",
+			"configurable": true,
+			"minCardinality": 0,
+			"maxCardinality": 3,
+			"extensible": true,
+			"validFor": {
+				"startDateTime": "2020-06-14T16:42:23-04:00"
+			},
+			"resourceSpecCharacteristicValue": [
+				{
+					"value": "Firewall"
+				},
+				{
+					"value": "Large Enterprise"
+				},
+				{
+					"value": "Medium Enterprise"
+				}
+			]
+		},
+		{
+			"id": "f30f90df-04ab-4463-9e25-3447bd073f23",
+			"name": "language",
+			"description": "Language supported in the RF package and user interface (if any)",
+			"valueType": "string",
+			"configurable": true,
+			"minCardinality": 0,
+			"maxCardinality": 3,
+			"extensible": true,
+			"validFor": {
+				"startDateTime": "2020-06-14T16:42:23-04:00"
+			},
+			"resourceSpecCharacteristicValue": [
+				{
+					"value": "English"
+				},
+				{
+					"value": "Spanish"
+				},
+				{
+					"value": "French"
+				}
+			]
+		},
+		{
+			"id": "bd58c3d9-4dea-4b6f-bc7d-e965afc29b43",
+			"name": "Scalability",
+			"description": "Scalability parameters for this resource function",
+			"valueType": "CapabilityScalable",
+			"@valueSchemaLocation": "/resourceCatalog/schema/CapabilityScalable.schema.json",
+			"configurable": true,
+			"validFor": {
+				"startDateTime": "2020-08-17T00:00",
+				"endDateTime": "2021-03-12T00:00"
+			},
+			"minCardinality": 0,
+			"maxCardinality": 1,
+			"isUnique": true,
+			"extensible": true,
+			"resourceSpecCharacteristicValue": [
+				{
+					"@type": "CapabilityScalable",
+					"@schemaLocation": "/resourceCatalog/schema/CapabilityScalable.schema.json",
+					"valueType": "object",
+					"value": {
+						"minInstances": 1,
+						"maxInstances": 1000
+					},
+					"isDefault": true,
+					"validFor": {
+						"startDateTime": "2020-08-17T00:00",
+						"endDateTime": "2021-03-12T00:00"
+					}
+				}
+			]
+		}
+	],
+	"featureSpecification": [
+		{
+			"id": "0c70c192-7f06-40ac-ae85-ccaf12eeb6d7",
+			"name": "L2&L3",
+			"isBundle": false,
+			"validFor": {
+				"startDateTime": "2020-08-16T00:00",
+				"endDateTime": "2021-03-12T00:00"
+			},
+			"isEnabled": true
+		},
+		{
+			"id": "2a7b9508-1dc8-4c25-abda-faf0fce3d899",
+			"name": "OSI-L4",
+			"isBundle": false,
+			"validFor": {
+				"startDateTime": "2020-08-16T00:00",
+				"endDateTime": "2021-03-12T00:00"
+			},
+			"isEnabled": true
+		},
+		{
+			"id": "a7d6b0b7-66a6-4d70-a5a4-4f3c6b552fb3",
+			"name": " OSI-L7",
+			"isBundle": false,
+			"validFor": {
+				"startDateTime": "2020-08-16T00:00",
+				"endDateTime": "2021-03-12T00:00"
+			},
+			"isEnabled": true
+		},
+		{
+			"id": "110e444d-6495-4fb6-b1ac-8c796377fa09",
+			"name": "tarpit",
+			"isBundle": false,
+			"validFor": {
+				"startDateTime": "2020-08-16T00:00",
+				"endDateTime": "2021-03-12T00:00"
+			},
+			"isEnabled": true
+		},
+		{
+			"id": "547477ce-f0fb-42e4-956e-fd5b7e0a9a09",
+			"name": "log",
+			"isBundle": false,
+			"validFor": {
+				"startDateTime": "2020-08-16T00:00",
+				"endDateTime": "2021-03-12T00:00"
+			},
+			"featureSpecCharacteristic": [
+				{
+					"name": "logSize",
+					"id": "7fea73cf-d6a2-4cdc-a9b0-e09bf9f17508",
+					"description": "Log Size in MB",
+					"valueType": "number",
+					"configurable": true,
+					"validFor": {
+						"startDateTime": "2020-08-12T00:00",
+						"endDateTime": "2021-03-07T00:00"
+					},
+					"minCardinality": 0,
+					"maxCardinality": 1,
+					"isUnique": true,
+					"extensible": false,
+					"featureSpecCharacteristicValue": [
+						{
+							"isDefault": true,
+							"value": 2000,
+							"validFor": {
+								"startDateTime": "2020-08-06T00:00",
+								"endDateTime": "2021-03-07T00:00"
+							}
+						}
+					]
+				}
+			],
+			"isEnabled": true
+		},
+		{
+			"id": "1ce894d6-f082-4cbe-922c-564a12eb03fd",
+			"name": "IPAddressing",
+			"isBundle": true,
+			"validFor": {
+				"startDateTime": "2020-08-16T00:00",
+				"endDateTime": "2021-03-12T00:00"
+			},
+			"isEnabled": true,
+			"constraint": [
+				{
+					"type": "validation",
+					"id": "c691344c-dcde-431a-86a9-f7f21857ec78",
+					"href": "/resourceCatalog/constraint/c691344c-dcde-431a-86a9-f7f21857ec78",
+					"name": "ReliesOnIPv4OrIPv6",
+					"validFor": {
+						"startDateTime": "2020-08-08T00:00",
+						"endDateTime": "2021-03-07T00:00"
+					}
+				}
+			],
+			"featureSpecRelationship": [
+				{
+					"type": "requires",
+					"featureId": "20ef7b99-dae4-4a05-85b1-1db98df9bdcb",
+					"name": "IPv4Addressing",
+					"validFor": {
+						"startDateTime": "2020-08-08T00:00",
+						"endDateTime": "2021-03-07T00:00"
+					}
+				},
+				{
+					"type": "requires",
+					"featureId": "ea484e71-4847-48b9-ac14-cc9ada4f377a",
+					"name": "IPv6Addressing",
+					"validFor": {
+						"startDateTime": "2020-08-08T00:00",
+						"endDateTime": "2021-03-07T00:00"
+					}
+				}
+			]
+		},
+		{
+			"id": "20ef7b99-dae4-4a05-85b1-1db98df9bdcb",
+			"name": "IPv4Addressing",
+			"isBundle": false,
+			"validFor": {
+				"startDateTime": "2020-08-16T00:00",
+				"endDateTime": "2021-03-12T00:00"
+			},
+			"isEnabled": true
+		},
+		{
+			"id": "ea484e71-4847-48b9-ac14-cc9ada4f377a",
+			"name": "IPv6Addressing",
+			"isBundle": false,
+			"validFor": {
+				"startDateTime": "2020-08-16T00:00",
+				"endDateTime": "2021-03-12T00:00"
+			},
+			"isEnabled": false
+		}
+	],
+	"resourceSpecRelationship": [
+		{
+			"relationshipType": "contains",
+			"id": "d28c5158-e7cb-4b89-ad03-ac2e1cb2ca65",
+			"href": "/resourceCatalog/resourceSpecification/d28c5158-e7cb-4b89-ad03-ac2e1cb2ca65",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": " SWI.1"
+		},
+		{
+			"relationshipType": "contains",
+			"id": "a2efdc9c-d1d9-47b9-9c2a-2e9c859755da",
+			"href": "/resourceCatalog/resourceSpecification/a2efdc9c-d1d9-47b9-9c2a-2e9c859755da",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "SWI.2"
+		},
+		{
+			"relationshipType": "contains",
+			"id": "34227685-6195-4e9d-a878-8b01028f5f65",
+			"href": "/resourceCatalog/resourceSpecification/34227685-6195-4e9d-a878-8b01028f5f65",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "SWI.3"
+		},
+		{
+			"relationshipType": "contains",
+			"id": "225721f6-6cfc-48fb-a585-7e16809f5d4d",
+			"href": "/resourceCatalog/resourceSpecification/225721f6-6cfc-48fb-a585-7e16809f5d4d",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "SWI.4"
+		},
+		{
+			"relationshipType": "contains",
+			"id": "3982c66e-c2b3-4761-b0b5-703ae785b6d7",
+			"href": "/resourceCatalog/resourceSpecification/3982c66e-c2b3-4761-b0b5-703ae785b6d7",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "SWI.5"
+		},
+		{
+			"relationshipType": "contains",
+			"id": "bbc9fcf2-3958-4208-bde7-6db2dcdd3c93",
+			"href": "/resourceCatalog/resourceSpecification/bbc9fcf2-3958-4208-bde7-6db2dcdd3c93",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP1.1"
+		},
+		{
+			"relationshipType": "contains",
+			"id": "5982e80e-b756-404e-aee6-2ba0ab240772",
+			"href": "/resourceCatalog/resourceSpecification/5982e80e-b756-404e-aee6-2ba0ab240772",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP1.2"
+		},
+		{
+			"relationshipType": "contains",
+			"id": "70d092fa-2e17-40a1-94e0-d348e743c7af",
+			"href": "/resourceCatalog/resourceSpecification/70d092fa-2e17-40a1-94e0-d348e743c7af",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP1.3"
+		},
+		{
+			"relationshipType": "contains",
+			"id": "e413c818-50a3-4b8f-8084-acef86e44467",
+			"href": "/resourceCatalog/resourceSpecification/e413c818-50a3-4b8f-8084-acef86e44467",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP2.1"
+		},
+		{
+			"relationshipType": "contains",
+			"id": "351dfff2-7e79-4008-a6dc-7d9e23ca20a1",
+			"href": "/resourceCatalog/resourceSpecification/351dfff2-7e79-4008-a6dc-7d9e23ca20a1",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP2.2"
+		},
+		{
+			"relationshipType": "contains",
+			"id": "00650129-19a5-48ee-932e-3d9da54ccfe6",
+			"href": "/resourceCatalog/resourceSpecification/00650129-19a5-48ee-932e-3d9da54ccfe6",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP3.1"
+		},
+		{
+			"relationshipType": "contains",
+			"id": "bf918909-7630-47d8-8208-25de1dc76b20",
+			"href": "/resourceCatalog/resourceSpecification/bf918909-7630-47d8-8208-25de1dc76b20",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP3.2"
+		},
+		{
+			"relationshipType": "contains",
+			"id": "8dfe562b-7936-47e1-baca-32e601983a49",
+			"href": "/resourceCatalog/resourceSpecification/8dfe562b-7936-47e1-baca-32e601983a49",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP3.3"
+		},
+		{
+			"relationshipType": "contains",
+			"id": "5fb9a767-242c-4b02-b08e-53a9b7dd9956",
+			"href": "/resourceCatalog/resourceSpecification/5fb9a767-242c-4b02-b08e-53a9b7dd9956",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP4.1"
+		},
+		{
+			"relationshipType": "contains",
+			"id": "dd82419d-6fec-4a97-9034-3c2f9b6cc70e",
+			"href": "/resourceCatalog/resourceSpecification/dd82419d-6fec-4a97-9034-3c2f9b6cc70e",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP4.2"
+		},
+		{
+			"relationshipType": "contains",
+			"id": "628445bb-a6ad-47b8-893b-7dc6815c33df",
+			"href": "/resourceCatalog/resourceSpecification/628445bb-a6ad-47b8-893b-7dc6815c33df",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP5.1"
+		},
+		{
+			"relationshipType": "contains",
+			"id": "3fb829fb-b635-48ac-8136-8142f1cbbcaf",
+			"href": "/resourceCatalog/resourceSpecification/3fb829fb-b635-48ac-8136-8142f1cbbcaf",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP5.2"
+		},
+		{
+			"relationshipType": "contains",
+			"id": "b37a1241-2cb2-4882-be47-8e1071864b8c",
+			"href": "/resourceCatalog/resourceSpecification/b37a1241-2cb2-4882-be47-8e1071864b8c",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP5.3"
+		}
+	],
+	"connectionPointSpecification":  [
+		{
+			"id": "bbc9fcf2-3958-4208-bde7-6db2dcdd3c93",
+			"href": "/resourceCatalog/resourceSpecification/bbc9fcf2-3958-4208-bde7-6db2dcdd3c93",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP1.1"
+		},
+		{
+			"id": "b38c6dfe-ecab-4a17-bdde-4019ca693699",
+			"href": "/resourceCatalog/resourceSpecification/b38c6dfe-ecab-4a17-bdde-4019ca693699",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP1.4"
+		},
+		{
+			"id": "bf918909-7630-47d8-8208-25de1dc76b20",
+			"href": "/resourceCatalog/resourceSpecification/bf918909-7630-47d8-8208-25de1dc76b20",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP3.2"
+		},
+		{
+			"id": "3fb829fb-b635-48ac-8136-8142f1cbbcaf",
+			"href": "/resourceCatalog/resourceSpecification/3fb829fb-b635-48ac-8136-8142f1cbbcaf",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP5.2"
+		}
+	],
+	"connectivitySpecification": [
+		{
+			"name": "AdjacencyGraph",
+			"connectionSpecification": [
+				{
+					"name": "AdjacencyPair1",
+					"associationType": "pointtoPoint",
+					"endpointSpecification": [
+						{
+							"id": "d28c5158-e7cb-4b89-ad03-ac2e1cb2ca65",
+							"href": "/resourceCatalog/resourceSpecification/d28c5158-e7cb-4b89-ad03-ac2e1cb2ca65",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": " SWI.1",
+							"isRoot": true,
+							"connectionPointSpecification": {
+								"id": "5982e80e-b756-404e-aee6-2ba0ab240772",
+								"href": "/resourceCatalog/resourceSpecification/5982e80e-b756-404e-aee6-2ba0ab240772",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP1.2"
+							}
+						},
+						{
+							"id": "a2efdc9c-d1d9-47b9-9c2a-2e9c859755da",
+							"href": "/resourceCatalog/resourceSpecification/a2efdc9c-d1d9-47b9-9c2a-2e9c859755da",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": "SWI.2",
+							"isRoot": false,
+							"connectionPointSpecification": {
+								"id": "e413c818-50a3-4b8f-8084-acef86e44467",
+								"href": "/resourceCatalog/resourceSpecification/e413c818-50a3-4b8f-8084-acef86e44467",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP2.1"
+							}
+						}
+					]
+				},
+				{
+					"name": "AdjacencyPair2",
+					"associationType": "pointtoPoint",
+					"endpointSpecification": [
+						{
+							"id": "a2efdc9c-d1d9-47b9-9c2a-2e9c859755da",
+							"href": "/resourceCatalog/resourceSpecification/a2efdc9c-d1d9-47b9-9c2a-2e9c859755da",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": " SWI.2",
+							"isRoot": true,
+							"connectionPointSpecification": {
+								"id": "351dfff2-7e79-4008-a6dc-7d9e23ca20a1",
+								"href": "/resourceCatalog/resourceSpecification/351dfff2-7e79-4008-a6dc-7d9e23ca20a1",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP2.2"
+							}
+						},
+						{
+							"id": "34227685-6195-4e9d-a878-8b01028f5f65",
+							"href": "/resourceCatalog/resourceSpecification/34227685-6195-4e9d-a878-8b01028f5f65",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": "SWI.3",
+							"isRoot": false,
+							"connectionPointSpecification": {
+								"id": "00650129-19a5-48ee-932e-3d9da54ccfe6",
+								"href": "/resourceCatalog/resourceSpecification/00650129-19a5-48ee-932e-3d9da54ccfe6",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP3.1"
+							}
+						}
+					]
+				},
+				{
+					"name": "AdjacencyPair3",
+					"associationType": "pointtoPoint",
+					"endpointSpecification": [
+						{
+							"id": "34227685-6195-4e9d-a878-8b01028f5f65",
+							"href": "/resourceCatalog/resourceSpecification/34227685-6195-4e9d-a878-8b01028f5f65",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": " SWI.3",
+							"isRoot": true,
+							"connectionPointSpecification": {
+								"id": "8dfe562b-7936-47e1-baca-32e601983a49",
+								"href": "/resourceCatalog/resourceSpecification/8dfe562b-7936-47e1-baca-32e601983a49",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP3.3"
+							}
+						},
+						{
+							"id": "225721f6-6cfc-48fb-a585-7e16809f5d4d",
+							"href": "/resourceCatalog/resourceSpecification/225721f6-6cfc-48fb-a585-7e16809f5d4d",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": "SWI.4",
+							"isRoot": false,
+							"connectionPointSpecification": {
+								"id": "5fb9a767-242c-4b02-b08e-53a9b7dd9956",
+								"href": "/resourceCatalog/resourceSpecification/5fb9a767-242c-4b02-b08e-53a9b7dd9956",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP4.1"
+							}
+						}
+					]
+				},
+				{
+					"name": "AdjacencyPair4",
+					"associationType": "pointtoPoint",
+					"endpointSpecification": [
+						{
+							"id": "225721f6-6cfc-48fb-a585-7e16809f5d4d",
+							"href": "/resourceCatalog/resourceSpecification/225721f6-6cfc-48fb-a585-7e16809f5d4d",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": " SWI.4",
+							"isRoot": true,
+							"connectionPointSpecification": {
+								"id": "dd82419d-6fec-4a97-9034-3c2f9b6cc70e",
+								"href": "/resourceCatalog/resourceSpecification/dd82419d-6fec-4a97-9034-3c2f9b6cc70e",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP4.2"
+							}
+						},
+						{
+							"id": "3982c66e-c2b3-4761-b0b5-703ae785b6d7",
+							"href": "/resourceCatalog/resourceSpecification/3982c66e-c2b3-4761-b0b5-703ae785b6d7",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": "SWI.5",
+							"isRoot": false,
+							"connectionPointSpecification": {
+								"id": "628445bb-a6ad-47b8-893b-7dc6815c33df",
+								"href": "/resourceCatalog/resourceSpecification/628445bb-a6ad-47b8-893b-7dc6815c33df",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP5.1"
+							}
+						}
+					]
+				},
+				{
+					"name": "AdjacencyPair5",
+					"associationType": "pointtoPoint",
+					"endpointSpecification": [
+						{
+							"id": "3982c66e-c2b3-4761-b0b5-703ae785b6d7",
+							"href": "/resourceCatalog/resourceSpecification/3982c66e-c2b3-4761-b0b5-703ae785b6d7",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": " SWI.5",
+							"isRoot": true,
+							"connectionPointSpecification": {
+								"id": "b37a1241-2cb2-4882-be47-8e1071864b8c",
+								"href": "/resourceCatalog/resourceSpecification/b37a1241-2cb2-4882-be47-8e1071864b8c",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP5.3"
+							}
+						},
+						{
+							"id": "d28c5158-e7cb-4b89-ad03-ac2e1cb2ca65",
+							"href": "/resourceCatalog/resourceSpecification/d28c5158-e7cb-4b89-ad03-ac2e1cb2ca65",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": "SWI.1",
+							"isRoot": false,
+							"connectionPointSpecification": {
+								"id": "70d092fa-2e17-40a1-94e0-d348e743c7af",
+								"href": "/resourceCatalog/resourceSpecification/70d092fa-2e17-40a1-94e0-d348e743c7af",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP1.3"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

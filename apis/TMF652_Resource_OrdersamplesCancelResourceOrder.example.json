@@ -1,0 +1,7 @@
+{
+    "cancellationReason": "Decided to use Ethernet cable instead",
+    "effectiveCancellationDate": "2020-04-30T00:00",
+    "href": "https:/host/tmf-api/cancelResourceOrder/v1/cancelResourceOrder/5130d5131a23",
+    "id": "5130d5131a23",
+    "requestedCancellationDate": "2020-04-01T00:00"
+}

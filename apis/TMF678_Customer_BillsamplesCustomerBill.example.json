@@ -1,0 +1,115 @@
+{
+	"id": "CB-123",
+	"href": "https://server:port/tmf-api/Customer_Bill_Management/v4/customerBill/CB-123",
+	"billNo": "780123456",
+	"amountDue": {
+		"unit": "EUR",
+		"value": 0.00
+		},
+	"appliedPayment": [
+		{
+			"appliedAmount": {
+				"unit": "EUR",
+				"value": 50.00
+			},
+			"payment": {
+				"id": "PAY-9876",
+				"href": "https://server:port/tmf-api/Payment_Management/v4/payment/PAY-9876",
+				"name": "csp-bill",
+				"@referredtype": "Payment",
+				"@type": "PaymentRef",
+				"@baseType": "PaymentRef",
+				"@schemaLocation": "...some href..."
+			},	
+			"@type": "AppliedPayment",
+			"@baseType": "AppliedPayment",
+			"@schemaLocation": "...some href..."
+		}
+	],
+	"billCycle": {
+		"id": "BC-1234",
+		"href": "http://server:port/tmf-api/Customer_Bill_Management/v4/billcycle/BC-1234",
+		"@referredType": "BillCycle",
+		"@type": "BillCycleRef",
+		"@baseType": "BillCycleRef",
+		"@schemaLocation": "...some href..."
+		},
+	"billDate": "2020-01-05T12:00:56.982Z",
+	"billDocument": [
+		{
+			"id": "DOC_1234",
+			"href": "http://server:port/tmf-api/Document_Management/v4/document/DOC_1234",
+			"attachmentType": "application/pdf",
+			"content": "bill",
+			"description": "regular monthly bill",
+			"mimeType": "application/pdf",
+			"size": 172851,
+			"uri": "",
+			"validfor": {
+				"startDateTime": "2020-01-05T12:00:56.982Z",
+				"endDateTime": "9999-12-31T23:59:59.999Z"
+			},
+			"@referredType": "application/pdf",
+			"@type": "AttachmentRefOrValue",
+			"@baseType": "AttachmentRefOrValue",
+			"@schemaLocation": "...some href..."
+		}
+	],
+	"billingAccount": {
+		"id": "A0815",
+		"href": "http://host:port/tmf-api/Account_Management/v4/billingAccount/A0815",
+		"name": "BA Peter Retep",
+		"@referredType": "BillingAccount",
+		"@type": "BillingAccountRef",
+		"@baseType": "BillingAccountRef",
+		"@schemaLocation": "...some href..."
+		},
+	"financialAccount": {
+		"id": "FA12345",
+		"href": "http://host:port/tmf-api/Account_Management/v4/financialAccount/FA12345",
+		"name": "FA Peter Retep",
+		"@referredType": "FinancialAccount",
+		"@type": "FinancialAccountRef",
+		"@baseType": "FinancialAccountRef",
+		"@schemaLocation": "...some href..."
+		},
+	"billingPeriod": {},
+	"category": "normal",
+	"lastUpdate": "2020-01-05T12:00:56.982Z",
+	"nextBillDate": "2020-02-05T12:00:00.000Z",
+	"paymentDueDate": "2020-01-15T00:00:00.000Z",
+	"paymentMethod": {},
+	"relatedParty": [
+		{}
+	],
+	"remainingAmount": {
+		"unit": "EUR",
+		"value": 0.00
+		},
+	"runType": "regular bill run",
+	"status": "settled",
+	"taxExcludedAmount": {
+		"unit": "EUR",
+		"value": 40.00
+		},
+	"taxIncludedAmount": {
+		"unit": "EUR",
+		"value": 50.00
+		},
+	"taxItem": [
+		{
+			"taxAmount": {
+				"unit": "EUR",
+				"value": 10.00
+			},
+			"taxCategory": "VAT",
+			"taxRate": 0.25,
+			"@type":"TaxItem",
+			"@baseType": "TaxItem",
+			"@schemalocation":"...some uri..."
+		}
+	],
+    "@type":"CustomerBill",
+    "@baseType": "CustomerBill",
+    "@schemalocation":"...some uri..."
+}

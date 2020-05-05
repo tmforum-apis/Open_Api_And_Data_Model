@@ -1,0 +1,31 @@
+{
+	"id": "D123",
+	"href": "http://server:port/tmf-api/Customer_Bill_Management/v4/customerBillOnDemand/D123",
+	"description": "Customer bill on demand",
+	"lastUpdate": "2020-01-19T12:34:56.123Z",
+	"name": "BillOnCustomerDemand",
+	"billingAccount": {
+		"id": "A0815",
+		"href": "http://server:port/tmf-api/Account_Management/v4/billingAccount/A0815",
+		"name": "BA Peter Retep",
+		"@referredType": "BillingAccount",
+		"@type": "BillingAccountRef",
+		"@baseType": "BillingAccountREf",
+		"@schemaLocation": "...some href..."
+	},
+	"customerBill": {},
+	"relatedParty": {
+		"id": "RP0815",
+		"href": "http://server:port/tmf-api/Party_Management/v4/party/RP0815",
+		"name": "Peter Retep",
+		"role": "requester",
+		"@referredType": "RelatedParty",
+		"@type": "RelatedParty",
+		"@baseType": "RelatedParty",
+		"@schemaLocation": "...some href..."
+	},
+	"state": "inProgress",
+	"@type": "CustomerBillOnDemand",
+	"@baseType": "CustomerBillOnDemand",
+	"@schemaLocation": "http://server:port/tmf-api/Customer_Bill_Management/v4/schemas/customerBillOnDemand"
+}

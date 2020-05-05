@@ -1,0 +1,45 @@
+{
+    "@type": "history",
+    "@schemaLocation": "http://xx/History.schema.json",
+    "@baseType": "history",
+    "eventId": "256c42f0-7cae-4cfe-8b96-f5773796f8ff",
+    "eventTime": "2019-11-02T14:20:54",
+    "eventType": "AlarmCreateNotification",
+    "correlationId": "238764827364827t367",
+    "domain": "domain-x",
+    "title": "Mail service not responding",
+    "description": "The mail service is no longer responding and sending mails",
+    "timeOccurred": "2019-11-02T14:20:54",
+    "timeReceived": "2019-11-02T14:21:08",
+    "priority": "Normal",
+    "source": {
+        "id": "12345",
+        "href": ".../relatedEntity/12345"
+    },
+    "reportingSystem": {
+         "id": "34534",
+        "href": ".../reportingEntity/12345",
+        "name": "name"
+    },
+    "relatedParty": [
+        {
+           "id": "12312",
+            "href": "http://.../party/12345",
+            "role": "Owner"
+        }
+    ],
+    "event": {
+        "alarm": {
+            "@type": "alarm",
+            "@schemaLocation": "http://../registry/Alarm.schema.json",
+            "@baseType": "alarm",
+            "id": "ROUTER_IF@Cisco-7609-6-4-4-4-14-14-4--Gi9/20@42",
+            "href": "http://api/alarm/ROUTER_IF@Cisco-7609-6-4-4-4-14-14-4--Gi9/20@42",
+            "externalAlarmId": "cisco-7609-1937465789",
+            "alarmType": "QualityOfServiceAlarm",
+            "perceivedSeverity": "CRITICAL",
+            "probableCause": "Threshold crossed",
+            "specificProblem": "Inbound Traffic threshold crossed"
+        }
+    }
+}

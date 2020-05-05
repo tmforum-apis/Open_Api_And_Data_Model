@@ -1,0 +1,20 @@
+{
+    "href": "https://host:port/tmf-api/serviceQualityManagement/v4/serviceLevelSpecification/1112", 
+    "id": "1112",
+    "description": "Maximum download/upload speed service level",
+    "name": "Access bandwidth",
+    "validFor": {
+        "endDateTime": "2021-05-00T00:00:00+01:00",
+        "startDateTime": "2020-03-00T00:00:00+01:00" 
+    },
+    "relatedServiceLevelObjective": [
+        {
+            "href": "https://host:port/tmf-api/serviceQualityManagement/v4/serviceLevelObjective/3112", 
+            "id": "3112"
+        }, 
+        {
+            "href": "https://host:port/tmf-api/serviceQualityManagement/v4/serviceLevelObjective/3113",
+            "id": "3113"
+        }
+    ] 
+}

@@ -2154,20 +2154,8 @@
                 },
                 "href": {
                     "type": "string",
-                    "description": "Hyperlink reference"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
                     "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "Hyperlink reference"
                 }
             }
         },
@@ -2264,19 +2252,6 @@
                         "$ref": "#/definitions/RelatedParty"
                     },
                     "minItems": 1
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -2296,19 +2271,6 @@
                 "state": {
                     "type": "string",
                     "description": "Current status of the authorization, for example in process, approved, rejected."
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -2335,19 +2297,6 @@
                     "items": {
                         "$ref": "#/definitions/AgreementTermOrCondition"
                     }
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -2361,6 +2310,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -2368,18 +2318,15 @@
                     "description": "Name of the agreement"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -2402,6 +2349,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "description": {
@@ -2413,18 +2361,15 @@
                     "description": "Name of the agreement specification"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -2452,19 +2397,6 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time during which the term or condition of the agreement applies."
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -2473,8 +2405,8 @@
             "type": "object",
             "description": "Describes a given characteristic of an object or entity through a name/value pair.",
             "required": [
-                "@type",
-                "name"
+                "name",
+                "value"
             ],
             "properties": {
                 "id": {
@@ -2495,19 +2427,20 @@
                         "$ref": "#/definitions/CharacteristicRelationship"
                     }
                 },
+                "value": {
+                    "$ref": "#/definitions/Any",
+                    "description": "The value of the characteristic"
+                },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -2524,19 +2457,6 @@
                 "relationshipType": {
                     "type": "string",
                     "description": "The type of relationship"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -2550,6 +2470,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -2557,18 +2478,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -2586,18 +2504,15 @@
             "description": "Base Extensible schema for use in TMForum Open-APIs",
             "properties": {
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -2710,19 +2625,6 @@
                         "$ref": "#/definitions/PartyPrivacyProfileCharacteristic"
                     },
                     "description": "A list of (typically) high criticality characteristics whose chosen privacy rules are included in the agreement"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -2825,19 +2727,6 @@
                         "$ref": "#/definitions/PartyPrivacyProfileCharacteristic"
                     },
                     "description": "A list of (typically) high criticality characteristics whose chosen privacy rules are included in the agreement"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -2940,19 +2829,6 @@
                         "$ref": "#/definitions/PartyPrivacyProfileCharacteristic"
                     },
                     "description": "A list of (typically) high criticality characteristics whose chosen privacy rules are included in the agreement"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -2966,6 +2842,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -2973,18 +2850,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -2997,12 +2871,20 @@
                 "id"
             ]
         },
+        "PartyPrivacyAgreementStatusExampleType": {
+            "type": "string",
+            "description": "Possible values for the status of party privacy profile agreement (for example: intialized, inProgress, rejected, pendingUpdate, validated)",
+            "enum": [
+                "initialized",
+                "inProgress",
+                "rejected",
+                "pendingUpdate",
+                "validated"
+            ]
+        },
         "PartyPrivacyProfile": {
             "type": "object",
             "description": "A Party Privacy Profile represents the set of Privacy settings defined for a Party",
-            "required": [
-                "agreedByParty"
-            ],
             "properties": {
                 "id": {
                     "type": "string",
@@ -3027,7 +2909,7 @@
                 },
                 "status": {
                     "type": "string",
-                    "description": "The status of this profile (such as agreed, created, terminated, etc.)"
+                    "description": "The status of this profile (for example: created, terminated, etc.)"
                 },
                 "agreedByParty": {
                     "$ref": "#/definitions/RelatedParty",
@@ -3055,19 +2937,6 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which this profile is valid, depending on regulations or business consideration the profile may expire and need to be renegotiated."
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -3095,7 +2964,7 @@
                 },
                 "status": {
                     "type": "string",
-                    "description": "The status of this profile (such as agreed, created, terminated, etc.)"
+                    "description": "The status of this profile (for example: created, terminated, etc.)"
                 },
                 "agreedByParty": {
                     "$ref": "#/definitions/RelatedParty",
@@ -3124,28 +2993,12 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which this profile is valid, depending on regulations or business consideration the profile may expire and need to be renegotiated."
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
         "PartyPrivacyProfile_Update": {
             "type": "object",
             "description": "A Party Privacy Profile represents the set of Privacy settings defined for a Party\nSkipped properties: id,href,creationDate",
-            "required": [
-                "agreedByParty"
-            ],
             "properties": {
                 "description": {
                     "type": "string",
@@ -3157,7 +3010,7 @@
                 },
                 "status": {
                     "type": "string",
-                    "description": "The status of this profile (such as agreed, created, terminated, etc.)"
+                    "description": "The status of this profile (for example: created, terminated, etc.)"
                 },
                 "agreedByParty": {
                     "$ref": "#/definitions/RelatedParty",
@@ -3185,19 +3038,6 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which this profile is valid, depending on regulations or business consideration the profile may expire and need to be renegotiated."
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -3205,7 +3045,8 @@
             "type": "object",
             "description": "A characteristic for an instantiated party profile, where the value indicates the allowed use of the characteristic",
             "required": [
-                "name"
+                "name",
+                "value"
             ],
             "properties": {
                 "id": {
@@ -3236,19 +3077,20 @@
                     },
                     "description": "A list of parties to which the allowed use of the characteristic applies."
                 },
+                "value": {
+                    "$ref": "#/definitions/Any",
+                    "description": "The value of the characteristic"
+                },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -3264,6 +3106,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -3271,18 +3114,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -3322,7 +3162,7 @@
                 },
                 "status": {
                     "type": "string",
-                    "description": "Lifecycle status of the specification (e.g. In Design, Active, Rejected, Retired)"
+                    "description": "Lifecycle status of the specification (for example: In Design, Active, Rejected, Retired)"
                 },
                 "version": {
                     "type": "string",
@@ -3358,19 +3198,6 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which the specification is valid"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -3396,7 +3223,7 @@
                 },
                 "status": {
                     "type": "string",
-                    "description": "Lifecycle status of the specification (e.g. In Design, Active, Rejected, Retired)"
+                    "description": "Lifecycle status of the specification (for example: In Design, Active, Rejected, Retired)"
                 },
                 "version": {
                     "type": "string",
@@ -3433,19 +3260,6 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which the specification is valid"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -3468,7 +3282,7 @@
                 },
                 "status": {
                     "type": "string",
-                    "description": "Lifecycle status of the specification (e.g. In Design, Active, Rejected, Retired)"
+                    "description": "Lifecycle status of the specification (for example: In Design, Active, Rejected, Retired)"
                 },
                 "version": {
                     "type": "string",
@@ -3504,19 +3318,6 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which the specification is valid"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -3564,19 +3365,6 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which this characteristic specification is valid."
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -3590,6 +3378,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -3597,18 +3386,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -3619,6 +3405,24 @@
             },
             "required": [
                 "id"
+            ]
+        },
+        "PartyPrivacyProfileSpecificationStatusExampleType": {
+            "type": "string",
+            "description": "Possible values for the status of party privacy profile Specification (for example: inDesign, active, rejected, retired)",
+            "enum": [
+                "inDesign",
+                "active",
+                "rejected",
+                "retired"
+            ]
+        },
+        "PartyPrivacyProfileStatusExampleType": {
+            "type": "string",
+            "description": "Possible values for the status of party privacy profile (for example: created, terminated)",
+            "enum": [
+                "created",
+                "terminated"
             ]
         },
         "PartyPrivacyRoleSpecification": {
@@ -3641,19 +3445,6 @@
                     "items": {
                         "$ref": "#/definitions/AgreementSpecificationRef"
                     }
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -3667,6 +3458,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -3674,18 +3466,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -3707,6 +3496,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -3714,18 +3504,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -3752,6 +3539,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -3763,18 +3551,15 @@
                     "description": "Role played by the related party"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -3798,19 +3583,6 @@
                 "name": {
                     "type": "string",
                     "description": "The name of the role specification. This name uniquely identifies the role specification"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -3853,19 +3625,6 @@
                 "value": {
                     "$ref": "#/definitions/Any",
                     "description": "the  value that the characteristic can take on."
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -3883,20 +3642,7 @@
                     "example": "1985-04-12T23:20:50.52Z",
                     "type": "string",
                     "format": "date-time",
-                    "description": "Start of the time period, using IETC-RFC-3339 format. If you define a start, you must also define an end"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "Start of the time period, using IETC-RFC-3339 format"
                 }
             }
         },

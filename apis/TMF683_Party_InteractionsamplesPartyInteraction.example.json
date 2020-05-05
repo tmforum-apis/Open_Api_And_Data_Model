@@ -1,0 +1,123 @@
+{
+    "id": "123",
+    "href": "https://host:port/partyInteraction/v4/partyInteraction/123",
+    "@type": "storeVisit",
+    "interactionDate": {
+        "startDateTime": "2019-10-02T11:36:18.758Z",
+        "endDateTime": "2019-10-02T11:53:21.789Z"
+    },
+    "description": "Visit to store",
+    "reason": "The user wanted to query about new TV tariffs ",
+    "status": "completed",
+    "statusChangeDate": "2019-10-02T11:53:21.789Z",
+    "direction": "inbounds",
+    "creationDate": "2019-10-02T11:37:08.013Z",
+    "relatedParty": [
+        {
+            "id": "999",
+            "href": "https://host:port/partyManagement/v4/individual/999",
+            "@referredType": "individual",
+            "role": "user",
+            "name": "John Doe"
+        },
+        {
+            "id": "888",
+            "href": "https://host:port/partyManagement/v4/individual/888",
+            "@referredType": "individual",
+            "role": "clerk",
+            "name": "Jane Doe"
+        }
+    ],
+    "interactionItem": [
+        {
+            "id": "5678",
+            "href": "https://host:port/partyInteraction/v4/partyInteraction/123/interactionItem/5678",
+            "reason": "The user signed up to new TV bundle and paid the decoder",
+            "itemDate": "2019-10-02T11:50:01.333Z",
+            "resolution": "Product order is created",
+            "creationDate": "2019-10-02T11:50:01.895Z",
+            "item": {
+                "id": "30001",
+                "href": "https://host:port/productOrderingManagement/v4/productOrder/30001",
+                "@referredType": "ProductOrder",
+                "@type":"EntityRef",
+                "role": "interaction",
+                "name": "Product Order illustration sample by reference"
+            }
+        },
+        {
+            "id": "1212",
+            "href": "https://host:port/partyInteraction/v4/partyInteraction/123/interactionItem/1212",
+            "reason": "The user signed up to new Cloud bundle",
+            "itemDate": "2019-10-02T11:50:01.333Z",
+            "resolution": "Product order is created",
+            "creationDate": "2019-10-02T11:50:01.895Z",
+            "item": {
+                "id": "88",
+                "href": "https://host:port/productOrderingManagement/v4/productOrder/88",
+                "@type": "ProductOrder",
+                "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/ProductOrder.schema.json",
+                "role": "interaction",
+                "name": "Product Order illustration sample by value",
+                "orderItem": [
+                    {"id": "1", 
+                    "action": "add"}
+                ]
+            }
+        },
+        {
+            "id": "9999",
+            "href": "https://host:port/partyInteraction/v4/partyInteraction/123/interactionItem/9999",
+            "reason": "The user paid the decoder in the store with credit card",
+            "itemDate": "2019-10-02T11:50:01.333Z",
+            "resolution": "TODO",
+            "creationDate": "2019-10-02T11:50:01.895Z",
+            "item": {
+                "id": "666",
+                "href": "https://host:port/paymentManagement/v4/payment/666",
+                "@referredType": "payment",
+                "name": "TV bundle plus decoder payment"
+            }
+        }
+    ],
+    "channel": [
+        {
+            "id": "555",
+            "name": "Madrid Gran V\u00eda Store",
+            "role": "interaction creation",
+            "@type": "store"
+        }
+    ],
+    "attachment": [
+        {
+            "id": "111222444",
+            "href": "https://host:port/partyInteraction/v4/partyInteraction/123/attachment/111222444",
+            "name": "Some cool attachment",
+            "description": "blahblahblah",
+            "type": "receipt",
+            "mimeType": "application/pdf",
+            "size": 321321,
+            "sizeUnit": "KB",
+            "URL": "https://whereverthpdfis.com",
+            "interactionDate": {
+                "startDateTime": "2019-10-02T11:36:18.758Z",
+                "endDateTime": "2019-10-02T11:53:21.789Z"
+            }
+        }
+    ],
+    "note": [
+        {
+            "id": "121",
+            "text": "loren ipsum dolor sit amet\u2026",
+            "author": "John Doe",
+            "date": "2019-10-02T11:36:18.758Z"
+        }
+    ],
+    "interactionRelationship": [
+        {
+            "id": "1034",
+            "href": "https://host:port/partyInteraction/v4/partyInteraction/1034",
+            "relationshipType": "parent"
+        }
+    ]
+}

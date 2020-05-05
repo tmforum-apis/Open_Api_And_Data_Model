@@ -1,0 +1,12 @@
+{
+    "href": "https:/server:port/tmf-api/monitor/v4/monitor/4035",
+    "id": "4035",
+    "request": {
+        "text": "--SEE RESOURCE RESQUEST SAMPLE--"
+    },
+    "response": {
+        "text": "--SEE RESOURCE RESPONSE SAMPLE--"
+    },
+    "sourceHref": "http://server:port/resourceInventoryManagement/logicalResource/444",
+    "state": "completed"
+}

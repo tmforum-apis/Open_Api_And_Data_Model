@@ -6,7 +6,7 @@
         "version": "4.0.0"
     },
     "host": "serverRoot",
-    "basePath": "/tmf-api/alarm/v4/",
+    "basePath": "/tmf-api/alarmManagement/v4/",
     "schemes": [
         "https"
     ],
@@ -3224,6 +3224,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "@baseType": {
@@ -3280,7 +3281,7 @@
                 },
                 "ackState": {
                     "type": "string",
-                    "description": "Provides the Acknowledgement State of the alarm"
+                    "description": "Provides the Acknowledgement State of the alarm (unacknowledged | acknowledged)."
                 },
                 "ackSystemId": {
                     "type": "string",
@@ -3318,10 +3319,6 @@
                     "format": "date-time",
                     "description": "Indicates the time (as a date + time) at which the alarm was reported by the owning OSS. It might be different from the alarmRaisedTime. For instance, if the alarm list is maintained by an EMS, the alarmRaisedtime would be the time the alarm\n  was detected by the NE, while the alarmReportingTime would be the time this alarm was stored in the alarm list of the EMS."
                 },
-                "alarmType": {
-                    "type": "string",
-                    "description": "Categorize the alarm. Should be one of the values defined in X.733 8.1.1 or 3GPP TS 32.111-2 Annex A:\n\tCommunications Alarm\n\tProcessing Error Alarm\n\tEnvironmental Alarm\n\tQuality of Service Alarm\n\tEquipment Alarm\n\tIntegrity Violation\n\tOperational Violation\n\tPhysical Violation\n\tSecurity Service or Mechanism Violation\n\tTime Domain Violation"
-                },
                 "alarmedObjectType": {
                     "type": "string",
                     "description": "The type (class) of the managed object associated with the event."
@@ -3341,10 +3338,6 @@
                 "isRootCause": {
                     "type": "boolean",
                     "description": "Indicates whether the alarm is a root cause alarm.. "
-                },
-                "perceivedSeverity": {
-                    "type": "string",
-                    "description": "Lists the possible severities that can be allocated to an Alarm. The values are consistent with ITU-T Recommendation X.733.\nOnce an alarm has been cleared, its perceived severity is set to 'cleared' and can no longer be set."
                 },
                 "plannedOutageIndicator": {
                     "type": "string",
@@ -3376,13 +3369,16 @@
                 },
                 "state": {
                     "type": "string",
-                    "description": "Defines the alarm state during its life cycle"
+                    "description": "Defines the alarm state during its life cycle (raised | updated | cleared)."
                 },
                 "affectedService": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/AffectedService"
                     }
+                },
+                "alarmType": {
+                    "$ref": "#/definitions/AlarmType"
                 },
                 "alarmedObject": {
                     "$ref": "#/definitions/AlarmedObject"
@@ -3407,6 +3403,9 @@
                     "items": {
                         "$ref": "#/definitions/AlarmRef"
                     }
+                },
+                "perceivedSeverity": {
+                    "$ref": "#/definitions/PerceivedSeverity"
                 },
                 "place": {
                     "type": "array",
@@ -3443,7 +3442,7 @@
             "properties": {
                 "ackState": {
                     "type": "string",
-                    "description": "Provides the Acknowledgement State of the alarm"
+                    "description": "Provides the Acknowledgement State of the alarm (unacknowledged | acknowledged)."
                 },
                 "ackSystemId": {
                     "type": "string",
@@ -3481,10 +3480,6 @@
                     "format": "date-time",
                     "description": "Indicates the time (as a date + time) at which the alarm was reported by the owning OSS. It might be different from the alarmRaisedTime. For instance, if the alarm list is maintained by an EMS, the alarmRaisedtime would be the time the alarm\n  was detected by the NE, while the alarmReportingTime would be the time this alarm was stored in the alarm list of the EMS."
                 },
-                "alarmType": {
-                    "type": "string",
-                    "description": "Categorize the alarm. Should be one of the values defined in X.733 8.1.1 or 3GPP TS 32.111-2 Annex A:\n\tCommunications Alarm\n\tProcessing Error Alarm\n\tEnvironmental Alarm\n\tQuality of Service Alarm\n\tEquipment Alarm\n\tIntegrity Violation\n\tOperational Violation\n\tPhysical Violation\n\tSecurity Service or Mechanism Violation\n\tTime Domain Violation"
-                },
                 "alarmedObjectType": {
                     "type": "string",
                     "description": "The type (class) of the managed object associated with the event."
@@ -3504,10 +3499,6 @@
                 "isRootCause": {
                     "type": "boolean",
                     "description": "Indicates whether the alarm is a root cause alarm.. "
-                },
-                "perceivedSeverity": {
-                    "type": "string",
-                    "description": "Lists the possible severities that can be allocated to an Alarm. The values are consistent with ITU-T Recommendation X.733.\nOnce an alarm has been cleared, its perceived severity is set to 'cleared' and can no longer be set."
                 },
                 "plannedOutageIndicator": {
                     "type": "string",
@@ -3539,13 +3530,16 @@
                 },
                 "state": {
                     "type": "string",
-                    "description": "Defines the alarm state during its life cycle"
+                    "description": "Defines the alarm state during its life cycle (raised | updated | cleared)."
                 },
                 "affectedService": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/AffectedService"
                     }
+                },
+                "alarmType": {
+                    "$ref": "#/definitions/AlarmType"
                 },
                 "alarmedObject": {
                     "$ref": "#/definitions/AlarmedObject"
@@ -3570,6 +3564,9 @@
                     "items": {
                         "$ref": "#/definitions/AlarmRef"
                     }
+                },
+                "perceivedSeverity": {
+                    "$ref": "#/definitions/PerceivedSeverity"
                 },
                 "place": {
                     "type": "array",
@@ -3597,7 +3594,7 @@
             "properties": {
                 "ackState": {
                     "type": "string",
-                    "description": "Provides the Acknowledgement State of the alarm"
+                    "description": "Provides the Acknowledgement State of the alarm (unacknowledged | acknowledged)."
                 },
                 "ackSystemId": {
                     "type": "string",
@@ -3630,10 +3627,6 @@
                     "format": "date-time",
                     "description": "Indicates the time (as a date + time) at which the alarm was reported by the owning OSS. It might be different from the alarmRaisedTime. For instance, if the alarm list is maintained by an EMS, the alarmRaisedtime would be the time the alarm\n  was detected by the NE, while the alarmReportingTime would be the time this alarm was stored in the alarm list of the EMS."
                 },
-                "alarmType": {
-                    "type": "string",
-                    "description": "Categorize the alarm. Should be one of the values defined in X.733 8.1.1 or 3GPP TS 32.111-2 Annex A:\n\tCommunications Alarm\n\tProcessing Error Alarm\n\tEnvironmental Alarm\n\tQuality of Service Alarm\n\tEquipment Alarm\n\tIntegrity Violation\n\tOperational Violation\n\tPhysical Violation\n\tSecurity Service or Mechanism Violation\n\tTime Domain Violation"
-                },
                 "alarmedObjectType": {
                     "type": "string",
                     "description": "The type (class) of the managed object associated with the event."
@@ -3653,10 +3646,6 @@
                 "isRootCause": {
                     "type": "boolean",
                     "description": "Indicates whether the alarm is a root cause alarm.. "
-                },
-                "perceivedSeverity": {
-                    "type": "string",
-                    "description": "Lists the possible severities that can be allocated to an Alarm. The values are consistent with ITU-T Recommendation X.733.\nOnce an alarm has been cleared, its perceived severity is set to 'cleared' and can no longer be set."
                 },
                 "plannedOutageIndicator": {
                     "type": "string",
@@ -3684,13 +3673,16 @@
                 },
                 "state": {
                     "type": "string",
-                    "description": "Defines the alarm state during its life cycle"
+                    "description": "Defines the alarm state during its life cycle (raised | updated | cleared)."
                 },
                 "affectedService": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/AffectedService"
                     }
+                },
+                "alarmType": {
+                    "$ref": "#/definitions/AlarmType"
                 },
                 "alarmedObject": {
                     "$ref": "#/definitions/AlarmedObject"
@@ -3715,6 +3707,9 @@
                     "items": {
                         "$ref": "#/definitions/AlarmRef"
                     }
+                },
+                "perceivedSeverity": {
+                    "$ref": "#/definitions/PerceivedSeverity"
                 },
                 "place": {
                     "type": "array",
@@ -3745,6 +3740,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -3790,7 +3786,7 @@
                 },
                 "ackState": {
                     "type": "string",
-                    "description": "Provides the Acknowledgement State of the alarm"
+                    "description": "Provides the Acknowledgement State of the alarm (unacknowledged | acknowledged)."
                 },
                 "ackSystemId": {
                     "type": "string",
@@ -3828,10 +3824,6 @@
                     "format": "date-time",
                     "description": "Indicates the time (as a date + time) at which the alarm was reported by the owning OSS. It might be different from the alarmRaisedTime. For instance, if the alarm list is maintained by an EMS, the alarmRaisedtime would be the time the alarm\n  was detected by the NE, while the alarmReportingTime would be the time this alarm was stored in the alarm list of the EMS."
                 },
-                "alarmType": {
-                    "type": "string",
-                    "description": "Categorize the alarm. Should be one of the values defined in X.733 8.1.1 or 3GPP TS 32.111-2 Annex A:\n\tCommunications Alarm\n\tProcessing Error Alarm\n\tEnvironmental Alarm\n\tQuality of Service Alarm\n\tEquipment Alarm\n\tIntegrity Violation\n\tOperational Violation\n\tPhysical Violation\n\tSecurity Service or Mechanism Violation\n\tTime Domain Violation"
-                },
                 "alarmedObjectType": {
                     "type": "string",
                     "description": "The type (class) of the managed object associated with the event."
@@ -3855,10 +3847,6 @@
                 "name": {
                     "type": "string",
                     "description": "Name of the related entity."
-                },
-                "perceivedSeverity": {
-                    "type": "string",
-                    "description": "Lists the possible severities that can be allocated to an Alarm. The values are consistent with ITU-T Recommendation X.733.\nOnce an alarm has been cleared, its perceived severity is set to 'cleared' and can no longer be set."
                 },
                 "plannedOutageIndicator": {
                     "type": "string",
@@ -3890,13 +3878,16 @@
                 },
                 "state": {
                     "type": "string",
-                    "description": "Defines the alarm state during its life cycle"
+                    "description": "Defines the alarm state during its life cycle (raised | updated | cleared)."
                 },
                 "affectedService": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/AffectedService"
                     }
+                },
+                "alarmType": {
+                    "$ref": "#/definitions/AlarmType"
                 },
                 "alarmedObject": {
                     "$ref": "#/definitions/AlarmedObject"
@@ -3922,6 +3913,9 @@
                         "$ref": "#/definitions/AlarmRef"
                     }
                 },
+                "perceivedSeverity": {
+                    "$ref": "#/definitions/PerceivedSeverity"
+                },
                 "place": {
                     "type": "array",
                     "items": {
@@ -3945,6 +3939,23 @@
                     "description": "The actual type of the target instance when needed for disambiguation."
                 }
             }
+        },
+        "AlarmType": {
+            "type": "string",
+            "description": "Categorizes the alarm (X.733 8.1.1, 3GPP TS 32.111-2 Annex A)",
+            "enum": [
+                "communicationsAlarm",
+                "processingErrorAlarm",
+                "environmentalAlarm",
+                "qualityOfServiceAlarm",
+                "equipmentAlarm",
+                "integrityViolation",
+                "operationalViolation",
+                "physicalViolation",
+                "securityService",
+                "mechanismViolation",
+                "timeDomainViolation"
+            ]
         },
         "AlarmedObject": {
             "type": "object",
@@ -4273,6 +4284,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -4441,6 +4453,18 @@
                 }
             }
         },
+        "PerceivedSeverity": {
+            "type": "string",
+            "description": "Lists the possible severities that can be allocated to an Alarm. The values are consistent with ITU-T Recommendation X.733.\nOnce an alarm has been cleared, its perceived severity is set to 'cleared' and can no longer be set.",
+            "enum": [
+                "critical",
+                "major",
+                "minor",
+                "warning",
+                "indeterminate",
+                "cleared"
+            ]
+        },
         "Place": {
             "type": "object",
             "description": "Place reference. Place defines the places where the products are sold or delivered.",
@@ -4482,6 +4506,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -4566,6 +4591,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {

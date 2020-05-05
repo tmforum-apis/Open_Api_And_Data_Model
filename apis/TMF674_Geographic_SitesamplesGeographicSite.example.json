@@ -1,0 +1,54 @@
+{
+  "id": "sd65-8874",
+  "href": "https://host:port/geographicSiteManagement/v4/geographicSite/sd65-8874",
+  "code": "Warehouse",
+  "description": "Warehouse in Marseille",
+  "name": "Marseille Warehouse",
+  "status": "active",
+  "calendar": [
+    {
+      "day": "weeekdays",
+      "status": "open",
+      "timeZone": "GMT+1",
+      "hourPeriod": [
+        {
+          "endHour": "16:30 pm",
+          "startHour": "6:30 am",
+          "@type": "HourPeriod"
+        }
+      ],
+      "@type": "Calendar"
+    }
+  ],
+  "place": [
+    {
+      "id": "9912",
+      "href": "https://host:port/geographicAddressManagement/v4/geographicAddress/9912",
+      "@type": "PlaceRef",
+      "@referredType": "GeographicAddress"
+    }
+  ],
+  "relatedParty": [
+    {
+      "id": "45",
+      "href": "https://host:port/partyManagement/v4/individual/45",
+      "name": "Jean Pontus",
+      "role": "Warehouse manager",
+      "@referredType": "Individual"
+    }
+  ],
+  "siteRelationship": [
+    {
+      "id": "4589-jj65",
+      "href": "string",
+      "relationshipType": "support",
+      "role": "support site in case of stock shortage",
+      "validFor": {
+        "endDateTime": "2019-01-02T09:33:35.749Z",
+        "startDateTime": "2023-12-31T09:33:35.749Z"
+      },
+      "@type": "SiteRelationship"
+    }
+  ],
+  "@type": "GeographicSite"
+}

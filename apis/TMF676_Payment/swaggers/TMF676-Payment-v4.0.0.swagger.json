@@ -6,7 +6,7 @@
         "version": "4.0.0"
     },
     "host": "serverRootserverRoot",
-    "basePath": "/payment/v4/",
+    "basePath": "/paymentManagement/v4/",
     "schemes": [
         "https"
     ],

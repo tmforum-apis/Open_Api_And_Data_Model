@@ -688,20 +688,8 @@
                 },
                 "href": {
                     "type": "string",
-                    "description": "Hyperlink reference"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
                     "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "Hyperlink reference"
                 }
             }
         },
@@ -757,19 +745,6 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which the attachment is valid"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -804,18 +779,15 @@
                     "description": "The value of the characteristic"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -832,19 +804,6 @@
                 "relationshipType": {
                     "type": "string",
                     "description": "The type of relationship"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -930,19 +889,6 @@
                 "state": {
                     "$ref": "#/definitions/CommunicationMessageStateType",
                     "description": "Status of communication message"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -1027,19 +973,6 @@
                 "state": {
                     "$ref": "#/definitions/CommunicationMessageStateType",
                     "description": "Status of communication message"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -1117,19 +1050,6 @@
                 "state": {
                     "$ref": "#/definitions/CommunicationMessageStateType",
                     "description": "Status of communication message"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -1154,6 +1074,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -1161,18 +1082,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -1190,18 +1108,15 @@
             "description": "Base Extensible schema for use in TMForum Open-APIs",
             "properties": {
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -1220,19 +1135,6 @@
                 "units": {
                     "type": "string",
                     "description": "Unit"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -1266,19 +1168,6 @@
                 },
                 "party": {
                     "$ref": "#/definitions/RelatedParty"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -1296,6 +1185,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -1307,18 +1197,15 @@
                     "description": "Role played by the related party"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -1350,19 +1237,6 @@
                 },
                 "party": {
                     "$ref": "#/definitions/RelatedParty"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -1380,20 +1254,7 @@
                     "example": "1985-04-12T23:20:50.52Z",
                     "type": "string",
                     "format": "date-time",
-                    "description": "Start of the time period, using IETC-RFC-3339 format. If you define a start, you must also define an end"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "Start of the time period, using IETC-RFC-3339 format"
                 }
             }
         },
