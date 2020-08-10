@@ -1,0 +1,40 @@
+{
+    "perfAlarmSpecThresholdCrossingDescription": "Dropped Packets per second are over the limit",
+    "thresholdRuleCondition": "Raise",
+    "thresholdRuleName": "DroppedPacketsPPS",
+    "thresholdRuleSeverity": "MAJOR",
+    "name": "DroppedPacketsPPS",
+    "href": "http://mycsp.com/rule/8794",
+    "id": "8794",
+    "@type": "AlgorithmThresholdRule",
+    "algorithmParams": [{
+        "name": "sensitivity",
+        "value": "0.2"
+    }],
+    "algorithmRef": "a string ...",
+    "measurement": {
+        "id": "50",
+        "name": "ImageQuality",
+        "href": "http://mycsp.com/measurement/50",
+        "description": "Input image quality proportion % of usable image",
+        "measurementType": "MovingAverage",
+        "measurementUnit": "percentage",
+        "collectionType": "COUNTER",
+        "measurementFormula": "X%"
+    },
+    "consequence": [{
+        "@type": "PerformanceConsequence",
+        "name": "Alarm Consequence",
+        "description": "Alarm Consequence",
+        "prescribedAction": "CreateAlarm",
+        "alarmSpecification": {
+            "perfAlarmSpecSeverity": "MAJOR",
+            "perfeAlarmProbableCause": "Threshold Crossed",
+            "perfAlarmSpecAdditionalText": "Input image quality degraded",
+            "perfAlarmSpecThresholdCrossingDescription": " Input image quality is under threshold",
+            "perfAlarmSpecRelatedEntity": {
+                "operatingState": "DEGRADED"
+            }
+        }
+    }]
+}

@@ -1,0 +1,90 @@
+{
+    "id": "5351",
+    "href": "https://mycsp.com:8080/tmf-api/AIInventory/v4/AIModel/PCP5351",
+    "serviceType": "AI PCP",
+    "@type": "AIModel",
+    "name": "PCP  AI Model serial 1355615",
+    "description": "Instantiation of a a PCP AI Service Model",
+    "state": "active",
+    "category": "CFS",
+    "startDate": "2018-01-15T12:26:11.747Z",
+    "serviceSpecification": {
+        "@type": "ServiceSpecification",
+        "id": "1212",
+        "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/serviceSpecification/PCPAIModelAsAServiceSpecification",
+        "name": "PCPAIModelAsAServiceSpecification",
+        "version": "1.0.0",
+        "@referredType": "AIModelSpecification"
+    },
+    "relatedEntity": [{
+            "@type": "EntityRef",
+            "id": "1212",
+            "href": "https://mycsp.com:8080/tmf-api/entityInventory/v4/entity/PCPMonitor42",
+            "name": "PCP Types",
+            "@referredType": "PCPMonitor",
+            "role": "PCP Monitor"
+        },
+        {
+            "@type": "EntityRef",
+            "id": "1212",
+            "href": "https://mycsp.com:8080/tmf-api/entityInventory/v4/entity/ConnectorMonitor42",
+            "name": "Connector Types ",
+            "@referredType": "ConnectorMonitor",
+            "role": "Connector Monitor"
+        }
+    ],
+    "serviceCharacteristic": [{
+            "name": "trainedPCPTypes",
+            "valueType": "StringArray",
+            "value": [
+                "Type_1",
+                "Type_2",
+                "Type_3",
+                "Type_4"
+            ]
+        },
+        {
+            "name": "trainedConnectorTypes",
+            "valueType": "StringArray",
+            "value": [
+                "CType_1",
+                "CType_2",
+                "CType_3",
+                "CType_4"
+            ]
+        }
+    ],
+    "software": [{
+        "href": "https://mycsp.com:8080/tmf-api/resourceInventory/v4/Software/tf.keras.optimizers",
+        "id": " tf.keras.optimizers",
+        "softwareVersion": "v2.2.0",
+        "@type": "SoftwareRef",
+        "@referredType": "Software"
+    }],
+    "gpu": {
+        "href": "https://mycsp.com:8080/tmf-api/resourceInventory/v4/GPU/5645",
+        "id": "5645",
+        "@type": "PhysicalResourceRef",
+        "@referredType": "GPU"
+    },
+    "relatedParty": [{
+        "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/party/456",
+        "id": "456",
+        "name": "John Doe",
+        "role": "user",
+        "@referredType": "Individual"
+    }],
+    "place": [{
+        "href": "https://mycsp.com:8080/tmf-api/geographicAddressManagement/v4/geographicAddress/2435",
+        "id": "2435",
+        "name": "Model primary location",
+        "@referredType": "GeographicAddress",
+        "role": "InstallationAddress"
+    }],
+    "note": [{
+        "author": "Harvey Poupon",
+        "date": "2018-01-15T12:26:11.748Z",
+        "text": "This AIModel was installed automatically, no issues were noted in testing."
+    }],
+    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/AIModel.schema.json"
+}

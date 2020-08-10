@@ -1,0 +1,37 @@
+{
+    "id": "1920",
+    "thresholdRuleName": "DropPacketsHighRule",
+    "@type": "AlgorithmThresholdRule ",
+    "href": "http://api/thresholdrule/1920",
+    "measurement": {
+        "id": "",
+        "name": "DroppedPacketsPPS",
+        "href": "http://api/measurement/1225",
+        "description": "The number of dropped packets per second",
+        "measurementType": "Traffic",
+        "measurementUnit": "packets per second",
+        "collectionType": "COUNTER",
+        "measurementFormula": ""
+    },
+    "algorithmRef": "http://api/thresholdrulealgoritm/7000",
+
+    "algorithmParams": [{
+        "name": "sensitivity",
+        "value": "0.2"
+    }],
+    "genericPerformanceConsequence": [{
+        "name": "",
+        "Description": "",
+        "prescribedAction": ""
+    }],
+    "performanceAlarmSpecification": {
+        "perfAlarmSpecSeverity": "MAJOR",
+        "perfAlarmSpecProbableCause": "Threshold Crossed",
+        "perfAlarmSpecAlarmType": "",
+        "perfAlarmSpecSpecificProblem": "",
+        "perfAlarmSpecAdditionalText": "Dropped Packets per second are over the limit"
+    },
+    "perfAlarmSpecThresholdCrossingDescription": "Dropped Packets per second are over the limit ",
+    "thresholdRuleCondition": "Raise",
+    "thresholdRuleSeverity": "MAJOR"
+}

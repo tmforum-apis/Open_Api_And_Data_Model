@@ -1,0 +1,40 @@
+{
+    "id": "8675309",
+    "href": "https://host:port/alarmManagement/v4/alarm/8675309",
+    "@type": "Alarm",
+    "@schemaLocation": "https:://host:port/Alarm.schema.json",
+    "externalAlarmId": "8675309",
+    "state": "updated",
+    "perceivedSeverity": "MAJOR",
+    "alarmedObjectType": "AIModel",
+    "alarmedObject": {
+        "id": "5351",
+        "href": "https://mycsp.com:8080/tmf-api/AIInventory/v4/AIModel/PCP5351"
+    },
+    "sourceSystemId": "aiOps-1",
+    "alarmDetails": "operationalState=degraded",
+    "alarmRaisedTime": "2019-07-03T03:32:17.235Z",
+    "alarmReportingTime": "2019-07-03T03:32:17.552Z",
+    "alarmChangedTime": "2019-07-03T03:32:52.744Z",
+    "comment": [
+        {
+            "userId": "bob@example.net",
+            "systemId": "ems-1",
+            "time": "2019-07-03T03:37:33.827Z",
+            "comment": "Dispatched"
+        }
+    ],
+    "crossedThresholdInformation": {
+        "direction": "string",
+        "granularity": "string",
+        "indicatorName": "ImageQuality",
+        "indicatorUnit": "percentage",
+        "observedValue": "20",
+        "thresholdCrossingDescription": "Input image quality proportion % of usable image",
+        "threshold": {
+            "id": "ImageQuality-1920",
+            "href": "http://api/thresholdRule/ImageQuality-1920",
+            "@referredType": "simpleThresholdRule"
+        }
+    }
+}
