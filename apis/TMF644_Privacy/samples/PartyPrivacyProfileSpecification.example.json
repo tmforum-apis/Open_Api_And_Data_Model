@@ -47,7 +47,8 @@
       "id": "203",
       "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/individual/203",
       "name": "Mandy brown",
-      "role": "admin"
+      "role": "admin",
+      "@referredType": "Individual"
     }
   ],
   "validFor": {

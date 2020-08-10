@@ -4,7 +4,7 @@
   "serviceType": "Cloud",
   "name": "vCPE serial 1355615",
   "description": "Instantiation of vCPE",
-  "state": "Active",
+  "state": "active",
   "category": "CFS",
   "isServiceEnabled": true,
   "hasStarted": true,

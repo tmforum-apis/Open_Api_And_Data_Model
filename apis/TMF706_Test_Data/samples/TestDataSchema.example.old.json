@@ -1,0 +1,64 @@
+{
+  "id": "aac9969d-219d-4ff1-b256-1765dcf9b342",
+  "href": "http://myservice.com/resource-path",
+  "description": "",
+  "version": "1.2.3",
+  "versionDescription": "This version does foo",
+  "agreement": {
+    "name": "My Agreement",
+    "terms": "<EULA>",
+    "url": "http://myagreement.com",
+    "@baseType": "Agreement",
+    "@schemaLocation": "http://datamodel.tmforum.org/schemas/EngagedParty/Agreement.schema.json",
+    "@type": "Agreement"
+  },
+  "attribute": [
+    {
+      "description": "",
+      "name": "string",
+      "valueType": "string",
+      "@baseType": "string",
+      "@schemaLocation": "string",
+      "@type": "string"
+    }
+  ],
+  "relatedParty": [{
+      "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/organization/3426",
+      "id": "3426",
+      "name": "Broadly Broad Ltd",
+      "role": "vendor"
+    },
+    {
+      "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/individual/115566",
+      "id": "115566",
+      "name": "Roger Collins",
+      "role": "Reviser"
+    }
+  ],
+  "state": "incomplete",
+  "testDataSchemaDefinition": {
+    "id": "4aafacbd-11ff-4dc8-b445-305f2215715f",
+    "href": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
+    "attachmentType": "video",
+    "code": "<definition of valid symbols for test data instances>",
+    "content": "string",
+    "description": "Photograph of the Product",
+    "mimeType": "string",
+    "name": "string",
+    "url": "http://host/Content/4aafacbd-11ff-4dc8-b445-305f2215715f",
+    "size": {
+      "amount": 0,
+      "units": "string"
+    },
+    "validFor": {
+      "endDateTime": "1985-04-12T23:20:50.52Z",
+      "startDateTime": "1985-04-12T23:20:50.52Z"
+    },
+    "@baseType": "testDataSchemaDefinition",
+    "@schemaLocation": "http://datamodel.tmforum.org/schemas/Common/TestDataSchemaDefinition.schema.json",
+    "@type": "TestDataSchemaDefinition"
+  },
+  "@baseType": "TestDataSchema",
+  "@schemaLocation": "http://datamodel.tmforum.org/schemas/Common/TestDataSchema.schema.json",
+  "@type": "TestDataSchema"
+}

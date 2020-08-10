@@ -1902,16 +1902,16 @@
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "reference id to the target constraint"
+                    "description": "unique identifier"
                 },
                 "href": {
                     "type": "string",
                     "format": "uri",
-                    "description": "Hyperlink reference to the target constraint"
+                    "description": "Hyperlink reference"
                 },
                 "name": {
                     "type": "string",
-                    "description": "Name given to the constraint"
+                    "description": "Name of the related entity."
                 },
                 "version": {
                     "type": "string",
@@ -1932,7 +1932,7 @@
                 },
                 "@referredType": {
                     "type": "string",
-                    "description": "The (class) type of the referred constraint"
+                    "description": "The actual type of the target instance when needed for disambiguation."
                 }
             },
             "required": [
@@ -1950,6 +1950,19 @@
                 "units": {
                     "type": "string",
                     "description": "Unit of time (seconds, minutes, hours, etc.)"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2007,16 +2020,16 @@
                 },
                 "description": {
                     "type": "string",
-                    "description": "Description of this REST resource"
+                    "description": "Description of the specification"
                 },
                 "isBundle": {
                     "type": "boolean",
-                    "description": "isBundle determines whether an EntitySpecification represents a single EntitySpecification (false), or a bundle of EntitySpecifications (true)."
+                    "description": "isBundle determines whether specification represents a single specification (false), or a bundle of specifications (true)."
                 },
                 "lastUpdate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "Date and time of the last update of this REST resource"
+                    "description": "Date and time of the last update of the specification"
                 },
                 "lifecycleStatus": {
                     "type": "string",
@@ -2024,11 +2037,11 @@
                 },
                 "name": {
                     "type": "string",
-                    "description": "Name given to this REST resource"
+                    "description": "Name given to the specification"
                 },
                 "version": {
                     "type": "string",
-                    "description": "Entity specification version"
+                    "description": "specification version"
                 },
                 "attachment": {
                     "type": "array",
@@ -2049,14 +2062,14 @@
                     "items": {
                         "$ref": "#/definitions/EntitySpecificationRelationship"
                     },
-                    "description": "Relationship to another entity specification, might be dependency, substitution, etc."
+                    "description": "Relationship to another specification"
                 },
                 "relatedParty": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RelatedParty"
                     },
-                    "description": "Parties who manage or otherwise have an interest in this entity specification"
+                    "description": "Parties who manage or otherwise have an interest in this specification"
                 },
                 "specCharacteristic": {
                     "type": "array",
@@ -2789,12 +2802,12 @@
                 },
                 "isBundle": {
                     "type": "boolean",
-                    "description": "isBundle determines whether an EntitySpecification represents a single EntitySpecification (false), or a bundle of EntitySpecifications (true)."
+                    "description": "isBundle determines whether specification represents a single specification (false), or a bundle of specifications (true)."
                 },
                 "lastUpdate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "Date and time of the last update of this REST resource"
+                    "description": "Date and time of the last update of the specification"
                 },
                 "lifecycleStatus": {
                     "type": "string",
@@ -2802,11 +2815,11 @@
                 },
                 "name": {
                     "type": "string",
-                    "description": "Name given to this REST resource"
+                    "description": "Name given to the specification"
                 },
                 "version": {
                     "type": "string",
-                    "description": "Entity specification version"
+                    "description": "specification version"
                 },
                 "attachment": {
                     "type": "array",
@@ -2827,14 +2840,14 @@
                     "items": {
                         "$ref": "#/definitions/EntitySpecificationRelationship"
                     },
-                    "description": "Relationship to another entity specification, might be dependency, substitution, etc."
+                    "description": "Relationship to another specification"
                 },
                 "relatedParty": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RelatedParty"
                     },
-                    "description": "Parties who manage or otherwise have an interest in this entity specification"
+                    "description": "Parties who manage or otherwise have an interest in this specification"
                 },
                 "relatedServiceSpecification": {
                     "type": "array",
@@ -2901,12 +2914,12 @@
                 },
                 "isBundle": {
                     "type": "boolean",
-                    "description": "isBundle determines whether an EntitySpecification represents a single EntitySpecification (false), or a bundle of EntitySpecifications (true)."
+                    "description": "isBundle determines whether specification represents a single specification (false), or a bundle of specifications (true)."
                 },
                 "lastUpdate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "Date and time of the last update of this REST resource"
+                    "description": "Date and time of the last update of the specification"
                 },
                 "lifecycleStatus": {
                     "type": "string",
@@ -2914,11 +2927,11 @@
                 },
                 "name": {
                     "type": "string",
-                    "description": "Name given to this REST resource"
+                    "description": "Name given to the specification"
                 },
                 "version": {
                     "type": "string",
-                    "description": "Entity specification version"
+                    "description": "specification version"
                 },
                 "attachment": {
                     "type": "array",
@@ -2939,14 +2952,14 @@
                     "items": {
                         "$ref": "#/definitions/EntitySpecificationRelationship"
                     },
-                    "description": "Relationship to another entity specification, might be dependency, substitution, etc."
+                    "description": "Relationship to another specification"
                 },
                 "relatedParty": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RelatedParty"
                     },
-                    "description": "Parties who manage or otherwise have an interest in this entity specification"
+                    "description": "Parties who manage or otherwise have an interest in this specification"
                 },
                 "relatedServiceSpecification": {
                     "type": "array",
@@ -3010,12 +3023,12 @@
                 },
                 "isBundle": {
                     "type": "boolean",
-                    "description": "isBundle determines whether an EntitySpecification represents a single EntitySpecification (false), or a bundle of EntitySpecifications (true)."
+                    "description": "isBundle determines whether specification represents a single specification (false), or a bundle of specifications (true)."
                 },
                 "lastUpdate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "Date and time of the last update of this REST resource"
+                    "description": "Date and time of the last update of the specification"
                 },
                 "lifecycleStatus": {
                     "type": "string",
@@ -3023,11 +3036,11 @@
                 },
                 "name": {
                     "type": "string",
-                    "description": "Name given to this REST resource"
+                    "description": "Name given to the specification"
                 },
                 "version": {
                     "type": "string",
-                    "description": "Entity specification version"
+                    "description": "specification version"
                 },
                 "attachment": {
                     "type": "array",
@@ -3048,14 +3061,14 @@
                     "items": {
                         "$ref": "#/definitions/EntitySpecificationRelationship"
                     },
-                    "description": "Relationship to another entity specification, might be dependency, substitution, etc."
+                    "description": "Relationship to another specification"
                 },
                 "relatedParty": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RelatedParty"
                     },
-                    "description": "Parties who manage or otherwise have an interest in this entity specification"
+                    "description": "Parties who manage or otherwise have an interest in this specification"
                 },
                 "relatedServiceSpecification": {
                     "type": "array",

@@ -1,49 +1,27 @@
 {
-  "id": "aac9969d-219d-4ff1-b256-1765dcf9b342",
-  "href": "http://myservice.com/resource-path",
-  "description": "",
+  "id": "f4cfa280-f0d7-45e5-99f8-11ba6059c0dd",
+  "href": "https://mycsp:8080/tmf-api/testEnvironment/v4/abstractEnvironment/f4cfa280-f0d7-45e5-99f8-11ba6059c0dd",
+  "description": "Sample abstract test environment",
   "version": "1.2.3",
-  "versionDescription": "This version does foo",
-  "abstractEnvironmentDefinition": {
-    "id": "4aafacbd-11ff-4dc8-b445-305f2215715f",
-    "href": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
-    "attachmentType": "json",
-    "content": {
-      "arg1": "sample value"
-    },
-    "mimeType": "application/json"
-  },
-  "agreement": {
-    "name": "My Agreement",
-    "terms": "<EULA>",
-    "url": "http://myagreement.com",
-    "@baseType": "Agreement",
-    "@schemaLocation": "http://datamodel.tmforum.org/schemas/Common/Agreement.schema.json",
-    "@type": "Agreement"
-  },
-  "attribute": [{
-    "description": "",
-    "name": "string",
-    "valueType": "string",
-    "@baseType": "string",
-    "@schemaLocation": "string",
-    "@type": "string"
-  }],
-  "relatedParty": [{
-      "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/organization/3426",
-      "id": "3426",
-      "name": "Broadly Broad Ltd",
-      "role": "vendor"
-    },
+  "relatedParty": [
     {
-      "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/individual/115566",
-      "id": "115566",
-      "name": "Roger Collins",
-      "role": "Reviser"
+      "name": "testUser",
+      "role": "Owner",
+      "@referredType": "Individual",
+      "contact": [
+        {
+          "mediumType": "email",
+          "characteristic": {
+            "emailAddress": "testUser@abc.com"
+          }
+        }
+      ]
     }
   ],
   "state": "incomplete",
-  "@baseType": "string",
-  "@schemaLocation": "string",
-  "@type": "string"
+  "abstractEnvironmentDefinition": {
+    "attachmentType": "json",
+    "content": "<base64-encoded abstract environment>",
+    "mimeType": "base64"
+  }
 }

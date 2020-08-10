@@ -1,26 +1,31 @@
 {
     "status": "Completed", 
-    "validFor": {
-        "startDateTime": "2017-08-23T00:00", 
-        "endDateTime": "2018-03-25T00:00"
-    }, 
     "characteristic": [
         {
-            "name": "Color",
+            "name": "Bandwidth",
             "valueType": "string",
-            "value": "black"
+            "value": "500MBps"
         }
     ],
     "productOffering": {
-        "id": "5677885"
+        "id": "7656",
+        "href": "https://mycsp.com:8080/tmf-api/productCatalogManagement/v4/productOffering/7656", 
+        "name": "Home Gateway",
+        "@referredType": "ProductOffering"
     },
     "place": {
-        "@type": "GeographicalAddress",
+        "@type": "RelatedPlace",
         "role": "home address",
-        "id": "234546467567231"
+        "id": "234546467567334",
+        "href": "https://mycsp.com:8080/tmf-api/geographicAddress/v4/geographicAddress/234546467567334",
+        "@referredType": "GeographicAddress"
     },
     "riskAssessmentResult": {
         "overallScore": 19,
+        "validFor": {
+            "startDateTime": "2017-08-23T00:00:22.920Z", 
+            "endDateTime": "2018-03-25T00:00:22.920Z"
+        }, 
         "score": [
             {
                 "score": 20,

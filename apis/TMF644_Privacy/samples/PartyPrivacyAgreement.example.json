@@ -58,12 +58,13 @@
       "endDateTime": "2019-09-06T09:56:38.679Z",
       "startDateTime": "2019-09-06T09:56:38.679Z"
     },
-    "engagedPartyRole": [
+    "engagedParty": [
       {
-        "id": "1",
-        "href": "http://serverLocation:port/partyManagement/partyRole/1",
-        "name": "John Doe",
-        "role": "customer"
+        "id": "5467",
+        "href": "http://serverLocation:port/partyManagement/individual/5467",
+        "name": "Jack Smith",
+        "role": "user",
+        "@referredType": "Individual"
       }
     ],
     "partyPrivacyProfile": [

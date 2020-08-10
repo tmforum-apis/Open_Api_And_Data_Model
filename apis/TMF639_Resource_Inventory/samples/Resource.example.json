@@ -21,11 +21,10 @@
         "text": "something about this resource"
     }],
     "place": {
-        "id": "1979",
-        "href": "https://server:port/genericCommon/place/1979",
-        "name": "Main Office",
-        "role": "default delivery",
-        "@referredType": "GeographicAddress"
+            "id": "9912",
+            "href": "https://host:port/geographicAddressManagement/v4/geographicAddress/9912",
+            "@type": "PlaceRef",
+            "@referredType": "GeographicAddress"
     },
     "resourceRelationship": [{
         "relationshipType": "contains",

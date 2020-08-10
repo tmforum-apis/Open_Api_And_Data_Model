@@ -5,7 +5,7 @@
 	"description": "This is a type of firewall to be used for our medium to large enterprise customers",
 	"@type": "ResourceFunctionSpecification",
 	"validFor": {
-		"startDateTime": "2019-08-01T00:00Z",
+		"startDateTime": "2019-08-01T00:00:00.000Z",
 		"endDateTime": "2019-08-31T23:59:59.999Z"
 	},
 	"lastUpdate": "2019-08-03T12:34:17.645Z",
@@ -18,10 +18,7 @@
 			"href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/organization/77b93cf8-54b1-49f6-82cd-4913d93101ef",
 			"role": "Supplier",
 			"name": "Firewall Express",
-			"validFor": {
-				"startDateTime": "2019-01-01T00:00",
-				"endDateTime": "2019-12-31T23:59:59.999Z"
-			}
+			"@referredType": "PartyRole"
 		}
 	],
 	"resourceSpecCharacteristic": [
@@ -31,7 +28,7 @@
 			"valueType": "string",
 			"configurable": true,
 			"validFor": {
-				"startDateTime": "2018-03-15T00:00",
+				"startDateTime": "2019-08-01T00:00:00.000Z",
 				"endDateTime": "2019-12-31T23:59:59.999Z"
 			},
 			"@type": "ResourceSpecificationCharacteristic",
@@ -45,7 +42,7 @@
         		        	"valueType": "string",
 					"value": "Android Pie",
 					"validFor": {
-						"startDateTime": "2018-08-06T00:00",
+						"startDateTime": "2019-08-01T00:00:00.000Z",
 						"endDateTime": "2020-08-31T23:59:59.999Z"
 					}
 				}, 
@@ -54,7 +51,7 @@
         	        		"valueType": "string",
 					"value": "Windows 10",
 					"validFor": {
-						"startDateTime": "2015-07-29T00:00",
+						"startDateTime": "2015-07-29T00:00:00.000Z",
 						"endDateTime": "2025-10-25T23:59:59.999Z"
 					}
 				},
@@ -63,7 +60,7 @@
         		        	"valueType": "string",
 					"value": "macOS 10.14.6",
 					"validFor": {
-						"startDateTime": "2019-06-23T00:00",
+						"startDateTime": "2019-06-23T00:00:00.000Z",
 						"endDateTime": "2021-12-31T23:59:59.999Z"
 					}
 				}
@@ -76,7 +73,7 @@
 			"configurable": false,
 			"extensible": true,
 			"validFor": {
-				"startDateTime": "2018-11-17T00:00",
+				"startDateTime": "2018-11-17T00:00:00.000Z",
 				"endDateTime": "2019-12-31T23:59:59.999Z"
 			},
 			"resourceSpecCharacteristicValue": [
@@ -93,7 +90,7 @@
 			"configurable": false,
 			"extensible": true,
 			"validFor": {
-				"startDateTime": "2016-03-15T00:00",
+				"startDateTime": "2016-03-15T00:00:00.000Z",
 				"endDateTime": "2019-12-31T23:59:59.999Z"
 			},
 			"resourceSpecCharacteristicValue": [
@@ -120,7 +117,7 @@
 			"maxCardinality": 3,
 			"extensible": true,
 			"validFor": {
-				"startDateTime": "2016-03-15T00:00",
+				"startDateTime": "2016-03-15T00:00:00.000Z",
 				"endDateTime": "2019-12-31T23:59:59.999Z"
 			},
 			"resourceSpecCharacteristicValue": [
@@ -144,7 +141,7 @@
 			"id": "h776f845f-z20a-468f-v44m-9e07fe3bd28l",
 			"name": "L2&L3",
 			"validFor": {
-				"startDateTime": "2018-05-11T00:00",
+				"startDateTime": "2018-05-11T00:00:00.000Z",
 				"endDateTime": "2019-12-31T23:59:59.999Z"
 			}
 		},
@@ -152,7 +149,7 @@
 			"id": "g535f845f-032a-468f-a86e-9e07fe3bc85b",
 			"name": "OSI-L4",
 			"validFor": {
-				"startDateTime": "2018-05-13T00:00",
+				"startDateTime": "2018-05-13T00:00:00.000Z",
 				"endDateTime": "2019-12-31T23:59:59.999Z"
 			}
 		},
@@ -160,7 +157,7 @@
 			"id": "k463345f-011a-463a-a92f-4h2kfe3bc44b",
 			"name": "OSI-L7",
 			"validFor": {
-				"startDateTime": "2018-05-16T00:00",
+				"startDateTime": "2018-05-16T00:00:00.000Z",
 				"endDateTime": "2019-12-31T23:59:59.999Z"
 			}
 		},
@@ -168,7 +165,7 @@
 			"id": "f78g245f-671a-468f-a95j-9e07fe3bc98b",
 			"name": "tarpit",
 			"validFor": {
-				"startDateTime": "2018-07-12T00:00",
+				"startDateTime": "2018-07-12T00:00:00.000Z",
 				"endDateTime": "2019-12-31T23:59:59.999Z"
 			}
 		},
@@ -176,7 +173,7 @@
 			"id": "l22m455f-671a-499d-a95j-8h46fe3bc88c",
 			"name": "log",
 			"validFor": {
-				"startDateTime": "2015-11-21T00:00",
+				"startDateTime": "2015-11-21T00:00:00.000Z",
 				"endDateTime": "2019-12-31T23:59:59.999Z"
 			},
 			"featureSpecCharacteristic": [
@@ -186,7 +183,7 @@
 					"valueType": "integer",
 					"configurable": true,
 					"validFor": {
-						"startDateTime": "2015-11-22T00:00",
+						"startDateTime": "2015-11-22T00:00:00.000Z",
 						"endDateTime": "2019-12-31T23:59:59.999Z"
 					},
 					"@type": "FeatureSpecificationCharacteristic",
@@ -200,7 +197,7 @@
 							"valueType": "integer",
 							"value": 2000,
 							"validFor": {
-								"startDateTime": "2015-11-22T00:00",
+								"startDateTime": "2015-11-22T00:00:00.000Z",
 								"endDateTime": "2019-12-31T23:59:59.999Z"
 							}
 						},
@@ -209,7 +206,7 @@
 							"valueType": "integer",
 							"value": 4000,
 							"validFor": {
-								"startDateTime": "2015-11-22T00:00",
+								"startDateTime": "2015-11-22T00:00:00.000Z",
 								"endDateTime": "2019-12-31T23:59:59.999Z"
 							}
 						}
@@ -222,41 +219,37 @@
 			"name": "IPAddressing",
 			"isBundle": true,
 			"validFor": {
-				"startDateTime": "2017-05-24T00:00",
+				"startDateTime": "2017-05-24T00:00:00.000Z",
 				"endDateTime": "2019-12-31T23:59:59.999Z"
 			},
 			"constraint": [
 				{
-					"type": "validation",
+					"@referredType": "ValidationConstraint",
 					"id": "bbccbc46-9b94-41aa-8ea8-5c33306d3c62",
 					"href": "https://mycsp.com:8080/tmf-api/entityCatalog/v4/constraint/bbccbc46-9b94-41aa-8ea8-5c33306d3c62",
-					"name": "ReliesOnIPv4OrIPv6",
-					"validFor": {
-						"startDateTime": "2017-05-24T00:00",
-						"endDateTime": "2019-12-31T23:59:59.999Z"
-					}
+					"name": "ReliesOnIPv4OrIPv6"
 				}
 			],
 			"featureSpecRelationship": [
 				{
 					"relationshipType": "requires",
 					"featureId": "43883a81-58ef-45af-ace4-993298ae8361",
-					"resourceSpecificationId": "755232457686",
-					"resourceSpecificationHref": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceSpecification/755232457686",
+					"parentSpecificationId": "755232457686",
+					"parentSpecificationHref": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceSpecification/755232457686",
 					"name": "IPv4Addressing",
 					"validFor": {
-						"startDateTime": "2017-05-24T00:00",
+						"startDateTime": "2017-05-24T00:00:00.000Z",
 						"endDateTime": "2019-12-31T23:59:59.999Z"
 					}
 				},
 				{
 					"relationshipType": "requires",
 					"featureId": "b85f845f-011a-468f-a90e-9e07fe3bc90a",
-					"resourceSpecificationId": "755232457686",
-					"resourceSpecificationHref": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceSpecification/755232457686",
+					"parentSpecificationId": "755232457686",
+					"parentSpecificationHref": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceSpecification/755232457686",
 					"name": "IPv6Addressing",
 					"validFor": {
-						"startDateTime": "2017-05-24T00:00",
+						"startDateTime": "2017-05-24T00:00:00.000Z",
 						"endDateTime": "2019-12-31T23:59:59.999Z"
 					}
 				}
@@ -266,7 +259,7 @@
 			"id": "43883a81-58ef-45af-ace4-993298ae8361",
 			"name": "IPv4Addressing",
 			"validFor": {
-				"startDateTime": "2017-05-24T00:00",
+				"startDateTime": "2017-05-24T00:00:00.000Z",
 				"endDateTime": "2019-12-31T23:59:59.999Z"
 			}
 		},
@@ -274,7 +267,7 @@
 			"id": "b85f845f-011a-468f-a90e-9e07fe3bc90a",
 			"name": "IPv6Addressing",
 			"validFor": {
-				"startDateTime": "2017-05-24T00:00",
+				"startDateTime": "2017-05-24T00:00:00.000Z",
 				"endDateTime": "2019-12-31T23:59:59.999Z"
 			},
 			"isEnabled": false
@@ -285,40 +278,30 @@
 			"id": "a19e5f96-3df4-4e34-95f7-30e66c42acd2",
 			"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/a19e5f96-3df4-4e34-95f7-30e66c42acd2",
 			"name": "SWI.1",
-			"@type": "ResourceFunctionSpecificationRef",
-			"@referredType": "ResourceFunctionSpecification",
 			"relationshipType": "contains"
 		},
 		{
 			"id": "aa013f8c-5f08-47ff-a2cb-f297359277c2",
 			"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/aa013f8c-5f08-47ff-a2cb-f297359277c2",
 			"name": "SWI.2",
-			"@type": "ResourceFunctionSpecificationRef",
-			"@referredType": "ResourceFunctionSpecification",
 			"relationshipType": "contains"
 		},
 		{
 			"id": "3a3b5bc7-039e-45b0-ada1-75560ec54108",
 			"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/3a3b5bc7-039e-45b0-ada1-75560ec54108",
 			"name": "SWI.3",
-			"@type": "ResourceFunctionSpecificationRef",
-			"@referredType": "ResourceFunctionSpecification",
 			"relationshipType": "contains"
 		},
 		{
 			"id": "4fbe07a3-42bb-45cd-b92c-d8d48f17dbc8",
 			"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/4fbe07a3-42bb-45cd-b92c-d8d48f17dbc8",
 			"name": "SWI.4",
-			"@type": "ResourceFunctionSpecificationRef",
-			"@referredType": "ResourceFunctionSpecification",
 			"relationshipType": "contains"
 		},
 		{
 			"id": "4a5c5d7c-0758-4896-a1aa-2f2a2241c4b5",
 			"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/4a5c5d7c-0758-4896-a1aa-2f2a2241c4b5",
 			"name": "SWI.5",
-			"@type": "ResourceFunctionSpecificationRef",
-			"@referredType": "ResourceFunctionSpecification",
 			"relationshipType": "contains"
 		}
 	],
@@ -327,7 +310,7 @@
 			"id": "feeb7495-4dc5-4e0f-bf64-5973faac050c",
 			"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/feeb7495-4dc5-4e0f-bf64-5973faac050c",
 			"@type": "ConnectionPointSpecificationRef",
-			"@referredType": "ResourceFunctionSpecification",
+			"@referredType": "ConnectionPointSpecification",
 			"name": "CP1.1"
 		},
 		{

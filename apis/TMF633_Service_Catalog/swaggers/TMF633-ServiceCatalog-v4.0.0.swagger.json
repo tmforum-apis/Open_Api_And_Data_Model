@@ -3209,19 +3209,6 @@
                     "type": "string",
                     "format": "uri",
                     "description": "Hyperlink reference"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -3316,19 +3303,6 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which the attachment is valid"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -3627,19 +3601,6 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period for which the object is valid"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -3704,15 +3665,16 @@
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "reference id to the target constraint"
+                    "description": "unique identifier"
                 },
                 "href": {
                     "type": "string",
-                    "description": "Hyperlink reference to the target constraint"
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "name": {
                     "type": "string",
-                    "description": "Name given to the constraint"
+                    "description": "Name of the related entity."
                 },
                 "version": {
                     "type": "string",
@@ -3729,11 +3691,11 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
                 "@referredType": {
                     "type": "string",
-                    "description": "The (class) type of the referred constraint"
+                    "description": "The actual type of the target instance when needed for disambiguation."
                 }
             },
             "required": [
@@ -3778,6 +3740,102 @@
             "required": [
                 "id"
             ]
+        },
+        "EntitySpecification": {
+            "type": "object",
+            "description": "EntitySpecification is a class that offers characteristics to describe a type of entity. Entities are generic constructs that may be used to describe bespoke business entities that are not effectively covered by the existing SID model.\nFunctionally, the entity specification acts as a template by which entities may be instantiated and described. By sharing the same specification, these entities would therefore share the same set of characteristics.\nNote: The \u2018configurable\u2019 attribute on the specCharacteristics determines if an entity instantiated from the entity specification can override the value of the attribute. When set to false, the entity instance may not define a value that differs from the value in the specification.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the specification"
+                },
+                "isBundle": {
+                    "type": "boolean",
+                    "description": "isBundle determines whether specification represents a single specification (false), or a bundle of specifications (true)."
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time of the last update of the specification"
+                },
+                "lifecycleStatus": {
+                    "type": "string",
+                    "description": "Used to indicate the current lifecycle status of this catalog item"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name given to the specification"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "specification version"
+                },
+                "attachment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AttachmentRefOrValue"
+                    },
+                    "description": "Attachments that may be of relevance to this specification, such as picture, document, media"
+                },
+                "constraint": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ConstraintRef"
+                    },
+                    "description": "This is a list of constraint references applied to this specification"
+                },
+                "entitySpecRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/EntitySpecificationRelationship"
+                    },
+                    "description": "Relationship to another specification"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    },
+                    "description": "Parties who manage or otherwise have an interest in this specification"
+                },
+                "specCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CharacteristicSpecification"
+                    },
+                    "description": "List of characteristics that the entity can take"
+                },
+                "targetEntitySchema": {
+                    "$ref": "#/definitions/TargetEntitySchema",
+                    "description": "Pointer to a schema that defines the target entity"
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period for which this REST resource is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
         },
         "EntitySpecificationRelationship": {
             "type": "object",
@@ -3881,19 +3939,6 @@
                 "status": {
                     "$ref": "#/definitions/JobStateType",
                     "description": "Status of the export job (not started, running, succeeded, failed)"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -3938,19 +3983,6 @@
                 "status": {
                     "$ref": "#/definitions/JobStateType",
                     "description": "Status of the export job (not started, running, succeeded, failed)"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -4021,19 +4053,6 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period for which this feature specification is valid"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -4153,19 +4172,6 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period for which the object is valid"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -4201,19 +4207,6 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period for which this feature spoecification relationship is valid."
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -4260,19 +4253,6 @@
                 "status": {
                     "$ref": "#/definitions/JobStateType",
                     "description": "Status of the import job (not started, running, succeeded, failed)"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -4313,19 +4293,6 @@
                 "status": {
                     "$ref": "#/definitions/JobStateType",
                     "description": "Status of the import job (not started, running, succeeded, failed)"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -4352,19 +4319,6 @@
                 "units": {
                     "type": "string",
                     "description": "Unit"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -5106,15 +5060,16 @@
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "The identifier to a service level specification."
+                    "description": "unique identifier"
                 },
                 "href": {
                     "type": "string",
-                    "description": "The hyperlink to access a service level specification."
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "name": {
                     "type": "string",
-                    "description": "The name of Service Level Specification"
+                    "description": "Name of the related entity."
                 },
                 "@baseType": {
                     "type": "string",
@@ -5127,7 +5082,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
                 "@referredType": {
                     "type": "string",
@@ -5140,7 +5095,7 @@
         },
         "ServiceSpecRelationship": {
             "type": "object",
-            "description": "A migration, substitution, dependency or exclusivity relationship between/among service specifications.",
+            "description": "A dependency, substitution or exclusivity relationship between/among service specifications.",
             "required": [
                 "relationshipType"
             ],
@@ -5160,7 +5115,7 @@
                 },
                 "relationshipType": {
                     "type": "string",
-                    "description": "Type of relationship such as migration, substitution, dependency, exclusivity"
+                    "description": "Type of relationship such as dependency, substitution or exclusivity"
                 },
                 "role": {
                     "type": "string",
@@ -5204,42 +5159,49 @@
                 },
                 "description": {
                     "type": "string",
-                    "description": "A narrative that explains in detail what the service specification is"
+                    "description": "Description of the specification"
                 },
                 "isBundle": {
                     "type": "boolean",
-                    "description": "isBundle determines whether a ServiceSpecification represents a single ServiceSpecification (false), or a bundle of ServiceSpecification (true)."
+                    "description": "isBundle determines whether specification represents a single specification (false), or a bundle of specifications (true)."
                 },
                 "lastUpdate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "Date and time of the last update of the service specification"
+                    "description": "Date and time of the last update of the specification"
                 },
                 "lifecycleStatus": {
                     "type": "string",
-                    "description": "Used to indicate the current lifecycle status of the service specification"
+                    "description": "Used to indicate the current lifecycle status of this catalog item"
                 },
                 "name": {
                     "type": "string",
-                    "description": "Name of the service specification"
+                    "description": "Name given to the specification"
                 },
                 "version": {
                     "type": "string",
-                    "description": "Service specification version"
+                    "description": "specification version"
                 },
                 "attachment": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/AttachmentRefOrValue"
                     },
-                    "description": "A list of attachments (Attachment [*]). Complements the description of the specification through video, pictures..."
+                    "description": "Attachments that may be of relevance to this specification, such as picture, document, media"
+                },
+                "constraint": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ConstraintRef"
+                    },
+                    "description": "This is a list of constraint references applied to this specification"
                 },
                 "entitySpecRelationship": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/EntitySpecificationRelationship"
                     },
-                    "description": "A list of entity specifications related to this specification with given role, e.g. dependency on test specification, usage specification and so on"
+                    "description": "Relationship to another specification"
                 },
                 "featureSpecification": {
                     "type": "array",
@@ -5253,7 +5215,7 @@
                     "items": {
                         "$ref": "#/definitions/RelatedParty"
                     },
-                    "description": "A list of related party references (RelatedParty [*]). A related party defines party or party role linked to a specific entity."
+                    "description": "Parties who manage or otherwise have an interest in this specification"
                 },
                 "resourceSpecification": {
                     "type": "array",
@@ -5269,13 +5231,6 @@
                     },
                     "description": "A list of service level specifications related to this service specification, and which will need to be satisifiable for corresponding service instances; e.g. Gold, Platinum"
                 },
-                "serviceSpecCharacteristic": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/CharacteristicSpecification"
-                    },
-                    "description": "A list of service spec characteristics (ServiceSpecCharacteristic [*]). This class represents the key features of this service specification."
-                },
                 "serviceSpecRelationship": {
                     "type": "array",
                     "items": {
@@ -5283,13 +5238,20 @@
                     },
                     "description": "A list of service specifications related to this specification, e.g. migration, substitution, dependency or exclusivity relationship"
                 },
-                "targetServiceSchema": {
-                    "$ref": "#/definitions/TargetServiceSchema",
-                    "description": "A target service schema reference (TargetServiceSchemaRef). The reference object to the schema and type of target service which is described by service specification."
+                "specCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CharacteristicSpecification"
+                    },
+                    "description": "List of characteristics that the entity can take"
+                },
+                "targetEntitySchema": {
+                    "$ref": "#/definitions/TargetEntitySchema",
+                    "description": "Pointer to a schema that defines the target entity"
                 },
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
-                    "description": "The period for which the service specification is valid"
+                    "description": "The period for which this REST resource is valid"
                 },
                 "@baseType": {
                     "type": "string",
@@ -5315,42 +5277,49 @@
             "properties": {
                 "description": {
                     "type": "string",
-                    "description": "A narrative that explains in detail what the service specification is"
+                    "description": "Description of the specification"
                 },
                 "isBundle": {
                     "type": "boolean",
-                    "description": "isBundle determines whether a ServiceSpecification represents a single ServiceSpecification (false), or a bundle of ServiceSpecification (true)."
+                    "description": "isBundle determines whether specification represents a single specification (false), or a bundle of specifications (true)."
                 },
                 "lastUpdate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "Date and time of the last update of the service specification"
+                    "description": "Date and time of the last update of the specification"
                 },
                 "lifecycleStatus": {
                     "type": "string",
-                    "description": "Used to indicate the current lifecycle status of the service specification"
+                    "description": "Used to indicate the current lifecycle status of this catalog item"
                 },
                 "name": {
                     "type": "string",
-                    "description": "Name of the service specification"
+                    "description": "Name given to the specification"
                 },
                 "version": {
                     "type": "string",
-                    "description": "Service specification version"
+                    "description": "specification version"
                 },
                 "attachment": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/AttachmentRefOrValue"
                     },
-                    "description": "A list of attachments (Attachment [*]). Complements the description of the specification through video, pictures..."
+                    "description": "Attachments that may be of relevance to this specification, such as picture, document, media"
+                },
+                "constraint": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ConstraintRef"
+                    },
+                    "description": "This is a list of constraint references applied to this specification"
                 },
                 "entitySpecRelationship": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/EntitySpecificationRelationship"
                     },
-                    "description": "A list of entity specifications related to this specification with given role, e.g. dependency on test specification, usage specification and so on"
+                    "description": "Relationship to another specification"
                 },
                 "featureSpecification": {
                     "type": "array",
@@ -5364,7 +5333,7 @@
                     "items": {
                         "$ref": "#/definitions/RelatedParty"
                     },
-                    "description": "A list of related party references (RelatedParty [*]). A related party defines party or party role linked to a specific entity."
+                    "description": "Parties who manage or otherwise have an interest in this specification"
                 },
                 "resourceSpecification": {
                     "type": "array",
@@ -5380,13 +5349,6 @@
                     },
                     "description": "A list of service level specifications related to this service specification, and which will need to be satisifiable for corresponding service instances; e.g. Gold, Platinum"
                 },
-                "serviceSpecCharacteristic": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/CharacteristicSpecification"
-                    },
-                    "description": "A list of service spec characteristics (ServiceSpecCharacteristic [*]). This class represents the key features of this service specification."
-                },
                 "serviceSpecRelationship": {
                     "type": "array",
                     "items": {
@@ -5394,13 +5356,20 @@
                     },
                     "description": "A list of service specifications related to this specification, e.g. migration, substitution, dependency or exclusivity relationship"
                 },
-                "targetServiceSchema": {
-                    "$ref": "#/definitions/TargetServiceSchema",
-                    "description": "A target service schema reference (TargetServiceSchemaRef). The reference object to the schema and type of target service which is described by service specification."
+                "specCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CharacteristicSpecification"
+                    },
+                    "description": "List of characteristics that the entity can take"
+                },
+                "targetEntitySchema": {
+                    "$ref": "#/definitions/TargetEntitySchema",
+                    "description": "Pointer to a schema that defines the target entity"
                 },
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
-                    "description": "The period for which the service specification is valid"
+                    "description": "The period for which this REST resource is valid"
                 },
                 "@baseType": {
                     "type": "string",
@@ -5423,37 +5392,44 @@
             "properties": {
                 "description": {
                     "type": "string",
-                    "description": "A narrative that explains in detail what the service specification is"
+                    "description": "Description of the specification"
                 },
                 "isBundle": {
                     "type": "boolean",
-                    "description": "isBundle determines whether a ServiceSpecification represents a single ServiceSpecification (false), or a bundle of ServiceSpecification (true)."
+                    "description": "isBundle determines whether specification represents a single specification (false), or a bundle of specifications (true)."
                 },
                 "lifecycleStatus": {
                     "type": "string",
-                    "description": "Used to indicate the current lifecycle status of the service specification"
+                    "description": "Used to indicate the current lifecycle status of this catalog item"
                 },
                 "name": {
                     "type": "string",
-                    "description": "Name of the service specification"
+                    "description": "Name given to the specification"
                 },
                 "version": {
                     "type": "string",
-                    "description": "Service specification version"
+                    "description": "specification version"
                 },
                 "attachment": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/AttachmentRefOrValue"
                     },
-                    "description": "A list of attachments (Attachment [*]). Complements the description of the specification through video, pictures..."
+                    "description": "Attachments that may be of relevance to this specification, such as picture, document, media"
+                },
+                "constraint": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ConstraintRef"
+                    },
+                    "description": "This is a list of constraint references applied to this specification"
                 },
                 "entitySpecRelationship": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/EntitySpecificationRelationship"
                     },
-                    "description": "A list of entity specifications related to this specification with given role, e.g. dependency on test specification, usage specification and so on"
+                    "description": "Relationship to another specification"
                 },
                 "featureSpecification": {
                     "type": "array",
@@ -5467,7 +5443,7 @@
                     "items": {
                         "$ref": "#/definitions/RelatedParty"
                     },
-                    "description": "A list of related party references (RelatedParty [*]). A related party defines party or party role linked to a specific entity."
+                    "description": "Parties who manage or otherwise have an interest in this specification"
                 },
                 "resourceSpecification": {
                     "type": "array",
@@ -5483,13 +5459,6 @@
                     },
                     "description": "A list of service level specifications related to this service specification, and which will need to be satisifiable for corresponding service instances; e.g. Gold, Platinum"
                 },
-                "serviceSpecCharacteristic": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/CharacteristicSpecification"
-                    },
-                    "description": "A list of service spec characteristics (ServiceSpecCharacteristic [*]). This class represents the key features of this service specification."
-                },
                 "serviceSpecRelationship": {
                     "type": "array",
                     "items": {
@@ -5497,13 +5466,20 @@
                     },
                     "description": "A list of service specifications related to this specification, e.g. migration, substitution, dependency or exclusivity relationship"
                 },
-                "targetServiceSchema": {
-                    "$ref": "#/definitions/TargetServiceSchema",
-                    "description": "A target service schema reference (TargetServiceSchemaRef). The reference object to the schema and type of target service which is described by service specification."
+                "specCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CharacteristicSpecification"
+                    },
+                    "description": "List of characteristics that the entity can take"
+                },
+                "targetEntitySchema": {
+                    "$ref": "#/definitions/TargetEntitySchema",
+                    "description": "Pointer to a schema that defines the target entity"
                 },
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
-                    "description": "The period for which the service specification is valid"
+                    "description": "The period for which this REST resource is valid"
                 },
                 "@baseType": {
                     "type": "string",
@@ -5563,25 +5539,21 @@
                 "id"
             ]
         },
-        "TargetServiceSchema": {
+        "TargetEntitySchema": {
             "type": "object",
-            "description": "The reference object to the schema and type of target service which is described by service specification",
+            "description": "The reference object to the schema and type of target entity which is described by a specification",
             "required": [
                 "@schemaLocation",
                 "@type"
             ],
             "properties": {
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
                 "@schemaLocation": {
                     "type": "string",
-                    "description": "This field provides a link to the schema describing the target service"
+                    "description": "This field provides a link to the schema describing the target entity"
                 },
                 "@type": {
                     "type": "string",
-                    "description": "Class type of the target service"
+                    "description": "Class type of the target entity"
                 }
             }
         },
@@ -5600,19 +5572,6 @@
                     "type": "string",
                     "format": "date-time",
                     "description": "Start of the time period, using IETC-RFC-3339 format"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },

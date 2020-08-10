@@ -1,13 +1,13 @@
 {
-  "id": "aac9969d-219d-4ff1-b256-1765dcf9b342",
-  "href": "https://mycsp:8080/tmf-api/testCase/v4/testSuite/aac9969d-219d-4ff1-b256-1765dcf9b342",
+  "id": "4cb18d40-a35f-4261-a9e9-20ab58498c42",
+  "href": "https://mycsp:8080/tmf-api/testCase/v4/testSuite/4cb18d40-a35f-4261-a9e9-20ab58498c42",
   "description": "Sample test suite",
   "version": "1.2.3",
   "relatedParty": [
     {
       "name": "testUser",
       "role": "Owner",
-      "@referredType": "TestSuite",
+      "@referredType": "Individual",
       "contact": [
         {
           "mediumType": "email",

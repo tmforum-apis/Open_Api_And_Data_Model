@@ -1,8 +1,8 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "Event Streaming API",
-        "description": "My api short documentation",
+        "title": "Event Management API",
+        "description": "## TMF API Reference: TMF688 - Event Management \n\n### Release : 19.5 - December 2019\n\nThe TMF688 Event (Streaming) API supports the large scale publication and subscription of events, with multiple event types enabling an Event Driven Architecture.",
         "version": "4.0.0"
     },
     "host": "serverRoot",
@@ -1047,6 +1047,77 @@
                 }
             }
         },
+        "/listener/eventCreateEvent": {
+            "post": {
+                "operationId": "listenToEventCreateEvent",
+                "summary": "Client listener for entity EventCreateEvent",
+                "description": "Example of a client listener for receiving the notification EventCreateEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/EventCreateEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
         "/listener/topicCreateEvent": {
             "post": {
                 "operationId": "listenToTopicCreateEvent",
@@ -1272,20 +1343,8 @@
                 },
                 "href": {
                     "type": "string",
-                    "description": "Hyperlink reference"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
                     "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "Hyperlink reference"
                 }
             }
         },
@@ -1294,7 +1353,8 @@
             "type": "object",
             "description": "Describes a given characteristic of an object or entity through a name/value pair.",
             "required": [
-                "name"
+                "name",
+                "value"
             ],
             "properties": {
                 "id": {
@@ -1315,6 +1375,10 @@
                         "$ref": "#/definitions/CharacteristicRelationship"
                     }
                 },
+                "value": {
+                    "$ref": "#/definitions/Any",
+                    "description": "The value of the characteristic"
+                },
                 "@baseType": {
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
@@ -1326,7 +1390,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1337,6 +1401,11 @@
                 "id": {
                     "type": "string",
                     "description": "Unique identifier of the characteristic"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "relationshipType": {
                     "type": "string",
@@ -1353,7 +1422,35 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "Entity": {
+            "type": "object",
+            "description": "Base entity schema for use in TMForum Open-APIs",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1367,6 +1464,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -1374,17 +1472,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "Place",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "http://host/schemas/Subclass.schema.json",
                     "type": "string",
+                    "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "VendorProductOffering",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -1401,6 +1497,15 @@
             "type": "object",
             "description": "event with common attributes.",
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "correlationId": {
                     "type": "string",
                     "description": "The correlation id for this event."
@@ -1474,7 +1579,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1555,7 +1660,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1564,17 +1669,15 @@
             "description": "Base Extensible schema for use in TMForum Open-APIs",
             "properties": {
                 "@baseType": {
-                    "example": "Place",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "http://host/schemas/Subclass.schema.json",
                     "type": "string",
+                    "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "VendorProductOffering",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -1584,8 +1687,8 @@
             "type": "object",
             "description": "A Hub is used to subscribe to an event notification",
             "required": [
-                "callback",
-                "id"
+                "id",
+                "callback"
             ],
             "properties": {
                 "id": {
@@ -1593,9 +1696,15 @@
                     "type": "string",
                     "description": "The unique-id for your subscription - referenced when updating or deleting a subscription"
                 },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "callback": {
                     "example": "http://host/resource/id/listener",
                     "type": "string",
+                    "format": "uri",
                     "description": "The URI that will be POSTed to when a notification is triggered"
                 },
                 "query": {
@@ -1614,7 +1723,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1622,13 +1731,14 @@
             "type": "object",
             "description": "A Hub is used to subscribe to an event notification\nSkipped properties: id,href",
             "required": [
-                "callback",
-                "id"
+                "id",
+                "callback"
             ],
             "properties": {
                 "callback": {
                     "example": "http://host/resource/id/listener",
                     "type": "string",
+                    "format": "uri",
                     "description": "The URI that will be POSTed to when a notification is triggered"
                 },
                 "query": {
@@ -1647,7 +1757,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1665,6 +1775,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -1676,17 +1787,15 @@
                     "description": "Role played by the related party"
                 },
                 "@baseType": {
-                    "example": "Place",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "http://host/schemas/Subclass.schema.json",
                     "type": "string",
+                    "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "VendorProductOffering",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -1731,7 +1840,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1762,7 +1871,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1802,6 +1911,64 @@
                 "query": {
                     "type": "string",
                     "description": "additional data to be passed"
+                }
+            }
+        },
+        "EventCreateEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/EventCreateEventPayload"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                }
+            }
+        },
+        "EventCreateEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "event": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/Event"
                 }
             }
         },

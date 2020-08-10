@@ -1,14 +1,14 @@
 {
     "id": "123",
     "href": "https://host:port/partyInteraction/v4/partyInteraction/123",
-    "@type": "storeVisit",
+    "@type": "PartyInteraction",
     "interactionDate": {
         "startDateTime": "2019-10-02T11:36:18.758Z",
         "endDateTime": "2019-10-02T11:53:21.789Z"
     },
     "description": "Visit to store",
-    "reason": "The user wanted to query about new TV tariffs ",
-    "status": "completed",
+    "reason": "The user wanted to buy TV and internet plan",
+    "status": "ongoing",
     "statusChangeDate": "2019-10-02T11:53:21.789Z",
     "direction": "inbounds",
     "creationDate": "2019-10-02T11:37:08.013Z",
@@ -16,16 +16,16 @@
         {
             "id": "999",
             "href": "https://host:port/partyManagement/v4/individual/999",
-            "@referredType": "individual",
+            "@referredType": "Individual",
             "role": "user",
             "name": "John Doe"
         },
         {
             "id": "888",
             "href": "https://host:port/partyManagement/v4/individual/888",
-            "@referredType": "individual",
-            "role": "clerk",
-            "name": "Jane Doe"
+            "@referredType": "Individual",
+            "role": "agent",
+            "name": "Rian Muray"
         }
     ],
     "interactionItem": [
@@ -33,7 +33,10 @@
             "id": "5678",
             "href": "https://host:port/partyInteraction/v4/partyInteraction/123/interactionItem/5678",
             "reason": "The user signed up to new TV bundle and paid the decoder",
-            "itemDate": "2019-10-02T11:50:01.333Z",
+            "itemDate": {
+                "endDateTime": "2019-10-02T11:56:01.895Z",
+                "startDateTime": "2019-10-02T11:50:01.895Z"
+              },
             "resolution": "Product order is created",
             "creationDate": "2019-10-02T11:50:01.895Z",
             "item": {
@@ -48,20 +51,28 @@
         {
             "id": "1212",
             "href": "https://host:port/partyInteraction/v4/partyInteraction/123/interactionItem/1212",
-            "reason": "The user signed up to new Cloud bundle",
-            "itemDate": "2019-10-02T11:50:01.333Z",
+            "reason": "The user is purchasing unlimited internet plan",
+            "itemDate": {
+                "endDateTime": "2019-10-02T11:59:01.895Z",
+                "startDateTime": "2019-10-02T11:50:01.895Z"
+              },
             "resolution": "Product order is created",
             "creationDate": "2019-10-02T11:50:01.895Z",
             "item": {
                 "id": "88",
                 "href": "https://host:port/productOrderingManagement/v4/productOrder/88",
                 "@type": "ProductOrder",
-                "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/ProductOrder.schema.json",
                 "role": "interaction",
-                "name": "Product Order illustration sample by value",
-                "orderItem": [
-                    {"id": "1", 
-                    "action": "add"}
+                "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/ProductOrder.schema.json",
+                "productOrderItem": [
+                    {
+						"id": "13219", 
+						"action": "add",
+						"productOffering": {
+							"id": "2445",
+							"name": "Unlimited Internet Plus"
+						}
+					}
                 ]
             }
         },
@@ -69,13 +80,17 @@
             "id": "9999",
             "href": "https://host:port/partyInteraction/v4/partyInteraction/123/interactionItem/9999",
             "reason": "The user paid the decoder in the store with credit card",
-            "itemDate": "2019-10-02T11:50:01.333Z",
+            "itemDate": {
+                "endDateTime": "2019-10-02T11:56:01.895Z",
+                "startDateTime": "2019-10-02T11:50:01.895Z"
+              },
             "resolution": "TODO",
             "creationDate": "2019-10-02T11:50:01.895Z",
             "item": {
                 "id": "666",
                 "href": "https://host:port/paymentManagement/v4/payment/666",
-                "@referredType": "payment",
+                "@referredType": "Payment",
+                "role": "interaction",
                 "name": "TV bundle plus decoder payment"
             }
         }
@@ -94,10 +109,12 @@
             "href": "https://host:port/partyInteraction/v4/partyInteraction/123/attachment/111222444",
             "name": "Some cool attachment",
             "description": "blahblahblah",
-            "type": "receipt",
+            "attachmentType": "receipt",
             "mimeType": "application/pdf",
-            "size": 321321,
-            "sizeUnit": "KB",
+            "size": {
+                "amount": 321321,
+                "units": "KB"
+              },
             "URL": "https://whereverthpdfis.com",
             "interactionDate": {
                 "startDateTime": "2019-10-02T11:36:18.758Z",

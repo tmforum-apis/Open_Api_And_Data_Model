@@ -1,17 +1,27 @@
 {
-  "id": "aac9969d-219d-4ff1-b256-1765dcf9b342",
-  "href": "http://myservice.com/resource-path",
-  "description": "Input parameters for test case 1 execution",
+  "id": "2db74193-e5fb-462a-98e0-6b1ed970dfc7",
+  "href": "https://mycsp:8080/tmf-api/testData/v4/testDataInstance/2db74193-e5fb-462a-98e0-6b1ed970dfc7",
+  "description": "Input parameters for test case execution",
   "version": "1.2.3",
-  "versionDescription": "This version does foo",
-  "state": "completed",
+  "relatedParty": [
+    {
+      "name": "testUser",
+      "role": "Owner",
+      "@referredType": "Individual",
+      "contact": [
+        {
+          "mediumType": "email",
+          "characteristic": {
+            "emailAddress": "testUser@abc.com"
+          }
+        }
+      ]
+    }
+  ],
+  "state": "stable",
   "testDataInstanceDefinition": {
-    "id": "4aafacbd-11ff-4dc8-b445-305f2215715f",
-    "href": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
     "attachmentType": "json",
-    "content": {
-      "arg1": "sample value"
-    },
-    "mimeType": "application/json"
+    "content": "<base64-encoded test data instance>",
+    "mimeType": "base64"
   }
 }

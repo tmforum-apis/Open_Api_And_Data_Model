@@ -3,10 +3,11 @@
     "href": "https://mycsp.com:8080/tmf-api/serviceTestManagement/v4/serviceTestSpecification/12",
     "id": "12",
     "version": "1.0",
+    "lifecycleStatus": "Active",
     "name": "monkey test",
     "validFor": {
-        "endDateTime": "2017-03-01T00:00:00",
-        "startDateTime": "2016-03-01T00:00:00"
+        "endDateTime": "2016-03-02T24:00:00.00Z",
+        "startDateTime": "2016-03-02T00:00:00.00Z"
     },
     "testMeasureDefinition": [
         {
@@ -19,7 +20,7 @@
             "unitOfMeasure": "A second",
             "valueType": "bits",
             "capturePeriod": {
-                "amount": "5",
+                "amount": 5,
                 "units": "seconds"
             },
             "thresholdRule": [
@@ -31,7 +32,7 @@
                     "numberOfAllowedCrossing": 0, 
                     "thresholdRuleSeverity": "1",
                     "tolerancePeriod": {
-                        "amount": "15",
+                        "amount": 15,
                         "units": "minutes"
                     },
                     "consequence": [
@@ -41,8 +42,8 @@
                             "name": "sendWarning",
                             "repeatAction": false,
                             "validFor": {
-                                "endDateTime": "2017-03-01T00:00:00",
-                                "startDateTime": "2016-03-01T00:00:00"
+                                "endDateTime": "2017-03-01T00:00:00.00Z",
+                                "startDateTime": "2016-03-01T00:00:00.00Z"
                             }
                         },
                         {
@@ -51,24 +52,55 @@
                             "name": "generateReport",
                             "repeatAction": false,
                             "validFor": {
-                                "endDateTime": "2017-03-01T00:00:00",
-                                "startDateTime": "2016-03-01T00:00:00"
+                                "endDateTime": "2017-03-01T00:00:00.00Z",
+                                "startDateTime": "2016-03-01T00:00:00.00Z"
                             }
                         }
                     ]
                 }
             ],
             "validFor": {
-                "endDateTime": "2017-03-01T00:00:00",
-                "startDateTime": "2016-03-01T00:00:00"
+                "endDateTime": "2016-03-02T24:00:00.00Z",
+                "startDateTime": "2016-03-02T00:00:00.00Z"
             }
         }
     ],
-    "relatedServiceSpecification": {
+    "specCharacteristic": [
+    {
+      "name": "restart",
+      "description": "This characteristic describes if restart of the service is required",
+      "valueType": "string",
+      "configurable": true,
+      "validFor": {
+        "startDateTime": "2016-03-02T24:00:00.00Z",
+        "endDateTime": "2016-03-02T00:00:00.00Z"
+      },
+      "@valueSchemaLocation": "",
+      "minCardinality": 0,
+      "maxCardinality": 1,
+      "isUnique": true,
+      "regex": "",
+      "extensible": false,
+      "characteristicValueSpecification": [
+        {
+          "valueType": "boolean",
+          "isDefault": false,
+          "value": "",
+          "validFor": {
+            "startDateTime": "2016-03-02T24:00:00.00Z",
+            "endDateTime": "2016-03-02T00:00:00.00Z"
+          }
+        }
+      ]
+    }
+    ],
+
+    "relatedServiceSpecification": [ {
         "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/serviceSpecification/31", 
         "id": "31", 
         "@referredType": "vCPEServiceSpecification"
-    },
+    }
+    ],
     "@baseType" : "ServiceTestSpecification",
     "@type" : "PerformanceTestSpecification",
     "@schemaLocation" : "https://mycsp.com:8080/tmf-api/schema/service/PerformanceTestSpecification.schema.json"

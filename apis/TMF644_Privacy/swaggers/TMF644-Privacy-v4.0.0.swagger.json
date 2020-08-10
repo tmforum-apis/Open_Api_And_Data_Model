@@ -2252,6 +2252,19 @@
                         "$ref": "#/definitions/RelatedParty"
                     },
                     "minItems": 1
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2259,6 +2272,15 @@
             "type": "object",
             "description": "A business participant that is responsible for approving the agreement.",
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "date": {
                     "type": "string",
                     "format": "date-time",
@@ -2271,6 +2293,19 @@
                 "state": {
                     "type": "string",
                     "description": "Current status of the authorization, for example in process, approved, rejected."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2278,6 +2313,15 @@
             "type": "object",
             "description": "A part of the agreement expressed in terms of a product offering and possibly including specific terms and conditions.",
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "product": {
                     "type": "array",
                     "items": {
@@ -2297,6 +2341,19 @@
                     "items": {
                         "$ref": "#/definitions/AgreementTermOrCondition"
                     }
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2390,6 +2447,11 @@
                     "type": "string",
                     "description": "Unique number assigned for reference."
                 },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "description": {
                     "type": "string",
                     "description": "Text that explains the term or condition of the agreement."
@@ -2397,6 +2459,19 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time during which the term or condition of the agreement applies."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2454,9 +2529,55 @@
                     "type": "string",
                     "description": "Unique identifier of the characteristic"
                 },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "relationshipType": {
                     "type": "string",
                     "description": "The type of relationship"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "Entity": {
+            "type": "object",
+            "description": "Base entity schema for use in TMForum Open-APIs",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2530,11 +2651,12 @@
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "Unique identifier for the agreement"
+                    "description": "unique identifier"
                 },
                 "href": {
                     "type": "string",
-                    "description": "Unique url identifying the agreement as a resource"
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "agreementType": {
                     "type": "string",
@@ -2625,6 +2747,19 @@
                         "$ref": "#/definitions/PartyPrivacyProfileCharacteristic"
                     },
                     "description": "A list of (typically) high criticality characteristics whose chosen privacy rules are included in the agreement"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2727,6 +2862,19 @@
                         "$ref": "#/definitions/PartyPrivacyProfileCharacteristic"
                     },
                     "description": "A list of (typically) high criticality characteristics whose chosen privacy rules are included in the agreement"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2829,6 +2977,19 @@
                         "$ref": "#/definitions/PartyPrivacyProfileCharacteristic"
                     },
                     "description": "A list of (typically) high criticality characteristics whose chosen privacy rules are included in the agreement"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2937,6 +3098,19 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which this profile is valid, depending on regulations or business consideration the profile may expire and need to be renegotiated."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2993,6 +3167,19 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which this profile is valid, depending on regulations or business consideration the profile may expire and need to be renegotiated."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3038,6 +3225,19 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which this profile is valid, depending on regulations or business consideration the profile may expire and need to be renegotiated."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3432,6 +3632,15 @@
                 "name"
             ],
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "description": {
                     "type": "string",
                     "description": "An explanatory text documenting the role specification"
@@ -3445,6 +3654,19 @@
                     "items": {
                         "$ref": "#/definitions/AgreementSpecificationRef"
                     }
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3576,6 +3798,15 @@
                 "name"
             ],
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "description": {
                     "type": "string",
                     "description": "An explanatory text documenting the role specification"
@@ -3583,6 +3814,19 @@
                 "name": {
                     "type": "string",
                     "description": "The name of the role specification. This name uniquely identifies the role specification"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3590,6 +3834,15 @@
             "type": "object",
             "description": "A number or text that can be assigned to a SpecificationCharacteristic",
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "isDefault": {
                     "type": "boolean",
                     "description": "If true, the Boolean Indicates if the value is the default value for a characteristic"
@@ -3625,6 +3878,19 @@
                 "value": {
                     "$ref": "#/definitions/Any",
                     "description": "the  value that the characteristic can take on."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3632,6 +3898,15 @@
             "type": "object",
             "description": "A period of time, either as a deadline (endDateTime only) a startDateTime only, or both",
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "endDateTime": {
                     "example": "1985-04-12T23:20:50.52Z",
                     "type": "string",
@@ -3643,6 +3918,19 @@
                     "type": "string",
                     "format": "date-time",
                     "description": "Start of the time period, using IETC-RFC-3339 format"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },

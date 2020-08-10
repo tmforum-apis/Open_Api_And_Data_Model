@@ -1354,19 +1354,6 @@
                     "type": "string",
                     "format": "uri",
                     "description": "Hyperlink reference"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -1398,7 +1385,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
                 "@referredType": {
                     "type": "string",
@@ -1472,7 +1459,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1503,18 +1490,15 @@
                     "description": "Link to the attachment media/content"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -1580,18 +1564,15 @@
                     "description": "The period of time for which the attachment is valid"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -1642,7 +1623,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1655,11 +1636,12 @@
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "id of the cancellation request (this is not an order id)"
+                    "description": "unique identifier"
                 },
                 "href": {
                     "type": "string",
-                    "description": "Hyperlink to access the cancellation request"
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "cancellationReason": {
                     "type": "string",
@@ -1693,7 +1675,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1727,7 +1709,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1762,18 +1744,15 @@
                     "description": "The value of the characteristic"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -1786,6 +1765,11 @@
                 "id": {
                     "type": "string",
                     "description": "Unique identifier of the characteristic"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "relationshipType": {
                     "type": "string",
@@ -1802,7 +1786,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1812,15 +1796,16 @@
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "reference id to the target constraint"
+                    "description": "unique identifier"
                 },
                 "href": {
                     "type": "string",
-                    "description": "Hyperlink reference to the target constraint"
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "name": {
                     "type": "string",
-                    "description": "Name given to the constraint"
+                    "description": "Name of the related entity."
                 },
                 "version": {
                     "type": "string",
@@ -1837,16 +1822,44 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
                 "@referredType": {
                     "type": "string",
-                    "description": "The (class) type of the referred constraint"
+                    "description": "The actual type of the target instance when needed for disambiguation."
                 }
             },
             "required": [
                 "id"
             ]
+        },
+        "Entity": {
+            "type": "object",
+            "description": "Base entity schema for use in TMForum Open-APIs",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
         },
         "EntityRef": {
             "type": "object",
@@ -1866,18 +1879,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -1895,18 +1905,15 @@
             "description": "Base Extensible schema for use in TMForum Open-APIs",
             "properties": {
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -1919,6 +1926,15 @@
                 "name"
             ],
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "externalReferenceType": {
                     "type": "string",
                     "description": "Type of the external reference"
@@ -1938,7 +1954,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1986,19 +2002,6 @@
                     "items": {
                         "$ref": "#/definitions/FeatureRelationship"
                     }
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -2025,19 +2028,6 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period for which this feature relationship is valid."
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -2052,6 +2042,11 @@
                 "id": {
                     "type": "string",
                     "description": "Identifier of the note within its containing entity (may or may not be globally unique, depending on provider implementation)"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "author": {
                     "type": "string",
@@ -2077,7 +2072,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2118,7 +2113,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2140,18 +2135,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -2177,19 +2169,6 @@
                 "units": {
                     "type": "string",
                     "description": "Unit"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -2219,18 +2198,15 @@
                     "description": "Role played by the related party"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -2263,18 +2239,15 @@
                     "type": "string"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -2287,10 +2260,6 @@
         "Resource": {
             "type": "object",
             "description": "Resource is an abstract entity that describes the common set of attributes shared by all concrete resources (e.g. TPE, EQUIPMENT) in the inventory.",
-            "required": [
-                "href",
-                "id"
-            ],
             "properties": {
                 "id": {
                     "type": "string",
@@ -2396,7 +2365,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2546,7 +2515,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2636,7 +2605,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2746,7 +2715,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2758,6 +2727,11 @@
                     "example": "01",
                     "type": "string",
                     "description": "Identifier of the line item (such as a sequence number 01, 02, 03)"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "quantity": {
                     "example": 7000,
@@ -2796,7 +2770,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2820,18 +2794,15 @@
                     "description": "Identifier of the resource order that this item belongs to"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -2848,6 +2819,15 @@
         "ResourceOrderItemRelationship": {
             "type": "object",
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "relationshipType": {
                     "example": "dependency",
                     "type": "string",
@@ -2867,7 +2847,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2914,7 +2894,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
                 "@referredType": {
                     "type": "string",
@@ -2956,18 +2936,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -2983,10 +2960,6 @@
         "ResourceRefOrValue": {
             "type": "object",
             "description": "Resource is an abstract entity that describes the common set of attributes shared by all concrete resources. The polymorphic attributes @type, @schemaLocation & @referredType are related to the Resource entity and not the related ResourceRefOrValue class itself",
-            "required": [
-                "href",
-                "id"
-            ],
             "properties": {
                 "id": {
                     "type": "string",
@@ -3082,18 +3055,15 @@
                     "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -3111,6 +3081,15 @@
                 "resource"
             ],
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "relationshipType": {
                     "example": "bundled",
                     "type": "string",
@@ -3130,7 +3109,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3156,18 +3135,15 @@
                     "description": "Resource Specification version"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -3226,19 +3202,6 @@
                     "type": "string",
                     "format": "date-time",
                     "description": "Start of the time period, using IETC-RFC-3339 format"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },

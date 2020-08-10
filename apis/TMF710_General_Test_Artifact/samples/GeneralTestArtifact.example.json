@@ -1,42 +1,49 @@
 {
-  "id": "aac9969d-219d-4ff1-b256-1765dcf9b342",
-  "href": "https:/host:port/tmf-api/generalartifact/v1/aac9969d-219d-4ff1-b256-1765dcf9b342",
-  "description": "Sample test artifact",
+  "id": "178ca8bb-81bc-47ef-911e-dd86a40b8974",
+  "href": "https://mycsp:8080/tmf-api/generalTestArtifact/v4/generalTestArtifact/178ca8bb-81bc-47ef-911e-dd86a40b8974",
+  "description": "Sample general test artifact",
   "version": "1.2.3",
   "relatedParty": [
     {
-      "name": "testUser1",
+      "name": "testUser",
+      "@referredType": "Individual",
       "role": "Owner",
       "contact": [
         {
           "mediumType": "email",
           "characteristic": {
-            "emailAddress": "testUser1@abc.com"
+            "emailAddress": "testUser@abc.com"
           }
         }
       ]
     }
   ],
-  "attributes": [
+  "attribute": [
     {
-      "name": "name",
-      "valueType": "string",
-      "value": "test"
+      "characteristic": {
+        "name": "name",
+        "valueType": "string",
+        "value": "test.zip"
+      }
     },
     {
-      "name": "category",
-      "valueType": "string",
-      "value": "vnf"
+      "characteristic": {
+        "name": "category",
+        "valueType": "string",
+        "value": "vnf"
+      }
     },
     {
-      "name": "checksum",
-      "valueType": "string",
-      "value": "BC1A4D958133CAE622EAC4F6B845D78D"
+      "characteristic": {
+        "name": "checksum",
+        "valueType": "string",
+        "value": "BC1A4D958133CAE622EAC4F6B845D78D"
+      }
     }
   ],
   "generalArtifactDefinition": {
     "attachmentType": "zip",
-    "content": "<BASE64 of test case>",
-    "mimeType": "binary"
+    "content": "<base64-encoded general artifact>",
+    "mimeType": "base64"
   }
 }

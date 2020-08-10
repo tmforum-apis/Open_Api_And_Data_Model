@@ -8,10 +8,10 @@
     "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/PhysicalResourceSpecification.schema.json", 
     "version": "3.2", 
     "validFor": {
-        "startDateTime": "2017-08-12T00:00", 
-        "endDateTime": "2018-03-07T00:00"
+        "startDateTime": "2017-08-12T00:00:00.000Z", 
+        "endDateTime": "2018-03-07T00:00:00.000Z"
     }, 
-    "lastUpdate": "2017-08-09T00:00", 
+    "lastUpdate": "2017-08-09T00:00:00.000Z", 
     "lifecycleStatus": "Active",
     "isBundle": false,
     "category": "Router resource",
@@ -29,7 +29,8 @@
             "id": "5855", 
             "href": "https://mycsp.com:8080/tmf-api/partyRoleManagement/organization/5855", 
             "role": "Supplier", 
-            "name": "Nokia Networks"
+            "name": "Nokia Networks",
+            "@referredType": "PartyRole"
         }
     ],
     "resourceSpecCharacteristic": [
@@ -66,7 +67,7 @@
 			"id": "l22m455f-671a-499d-a95j-8h46fe3bc88c",
 			"name": "log",
 			"validFor": {
-				"startDateTime": "2015-11-21T00:00",
+				"startDateTime": "2015-11-21T00:00:00.000Z",
 				"endDateTime": "2019-12-31T23:59:59.999Z"
 			},
 			"featureSpecCharacteristic": [
@@ -76,7 +77,7 @@
 					"valueType": "integer",
 					"configurable": true,
 					"validFor": {
-						"startDateTime": "2015-11-22T00:00",
+						"startDateTime": "2015-11-22T00:00:00.000Z",
 						"endDateTime": "2019-12-31T23:59:59.999Z"
 					},
 					"@type": "FeatureSpecificationCharacteristic",
@@ -90,7 +91,7 @@
         					"valueType": "integer",
 							"value": 2000,
 							"validFor": {
-								"startDateTime": "2015-11-22T00:00",
+								"startDateTime": "2015-11-22T00:00:00.000Z",
 								"endDateTime": "2019-12-31T23:59:59.999Z"
 							}
 						},
@@ -99,7 +100,7 @@
         					"valueType": "integer",
 							"value": 4000,
 							"validFor": {
-								"startDateTime": "2015-11-22T00:00",
+								"startDateTime": "2015-11-22T00:00:00.000Z",
 								"endDateTime": "2019-12-31T23:59:59.999Z"
 							}
 						}
@@ -112,7 +113,7 @@
 			"name": "IPAddressing",
 			"isBundle": true,
 			"validFor": {
-				"startDateTime": "2017-05-24T00:00",
+				"startDateTime": "2017-05-24T00:00:00.000Z",
 				"endDateTime": "2019-12-31T23:59:59.999Z"
 			},
 			"constraint": [
@@ -127,22 +128,22 @@
 				{
 					"relationshipType": "requires",
 					"featureId": "43883a81-58ef-45af-ace4-993298ae8361",
-					"resourceSpecificationId": "755232457686",
-					"resourceSpecificationHref": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceSpecification/755232457686",
+					"parentSpecificationId": "755232457686",
+					"parentSpecificationHref": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceSpecification/755232457686",
 					"name": "IPv4Addressing",
 					"validFor": {
-						"startDateTime": "2017-05-24T00:00",
+						"startDateTime": "2017-05-24T00:00:00.000Z",
 						"endDateTime": "2019-12-31T23:59:59.999Z"
 					}
 				},
 				{
 					"relationshipType": "requires",
 					"featureId": "b85f845f-011a-468f-a90e-9e07fe3bc90a",
-					"resourceSpecificationId": "755232457686",
-					"resourceSpecificationHref": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceSpecification/755232457686",
+					"parentSpecificationId": "755232457686",
+					"parentSpecificationHref": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceSpecification/755232457686",
 					"name": "IPv6Addressing",
 					"validFor": {
-						"startDateTime": "2017-05-24T00:00",
+						"startDateTime": "2017-05-24T00:00:00.000Z",
 						"endDateTime": "2019-12-31T23:59:59.999Z"
 					}
 				}

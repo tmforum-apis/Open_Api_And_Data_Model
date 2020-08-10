@@ -1,13 +1,13 @@
 {
-  "id": "aac9969d-219d-4ff1-b256-1765dcf9b342",
-  "href": "https://mycsp:8080/tmf-api/testCase/v4/nonFunctionalTestModel/aac9969d-219d-4ff1-b256-1765dcf9b342",
+  "id": "16db32a3-e008-401b-8168-4ebac788f9d8",
+  "href": "https://mycsp:8080/tmf-api/testCase/v4/nonFunctionalTestModel/16db32a3-e008-401b-8168-4ebac788f9d8",
   "description": "Sample non-functional test model",
   "version": "1.2.3",
   "relatedParty": [
     {
       "name": "testUser",
       "role": "Owner",
-      "@referredType": "NonFunctionalTestModel",
+      "@referredType": "Individual",
       "contact": [
         {
           "mediumType": "email",

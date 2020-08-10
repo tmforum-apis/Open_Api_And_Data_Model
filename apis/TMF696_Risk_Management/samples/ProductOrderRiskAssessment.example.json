@@ -1,9 +1,5 @@
 {
     "status": "Completed", 
-    "validFor": {
-        "startDateTime": "2017-08-23T00:00", 
-        "endDateTime": "2018-03-25T00:00"
-    }, 
     "characteristic": [
         {
             "name": "CouponType",
@@ -11,23 +7,28 @@
             "value": "Discount21"
         }
     ],
-    "partyRole": {
-        "id": "22556513347112"
-    },
     "productOrder": {
-        "id": "267734"
+        "id": "267734",
+        "href": "https://mycsp.com:8080/tmf-api/productOrder/v4/productOrder/267734",
+        "@referredType": "ProductOrder"
     },
     "place": {
-        "@type": "GeographicalAddress",
+        "@type": "RelatedPlace",
         "role": "home address",
-        "id": "234546467567334"
+        "id": "234546467567334",
+        "href": "https://mycsp.com:8080/tmf-api/geographicAddress/v4/geographicAddress/234546467567334",
+        "@referredType": "GeographicAddress"
     },
     "riskAssessmentResult": {
         "overallScore": 16,
+        "validFor": {
+            "startDateTime": "2017-08-23T00:00:22.920Z", 
+            "endDateTime": "2018-03-25T00:00:22.920Z"
+        }, 
         "score": [
             {
                 "score": 0,
-                "riskName": "PartyRoleIDConfidenceRisk"
+                "riskName": "IDConfidenceRisk"
             },
             {
                 "score": 0,

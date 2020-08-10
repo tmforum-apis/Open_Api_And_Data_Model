@@ -8,10 +8,10 @@
     "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json", 
     "version": "3.2", 
     "validFor": {
-        "startDateTime": "2017-08-12T00:00", 
-        "endDateTime": "2018-03-07T00:00"
+        "startDateTime": "2017-08-12T00:00:00.000Z", 
+        "endDateTime": "2018-03-07T00:00:00.000Z"
     }, 
-    "lastUpdate": "2017-08-09T00:00", 
+    "lastUpdate": "2017-08-09T00:00:00.000Z", 
     "lifecycleStatus": "Active",
     "isBundle": false,
     "category": "Cloud resource",
@@ -29,7 +29,8 @@
             "id": "5858", 
             "href": "https://mycsp.com:8080/tmf-api/partyRoleManagement/organization/5858", 
             "role": "Supplier", 
-            "name": "Gustave Flaubert"
+            "name": "Gustave Flaubert",
+            "@referredType": "PartyRole"
         }
     ],
     "resourceSpecCharacteristic": [

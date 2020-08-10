@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "title": "Entity Inventory",
-        "description": "## TMF API Reference : TMF 703 - Entity Inventory \n\n Version 4.0 \n\nThe intent of this API is to provide a consistent/standardized mechanism to query and manipulate the Entity inventory.\n\nThe Entity Inventory API can be used to query the Entity and Association instances. \n Note: The Entity Inventory API can be called by an order management system to create new Entity/Association instances or update existing Entity/Association instances in the Entity Inventory.\n\n### Entity/Association resources\n\n### Entity Inventory API performs the following operations on Entity/Association resources :\n- Retrieve  an Entity/Association or a collection of Entities/Associations depending on filter criteria\n- Partial update of an Entity/Association instance (including updating rules)\n- Create an Entity/Association instance (including default values and creation rules)\n- Delete an Entity/Association (for administration users only)\n- Notification of events on Entity/Association \n it should be noted that the Entity resource can be considered as an abstract resource that extended by a concrete MEntity resource in this API\n\nCopyright (c)TM Forum 2020. All Rights Reserved.",
+        "description": "## TMF API Reference : TMF 703 - Entity Inventory \n\n Version 4.0 \n\nThe intent of this API is to provide a consistent/standardized mechanism to query and manipulate the Entity inventory.\n\nThe Entity Inventory API can be used to query the Entity and Association instances. \n Note: The Entity Inventory API can be called by an order management system to create new Entity/Association instances or update existing Entity/Association instances in the Entity Inventory.\n\n### Entity/Association resources\n\n### Entity Inventory API performs the following operations on Entity/Association resources :\n- Retrieve  an Entity/Association or a collection of Entities/Associations depending on filter criteria\n- Partial update of an Entity/Association instance (including updating rules)\n- Create an Entity/Association instance (including default values and creation rules)\n- Delete an Entity/Association (for administration users only)\n- Notification of events on Entity/Association \n it should be noted that the Entity resource can be considered as an abstract resource that extended by a concrete Managed Entity resource in this API\n\nCopyright (c)TM Forum 2020. All Rights Reserved.",
         "version": "4.0.0"
     },
     "host": "serverRoot",
@@ -1585,27 +1585,6 @@
                 }
             }
         },
-        "AssociationSpecRef": {
-            "type": "object",
-            "description": "reference to an AssociationSpecification object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "reference id to the target AssociationSpecification"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Hyperlink reference to the target AssociationSpecification"
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                }
-            },
-            "required": [
-                "id"
-            ]
-        },
         "AssociationSpecificationRef": {
             "type": "object",
             "description": "reference to an AssociationSpecification object",
@@ -1883,23 +1862,37 @@
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "reference id to the target constraint"
+                    "description": "unique identifier"
                 },
                 "href": {
                     "type": "string",
-                    "description": "Hyperlink reference to the target constraint"
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "name": {
                     "type": "string",
-                    "description": "Name given to the constraint"
+                    "description": "Name of the related entity."
                 },
                 "version": {
                     "type": "string",
                     "description": "constraint version"
                 },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
                 "@referredType": {
                     "type": "string",
-                    "description": "The (class) type of the referred constraint"
+                    "description": "The actual type of the target instance when needed for disambiguation."
                 }
             },
             "required": [
@@ -1952,7 +1945,10 @@
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
-            }
+            },
+            "required": [
+                "@type"
+            ]
         },
         "Entity_Update": {
             "type": "object",
@@ -2029,7 +2025,7 @@
                     "description": "The association role for this entity"
                 },
                 "associationSpec": {
-                    "$ref": "#/definitions/AssociationSpecRef"
+                    "$ref": "#/definitions/AssociationSpecificationRef"
                 },
                 "entity": {
                     "$ref": "#/definitions/EntityRef",
@@ -2116,9 +2112,9 @@
                 }
             }
         },
-        "MEntity": {
+        "ManagedEntity": {
             "type": "object",
-            "description": "MEntity represents an entity that describes the common set of attributes shared by all concrete entities (e.g. Resource, Service, ..) in the Entity Inventory.",
+            "description": "ManagedEntity represents an entity that describes the common set of attributes shared by all concrete entities (e.g. Resource, Service, ..) in the Entity Inventory.",
             "required": [
                 "name"
             ],

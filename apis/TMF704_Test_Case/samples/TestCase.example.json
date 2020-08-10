@@ -7,7 +7,7 @@
     {
       "name": "testUser",
       "role": "Owner",
-      "@referredType": "TestCase",
+      "@referredType": "Individual",
       "contact": [
         {
           "mediumType": "email",

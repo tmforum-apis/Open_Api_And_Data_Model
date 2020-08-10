@@ -2743,20 +2743,8 @@
                 },
                 "href": {
                     "type": "string",
-                    "description": "Hyperlink reference"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
                     "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "Hyperlink reference"
                 }
             }
         },
@@ -2792,18 +2780,15 @@
                     "description": "The value of the characteristic"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -2816,6 +2801,11 @@
                 "id": {
                     "type": "string",
                     "description": "Unique identifier of the characteristic"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "relationshipType": {
                     "type": "string",
@@ -2832,7 +2822,35 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "Entity": {
+            "type": "object",
+            "description": "Base entity schema for use in TMForum Open-APIs",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2846,6 +2864,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -2853,18 +2872,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -2882,18 +2898,15 @@
             "description": "Base Extensible schema for use in TMForum Open-APIs",
             "properties": {
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -2913,6 +2926,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "status": {
@@ -2927,7 +2941,7 @@
                     "description": "Additional characteristics for which the risk might be assessed, optional input to the task"
                 },
                 "partyRole": {
-                    "$ref": "#/definitions/RelatedPartyRef",
+                    "$ref": "#/definitions/RelatedParty",
                     "description": "The party or party role for which the assessment is to be carried out, must be supplied as input to the task, with the attribute id populated"
                 },
                 "place": {
@@ -2943,18 +2957,15 @@
                     "description": "The result of the risk assessment, output from the task"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -2980,7 +2991,7 @@
                     "description": "Additional characteristics for which the risk might be assessed, optional input to the task"
                 },
                 "partyRole": {
-                    "$ref": "#/definitions/RelatedPartyRef",
+                    "$ref": "#/definitions/RelatedParty",
                     "description": "The party or party role for which the assessment is to be carried out, must be supplied as input to the task, with the attribute id populated"
                 },
                 "place": {
@@ -2996,18 +3007,15 @@
                     "description": "The result of the risk assessment, output from the task"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -3020,9 +3028,37 @@
                 "partyRole"
             ],
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The status of the risk assessment, such as Succeeded, In Progress, Failed, output from the task"
+                },
+                "characteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    },
+                    "description": "Additional characteristics for which the risk might be assessed, optional input to the task"
+                },
                 "partyRole": {
-                    "$ref": "#/definitions/RelatedPartyRef",
+                    "$ref": "#/definitions/RelatedParty",
                     "description": "The party role for which the assessment is to be carried out, must be supplied as input to the task, with the attribute id populated"
+                },
+                "place": {
+                    "$ref": "#/definitions/RelatedPlace",
+                    "description": "The place for which the risk is assessed, this is optional input to the task"
+                },
+                "riskAssessmentResult": {
+                    "$ref": "#/definitions/RiskAssessmentResult",
+                    "description": "The result of the risk assessment, output from the task"
                 },
                 "@baseType": {
                     "type": "string",
@@ -3035,7 +3071,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3046,9 +3082,28 @@
                 "partyRole"
             ],
             "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "The status of the risk assessment, such as Succeeded, In Progress, Failed, output from the task"
+                },
+                "characteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    },
+                    "description": "Additional characteristics for which the risk might be assessed, optional input to the task"
+                },
                 "partyRole": {
-                    "$ref": "#/definitions/RelatedPartyRef",
+                    "$ref": "#/definitions/RelatedParty",
                     "description": "The party role for which the assessment is to be carried out, must be supplied as input to the task, with the attribute id populated"
+                },
+                "place": {
+                    "$ref": "#/definitions/RelatedPlace",
+                    "description": "The place for which the risk is assessed, this is optional input to the task"
+                },
+                "riskAssessmentResult": {
+                    "$ref": "#/definitions/RiskAssessmentResult",
+                    "description": "The result of the risk assessment, output from the task"
                 },
                 "@baseType": {
                     "type": "string",
@@ -3061,7 +3116,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3075,6 +3130,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -3082,18 +3138,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -3113,9 +3166,37 @@
                 "productOffering"
             ],
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The status of the risk assessment, such as Succeeded, In Progress, Failed, output from the task"
+                },
+                "characteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    },
+                    "description": "Additional characteristics for which the risk might be assessed, optional input to the task"
+                },
+                "place": {
+                    "$ref": "#/definitions/RelatedPlace",
+                    "description": "The place for which the risk is assessed, this is optional input to the task"
+                },
                 "productOffering": {
                     "$ref": "#/definitions/ProductOfferingRef",
                     "description": "The product offering for which the assessment is to be carried out, must be supplied as input to the task, with the attribute id populated"
+                },
+                "riskAssessmentResult": {
+                    "$ref": "#/definitions/RiskAssessmentResult",
+                    "description": "The result of the risk assessment, output from the task"
                 },
                 "@baseType": {
                     "type": "string",
@@ -3128,7 +3209,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3139,9 +3220,28 @@
                 "productOffering"
             ],
             "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "The status of the risk assessment, such as Succeeded, In Progress, Failed, output from the task"
+                },
+                "characteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    },
+                    "description": "Additional characteristics for which the risk might be assessed, optional input to the task"
+                },
+                "place": {
+                    "$ref": "#/definitions/RelatedPlace",
+                    "description": "The place for which the risk is assessed, this is optional input to the task"
+                },
                 "productOffering": {
                     "$ref": "#/definitions/ProductOfferingRef",
                     "description": "The product offering for which the assessment is to be carried out, must be supplied as input to the task, with the attribute id populated"
+                },
+                "riskAssessmentResult": {
+                    "$ref": "#/definitions/RiskAssessmentResult",
+                    "description": "The result of the risk assessment, output from the task"
                 },
                 "@baseType": {
                     "type": "string",
@@ -3154,7 +3254,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3168,6 +3268,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -3175,18 +3276,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -3212,6 +3310,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "status": {
@@ -3238,18 +3337,15 @@
                     "description": "The result of the risk assessment, output from the task"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -3286,42 +3382,44 @@
                     "description": "The result of the risk assessment, output from the task"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
-        "RelatedPartyRef": {
+        "RelatedParty": {
             "type": "object",
-            "description": "RelatedParty reference. A related party defines party or party role linked to a specific entity.",
+            "description": "Related Entity reference. A related party defines party or party role linked to a specific entity.",
+            "required": [
+                "@referredType",
+                "id"
+            ],
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "Unique identifier of a related party"
+                    "description": "unique identifier"
                 },
                 "href": {
                     "type": "string",
-                    "description": "Reference of the related party, could be a party reference or a party role reference"
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "name": {
                     "type": "string",
-                    "description": "Name of the related party"
+                    "description": "Name of the related entity."
                 },
                 "role": {
                     "type": "string",
-                    "description": "Role of the related party."
+                    "description": "Role played by the related party"
                 },
                 "@baseType": {
                     "type": "string",
@@ -3334,16 +3432,13 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
                 "@referredType": {
                     "type": "string",
                     "description": "The actual type of the target instance when needed for disambiguation."
                 }
-            },
-            "required": [
-                "id"
-            ]
+            }
         },
         "RelatedPlace": {
             "type": "object",
@@ -3376,7 +3471,11 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
                 }
             }
         },
@@ -3390,6 +3489,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "status": {
@@ -3412,18 +3512,15 @@
                     "description": "The result of the risk assessment, output from the task"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -3445,19 +3542,20 @@
                     },
                     "description": "Additional characteristics for which the risk might be assessed, optional input to the task"
                 },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "Period for which this result is considered valid and not stale"
+                },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -3477,18 +3575,15 @@
                     "description": "The name of the risk"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -3528,7 +3623,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
                 "@referredType": {
                     "type": "string",
@@ -3552,6 +3647,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "status": {
@@ -3578,18 +3674,15 @@
                     "description": "The shopping cart for which the assessment is to be carried out, must be supplied as input to the task, with the attribute id populated"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -3626,18 +3719,55 @@
                     "description": "The shopping cart for which the assessment is to be carried out, must be supplied as input to the task, with the attribute id populated"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "TimePeriod": {
+            "type": "object",
+            "description": "A period of time, either as a deadline (endDateTime only) a startDateTime only, or both",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "endDateTime": {
+                    "example": "1985-04-12T23:20:50.52Z",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "End of the time period, using IETC-RFC-3339 format"
+                },
+                "startDateTime": {
+                    "example": "1985-04-12T23:20:50.52Z",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Start of the time period, using IETC-RFC-3339 format"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }

@@ -2424,6 +2424,19 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which the attachment is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2492,9 +2505,27 @@
                     "type": "string",
                     "description": "Unique identifier of the characteristic"
                 },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "relationshipType": {
                     "type": "string",
                     "description": "The type of relationship"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2502,6 +2533,15 @@
             "type": "object",
             "description": "Indicates the contact medium that could be used to contact the party.",
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "mediumType": {
                     "type": "string",
                     "description": "Type of the contact medium, such as: email address, telephone number, postal address"
@@ -2517,6 +2557,47 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The time period that the contact medium is valid for"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "Entity": {
+            "type": "object",
+            "description": "Base entity schema for use in TMForum Open-APIs",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2583,14 +2664,13 @@
             "description": "General information about a managed artifact",
             "properties": {
                 "id": {
-                    "example": "aac9969d-219d-4ff1-b256-1765dcf9b342",
                     "type": "string",
-                    "description": "ID created by the implementing service"
+                    "description": "unique identifier"
                 },
                 "href": {
-                    "example": "http://myservice.com/resource-path",
                     "type": "string",
-                    "description": "Hyperlink to access the test resource"
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "description": {
                     "example": "",
@@ -2600,12 +2680,12 @@
                 "version": {
                     "example": "1.2.3",
                     "type": "string",
-                    "description": "The artifact verion"
+                    "description": "The artifact version"
                 },
                 "versionDescription": {
                     "example": "What's changed: ...",
                     "type": "string",
-                    "description": "The artifact verion description"
+                    "description": "The artifact version description"
                 },
                 "agreement": {
                     "$ref": "#/definitions/TestAgreement"
@@ -2624,6 +2704,19 @@
                 },
                 "state": {
                     "$ref": "#/definitions/ManagedArtifactStateType"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2641,6 +2734,15 @@
             "type": "object",
             "description": "Describes the contact medium characteristics that could be used to contact a party (an individual or an organization)",
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "city": {
                     "type": "string",
                     "description": "The city"
@@ -2684,6 +2786,19 @@
                 "street2": {
                     "type": "string",
                     "description": "Complementary street description"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2695,14 +2810,13 @@
             ],
             "properties": {
                 "id": {
-                    "example": "aac9969d-219d-4ff1-b256-1765dcf9b342",
                     "type": "string",
-                    "description": "ID created by the implementing service"
+                    "description": "unique identifier"
                 },
                 "href": {
-                    "example": "http://myservice.com/resource-path",
                     "type": "string",
-                    "description": "Hyperlink to access the test resource"
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "description": {
                     "example": "",
@@ -2712,12 +2826,12 @@
                 "version": {
                     "example": "1.2.3",
                     "type": "string",
-                    "description": "The artifact verion"
+                    "description": "The artifact version"
                 },
                 "versionDescription": {
                     "example": "What's changed: ...",
                     "type": "string",
-                    "description": "The artifact verion description"
+                    "description": "The artifact version description"
                 },
                 "agreement": {
                     "$ref": "#/definitions/TestAgreement"
@@ -2739,6 +2853,19 @@
                 },
                 "state": {
                     "$ref": "#/definitions/ManagedArtifactStateType"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2759,12 +2886,12 @@
                 "version": {
                     "example": "1.2.3",
                     "type": "string",
-                    "description": "The artifact verion"
+                    "description": "The artifact version"
                 },
                 "versionDescription": {
                     "example": "What's changed: ...",
                     "type": "string",
-                    "description": "The artifact verion description"
+                    "description": "The artifact version description"
                 },
                 "agreement": {
                     "$ref": "#/definitions/TestAgreement"
@@ -2786,6 +2913,19 @@
                 },
                 "state": {
                     "$ref": "#/definitions/ManagedArtifactStateType"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2804,7 +2944,7 @@
                 "versionDescription": {
                     "example": "What's changed: ...",
                     "type": "string",
-                    "description": "The artifact verion description"
+                    "description": "The artifact version description"
                 },
                 "agreement": {
                     "$ref": "#/definitions/TestAgreement"
@@ -2826,6 +2966,19 @@
                 },
                 "state": {
                     "$ref": "#/definitions/ManagedArtifactStateType"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2834,15 +2987,13 @@
             "description": "Non-functional test model definition",
             "properties": {
                 "id": {
-                    "example": "4aafacbd-11ff-4dc8-b445-305f2215715f",
                     "type": "string",
-                    "description": "Unique identifier for this particular attachment"
+                    "description": "unique identifier"
                 },
                 "href": {
-                    "example": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
                     "type": "string",
                     "format": "uri",
-                    "description": "URI for this Attachment"
+                    "description": "Hyperlink reference"
                 },
                 "attachmentType": {
                     "example": "video",
@@ -2880,6 +3031,19 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which the attachment is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3005,6 +3169,19 @@
                     "example": "http://myservice.com/resource-path",
                     "type": "string",
                     "description": "Hyperlink to access the test resource"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3037,14 +3214,13 @@
             ],
             "properties": {
                 "id": {
-                    "example": "aac9969d-219d-4ff1-b256-1765dcf9b342",
                     "type": "string",
-                    "description": "ID created by the implementing service"
+                    "description": "unique identifier"
                 },
                 "href": {
-                    "example": "http://myservice.com/resource-path",
                     "type": "string",
-                    "description": "Hyperlink to access the test resource"
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "description": {
                     "example": "",
@@ -3054,12 +3230,12 @@
                 "version": {
                     "example": "1.2.3",
                     "type": "string",
-                    "description": "The artifact verion"
+                    "description": "The artifact version"
                 },
                 "versionDescription": {
                     "example": "What's changed: ...",
                     "type": "string",
-                    "description": "The artifact verion description"
+                    "description": "The artifact version description"
                 },
                 "agreement": {
                     "$ref": "#/definitions/TestAgreement"
@@ -3081,6 +3257,19 @@
                 },
                 "testCaseDefinition": {
                     "$ref": "#/definitions/TestCaseDefinition"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3101,12 +3290,12 @@
                 "version": {
                     "example": "1.2.3",
                     "type": "string",
-                    "description": "The artifact verion"
+                    "description": "The artifact version"
                 },
                 "versionDescription": {
                     "example": "What's changed: ...",
                     "type": "string",
-                    "description": "The artifact verion description"
+                    "description": "The artifact version description"
                 },
                 "agreement": {
                     "$ref": "#/definitions/TestAgreement"
@@ -3128,6 +3317,19 @@
                 },
                 "testCaseDefinition": {
                     "$ref": "#/definitions/TestCaseDefinition"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3146,7 +3348,7 @@
                 "versionDescription": {
                     "example": "What's changed: ...",
                     "type": "string",
-                    "description": "The artifact verion description"
+                    "description": "The artifact version description"
                 },
                 "agreement": {
                     "$ref": "#/definitions/TestAgreement"
@@ -3168,6 +3370,19 @@
                 },
                 "testCaseDefinition": {
                     "$ref": "#/definitions/TestCaseDefinition"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3176,15 +3391,13 @@
             "description": "Test case definition",
             "properties": {
                 "id": {
-                    "example": "4aafacbd-11ff-4dc8-b445-305f2215715f",
                     "type": "string",
-                    "description": "Unique identifier for this particular attachment"
+                    "description": "unique identifier"
                 },
                 "href": {
-                    "example": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
                     "type": "string",
                     "format": "uri",
-                    "description": "URI for this Attachment"
+                    "description": "Hyperlink reference"
                 },
                 "attachmentType": {
                     "example": "video",
@@ -3222,6 +3435,19 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which the attachment is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3233,14 +3459,13 @@
             ],
             "properties": {
                 "id": {
-                    "example": "aac9969d-219d-4ff1-b256-1765dcf9b342",
                     "type": "string",
-                    "description": "ID created by the implementing service"
+                    "description": "unique identifier"
                 },
                 "href": {
-                    "example": "http://myservice.com/resource-path",
                     "type": "string",
-                    "description": "Hyperlink to access the test resource"
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "description": {
                     "example": "",
@@ -3250,12 +3475,12 @@
                 "version": {
                     "example": "1.2.3",
                     "type": "string",
-                    "description": "The artifact verion"
+                    "description": "The artifact version"
                 },
                 "versionDescription": {
                     "example": "What's changed: ...",
                     "type": "string",
-                    "description": "The artifact verion description"
+                    "description": "The artifact version description"
                 },
                 "agreement": {
                     "$ref": "#/definitions/TestAgreement"
@@ -3277,6 +3502,19 @@
                 },
                 "testSuiteDefinition": {
                     "$ref": "#/definitions/TestSuiteDefinition"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3297,12 +3535,12 @@
                 "version": {
                     "example": "1.2.3",
                     "type": "string",
-                    "description": "The artifact verion"
+                    "description": "The artifact version"
                 },
                 "versionDescription": {
                     "example": "What's changed: ...",
                     "type": "string",
-                    "description": "The artifact verion description"
+                    "description": "The artifact version description"
                 },
                 "agreement": {
                     "$ref": "#/definitions/TestAgreement"
@@ -3324,6 +3562,19 @@
                 },
                 "testSuiteDefinition": {
                     "$ref": "#/definitions/TestSuiteDefinition"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3342,7 +3593,7 @@
                 "versionDescription": {
                     "example": "What's changed: ...",
                     "type": "string",
-                    "description": "The artifact verion description"
+                    "description": "The artifact version description"
                 },
                 "agreement": {
                     "$ref": "#/definitions/TestAgreement"
@@ -3364,6 +3615,19 @@
                 },
                 "testSuiteDefinition": {
                     "$ref": "#/definitions/TestSuiteDefinition"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3372,15 +3636,13 @@
             "description": "Test suite definition",
             "properties": {
                 "id": {
-                    "example": "4aafacbd-11ff-4dc8-b445-305f2215715f",
                     "type": "string",
-                    "description": "Unique identifier for this particular attachment"
+                    "description": "unique identifier"
                 },
                 "href": {
-                    "example": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
                     "type": "string",
                     "format": "uri",
-                    "description": "URI for this Attachment"
+                    "description": "Hyperlink reference"
                 },
                 "attachmentType": {
                     "example": "video",
@@ -3418,6 +3680,19 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which the attachment is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
