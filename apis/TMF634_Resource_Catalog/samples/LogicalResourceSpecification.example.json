@@ -27,10 +27,10 @@
     "relatedParty": [
         {
             "id": "5858", 
-            "href": "https://mycsp.com:8080/tmf-api/partyRoleManagement/organization/5858", 
+            "href": "https://mycsp.com:8080/tmf-api/partyManagement/organization/5858", 
             "role": "Supplier", 
             "name": "Gustave Flaubert",
-            "@referredType": "PartyRole"
+            "@referredType": "Organization"
         }
     ],
     "resourceSpecCharacteristic": [

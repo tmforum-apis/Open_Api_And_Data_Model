@@ -21,7 +21,8 @@
     "relatedService": {
         "href": "https://mycsp.com:8080/tmf-api/serviceManagement/v4/service/21", 
         "id": "21", 
-        "name": "gameService"
+        "name": "gameService",
+        "@referredType": "Service"
     },
     "testSpecification":{
         "href": "https://mycsp.com:8080/tmf-api/serviceTestManagement/v4/serviceTestSpecification/22",
@@ -31,8 +32,8 @@
     "characteristic": [
         {
             "id":"1",
-            "name": "number",
-            "valueType": "integer",
+            "name": "something significant",
+            "valueType": "number",
             "value": 3
         },
         {
@@ -54,7 +55,7 @@
             "value": {
                 "id":"3",
                 "name":"Flow speed",
-                "valueType": "integer",
+                "valueType": "number",
                 "value":3000
             },
             "ruleViolation": [

@@ -83,9 +83,9 @@
       "extensible": false,
       "characteristicValueSpecification": [
         {
-          "valueType": "boolean",
+          "valueType": "string",
           "isDefault": false,
-          "value": "",
+          "value": "Completed",
           "validFor": {
             "startDateTime": "2016-03-02T24:00:00.00Z",
             "endDateTime": "2016-03-02T00:00:00.00Z"

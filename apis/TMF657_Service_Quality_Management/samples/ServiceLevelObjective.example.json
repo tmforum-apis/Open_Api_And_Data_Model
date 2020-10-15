@@ -1,8 +1,8 @@
 {
     "href": "https://host:port/tmf-api/serviceQualityManagement/v4/serviceLevelObjective/3112", 
     "id": "3112",
-    "conformanceCompartor": ">", 
-    "conformanceTargarget": "32",
+    "conformanceComparator": ">", 
+    "conformanceTarget": "32",
     "conformancePeriod": 
     {
         "endDateTime": "2021-03-00T00:00:00+01:00",
@@ -23,7 +23,7 @@
         "serviceParmCategory": "service specific", 
         "serviceParmPerspective": "aggregation", 
         "transformationAlgorithmOfKQI": "KeepTheSame",
-        "type": "KPI",
+        "parameterType": "KPI",
         "validFor":
         {
             "endDateTime": "2021-03-00T00:00:00+01:00",
@@ -46,7 +46,7 @@
             }
         ]
     },
-    "serviceLevelObjectiveConsquence": [ 
+    "serviceLevelObjectiveConsequence": [ 
         {
             "prescribedAction": "https://service.com/vCPEBandwithAction", 
             "validFor": {

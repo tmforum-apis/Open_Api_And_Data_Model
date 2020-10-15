@@ -18,7 +18,7 @@
 			"href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/organization/77b93cf8-54b1-49f6-82cd-4913d93101ef",
 			"role": "Supplier",
 			"name": "Firewall Express",
-			"@referredType": "PartyRole"
+			"@referredType": "Organization"
 		}
 	],
 	"resourceSpecCharacteristic": [

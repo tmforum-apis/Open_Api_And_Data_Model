@@ -27,10 +27,10 @@
     "relatedParty": [
         {
             "id": "5855", 
-            "href": "https://mycsp.com:8080/tmf-api/partyRoleManagement/organization/5855", 
+            "href": "https://mycsp.com:8080/tmf-api/partyManagement/organization/5855", 
             "role": "Supplier", 
             "name": "Nokia Networks",
-            "@referredType": "PartyRole"
+            "@referredType": "Organization"
         }
     ],
     "resourceSpecCharacteristic": [

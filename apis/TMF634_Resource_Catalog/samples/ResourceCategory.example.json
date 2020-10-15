@@ -40,7 +40,7 @@
             "href": "https://mycsp.com:8080/tmf-api/partyManagement/organization/4434", 
             "role": "employee", 
             "name": "Jimmy Doe",
-            "@referredType": "PartyRole"
+            "@referredType": "Organization"
         }
     ]
 }

@@ -3303,6 +3303,19 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which the attachment is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3601,6 +3614,19 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period for which the object is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3701,6 +3727,34 @@
             "required": [
                 "id"
             ]
+        },
+        "Entity": {
+            "type": "object",
+            "description": "Base entity schema for use in TMForum Open-APIs",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
         },
         "EntityRef": {
             "type": "object",
@@ -3939,6 +3993,19 @@
                 "status": {
                     "$ref": "#/definitions/JobStateType",
                     "description": "Status of the export job (not started, running, succeeded, failed)"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3983,6 +4050,19 @@
                 "status": {
                     "$ref": "#/definitions/JobStateType",
                     "description": "Status of the export job (not started, running, succeeded, failed)"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -4002,176 +4082,6 @@
                 "@type": {
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
-                }
-            }
-        },
-        "FeatureSpecification": {
-            "type": "object",
-            "description": "Specification for resource, service or product features",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of the feature specification. Must be locally unique within the containing specification, thus allowing direct access to the feature spec."
-                },
-                "isBundle": {
-                    "type": "boolean",
-                    "description": "A flag indicating if this is a feature group (true) or not (false)"
-                },
-                "isEnabled": {
-                    "type": "boolean",
-                    "description": "A flag indicating if the feature is enabled (true) or not (false)"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Unique name given to the feature specification"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "Version of the feature specification"
-                },
-                "constraint": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/ConstraintRef"
-                    },
-                    "description": "This is a list of feature constraints"
-                },
-                "featureSpecCharacteristic": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/FeatureSpecificationCharacteristic"
-                    },
-                    "description": "This is a list of characteristics for a particular feature"
-                },
-                "featureSpecRelationship": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/FeatureSpecificationRelationship"
-                    },
-                    "description": "A dependency, exclusivity or aggratation relationship between/among feature specifications."
-                },
-                "validFor": {
-                    "$ref": "#/definitions/TimePeriod",
-                    "description": "The period for which this feature specification is valid"
-                }
-            }
-        },
-        "FeatureSpecificationCharacteristic": {
-            "type": "object",
-            "description": "Configuration feature characteristic specification.",
-            "required": [
-                "name"
-            ],
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique ID for the characteristic"
-                },
-                "configurable": {
-                    "type": "boolean",
-                    "description": "If true, the Boolean indicates that the target Characteristic is configurable"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "A narrative that explains the CharacteristicSpecification."
-                },
-                "extensible": {
-                    "type": "boolean",
-                    "description": "An indicator that specifies that the values for the characteristic can be extended by adding new values when instantiating a characteristic for a resource."
-                },
-                "isUnique": {
-                    "type": "boolean",
-                    "description": "An indicator that specifies if a value is unique for the specification. Possible values are; \"unique while value is in effect\" and \"unique whether value is in effect or not\""
-                },
-                "maxCardinality": {
-                    "type": "integer",
-                    "description": "The maximum number of instances a CharacteristicValue can take on. For example, zero to five phone numbers in a group calling plan, where five is the value for the maxCardinality."
-                },
-                "minCardinality": {
-                    "type": "integer",
-                    "description": "The minimum number of instances a CharacteristicValue can take on. For example, zero to five phone numbers in a group calling plan, where zero is the value for the minCardinality."
-                },
-                "name": {
-                    "type": "string",
-                    "description": "A word, term, or phrase by which this characteristic specification is known and distinguished from other characteristic specifications."
-                },
-                "regex": {
-                    "type": "string",
-                    "description": "A rule or principle represented in regular expression used to derive the value of a characteristic value."
-                },
-                "valueType": {
-                    "type": "string",
-                    "description": "A kind of value that the characteristic can take on, such as numeric, text and so forth"
-                },
-                "featureSpecCharRelationship": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/FeatureSpecificationCharacteristicRelationship"
-                    },
-                    "description": "An aggregation, migration, substitution, dependency or exclusivity relationship between/among feature characteristics."
-                },
-                "featureSpecCharacteristicValue": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/CharacteristicValueSpecification"
-                    },
-                    "description": "Used to define a set of attributes, each of which can be assigned to a corresponding set of attributes in a FeatureCharacteristic object."
-                },
-                "validFor": {
-                    "$ref": "#/definitions/TimePeriod",
-                    "description": "The period of time for which a characteristic is applicable."
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class Extensible name"
-                },
-                "@valueSchemaLocation": {
-                    "type": "string",
-                    "description": "This (optional) field provides a link to the schema describing the value type."
-                }
-            }
-        },
-        "FeatureSpecificationCharacteristicRelationship": {
-            "type": "object",
-            "description": "An aggregation, migration, substitution, dependency or exclusivity relationship between/among FeatureSpecificationCharacteristics.",
-            "properties": {
-                "characteristicId": {
-                    "type": "string",
-                    "description": "Unique identifier of the characteristic within the the target feature specification"
-                },
-                "featureId": {
-                    "type": "string",
-                    "description": "Unique identifier of the target feature specification within the resource specification."
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the target characteristic"
-                },
-                "relationshipType": {
-                    "type": "string",
-                    "description": "Type of relationship such as aggregation, migration, substitution, dependency, exclusivity"
-                },
-                "resourceSpecificationHref": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "Hyperlink reference to the resource specification containing the target feature and feature characteristic"
-                },
-                "resourceSpecificationId": {
-                    "type": "string",
-                    "description": "Unique identifier of the resource specification containing the target feature and feature characteristic"
-                },
-                "validFor": {
-                    "$ref": "#/definitions/TimePeriod",
-                    "description": "The period for which the object is valid"
                 }
             }
         },
@@ -4207,6 +4117,19 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period for which this feature spoecification relationship is valid."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -4253,6 +4176,19 @@
                 "status": {
                     "$ref": "#/definitions/JobStateType",
                     "description": "Status of the import job (not started, running, succeeded, failed)"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -4293,6 +4229,19 @@
                 "status": {
                     "$ref": "#/definitions/JobStateType",
                     "description": "Status of the import job (not started, running, succeeded, failed)"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -5054,6 +5003,75 @@
                 "id"
             ]
         },
+        "ServiceFeatureSpecification": {
+            "type": "object",
+            "description": "Specification for service features",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the feature specification. Must be locally unique within the containing specification, thus allowing direct access to the feature spec."
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "isBundle": {
+                    "type": "boolean",
+                    "description": "A flag indicating if this is a feature group (true) or not (false)"
+                },
+                "isEnabled": {
+                    "type": "boolean",
+                    "description": "A flag indicating if the feature is enabled (true) or not (false)"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Unique name given to the feature specification"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "Version of the feature specification"
+                },
+                "constraint": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ConstraintRef"
+                    },
+                    "description": "A list of feature constraints/rules"
+                },
+                "featureSpecCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CharacteristicSpecification"
+                    },
+                    "description": "This is a list of characteristics for a particular feature"
+                },
+                "featureSpecRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FeatureSpecificationRelationship"
+                    },
+                    "description": "A dependency, exclusivity or aggratation relationship between/among feature specifications."
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period for which this feature specification is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
         "ServiceLevelSpecificationRef": {
             "type": "object",
             "description": "A Service Level Specification represents a pre-defined or negotiated set of Service Level \nObjectives. In addition, certain consequences are associated with not meeting the Service Level \nObjectives. Service Level Agreements are expressed in terms of Service Level Specifications.",
@@ -5206,7 +5224,7 @@
                 "featureSpecification": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/FeatureSpecification"
+                        "$ref": "#/definitions/ServiceFeatureSpecification"
                     },
                     "description": "A list of Features for this specification."
                 },
@@ -5324,7 +5342,7 @@
                 "featureSpecification": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/FeatureSpecification"
+                        "$ref": "#/definitions/ServiceFeatureSpecification"
                     },
                     "description": "A list of Features for this specification."
                 },
@@ -5434,7 +5452,7 @@
                 "featureSpecification": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/FeatureSpecification"
+                        "$ref": "#/definitions/ServiceFeatureSpecification"
                     },
                     "description": "A list of Features for this specification."
                 },

@@ -43,7 +43,7 @@
   ],
   "generalArtifactDefinition": {
     "attachmentType": "zip",
-    "content": "<base64-encoded general artifact>",
+    "content": "<base64-encoded general artifact, usually a binary of some sort>",
     "mimeType": "base64"
   }
 }
