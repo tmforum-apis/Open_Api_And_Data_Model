@@ -1,0 +1,61 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Permission.schema.json",
+    "title": "Permission",
+    "definitions": {
+        "Permission": {
+            "$id": "#Permission",
+            "description": "The Permission resource represents the entitlement given by an individual (granter) to another individual (user) to get access to a set of his owned manageable assets. One single permission resource can hold information referring to privileges granted for multiple manageable assets.",
+            "type": "object",
+            "required": [
+                "validFor","user"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the permission"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hypertext Reference of the permission"
+                },
+                "creationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the payment was performed"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Text describing the contents of the payment"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which the permission is valid"
+                },
+                "user": {
+                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                },
+                "granter": {
+                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                },
+                "privilege": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Privilege.schema.json#Privilege"
+                    }
+                },
+                "assetUserRole": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/AssetUserRole.schema.json#AssetUserRole"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,3768 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Resource Ordering",
+        "description": "TMF652: The Resource Order API provides a standard mechanism for creating/placing, updating, canceling and deleting a Resource Order with all necessary order parameters. A Resource Order is based on a resource candidate that is defined in the resource catalog. A Resource candidate makes a Resource Specification available to a resource catalog. Resources can be logical (eg: MSISDN, IP-addresses) or physical (eg: cables, routers, firewalls).",
+        "version": "4.0.0"
+    },
+    "host": "serverRoot",
+    "basePath": "/tmf-api/resourceOrdering/v4/",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json;charset=utf-8"
+    ],
+    "produces": [
+        "application/json;charset=utf-8"
+    ],
+    "tags": [
+        {
+            "name": "resourceOrder"
+        },
+        {
+            "name": "cancelResourceOrder"
+        },
+        {
+            "name": "notification listeners (client side)"
+        },
+        {
+            "name": "events subscription"
+        }
+    ],
+    "paths": {
+        "/resourceOrder": {
+            "get": {
+                "operationId": "listResourceOrder",
+                "summary": "List or find ResourceOrder objects",
+                "description": "This operation list or find ResourceOrder entities",
+                "tags": [
+                    "resourceOrder"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "offset",
+                        "description": "Requested index for start of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "description": "Requested number of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "X-Result-Count": {
+                                "description": "Actual number of items returned in the response body",
+                                "type": "integer"
+                            },
+                            "X-Total-Count": {
+                                "description": "Total number of items matching criteria",
+                                "type": "integer"
+                            }
+                        },
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/ResourceOrder"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "operationId": "createResourceOrder",
+                "summary": "Creates a ResourceOrder",
+                "description": "This operation creates a ResourceOrder entity.",
+                "tags": [
+                    "resourceOrder"
+                ],
+                "parameters": [
+                    {
+                        "name": "resourceOrder",
+                        "description": "The ResourceOrder to be created",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ResourceOrder_Create"
+                        },
+                        "in": "body"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/ResourceOrder"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/resourceOrder/{id}": {
+            "get": {
+                "operationId": "retrieveResourceOrder",
+                "summary": "Retrieves a ResourceOrder by ID",
+                "description": "This operation retrieves a ResourceOrder entity. Attribute selection is enabled for all first level attributes.",
+                "tags": [
+                    "resourceOrder"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the ResourceOrder",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    },
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to provide in response",
+                        "required": false,
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ResourceOrder"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "operationId": "patchResourceOrder",
+                "summary": "Updates partially a ResourceOrder",
+                "description": "This operation updates partially a ResourceOrder entity.",
+                "tags": [
+                    "resourceOrder"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the ResourceOrder",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    },
+                    {
+                        "name": "resourceOrder",
+                        "description": "The ResourceOrder to be updated",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ResourceOrder_Update"
+                        },
+                        "in": "body"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Updated",
+                        "schema": {
+                            "$ref": "#/definitions/ResourceOrder"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "deleteResourceOrder",
+                "summary": "Deletes a ResourceOrder",
+                "description": "This operation deletes a ResourceOrder entity.",
+                "tags": [
+                    "resourceOrder"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the ResourceOrder",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/cancelResourceOrder": {
+            "get": {
+                "operationId": "listCancelResourceOrder",
+                "summary": "List or find CancelResourceOrder objects",
+                "description": "This operation list or find CancelResourceOrder entities",
+                "tags": [
+                    "cancelResourceOrder"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "offset",
+                        "description": "Requested index for start of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "description": "Requested number of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "X-Result-Count": {
+                                "description": "Actual number of items returned in the response body",
+                                "type": "integer"
+                            },
+                            "X-Total-Count": {
+                                "description": "Total number of items matching criteria",
+                                "type": "integer"
+                            }
+                        },
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/CancelResourceOrder"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "operationId": "createCancelResourceOrder",
+                "summary": "Creates a CancelResourceOrder",
+                "description": "This operation creates a CancelResourceOrder entity.",
+                "tags": [
+                    "cancelResourceOrder"
+                ],
+                "parameters": [
+                    {
+                        "name": "cancelResourceOrder",
+                        "description": "The CancelResourceOrder to be created",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CancelResourceOrder_Create"
+                        },
+                        "in": "body"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/CancelResourceOrder"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/cancelResourceOrder/{id}": {
+            "get": {
+                "operationId": "retrieveCancelResourceOrder",
+                "summary": "Retrieves a CancelResourceOrder by ID",
+                "description": "This operation retrieves a CancelResourceOrder entity. Attribute selection is enabled for all first level attributes.",
+                "tags": [
+                    "cancelResourceOrder"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the CancelResourceOrder",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    },
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to provide in response",
+                        "required": false,
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/CancelResourceOrder"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/hub": {
+            "post": {
+                "operationId": "registerListener",
+                "summary": "Register a listener",
+                "description": "Sets the communication endpoint address the service instance must use to deliver information about its health state, execution state, failures and metrics.",
+                "tags": [
+                    "events subscription"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscriptionInput"
+                        },
+                        "required": true,
+                        "in": "body",
+                        "description": "Data containing the callback endpoint to deliver the information"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Subscribed",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/hub/{id}": {
+            "delete": {
+                "operationId": "unregisterListener",
+                "summary": "Unregister a listener",
+                "description": "Resets the communication endpoint address the service instance must use to deliver information about its health state, execution state, failures and metrics.",
+                "tags": [
+                    "events subscription"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "description": "The id of the registered listener"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/resourceOrderCreateEvent": {
+            "post": {
+                "operationId": "listenToResourceOrderCreateEvent",
+                "summary": "Client listener for entity ResourceOrderCreateEvent",
+                "description": "Example of a client listener for receiving the notification ResourceOrderCreateEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/ResourceOrderCreateEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/resourceOrderAttributeValueChangeEvent": {
+            "post": {
+                "operationId": "listenToResourceOrderAttributeValueChangeEvent",
+                "summary": "Client listener for entity ResourceOrderAttributeValueChangeEvent",
+                "description": "Example of a client listener for receiving the notification ResourceOrderAttributeValueChangeEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/ResourceOrderAttributeValueChangeEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/resourceOrderStateChangeEvent": {
+            "post": {
+                "operationId": "listenToResourceOrderStateChangeEvent",
+                "summary": "Client listener for entity ResourceOrderStateChangeEvent",
+                "description": "Example of a client listener for receiving the notification ResourceOrderStateChangeEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/ResourceOrderStateChangeEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/resourceOrderDeleteEvent": {
+            "post": {
+                "operationId": "listenToResourceOrderDeleteEvent",
+                "summary": "Client listener for entity ResourceOrderDeleteEvent",
+                "description": "Example of a client listener for receiving the notification ResourceOrderDeleteEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/ResourceOrderDeleteEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/resourceOrderInformationRequiredEvent": {
+            "post": {
+                "operationId": "listenToResourceOrderInformationRequiredEvent",
+                "summary": "Client listener for entity ResourceOrderInformationRequiredEvent",
+                "description": "Example of a client listener for receiving the notification ResourceOrderInformationRequiredEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/ResourceOrderInformationRequiredEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/cancelResourceOrderCreateEvent": {
+            "post": {
+                "operationId": "listenToCancelResourceOrderCreateEvent",
+                "summary": "Client listener for entity CancelResourceOrderCreateEvent",
+                "description": "Example of a client listener for receiving the notification CancelResourceOrderCreateEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/CancelResourceOrderCreateEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/cancelResourceOrderStateChangeEvent": {
+            "post": {
+                "operationId": "listenToCancelResourceOrderStateChangeEvent",
+                "summary": "Client listener for entity CancelResourceOrderStateChangeEvent",
+                "description": "Example of a client listener for receiving the notification CancelResourceOrderStateChangeEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/CancelResourceOrderStateChangeEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/cancelResourceOrderInformationRequiredEvent": {
+            "post": {
+                "operationId": "listenToCancelResourceOrderInformationRequiredEvent",
+                "summary": "Client listener for entity CancelResourceOrderInformationRequiredEvent",
+                "description": "Example of a client listener for receiving the notification CancelResourceOrderInformationRequiredEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/CancelResourceOrderInformationRequiredEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Addressable": {
+            "type": "object",
+            "description": "Base schema for adressable entities",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                }
+            }
+        },
+        "Any": {},
+        "AppointmentRef": {
+            "type": "object",
+            "description": "Refers an appointment, such as a Customer presentation or internal meeting or site visit",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The identifier of the referred appointment"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "The reference of the appointment"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explanatory text regarding the appointment made with a party"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "Attachment": {
+            "type": "object",
+            "description": "Complements the description of an element (for instance a product) through video, pictures...",
+            "properties": {
+                "id": {
+                    "example": "4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "type": "string",
+                    "description": "Unique identifier for this particular attachment"
+                },
+                "href": {
+                    "example": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URI for this Attachment"
+                },
+                "attachmentType": {
+                    "example": "video",
+                    "type": "string",
+                    "description": "Attachment type such as video, picture"
+                },
+                "content": {
+                    "type": "string",
+                    "format": "base64",
+                    "description": "The actual contents of the attachment object, if embedded, encoded as base64"
+                },
+                "description": {
+                    "example": "Photograph of the Product",
+                    "type": "string",
+                    "description": "A narrative text describing the content of the attachment"
+                },
+                "mimeType": {
+                    "type": "string",
+                    "description": "Attachment mime type such as extension file for video, picture and document"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the attachment"
+                },
+                "url": {
+                    "example": "http://host/Content/4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Uniform Resource Locator, is a web page address (a subset of URI)"
+                },
+                "size": {
+                    "$ref": "#/definitions/Quantity",
+                    "description": "The size of the attachment."
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period of time for which the attachment is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "AttachmentRef": {
+            "type": "object",
+            "description": "Attachment reference. An attachment complements the description of an element (for instance a product) through video, pictures",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique-Identifier for this attachment"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URL serving as reference for the attachment resource"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A narrative text describing the content of the attachment"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to the attachment media/content"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "AttachmentRefOrValue": {
+            "type": "object",
+            "description": "An attachment by value or by reference. An attachment complements the description of an element, for example through a document, a video, a picture.",
+            "properties": {
+                "id": {
+                    "example": "4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "type": "string",
+                    "description": "Unique identifier for this particular attachment"
+                },
+                "href": {
+                    "example": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URI for this Attachment"
+                },
+                "attachmentType": {
+                    "example": "video",
+                    "type": "string",
+                    "description": "Attachment type such as video, picture"
+                },
+                "content": {
+                    "type": "string",
+                    "format": "base64",
+                    "description": "The actual contents of the attachment object, if embedded, encoded as base64"
+                },
+                "description": {
+                    "example": "Photograph of the Product",
+                    "type": "string",
+                    "description": "A narrative text describing the content of the attachment"
+                },
+                "mimeType": {
+                    "type": "string",
+                    "description": "Attachment mime type such as extension file for video, picture and document"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the attachment"
+                },
+                "url": {
+                    "example": "http://host/Content/4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Uniform Resource Locator, is a web page address (a subset of URI)"
+                },
+                "size": {
+                    "$ref": "#/definitions/Quantity",
+                    "description": "The size of the attachment."
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period of time for which the attachment is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            }
+        },
+        "CancelOrder": {
+            "type": "object",
+            "description": "A Order cancel is a type of task which  can  be used to place a request to cancel an order",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "id of the cancellation request (this is not an order id)"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink to access the cancellation request"
+                },
+                "cancellationReason": {
+                    "type": "string",
+                    "description": "Reason why the order is cancelled."
+                },
+                "effectiveCancellationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order is cancelled."
+                },
+                "requestedCancellationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the submitter wants the order to be cancelled"
+                },
+                "state": {
+                    "$ref": "#/definitions/TaskStateType",
+                    "description": "Tracks the lifecycle status of the cancellation request, such as Acknowledged, Rejected, InProgress, Pending and so on."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "CancelResourceOrder": {
+            "type": "object",
+            "description": "Request for cancellation an existing resource order",
+            "required": [
+                "resourceOrder"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "cancellationReason": {
+                    "type": "string",
+                    "description": "Reason why the order is cancelled."
+                },
+                "effectiveCancellationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order is cancelled."
+                },
+                "requestedCancellationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the submitter wants the order to be cancelled"
+                },
+                "resourceOrder": {
+                    "$ref": "#/definitions/ResourceOrderRef"
+                },
+                "state": {
+                    "$ref": "#/definitions/TaskStateType",
+                    "description": "Tracks the lifecycle status of the cancellation request, such as Acknowledged, Rejected, InProgress, Pending and so on."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "CancelResourceOrder_Create": {
+            "type": "object",
+            "description": "Request for cancellation an existing resource order\nSkipped properties: id,href,state,effectiveCancellationDate",
+            "required": [
+                "resourceOrder"
+            ],
+            "properties": {
+                "cancellationReason": {
+                    "type": "string",
+                    "description": "Reason why the order is cancelled."
+                },
+                "requestedCancellationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the submitter wants the order to be cancelled"
+                },
+                "resourceOrder": {
+                    "$ref": "#/definitions/ResourceOrderRef"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "Characteristic": {
+            "type": "object",
+            "description": "Describes a given characteristic of an object or entity through a name/value pair.",
+            "required": [
+                "name",
+                "value"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the characteristic"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the characteristic"
+                },
+                "valueType": {
+                    "type": "string",
+                    "description": "Data type of the value of the characteristic"
+                },
+                "characteristicRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CharacteristicRelationship"
+                    }
+                },
+                "value": {
+                    "$ref": "#/definitions/Any",
+                    "description": "The value of the characteristic"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "CharacteristicRelationship": {
+            "type": "object",
+            "description": "Another Characteristic that is related to the current Characteristic;",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the characteristic"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "The type of relationship"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "ConstraintRef": {
+            "type": "object",
+            "description": "Constraint reference. The Constraint resource represents a policy/rule applied to an entity or entity spec.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "version": {
+                    "type": "string",
+                    "description": "constraint version"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "Entity": {
+            "type": "object",
+            "description": "Base entity schema for use in TMForum Open-APIs",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "EntityRef": {
+            "type": "object",
+            "description": "Entity reference schema to be use for all entityRef class.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "Extensible": {
+            "type": "object",
+            "description": "Base Extensible schema for use in TMForum Open-APIs",
+            "properties": {
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "ExternalReference": {
+            "type": "object",
+            "description": "External reference of the individual or reference in other system",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "externalReferenceType": {
+                    "type": "string",
+                    "description": "Type of the external reference"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "External reference name"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "Feature": {
+            "type": "object",
+            "description": "Configuration feature.",
+            "required": [
+                "featureCharacteristic",
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the feature."
+                },
+                "isBundle": {
+                    "type": "boolean",
+                    "description": "True if this is a feature group. Default is false."
+                },
+                "isEnabled": {
+                    "type": "boolean",
+                    "description": "True if this feature is enabled. Default is true."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "This is the name for the feature."
+                },
+                "constraint": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ConstraintRef"
+                    },
+                    "description": "This is a list of feature constraints."
+                },
+                "featureCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    },
+                    "minItems": 1,
+                    "description": "This is a list of Characteristics for a particular feature."
+                },
+                "featureRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FeatureRelationship"
+                    }
+                }
+            }
+        },
+        "FeatureRelationship": {
+            "type": "object",
+            "description": "Configuration feature",
+            "required": [
+                "name",
+                "relationshipType"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the target feature."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "This is the name of the target feature."
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "This is the type of the feature relationship."
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period for which this feature relationship is valid."
+                }
+            }
+        },
+        "Note": {
+            "type": "object",
+            "description": "Extra information about a given entity",
+            "required": [
+                "text",
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the note within its containing entity (may or may not be globally unique, depending on provider implementation)"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "author": {
+                    "type": "string",
+                    "description": "Author of the note"
+                },
+                "date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date of the note"
+                },
+                "text": {
+                    "type": "string",
+                    "description": "Text of the note"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "OrderItemActionType": {
+            "type": "string",
+            "description": "action to be performed on the product",
+            "enum": [
+                "add",
+                "modify",
+                "delete",
+                "noChange"
+            ]
+        },
+        "Place": {
+            "type": "object",
+            "description": "Place reference. Place defines the places where the products are sold or delivered.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the place"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Unique reference of the place"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A user-friendly name for the place, such as [Paris Store], [London Store], [Main Home]"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "PlaceRef": {
+            "type": "object",
+            "description": "Place reference. PlaceRef defines the placeRefs where the products are sold or delivered.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "Quantity": {
+            "type": "object",
+            "description": "An amount in a given unit",
+            "properties": {
+                "amount": {
+                    "default": 1,
+                    "type": "number",
+                    "format": "float",
+                    "description": "Numeric value in a given unit"
+                },
+                "units": {
+                    "type": "string",
+                    "description": "Unit"
+                }
+            }
+        },
+        "RelatedParty": {
+            "type": "object",
+            "description": "Related Entity reference. A related party defines party or party role linked to a specific entity.",
+            "required": [
+                "@referredType",
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "role": {
+                    "type": "string",
+                    "description": "Role played by the related party"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            }
+        },
+        "RelatedPlaceRefOrValue": {
+            "type": "object",
+            "description": "Related Entity reference. A related place defines a place described by reference or by value linked to a specific entity. The polymorphic attributes @type, @schemaLocation & @referredType are related to the place entity and not the RelatedPlaceRefOrValue class itself",
+            "required": [
+                "role"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the place"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Unique reference of the place"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A user-friendly name for the place, such as [Paris Store], [London Store], [Main Home]"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            }
+        },
+        "Resource": {
+            "type": "object",
+            "description": "Resource is an abstract entity that describes the common set of attributes shared by all concrete resources (e.g. TPE, EQUIPMENT) in the inventory.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of an instance of the resource. Required to be unique within the resource type.  Used in URIs as the identifier for specific instances of a type."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "The URI for the object itself."
+                },
+                "category": {
+                    "type": "string",
+                    "description": "Category of the concrete resource. e.g Gold, Silver for MSISDN concrete resource"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "free-text description of the resource"
+                },
+                "endOperatingDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "A date time( DateTime). The date till the resource is operating"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A string used to give a name to the resource"
+                },
+                "resourceVersion": {
+                    "type": "string",
+                    "description": "A field that identifies the specific version of an instance of a resource."
+                },
+                "startOperatingDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "A date time( DateTime). The date from which the resource is operating"
+                },
+                "activationFeature": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Feature"
+                    },
+                    "description": "Configuration features"
+                },
+                "administrativeState": {
+                    "$ref": "#/definitions/ResourceAdministrativeStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
+                "attachment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AttachmentRefOrValue"
+                    }
+                },
+                "note": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Note"
+                    }
+                },
+                "operationalState": {
+                    "$ref": "#/definitions/ResourceOperationalStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
+                "place": {
+                    "$ref": "#/definitions/RelatedPlaceRefOrValue"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    }
+                },
+                "resourceCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    }
+                },
+                "resourceRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ResourceRelationship"
+                    }
+                },
+                "resourceSpecification": {
+                    "$ref": "#/definitions/ResourceSpecificationRef"
+                },
+                "resourceStatus": {
+                    "$ref": "#/definitions/ResourceStatusType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
+                "usageState": {
+                    "$ref": "#/definitions/ResourceUsageStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "ResourceAdministrativeStateType": {
+            "type": "string",
+            "description": "ResourceAdministrativeStateType enumerations",
+            "enum": [
+                "locked",
+                "unlocked",
+                "shutdown"
+            ]
+        },
+        "ResourceOperationalStateType": {
+            "type": "string",
+            "description": "ResourceOperationalStateType enumerations",
+            "enum": [
+                "enable",
+                "disable"
+            ]
+        },
+        "ResourceOrder": {
+            "type": "object",
+            "description": "A Resource Order is a request to provision a set of Resources (logical and physical) triggered by the request to provision a Service through a Service Order",
+            "properties": {
+                "id": {
+                    "example": "9ba1047c38ce",
+                    "type": "string",
+                    "description": "Identifier of an instance of the Resource Order. Required to be unique within the resource type."
+                },
+                "href": {
+                    "example": "http://host/resourceOrder/9ba1047c38ce",
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink to access the order"
+                },
+                "cancellationDate": {
+                    "example": "2021-11-20T10:19:46+0000",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order is cancelled - if cancelled, in RFC3339 (subset of ISO8601) format"
+                },
+                "cancellationReason": {
+                    "example": "Cables no longer required by customer",
+                    "type": "string",
+                    "description": "Reason why the order is cancelled - if cancelled"
+                },
+                "category": {
+                    "example": "Premium",
+                    "type": "string",
+                    "description": "Used to categorize the order from a business perspective that can be useful for the order management system"
+                },
+                "completionDate": {
+                    "example": "2021-07-07T10:19:46+0000",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order was actually completed, in RFC3339 (subset of ISO8601) format"
+                },
+                "description": {
+                    "example": "7km of 6-fiber, double jacketed Optical Cable for Acme Inc",
+                    "type": "string",
+                    "description": "Free-text description of the Resource Order"
+                },
+                "expectedCompletionDate": {
+                    "example": "2021-07-07T10:19:46+0000",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order is expected to be completed, in RFC3339 (subset of ISO8601) format"
+                },
+                "externalId": {
+                    "example": "Customer Ref: 577e6b2be5e5",
+                    "type": "string",
+                    "description": "DEPRECATED: Use externalReference Instead. ID given by the consumer (to facilitate searches afterwards)"
+                },
+                "name": {
+                    "example": "7km of Optical Cable for Acme Inc",
+                    "type": "string",
+                    "description": "A string used to give a name to the Resource Order"
+                },
+                "orderDate": {
+                    "example": "2020-11-20T10:19:46+0000",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order was created, in RFC3339 (subset of ISO8601) format"
+                },
+                "orderType": {
+                    "type": "string",
+                    "description": "Name of the Resource Order type"
+                },
+                "priority": {
+                    "example": 0,
+                    "type": "integer",
+                    "description": "A way that can be used by consumers to prioritize orders in OM system (such as: 0 is the highest priority, and 4 the lowest)"
+                },
+                "requestedCompletionDate": {
+                    "example": "2021-07-07T10:19:46+0000",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Requested delivery date from the requestor perspective, in RFC3339 (subset of ISO8601) format"
+                },
+                "requestedStartDate": {
+                    "example": "2020-11-20T10:19:46+0000",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Order start date wished by the requestor, in RFC3339 (subset of ISO8601) format"
+                },
+                "startDate": {
+                    "example": "2020-11-20T10:19:46+0000",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order was actually started, in RFC3339 (subset of ISO8601) format"
+                },
+                "externalReference": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ExternalReference"
+                    }
+                },
+                "note": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Note"
+                    }
+                },
+                "orderItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ResourceOrderItem"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    }
+                },
+                "state": {
+                    "$ref": "#/definitions/ResourceOrderStateType"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "ResourceOrder_Create": {
+            "type": "object",
+            "description": "A Resource Order is a request to provision a set of Resources (logical and physical) triggered by the request to provision a Service through a Service Order\nSkipped properties: id,href,completionDate,orderDate,state,expectedCompletionDate,cancellationDate,cancellationReason",
+            "properties": {
+                "category": {
+                    "example": "Premium",
+                    "type": "string",
+                    "description": "Used to categorize the order from a business perspective that can be useful for the order management system"
+                },
+                "description": {
+                    "example": "7km of 6-fiber, double jacketed Optical Cable for Acme Inc",
+                    "type": "string",
+                    "description": "Free-text description of the Resource Order"
+                },
+                "externalId": {
+                    "example": "Customer Ref: 577e6b2be5e5",
+                    "type": "string",
+                    "description": "DEPRECATED: Use externalReference Instead. ID given by the consumer (to facilitate searches afterwards)"
+                },
+                "name": {
+                    "example": "7km of Optical Cable for Acme Inc",
+                    "type": "string",
+                    "description": "A string used to give a name to the Resource Order"
+                },
+                "orderType": {
+                    "type": "string",
+                    "description": "Name of the Resource Order type"
+                },
+                "priority": {
+                    "example": 0,
+                    "type": "integer",
+                    "description": "A way that can be used by consumers to prioritize orders in OM system (such as: 0 is the highest priority, and 4 the lowest)"
+                },
+                "requestedCompletionDate": {
+                    "example": "2021-07-07T10:19:46+0000",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Requested delivery date from the requestor perspective, in RFC3339 (subset of ISO8601) format"
+                },
+                "requestedStartDate": {
+                    "example": "2020-11-20T10:19:46+0000",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Order start date wished by the requestor, in RFC3339 (subset of ISO8601) format"
+                },
+                "startDate": {
+                    "example": "2020-11-20T10:19:46+0000",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order was actually started, in RFC3339 (subset of ISO8601) format"
+                },
+                "externalReference": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ExternalReference"
+                    }
+                },
+                "note": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Note"
+                    }
+                },
+                "orderItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ResourceOrderItem"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    }
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "ResourceOrder_Update": {
+            "type": "object",
+            "description": "A Resource Order is a request to provision a set of Resources (logical and physical) triggered by the request to provision a Service through a Service Order\nSkipped properties: id,href,orderDate,completionDate",
+            "properties": {
+                "cancellationDate": {
+                    "example": "2021-11-20T10:19:46+0000",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order is cancelled - if cancelled, in RFC3339 (subset of ISO8601) format"
+                },
+                "cancellationReason": {
+                    "example": "Cables no longer required by customer",
+                    "type": "string",
+                    "description": "Reason why the order is cancelled - if cancelled"
+                },
+                "category": {
+                    "example": "Premium",
+                    "type": "string",
+                    "description": "Used to categorize the order from a business perspective that can be useful for the order management system"
+                },
+                "description": {
+                    "example": "7km of 6-fiber, double jacketed Optical Cable for Acme Inc",
+                    "type": "string",
+                    "description": "Free-text description of the Resource Order"
+                },
+                "expectedCompletionDate": {
+                    "example": "2021-07-07T10:19:46+0000",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order is expected to be completed, in RFC3339 (subset of ISO8601) format"
+                },
+                "externalId": {
+                    "example": "Customer Ref: 577e6b2be5e5",
+                    "type": "string",
+                    "description": "DEPRECATED: Use externalReference Instead. ID given by the consumer (to facilitate searches afterwards)"
+                },
+                "name": {
+                    "example": "7km of Optical Cable for Acme Inc",
+                    "type": "string",
+                    "description": "A string used to give a name to the Resource Order"
+                },
+                "orderType": {
+                    "type": "string",
+                    "description": "Name of the Resource Order type"
+                },
+                "priority": {
+                    "example": 0,
+                    "type": "integer",
+                    "description": "A way that can be used by consumers to prioritize orders in OM system (such as: 0 is the highest priority, and 4 the lowest)"
+                },
+                "requestedCompletionDate": {
+                    "example": "2021-07-07T10:19:46+0000",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Requested delivery date from the requestor perspective, in RFC3339 (subset of ISO8601) format"
+                },
+                "requestedStartDate": {
+                    "example": "2020-11-20T10:19:46+0000",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Order start date wished by the requestor, in RFC3339 (subset of ISO8601) format"
+                },
+                "startDate": {
+                    "example": "2020-11-20T10:19:46+0000",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order was actually started, in RFC3339 (subset of ISO8601) format"
+                },
+                "externalReference": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ExternalReference"
+                    }
+                },
+                "note": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Note"
+                    }
+                },
+                "orderItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ResourceOrderItem"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    }
+                },
+                "state": {
+                    "$ref": "#/definitions/ResourceOrderStateType"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "ResourceOrderItem": {
+            "type": "object",
+            "description": "An identified part of the order. A resource order is decomposed into one or more order items.",
+            "properties": {
+                "id": {
+                    "example": "01",
+                    "type": "string",
+                    "description": "Identifier of the line item (such as a sequence number 01, 02, 03)"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "quantity": {
+                    "example": 7000,
+                    "type": "integer",
+                    "description": "Quantity ordered"
+                },
+                "action": {
+                    "$ref": "#/definitions/OrderItemActionType"
+                },
+                "appointment": {
+                    "$ref": "#/definitions/AppointmentRef"
+                },
+                "orderItemRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ResourceOrderItemRelationship"
+                    }
+                },
+                "resource": {
+                    "$ref": "#/definitions/ResourceRefOrValue"
+                },
+                "resourceSpecification": {
+                    "$ref": "#/definitions/ResourceSpecificationRef"
+                },
+                "state": {
+                    "$ref": "#/definitions/ResourceOrderItemStateType"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "ResourceOrderItemRef": {
+            "type": "object",
+            "properties": {
+                "itemId": {
+                    "example": "01",
+                    "type": "string",
+                    "description": "Identifier of the line item"
+                },
+                "resourceOrderHref": {
+                    "example": "http://host/resourceOrder/4b22f7cad22d",
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to the order to which this item belongs to"
+                },
+                "resourceOrderId": {
+                    "example": "4b22f7cad22d",
+                    "type": "string",
+                    "description": "Identifier of the resource order that this item belongs to"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "example": "PhysicalResource",
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "ResourceOrderItemRelationship": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "relationshipType": {
+                    "example": "dependency",
+                    "type": "string",
+                    "description": "Type of the order item relationship"
+                },
+                "orderItem": {
+                    "$ref": "#/definitions/ResourceOrderItemRef"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "ResourceOrderItemStateType": {
+            "type": "string",
+            "description": "Possible values for the state of the order item",
+            "enum": [
+                "acknowledged",
+                "rejected",
+                "pending",
+                "held",
+                "inProgress",
+                "cancelled",
+                "completed",
+                "failed",
+                "assessingCancellation",
+                "pendingCancellation"
+            ]
+        },
+        "ResourceOrderRef": {
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "example": "fde8c6a47450",
+                    "type": "string",
+                    "description": "The unique identifier of the related resource order"
+                },
+                "href": {
+                    "example": "http://host/resourceOrder/fde8c6a47450",
+                    "type": "string",
+                    "description": "Hyperlink to access the related Resource Order"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation"
+                }
+            }
+        },
+        "ResourceOrderStateType": {
+            "type": "string",
+            "description": "Possible values for the state of the order",
+            "enum": [
+                "acknowledged",
+                "rejected",
+                "pending",
+                "held",
+                "inProgress",
+                "cancelled",
+                "completed",
+                "failed",
+                "partial",
+                "assessingCancellation",
+                "pendingCancellation"
+            ]
+        },
+        "ResourceRef": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "ResourceRefOrValue": {
+            "type": "object",
+            "description": "Resource is an abstract entity that describes the common set of attributes shared by all concrete resources. The polymorphic attributes @type, @schemaLocation & @referredType are related to the Resource entity and not the related ResourceRefOrValue class itself",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of an instance of the resource. Required to be unique within the resource type.  Used in URIs as the identifier for specific instances of a type."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "The URI for the object itself."
+                },
+                "category": {
+                    "type": "string",
+                    "description": "Category of the concrete resource. e.g Gold, Silver for MSISDN concrete resource"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "free-text description of the resource"
+                },
+                "endOperatingDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "A date time( DateTime). The date till the resource is operating"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A string used to give a name to the resource"
+                },
+                "resourceVersion": {
+                    "type": "string",
+                    "description": "A field that identifies the specific version of an instance of a resource."
+                },
+                "startOperatingDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "A date time( DateTime). The date from which the resource is operating"
+                },
+                "activationFeature": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Feature"
+                    },
+                    "description": "Configuration features"
+                },
+                "administrativeState": {
+                    "$ref": "#/definitions/ResourceAdministrativeStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
+                "attachment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AttachmentRefOrValue"
+                    }
+                },
+                "note": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Note"
+                    }
+                },
+                "operationalState": {
+                    "$ref": "#/definitions/ResourceOperationalStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
+                "place": {
+                    "$ref": "#/definitions/RelatedPlaceRefOrValue"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    }
+                },
+                "resourceCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    }
+                },
+                "resourceRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ResourceRelationship"
+                    }
+                },
+                "resourceSpecification": {
+                    "$ref": "#/definitions/ResourceSpecificationRef"
+                },
+                "resourceStatus": {
+                    "$ref": "#/definitions/ResourceStatusType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
+                "usageState": {
+                    "$ref": "#/definitions/ResourceUsageStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            }
+        },
+        "ResourceRelationship": {
+            "type": "object",
+            "description": "Linked resources to the one instantiate, such as [bundled] if the resource is a bundle and you want to describe the bundled resources inside this bundle; [reliesOn] if the resource needs another already owned resource to rely on (e.g. an option on an already owned mobile access resource) [targets] or [isTargeted] (depending on the way of expressing the link) for any other kind of links that may be useful",
+            "required": [
+                "relationshipType",
+                "resource"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "relationshipType": {
+                    "example": "bundled",
+                    "type": "string",
+                    "description": "Type of the resource relationship, such as [bundled] if the resource is a bundle and you want to describe the bundled resources inside this bundle; [reliesOn] if the resource needs another already owned resource to rely on (eg: an option on an already owned mobile access resource) [targets] or [isTargeted] (depending on the way of expressing the link) for any other kind of links that may be useful"
+                },
+                "resource": {
+                    "$ref": "#/definitions/ResourceRefOrValue"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "ResourceSpecificationRef": {
+            "type": "object",
+            "description": "Resources are physical or non-physical components (or some combination of these) within an enterprise's infrastructure or inventory. They are typically consumed or used by services (for example a physical port assigned to a service) or contribute to the realization of a Product (for example, a SIM card). They can be drawn from the Application, Computing and Network domains, and include, for example, Network Elements, software, IT systems, content and information, and technology components.\nA ResourceSpecification is an abstract base class for representing a generic means for implementing a particular type of Resource. In essence, a ResourceSpecification defines the common attributes and relationships of a set of related Resources, while Resource defines a specific instance that is based on a particular ResourceSpecification.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "version": {
+                    "type": "string",
+                    "description": "Resource Specification version"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "ResourceStatusType": {
+            "type": "string",
+            "description": "ResourceStatusType enumerations",
+            "enum": [
+                "standby",
+                "alarm",
+                "available",
+                "reserved",
+                "unknown",
+                "suspended"
+            ]
+        },
+        "ResourceUsageStateType": {
+            "type": "string",
+            "description": "ResourceUsageStateType enumerations",
+            "enum": [
+                "idle",
+                "active",
+                "busy"
+            ]
+        },
+        "TaskStateType": {
+            "type": "string",
+            "description": "Possible values for the state of a task",
+            "enum": [
+                "accepted",
+                "terminatedWithError",
+                "inProgress",
+                "done"
+            ]
+        },
+        "TimePeriod": {
+            "type": "object",
+            "description": "A period of time, either as a deadline (endDateTime only) a startDateTime only, or both",
+            "properties": {
+                "endDateTime": {
+                    "example": "1985-04-12T23:20:50.52Z",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "End of the time period, using IETC-RFC-3339 format"
+                },
+                "startDateTime": {
+                    "example": "1985-04-12T23:20:50.52Z",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Start of the time period, using IETC-RFC-3339 format"
+                }
+            }
+        },
+        "EventSubscription": {
+            "type": "object",
+            "description": "Sets the communication endpoint address the service instance must use to deliver notification information",
+            "required": [
+                "id",
+                "callback"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Id of the listener"
+                },
+                "callback": {
+                    "type": "string",
+                    "description": "The callback being registered."
+                },
+                "query": {
+                    "type": "string",
+                    "description": "additional data to be passed"
+                }
+            }
+        },
+        "EventSubscriptionInput": {
+            "type": "object",
+            "description": "Sets the communication endpoint address the service instance must use to deliver notification information",
+            "required": [
+                "callback"
+            ],
+            "properties": {
+                "callback": {
+                    "type": "string",
+                    "description": "The callback being registered."
+                },
+                "query": {
+                    "type": "string",
+                    "description": "additional data to be passed"
+                }
+            }
+        },
+        "ResourceOrderCreateEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/ResourceOrderCreateEventPayload"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                }
+            }
+        },
+        "ResourceOrderCreateEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "resourceOrder": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/ResourceOrder"
+                }
+            }
+        },
+        "ResourceOrderAttributeValueChangeEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                },
+                "fieldPath": {
+                    "type": "string",
+                    "description": "The path identifying the object field concerned by this notification."
+                },
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/ResourceOrderAttributeValueChangeEventPayload"
+                }
+            }
+        },
+        "ResourceOrderAttributeValueChangeEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "resourceOrder": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/ResourceOrder"
+                }
+            }
+        },
+        "ResourceOrderStateChangeEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/ResourceOrderStateChangeEventPayload"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                }
+            }
+        },
+        "ResourceOrderStateChangeEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "resourceOrder": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/ResourceOrder"
+                }
+            }
+        },
+        "ResourceOrderDeleteEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/ResourceOrderDeleteEventPayload"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                }
+            }
+        },
+        "ResourceOrderDeleteEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "resourceOrder": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/ResourceOrder"
+                }
+            }
+        },
+        "ResourceOrderInformationRequiredEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                },
+                "fieldPath": {
+                    "type": "string",
+                    "description": "The path identifying the object field concerned by this notification."
+                },
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/ResourceOrderInformationRequiredEventPayload"
+                }
+            }
+        },
+        "ResourceOrderInformationRequiredEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "resourceOrder": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/ResourceOrder"
+                }
+            }
+        },
+        "CancelResourceOrderCreateEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/CancelResourceOrderCreateEventPayload"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                }
+            }
+        },
+        "CancelResourceOrderCreateEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "cancelResourceOrder": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/CancelResourceOrder"
+                }
+            }
+        },
+        "CancelResourceOrderStateChangeEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/CancelResourceOrderStateChangeEventPayload"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                }
+            }
+        },
+        "CancelResourceOrderStateChangeEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "cancelResourceOrder": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/CancelResourceOrder"
+                }
+            }
+        },
+        "CancelResourceOrderInformationRequiredEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                },
+                "fieldPath": {
+                    "type": "string",
+                    "description": "The path identifying the object field concerned by this notification."
+                },
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/CancelResourceOrderInformationRequiredEventPayload"
+                }
+            }
+        },
+        "CancelResourceOrderInformationRequiredEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "cancelResourceOrder": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/CancelResourceOrder"
+                }
+            }
+        },
+        "Error": {
+            "description": "Used when an API throws an Error, typically with a HTTP error response-code (3xx, 4xx, 5xx)",
+            "type": "object",
+            "required": [
+                "code",
+                "reason"
+            ],
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "description": "Application relevant detail, defined in the API or a common list."
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "Explanation of the reason for the error which can be shown to a client user."
+                },
+                "message": {
+                    "type": "string",
+                    "description": "More details and corrective actions related to the error which can be shown to a client user."
+                },
+                "status": {
+                    "type": "string",
+                    "description": "HTTP Error code extension"
+                },
+                "referenceError": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URI of documentation describing the error."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class."
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name."
+                }
+            }
+        }
+    }
+}

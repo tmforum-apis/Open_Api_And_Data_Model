@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "FileDescriptor.schema.json",
+  "title": "FileDescriptor",
+  "definitions": {
+    "FileDescriptor": {
+      "$id": "FileDescriptor",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "fileName": {
+          "type": "string"
+        },
+        "fileLocation": {
+          "type": "string"
+        },
+        "readyTime": {
+          "type":"string",
+          "format":"date-time"
+        }
+      }
+    }
+  }
+}

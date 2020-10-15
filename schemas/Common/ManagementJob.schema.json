@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ManagementJob.schema.json",
+  "title": "ManagementJob",
+  "definitions": {
+    "ManagementJob": {
+      "type": "object",
+      "description": "",
+      "properties": {
+        "adminState": {
+          "$ref": "AdministrativeState.schema.json#/definitions/AdministrativeState"
+        },
+        "creationTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The measurement job creation time."
+        },
+        "executionState": {
+          "$ref": "ExecutionState.schema.json#/definitions/ExecutionStateType"
+        },
+        "fileTransferData": {
+          "type": "array",
+          "items": {
+            "$ref": "FileTransferData.schema.json#/definitions/FileTransferData"
+          },
+          "minItems": 1
+        },
+        "jobId": {
+          "type": "string",
+          "description": "The ID of the management job."
+        },
+        "jobPriority": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10,
+          "default": 5,
+          "description": "The priority of the management job. The way the management application will use the JobPriority to schedule job execution is application specific and outside the scope. Integer, limited to a range of 1 to 10."
+        },
+        "lastModifiedTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The last time that a measurement job was modified."
+        },
+        "scheduleDefinition": {
+          "type": "array",
+          "items": {
+            "$ref": "ScheduleDefinition.schema.json#/definitions/ScheduleDefinition"
+          },
+          "minItems": 0,
+          "maxItems": 1
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

@@ -1,32 +1,32 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "AgreementAuthorization.schema.json",
-    "title": "AgreementAuthorization",
-    "definitions": {
-        "AgreementAuthorization": {
-            "$id": "#AgreementAuthorization",
-            "description": "A business participant that is responsible for approving the agreement.",
-            "type": "object",
-            "properties": {
-                "date": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "The date associated with the authorization state."
-                },
-                "signatureRepresentation": {
-                    "type": "string",
-                    "description": "Indication that represents whether the signature is a physical paper signature or a digital signature."
-                },
-                "state": {
-                    "type": "string",
-                    "description": "Current status of the authorization, for example in process, approved, rejected."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AgreementAuthorization.schema.json",
+  "title": "AgreementAuthorization",
+  "definitions": {
+    "AgreementAuthorization": {
+      "$id": "#AgreementAuthorization",
+      "description": "A business participant that is responsible for approving the agreement.",
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date associated with the authorization state."
+        },
+        "signatureRepresentation": {
+          "type": "string",
+          "description": "Indication that represents whether the signature is a physical paper signature or a digital signature."
+        },
+        "state": {
+          "type": "string",
+          "description": "Current status of the authorization, for example in process, approved, rejected."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

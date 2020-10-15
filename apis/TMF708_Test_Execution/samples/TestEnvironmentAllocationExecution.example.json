@@ -1,0 +1,24 @@
+{
+  "id": "418b253c-0cf3-4f48-b64e-93f8db9b614a",
+  "href": "https://mycsp:8080/tmf-api/testExecution/v4/testEnvironmentAllocationExecution/418b253c-0cf3-4f48-b64e-93f8db9b614a",
+  "dataCorrelationId": "156cf43a-fd6a-488e-a8dd-6b01ccef12cd",
+  "resourceManagerUrl": "https://myserver.com/resourceManager",
+  "testScenario": {
+    "id": "35776d4f-1851-435c-8573-802438f41e7a",
+    "href": "https://mycsp:8080/tmf-api/testScenario/v4/testScenario/35776d4f-1851-435c-8573-802438f41e7a",
+    "@referredType": "TestScenario"
+  },
+  "concreteResourceMapping": [
+    {
+      "abstractResource": "phone",
+      "concreteResource": [
+        {
+          "name": "iPhone_1289"
+        }
+      ]
+    }
+  ],
+  "state": "completed",
+  "@baseType": "Execution",
+  "@type": "TestEnvironmentAllocationExecution"
+}

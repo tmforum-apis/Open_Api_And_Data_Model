@@ -18,7 +18,7 @@
                     "format": "date-time"
                 },
                 "alternateService": {
-                    "$ref": "ServiceRestriction.schema.json#/definitions/ServiceRestriction"
+                    "$ref": "ServiceRefOrValue.schema.json#/definitions/ServiceRefOrValue"
                 }
             },
             "allOf": [

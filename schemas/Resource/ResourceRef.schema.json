@@ -7,14 +7,6 @@
             "$id": "#ResourceRef",
             "type": "object",
             "properties": {
-                "name": {
-                    "type": "string",
-                    "description": "Name of the resource"
-                },
-                "value": {
-                    "type": "string",
-                    "description": "The resource value that can be used to identify a resource with a public key (e.g.: a tel nr, an msisdn)"
-                }
             },
             "allOf": [
                 {

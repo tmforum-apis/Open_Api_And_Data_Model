@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "RefundStatusExampleType.schema.json",
+    "title": "RefundStatusExampleType",
+    "definitions": {
+        "RefundStatusExampleType": {
+            "$id": "#RefundStatusExampleType",
+            "type": "string",
+            "description": "Possible values for the status of a refund",
+            "enum": [
+                "pendingAuthorization",
+                "authorized",
+                "captured",
+                "failed",
+                "canceled",
+                "denied",
+                "done"
+            ]
+        }
+    }
+}

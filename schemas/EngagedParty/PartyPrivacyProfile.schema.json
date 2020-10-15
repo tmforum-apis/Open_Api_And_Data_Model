@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PartyPrivacyProfile.schema.json",
+  "title": "PartyPrivacyProfile",
+  "definitions": {
+    "PartyPrivacyProfile": {
+      "$id": "#PartyPrivacyProfile",
+      "type": "object",
+      "description": "A Party Privacy Profile represents the set of Privacy settings defined for a Party",
+      "properties": {
+        "applicableForParty": {
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty",
+          "description": "The party to whom the privacy profile applies. Could be a minor where the agreeing party is a parent, an organization where the agreeing party is authorized to make such agreements, or some individual for whom the agreeing party has authorization (e.g. power of attorney). If empty, the agreeing party is the party to whom the profile applies."
+        },
+        "agreedByParty": {
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty",
+          "description": "The party who agreed to the privacy profile. Not necessarily the party to whom the profile applies."
+        },
+        "agreement": {
+          "$ref": "../EngagedParty/PartyPrivacyAgreementRef.schema.json#PartyPrivacyAgreementRef",
+          "description": "An agreement under which the privacy profile was produced."
+        },
+        "creationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date on which the PartyPrivacyProfile was created"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the privacy profile"
+        },
+        "href": {
+          "type": "string",
+          "description": "URI reference of the privacy profile allowing navigation to the resource"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the privacy profile"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the privacy profile"
+        },
+        "partyPrivacyProfileCharacteristic": {
+          "type": "array",
+          "description": "List of characteristics of the privacy profile",
+          "items": {
+            "$ref": "../EngagedParty/PartyPrivacyProfileCharacteristic.schema.json#PartyPrivacyProfileCharacteristic"
+          }
+        },
+        "partyPrivacyProfileSpecification": {
+          "$ref": "../EngagedParty/PartyPrivacyProfileSpecificationRef.schema.json#PartyPrivacyProfileSpecificationRef",
+          "description": "The specification from which this profile was instantiated"
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of this profile (for example: created, terminated, etc.)"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period of time for which this profile is valid, depending on regulations or business consideration the profile may expire and need to be renegotiated."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

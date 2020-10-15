@@ -1,35 +1,35 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ServiceTestSpecificationRef.schema.json",
-    "title": "ServiceTestSpecificationRef",
-    "definitions": {
-        "ServiceTestSpecificationRef": {
-            "$id": "#ServiceTestSpecificationRef",
-            "type": "object",
-            "description": "The service test specification used by the service test.",
-            "properties": {
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Hyperlink to access a service test specification."
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of a service test specification."
-                },
-                "version": {
-                    "type": "string",
-                    "description": "Version of a service test specification "
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ServiceTestSpecificationRef.schema.json",
+  "title": "ServiceTestSpecificationRef",
+  "definitions": {
+    "ServiceTestSpecificationRef": {
+      "$id": "#ServiceTestSpecificationRef",
+      "type": "object",
+      "description": "The service test specification used by the service test.",
+      "properties": {
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink to access a service test specification."
+        },
+        "id": {
+          "type": "string",
+          "description": "Identifier of a service test specification."
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of a service test specification "
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Extensible.schema.json#Extensible"
+        }
+      ]
     }
+  }
 }

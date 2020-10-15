@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "NonFunctionalTestResult.schema.json",
+  "title": "NonFunctionalTestResult",
+  "definitions": {
+    "NonFunctionalTestResult": {
+      "$id": "#NonFunctionalTestResult",
+      "type": "object",
+      "description": "A managed non-functional test result resource",
+      "required": [
+        "nonFunctionalTestResultDefinition",
+        "testExecution"
+      ],
+      "properties": {
+        "nonFunctionalTestResultDefinition": {
+          "$ref": "../Common/NonFunctionalTestResultDefinition.schema.json#NonFunctionalTestResultDefinition"
+        },
+        "testExecution": {
+          "$ref": "../Common/NonFunctionalTestExecutionRefOrValue.schema.json#NonFunctionalTestExecutionRefOrValue"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Resource/ResourceEntity.schema.json#ResourceEntity"
+        }
+      ]
+    }
+  }
+}

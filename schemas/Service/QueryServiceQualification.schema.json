@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "QueryServiceQualification.schema.json",
+    "title": "QueryServiceQualification",
+    "definitions": {
+        "QueryServiceQualification": {
+            "$id": "#QueryServiceQualification",
+            "type": "object",
+            "description": "QueryServiceQualification is used to retrieve a list of services that are technically available in the context of the interaction (place, party, service characteristics, ...).",
+            "properties": {
+                "searchCriteria": {
+                    "description": "Search structure to retrieve eligible service specification",
+                    "$ref": "ServiceQualificationItem.schema.json#ServiceQualificationItem"
+                },
+                "serviceQualificationItem": {
+                    "type": "array",
+                    "description": "A list of service qualification items.",
+                    "items": {
+                        "$ref": "ServiceQualificationItem.schema.json#ServiceQualificationItem"
+                    }
+                },
+                "queryServiceQualificationDate": {
+                    "type": "string",
+                    "description": "Date when the serviceQualification was submitted",
+                    "format": "date-time"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Service/ServiceQualification.schema.json#ServiceQualification"
+                }
+            ]
+        }
+    }
+}

@@ -1,23 +1,23 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "AgreementRef.schema.json",
-    "title": "AgreementRef",
-    "definitions": {
-        "AgreementRef": {
-            "$id": "#AgreementRef",
-            "description": "Agreement reference. An agreement represents a contract or arrangement, either written or verbal and sometimes enforceable by law, such as a service level agreement or a customer price agreement. An agreement involves a number of other business entities, such as products, services, and resources and/or their specifications.",
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "description": "Name of the agreement"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AgreementRef.schema.json",
+  "title": "AgreementRef",
+  "definitions": {
+    "AgreementRef": {
+      "$id": "#AgreementRef",
+      "description": "Agreement reference. An agreement represents a contract or arrangement, either written or verbal and sometimes enforceable by law, such as a service level agreement or a customer price agreement. An agreement involves a number of other business entities, such as products, services, and resources and/or their specifications.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the agreement"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        }
+      ]
     }
+  }
 }

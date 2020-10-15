@@ -5,33 +5,17 @@
     "definitions": {
         "ResourceSpecificationRef": {
             "$id": "#ResourceSpecificationRef",
-            "description": "Resource Specification reference: The ResourceSpecification is required to realize a ProductSpecification.",
+            "description": "Resources are physical or non-physical components (or some combination of these) within an enterprise's infrastructure or inventory. They are typically consumed or used by services (for example a physical port assigned to a service) or contribute to the realization of a Product (for example, a SIM card). They can be drawn from the Application, Computing and Network domains, and include, for example, Network Elements, software, IT systems, content and information, and technology components.\nA ResourceSpecification is an abstract base class for representing a generic means for implementing a particular type of Resource. In essence, a ResourceSpecification defines the common attributes and relationships of a set of related Resources, while Resource defines a specific instance that is based on a particular ResourceSpecification.",
             "type": "object",
             "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the resource specification"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the resource specification"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the requiredResourceSpecification"
-                },
                 "version": {
-                    "type": "string",
-                    "description": "Resource specification version"
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
+                    "type": "string", 
+                    "description": "Resource Specification version"
                 }
             },
             "allOf": [
                 {
-                    "$ref": "../Common/Entity.schema.json#Entity"
+                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
                 }
             ]
         }

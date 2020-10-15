@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ParentAlarm.schema.json",
+  "title": "ParentAlarm",
+  "definitions": {
+    "ParentAlarm": {
+      "$id": "#ParentAlarm",
+      "type": "object",
+      "description": "Indicates the alarms attached to this alarm as parent alarms from a correlation point of view. ",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,23 +1,23 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "PaymentRef.schema.json",
-    "title": "PaymentRef",
-    "definitions": {
-        "PaymentRef": {
-            "$id": "#PaymentRef",
-            "type": "object",
-            "description": "If an immediate payment has been done at the product order submission, the payment information are captured and stored (as a reference) in the order.",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "description": "A name for the payment"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PaymentRef.schema.json",
+  "title": "PaymentRef",
+  "definitions": {
+    "PaymentRef": {
+      "$id": "#PaymentRef",
+      "type": "object",
+      "description": "If an immediate payment has been done at the product order submission, the payment information are captured and stored (as a reference) in the order.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "A name for the payment"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        }
+      ]
     }
+  }
 }

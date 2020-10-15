@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "TargetShipmentSchema.schema.json",
+    "title": "TargetShipmentSchema",
+    "definitions": {
+        "TargetShipmentSchema": {
+            "$id": "#TargetShipmentSchema",
+            "type": "object",
+            "description": "The reference object to the schema and type of target shipment which is described by shipment specification",
+            "required": [
+                "@type",
+                "@schemaLocation"
+            ],
+            "properties": {
+                "@type": {
+                    "type": "string",
+                    "description": "Class type of the target shipment"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "description": "This field provides a link to the schema describing the target shipment\r\n"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,73 @@
+{
+    "address": {
+        "id": "1a2b3c",
+        "href": "https://host:port/location/geographicAddress/1a2b3c",
+        "streetNr": "1",
+        "streetName": "UnterDenLinden",
+        "city": "Berlin",
+        "country": "Germany",
+        "postcode": "10117",
+        "@type": "GeographicAddress",
+        "geographicLocation":
+        {
+            "id": "afuih78g"
+        }
+    },
+    "birthdate": "1970-11-02",
+    "email": "jane.doe@email.com",
+    "email_verified": true,
+    "family_name": "Doe",
+    "gender": "female",
+    "given_name": "Jane",
+    "legalId": [
+        {
+            "identificationType": "passport",
+            "identificationId": "51DD1234",
+            "issuingAuthority": "US Government",
+            "issuingDate": "2017-10-22T07:49:25.246Z",
+            "validFor": {
+                "startDateTime": "2017-10-22T07:49:25.246Z",
+                "endDateTime": "2027-10-21T07:49:25.246Z"
+            },
+            "attachment": [
+                {
+                    "attachmentType": "passportCopy",
+                    "isRef": false,
+                    "name": "PassportCopy321.pdf",
+                    "description": "Scanned copy of the passport",
+                    "mimeType": "application/pdf",
+                    "url": "http://DocumentManager/321/PassportCopy321.pdf"
+                }
+            ]
+        }
+    ],
+    "locale": "en",
+    "middle_name": "Mary",
+    "name": "Jane Mary Doe",
+    "nickname": "JaneDoe",
+    "phone_number": "+1 (425) 555-1212",
+    "phone_number_verified": true,
+    "picture": "https://some.url.com/janeDoe.jpg",
+    "preferred_username": "janeDoe",
+    "profile": "https://my.blog.com/janeDoe",
+    "sub": "a066ffd5-f685-43bc-ad57-bfb7639decb0",
+    "userAssets": [{
+        "id": "2289c5f7-7e14-41a5-a71d-5ba811618ad0",
+        "assetType": "landline",
+        "entityType": "service",
+        "role": "authorizedUser",
+        "entitlement": [{
+            "action": "string",
+            "function": "string"
+        }],
+        "href": "https://host:port/userInfo/userAssets/2289c5f7-7e14-41a5-a71d-5ba811618ad0",
+        "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/UserAsser.schema.json",
+        "@type": "UserAsset"
+    }],
+    "website": "https://janedoe.com",
+    "zoneinfo": "America/Los_Angeles",
+    "id": "a066ffd5-f685-43bc-ad57-bfb7639decb0",
+    "href": "https://host:port/userInfo/a066ffd5-f685-43bc-ad57-bfb7639decb0",
+    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/UserInfo.schema.json",
+    "@type": "UserInfo"
+}

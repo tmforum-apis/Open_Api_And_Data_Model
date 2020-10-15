@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Granularity.schema.json",
+  "title": "Granularity",
+  "definitions": {
+    "Granularity": {
+      "$id": "#Granularity",
+      "description": "Sampling rate of the collection or production of performance indicators.",
+      "type": "string",
+      "enum": [
+        "g_1mn",
+        "g_5mn",
+        "g_15mn",
+        "g_30mn",
+        "g_1h",
+        "g_24h",
+        "g_1m",
+        "g_1y",
+        "na"
+      ]
+    }
+  }
+}

@@ -1,18 +1,18 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "TroubleTicketRef.schema.json",
-    "title": "TroubleTicketRef",
-    "definitions": {
-        "TroubleTicketRef": {
-            "$id": "#TroubleTicketRef",
-            "description": "TroubleTicket reference, for when a Trouble Ticket is used by other entities",
-            "type": "object",
-            "properties": {},
-            "allOf": [
-                {
-                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TroubleTicketRef.schema.json",
+  "title": "TroubleTicketRef",
+  "definitions": {
+    "TroubleTicketRef": {
+      "$id": "#TroubleTicketRef",
+      "description": "TroubleTicket reference, for when a Trouble Ticket is used by other entities",
+      "type": "object",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
         }
+      ]
     }
+  }
 }

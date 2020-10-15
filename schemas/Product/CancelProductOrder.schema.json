@@ -1,25 +1,25 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "CancelProductOrder.schema.json",
-    "title": "CancelProductOrder",
-    "definitions": {
-        "CancelProductOrder": {
-            "$id": "#CancelProductOrder",
-            "description": "Request for cancellation an existing product order",
-            "type": "object",
-            "required": [
-                "productOrder"
-            ],
-            "properties": {
-                "productOrder": {
-                    "$ref": "../Customer/ProductOrderRef.schema.json#ProductOrderRef"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/EntityRef.schema.json#CancelOrder"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "CancelProductOrder.schema.json",
+  "title": "CancelProductOrder",
+  "definitions": {
+    "CancelProductOrder": {
+      "$id": "#CancelProductOrder",
+      "description": "Request for cancellation an existing product order",
+      "type": "object",
+      "required": [
+        "productOrder"
+      ],
+      "properties": {
+        "productOrder": {
+          "$ref": "../Customer/ProductOrderRef.schema.json#ProductOrderRef"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#CancelOrder"
+        }
+      ]
     }
+  }
 }

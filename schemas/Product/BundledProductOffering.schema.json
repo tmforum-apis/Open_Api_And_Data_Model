@@ -1,39 +1,39 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "BundledProductOffering.schema.json",
-    "title": "BundledProductOffering",
-    "definitions": {
-        "BundledProductOffering": {
-            "$id": "#BundledProductOffering",
-            "type": "object",
-            "description": "A type of ProductOffering that belongs to a grouping of ProductOfferings made available to the market. It inherits of all attributes of ProductOffering.",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "Unique reference of the BundledProductOffering"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the BundledProductOffering"
-                },
-                "lifecycleStatus": {
-                    "type": "string",
-                    "description": "Used to indicate the current lifecycle status"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the BundledProductOffering"
-                },
-                "bundledProductOfferingOption": {
-                    "$ref": "../Product/BundledProductOfferingOption.schema.json#BundledProductOfferingOption",
-                    "description": "A set of numbers that specifies the lower and upper limits for a ProductOffering that can be procured as part of the related BundledProductOffering. Values can range from 0 to unbounded."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BundledProductOffering.schema.json",
+  "title": "BundledProductOffering",
+  "definitions": {
+    "BundledProductOffering": {
+      "$id": "#BundledProductOffering",
+      "type": "object",
+      "description": "A type of ProductOffering that belongs to a grouping of ProductOfferings made available to the market. It inherits of all attributes of ProductOffering.",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "Unique reference of the BundledProductOffering"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the BundledProductOffering"
+        },
+        "lifecycleStatus": {
+          "type": "string",
+          "description": "Used to indicate the current lifecycle status"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the BundledProductOffering"
+        },
+        "bundledProductOfferingOption": {
+          "$ref": "../Product/BundledProductOfferingOption.schema.json#BundledProductOfferingOption",
+          "description": "A set of numbers that specifies the lower and upper limits for a ProductOffering that can be procured as part of the related BundledProductOffering. Values can range from 0 to unbounded."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Extensible.schema.json#Extensible"
+        }
+      ]
     }
+  }
 }

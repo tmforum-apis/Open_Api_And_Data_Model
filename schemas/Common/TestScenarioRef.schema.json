@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TestScenarioRef.schema.json",
+  "title": "TestScenarioRef",
+  "definitions": {
+    "TestScenarioRef": {
+      "$id": "#TestScenarioRef",
+      "type": "object",
+      "description": "A reference to a managed test scenario resource",
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        }
+      ]
+    }
+  }
+}

@@ -1,57 +1,57 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "PriceAlteration.schema.json",
-    "title": "PriceAlteration",
-    "definitions": {
-        "PriceAlteration": {
-            "$id": "#PriceAlteration",
-            "description": "Is an amount, usually of money, that modifies the price charged for an order item.",
-            "type": "object",
-            "required": [
-                "priceType",
-                "price"
-            ],
-            "properties": {
-                "applicationDuration": {
-                    "type": "integer",
-                    "description": "Duration during which the alteration applies on the order item price (for instance 2 months free of charge for the recurring charge)"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "A narrative that explains in detail the semantics of this order item price alteration"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the order item price alteration"
-                },
-                "productOfferingPrice": {
-                    "$ref": "../Product/ProductOfferingPriceRef.schema.json#ProductOfferingPriceRef"
-                },
-                "priceType": {
-                    "type": "string",
-                    "description": "A category that describes the price such as recurring, one time and usage."
-                },
-                "priority": {
-                    "type": "integer",
-                    "description": "Priority level for applying this alteration among all the defined alterations on the order item price"
-                },
-                "recurringChargePeriod": {
-                    "type": "string",
-                    "description": "Could be month, week..."
-                },
-                "unitOfMeasure": {
-                    "type": "string",
-                    "description": "Could be minutes, GB..."
-                },
-                "price": {
-                    "$ref": "../Customer/Price.schema.json#Price"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PriceAlteration.schema.json",
+  "title": "PriceAlteration",
+  "definitions": {
+    "PriceAlteration": {
+      "$id": "#PriceAlteration",
+      "description": "Is an amount, usually of money, that modifies the price charged for an order item.",
+      "type": "object",
+      "required": [
+        "priceType",
+        "price"
+      ],
+      "properties": {
+        "applicationDuration": {
+          "type": "integer",
+          "description": "Duration during which the alteration applies on the order item price (for instance 2 months free of charge for the recurring charge)"
+        },
+        "description": {
+          "type": "string",
+          "description": "A narrative that explains in detail the semantics of this order item price alteration"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the order item price alteration"
+        },
+        "productOfferingPrice": {
+          "$ref": "../Product/ProductOfferingPriceRef.schema.json#ProductOfferingPriceRef"
+        },
+        "priceType": {
+          "type": "string",
+          "description": "A category that describes the price such as recurring, one time and usage."
+        },
+        "priority": {
+          "type": "integer",
+          "description": "Priority level for applying this alteration among all the defined alterations on the order item price"
+        },
+        "recurringChargePeriod": {
+          "type": "string",
+          "description": "Could be month, week..."
+        },
+        "unitOfMeasure": {
+          "type": "string",
+          "description": "Could be minutes, GB..."
+        },
+        "price": {
+          "$ref": "../Customer/Price.schema.json#Price"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

@@ -1,18 +1,18 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ProductActionType.schema.json",
-    "title": "ProductActionType",
-    "definitions": {
-        "ProductActionType": {
-            "$id": "#ProductActionType",
-            "description": "action to be performed on the product",
-            "type": "string",
-            "enum": [
-                "add",
-                "modify",
-                "delete",
-                "noChange"
-            ]
-        }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ProductActionType.schema.json",
+  "title": "ProductActionType",
+  "definitions": {
+    "ProductActionType": {
+      "$id": "#ProductActionType",
+      "description": "action to be performed on the product",
+      "type": "string",
+      "enum": [
+        "add",
+        "modify",
+        "delete",
+        "noChange"
+      ]
     }
+  }
 }

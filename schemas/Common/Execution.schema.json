@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Execution.schema.json",
+  "title": "Execution",
+  "definitions": {
+    "Execution": {
+      "$id": "#Execution",
+      "type": "object",
+      "description": "The base for all Execution resources",
+      "properties": {
+        "dataCorrelationId": {
+          "type": "string",
+          "description": "Data correlation ID passed in by the API consumer",
+          "example": "aac9969d-219d-4ff1-b256-1765dcf9b342"
+        },
+        "generalTestArtifact": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/GeneralTestArtifactRef.schema.json#GeneralTestArtifactRef"
+          }
+        },
+        "state": {
+          "$ref": "../Common/ExecutionStateType.schema.json#ExecutionStateType"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Resource/ResourceEntity.schema.json#ResourceEntity"
+        }
+      ]
+    }
+  }
+}

@@ -1,20 +1,20 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ServiceStateType.schema.json",
-    "title": "ServiceStateType",
-    "definitions": {
-        "ServiceStateType": {
-            "$id": "#ServiceStateType",
-            "type": "string",
-            "description": "Valid values for the lifecycle state of the service",
-            "enum": [
-                "feasibilityChecked",
-                "designed",
-                "reserved",
-                "inactive",
-                "active",
-                "terminated"
-            ]
-        }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ServiceStateType.schema.json",
+  "title": "ServiceStateType",
+  "definitions": {
+    "ServiceStateType": {
+      "$id": "#ServiceStateType",
+      "type": "string",
+      "description": "Valid values for the lifecycle state of the service",
+      "enum": [
+        "feasibilityChecked",
+        "designed",
+        "reserved",
+        "inactive",
+        "active",
+        "terminated"
+      ]
     }
+  }
 }

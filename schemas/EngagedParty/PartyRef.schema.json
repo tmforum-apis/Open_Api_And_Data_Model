@@ -1,20 +1,20 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "PartyRef.schema.json",
-    "title": "PartyRef",
-    "definitions": {
-        "PartyRef": {
-            "$id": "#PartyRef",
-            "type": "object",
-            "required": [
-                "@referredType"
-            ],
-            "properties": {},
-            "allOf": [
-                {
-                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PartyRef.schema.json",
+  "title": "PartyRef",
+  "definitions": {
+    "PartyRef": {
+      "$id": "#PartyRef",
+      "type": "object",
+      "required": [
+        "@referredType"
+      ],
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
         }
+      ]
     }
+  }
 }

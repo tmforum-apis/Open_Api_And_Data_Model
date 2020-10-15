@@ -1,0 +1,93 @@
+{
+	"id": "1089",
+	"href": "/alarmManagement/v4/commentAlarms/1089",
+	"clearSystemId": "ems-1",
+	"clearUserId": "bob@example.net",
+	"alarmClearedTime": "2019-07-03T03:55:45.937Z",
+	"alarmPattern": [
+		{
+			"id": "8675309"
+		},
+		{
+			"id": "8675399"
+		}
+	],
+	"state": "done",
+	"clearedAlarm": [
+		{
+			"id": "8675309",
+			"href": "/alarmManagement/v4/alarm/8675309",
+			"@baseType": "Alarm",
+			"@type": "Alarm",
+			"@schemaLocation": "/alarmManagement/v4/schema/Alarm.schema.json",
+			"externalAlarmId": "5551212",
+			"state": "cleared",
+			"alarmType": "environmentalAlarm",
+			"perceivedSeverity": "cleared",
+			"probableCause": "rectifierLowVoltage",
+			"specificProblem": "ps=3,sl=1,in=8",
+			"alarmedObjectType": "Rectifier",
+			"alarmedObject": {
+				"id": "93051825",
+				"href": "/resourceInventoryManagement/v4/resource/93051825"
+			}, 
+			"sourceSystemId": "ems-1",
+			"alarmDetails": "voltage=204",
+			"alarmRaisedTime": "2019-07-03T03:32:17.235Z",
+			"alarmReportingTime": "2019-07-03T03:32:17.552Z",
+			"alarmChangedTime": "2019-07-03T03:42:12.861Z",
+			"ackSystemId": "ems-1",
+			"ackUserId": "bob@example.net",
+			"ackTime": "2019-07-03T03:38:06.890Z",
+			"ackState": "UNacknowledged",
+			"comment": [
+				{
+					"userId": "bob@example.net",
+					"systemId": "ems-1",
+					"time": "2019-07-03T03:37:33.827Z",
+					"comment": "Dispatched"
+				}
+			],
+			"clearSystemId": "ems-1",
+			"clearUserId": "bob@example.net",
+			"alarmClearedTime": "2019-07-03T03:55:45.937Z"
+		},
+		{
+			"id": "8675399",
+			"href": "/alarmManagement/v4/alarm/8675399",
+			"@baseType": "Alarm",
+			"@type": "Alarm",
+			"@schemaLocation": "/alarmManagement/v4/schema/Alarm.schema.json",
+			"externalAlarmId": "5551234",
+			"state": "cleared",
+			"alarmType": "equipmentAlarm",
+			"perceivedSeverity": "cleared",
+			"probableCause": "powerSupplyFailure",
+			"specificProblem": "ch=1,ps=3",
+			"alarmedObjectType": "Chassis",
+			"alarmedObject": {
+				"id": "95830731",
+				"href": "/resourceInventoryManagement/v4/resource/95830731"
+			}, 
+			"sourceSystemId": "ems-1",
+			"alarmRaisedTime": "2019-07-03T03:32:17.843Z",
+			"alarmReportingTime": "2019-07-03T03:32:18.102Z",
+			"alarmChangedTime": "2019-07-03T03:42:12.861Z",
+			"ackSystemId": "ems-1",
+			"ackUserId": "bob@example.net",
+			"ackTime": "2019-07-03T03:38:06.890Z",
+			"ackState": "unacknowledged",
+			"comment": [
+				{
+					"userId": "bob@example.net",
+					"systemId": "ems-1",
+					"time": "2019-07-03T03:37:33.827Z",
+					"comment": "Dispatched"
+				}
+			],
+			"clearSystemId": "ems-1",
+			"clearUserId": "bob@example.net",
+			"alarmClearedTime": "2019-07-03T03:55:45.937Z"
+		}
+	]
+}

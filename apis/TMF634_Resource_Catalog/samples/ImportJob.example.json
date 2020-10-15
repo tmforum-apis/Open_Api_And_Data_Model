@@ -1,0 +1,12 @@
+{
+    "id": "2341",
+    "href": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/v4/importJob/2341",
+    "contentType": "application/json",
+    "creationDate": "2018-08-27T00:00:00.000Z",
+    "completionDate": "2018-08-27T00:05:00.000Z",
+    "path": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/v4/resourceCatalog/3830",
+    "status": "Succeeded",
+    "url": "https://my-platform/daily/job/NHCFD6",
+    "errorLog": "http://my-platform/logging/errors.log",
+    "@type": "ImportJob"
+}

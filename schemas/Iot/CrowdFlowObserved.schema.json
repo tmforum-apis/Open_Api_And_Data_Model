@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/specs/Transportation/CrowdFlowObserved/schema.json",
+  "title": "FIWARE - SynchroniCity - Transportation / CrowdFlowObserved",
+  "description": "CrowdFlowObserved",
+  "type": "object",
+  "allOf": [
+   {"$ref": "https://github.com/tmforum-rand/schemas/blob/master/Common/Entity.schema.json#/definitions/Entity"},
+                
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "CrowdFlowObserved"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "refRoadSegment": {
+          "type": "string",
+          "format": "uri"
+        },
+        "dateObserved": {
+          "type": "string"
+        },
+        "dateObservedFrom": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dateObservedTo": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "peopleCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "occupancy": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "averageCrowdSpeed": {
+          "type": "number",
+          "minimum": 0
+        },
+        "congested": {
+          "type": "boolean"
+        },
+        "averageHeadwayTime": {
+          "type": "number",
+          "minimum": 0
+        },
+        "direction": {
+          "type": "string",
+          "enum": [
+            "inbound",
+            "outbound"
+          ]
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "dateObserved"
+  ],
+  "anyOf": [
+    {"required" : ["refRoadSegment"]},
+    {"required" : ["location"]},
+    {"required" : ["address"]}
+  ]
+}

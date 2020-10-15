@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Characteristic.schema.json",
+  "title": "Characteristic",
+  "definitions": {
+    "Characteristic": {
+      "$id": "#Characteristic",
+      "description": "Describes a given characteristic of an object or entity through a name/value pair.",
+      "type": "object",
+      "discriminator": "@type",       
+      "required": [
+        "name",
+        "@type"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the characteristic"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the characteristic"
+        },
+        "valueType": {
+          "type": "string",
+          "description": "Data type of the value of the characteristic"
+        },
+        "characteristicRelationship": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/CharacteristicRelationship.schema.json#CharacteristicRelationship"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Extensible.schema.json#Extensible"
+        }
+      ]
+    }
+  }
+}

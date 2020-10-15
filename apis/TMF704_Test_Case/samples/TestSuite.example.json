@@ -1,0 +1,27 @@
+{
+  "id": "4cb18d40-a35f-4261-a9e9-20ab58498c42",
+  "href": "https://mycsp:8080/tmf-api/testCase/v4/testSuite/4cb18d40-a35f-4261-a9e9-20ab58498c42",
+  "description": "Sample test suite",
+  "version": "1.2.3",
+  "relatedParty": [
+    {
+      "name": "testUser",
+      "role": "Owner",
+      "@referredType": "Individual",
+      "contact": [
+        {
+          "mediumType": "email",
+          "characteristic": {
+            "emailAddress": "testUser@abc.com"
+          }
+        }
+      ]
+    }
+  ],
+  "state": "stable",
+  "testSuiteDefinition": {
+    "attachmentType": "testsuite",
+    "content": "<base64-encoded test suite>",
+    "mimeType": "base64"
+  }
+}

@@ -1,0 +1,12 @@
+{
+    "completionDate": "2020-08-16T00:02", 
+    "contentType": "application/json", 
+    "creationDate": "2020-08-16T00:00", 
+    "errorLog": "http://my-platform/daily/logging/errors.log", 
+    "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/exportJob/1866", 
+    "id": "1866", 
+    "path": "serviceCatalogManagement/", 
+    "query": "@type=ServiceSpecification", 
+    "status": "completed", 
+    "url": "ftp://ftp.mycsp.com/serviceCatalogManagement/1866.json"
+}

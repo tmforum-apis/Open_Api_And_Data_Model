@@ -1,0 +1,46 @@
+{
+    "id": "8121", 
+    "href": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceCategory/8121", 
+    "name": "Network Logical Resources", 
+    "description": "This resource category groups together logical resources that are implemented in the network", 
+    "@type": "ResourceCategory", 
+    "version": "1.0", 
+    "validFor": {
+        "startDateTime": "2017-08-23T00:00:22.920Z", 
+        "endDateTime": "2018-03-25T00:00:22.920Z"
+    }, 
+    "lifecycleStatus": "Active", 
+    "lastUpdate": "2018-03-24T00:00:22.920Z", 
+    "isRoot": true, 
+    "category": [
+        {
+            "id": "5982", 
+            "href": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/category/5982", 
+            "version": "3.2", 
+            "name": "IoT"
+        }
+    ], 
+    "resourceCandidate": [
+        {
+            "id": "5298", 
+            "href": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceCandidate/5298", 
+            "version": "1.0", 
+            "name": "Elastic Storage"
+        },
+        {
+            "id": "7479", 
+            "href": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceCandidate/7479", 
+            "version": "3.2", 
+            "name": "Virtual Storage Medium"
+        }
+    ], 
+    "relatedParty": [
+        {
+            "id": "4434", 
+            "href": "https://mycsp.com:8080/tmf-api/partyManagement/organization/4434", 
+            "role": "employee", 
+            "name": "Jimmy Doe",
+            "@referredType": "Organization"
+        }
+    ]
+}

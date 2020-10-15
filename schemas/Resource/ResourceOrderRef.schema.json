@@ -1,30 +1,32 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ResourceOrderRef.schema.json",
-    "title": "ResourceOrderRef",
-    "definitions": {
-        "ResourceOrderRef": {
-            "$id": "#ResourceOrderRef",
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "Hyperlink to access the related Resource Order"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "The unique identifier of the related resource order"
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ResourceOrderRef.schema.json",
+  "title": "ResourceOrderRef",
+  "definitions": {
+    "ResourceOrderRef": {
+      "$id": "#ResourceOrderRef",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The unique identifier of the related resource order",
+          "examples": [ "fde8c6a47450" ]
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink to access the related Resource Order",
+          "examples": [ "http://host/resourceOrder/fde8c6a47450" ]
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

@@ -1,21 +1,21 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "FinancialAccount.schema.json",
-    "title": "FinancialAccount",
-    "definitions": {
-        "FinancialAccount": {
-            "$id": "#FinancialAccount",
-            "description": "An account of money owed by a party to another entity in exchange for goods or services that have been delivered or used. A financial (account receivable account/account payable) aggregates the amounts of one or more party accounts (billing or settlement) owned by a given party. It is a specialization of entity Account.",
-            "type": "object",
-            "required": [
-                "name"
-            ],
-            "properties": {},
-            "allOf": [
-                {
-                    "$ref": "../EngagedParty/Account.schema.json#Account"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "FinancialAccount.schema.json",
+  "title": "FinancialAccount",
+  "definitions": {
+    "FinancialAccount": {
+      "$id": "#FinancialAccount",
+      "description": "An account of money owed by a party to another entity in exchange for goods or services that have been delivered or used. A financial (account receivable account/account payable) aggregates the amounts of one or more party accounts (billing or settlement) owned by a given party. It is a specialization of entity Account.",
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../EngagedParty/Account.schema.json#Account"
         }
+      ]
     }
+  }
 }

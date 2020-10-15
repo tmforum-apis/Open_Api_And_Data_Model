@@ -1,28 +1,28 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "RelatedEntity.schema.json",
-    "title": "RelatedEntity",
-    "definitions": {
-        "RelatedEntity": {
-            "$id": "#RelatedEntity",
-            "description": "A reference to an entity, where the type of the entity is not known in advance.",
-            "type": "object",
-            "required": [
-                "id",
-                "role",
-                "@referredType"
-            ],
-            "properties": {
-                "role": {
-                    "type": "string",
-                    "description": "The role of an entity."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "RelatedEntity.schema.json",
+  "title": "RelatedEntity",
+  "definitions": {
+    "RelatedEntity": {
+      "$id": "#RelatedEntity",
+      "description": "A reference to an entity, where the type of the entity is not known in advance.",
+      "type": "object",
+      "required": [
+        "id",
+        "role",
+        "@referredType"
+      ],
+      "properties": {
+        "role": {
+          "type": "string",
+          "description": "The role of an entity."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        }
+      ]
     }
+  }
 }

@@ -1,0 +1,203 @@
+{
+	"id": "3bc72846-3516-4504-86ce-63a4954f7c00",
+	"href": "/resourceFunctionActivation/v4/monitor/3bc72846-3516-4504-86ce-63a4954f7c00",
+	"sourceHref": "/resourceFunctionActivation/v4/resourceFunction/acd6cbde-22a1-4f42-9ed0-52bc72d82386",
+	"state": "inProgress",
+	"request": {
+		"method": "POST",
+		"to": "/resourceFunctionActivation/v4/resourceFunction",
+		"header": [
+			{
+				"name": "accept",
+				"value": "application/json"
+			}
+		],
+		"body": {
+			"name": "Medium to Large Enterprise Firewall - Model 134985.3",
+			"description": "This is a type of firewall to be used for our medium to large enterprise customers",
+			"@type": "ResourceFunction",
+			"lifecycleState": "operating",
+			"category": "Security",
+			"resourceSpecification": {
+				"id": "5fc91de8-88be-4c7c-8b3c-e08ccc53b889",
+				"href": "/resourceCatalog/v4/resourceSpecification/5fc91de8-88be-4c7c-8b3c-e08ccc53b889",
+				"@type": "ResourceFunctionSpecificationRef",
+				"@referredType": "ResourceFunctionSpecification"
+			},
+			"resourceCharacteristic": [
+				{
+					"name": "OperatingSystem",
+					"value": "Android Pie"
+				},
+				{
+					"name": "keywords",
+					"value": "Medium Enterprise"
+				},
+				{
+					"name": "language",
+					"value": "English"
+				}
+			],
+			"feature": [
+				{
+					"id": "l22m455f-671a-499d-a95j-8h46fe3bc88c",
+					"name": "log",
+					"featureCharacteristic": [
+						{
+							"name": "logSize",
+							"value": 8000
+						}
+					]
+				}
+			]
+		}
+	},
+	"response": {
+		"statusCode": "202 Accepted",
+		"header": [
+			{
+				"name": "content-type",
+				"value": "application/json"
+			},
+			{
+				"name": "location",
+				"value": "/resourceFunctionActivation/v4/resourceFunction/91f13709-593d-4175-a5e5-ce0ee95db0d5"
+			},
+			{
+				"name": "link",
+				"value": "</resourceFunctionActivation/v4/monitor/3bc72846-3516-4504-86ce-63a4954f7c00>;rel=related;title=monitor,</resourceFunctionActivation/v4/resourceFunction/acd6cbde-22a1-4f42-9ed0-52bc72d82386>;rel=self,</resourceFunctionActivation/v4/resourceFunction/acd6cbde-22a1-4f42-9ed0-52bc72d82386>;rel=canonical"
+			}
+		],
+		"body": {
+			"id": "acd6cbde-22a1-4f42-9ed0-52bc72d82386",
+			"href": "/resourceFunctionActivation/v4/resourceFunction/acd6cbde-22a1-4f42-9ed0-52bc72d82386",
+			"name": "Medium to Large Enterprise Firewall - Model 134985.3",
+			"description": "This is a type of firewall to be used for our medium to large enterprise customers",
+			"@type": "ResourceFunction",
+			"@baseType": "LogicalResource",
+			"lifecycleState": "installing",
+			"category": "Security",
+			"resourceSpecification": {
+				"id": "5fc91de8-88be-4c7c-8b3c-e08ccc53b889",
+				"href": "/resourceCatalog/v4/resourceSpecification/5fc91de8-88be-4c7c-8b3c-e08ccc53b889",
+				"@type": "ResourceFunctionSpecification",
+				"@baseType": "LogicalResourceSpecification"
+			},
+			"resourceCharacteristic": [
+				{
+					"name": "OperatingSystem",
+					"value": "Android Pie"
+				},
+				{
+					"name": "MaxTraffic",
+					"value": 25
+				},
+				{
+					"name": "keywords",
+					"value": "Medium Enterprise"
+				},
+				{
+					"name": "language",
+					"value": "English"
+				}
+			],
+			"feature": [
+				{
+					"id": "h776f845f-z20a-468f-v44m-9e07fe3bd28l",
+					"name": "L2&L3"
+				},
+				{
+					"id": "g535f845f-032a-468f-a86e-9e07fe3bc85b",
+					"name": "OSI-L4"
+				},
+				{
+					"id": "k463345f-011a-463a-a92f-4h2kfe3bc44b",
+					"name": "OSI-L7"
+				},
+				{
+					"id": "f78g245f-671a-468f-a95j-9e07fe3bc98b",
+					"name": "tarpit"
+				},
+				{
+					"id": "l22m455f-671a-499d-a95j-8h46fe3bc88c",
+					"name": "log",
+					"featureCharacteristic": [
+						{
+							"name": "logSize",
+							"value": 8000
+						}
+					]
+				},
+				{
+					"id": "db723e27-58d3-4120-b564-af199cb32bd3",
+					"name": "IPAddressing",
+					"featureRelationship": [
+						{
+							"relationshipType": "requires",
+							"id": "43883a81-58ef-45af-ace4-993298ae8361",
+							"name": "IPv4Addressing"
+						},
+						{
+							"relationshipType": "requires",
+							"id": "b85f845f-011a-468f-a90e-9e07fe3bc90a",
+							"name": "IPv6Addressing"
+						}
+					]
+				},
+				{
+					"id": "43883a81-58ef-45af-ace4-993298ae8361",
+					"name": "IPv4Addressing"
+				},
+				{
+					"id": "b85f845f-011a-468f-a90e-9e07fe3bc90a",
+					"name": "IPv6Addressing",
+					"isEnabled": false
+				}
+			],
+			"connectionPoint": [],
+			"resourceRelationship": [
+				{
+					"resource": {
+						"id": "179ed458-6053-4be5-be14-e71be8be4440",
+						"href": "/resourceInventory/v4/resource/179ed458-6053-4be5-be14-e71be8be4440",
+						"name": "SWI.1"
+					},
+					"relationshipType": "contains"
+				},
+				{
+					"resource": {
+						"id": "d66a404f-9464-47b8-92f5-7a3de88cfb40",
+						"href": "/resourceInventory/v4/resource/d66a404f-9464-47b8-92f5-7a3de88cfb40",
+						"name": "SWI.2"
+					},
+					"relationshipType": "contains"
+				},
+				{
+					"resource": {
+						"id": "c47b1f3a-d74b-4594-9596-b1f2ace66365",
+						"href": "/resourceInventory/v4/resource/c47b1f3a-d74b-4594-9596-b1f2ace66365",
+						"name": "SWI.3"
+					},
+					"relationshipType": "contains"
+				},
+				{
+					"resource": {
+						"id": "fb126b4f-5d2e-4fb3-8e94-3d0a721a6cbc",
+						"href": "/resourceInventory/v4/resource/",
+						"name": "SWI.4"
+					},
+					"relationshipType": "contains"
+				},
+				{
+					"resource": {
+						"id": "11c59a1e-f15d-4cc0-9ae5-aaa20380ccdc",
+						"href": "/resourceInventory/v4/resource/11c59a1e-f15d-4cc0-9ae5-aaa20380ccdc",
+						"name": "SWI.5"
+					},
+					"relationshipType": "contains"
+				}
+			],
+			"connectivity": []
+		}
+	}
+}

@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CheckStockLevelItem.schema.json",
+    "title": "CheckStockLevelItem",
+    "definitions": {
+        "CheckStockLevelItem": {
+            "$id": "#CheckStockLevelItem",
+            "description": "CheckStockLevelItem is used to log and execute query about one product (or configured product) stock availability",
+            "type": "object",
+            "required": ["quantity","requestedStockItem"],
+            "properties": {
+                "id": {
+                    "description": "Unique identifier of the Check Stock Level item",
+                    "type": "string"
+                },
+                "availabilityResult": {
+                    "description": "Result of the availability like available, notAvailable, alternate",
+                    "type": "string"
+                },
+                "state": {
+                    "$ref": "TaskStateType.schema.json#/definitions/TaskStateType",
+                    "description": "State of the CheckStockLevelItem (acknowledged, inProgress, terminatedWithError, done)"
+                },
+                "stockLevelState": {
+                    "description": "Stock  level state to be checked - by default 'available' state must be considered",
+                    "$ref": "StockLevelStateType.schema.json#/definitions/StockLevelStateType"
+                },
+                "requestedQuantity": {
+                    "$ref": "Quantity.schema.json#/definitions/Quantity"
+                },
+                "stockLevel": {
+                        "$ref": "StockLevelRef.schema.json#/definitions/StockLevelRef"
+                },
+                "provideAlternative": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "When the value is TRUE means that alternative proposal should be provided (from other stock  level, different date or quantity)"
+                },
+                "alternate": {
+                    "type": "array",
+                    "description": "A list of alternate availability - from other stock level, different date or quantity",
+                    "items": {
+                        "$ref": "..Resource/AlternateStockLevel.schema.json#/definitions/AlternateStockLevel"
+                    }
+                },
+                "requestedProduct": {
+                    "$ref": "../Product/ProductRefOrValue.json#/definitions/ProductRefOrValue"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Extensible.schema.json#/Extensible"
+                }
+            ]
+        }
+    }
+}

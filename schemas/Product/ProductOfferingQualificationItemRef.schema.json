@@ -1,43 +1,43 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ProductOfferingQualificationItemRef.schema.json",
-    "title": "ProductOfferingQualificationItemRef",
-    "definitions": {
-        "ProductOfferingQualificationItemRef": {
-            "$id": "#ProductOfferingQualificationItemRef",
-            "type": "object",
-            "description": "It's a productOfferingQualification item that has been executed previously.",
-            "required": [
-                "id",
-                "productOfferingQualificationId"
-            ],
-            "properties": {
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                },
-                "productOfferingQualificationHref": {
-                    "type": "string",
-                    "description": "Reference of the related entity."
-                },
-                "productOfferingQualificationId": {
-                    "type": "string",
-                    "description": "Unique identifier of a related entity."
-                },
-                "productOfferingQualificationName": {
-                    "type": "string",
-                    "description": "Name of the related entity."
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Id of an item of a product offering qualification"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ProductOfferingQualificationItemRef.schema.json",
+  "title": "ProductOfferingQualificationItemRef",
+  "definitions": {
+    "ProductOfferingQualificationItemRef": {
+      "$id": "#ProductOfferingQualificationItemRef",
+      "type": "object",
+      "description": "It's a productOfferingQualification item that has been executed previously.",
+      "required": [
+        "id",
+        "productOfferingQualificationId"
+      ],
+      "properties": {
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
+        },
+        "productOfferingQualificationHref": {
+          "type": "string",
+          "description": "Reference of the related entity."
+        },
+        "productOfferingQualificationId": {
+          "type": "string",
+          "description": "Unique identifier of a related entity."
+        },
+        "productOfferingQualificationName": {
+          "type": "string",
+          "description": "Name of the related entity."
+        },
+        "id": {
+          "type": "string",
+          "description": "Id of an item of a product offering qualification"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

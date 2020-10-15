@@ -5,15 +5,30 @@
     "definitions": {
         "PaymentItem": {
             "$id": "#PaymentItem",
+            "required": [
+                "item"
+            ],
             "description": "The paymentItem is the result of lettering process. It enables to assign automatically or manually part of incoming payment amount to a bill",
             "type": "object",
             "properties": {
-                "appliedAmount": {
-                    "$ref": "../Common/Money.schema.json#Money",
-                    "description": "Part of a payment amount lettered to the customer bill"
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the payment Item"
                 },
-                "payment": {
-                    "$ref": "../Customer/PaymentRef.schema.json#PaymentRef"
+                "amount": {
+                    "$ref": "../Common/Money.schema.json#Money",
+                    "description": "Amount to be paid (net of taxes)"
+                },
+                "taxAmount": {
+                    "$ref": "../Common/Money.schema.json#Money",
+                    "description": "Tax applied"
+                },
+                "totalAmount": {
+                    "$ref": "../Common/Money.schema.json#Money",
+                    "description": "Amount to be paid (including taxes)"
+                },
+                "item": {
+                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
                 }
             },
             "allOf": [

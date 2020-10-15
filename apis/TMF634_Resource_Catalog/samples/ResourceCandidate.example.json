@@ -1,0 +1,28 @@
+{
+    "id": "7479", 
+    "href": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceCandidate/7479", 
+    "name": "Virtual Storage Medium", 
+    "description": "This resource candidate makes the virtual storage medium specification available in the cloud catalog", 
+    "@type": "ResourceCandidate", 
+    "version": "3.2", 
+    "validFor": {
+        "startDateTime": "2017-08-23T00:00:22.920Z", 
+        "endDateTime": "2018-03-25T00:00:22.920Z"
+    }, 
+    "lastUpdate": "2018-03-24T00:00:22.920Z", 
+    "lifecycleStatus": "Active", 
+    "category": [
+        {
+            "id": "5355", 
+            "href": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/category/5355", 
+            "version": "1.1", 
+            "name": "Cloud Resources"
+        }
+    ], 
+    "resourceSpecification": {
+        "id": "42", 
+        "href": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceSpecification/42", 
+        "version": "3.0", 
+        "name": "VirtualStorageMedium" 
+    }
+}

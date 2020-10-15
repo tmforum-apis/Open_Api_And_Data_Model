@@ -1,50 +1,50 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "PaymentPlan.schema.json",
-    "title": "PaymentPlan",
-    "definitions": {
-        "PaymentPlan": {
-            "$id": "#PaymentPlan",
-            "description": "Defines a plan for payment (when a party wants to spread his payments)",
-            "type": "object",
-            "properties": {
-                "numberOfPayments": {
-                    "type": "integer",
-                    "description": "Number of payments used to spread the global payment"
-                },
-                "paymentFrequency": {
-                    "type": "string",
-                    "description": "Frequency of the payments, such as monthly and bimonthly"
-                },
-                "priority": {
-                    "type": "integer",
-                    "description": "Priority of the payment plan"
-                },
-                "status": {
-                    "type": "string",
-                    "description": "Status of the payment plan (effective, ineffective)"
-                },
-                "totalAmount": {
-                    "$ref": "../Common/Money.schema.json#Money",
-                    "description": "Amount paid"
-                },
-                "planType": {
-                    "type": "string",
-                    "description": "Type of payment plan"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "Validity period of the payment plan"
-                },
-                "paymentMethod": {
-                    "$ref": "../Customer/PaymentMethodRef.schema.json#PaymentMethodRef"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PaymentPlan.schema.json",
+  "title": "PaymentPlan",
+  "definitions": {
+    "PaymentPlan": {
+      "$id": "#PaymentPlan",
+      "description": "Defines a plan for payment (when a party wants to spread his payments)",
+      "type": "object",
+      "properties": {
+        "numberOfPayments": {
+          "type": "integer",
+          "description": "Number of payments used to spread the global payment"
+        },
+        "paymentFrequency": {
+          "type": "string",
+          "description": "Frequency of the payments, such as monthly and bimonthly"
+        },
+        "priority": {
+          "type": "integer",
+          "description": "Priority of the payment plan"
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of the payment plan (effective, ineffective)"
+        },
+        "totalAmount": {
+          "$ref": "../Common/Money.schema.json#Money",
+          "description": "Amount paid"
+        },
+        "planType": {
+          "type": "string",
+          "description": "Type of payment plan"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "Validity period of the payment plan"
+        },
+        "paymentMethod": {
+          "$ref": "../Customer/PaymentMethodRef.schema.json#PaymentMethodRef"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

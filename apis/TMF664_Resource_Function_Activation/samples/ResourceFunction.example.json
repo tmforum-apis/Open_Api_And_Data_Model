@@ -1,0 +1,362 @@
+{
+	"id": "acd6cbde-22a1-4f42-9ed0-52bc72d82386",
+	"href": "/resourceFunctionActivation/v4/resourceFunction/acd6cbde-22a1-4f42-9ed0-52bc72d82386",
+	"name": "Medium to Large Enterprise Firewall - Model 134985.3",
+	"description": "This is a type of firewall to be used for our medium to large enterprise customers",
+	"@type": "ResourceFunction",
+	"lifecycleState": "operating",
+	"category": "Security",
+	"resourceSpecification": {
+		"id": "5fc91de8-88be-4c7c-8b3c-e08ccc53b889",
+		"href": "/resourceCatalog/v4/resourceSpecification/5fc91de8-88be-4c7c-8b3c-e08ccc53b889",
+		"@type": "ResourceFunctionSpecificationRef",
+		"@referredType": "ResourceFunctionSpecification"
+	},
+	"resourceCharacteristic": [
+		{
+			"name": "OperatingSystem",
+			"value": "Android Pie"
+		},
+		{
+			"name": "MaxTraffic",
+			"value": 25
+		},
+		{
+			"name": "keywords",
+			"value": "Medium Enterprise"
+		},
+		{
+			"name": "language",
+			"value": "English"
+		}
+	],
+	"activationFeature": [
+		{
+			"id": "h776f845f-z20a-468f-v44m-9e07fe3bd28l",
+			"name": "L2&L3"
+		},
+		{
+			"id": "g535f845f-032a-468f-a86e-9e07fe3bc85b",
+			"name": "OSI-L4"
+		},
+		{
+			"id": "k463345f-011a-463a-a92f-4h2kfe3bc44b",
+			"name": "OSI-L7"
+		},
+		{
+			"id": "f78g245f-671a-468f-a95j-9e07fe3bc98b",
+			"name": "tarpit"
+		},
+		{
+			"id": "l22m455f-671a-499d-a95j-8h46fe3bc88c",
+			"name": "log",
+			"featureCharacteristic": [
+				{
+					"name": "logSize",
+					"value": 2000
+				}
+			]
+		},
+		{
+			"id": "db723e27-58d3-4120-b564-af199cb32bd3",
+			"name": "IPAddressing",
+			"featureRelationship": [
+				{
+					"relationshipType": "requires",
+					"id": "43883a81-58ef-45af-ace4-993298ae8361",
+					"name": "IPv4Addressing"
+				},
+				{
+					"relationshipType": "requires",
+					"id": "b85f845f-011a-468f-a90e-9e07fe3bc90a",
+					"name": "IPv6Addressing"
+				}
+			]
+		},
+		{
+			"id": "43883a81-58ef-45af-ace4-993298ae8361",
+			"name": "IPv4Addressing"
+		},
+		{
+			"id": "b85f845f-011a-468f-a90e-9e07fe3bc90a",
+			"name": "IPv6Addressing",
+			"isEnabled": false
+		}
+	],
+	"connectionPoint": [
+		{
+			"id": "82a48c39-787b-49b6-b919-4d8d7319c584",
+			"href": "/resourceInventory/v4/resource/82a48c39-787b-49b6-b919-4d8d7319c584",
+			"@type": "ConnectionPointRef",
+			"@referredType": "ResourceFunction",
+			"name": "CP1.1"
+		},
+		{
+			"id": "2da750ad-cdb2-4337-a823-dd3f294d458c",
+			"href": "/resourceInventory/v4/resource/2da750ad-cdb2-4337-a823-dd3f294d458c",
+			"@type": "ConnectionPointRef",
+			"@referredType": "ResourceFunction",
+			"name": "CP3.2"
+		},
+		{
+			"id": "ecc5eb54-b032-409d-9213-604b5ebb74ac",
+			"href": "/resourceInventory/v4/resource/ecc5eb54-b032-409d-9213-604b5ebb74ac",
+			"@type": "ConnectionPointRef",
+			"@referredType": "ResourceFunction",
+			"name": "CP5.2"
+		},
+		{
+			"id": "9af2fa2c-08b2-474d-8eb2-174c6a02f021",
+			"href": "/resourceInventory/v4/resource/9af2fa2c-08b2-474d-8eb2-174c6a02f021",
+			"@type": "ConnectionPointRef",
+			"@referredType": "ResourceFunction",
+			"name": "CP1.4"
+		}
+	],
+	"resourceRelationship": [
+		{
+			"resource": {
+				"id": "179ed458-6053-4be5-be14-e71be8be4440",
+				"href": "/resourceInventory/v4/resource/179ed458-6053-4be5-be14-e71be8be4440",
+				"@type": "ResourceFunctionRef",
+				"@referredType": "ResourceFunction",
+				"name": "SWI.1"
+			},
+			"relationshipType": "contains"
+		},
+		{
+			"resource": {
+				"id": "d66a404f-9464-47b8-92f5-7a3de88cfb40",
+				"href": "/resourceInventory/v4/resource/d66a404f-9464-47b8-92f5-7a3de88cfb40",
+				"@type": "ResourceFunctionRef",
+				"@referredType": "ResourceFunction",
+				"name": "SWI.2"
+			},
+			"relationshipType": "contains"
+		},
+		{
+			"resource": {
+				"id": "c47b1f3a-d74b-4594-9596-b1f2ace66365",
+				"href": "/resourceInventory/v4/resource/c47b1f3a-d74b-4594-9596-b1f2ace66365",
+				"@type": "ResourceFunctionRef",
+				"@referredType": "ResourceFunction",
+				"name": "SWI.3"
+			},
+			"relationshipType": "contains"
+		},
+		{
+			"resource": {
+				"id": "fb126b4f-5d2e-4fb3-8e94-3d0a721a6cbc",
+				"href": "/resourceInventory/v4/resource/",
+				"@type": "ResourceFunctionRef",
+				"@referredType": "ResourceFunction",
+				"name": "SWI.4"
+			},
+			"relationshipType": "contains"
+		},
+		{
+			"resource": {
+				"id": "11c59a1e-f15d-4cc0-9ae5-aaa20380ccdc",
+				"href": "/resourceInventory/v4/resource/11c59a1e-f15d-4cc0-9ae5-aaa20380ccdc",
+				"@type": "ResourceFunctionRef",
+				"@referredType": "ResourceFunction",
+				"name": "SWI.5"
+			},
+			"relationshipType": "contains"
+		}
+	],
+	"connectivity": [
+		{
+			"id": "5921a308-322c-40fe-80e8-c2a7bc0ba546",
+			"name": "Internal Connectivity Graph",
+			"@type": "ResourceGraph",
+			"connection": [
+				{
+					"name": "AdjacencyPair1",
+					"associationType": "pointtoPoint",
+					"@type": "Connection",
+					"endpoint": [
+						{
+							"id": "179ed458-6053-4be5-be14-e71be8be4440",
+							"href": "/resourceInventory/v4/resource/179ed458-6053-4be5-be14-e71be8be4440",
+							"@type": "EndpointRef",
+							"@referredType": "ResourceFunction",
+							"name": "SWI.1",
+							"isRoot": true,
+							"connectionPoint": {
+								"id": "8c237137-46b1-4eac-9b20-0f2b35f5ffb2",
+								"href": "/resourceInventory/v4/resource/8c237137-46b1-4eac-9b20-0f2b35f5ffb2",
+								"@type": "ConnectionPointRef",
+								"@referredType": "ResourceFunction",
+								"name": "CP1.2"
+							}
+						},
+						{
+							"id": "d66a404f-9464-47b8-92f5-7a3de88cfb40",
+							"href": "/resourceInventory/v4/resource/d66a404f-9464-47b8-92f5-7a3de88cfb4032",
+							"@type": "EndpointRef",
+							"@referredType": "ResourceFunction",
+							"name": "SWI.2",
+							"isRoot": false,
+							"connectionPoint": {
+								"id": "c8937fec-1923-4bdc-99d1-4a168f14d445",
+								"href": "/resourceInventory/v4/resource/c8937fec-1923-4bdc-99d1-4a168f14d445",
+								"@type": "ConnectionPointRef",
+								"@referredType": "ResourceFunction",
+								"name": "CP2.1"
+							}
+						}
+					]
+				},
+				{
+					"name": "AdjacencyPair2",
+					"@type": "Connection",
+					"associationType": "pointtoPoint",
+					"endpoint": [
+						{
+							"id": "d66a404f-9464-47b8-92f5-7a3de88cfb40",
+							"href": "/resourceInventory/v4/resource/d66a404f-9464-47b8-92f5-7a3de88cfb40",
+							"@type": "EndpointRef",
+							"@referredType": "ResourceFunction",
+							"name": "SWI.2",
+							"isRoot": true,
+							"connectionPoint": {
+								"id": "acbdf06a-1f2e-4815-8db5-4220bc87ade2",
+								"href": "/resourceInventory/v4/resource/acbdf06a-1f2e-4815-8db5-4220bc87ade2",
+								"@type": "ConnectionPointRef",
+								"@referredType": "ResourceFunction",
+								"name": "CP2.2"
+							}
+						},
+						{
+							"id": "c47b1f3a-d74b-4594-9596-b1f2ace66365",
+							"href": "/resourceInventory/v4/resource/c47b1f3a-d74b-4594-9596-b1f2ace66365",
+							"@type": "EndpointRef",
+							"@referredType": "ResourceFunction",
+							"name": "SWI.3",
+							"isRoot": false,
+							"connectionPoint": {
+								"id": "0564e364-dd52-461b-a9f6-718e342e2217",
+								"href": "/resourceInventory/v4/resource/0564e364-dd52-461b-a9f6-718e342e2217",
+								"@type": "ConnectionPointRef",
+								"@referredType": "ResourceFunction",
+								"name": "CP3.1"
+							}
+						}
+					]
+				},
+				{
+					"name": "AdjacencyPair3",
+					"@type": "Connection",
+					"associationType": "pointtoPoint",
+					"endpoint": [
+						{
+							"id": "c47b1f3a-d74b-4594-9596-b1f2ace66365",
+							"href": "/resourceInventory/v4/resource/c47b1f3a-d74b-4594-9596-b1f2ace66365",
+							"@type": "EndpointRef",
+							"@referredType": "ResourceFunction",
+							"name": "SWI.3",
+							"isRoot": true,
+							"connectionPoint": {
+								"id": "14ae7a86-8d6e-407e-adf0-f99505e48b67",
+								"href": "/resourceInventory/v4/resource/14ae7a86-8d6e-407e-adf0-f99505e48b67",
+								"@type": "ConnectionPointRef",
+								"@referredType": "ResourceFunction",
+								"name": "CP3.3"
+							}
+						},
+						{
+							"id": "fb126b4f-5d2e-4fb3-8e94-3d0a721a6cbc",
+							"href": "/resourceInventory/v4/resource/fb126b4f-5d2e-4fb3-8e94-3d0a721a6cbc",
+							"@type": "EndpointRef",
+							"@referredType": "ResourceFunction",
+							"name": "SWI.4",
+							"isRoot": false,
+							"connectionPoint": {
+								"id": "98b5906c-bbd0-4bb9-8551-1eaac552a4a3",
+								"href": "/resourceInventory/v4/resource/98b5906c-bbd0-4bb9-8551-1eaac552a4a3",
+								"@type": "ConnectionPointRef",
+								"@referredType": "ResourceFunction",
+								"name": "CP4.1"
+							}
+						}
+					]
+				},
+				{
+					"name": "AdjacencyPair4",
+					"@type": "Connection",
+					"associationType": "pointtoPoint",
+					"endpoint": [
+						{
+							"id": "fb126b4f-5d2e-4fb3-8e94-3d0a721a6cbc",
+							"href": "/resourceInventory/v4/resource/fb126b4f-5d2e-4fb3-8e94-3d0a721a6cbc",
+							"@type": "EndpointRef",
+							"@referredType": "ResourceFunction",
+							"name": "SWI.4",
+							"isRoot": true,
+							"connectionPoint": {
+								"id": "415a8aa1-5d8b-4a7b-a886-cfb248fba864",
+								"href": "/resourceInventory/v4/resource/415a8aa1-5d8b-4a7b-a886-cfb248fba864",
+								"@type": "ConnectionPointRef",
+								"@referredType": "ResourceFunction",
+								"name": "CP4.2"
+							}
+						},
+						{
+							"id": "11c59a1e-f15d-4cc0-9ae5-aaa20380ccdc",
+							"href": "/resourceInventory/v4/resource/11c59a1e-f15d-4cc0-9ae5-aaa20380ccdc",
+							"@type": "EndpointRef",
+							"@referredType": "ResourceFunction",
+							"name": "SWI.5",
+							"isRoot": false,
+							"connectionPoint": {
+								"id": "29bf728a-08c1-4bb9-84b0-5ad63468b1fb",
+								"href": "/resourceInventory/v4/resource/29bf728a-08c1-4bb9-84b0-5ad63468b1fb",
+								"@type": "ConnectionPointRef",
+								"@referredType": "ResourceFunction",
+								"name": "CP5.1"
+							}
+						}
+					]
+				},
+				{
+					"name": "AdjacencyPair5",
+					"@type": "Connection",
+					"associationType": "pointtoPoint",
+					"endpoint": [
+						{
+							"id": "11c59a1e-f15d-4cc0-9ae5-aaa20380ccdc",
+							"href": "/resourceInventory/v4/resource/11c59a1e-f15d-4cc0-9ae5-aaa20380ccdc",
+							"@type": "EndpointRef",
+							"@referredType": "ResourceFunction",
+							"name": "SWI.5",
+							"isRoot": true,
+							"connectionPoint": {
+								"id": "e26d911c-3e61-409c-bcca-c7500e12b5a6",
+								"href": "/resourceInventory/v4/resource/e26d911c-3e61-409c-bcca-c7500e12b5a6",
+								"@type": "ConnectionPointRef",
+								"@referredType": "ResourceFunction",
+								"name": "CP5.3"
+							}
+						},
+						{
+							"id": "179ed458-6053-4be5-be14-e71be8be4440",
+							"href": "/resourceInventory/v4/resource/179ed458-6053-4be5-be14-e71be8be4440",
+							"@type": "EndpointRef",
+							"@referredType": "ResourceFunction",
+							"name": "SWI.1",
+							"isRoot": false,
+							"connectionPoint": {
+								"id": "62606a50-3cce-4225-b862-3b9ac72ef8ca",
+								"href": "/resourceInventory/v4/resource/62606a50-3cce-4225-b862-3b9ac72ef8ca",
+								"@type": "ConnectionPointRef",
+								"@referredType": "ResourceFunction",
+								"name": "CP1.3"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

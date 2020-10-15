@@ -1,44 +1,30 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "RoleSpecification.schema.json",
-    "title": "RoleSpecification",
-    "definitions": {
-        "RoleSpecification": {
-            "$id": "#RoleSpecification",
-            "description": "A RoleSpecification represents a specification of a role, which may be defined in the context of a given type of partnership (PartnershipSpecification), such as Buyer, Seller.",
-            "type": "object",
-            "required": [
-                "name"
-            ],
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "An explanatory text documenting the role specification"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "The name of the role specification. This name uniquely identifies the role specification within the partnership"
-                },
-                "requiresBilling": {
-                    "type": "boolean",
-                    "description": "Indicates whether billing operations will be associated to parties playing the role"
-                },
-                "requiresSettlement": {
-                    "type": "boolean",
-                    "description": "Indicates whether settlement operations will be associated to parties playing the role"
-                },
-                "agreementSpecification": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/AgreementSpecificationRef.schema.json#AgreementSpecificationRef"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "RoleSpecification.schema.json",
+  "title": "RoleSpecification",
+  "definitions": {
+    "RoleSpecification": {
+      "$id": "#RoleSpecification",
+      "description": "A RoleSpecification represents a specification of a role.",
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "An explanatory text documenting the role specification"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the role specification. This name uniquely identifies the role specification"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

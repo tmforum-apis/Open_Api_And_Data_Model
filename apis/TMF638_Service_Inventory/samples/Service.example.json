@@ -1,0 +1,138 @@
+{
+  "id": "5351",
+  "href": "https://mycsp.com:8080/tmf-api/serviceInventory/v4/service/5351",
+  "serviceType": "Cloud",
+  "name": "vCPE serial 1355615",
+  "description": "Instantiation of vCPE",
+  "state": "active",
+  "category": "CFS",
+  "isServiceEnabled": true,
+  "hasStarted": true,
+  "startMode": "1",
+  "isStateful": true,
+  "startDate": "2018-01-15T12:26:11.747Z",
+  "serviceSpecification": {
+    "id": "1212",
+    "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/serviceSpecification/1212",
+    "name": "vCPE",
+    "version": "1.0.0",
+    "@referredType": "ServiceSpecification"
+  },
+  "feature": [
+    {
+      "id": "Feat1",
+      "isEnabled": true,
+      "name": "ElasticBandwith",
+      "featureCharacteritic": [
+        {
+          "name": "isCapped",
+          "value": true,
+          "id": "45gh-fg",
+          "valueType": "boolean"
+        }
+      ]
+    }
+  ],
+  "serviceCharacteristic": [
+    {
+      "id": "452-gh6",
+      "name": "vCPE",
+      "valueType": "object",
+      "value": {
+        "@type": "JSONSpecification",
+        "@schemaLocation": "http://my.schemas/vCPE.schema.json",
+        "vCPE_IP": "193.218.236.21",
+        "MaxTxRate": 300,
+        "TransmitPower": "11 dBm",
+        "maxTream": "OFF"
+      }
+    }
+  ],
+  "serviceRelationship": [
+    {
+      "relationshipType": "DependentOn",
+      "ServiceRelationshipCharacteristic": [
+        {
+          "id": "126",
+          "name": "CrossRef",
+          "value": "44-11-h",
+          "valueType": "string"
+        }
+      ],
+      "service": {
+        "href": "https://mycsp.com:8080/tmf-api/serviceInventory/v4/service/5645",
+        "id": "5645",
+        "@type": "ServiceRef",
+        "@referredType": "Service"
+      }
+    }
+  ],
+  "supportingService": [
+    {
+      "href": "https://mycsp.com:8080/tmf-api/serviceInventory/v4/service/5885",
+      "id": "5885",
+      "@type": "ServiceRef",
+      "@referredType": "Service"
+    }
+  ],
+  "supportingResource": [
+    {
+      "id": "6161",
+      "href": "https://mycsp.com:8080/tmf-api/resourceInventoryManagement/v4/resource/5351",
+      "name": "GenInfra",
+      "@referredType": "VirtualResource"
+    },
+    {
+      "id": "7171",
+      "href": "https://mycsp.com:8080/tmf-api/resourceInventoryManagement/v4/resource/7171",
+      "name": "BNG_MUX",
+      "value": "01 25 65",
+      "@referredType": "VNF"
+    }
+  ],
+  "relatedParty": [
+    {
+      "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/party/456",
+      "id": "456",
+      "name": "John Doe",
+      "role": "user",
+      "@referredType": "Individual"
+    }
+  ],
+  "serviceOrderItem": [
+    {
+      "serviceOrderHref": "https://mycsp.com:8080/tmf-api/serviceOrder/v4/serviceOrder/42",
+      "serviceOrderId": "42",
+      "role" : "initiator",
+      "@referredType" : "ServiceOrder",
+      "itemId": "1",
+      "itemAction": "add"
+    },
+    {
+        "serviceOrderHref": "https://mycsp.com:8080/tmf-api/serviceOrder/v4/serviceOrder/896",
+        "serviceOrderId": "896",
+        "role" : "activation",
+        "@referredType" : "ServiceOrder",
+        "itemId": "4",
+        "itemAction": "change"
+      }
+  ],
+  "place": [
+    {
+      "href": "https://mycsp.com:8080/tmf-api/geographicAddressManagement/v4/geographicAddress/2435",
+      "id": "2435",
+      "name": "Customer primary location",
+      "@referredType" : "GeographicAddress",
+      "role": "InstallationAddress"
+    }
+  ],
+  "note": [
+    {
+      "author": "Harvey Poupon",
+      "date": "2018-01-15T12:26:11.748Z",
+      "text": "This service was installed automatically, no issues were noted in testing."
+    }
+  ],
+  "@type": "Service",
+  "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Service/vCPE.schema.json"
+}

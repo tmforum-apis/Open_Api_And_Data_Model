@@ -1,12 +1,103 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "BalanceTransfer.schema.json",
-    "title": "BalanceTransfer",
-    "definitions": {
-        "BalanceTransfer": {
-            "$id": "#BalanceTransfer",
-            "description": "#TODO",
-            "type": "object"
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BalanceTransfer.schema.json",
+  "title": "BalanceTransfer",
+  "definitions": {
+    "BalanceTransfer": {
+      "$id": "#BalanceTransfer",
+      "description": "The BalanceTransfer resource is a detailed description of credit transfer operation requested between two buckets (reference to products owned by customers and consuming credit when using a service).",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique Identifier within the server for the balance transfer operation request."
+        },
+        "href": {
+          "type": "string",
+          "description": "A resource URI pointing to the resource in the OB that stores the detailed information. This is typically the resource url to retrieve individual transfer operation details"
+        },
+        "type": {
+          "type": "string",
+          "description": "A preconfigured value that describes a Transfer type which determines the prepay balance bucket in which the transfer is done (national-voice, roaming-voice, promotional-voice, data, ....)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the transfer operation"
+        },
+        "reason": {
+          "type": "string",
+          "description": "Text describing the reason for the adjustment"
+        },
+        "channel": {
+          "description": "Indicator for the channel used to request the transfer operation. Structure including at least attribute name",
+          "$ref": "../Common/ChannelRef.schema.json#ChannelRef"
+        },
+        "requestor": {
+          "description": "Identifier for the user/customer/entity that performs the transfer action.This can be used to indicate the identifier of an agent that performs the operation on behalf of a user via a customer service channel Structure including at least attributes “role” and “name”",
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+        },
+        "targetId": {
+          "type": "string",
+          "description": "Identifier for the entity that receives the transfer (reference to a product via a commercial identifier such as an msisidn that relates to an internal product id)"
+        },
+        "targetType": {
+          "type": "string",
+          "description": "Intended for scenarios where the transfer is done from one bucket type to another (from voice to data). A preconfigured value that describes a Transfer type which determines the prepay balance bucket in which the transfer is done"
+        },
+        "receiver": {
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty",
+          "description": "Identifier for the user/customer/entity that receives the transfer action when it is required to indicate additional customer hierarchy information regarding the entity receiving the balance transfer Structure including at least attributes “role” and “name”"
+        },
+        "amount": {
+          "description": "Amount (can be monetary or non-monetary) to be transferred",
+          "$ref": "../Common/Quantity.schema.json#Quantity"
+        },
+        "transferCost": {
+          "description": "Associated cost to be charged for the transfer operation (can be monetary or non-monetary)",
+          "$ref": "../Common/Quantity.schema.json#Quantity"
+        },
+        "product": {
+          "description": "A reference to the product related to the bucket that is impacted by the balance related operation",
+          "$ref": "../Product/ProductRef.schema.json#ProductRef"
+        },
+        "sourceBucketBalance": {
+          "description": "A reference to the source bucketBalance from which the funds are being transferred ",
+          "$ref": "../Customer/BucketBalanceRef.schema.json#BucketBalanceRef"
+        },
+        "targetBucketBalance": {
+          "description": "A reference to the target bucketBalance to which the funds are being transferred ",
+          "$ref": "../Customer/BucketBalanceRef.schema.json#BucketBalanceRef"
+        },
+        "partyAccount": {
+          "description": "A reference to the account that owns the bucket impacted by the balance transfer request",
+          "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef"
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          },
+          "description": "Used to provide information about any other entity with relation to the balance transfer"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Customer/BalanceAction.schema.json#BalanceAction"
+        }
+      ],
+      "required": [
+        "id",
+        "href",
+        "type",
+        "reason",
+        "channel",
+        "targetId",
+        "requestDate",
+        "confirmationDate",
+        "status",
+        "amount",
+        "product"
+      ],
+      "type": "object"
     }
+  }
 }

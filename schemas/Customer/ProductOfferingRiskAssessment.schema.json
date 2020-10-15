@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProductOfferingRiskAssessment.schema.json",
+    "title": "ProductOfferingRiskAssessment",
+    "definitions": {
+        "ProductOfferingRiskAssessment": {
+            "$id": "#ProductOfferingRiskAssessment",
+            "description": "This is a task resource allowing assessment of the risks associated with a product offering. For example, the risk associated with iPhone X will probably be higher than the risk for a battery",
+            "type": "object",
+            "required" : [
+                "productOffering"
+            ],
+            "properties": {
+                "productOffering": {
+                    "$ref": "../Product/ProductOfferingRef.json#ProductOfferingRef",
+                    "description": "The product offering for which the assessment is to be carried out, must be supplied as input to the task, with the attribute id populated"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

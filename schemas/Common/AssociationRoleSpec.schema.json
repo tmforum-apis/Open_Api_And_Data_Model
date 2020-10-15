@@ -1,43 +1,43 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "AssociationRoleSpec.schema.json",
-    "title": "AssociationRoleSpec",
-    "definitions": {
-        "AssociationRoleSpec": {
-            "$id": "#AssociationRoleSpec",
-            "description": "This embedded object represents the role and type of each entity involved in a relationship.",
-            "type": "object",
-            "properties": {
-                "aggregation": {
-                    "type": "string"
-                },
-                "defaultQuantity": {
-                    "type": "integer"
-                },
-                "entityType": {
-                    "type": "string"
-                },
-                "isNavigable": {
-                    "type": "boolean"
-                },
-                "isSource": {
-                    "type": "boolean"
-                },
-                "maxQuantity": {
-                    "type": "integer"
-                },
-                "minQuantity": {
-                    "type": "integer"
-                },
-                "role": {
-                    "type": "string"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AssociationRoleSpec.schema.json",
+  "title": "AssociationRoleSpec",
+  "definitions": {
+    "AssociationRoleSpec": {
+      "$id": "#AssociationRoleSpec",
+      "description": "This embedded object represents the role and type of each entity involved in a relationship.",
+      "type": "object",
+      "properties": {
+        "aggregation": {
+          "type": "string"
+        },
+        "defaultQuantity": {
+          "type": "integer"
+        },
+        "entityType": {
+          "type": "string"
+        },
+        "isNavigable": {
+          "type": "boolean"
+        },
+        "isSource": {
+          "type": "boolean"
+        },
+        "maxQuantity": {
+          "type": "integer"
+        },
+        "minQuantity": {
+          "type": "integer"
+        },
+        "role": {
+          "type": "string"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

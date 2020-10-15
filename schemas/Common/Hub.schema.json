@@ -1,46 +1,46 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Hub.schema.json",
-    "title": "Hub",
-    "definitions": {
-        "Hub": {
-            "$id": "#Hub",
-            "description": "A Hub is used to subscribe to an event notification",
-            "type": "object",
-            "required": [
-                "id",
-                "callback"
-            ],
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "The unique-id for your subscription - referenced when updating or deleting a subscription",
-                    "examples": [
-                        "4aafacbd-11ff-4dc8-b445-305f2215715f",
-                        "2334bc59-726e-4d34-ab96-f50e0561412f"
-                    ]
-                },
-                "callback": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "The URI that will be POSTed to when a notification is triggered",
-                    "examples": [
-                        "http://host/resource/id/listener"
-                    ]
-                },
-                "query": {
-                    "type": "string",
-                    "description": "This is a query string used to filter notifications in the context of the notifier",
-                    "examples": [
-                        "status=active"
-                    ]
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Hub.schema.json",
+  "title": "Hub",
+  "definitions": {
+    "Hub": {
+      "$id": "#Hub",
+      "description": "A Hub is used to subscribe to an event notification",
+      "type": "object",
+      "required": [
+        "id",
+        "callback"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The unique-id for your subscription - referenced when updating or deleting a subscription",
+          "examples": [
+            "4aafacbd-11ff-4dc8-b445-305f2215715f",
+            "2334bc59-726e-4d34-ab96-f50e0561412f"
+          ]
+        },
+        "callback": {
+          "type": "string",
+          "format": "uri",
+          "description": "The URI that will be POSTed to when a notification is triggered",
+          "examples": [
+            "http://host/resource/id/listener"
+          ]
+        },
+        "query": {
+          "type": "string",
+          "description": "This is a query string used to filter notifications in the context of the notifier",
+          "examples": [
+            "status=active"
+          ]
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

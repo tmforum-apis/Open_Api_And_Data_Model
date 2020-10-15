@@ -4,15 +4,27 @@
     "title": "AccumulatedBalance",
     "definitions": {
         "AccumulatedBalance": {
-            "$id": "#AccumulatedBalance",
+	     "$id": "#AccumulatedBalance",
             "description": "Represents and tracks the aggregated amount remained or owed in certain account which is owned by certain customer for a set of buckets.",
             "properties": {
+                "href": {
+                    "type": "string",
+                    "description": "A resource URI pointing to the resource in the OB that stores the detailed information."
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique Identifier within the server for the recharge operation request"
+                },
                 "bucket": {
                     "type": "array",
                     "items": {
-                        "$ref": "../Customer/BucketBalanceRef.schema.json#BucketBalanceRef"
+                        "$ref": "BucketRef.schema.json#BucketRef"
                     },
                     "description": "A reference to the buckets involved in the aggregation"
+                },
+                "logicalResource": {
+                    "$ref": "../Resource/LogicalResourceRef.schema.json#LogicalResourceRef",
+                    "description": "A reference to the logical resource that can be used to identify the bucket balance for example where product ids are not unique."
                 },
                 "description": {
                     "type": "string",
@@ -23,10 +35,7 @@
                     "description": "Friendly name to identify the aggregated balance"
                 },
                 "partyAccount": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef"
-                    },
+                        "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef",
                     "description": "A reference to the account that owns the buckets aggregated"
                 },
                 "product": {
@@ -45,16 +54,19 @@
                 },
                 "totalBalance": {
                     "description": "Aggregated for a set of prepay balance buckets associated to the product",
-                    "$ref": "../Common/QuantityType.schema.json#QuantityType"
+                    "$ref": "../Common/Quantity.schema.json#/Quantity"
                 }
             },
+	    "allOf" :[
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                } 
+	    ],
             "required": [
                 "name",
                 "totalBalance",
-                "bucket",
-                "product"
-            ],
-            "type": "object"
+                "bucket"
+            ]
         }
     }
 }

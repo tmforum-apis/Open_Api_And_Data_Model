@@ -1,26 +1,26 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "TaskFlowRelationship.schema.json",
-    "title": "TaskFlowRelationship",
-    "definitions": {
-        "TaskFlowRelationship": {
-            "$id": "#TaskFlowRelationship",
-            "description": "Describes relationship between taskFlow",
-            "type": "object",
-            "required": [
-                "relationshipType",
-                "taskFlow"
-            ],
-            "properties": {
-                "relationshipType": {
-                    "type": "string",
-                    "description": "The type of taskFlow relationship (requires, triggers, etc.)"
-                },
-                "taskFlow": {
-                    "description": "The taskFlow being referred to",
-                    "$ref": "../Common/TaskFlowRef.schema.json#TaskFlowRef"
-                }
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TaskFlowRelationship.schema.json",
+  "title": "TaskFlowRelationship",
+  "definitions": {
+    "TaskFlowRelationship": {
+      "$id": "#TaskFlowRelationship",
+      "description": "Describes relationship between taskFlow",
+      "type": "object",
+      "required": [
+        "relationshipType",
+        "taskFlow"
+      ],
+      "properties": {
+        "relationshipType": {
+          "type": "string",
+          "description": "The type of taskFlow relationship (requires, triggers, etc.)"
+        },
+        "taskFlow": {
+          "description": "The taskFlow being referred to",
+          "$ref": "../Common/TaskFlowRef.schema.json#TaskFlowRef"
         }
+      }
     }
+  }
 }

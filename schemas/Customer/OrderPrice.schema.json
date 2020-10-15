@@ -1,58 +1,58 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "OrderPrice.schema.json",
-    "title": "OrderPrice",
-    "definitions": {
-        "OrderPrice": {
-            "$id": "#OrderPrice",
-            "description": "An amount, usually of money, that represents the actual price paid by the Customer for this item or this order",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "A narrative that explains in detail the semantics of this order item price."
-                },
-                "name": {
-                    "type": "string",
-                    "description": "A short descriptive name such as \"Subscription price\"."
-                },
-                "productOfferingPrice": {
-                    "$ref": "../Product/ProductOfferingPriceRef.schema.json#ProductOfferingPriceRef",
-                    "description": "An amount, usually of money, that is asked for or allowed when a ProductOffering is bought, rented, or leased. The price is valid for a defined period of time."
-                },
-                "priceType": {
-                    "type": "string",
-                    "description": "A category that describes the price, such as recurring, discount, allowance, penalty, and so forth"
-                },
-                "recurringChargePeriod": {
-                    "type": "string",
-                    "description": "Could be month, week..."
-                },
-                "unitOfMeasure": {
-                    "type": "string",
-                    "description": "Could be minutes, GB..."
-                },
-                "billingAccount": {
-                    "$ref": "../Customer/BillingAccountRef.schema.json#BillingAccountRef",
-                    "description": "A reference to a billing account used for paid the order price charge"
-                },
-                "price": {
-                    "$ref": "../Customer/Price.schema.json#Price",
-                    "description": "a structure used to define price amount"
-                },
-                "priceAlteration": {
-                    "type": "array",
-                    "description": "a strucuture used to describe a price alteration",
-                    "items": {
-                        "$ref": "../Product/PriceAlteration.schema.json#PriceAlteration"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "OrderPrice.schema.json",
+  "title": "OrderPrice",
+  "definitions": {
+    "OrderPrice": {
+      "$id": "#OrderPrice",
+      "description": "An amount, usually of money, that represents the actual price paid by the Customer for this item or this order",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "A narrative that explains in detail the semantics of this order item price."
+        },
+        "name": {
+          "type": "string",
+          "description": "A short descriptive name such as \"Subscription price\"."
+        },
+        "productOfferingPrice": {
+          "$ref": "../Product/ProductOfferingPriceRef.schema.json#ProductOfferingPriceRef",
+          "description": "An amount, usually of money, that is asked for or allowed when a ProductOffering is bought, rented, or leased. The price is valid for a defined period of time."
+        },
+        "priceType": {
+          "type": "string",
+          "description": "A category that describes the price, such as recurring, discount, allowance, penalty, and so forth"
+        },
+        "recurringChargePeriod": {
+          "type": "string",
+          "description": "Could be month, week..."
+        },
+        "unitOfMeasure": {
+          "type": "string",
+          "description": "Could be minutes, GB..."
+        },
+        "billingAccount": {
+          "$ref": "../Customer/BillingAccountRef.schema.json#BillingAccountRef",
+          "description": "A reference to a billing account used for paid the order price charge"
+        },
+        "price": {
+          "$ref": "../Customer/Price.schema.json#Price",
+          "description": "a structure used to define price amount"
+        },
+        "priceAlteration": {
+          "type": "array",
+          "description": "a strucuture used to describe a price alteration",
+          "items": {
+            "$ref": "../Product/PriceAlteration.schema.json#PriceAlteration"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

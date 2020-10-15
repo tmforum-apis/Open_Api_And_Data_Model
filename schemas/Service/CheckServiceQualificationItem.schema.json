@@ -1,0 +1,62 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CheckServiceQualificationItem.schema.json",
+    "title": "CheckServiceQualificationItem",
+    "definitions": {
+        "CheckServiceQualificationItem": {
+            "$id": "#CheckServiceQualificationItem",
+            "description": "A ServiceQualificationItem relates to a specific service being checked in a qualification operation.",
+            "type": "object",
+            "properties": {
+                "qualificationResult": {
+                    "type": "string",
+                    "description" : "Qualification result for serviceQualification item. It could be: - qualified (request service are available), - unqualified (requested not available and not alternate available), - alternate (requested not available but proposal available)"
+                },
+                "state": {
+                    "type": "string",
+                    "description" : "State of the serviceQualification item (acknowledged, inProgress, terminatedWithError, done)"
+                },
+                "qualificationRelationship": {
+                    "type": "array",
+                    "description" : "Structure used to describe relationship between serviceQualification item from the same serviceQualification.",
+                    "items": {
+                        "$ref": "ServiceQualificationRelationship.schema.json#ServiceQualificationRelationship"
+                    }
+                },
+                "eligibilityUnavailabilityReason": {
+                    "type": "array",
+                    "description" : "A list of eligibility unavailability reasons (EligibilityUnavailabilityReason [*]). Reason for eligibility result if the serviceQualification result is no (meaning the service is not available).",
+                    "items": {
+                        "$ref": "ServiceEligibilityUnavailabilityReason.schema.json#ServiceEligibilityUnavailabilityReason"
+                    }
+                },
+                "qualificationItemRelationship": {
+                    "type": "array",
+                    "description" : "A list of qualification item relationships used to describe relationship between serviceQualification item from the same serviceQualification.",
+                    "items": {
+                        "$ref": "ServiceQualificationItemRelationship.schema.json#ServiceQualificationItemRelationship"
+                    }
+                },
+                "terminationError": {
+                    "type": "array",
+                    "description" : "If qualificationItem has not been done properly this lists the error(s) that caused termination of the qualification.",
+                    "items": {
+                        "$ref": "TerminationError.schema.json#TerminationError"
+                    }
+                },
+                "alternateServiceProposal": {
+                    "type": "array",
+                    "description" : "Alternate service proposal is used when the requested service is not available with characteristic and date asked for. An alternate proposal could be a distinct service Spec close to requested one or same as requested but with a different availability date.",
+                    "items": {
+                        "$ref": "AlternateServiceProposal.schema.json#AlternateServiceProposal"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Service/ServiceQualificationItem.schema.json#ServiceQualificationItem"
+                }
+            ]
+        }
+    }
+}

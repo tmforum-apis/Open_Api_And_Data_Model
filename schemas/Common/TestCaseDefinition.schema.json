@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TestCaseDefinition.schema.json",
+  "title": "TestCaseDefinition",
+  "definitions": {
+    "TestCaseDefinition": {
+      "$id": "#TestCaseDefinition",
+      "type": "object",
+      "description": "Test case definition",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/Attachment.schema.json#Attachment"
+        }
+      ]
+    }
+  }
+}

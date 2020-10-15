@@ -7,18 +7,31 @@
             "$id": "#ResourceOrderItemRef",
             "type": "object",
             "properties": {
-                "id": {
+                "itemId": {
                     "type": "string",
-                    "description": "Identifier of the line item (generally it is a sequence number 01, 02, 03, ...)"
+                    "description": "Identifier of the line item",
+                    "examples": [ "01", "02" ]
+                },
+                "resourceOrderId": {
+                    "type": "string",
+                    "description": "Identifier of the resource order that this item belongs to",
+                    "examples": [ "4b22f7cad22d" ]
+                },
+                "resourceOrderHref": {
+                    "type": "string",
+                    "description": "Link to the order to which this item belongs to",
+                    "format": "uri",
+                    "examples": [ "http://host/resourceOrder/4b22f7cad22d" ]
                 },
                 "@referredType": {
                     "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
+                    "description": "The actual type of the target instance when needed for disambiguation",
+                    "examples": [ "PhysicalResource" ]
                 }
             },
             "allOf": [
                 {
-                    "$ref": "../Common/Entity.schema.json#Entity"
+                    "$ref": "../Common/Extensible.schema.json#Extensible"
                 }
             ]
         }

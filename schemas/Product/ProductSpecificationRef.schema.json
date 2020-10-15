@@ -1,27 +1,27 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ProductSpecificationRef.schema.json",
-    "title": "ProductSpecificationRef",
-    "definitions": {
-        "ProductSpecificationRef": {
-            "$id": "#ProductSpecificationRef",
-            "description": "Product specification reference: A ProductSpecification is a detailed description of a tangible or intangible object made available externally in the form of a ProductOffering to customers or other parties playing a party role.",
-            "type": "object",
-            "properties": {
-                "version": {
-                    "type": "string",
-                    "description": "Version of the product specification"
-                },
-                "targetProductSchema": {
-                    "description": "A target product schema reference. The reference object to the schema and type of target product which is described by product specification.",
-                    "$ref": "../Product/TargetProductSchema.schema.json#TargetProductSchema"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ProductSpecificationRef.schema.json",
+  "title": "ProductSpecificationRef",
+  "definitions": {
+    "ProductSpecificationRef": {
+      "$id": "#ProductSpecificationRef",
+      "description": "Product specification reference: A ProductSpecification is a detailed description of a tangible or intangible object made available externally in the form of a ProductOffering to customers or other parties playing a party role.",
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "Version of the product specification"
+        },
+        "targetProductSchema": {
+          "description": "A target product schema reference. The reference object to the schema and type of target product which is described by product specification.",
+          "$ref": "../Product/TargetProductSchema.schema.json#TargetProductSchema"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        }
+      ]
     }
+  }
 }

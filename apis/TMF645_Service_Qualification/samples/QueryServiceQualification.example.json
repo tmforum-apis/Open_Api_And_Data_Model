@@ -1,0 +1,81 @@
+{
+  "id": "54",
+  "href": "http://serverlocation:port/serviceQualificationManagement/v4/queryServiceQualification/54",
+  "description": "Query Service Qualification Illustration - 2 serviceSpec available at this place for this category",
+  "effectiveQualificationDate": "2020-04-13T13:51:41.218Z",
+  "estimatedResponseDate": "2020-04-13T14:00:00.218Z",
+  "expectedQualificationDate": "2020-04-13T13:51:41.218Z",
+  "expirationDate": "2020-04-15T13:51:41.218Z",
+  "externalId": "QSQ-456",
+  "instantSyncQualification": true,
+  "queryServiceQualificationDate": "2020-04-13T13:51:41.218Z",
+  "relatedParty": [
+    {
+        "id": "456",
+        "href": "http://serverlocation:port/partyManagement/v4/party/456",
+        "name": "Jean Pontus",
+        "role": "Buyer contact",
+        "@type": "RelatedParty",
+        "@referredType": "Individual"
+      }
+  ],
+  "searchCriteria": {
+    "id": "1",
+    "category": {
+      "id": "1",
+      "href": "http://serverlocation:port/serviceCatalogManagement/v4/category/1",
+      "name": "Fiber Access",
+      "@type": "Category"
+    },
+    "service": {
+        "place": [
+            {
+              "role": "Installation Place",
+              "@type": "GeographicAddress",
+              "city": "San Francisco",
+              "postcode" : "94121",
+              "streetName": "25th",
+              "streetType" : "Avenue",
+              "streetNr" : "437",
+              "geographicAddress": [
+                  {
+                      "levelType": "floor",
+                      "levelNumber": "3"
+                  }
+              ]
+            }
+        ]
+    },
+    "@type": "SearchCriteria"
+  },
+  "serviceQualificationItem": [
+    {
+      "id": "1",
+      "service": {
+        "serviceSpecification": {
+          "id": "78",
+          "href": "http://serverlocation:port/serviceCatalogManagement/v4/serviceSpecification/78",
+          "name": "X-Fiber Service",
+          "@type": "ServiceSpecification"
+        },
+        "@type": "Service"
+      },
+      "@type": "ServiceQualificationItem"
+    },
+    {
+        "id": "2",
+        "service": {
+          "serviceSpecification": {
+            "id": "87",
+            "href": "http://serverlocation:port/serviceCatalogManagement/v4/serviceSpecification/87",
+            "name": "Standard Fiber Service",
+            "@type": "ServiceSpecification"
+          },
+          "@type": "Service"
+        },
+        "@type": "ServiceQualificationItem"
+      }
+  ],
+  "state": "done",
+  "@type": "QueryServiceQualification"
+}

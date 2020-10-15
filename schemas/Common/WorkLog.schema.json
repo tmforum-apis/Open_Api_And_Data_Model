@@ -1,38 +1,38 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "WorkLog.schema.json",
-    "title": "WorkLog",
-    "definitions": {
-        "WorkLog": {
-            "$id": "#WorkLog",
-            "description": "A record of the work performed on the change request during the investigation and resolution process.",
-            "type": "object",
-            "properties": {
-                "createDateTime": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date and time of worklog generated."
-                },
-                "description": {
-                    "type": "string",
-                    "description": "The description of the worklog."
-                },
-                "lastUpdateDateTime": {
-                    "type": "string",
-                    "description": "Date and time when the worklog updated."
-                },
-                "record": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/Record.schema.json#Record"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "WorkLog.schema.json",
+  "title": "WorkLog",
+  "definitions": {
+    "WorkLog": {
+      "$id": "#WorkLog",
+      "description": "A record of the work performed on the change request during the investigation and resolution process.",
+      "type": "object",
+      "properties": {
+        "createDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time of worklog generated."
+        },
+        "description": {
+          "type": "string",
+          "description": "The description of the worklog."
+        },
+        "lastUpdateDateTime": {
+          "type": "string",
+          "description": "Date and time when the worklog updated."
+        },
+        "record": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/Record.schema.json#Record"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

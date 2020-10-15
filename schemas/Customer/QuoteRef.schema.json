@@ -1,18 +1,18 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "QuoteRef.schema.json",
-    "title": "QuoteRef",
-    "definitions": {
-        "QuoteRef": {
-            "$id": "#QuoteRef",
-            "type": "object",
-            "description": "It's a Quote that has been executed previously",
-            "properties": {},
-            "allOf": [
-                {
-                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "QuoteRef.schema.json",
+  "title": "QuoteRef",
+  "definitions": {
+    "QuoteRef": {
+      "$id": "#QuoteRef",
+      "type": "object",
+      "description": "It's a Quote that has been executed previously",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
         }
+      ]
     }
+  }
 }

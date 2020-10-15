@@ -1,0 +1,79 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CheckStockLevel.schema.json",
+    "title": "CheckStockLevel",
+    "definitions": {
+        "CheckStockLevel": {
+            "$id": "#CheckStockLevel",
+            "description": "CheckStockLevel is used to log and execute check about stock availability",
+            "type": "object",
+            "properties": {
+                "creationDate": {
+                    "description": "Date when the CheckStockLevel was created (whatever its status).",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "requestedCheckStockLevelDate": {
+                    "description": "Date when the requester wished to have a response for this query.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "completedCheckStockLevelDate": {
+                    "description": "Date when the CheckStockLevel was completed.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "requestedAvailabilityDate": {
+                    "description": "Date when the stock availability should be check.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "id": {
+                    "description": "Unique identifier of the CheckStockLevel",
+                    "type": "string"
+                },
+                "href": {
+                    "description": "Reference of the CheckStockLevel",
+                    "type": "string"
+                },
+                "instantSyncCheck": {
+                  "type": "boolean",
+                  "description": "An indicator which when the value is \"true\" means that requester expects to get result immediately in the response. If the indicator is true then the response code of 200 indicates the operation is successful otherwise a task is created with a response 201."
+                },
+                "state": {
+                    "$ref": "TaskStateType.schema.json#/definitions/TaskStateType",
+                    "description": "State of the CheckStockLevel (acknowledged, inProgress, terminatedWithError, done)"
+                },
+                "provideAlternative": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "When the value is TRUE means that alternative proposal should be provided (from other stock  level, different date or quantity)"
+                },
+                "checkStockLevelItem": {
+                    "type": "array",
+                    "description": "A list of check stock level item",
+                    "items": {
+                        "$ref": "../Resource/CheckStockLevelItem.schema.json#/definitions/CheckStockLevelItem"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "description": "A list of related party references (RelatedParty [*]). A related party defines party or party role linked to a specific entity",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+                    }
+                },
+                "place": {
+                    "description": "Used to define a geographical place where requester wants to check stock availability ",
+                        "$ref": "../Common/PlaceRefOrValue.schema.json#PlaceRefOrValue"
+                }
+
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#/Entity"
+                }
+            ]
+        }
+    }
+}

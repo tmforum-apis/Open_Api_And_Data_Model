@@ -1,22 +1,22 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "LoyaltyProgramProductSpecRef.schema.json",
-    "title": "LoyaltyProgramProductSpecRef",
-    "definitions": {
-        "LoyaltyProgramProductSpecRef": {
-            "$id": "#LoyaltyProgramProductSpecRef",
-            "description": "A reference to a loyalty program specification.",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier for the product specification."
-                },
-                "href": {
-                    "type": "string",
-                    "description": "A reference to the product specification."
-                }
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "LoyaltyProgramProductSpecRef.schema.json",
+  "title": "LoyaltyProgramProductSpecRef",
+  "definitions": {
+    "LoyaltyProgramProductSpecRef": {
+      "$id": "#LoyaltyProgramProductSpecRef",
+      "description": "A reference to a loyalty program specification.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the product specification."
+        },
+        "href": {
+          "type": "string",
+          "description": "A reference to the product specification."
         }
+      }
     }
+  }
 }

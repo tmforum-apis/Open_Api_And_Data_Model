@@ -1,31 +1,31 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "AgreementTermOrCondition.schema.json",
-    "title": "AgreementTermOrCondition",
-    "definitions": {
-        "AgreementTermOrCondition": {
-            "$id": "#AgreementTermOrCondition",
-            "description": "Aspects of the agreement not formally specified elsewhere in the agreement and that cannot be captured elsewhere in a formal notation, or automatically monitored and require a more human level of management.",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "Text that explains the term or condition of the agreement."
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique number assigned for reference."
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The period of time during which the term or condition of the agreement applies."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AgreementTermOrCondition.schema.json",
+  "title": "AgreementTermOrCondition",
+  "definitions": {
+    "AgreementTermOrCondition": {
+      "$id": "#AgreementTermOrCondition",
+      "description": "Aspects of the agreement not formally specified elsewhere in the agreement and that cannot be captured elsewhere in a formal notation, or automatically monitored and require a more human level of management.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Text that explains the term or condition of the agreement."
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique number assigned for reference."
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period of time during which the term or condition of the agreement applies."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

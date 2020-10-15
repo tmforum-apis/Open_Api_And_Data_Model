@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceOrderStateType.schema.json",
+    "title": "ResourceOrderStateType",
+    "definitions": {
+        "ResourceOrderStateType": {
+            "$id": "#ResourceOrderStateType",
+            "type": "string",
+            "description": "Possible values for the state of the order",
+            "enum": [
+                "acknowledged",
+                "rejected",
+                "pending",
+                "held",
+                "inProgress",
+                "cancelled",
+                "completed",
+                "failed",
+                "partial",
+                "assessingCancellation",
+                "pendingCancellation"
+            ]
+        }
+    }
+}

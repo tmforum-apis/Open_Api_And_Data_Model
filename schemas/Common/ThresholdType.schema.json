@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ThresholdType.schema.json",
+    "title": "ThresholdType",
+    "definitions": {
+        "ThresholdType": {
+            "type": "string",
+            "description": "The Threshold Type may be either LogicDefinition or PreDefined",
+            "enum": [
+                "LogicDefinition",
+                "PreDefined"
+            ]
+        }
+    }
+}

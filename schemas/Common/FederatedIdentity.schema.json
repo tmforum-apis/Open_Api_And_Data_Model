@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "FederatedIdentity.schema.json",
+  "title": "FederatedIdentity",
+  "description": "An apparatus (hardware + software + firmware) intended to accomplish a particular task (sensing the environment, actuating, etc.).",
+  "definitions": {
+    "FederatedIdentity": {
+      "$id": "#FederatedIdentity",
+      "description": "#TODO",
+      "type": "object",
+      "allOf": [{
+        "$ref": "../EngagedParty/PartyRole.schema.json#PartyRole"
+      }]
+    }
+  }
+}

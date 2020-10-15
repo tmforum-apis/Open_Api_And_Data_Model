@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceCatalog.schema.json",
+    "title": "ResourceCatalog",
+    "definitions": {
+        "ResourceCatalog": {
+            "$id": "#ResourceCatalog",
+            "description": "The root entity for resource catalog management.\nA resource catalog is a group of resource specifications made available through resource candidates that an organization provides to the consumers (internal consumers like its employees or B2B customers or B2C customers).", 
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string", 
+                    "description": "Unique identifier of the Catalog"
+                }, 
+                "href": {
+                    "type": "string", 
+                    "format": "uri",
+                    "description": "Unique reference of the catalog"
+                }, 
+                "name": {
+                    "type": "string", 
+                    "description": "Name of the catalog"
+                }, 
+                "description": {
+                    "type": "string", 
+                    "description": "Description of this catalog"
+                }, 
+                "version": {
+                    "type": "string", 
+                    "description": "Catalog version"
+                }, 
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod", 
+                    "description": "The period for which the catalog is valid"
+                }, 
+                "lastUpdate": {
+                    "type": "string", 
+                    "format": "date-time", 
+                    "description": "Date and time of the last update"
+                }, 
+                "lifecycleStatus": {
+                    "type": "string", 
+                    "description": "Used to indicate the current lifecycle status"
+                }, 
+                "relatedParty": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    },
+                    "description": "List of parties involved in this catalog"
+                }, 
+                "category": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "ResourceCategoryRef.schema.json#ResourceCategoryRef"
+                    },
+                    "description": "List of root categories contained in this catalog"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

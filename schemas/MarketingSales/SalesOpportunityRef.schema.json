@@ -1,18 +1,18 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "SalesOpportunityRef.schema.json",
-    "title": "SalesOpportunityRef",
-    "definitions": {
-        "SalesOpportunityRef": {
-            "$id": "#SalesOpportunityRef",
-            "description": "Sales Opportunity is an 'opportunity' to generate revenue from a Sales Account or Sales Lead. Opportunities are the pending deals that need to be tracked and on which Sales Team plans and executes Sales Activities (Events and Tasks). ",
-            "type": "object",
-            "properties": {},
-            "allOf": [
-                {
-                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "SalesOpportunityRef.schema.json",
+  "title": "SalesOpportunityRef",
+  "definitions": {
+    "SalesOpportunityRef": {
+      "$id": "#SalesOpportunityRef",
+      "description": "Sales Opportunity is an 'opportunity' to generate revenue from a Sales Account or Sales Lead. Opportunities are the pending deals that need to be tracked and on which Sales Team plans and executes Sales Activities (Events and Tasks). ",
+      "type": "object",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
         }
+      ]
     }
+  }
 }

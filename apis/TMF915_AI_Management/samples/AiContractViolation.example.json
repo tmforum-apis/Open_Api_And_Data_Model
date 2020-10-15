@@ -1,0 +1,29 @@
+{
+    "href": "https:/host:port/tmf-api/AIMAnagementAPI/v4/aiContractViolation/4242",
+    "id": "4242",
+    "aiContract": {
+        "href": "http://tmf.com/AIMAnagement/aiContract/4242",
+        "id": "4242"
+    },
+    "date": "2020-07-31T00:00:00.00Z",
+    "relatedParty": [{
+        "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/organization/3643",
+        "id": "3643",
+        "name": "BT",
+        "role": "Supplier",
+        "@referredType": "Organization"
+    }],
+    "violation": {
+        "unit": "percentage",
+        "referenceValue": "10",
+        "operator": "GT",
+        "actualValue": "12",
+        "comment": "Input image quality proportion % of usable image above limit.",
+        "consequence": "Alarm",
+        "rule": {
+            "id": "42",
+            "href": "http/tmf.com/AIManagement/rule/42",
+            "@referredType": "ThresholdRule"
+        }
+    }
+}

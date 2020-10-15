@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "SwitchXDRAnalytics.schema.json",
+    "title": "SwitchXDRAnalytics",
+    "definitions": {
+        "SwitchXDRAnalytics": {
+            "$id": "#SwitchXDRAnalytics",
+            "type": "object",
+            "properties": {
+                "eventStartTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Call start charging time\r\nFor SMS - START_TIME = SMS TRANSFER TIME"
+                },
+                "eventEndTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Call end charging time"
+                },
+                "eventAnswerTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Call answer time.\r\nFor SMS - ANSWER_TIME = SMS DELIVERY TIME"
+                },
+                "dataCreationTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data creation (e.g. system dump creation, event generation\u2026)"
+                },
+                "runTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data upload run"
+                },
+                "validFromTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for business validity of entity record"
+                }
+            }
+        },
+              "allOf": [{"$ref": "../Common/Entity.schema.json#Extensible"}]
+    }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TestDataSchema.schema.json",
+  "title": "TestDataSchema",
+  "definitions": {
+    "TestDataSchema": {
+      "$id": "#TestDataSchema",
+      "type": "object",
+      "description": "A managed test data schema resource",
+      "required": [
+        "testDataSchemaDefinition"
+      ],
+      "properties": {
+        "testDataSchemaDefinition": {
+          "$ref": "../Common/TestDataSchemaDefinition.schema.json#TestDataSchemaDefinition"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/ManagedArtifact.schema.json#ManagedArtifact"
+        }
+      ]
+    }
+  }
+}

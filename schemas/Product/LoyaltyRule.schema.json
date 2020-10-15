@@ -1,75 +1,75 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "LoyaltyRule.schema.json",
-    "title": "LoyaltyRule",
-    "definitions": {
-        "LoyaltyRule": {
-            "$id": "#LoyaltyRule",
-            "description": "Loyalty rule, containing conditions, event types and actions.",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier for the loyalty rule."
-                },
-                "href": {
-                    "type": "string",
-                    "description": "A reference to the loyalty rule."
-                },
-                "isCNF": {
-                    "type": "boolean",
-                    "description": "Unit and value of the balance."
-                },
-                "hasSubRules": {
-                    "type": "boolean",
-                    "description": "A Boolean attribute that signifies whether this loyalty rule has one or more sub-rules. Sub-rules are used to enforce a hierarchical nesting of rules, so that parent rules may control the execution and other semantics of sub-rules that they contain."
-                },
-                "isMandatoryEvaluation": {
-                    "type": "boolean",
-                    "description": "A Boolean attribute that, if true, signifies that evaluation (and possibly action execution) of this entity is mandatory and must be attempted. If the Mandatory property value of this entity is false, then the evaluation of this entity is considered to be 'best effort' and may be ignored."
-                },
-                "usage": {
-                    "type": "string",
-                    "description": "A free-form string attribute that recommends how this policy object should be used."
-                },
-                "keywords": {
-                    "type": "string",
-                    "description": "A string attribute that defines a set of one or more keywords that a policy administrator may use to assist in characterizing or categorizing a policy object to facilitate search operations."
-                },
-                "policyName": {
-                    "type": "string",
-                    "description": "A generic naming attribute that can be used to identify different policy entities."
-                },
-                "commonName": {
-                    "type": "string",
-                    "description": "A user-friendly identifier of the loyalty rule."
-                },
-                "description": {
-                    "type": "string",
-                    "description": "A free-form description of the rule."
-                },
-                "loyaltyEventType": {
-                    "type": "array",
-                    "description": "References to linked event types.",
-                    "items": {
-                        "$ref": "../Product/LoyaltyEventTypeRef.schema.json#LoyaltyEventTypeRef"
-                    }
-                },
-                "loyaltyCondition": {
-                    "type": "array",
-                    "description": "References to linked conditions.",
-                    "items": {
-                        "$ref": "../Product/LoyaltyConditionRef.schema.json#LoyaltyConditionRef"
-                    }
-                },
-                "loyaltyAction": {
-                    "type": "array",
-                    "description": "References to linked actions.",
-                    "items": {
-                        "$ref": "../Product/LoyaltyActionRef.schema.json#LoyaltyActionRef"
-                    }
-                }
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "LoyaltyRule.schema.json",
+  "title": "LoyaltyRule",
+  "definitions": {
+    "LoyaltyRule": {
+      "$id": "#LoyaltyRule",
+      "description": "Loyalty rule, containing conditions, event types and actions.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the loyalty rule."
+        },
+        "href": {
+          "type": "string",
+          "description": "A reference to the loyalty rule."
+        },
+        "isCNF": {
+          "type": "boolean",
+          "description": "This is a Boolean attribute that, if true, defines the condition clause of this rule to be represented in Conjunctive Normal Form (e.g., an AND of ORs). If the value of this attribute is false, then the condition clause will be represented in Disjunctive Normal Form (e.g., an OR of ANDs)."
+        },
+        "hasSubRules": {
+          "type": "boolean",
+          "description": "A Boolean attribute that signifies whether this loyalty rule has one or more sub-rules. Sub-rules are used to enforce a hierarchical nesting of rules, so that parent rules may control the execution and other semantics of sub-rules that they contain."
+        },
+        "isMandatoryEvaluation": {
+          "type": "boolean",
+          "description": "A Boolean attribute that, if true, signifies that evaluation (and possibly action execution) of this entity is mandatory and must be attempted. If the Mandatory property value of this entity is false, then the evaluation of this entity is considered to be 'best effort' and may be ignored."
+        },
+        "usage": {
+          "type": "string",
+          "description": "A free-form string attribute that recommends how this policy object should be used."
+        },
+        "keywords": {
+          "type": "string",
+          "description": "A string attribute that defines a set of one or more keywords that a policy administrator may use to assist in characterizing or categorizing a policy object to facilitate search operations."
+        },
+        "policyName": {
+          "type": "string",
+          "description": "A generic naming attribute that can be used to identify different policy entities."
+        },
+        "commonName": {
+          "type": "string",
+          "description": "A user-friendly identifier of the loyalty rule."
+        },
+        "description": {
+          "type": "string",
+          "description": "A free-form description of the rule."
+        },
+        "loyaltyEventType": {
+          "type": "array",
+          "description": "References to linked event types.",
+          "items": {
+            "$ref": "../Product/LoyaltyEventTypeRef.schema.json#LoyaltyEventTypeRef"
+          }
+        },
+        "loyaltyCondition": {
+          "type": "array",
+          "description": "References to linked conditions.",
+          "items": {
+            "$ref": "../Product/LoyaltyConditionRef.schema.json#LoyaltyConditionRef"
+          }
+        },
+        "loyaltyAction": {
+          "type": "array",
+          "description": "References to linked actions.",
+          "items": {
+            "$ref": "../Product/LoyaltyActionRef.schema.json#LoyaltyActionRef"
+          }
         }
+      }
     }
+  }
 }

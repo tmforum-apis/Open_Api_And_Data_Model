@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ConcreteResource.schema.json",
+  "title": "ConcreteResource",
+  "definitions": {
+    "ConcreteResource": {
+      "$id": "#ConcreteResource",
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Concrete resource name",
+          "example": "iPhone_1289"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

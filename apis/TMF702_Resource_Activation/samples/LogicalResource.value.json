@@ -1,0 +1,43 @@
+{
+    "id": "444",
+    "href": "https:/host:port/tmf-api/Resource/v1/Resource?LogicalResource=444",
+    "description": "This  logical resource describes the MSISDN",
+    "category": "Premium",
+    "startOperatingDate": "2019-07-04T00:00",
+    "endOperatingDate": "2019-07-04T00:00",
+    "name": "MSISDN",
+    "version": "v1",
+    "value": "07465233456",
+    "administrativeState": "unlock",
+    "operationalState": "disable",
+    "usageState": "idle",
+    "resourceStatus": "available",
+    "characteristic": [
+        {
+	   "name": "premiumValue",
+ 	   "value": "gold"
+	}
+    ],
+    "note": [
+        {"text": "something about this resource"}
+    ],
+    "place": {},
+    "relatedParty": [
+        {
+            "role": "Owner",
+            "id": "42",
+            "href": "http://serverlocation:port/PartyManagement/organisation/42"
+	}
+    ],
+    "resourceRelationship": [
+        {}
+    ],
+    "resourceSpecification": {
+	"id": "4",
+        "href": " http://server:port/resourceCatalogManagement/resourceSpecification/4",
+        "@type": "LogicalResourceSpecification"
+	},
+    "@type": "MSISDN",
+    "@schemaLocation": "http://xx/LogicalResource.schema.json",
+    "@baseType": "LogicalResource"    
+}

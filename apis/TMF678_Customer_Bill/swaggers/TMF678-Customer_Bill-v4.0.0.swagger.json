@@ -1,0 +1,2506 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "API CustomerBill",
+        "description": "## TMF API Reference: TMF 678 - Customer bill Management\n\n### Release: 19.5 - December 2019\n\nThe Customer Bill Management API allows to find and retrieve one or several customer bills (also called invoices) produced for a customer. A customer bill is an electronic or paper document produced at the end of the billing process. The customer bill gathers and displays different items (applied customer billing rates generated during the rating and billing processes) to be charged to a customer. It represents a total amount due for all the products during the billing period and all significant information like dates, bill reference...\nThis API provides also operations to find and retrieve the details of applied customer billing rates presented on a customer bill. \nFinally, this API allows to request in real-time a customer bill creation and to manage this request.\n\n### Resources \n- customerBill\n- appliedCustomerBillingRate\n- customerBillOnDemand\n- billingCycle\n\n### Operations\nCustomer Bill Management API performs the following operations :\n- Retrieve a customer bill or a collection of customer bills depending on filter criteria.\n- Partial update of  a customer bill (for administration purposes).\n-  Retrieve an applied customer billing rate or a collection of applied customer billing rates depending on filter criteria.\n-  Create a customer bill on demand request, retrieve one or a collection of  customer bill on demand request(s) depending on filter criteria.\n\n- Manage notification of events on customer bill and customer bill on demand.\n\nCopyright \u00a9 TM Forum 2018. All Rights Reserved.",
+        "version": "4.0"
+    },
+    "host": "serverRoot",
+    "basePath": "/tmf-api/customerBillManagement/v4/",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json;charset=utf-8"
+    ],
+    "produces": [
+        "application/json;charset=utf-8"
+    ],
+    "tags": [
+        {
+            "name": "customerBillOnDemand"
+        },
+        {
+            "name": "customerBill"
+        },
+        {
+            "name": "appliedCustomerBillingRate"
+        },
+        {
+            "name": "billCycle"
+        },
+        {
+            "name": "billCycleSpecification"
+        },
+        {
+            "name": "events subscription"
+        }
+    ],
+    "paths": {
+        "/customerBillOnDemand": {
+            "get": {
+                "operationId": "listCustomerBillOnDemand",
+                "summary": "List or find CustomerBillOnDemand objects",
+                "description": "This operation list or find CustomerBillOnDemand entities",
+                "tags": [
+                    "customerBillOnDemand"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "offset",
+                        "description": "Requested index for start of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "description": "Requested number of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "X-Result-Count": {
+                                "description": "Actual number of items returned in the response body",
+                                "type": "integer"
+                            },
+                            "X-Total-Count": {
+                                "description": "Total number of items matching criteria",
+                                "type": "integer"
+                            }
+                        },
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/CustomerBillOnDemand"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "operationId": "createCustomerBillOnDemand",
+                "summary": "Creates a CustomerBillOnDemand",
+                "description": "This operation creates a CustomerBillOnDemand entity.",
+                "tags": [
+                    "customerBillOnDemand"
+                ],
+                "parameters": [
+                    {
+                        "name": "customerBillOnDemand",
+                        "description": "The CustomerBillOnDemand to be created",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CustomerBillOnDemand_Create"
+                        },
+                        "in": "body"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/CustomerBillOnDemand"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/customerBillOnDemand/{id}": {
+            "get": {
+                "operationId": "retrieveCustomerBillOnDemand",
+                "summary": "Retrieves a CustomerBillOnDemand by ID",
+                "description": "This operation retrieves a CustomerBillOnDemand entity. Attribute selection is enabled for all first level attributes.",
+                "tags": [
+                    "customerBillOnDemand"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the CustomerBillOnDemand",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    },
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to provide in response",
+                        "required": false,
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/CustomerBillOnDemand"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/customerBill": {
+            "get": {
+                "operationId": "listCustomerBill",
+                "summary": "List or find CustomerBill objects",
+                "description": "This operation list or find CustomerBill entities",
+                "tags": [
+                    "customerBill"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "offset",
+                        "description": "Requested index for start of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "description": "Requested number of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "X-Result-Count": {
+                                "description": "Actual number of items returned in the response body",
+                                "type": "integer"
+                            },
+                            "X-Total-Count": {
+                                "description": "Total number of items matching criteria",
+                                "type": "integer"
+                            }
+                        },
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/CustomerBill"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/customerBill/{id}": {
+            "get": {
+                "operationId": "retrieveCustomerBill",
+                "summary": "Retrieves a CustomerBill by ID",
+                "description": "This operation retrieves a CustomerBill entity. Attribute selection is enabled for all first level attributes.",
+                "tags": [
+                    "customerBill"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the CustomerBill",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    },
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to provide in response",
+                        "required": false,
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/CustomerBill"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "operationId": "patchCustomerBill",
+                "summary": "Updates partially a CustomerBill",
+                "description": "This operation updates partially a CustomerBill entity.",
+                "tags": [
+                    "customerBill"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the CustomerBill",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    },
+                    {
+                        "name": "customerBill",
+                        "description": "The CustomerBill to be updated",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CustomerBill_Update"
+                        },
+                        "in": "body"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Updated",
+                        "schema": {
+                            "$ref": "#/definitions/CustomerBill"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/appliedCustomerBillingRate": {
+            "get": {
+                "operationId": "listAppliedCustomerBillingRate",
+                "summary": "List or find AppliedCustomerBillingRate objects",
+                "description": "This operation list or find AppliedCustomerBillingRate entities",
+                "tags": [
+                    "appliedCustomerBillingRate"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "offset",
+                        "description": "Requested index for start of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "description": "Requested number of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "X-Result-Count": {
+                                "description": "Actual number of items returned in the response body",
+                                "type": "integer"
+                            },
+                            "X-Total-Count": {
+                                "description": "Total number of items matching criteria",
+                                "type": "integer"
+                            }
+                        },
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/AppliedCustomerBillingRate"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/appliedCustomerBillingRate/{id}": {
+            "get": {
+                "operationId": "retrieveAppliedCustomerBillingRate",
+                "summary": "Retrieves a AppliedCustomerBillingRate by ID",
+                "description": "This operation retrieves a AppliedCustomerBillingRate entity. Attribute selection is enabled for all first level attributes.",
+                "tags": [
+                    "appliedCustomerBillingRate"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the AppliedCustomerBillingRate",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    },
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to provide in response",
+                        "required": false,
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/AppliedCustomerBillingRate"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/billCycle": {
+            "get": {
+                "operationId": "listBillCycle",
+                "summary": "List or find BillCycle objects",
+                "description": "This operation list or find BillCycle entities",
+                "tags": [
+                    "billCycle"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "offset",
+                        "description": "Requested index for start of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "description": "Requested number of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "X-Result-Count": {
+                                "description": "Actual number of items returned in the response body",
+                                "type": "integer"
+                            },
+                            "X-Total-Count": {
+                                "description": "Total number of items matching criteria",
+                                "type": "integer"
+                            }
+                        },
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/BillCycle"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/billCycle/{id}": {
+            "get": {
+                "operationId": "retrieveBillCycle",
+                "summary": "Retrieves a BillCycle by ID",
+                "description": "This operation retrieves a BillCycle entity. Attribute selection is enabled for all first level attributes.",
+                "tags": [
+                    "billCycle"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the BillCycle",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    },
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to provide in response",
+                        "required": false,
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/BillCycle"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/billCycleSpecification": {
+            "get": {
+                "operationId": "listBillCycleSpecification",
+                "summary": "List or find BillCycleSpecification objects",
+                "description": "This operation list or find BillCycleSpecification entities",
+                "tags": [
+                    "billCycleSpecification"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "offset",
+                        "description": "Requested index for start of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "description": "Requested number of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "X-Result-Count": {
+                                "description": "Actual number of items returned in the response body",
+                                "type": "integer"
+                            },
+                            "X-Total-Count": {
+                                "description": "Total number of items matching criteria",
+                                "type": "integer"
+                            }
+                        },
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/BillCycleSpecification"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/billCycleSpecification/{id}": {
+            "get": {
+                "operationId": "retrieveBillCycleSpecification",
+                "summary": "Retrieves a BillCycleSpecification by ID",
+                "description": "This operation retrieves a BillCycleSpecification entity. Attribute selection is enabled for all first level attributes.",
+                "tags": [
+                    "billCycleSpecification"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the BillCycleSpecification",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    },
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to provide in response",
+                        "required": false,
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/BillCycleSpecification"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/hub": {
+            "post": {
+                "operationId": "registerListener",
+                "summary": "Register a listener",
+                "description": "Sets the communication endpoint address the service instance must use to deliver information about its health state, execution state, failures and metrics.",
+                "tags": [
+                    "events subscription"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscriptionInput"
+                        },
+                        "required": true,
+                        "in": "body",
+                        "description": "Data containing the callback endpoint to deliver the information"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Subscribed",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/hub/{id}": {
+            "delete": {
+                "operationId": "unregisterListener",
+                "summary": "Unregister a listener",
+                "description": "Resets the communication endpoint address the service instance must use to deliver information about its health state, execution state, failures and metrics.",
+                "tags": [
+                    "events subscription"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "description": "The id of the registered listener"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Any": {},
+        "AppliedBillingTaxRate": {
+            "type": "object",
+            "description": "The applied billing tax rate represents taxes applied billing rate it refers to. It is calculated during the billing process.",
+            "properties": {
+                "taxCategory": {
+                    "type": "string",
+                    "description": "A categorization of the tax rate"
+                },
+                "taxRate": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "Applied rate"
+                },
+                "taxAmount": {
+                    "$ref": "#/definitions/Money",
+                    "description": "Tax amount expressed in the given currency"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "AppliedCustomerBillingRate": {
+            "type": "object",
+            "description": "A customer bill displays applied billing rates created before or during the billing process.",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the customer applied billing rate"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Explanation: Reference of the customer applied billing rate."
+                },
+                "appliedBillingRateType": {
+                    "type": "string",
+                    "description": "Type of the applied billing rate : appliedBillingCharge (any kind of charge except taxation charges : recurringCharge, oneTimeCharge, usageCharge),  appliedBillingCredit (any kind of credit : rebate or productAlteration) or appliedPenaltyCharge (penalty charges such as late fees, payment rejection fees,...)"
+                },
+                "date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Creation date of the applied billing rate"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Additional data to be displayed on the bill for this customer applied billing rate"
+                },
+                "isBilled": {
+                    "type": "boolean",
+                    "description": "If isBilled = true then bill should be provided, if false then billingAccount should be provided"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the customer applied billing rate"
+                },
+                "appliedTax": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AppliedBillingTaxRate"
+                    }
+                },
+                "bill": {
+                    "$ref": "#/definitions/CustomerBillRef"
+                },
+                "billingAccount": {
+                    "$ref": "#/definitions/BillingAccountRef"
+                },
+                "characteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    }
+                },
+                "periodCoverage": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "periodCoverage for RecurringCharge (RC) indicating the RC coverage period dates for different purposes, such as RC proration, display on bill, GL reporting, etc. periodCoverage for OC start and end date will be the same"
+                },
+                "product": {
+                    "$ref": "#/definitions/ProductRef",
+                    "description": "Usually this information should be provided by the PRODUCT, which implies that there is a valid reference to product. In this case, this property should be empty. For all other situations, a text or structured info could be provided using this property. Regular modelling would suggest tu use the reforvalue pattern for this case. It is not choosen here because it would generate declarational dependencies which would be hard to maintain."
+                },
+                "taxExcludedAmount": {
+                    "$ref": "#/definitions/Money"
+                },
+                "taxIncludedAmount": {
+                    "$ref": "#/definitions/Money"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "AppliedPayment": {
+            "type": "object",
+            "description": "The applied payment is the result of lettering process. It enables to assign automatically or manually part of incoming payment amount to a bill.",
+            "properties": {
+                "appliedAmount": {
+                    "$ref": "#/definitions/Money"
+                },
+                "payment": {
+                    "$ref": "#/definitions/PaymentRef"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "Attachment": {
+            "type": "object",
+            "description": "Complements the description of an element (for instance a product) through video, pictures...",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier for this particular attachment"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "URI for this Attachment"
+                },
+                "attachmentType": {
+                    "type": "string",
+                    "description": "Attachment type such as video, picture"
+                },
+                "content": {
+                    "type": "string",
+                    "description": "The actual contents of the attachment object, if embedded, encoded as base64"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A narrative text describing the content of the attachment"
+                },
+                "mimeType": {
+                    "type": "string",
+                    "description": "Attachment mime type such as extension file for video, picture and document"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the attachment"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "Uniform Resource Locator, is a web page address (a subset of URI)"
+                },
+                "size": {
+                    "$ref": "#/definitions/Quantity",
+                    "description": "The size of the attachment."
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period of time for which the attachment is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "AttachmentRef": {
+            "type": "object",
+            "description": "Attachment reference. An attachment complements the description of an element (for instance a product) through video, pictures",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique-Identifier for this attachment"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "URL serving as reference for the attachment resource"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A narrative text describing the content of the attachment"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "url": {
+                    "type": "string",
+                    "description": "Link to the attachment media/content"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "AttachmentRefOrValue": {
+            "type": "object",
+            "description": "An attachment by value or by reference. For AttachmentRefOrValue, the attribute type,schemaLocation and referredType are related to the contained entity and not to AttchmentRefOrValue itself",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier for this particular attachment"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "URI for this Attachment"
+                },
+                "attachmentType": {
+                    "type": "string",
+                    "description": "Attachment type such as video, picture"
+                },
+                "content": {
+                    "type": "string",
+                    "description": "The actual contents of the attachment object, if embedded, encoded as base64"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A narrative text describing the content of the attachment"
+                },
+                "mimeType": {
+                    "type": "string",
+                    "description": "Attachment mime type such as extension file for video, picture and document"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the attachment"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "Uniform Resource Locator, is a web page address (a subset of URI)"
+                },
+                "size": {
+                    "$ref": "#/definitions/Quantity",
+                    "description": "The size of the attachment."
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period of time for which the attachment is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            }
+        },
+        "BillCycle": {
+            "type": "object",
+            "description": "A detailed description of a billing cycle and the various sub steps of a billing cycle.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the billing cycle."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the billing cycle"
+                },
+                "billingDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The billing/settlement date."
+                },
+                "billingPeriod": {
+                    "type": "string",
+                    "description": "A billing time period. It is e.g. the concrete expressed month. Example: 'March'."
+                },
+                "chargeDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date through when a payment method (e.g. credit card,...) will be activated."
+                },
+                "creditDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date through which credits previously received by the billing system are displeyed on the bill."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explanation regarding this billing cycle. If necessary."
+                },
+                "mailingDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Customer bill mailing date."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A short descriptive name of the actual billing cycle"
+                },
+                "paymentDueDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date, when the payment is due."
+                },
+                "BillCycleSpecification": {
+                    "$ref": "#/definitions/BillCycleSpecificationRef"
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period for which the billing cycle is valid (expressed in a formal formatted way)"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "BillCycleRef": {
+            "type": "object",
+            "description": "....",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the account"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Unique reference of the account"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the account"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "BillCycleSpecification": {
+            "type": "object",
+            "description": "A detailed description of a billing cycle and the various sub steps of a billing cycle.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the billing cycle."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the billing cycle"
+                },
+                "billingDateShift": {
+                    "type": "integer",
+                    "description": "An offset of a billing/settlement date. The offset is expressed as number of days with regard to the start of the billing/settlement period."
+                },
+                "billingPeriod": {
+                    "type": "string",
+                    "description": "A billing time period. It can be recurring, for example: week, month, quarter of year, year ."
+                },
+                "chargeDateOffset": {
+                    "type": "integer",
+                    "description": "An offset of a date through which charges previously received by the billing system will appear on the bill. The offset is expressed as number of days with regard to the start of the BillingPeriod."
+                },
+                "creditDateOffset": {
+                    "type": "integer",
+                    "description": "An offset of a date through which credits previously received by the billing system will appear on the bill. The offset is expressed as number of days with regard to the start of the BillingPeriod."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explanation regarding this billing cycle. If necessary."
+                },
+                "frequency": {
+                    "type": "string",
+                    "description": "Frequency of the billing cycle (monthly for instance)"
+                },
+                "mailingDateOffset": {
+                    "type": "integer",
+                    "description": "An offset of a customer bill mailing date. The offset is expressed as number of days with regard to the start of the BillingPeriod."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A short descriptive name of the actual billing cycle"
+                },
+                "paymentDueDateOffset": {
+                    "type": "integer",
+                    "description": "An offset of a payment due date. The offset is expressed as number of days with regard to the start of the BillingPeriod."
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period for which the billing cycle is valid, expressed in a formatted structured way."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "BillCycleSpecificationRef": {
+            "type": "object",
+            "description": "....",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the BillCycleSpecification"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Unique reference of the BillCycleSpecification"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the BillCycleSpecification"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "BillingAccountRef": {
+            "type": "object",
+            "description": "BillingAccount reference. A BillingAccount is a detailed description of a bill structure.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the billing account"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the billing account"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the billing account"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "Characteristic": {
+            "type": "object",
+            "description": "Describes a given characteristic of an object or entity through a name/value pair.",
+            "required": [
+                "name",
+                "value"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the characteristic"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the characteristic"
+                },
+                "valueType": {
+                    "type": "string",
+                    "description": "Data type of the value of the characteristic"
+                },
+                "characteristicRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CharacteristicRelationship"
+                    }
+                },
+                "value": {
+                    "$ref": "#/definitions/Any",
+                    "description": "The value of the characteristic"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "CharacteristicRelationship": {
+            "type": "object",
+            "description": "Another Characteristic that is related to the current Characteristic;",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the characteristic"
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "The type of relationship"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "CustomerBill": {
+            "type": "object",
+            "description": "The customer bill. Can be a regular recurring bill or an extra bill on demand by the customer or the csp.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Explanation: Unique identifier of he bill"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Bill unique reference"
+                },
+                "billDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Bill date, external customer view (in consequence: different to the production date of the bill)"
+                },
+                "billNo": {
+                    "type": "string",
+                    "description": "Bill reference known by the customer or the party and displayed on the bill. Could be different from the id"
+                },
+                "category": {
+                    "type": "string",
+                    "description": "Category of the bill produced : normal, duplicate, interim, last, trial customer or credit note for example"
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date of bill last update"
+                },
+                "nextBillDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "). Approximate date of  the next bill production given for information (only used/meaningful for on cycle / regular bills)"
+                },
+                "paymentDueDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date at which the amount due should have been paid"
+                },
+                "amountDue": {
+                    "$ref": "#/definitions/Money"
+                },
+                "appliedPayment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AppliedPayment"
+                    },
+                    "description": "Applied payment is a payment associated with the bill. There may be a partial payment, then there should be several applied payments available. On the other hand, more than one bill could be payed by one payment. In general there is an n:m relation between payment and bill."
+                },
+                "billCycle": {
+                    "$ref": "#/definitions/BillCycleRef"
+                },
+                "billDocument": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AttachmentRefOrValue"
+                    }
+                },
+                "billingAccount": {
+                    "$ref": "#/definitions/BillingAccountRef"
+                },
+                "billingPeriod": {
+                    "$ref": "#/definitions/TimePeriod"
+                },
+                "financialAccount": {
+                    "$ref": "#/definitions/FinancialAccountRef"
+                },
+                "paymentMethod": {
+                    "$ref": "#/definitions/PaymentMethodRef",
+                    "description": "paymentMethod here is recognized to be not really necessary in a STANDARD. It could be obtained by a GET request on the billing account. Conclusion: paymentMethod is marked to DEPRECIATED and will be removed in one of the next versions."
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    }
+                },
+                "remainingAmount": {
+                    "$ref": "#/definitions/Money"
+                },
+                "runType": {
+                    "$ref": "#/definitions/CustomerBillRunType",
+                    "description": "onCycle (a bill can be created as a result of a cycle run) or offCycle (a bill can be created as a result of other events such as customer request or account close)"
+                },
+                "state": {
+                    "$ref": "#/definitions/CustomerBillStateType",
+                    "description": "Status of the bill"
+                },
+                "taxExcludedAmount": {
+                    "$ref": "#/definitions/Money"
+                },
+                "taxIncludedAmount": {
+                    "$ref": "#/definitions/Money"
+                },
+                "taxItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TaxItem"
+                    }
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "CustomerBill_Update": {
+            "type": "object",
+            "description": "The customer bill. Can be a regular recurring bill or an extra bill on demand by the customer or the csp.\nSkipped properties: id,href,amountDue,appliedPayment,billDate,billDocument,billNo,billingAccount,billingPeriod,category,financialAccount,lastUpdate,nextBillDate,paymentDueDate,paymentMethod,relatedParty,remainingAmount,runType,taxExcludedAmount,taxIncludedAmount,taxItem",
+            "properties": {
+                "billCycle": {
+                    "$ref": "#/definitions/BillCycleRef"
+                },
+                "state": {
+                    "$ref": "#/definitions/CustomerBillStateType",
+                    "description": "Status of the bill"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "CustomerBillOnDemand": {
+            "type": "object",
+            "description": "This resource is used to manage the creation request of a customer bill in real-time (on demand).",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Explanation: Unique identifier of the customer bill on demand request given by the server"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the customer bill on demand request"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Additional data describing the customer bill on demand request"
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "description": "The last date time when the customer bill on demand has been updated"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Friendly name to identify the customer bill on demand request"
+                },
+                "billingAccount": {
+                    "$ref": "#/definitions/BillingAccountRef"
+                },
+                "customerBill": {
+                    "$ref": "#/definitions/CustomerBillRef"
+                },
+                "relatedParty": {
+                    "$ref": "#/definitions/RelatedParty"
+                },
+                "state": {
+                    "$ref": "#/definitions/CustomerBillOnDemandStateType",
+                    "description": "State of the request to produce an off cycle bill: Possible values are: inProgress, rejected, done, terminatedWithError."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "CustomerBillOnDemand_Create": {
+            "type": "object",
+            "description": "This resource is used to manage the creation request of a customer bill in real-time (on demand).\nSkipped properties: id,href",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Additional data describing the customer bill on demand request"
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "description": "The last date time when the customer bill on demand has been updated"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Friendly name to identify the customer bill on demand request"
+                },
+                "billingAccount": {
+                    "$ref": "#/definitions/BillingAccountRef"
+                },
+                "customerBill": {
+                    "$ref": "#/definitions/CustomerBillRef"
+                },
+                "relatedParty": {
+                    "$ref": "#/definitions/RelatedParty"
+                },
+                "state": {
+                    "$ref": "#/definitions/CustomerBillOnDemandStateType",
+                    "description": "State of the request to produce an off cycle bill: Possible values are: inProgress, rejected, done, terminatedWithError."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "CustomerBillOnDemandStateType": {
+            "type": "string",
+            "description": "Recommended Enumeration Type (not formal forced in standard): Valid values for 'CustomerBillOnDemand': 'inProgress', 'rejected', 'done', 'terminatedWithError'",
+            "enum": [
+                "inProgress",
+                "rejected",
+                "done",
+                "terminatedWithError"
+            ]
+        },
+        "CustomerBillRef": {
+            "type": "object",
+            "description": "Bill reference.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "CustomerBillRunType": {
+            "type": "string",
+            "description": "Recommended Enumeration Type (not formal forced in standard): Valid values for the runType of a bill. The bill could be produced in a regular bill cycle 'onCycle'. Otherwise the bill is produced on a request (e.g. customer request). This could be indicated by 'offCycle'",
+            "enum": [
+                "onCycle",
+                "offCycle"
+            ]
+        },
+        "CustomerBillStateType": {
+            "type": "string",
+            "description": "Recommended Enumeration Type (not formal forced in standard): Valid values for the lifecycle state of the bill: new = 'bill is ready to validate or to sent', validated = 'bill is checked (manual / automatic)', sent = 'bill is sent with the channel defined in the billingaccount', settled = 'bill is payed', partiallySettled = 'bill is partially payed', onHold = 'bill will not be in further processing until open issues connected to the bill are solved'",
+            "enum": [
+                "new",
+                "onHold",
+                "validated",
+                "sent",
+                "settled",
+                "partiallyPaid"
+            ]
+        },
+        "EntityRef": {
+            "type": "object",
+            "description": "Entity reference schema to be use for all entityRef class.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "FinancialAccountRef": {
+            "type": "object",
+            "description": "AccountReceivable reference. An account of money owed by a party to another entity in exchange for goods or services that have been delivered or used. An account receivable aggregates the amounts of one or more party accounts (billing or settlement) owned by a given party.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "Money": {
+            "type": "object",
+            "description": "A base / value business entity used to represent money",
+            "properties": {
+                "unit": {
+                    "type": "string",
+                    "description": "Currency (ISO4217 norm uses 3 letters to define the currency)"
+                },
+                "value": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "A positive floating point number"
+                }
+            }
+        },
+        "PaymentMethodRef": {
+            "type": "object",
+            "description": "PaymentMethod reference. A payment method defines a specific mean of payment (e.g direct debit).",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the payment mean"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the payment mean"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the payment mean"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "PaymentRef": {
+            "type": "object",
+            "description": "If an immediate payment has been done at the product order submission, the payment information are captured and stored (as a reference) in the order.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A name for the payment"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "ProductRef": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "Quantity": {
+            "type": "object",
+            "description": "An amount in a given unit",
+            "properties": {
+                "amount": {
+                    "default": 1,
+                    "type": "number",
+                    "format": "float",
+                    "description": "Numeric value in a given unit"
+                },
+                "units": {
+                    "type": "string",
+                    "description": "Unit"
+                }
+            }
+        },
+        "RelatedParty": {
+            "type": "object",
+            "description": "Related Entity reference. A related party defines party or party role linked to a specific entity.",
+            "required": [
+                "@referredType",
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "role": {
+                    "type": "string",
+                    "description": "Role played by the related party"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            }
+        },
+        "TaxItem": {
+            "type": "object",
+            "description": "A tax item is created for each tax rate and tax type used in the bill.",
+            "properties": {
+                "taxCategory": {
+                    "type": "string",
+                    "description": "Tax category"
+                },
+                "taxRate": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "Applied rate of the tax"
+                },
+                "taxAmount": {
+                    "$ref": "#/definitions/Money",
+                    "description": "Amount of tax expressed in the given currency"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "TimePeriod": {
+            "type": "object",
+            "description": "A period of time, either as a deadline (endDateTime only) a startDateTime only, or both",
+            "properties": {
+                "endDateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "End of the time period, using IETC-RFC-3339 format"
+                },
+                "startDateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Start of the time period, using IETC-RFC-3339 format. If you define a start, you must also define an end"
+                }
+            }
+        },
+        "EventSubscription": {
+            "type": "object",
+            "description": "Sets the communication endpoint address the service instance must use to deliver notification information",
+            "required": [
+                "id",
+                "callback"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Id of the listener"
+                },
+                "callback": {
+                    "type": "string",
+                    "description": "The callback being registered."
+                },
+                "query": {
+                    "type": "string",
+                    "description": "additional data to be passed"
+                }
+            }
+        },
+        "EventSubscriptionInput": {
+            "type": "object",
+            "description": "Sets the communication endpoint address the service instance must use to deliver notification information",
+            "required": [
+                "callback"
+            ],
+            "properties": {
+                "callback": {
+                    "type": "string",
+                    "description": "The callback being registered."
+                },
+                "query": {
+                    "type": "string",
+                    "description": "additional data to be passed"
+                }
+            }
+        },
+        "Error": {
+            "description": "Used when an API throws an Error, typically with a HTTP error response-code (3xx, 4xx, 5xx)",
+            "type": "object",
+            "required": [
+                "code",
+                "reason"
+            ],
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "description": "Application relevant detail, defined in the API or a common list."
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "Explanation of the reason for the error which can be shown to a client user."
+                },
+                "message": {
+                    "type": "string",
+                    "description": "More details and corrective actions related to the error which can be shown to a client user."
+                },
+                "status": {
+                    "type": "string",
+                    "description": "HTTP Error code extension"
+                },
+                "referenceError": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URI of documentation describing the error."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class."
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name."
+                }
+            }
+        }
+    }
+}

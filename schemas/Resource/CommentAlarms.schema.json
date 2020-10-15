@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "CommentAlarms.schema.json",
+  "title": "CommentAlarms",
+  "definitions": {
+    "CommentAlarms": {
+      "$id": "#CommentAlarms",
+      "description": "Task resource for comment alarms operation",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The identifier of the task",
+          "type": "string"
+        },
+        "href": {
+          "description": "A reference to the task",
+          "type": "string"
+        },
+        "state": {
+          "description": "Current state of the operation task",
+          "type": "string",
+          "enum": [
+            "acknowledged",
+            "terminatedWithError",
+            "inProgress",
+            "done",
+            "cancel",
+            "canceled"
+          ]
+        },
+        "comment": {
+          "$ref": "../Common/Comment.schema.json#Comment"
+        },
+        "alarmPattern": {
+          "description": "Alarm patterns to match target alarms. An alarm will match if all of the sttributes in any of the patterns compare equal to those attributes of the alarm.",
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/Alarm.schema.json#Alarm"
+          }
+        },
+        "commentedAlarm": {
+          "description": "The successfully commented alarms",
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/AlarmRefOrValue.schema.json#AlarmRefOrValue"
+          }
+        }
+      }
+    }
+  }
+}

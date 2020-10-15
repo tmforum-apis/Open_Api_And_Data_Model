@@ -1,0 +1,49 @@
+{
+  "id": "178ca8bb-81bc-47ef-911e-dd86a40b8974",
+  "href": "https://mycsp:8080/tmf-api/generalTestArtifact/v4/generalTestArtifact/178ca8bb-81bc-47ef-911e-dd86a40b8974",
+  "description": "Sample general test artifact",
+  "version": "1.2.3",
+  "relatedParty": [
+    {
+      "name": "testUser",
+      "@referredType": "Individual",
+      "role": "Owner",
+      "contact": [
+        {
+          "mediumType": "email",
+          "characteristic": {
+            "emailAddress": "testUser@abc.com"
+          }
+        }
+      ]
+    }
+  ],
+  "attribute": [
+    {
+      "characteristic": {
+        "name": "name",
+        "valueType": "string",
+        "value": "test.zip"
+      }
+    },
+    {
+      "characteristic": {
+        "name": "category",
+        "valueType": "string",
+        "value": "vnf"
+      }
+    },
+    {
+      "characteristic": {
+        "name": "checksum",
+        "valueType": "string",
+        "value": "BC1A4D958133CAE622EAC4F6B845D78D"
+      }
+    }
+  ],
+  "generalArtifactDefinition": {
+    "attachmentType": "zip",
+    "content": "<base64-encoded general artifact, usually a binary of some sort>",
+    "mimeType": "base64"
+  }
+}

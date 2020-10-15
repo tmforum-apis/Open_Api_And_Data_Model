@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "MapArrayCharacteristic.schema.json",
+    "title": "MapArrayCharacteristic",
+    "definitions": {
+        "MapArrayCharacteristic": {
+            "$id": "#MapArrayCharacteristic",
+            "description": "A characteristic which value is a string",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "value": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Characteristic.schema.json#Characteristic"
+                }
+            ]
+        }
+    }
+}

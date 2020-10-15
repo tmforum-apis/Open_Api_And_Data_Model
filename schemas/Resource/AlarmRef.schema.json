@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AlarmRef.schema.json",
+  "title": "AlarmRef",
+  "definitions": {
+    "AlarmRef": {
+      "$id": "#AlarmRef",
+      "type": "object",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        }
+      ]
+    }
+  }
+}

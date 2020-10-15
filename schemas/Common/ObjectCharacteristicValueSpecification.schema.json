@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ObjectCharacteristicValueSpecification.schema.json",
+    "title": "ObjectCharacteristicValueSpecification",
+    "definitions": {
+        "ObjectCharacteristicValueSpecification": {
+            "$id": "#ObjectCharacteristicValueSpecification",
+            "description": "A specification for a characteristic for which the value is any object",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "object",
+                    "description": "Value of the characteristic"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "CharacteristicValueSpecification.schema.json#CharacteristicValueSpecification"
+                }
+            ]
+        }
+    }
+}

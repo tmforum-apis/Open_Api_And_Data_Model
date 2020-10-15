@@ -1,0 +1,30 @@
+{
+    "id": "5351",
+    "href": "https://mycsp.com:8080/tmf-api/serviceInventory/v4/service/5351",
+    "approvalDate": "2018-01-15T12:26:11.747Z",
+    "approved": true,
+    "description": "This  is an AI contract ",
+    "state": "Active",
+    "version": "1.0",
+    "aiContractSpecification": {
+        "href": "https://mycsp.com:8080/tmf-api/AIManagment/v4/aiContractSpecification/2435",
+        "id": "2435"
+    },
+    "aiModelSpecification": {
+        "href": "https://mycsp.com:8080/tmf-api/AIManagment/v4/aiModelSpecification/42",
+        "id": "42",
+        "@referredType": "AiModelSpecification"
+    },
+    "relatedParty": [{
+        "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/organization/ACME",
+        "id": "456",
+        "name": "ACME",
+        "role": "ContractOwner",
+        "@referredType": "Organization"
+    }],
+    "rule": [{
+        "id": "ImageQuality-1920",
+        "href": "http://api/thresholdRule/ImageQuality-1920",
+        "@referredType": "SimpleThresholdRule"
+    }]
+}

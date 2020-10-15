@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ShipmentQualificationItem.schema.json",
+    "title": "ShipmentQualificationItem",
+    "definitions": {
+        "ShipmentQualificationItem": {
+            "$id": "#ShipmentQualificationItem",
+            "type": "object",
+            "description": "A ShipmentQualificationItem relates to a specific shipment being checked in a qualification operation.",
+            "properties": {
+                "expectedDeliveryDate": {
+                    "type": "string",
+                    "description": "The date when the shipment is expected to be delivered",
+                    "format": "date-time"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Id of the Shipment Qualification Item"
+                },
+                "expirationDate": {
+                    "type": "string",
+                    "description": "Date when the qualification item response expires",
+                    "format": "date-time"
+                },
+                "shipment": {
+                    "description": "Shipment structure that allows to identify the Shipment's composition, the Shipment Specification and the Shipment Characteristics.",
+                    "$ref": "../EngagedParty/ShipmentRefOrValue.schema.json#/definitions/ShipmentRefOrValue"
+                },
+                "eligibilityUnavailabilityReason": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/EligibilityUnavailabilityReason.schema.json#/definitions/EligibilityUnavailabilityReason"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
+        }
+    }
+}

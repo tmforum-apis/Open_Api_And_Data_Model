@@ -1,0 +1,46 @@
+{
+    "id": "8044",
+    "href": "http://server:port/resourceInventoryManagement/resource/8044",
+    "description": "This is a MSISDN resource with the category Premium and with a reserved resourceStatus for organisations.",
+    "category": "Premium",
+    "value": "0170112231",
+    "endOperatingDate": "2022-07-04T08:00.000Z",
+    "name": "MobileNumber xx",
+    "administrativeState": "locked",
+    "operationalState": "enable",
+    "usageState": "active",
+    "resourceStatus": "reserved",
+    "relatedParty": [{
+        "href": "https://server:port/tmf-api/partyManagement/v4/individual/456",
+        "id": "456",
+        "name": "John Doe",
+        "role": "user",
+        "@referredType": "Individual"
+    }],
+    "note": [{
+        "text": "something about this resource"
+    }],
+    "place": {
+            "id": "9912",
+            "href": "https://host:port/geographicAddressManagement/v4/geographicAddress/9912",
+            "@type": "PlaceRef",
+            "@referredType": "GeographicAddress"
+    },
+    "resourceRelationship": [{
+        "relationshipType": "contains",
+        "resource": {
+            "id": "44",
+            "href": "http://server:port/resourceInventoryManagement/resource/44"
+        }
+    }],
+    "resourceSpecification": {
+        "id": "4",
+        "href": " http://server:port/resourceCatalogManagement/resourceSpecification/4",
+        "@referredType": "LogicalResourceSpecification"
+    },
+    "startOperatingDate": "2020-03-04T00:00.000Z",
+    "version": "business v2",
+    "@type": "MSISDN",
+    "@schemaLocation": "http://server:port/MSISDN_Resource.schema.json",
+    "@baseType": "Resource"
+}

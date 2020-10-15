@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "MonitoredInstancesCriteria.schema.json",
+  "title": "MonitoredInstancesCriteria",
+  "definitions": {
+    "MonitoredInstancesCriteria": {
+      "description": "",
+      "allOf": [
+        {
+          "$ref": "MonitoredObjectsCriteria.schema.json#/definitions/MonitoredObjectsCriteria"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "monitoredObjectInstances": {
+              "$ref": "#/definitions/ObjectName"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

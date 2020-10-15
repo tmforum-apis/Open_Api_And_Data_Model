@@ -1,0 +1,47 @@
+{
+    "id": "ImageQuality-1920",
+    "href": "http://api/thresholdRule/ImageQuality-1920",
+    "@type": "SimpleThresholdRule",
+    "thresholdRuleName": "ImageQuality",
+    "thresholdRuleSeverity": "MAJOR",
+    "thresholdRuleCondition": "Raise",
+    "measurement": {
+        "id": "50",
+        "name": "ImageQuality",
+        "href": "http://mycsp.com/measurement/50",
+        "description": "Input image quality proportion % of usable image",
+        "measurementType": "MovingAverage",
+        "measurementUnit": "percentage",
+        "collectionType": "COUNTER",
+        "measurementFormula": "X%"
+    },
+    "conformanceTargetUpper": 10,
+    "conformanceTargetLower": 0,
+    "conformanceComparatorUpper": "GT",
+    "conformanceComparatorLower": 0,
+    "conformancePeriod": {
+        "startDateTime": "2018-01-15T12:26:11.747Z",
+        "endDateTime": "2019-01-15T12:26:11.747Z"
+    },
+    "tolerancePeriod": {
+        "startDateTime": "2019-07-15T12:26:11.747Z",
+        "endDateTime": "2019-08-15T12:26:11.747Z"
+    },
+    "thresholdTarget": 0,
+    "gracePeriods": 0,
+    "consequence": [{
+        "@type": "PerformanceConsequence",
+        "name": "Alarm Consequence",
+        "description": "Alarm Consequence",
+        "prescribedAction": "CreateAlarm",
+        "alarmSpecification": {
+            "perfAlarmSpecSeverity": "MAJOR",
+            "perfeAlarmProbableCause": "Threshold Crossed",
+            "perfAlarmSpecAdditionalText": "Input image quality degraded",
+            "perfAlarmSpecThresholdCrossingDescription": " Input image quality is under threshold",
+            "perfAlarmSpecRelatedEntity": {
+                "operatingState": "DEGRADED"
+            }
+        }
+    }]
+}

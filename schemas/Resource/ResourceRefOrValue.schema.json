@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ResourceRefOrValue.schema.json",
+  "title": "ResourceRefOrValue",
+  "definitions": {
+      "ResourceRefOrValue": {
+          "$id": "#ResourceRefOrValue",
+          "description": "Resource is an abstract entity that describes the common set of attributes shared by all concrete resources. The polymorphic attributes @type, @schemaLocation & @referredType are related to the Resource entity and not the related ResourceRefOrValue class itself",
+          "type": "object",
+          "properties": {
+          },
+          "allOf": [
+              {
+                "$ref": "ResourceRef.schema.json#ResourceRef"
+              },
+              {
+                "$ref": "Resource.schema.json#Resource"
+              }
+          ]
+      }
+  }
+}

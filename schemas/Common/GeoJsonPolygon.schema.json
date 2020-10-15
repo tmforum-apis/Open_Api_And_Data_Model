@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "GeoJsonPolygon.schema.json",
+  "title": "GeoJsonPolygon",
+  "definitions": {
+    "GeoJsonPolygon": {
+      "$id": "#GeoJsonPolygon",
+      "description": "Container for GeoJSON Polygon: An array of linear rings",
+      "required": [
+        "@type",
+        "geoJson"
+      ],
+      "properties": {
+        "@type": {
+          "type": "string",
+          "enum": [
+            "GeoJsonPolygon"
+          ],
+          "description": "The name of the GeoJSON structure used in the geometry attribute"
+        },
+        "geoJson": {
+          "$ref": "../Common/Polygon.schema.json#Polygon"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/GeographicLocation.schema.json#GeographicLocation"
+        }
+      ],
+      "type": "object"
+    }
+  }
+}

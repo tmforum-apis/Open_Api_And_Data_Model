@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ConnectionPointRef.schema.json",
+    "title": "ConnectionPointRef",
+    "definitions": {
+        "ConnectionPointRef": {
+            "$id": "#ConnectionPointRef",
+            "description": "Connection point reference. A connection point provides a service access point (SAP) for input and/or output of the resource function.",
+            "type": "object",
+            "properties": {
+                "version": {
+                    "type": "string",
+                    "description": "Connection point version"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#/definitions/EntityRef"
+                }
+            ]
+        }
+    }
+}

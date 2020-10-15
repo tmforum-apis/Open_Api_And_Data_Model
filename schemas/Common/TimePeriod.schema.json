@@ -1,37 +1,37 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "TimePeriod.schema.json",
-    "title": "TimePeriod",
-    "definitions": {
-        "TimePeriod": {
-            "$id": "#TimePeriod",
-            "description": "A period of time, either as a deadline (endDateTime only) a startDateTime only, or both",
-            "type": "object",
-            "properties": {
-                "startDateTime": {
-                    "description": "Start of the time period, using IETC-RFC-3339 format. If you define a start, you must also define an end",
-                    "type": "string",
-                    "format": "date-time",
-                    "examples": [
-                        "1985-04-12T23:20:50.52Z",
-                        "2018-09-21T09:13:16-07:00"
-                    ]
-                },
-                "endDateTime": {
-                    "description": "End of the time period, using IETC-RFC-3339 format",
-                    "type": "string",
-                    "format": "date-time",
-                    "examples": [
-                        "1985-04-12T23:20:50.52Z",
-                        "2018-09-21T09:13:16-07:00"
-                    ]
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TimePeriod.schema.json",
+  "title": "TimePeriod",
+  "definitions": {
+    "TimePeriod": {
+      "$id": "#TimePeriod",
+      "description": "A period of time, either as a deadline (endDateTime only) a startDateTime only, or both",
+      "type": "object",
+      "properties": {
+        "startDateTime": {
+          "description": "Start of the time period, using IETC-RFC-3339 format",
+          "type": "string",
+          "format": "date-time",
+          "examples": [
+            "1985-04-12T23:20:50.52Z",
+            "2018-09-21T09:13:16-07:00"
+          ]
+        },
+        "endDateTime": {
+          "description": "End of the time period, using IETC-RFC-3339 format",
+          "type": "string",
+          "format": "date-time",
+          "examples": [
+            "1985-04-12T23:20:50.52Z",
+            "2018-09-21T09:13:16-07:00"
+          ]
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

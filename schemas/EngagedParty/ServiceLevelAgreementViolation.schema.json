@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#", 
+    "$id": "ServiceLevelAgreementViolation.schema.json", 
+    "title": "ServiceLevelAgreementViolation", 
+    "definitions": {
+        "ServiceLevelAgreementViolation": {
+            "type": "object", 
+            "properties": {
+                "date": {
+                    "type": "string", 
+                    "format": "date-time"
+                }, 
+                "href": {
+                    "type": "string"
+                }, 
+                "id": {
+                    "type": "integer", 
+                    "format": "int64"
+                }, 
+                "relatedParty": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "../RelatedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+                    }
+                }, 
+                "serviceLevelAgreement": {
+                    "$ref": "ServiceLevelAgreementRef.schema.json#/definitions/ServiceLevelAgreementRef"
+                }, 
+                "violation": {
+                    "$ref": "Violation.schema.json#/definitions/Violation"
+                }
+            }
+        }
+    }
+}

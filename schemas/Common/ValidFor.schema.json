@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ValidFor.schema.json",
+  "title": "ValidFor",
+  "definitions": {
+    "ValidFor": {
+      "$id": "#ValidFor",
+      "type": "object",
+      "properties": {
+        "endDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "startDateTime": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

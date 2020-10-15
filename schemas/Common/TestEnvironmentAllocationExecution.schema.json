@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TestEnvironmentAllocationExecution.schema.json",
+  "title": "TestEnvironmentAllocationExecution",
+  "definitions": {
+    "TestEnvironmentAllocationExecution": {
+      "$id": "#TestEnvironmentAllocationExecution",
+      "type": "object",
+      "description": "REST resource for test environment allocation lifecycle",
+      "required": [
+        "resourceManagerUrl"
+      ],
+      "properties": {
+        "abstractEnvironment": {
+          "$ref": "../Common/AbstractEnvironmentRef.schema.json#AbstractEnvironmentRef"
+        },
+        "testScenario": {
+          "$ref": "../Common/TestScenarioRef.schema.json#TestScenarioRef"
+        },
+        "concreteResourceMapping": {
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/ConcreteResourceMapping.schema.json#ConcreteResourceMapping"
+          }
+        },
+        "resourceManagerUrl": {
+          "type": "string",
+          "format": "uri",
+          "example": "https://myserver.com/resourceManager"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Execution.schema.json#Execution"
+        }
+      ]
+    }
+  }
+}

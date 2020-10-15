@@ -1,27 +1,27 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ExternalReference.schema.json",
-    "title": "ExternalReference",
-    "definitions": {
-        "ExternalReference": {
-            "$id": "#ExternalReference",
-            "type": "object",
-            "description": "External reference of the individual or reference in other system",
-            "properties": {
-                "externalReferenceType": {
-                    "type": "string",
-                    "description": "Type of the external reference"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "External reference name"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ExternalReference.schema.json",
+  "title": "ExternalReference",
+  "definitions": {
+    "ExternalReference": {
+      "$id": "#ExternalReference",
+      "type": "object",
+      "description": "External reference of the individual or reference in other system",
+      "properties": {
+        "externalReferenceType": {
+          "type": "string",
+          "description": "Type of the external reference"
+        },
+        "name": {
+          "type": "string",
+          "description": "External reference name"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

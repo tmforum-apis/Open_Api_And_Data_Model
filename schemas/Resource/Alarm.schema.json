@@ -1,0 +1,178 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Alarm.schema.json",
+  "title": "Alarm",
+  "definitions": {
+    "Alarm": {
+      "$id": "#Alarm",
+      "description": "This resource represents an alarm supporting the information model defined in ITU-T X.733.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Identifier of the alarm, determined by the alarm owning system"
+        },
+        "href": {
+          "type": "string",
+          "description": "A reference to the alarm."
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "The base type of this alarm."
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "description": "A reference to the schema describing this alarm."
+        },
+        "@type": {
+          "type": "string",
+          "description": "The type for this alarm."
+        },
+        "externalAlarmId": {
+          "type": "string",
+          "description": "An identifier of the alarm in the source system."
+        },
+        "state": {
+          "type": "string",
+          "description": "Defines the alarm state during its life cycle (raised | updated | cleared).",
+          "enum": [
+            "raised",
+            "updated",
+            "cleared"
+          ]
+        },
+        "alarmType": {
+          "$ref": "../Resource/AlarmType.schema.json#AlarmType"
+        },
+        "perceivedSeverity": {
+          "$ref": "../Resource/PerceivedSeverity.schema.json#PerceivedSeverity"
+        },
+        "probableCause": {
+          "type": "string",
+          "description": "Provides the probable cause of the alarm. The values are consistent with ITU-T Recommendation X.733 or 3GPP TS 32.111-2 Annex B."
+        },
+        "specificProblem": {
+          "type": "string",
+          "description": "Provides more specific information about the alarm."
+        },
+        "alarmedObjectType": {
+          "type": "string",
+          "description": "The type (class) of the managed object associated with the event."
+        },
+        "alarmedObject": {
+          "$ref": "../Resource/AlarmedObject.schema.json#AlarmedObject"
+        },
+        "reportingSystemId": {
+          "type": "string",
+          "description": "Reporting system identity."
+        },
+        "sourceSystemId": {
+          "type": "string",
+          "description": "Source system identity."
+        },
+        "alarmDetails": {
+          "type": "string",
+          "description": "Contains further information on the alarm."
+        },
+        "alarmRaisedTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Indicates the time (as a date + time) at which the alarm occurred at its source."
+        },
+        "alarmChangedTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Indicates the last date and time when the alarm is changed on the alarm-owning system. Any change to the alarm whether coming from the alarmed resource, or triggered by a change from the client is changing this time."
+        },
+        "alarmClearedTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Indicates the time (as a date + time) at which the alarm is cleared at the source. "
+        },
+        "alarmReportingTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Indicates the time (as a date + time) at which the alarm was reported by the owning OSS. It might be different from the alarmRaisedTime. For instance, if the alarm list is maintained by an EMS, the alarmRaisedtime would be the time the alarm\n  was detected by the NE, while the alarmReportingTime would be the time this alarm was stored in the alarm list of the EMS."
+        },
+        "ackState": {
+          "type": "string",
+          "description": "Provides the Acknowledgement State of the alarm (unacknowledged | acknowledged).",
+          "enum": [
+            "unacknowledged",
+            "acknowledged"
+          ]
+        },
+        "ackSystemId": {
+          "type": "string",
+          "description": "Provides the name of the system that last changed the ackState of an alarm, i.e. acknowledged or unacknowledged the alarm."
+        },
+        "ackUserId": {
+          "type": "string",
+          "description": "Provides the id of the user who has last changed the ack state of the alarm, i.e. acknowledged or unacknowledged the alarm."
+        },
+        "affectedService": {
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/AffectedService.schema.json#AffectedService"
+          }
+        },
+        "alarmEscalation": {
+          "type": "boolean",
+          "description": "Indicates if this alarm has been escalated or not. "
+        },
+        "clearSystemId": {
+          "type": "string",
+          "description": "Provides the id of the system where the user who invoked the alarmCleared operation is located. "
+        },
+        "clearUserId": {
+          "type": "string",
+          "description": "Provides the id of the user who invoked the alarmCleared operation"
+        },
+        "comment": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/Comment.schema.json#Comment"
+          }
+        },
+        "correlatedAlarm": {
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/AlarmRef.schema.json#AlarmRef"
+          }
+        },
+        "crossedThresholdInformation": {
+          "$ref": "../Resource/CrossedThresholdInformation.schema.json#CrossedThresholdInformation"
+        },
+        "isRootCause": {
+          "type": "boolean",
+          "description": "Indicates whether the alarm is a root cause alarm.. "
+        },
+        "parentAlarm": {
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/AlarmRef.schema.json#AlarmRef"
+          }
+        },
+        "plannedOutageIndicator": {
+          "type": "string",
+          "description": "Indicates that the Managed Object (related to this alarm) is in planned outage (in planned maintenance, or out-of-service). "
+        },
+        "proposedRepairedActions": {
+          "type": "string",
+          "description": "Indicates proposed repair actions, if known to the system emitting the alarm."
+        },
+        "serviceAffecting": {
+          "type": "boolean",
+          "description": "Indicates whether the alarm affects service or not."
+        },
+        "place": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue"
+          }
+        }
+      }
+    }
+  }
+}

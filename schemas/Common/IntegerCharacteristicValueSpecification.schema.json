@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "IntegerCharacteristicValueSpecification.schema.json",
+    "title": "IntegerCharacteristicValueSpecification",
+    "definitions": {
+        "IntegerCharacteristicValueSpecification": {
+            "$id": "#IntegerCharacteristicValueSpecification",
+            "description": "A specification for a characteristic for which the value is an integer number",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "integer",
+                    "description": "Value of the characteristic"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "CharacteristicValueSpecification.schema.json#CharacteristicValueSpecification"
+                }
+            ]
+        }
+    }
+}

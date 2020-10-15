@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "StringArrayCharacteristicValueSpecification.schema.json",
+    "title": "StringArrayCharacteristicValueSpecification",
+    "definitions": {
+        "StringArrayCharacteristicValueSpecification": {
+            "$id": "#StringArrayCharacteristicValueSpecification",
+            "description": "A specification for a characteristic for which the value is an array of strings",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+			"allOf": [
+                {
+                    "$ref": "CharacteristicValueSpecification.schema.json#CharacteristicValueSpecification"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,532 @@
+{
+	"id": "5fc91de8-88be-4c7c-8b3c-e08ccc53b889",
+	"href": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceSpecification/5fc91de8-88be-4c7c-8b3c-e08ccc53b889",
+	"name": "Medium to Large Enterprise Firewall - Model 134985.3",
+	"description": "This is a type of firewall to be used for our medium to large enterprise customers",
+	"@type": "ResourceFunctionSpecification",
+	"validFor": {
+		"startDateTime": "2019-08-01T00:00:00.000Z",
+		"endDateTime": "2019-08-31T23:59:59.999Z"
+	},
+	"lastUpdate": "2019-08-03T12:34:17.645Z",
+	"lifecycleStatus": "Active",
+	"isBundle": false,
+	"category": "Security",
+	"relatedParty": [
+		{
+			"id": "77b93cf8-54b1-49f6-82cd-4913d93101ef",
+			"href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/organization/77b93cf8-54b1-49f6-82cd-4913d93101ef",
+			"role": "Supplier",
+			"name": "Firewall Express",
+			"@referredType": "Organization"
+		}
+	],
+	"resourceSpecCharacteristic": [
+		{
+			"name": "operatingSystem",
+			"description": "Operating System",
+			"valueType": "string",
+			"configurable": true,
+			"validFor": {
+				"startDateTime": "2019-08-01T00:00:00.000Z",
+				"endDateTime": "2019-12-31T23:59:59.999Z"
+			},
+			"@type": "ResourceSpecificationCharacteristic",
+			"minCardinality": 1,
+			"maxCardinality": 1,
+			"isUnique": true,
+			"extensible": false,
+			"resourceSpecCharacteristicValue": [
+				{
+					"isDefault": true,
+        		        	"valueType": "string",
+					"value": "Android Pie",
+					"validFor": {
+						"startDateTime": "2019-08-01T00:00:00.000Z",
+						"endDateTime": "2020-08-31T23:59:59.999Z"
+					}
+				}, 
+				{
+					"isDefault": false,
+        	        		"valueType": "string",
+					"value": "Windows 10",
+					"validFor": {
+						"startDateTime": "2015-07-29T00:00:00.000Z",
+						"endDateTime": "2025-10-25T23:59:59.999Z"
+					}
+				},
+				{
+					"isDefault": false,
+        		        	"valueType": "string",
+					"value": "macOS 10.14.6",
+					"validFor": {
+						"startDateTime": "2019-06-23T00:00:00.000Z",
+						"endDateTime": "2021-12-31T23:59:59.999Z"
+					}
+				}
+			]
+		},
+		{
+			"name": "maxTraffic",
+			"description": "Max Traffic size in GBs/sec",
+			"valueType": "integer",
+			"configurable": false,
+			"extensible": true,
+			"validFor": {
+				"startDateTime": "2018-11-17T00:00:00.000Z",
+				"endDateTime": "2019-12-31T23:59:59.999Z"
+			},
+			"resourceSpecCharacteristicValue": [
+				{
+        			"valueType": "integer",
+					"value": 25
+				}
+			]
+		},
+		{
+			"name": "keywords",
+			"description": "Keywords",
+			"valueType": "string",
+			"configurable": false,
+			"extensible": true,
+			"validFor": {
+				"startDateTime": "2016-03-15T00:00:00.000Z",
+				"endDateTime": "2019-12-31T23:59:59.999Z"
+			},
+			"resourceSpecCharacteristicValue": [
+				{
+        		        	"valueType": "string",
+					"value": "Firewall"
+				},
+				{
+        		        	"valueType": "string",
+					"value": "Large Enterprise"
+				},
+				{
+        		        	"valueType": "string",
+					"value": "Medium Enterprise"
+				}
+			]
+		},
+		{
+			"name": "language",
+			"description": "Language supported in the RF package and user interface (if any)",
+			"valueType": "string",
+			"configurable": true,
+			"minCardinality": 0,
+			"maxCardinality": 3,
+			"extensible": true,
+			"validFor": {
+				"startDateTime": "2016-03-15T00:00:00.000Z",
+				"endDateTime": "2019-12-31T23:59:59.999Z"
+			},
+			"resourceSpecCharacteristicValue": [
+				{
+        		        	"valueType": "string",
+					"value": "en"
+				},
+				{
+        		        	"valueType": "string",
+					"value": "es"
+				},
+				{
+        		        	"valueType": "string",
+					"value": "fr"
+				}
+			]
+		}
+	],
+	"featureSpecification": [
+		{
+			"id": "h776f845f-z20a-468f-v44m-9e07fe3bd28l",
+			"name": "L2&L3",
+			"validFor": {
+				"startDateTime": "2018-05-11T00:00:00.000Z",
+				"endDateTime": "2019-12-31T23:59:59.999Z"
+			}
+		},
+		{
+			"id": "g535f845f-032a-468f-a86e-9e07fe3bc85b",
+			"name": "OSI-L4",
+			"validFor": {
+				"startDateTime": "2018-05-13T00:00:00.000Z",
+				"endDateTime": "2019-12-31T23:59:59.999Z"
+			}
+		},
+		{
+			"id": "k463345f-011a-463a-a92f-4h2kfe3bc44b",
+			"name": "OSI-L7",
+			"validFor": {
+				"startDateTime": "2018-05-16T00:00:00.000Z",
+				"endDateTime": "2019-12-31T23:59:59.999Z"
+			}
+		},
+		{
+			"id": "f78g245f-671a-468f-a95j-9e07fe3bc98b",
+			"name": "tarpit",
+			"validFor": {
+				"startDateTime": "2018-07-12T00:00:00.000Z",
+				"endDateTime": "2019-12-31T23:59:59.999Z"
+			}
+		},
+		{
+			"id": "l22m455f-671a-499d-a95j-8h46fe3bc88c",
+			"name": "log",
+			"validFor": {
+				"startDateTime": "2015-11-21T00:00:00.000Z",
+				"endDateTime": "2019-12-31T23:59:59.999Z"
+			},
+			"featureSpecCharacteristic": [
+				{
+					"name": "logSize",
+					"description": "Log Size in MB",
+					"valueType": "integer",
+					"configurable": true,
+					"validFor": {
+						"startDateTime": "2015-11-22T00:00:00.000Z",
+						"endDateTime": "2019-12-31T23:59:59.999Z"
+					},
+					"@type": "FeatureSpecificationCharacteristic",
+					"minCardinality": 0,
+					"maxCardinality": 1,
+					"isUnique": true,
+					"extensible": false,
+					"featureSpecCharacteristicValue": [
+						{
+							"isDefault": true,
+							"valueType": "integer",
+							"value": 2000,
+							"validFor": {
+								"startDateTime": "2015-11-22T00:00:00.000Z",
+								"endDateTime": "2019-12-31T23:59:59.999Z"
+							}
+						},
+						{
+							"isDefault": false,
+							"valueType": "integer",
+							"value": 4000,
+							"validFor": {
+								"startDateTime": "2015-11-22T00:00:00.000Z",
+								"endDateTime": "2019-12-31T23:59:59.999Z"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "db723e27-58d3-4120-b564-af199cb32bd3",
+			"name": "IPAddressing",
+			"isBundle": true,
+			"validFor": {
+				"startDateTime": "2017-05-24T00:00:00.000Z",
+				"endDateTime": "2019-12-31T23:59:59.999Z"
+			},
+			"constraint": [
+				{
+					"@referredType": "ValidationConstraint",
+					"id": "bbccbc46-9b94-41aa-8ea8-5c33306d3c62",
+					"href": "https://mycsp.com:8080/tmf-api/entityCatalog/v4/constraint/bbccbc46-9b94-41aa-8ea8-5c33306d3c62",
+					"name": "ReliesOnIPv4OrIPv6"
+				}
+			],
+			"featureSpecRelationship": [
+				{
+					"relationshipType": "requires",
+					"featureId": "43883a81-58ef-45af-ace4-993298ae8361",
+					"parentSpecificationId": "755232457686",
+					"parentSpecificationHref": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceSpecification/755232457686",
+					"name": "IPv4Addressing",
+					"validFor": {
+						"startDateTime": "2017-05-24T00:00:00.000Z",
+						"endDateTime": "2019-12-31T23:59:59.999Z"
+					}
+				},
+				{
+					"relationshipType": "requires",
+					"featureId": "b85f845f-011a-468f-a90e-9e07fe3bc90a",
+					"parentSpecificationId": "755232457686",
+					"parentSpecificationHref": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceSpecification/755232457686",
+					"name": "IPv6Addressing",
+					"validFor": {
+						"startDateTime": "2017-05-24T00:00:00.000Z",
+						"endDateTime": "2019-12-31T23:59:59.999Z"
+					}
+				}
+			]
+		},
+		{
+			"id": "43883a81-58ef-45af-ace4-993298ae8361",
+			"name": "IPv4Addressing",
+			"validFor": {
+				"startDateTime": "2017-05-24T00:00:00.000Z",
+				"endDateTime": "2019-12-31T23:59:59.999Z"
+			}
+		},
+		{
+			"id": "b85f845f-011a-468f-a90e-9e07fe3bc90a",
+			"name": "IPv6Addressing",
+			"validFor": {
+				"startDateTime": "2017-05-24T00:00:00.000Z",
+				"endDateTime": "2019-12-31T23:59:59.999Z"
+			},
+			"isEnabled": false
+		}
+	],
+	"resourceSpecRelationship": [
+		{
+			"id": "a19e5f96-3df4-4e34-95f7-30e66c42acd2",
+			"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/a19e5f96-3df4-4e34-95f7-30e66c42acd2",
+			"name": "SWI.1",
+			"relationshipType": "contains"
+		},
+		{
+			"id": "aa013f8c-5f08-47ff-a2cb-f297359277c2",
+			"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/aa013f8c-5f08-47ff-a2cb-f297359277c2",
+			"name": "SWI.2",
+			"relationshipType": "contains"
+		},
+		{
+			"id": "3a3b5bc7-039e-45b0-ada1-75560ec54108",
+			"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/3a3b5bc7-039e-45b0-ada1-75560ec54108",
+			"name": "SWI.3",
+			"relationshipType": "contains"
+		},
+		{
+			"id": "4fbe07a3-42bb-45cd-b92c-d8d48f17dbc8",
+			"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/4fbe07a3-42bb-45cd-b92c-d8d48f17dbc8",
+			"name": "SWI.4",
+			"relationshipType": "contains"
+		},
+		{
+			"id": "4a5c5d7c-0758-4896-a1aa-2f2a2241c4b5",
+			"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/4a5c5d7c-0758-4896-a1aa-2f2a2241c4b5",
+			"name": "SWI.5",
+			"relationshipType": "contains"
+		}
+	],
+	"connectionPointSpecification": [
+		{
+			"id": "feeb7495-4dc5-4e0f-bf64-5973faac050c",
+			"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/feeb7495-4dc5-4e0f-bf64-5973faac050c",
+			"@type": "ConnectionPointSpecificationRef",
+			"@referredType": "ConnectionPointSpecification",
+			"name": "CP1.1"
+		},
+		{
+			"id": "ca331dcc-2c52-4346-bfbe-5d4170fe1b83",
+			"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/ca331dcc-2c52-4346-bfbe-5d4170fe1b83",
+			"@type": "ConnectionPointSpecificationRef",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP3.2"
+		},
+		{
+			"id": "3e35575c-897e-4dad-952d-3fcf87af698f",
+			"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/3e35575c-897e-4dad-952d-3fcf87af698f",
+			"@type": "ConnectionPointSpecificationRef",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP5.2"
+		},
+		{
+			"id": "9b2069ec-3bf7-43d2-afd8-1fa5711f905e",
+			"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/9b2069ec-3bf7-43d2-afd8-1fa5711f905e",
+			"@type": "ConnectionPointSpecificationRef",
+			"@referredType": "ResourceFunctionSpecification",
+			"name": "CP1.4"
+		}
+	],
+	"connectivitySpecification": [
+		{
+			"id": "2171b1da-0c68-412a-b986-18791d132ddd",
+			"name": "Internal Connectivity Potential Graph",
+			"@type": "ResourceGraphSpecification",
+			"connectionSpecification": [
+				{
+					"name": "AdjacencyPair1",
+					"@type": "ConnectionSpecification",
+					"associationType": "pointtoPoint",
+					"endpointSpecification": [
+						{
+							"id": "a19e5f96-3df4-4e34-95f7-30e66c42acd2",
+							"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/a19e5f96-3df4-4e34-95f7-30e66c42acd2",
+							"@type": "EndpointSpecificationRef",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": "SWI.1",
+							"isRoot": true,
+							"connectionPointSpecification": {
+								"id": "8c237137-46b1-4eac-9b20-0f2b35f5ffb2",
+								"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/8c237137-46b1-4eac-9b20-0f2b35f5ffb2",
+								"@type": "ConnectionPointSpecificationRef",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP1.2"
+							}
+						},
+						{
+							"id": "aa013f8c-5f08-47ff-a2cb-f297359277c2",
+							"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/aa013f8c-5f08-47ff-a2cb-f297359277c232",
+							"@type": "EndpointSpecificationRef",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": "SWI.2",
+							"isRoot": false,
+							"connectionPointSpecification": {
+								"id": "c8937fec-1923-4bdc-99d1-4a168f14d445",
+								"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/c8937fec-1923-4bdc-99d1-4a168f14d445",
+								"@type": "ConnectionPointSpecificationRef",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP2.1"
+							}
+						}
+					]
+				},
+				{
+					"name": "AdjacencyPair2",
+					"@type": "ConnectionSpecification",
+					"associationType": "pointtoPoint",
+					"endpointSpecification": [
+						{
+							"id": "aa013f8c-5f08-47ff-a2cb-f297359277c2",
+							"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/aa013f8c-5f08-47ff-a2cb-f297359277c2",
+							"@type": "EndpointSpecificationRef",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": "SWI.2",
+							"isRoot": true,
+							"connectionPointSpecification": {
+								"id": "acbdf06a-1f2e-4815-8db5-4220bc87ade2",
+								"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/acbdf06a-1f2e-4815-8db5-4220bc87ade2",
+								"@type": "ConnectionPointSpecificationRef",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP2.2"
+							}
+						},
+						{
+							"id": "3a3b5bc7-039e-45b0-ada1-75560ec54108",
+							"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/3a3b5bc7-039e-45b0-ada1-75560ec54108",
+							"@type": "EndpointSpecificationRef",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": "SWI.3",
+							"isRoot": false,
+							"connectionPointSpecification": {
+								"id": "0564e364-dd52-461b-a9f6-718e342e2217",
+								"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/0564e364-dd52-461b-a9f6-718e342e2217",
+								"@type": "ConnectionPointSpecificationRef",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP3.1"
+							}
+						}
+					]
+				},
+				{
+					"name": "AdjacencyPair3",
+					"@type": "ConnectionSpecification",
+					"associationType": "pointtoPoint",
+					"endpointSpecification": [
+						{
+							"id": "3a3b5bc7-039e-45b0-ada1-75560ec54108",
+							"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/3a3b5bc7-039e-45b0-ada1-75560ec54108",
+							"@type": "EndpointSpecificationRef",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": "SWI.3",
+							"isRoot": true,
+							"connectionPointSpecification": {
+								"id": "14ae7a86-8d6e-407e-adf0-f99505e48b67",
+								"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/14ae7a86-8d6e-407e-adf0-f99505e48b67",
+								"@type": "ConnectionPointSpecificationRef",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP3.3"
+							}
+						},
+						{
+							"id": "4fbe07a3-42bb-45cd-b92c-d8d48f17dbc8",
+							"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/4fbe07a3-42bb-45cd-b92c-d8d48f17dbc8",
+							"@type": "EndpointSpecificationRef",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": "SWI.4",
+							"isRoot": false,
+							"connectionPointSpecification": {
+								"id": "98b5906c-bbd0-4bb9-8551-1eaac552a4a3",
+								"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/98b5906c-bbd0-4bb9-8551-1eaac552a4a3",
+								"@type": "ConnectionPointSpecificationRef",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP4.1"
+							}
+						}
+					]
+				},
+				{
+					"name": "AdjacencyPair4",
+					"@type": "ConnectionSpecification",
+					"associationType": "pointtoPoint",
+					"endpointSpecification": [
+						{
+							"id": "4fbe07a3-42bb-45cd-b92c-d8d48f17dbc8",
+							"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/4fbe07a3-42bb-45cd-b92c-d8d48f17dbc8",
+							"@type": "EndpointSpecificationRef",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": "SWI.4",
+							"isRoot": true,
+							"connectionPointSpecification": {
+								"id": "415a8aa1-5d8b-4a7b-a886-cfb248fba864",
+								"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/415a8aa1-5d8b-4a7b-a886-cfb248fba864",
+								"@type": "ConnectionPointSpecificationRef",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP4.2"
+							}
+						},
+						{
+							"id": "4a5c5d7c-0758-4896-a1aa-2f2a2241c4b5",
+							"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/4a5c5d7c-0758-4896-a1aa-2f2a2241c4b5",
+							"@type": "EndpointSpecificationRef",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": "SWI.5",
+							"isRoot": false,
+							"connectionPointSpecification": {
+								"id": "29bf728a-08c1-4bb9-84b0-5ad63468b1fb",
+								"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/29bf728a-08c1-4bb9-84b0-5ad63468b1fb",
+								"@type": "ConnectionPointSpecificationRef",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP5.1"
+							}
+						}
+					]
+				},
+				{
+					"name": "AdjacencyPair5",
+					"@type": "ConnectionSpecification",
+					"associationType": "pointtoPoint",
+					"endpointSpecification": [
+						{
+							"id": "4a5c5d7c-0758-4896-a1aa-2f2a2241c4b5",
+							"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/4a5c5d7c-0758-4896-a1aa-2f2a2241c4b5",
+							"@type": "EndpointSpecificationRef",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": "SWI.5",
+							"isRoot": true,
+							"connectionPointSpecification": {
+								"id": "e26d911c-3e61-409c-bcca-c7500e12b5a6",
+								"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/e26d911c-3e61-409c-bcca-c7500e12b5a6",
+								"@type": "ConnectionPointSpecificationRef",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP5.3"
+							}
+						},
+						{
+							"id": "a19e5f96-3df4-4e34-95f7-30e66c42acd2",
+							"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/a19e5f96-3df4-4e34-95f7-30e66c42acd2",
+							"@type": "EndpointSpecificationRef",
+							"@referredType": "ResourceFunctionSpecification",
+							"name": "SWI.1",
+							"isRoot": false,
+							"connectionPointSpecification": {
+								"id": "62606a50-3cce-4225-b862-3b9ac72ef8ca",
+								"href": "https://mycsp.com:8080/tmf-api/resourceCatalog/v4/resourceSpecification/62606a50-3cce-4225-b862-3b9ac72ef8ca",
+								"@type": "ConnectionPointSpecificationRef",
+								"@referredType": "ResourceFunctionSpecification",
+								"name": "CP1.3"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

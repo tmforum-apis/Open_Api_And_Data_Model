@@ -1,0 +1,41 @@
+{
+    "status": "Completed", 
+    "partyRole": {
+        "id": "9866",
+        "href": "https://mycsp.com:8080/tmf-api/partyManagement/v1/individual/9866",
+        "name": "Sandy Smith",
+        "@referredType": "Individual"
+    },
+    "place": {
+        "@type": "RelatedPlace",
+        "role": "home address",
+        "id": "234546467567334",
+        "href": "https://mycsp.com:8080/tmf-api/geographicAddress/v4/geographicAddress/234546467567334",
+        "@referredType": "GeographicAddress"
+    },
+    "riskAssessmentResult": {
+        "overallScore": 65,
+        "validFor": {
+            "startDateTime": "2017-08-23T00:00:22.920Z", 
+            "endDateTime": "2018-03-25T00:00:22.920Z"
+        }, 
+        "score": [
+            {
+                "score": 0,
+                "riskName": "IDConfidenceRisk"
+            },
+            {
+                "score": 80,
+                "riskName": "FraudRisk"
+            },
+            {
+                "score": 20,
+                "riskName": "BadPaymentRisk"
+            },
+            {
+                "score": 14,
+                "riskName": "CreditGamingRisk"
+            }
+        ]
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TestSuiteExecutionRefOrValue.schema.json",
+  "title": "TestSuiteExecutionRefOrValue",
+  "definitions": {
+    "TestSuiteExecutionRefOrValue": {
+      "$id": "#TestSuiteExecutionRefOrValue",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "../Common/TestSuiteExecution.schema.json#TestSuiteExecution"
+        },
+        {
+          "$ref": "../Common/TestSuiteExecutionRef.schema.json#TestSuiteExecutionRef"
+        }
+      ]
+    }
+  }
+}

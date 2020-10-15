@@ -1,39 +1,39 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "UsageSpecCharacteristicValue.schema.json",
-    "title": "UsageSpecCharacteristicValue",
-    "definitions": {
-        "UsageSpecCharacteristicValue": {
-            "$id": "#UsageSpecCharacteristicValue",
-            "description": "A value that can be assigned to a UsageSpecCharacteristic.",
-            "type": "object",
-            "properties": {
-                "default": {
-                    "type": "boolean",
-                    "description": "If true, this is the default value for a characteristic"
-                },
-                "value": {
-                    "type": "string",
-                    "description": "A narrative that explains in detail what the usage specification characteristic is"
-                },
-                "valueFrom": {
-                    "type": "string",
-                    "description": "The low range value that a characteristic can take on"
-                },
-                "valueTo": {
-                    "type": "string",
-                    "description": "The upper range value that a characteristic can take on"
-                },
-                "valueType": {
-                    "type": "string",
-                    "description": "A kind of value that the characteristic can take on, such as numeric, text"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "UsageSpecCharacteristicValue.schema.json",
+  "title": "UsageSpecCharacteristicValue",
+  "definitions": {
+    "UsageSpecCharacteristicValue": {
+      "$id": "#UsageSpecCharacteristicValue",
+      "description": "A value that can be assigned to a UsageSpecCharacteristic.",
+      "type": "object",
+      "properties": {
+        "default": {
+          "type": "boolean",
+          "description": "If true, this is the default value for a characteristic"
+        },
+        "value": {
+          "type": "string",
+          "description": "A narrative that explains in detail what the usage specification characteristic is"
+        },
+        "valueFrom": {
+          "type": "string",
+          "description": "The low range value that a characteristic can take on"
+        },
+        "valueTo": {
+          "type": "string",
+          "description": "The upper range value that a characteristic can take on"
+        },
+        "valueType": {
+          "type": "string",
+          "description": "A kind of value that the characteristic can take on, such as numeric, text"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

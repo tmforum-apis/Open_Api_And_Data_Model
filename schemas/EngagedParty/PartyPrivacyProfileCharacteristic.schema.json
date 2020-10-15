@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PartyPrivacyProfileCharacteristic.schema.json",
+  "title": "PartyPrivacyProfileCharacteristic",
+  "definitions": {
+    "PartyPrivacyProfileCharacteristic": {
+      "$id": "#PartyPrivacyProfileCharacteristic",
+      "type": "object",
+      "description": "A characteristic for an instantiated party profile, where the value indicates the allowed use of the characteristic",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "relatedParty": {
+          "type": "array",
+          "description": "A list of parties to which the allowed use of the characteristic applies.",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
+        },
+        "privacyUsagePurpose": {
+          "type": "string",
+          "description": "Defines the purpose authorized or refused for the characteristic (e.g. ADMIN, INFORMATION, MARKETING, RESEARCH, etc."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Characteristic.schema.json#Characteristic"
+        }
+      ]
+    }
+  }
+}

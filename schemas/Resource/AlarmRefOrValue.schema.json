@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AlarmRefOrValue.schema.json",
+  "title": "AlarmRefOrValue",
+  "definitions": {
+    "AlarmRefOrValue": {
+      "$id": "#AlarmRefOrValue",
+      "description": "An alarm defined by reference or value. The polymorphic attributes @type, @schemaLocation & @referredType are related to the alarm entity and not the RelatedAlarmRefOrValue class itself",
+      "type": "object",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Resource/AlarmRef.schema.json#AlarmRef"
+        },
+        {
+          "$ref": "../Resource/Alarm.schema.json#Alarm"
+        }
+      ]
+    }
+  }
+}

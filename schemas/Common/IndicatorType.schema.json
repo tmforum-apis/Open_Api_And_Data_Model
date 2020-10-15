@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "IndicatorType.schema.json",
+  "title": "IndicatorType",
+  "definitions": {
+    "IndicatorType": {
+      "$id": "#IndicatorType",
+      "description": "This is enumeration for Indicator Type",
+      "type": "string",
+      "enum": [
+        "string",
+        "int",
+        "float",
+        "double"
+      ]
+    }
+  }
+}

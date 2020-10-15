@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PartyPrivacyProfileRef.schema.json",
+  "title": "PartyPrivacyProfileRef",
+  "definitions": {
+    "PartyPrivacyProfileRef": {
+      "$id": "#PartyPrivacyProfileRef",
+      "type": "object",
+      "description": "Reference to Party Privacy Profile resource",
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PartyPrivacyProfileSpecification.schema.json",
+  "title": "PartyPrivacyProfileSpecification",
+  "definitions": {
+    "PartyPrivacyProfileSpecification": {
+      "$id": "#PartyPrivacyProfileSpecification",
+      "type": "object",
+      "description": "Party Privacy Profile Specification serves as a template for creating Privacy Profiles. The specification defines characteristics for the profile. For example there might be a profile specification for residential customers, and a different specification for partners.",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of the specification"
+        },
+        "applicableRole": {
+          "description": "A list of roles to which this specification can apply. For example: Shop Agent, Call Center Agent.",
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/PartyPrivacyRoleSpecification.schema.json#PartyPrivacyRoleSpecification"
+          }
+        },
+        "href": {
+          "type": "string",
+          "format": "hostname",
+          "description": "URI reference of the specification allowing navigation to the resource"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the specification"
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time when the specification was last updated"
+        },
+        "status": {
+          "type": "string",
+          "description": "Lifecycle status of the specification (for example: In Design, Active, Rejected, Retired)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the specification"
+        },
+        "partyPrivacyProfileSpecCharacteristic": {
+          "type": "array",
+          "description": "List of characteristics of the specification, whose values would typically be supplied when the profile is instantiated",
+          "items": {
+            "$ref": "../EngagedParty/PartyPrivacyProfileSpecificationCharacteristic.schema.json#PartyPrivacyProfileSpecificationCharacteristic"
+          }
+        },
+        "productOffering": {
+          "type": "array",
+          "items": {
+            "$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef"
+          }
+        },
+        "relatedParty": {
+          "type": "array",
+          "description": "List of parties or party roles involved in the definition or management of the specification",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period of time for which the specification is valid"
+        },
+        "version": {
+          "type": "string",
+          "description": "The version of the specification, in case it is desired to maintain multiple versions of profile specifications"
+        }
+      }
+    }
+  }
+}

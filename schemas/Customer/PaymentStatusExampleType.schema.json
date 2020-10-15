@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PaymentStatusExampleType.schema.json",
+    "title": "PaymentStatusExampleType",
+    "definitions": {
+        "PaymentStatusExampleType": {
+            "$id": "#PaymentStatusExampleType",
+            "type": "string",
+            "description": "Possible values for the status of a payment",
+            "enum": [
+                "pendingAuthorization",
+                "authorized",
+                "captured",
+                "failed",
+                "canceled",
+                "denied",
+                "done"
+            ]
+        }
+    }
+}

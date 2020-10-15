@@ -1,24 +1,21 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "BillFormatRefOrValue.schema.json",
-    "title": "BillFormatRefOrValue",
-    "definitions": {
-        "BillFormatRefOrValue": {
-            "$id": "#BillFormatRefOrValue",
-            "description": "An attachment by value or by reference.",
-            "type": "object",
-            "properties": {},
-            "required": [
-                "role"
-            ],
-            "allOf": [
-                {
-                    "$ref": "../Customer/BillFormatRef.schema.json#BillFormatRef"
-                },
-                {
-                    "$ref": "../Customer/BillFormat.schema.json#BillFormat"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BillFormatRefOrValue.schema.json",
+  "title": "BillFormatRefOrValue",
+  "definitions": {
+    "BillFormatRefOrValue": {
+      "discriminator": "isRef",
+      "$id": "#BillFormatRefOrValue",
+      "description": "An attachment by value or by reference.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "../Customer/BillFormatRef.schema.json#BillFormatRef"
+        },
+        {
+          "$ref": "../Customer/BillFormat.schema.json#BillFormat"
         }
+      ]
     }
+  }
 }

@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AlternateStockLevel.schema.json",
+    "title": "AlternateStockLevel",
+    "definitions": {
+        "AlternateStockLevel": {
+            "$id": "#AlternateStockLevel",
+            "description": "AlternateStockLevel is used to log and execute Alternate about stock availability",
+            "type": "object",
+            "properties": {
+                "alternateAvailabilityDate": {
+                    "description": "Alternate date when the stock is available.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "id": {
+                    "description": "identifier of the Alternate Stock Level",
+                    "type": "string"
+                },
+                "alternateQuantity": {
+                    "description": "Alternate quantity available",
+                    "$ref": "Quantity.schema.json#/definitions/Quantity"
+                },
+                "alternatePlace": {
+                    "description": "Alternate place where stock availability ",
+                    "$ref": "../Common/PlaceRefOrValue.schema.json#PlaceRefOrValue"
+                },
+                "alternateStock": {
+                    "description": "Alternate stock  available",
+                    "$ref": "StockLevelRef.schema.json#/definitions/StockLevelRef"
+                },
+                "alternateProduct": {
+                    "$ref": "../Product/ProductRefOrValue.schema.json#/definitions/ProductRefOrValue"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Extensible.schema.json#/Extensible"
+                }
+            ]
+        }
+    }
+}

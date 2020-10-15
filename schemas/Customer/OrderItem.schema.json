@@ -1,89 +1,89 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "OrderItem.schema.json",
-    "title": "OrderItem",
-    "definitions": {
-        "OrderItem": {
-            "$id": "#OrderItem",
-            "description": "An identified part of the order. A product order is decomposed into one or more order items.",
-            "type": "object",
-            "properties": {
-                "action": {
-                    "type": "string",
-                    "description": "Can be \"add\" / \"modify\" / \"no_change\"/ \"delete\""
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of the line item (generally it is a sequence number 01, 02, 03, ...)"
-                },
-                "quantity": {
-                    "type": "integer",
-                    "description": "Quantity ordered"
-                },
-                "state": {
-                    "type": "string",
-                    "description": "State of the order item : described in the state machine diagram"
-                },
-                "appointment": {
-                    "$ref": "../Customer/AppointmentRef.schema.json#AppointmentRef"
-                },
-                "billingAccount": {
-                    "$ref": "../Customer/BillingAccountRef.schema.json#BillingAccountRef"
-                },
-                "itemPrice": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/OrderPrice.schema.json#OrderPrice"
-                    }
-                },
-                "orderItem": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/OrderItem.schema.json#OrderItem"
-                    }
-                },
-                "orderItemRelationship": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/OrderItemRelationship.schema.json#OrderItemRelationship"
-                    }
-                },
-                "itemTotalPrice": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/OrderPrice.schema.json#OrderPrice"
-                    }
-                },
-                "payment": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/PaymentRef.schema.json#PaymentRef"
-                    }
-                },
-                "productOffering": {
-                    "$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef"
-                },
-                "product": {
-                    "$ref": "../Product/Product.schema.json#Product"
-                },
-                "qualification": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/QualificationRef.schema.json#QualificationRef"
-                    }
-                },
-                "itemTerm": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/OrderTerm.schema.json#OrderTerm"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "OrderItem.schema.json",
+  "title": "OrderItem",
+  "definitions": {
+    "OrderItem": {
+      "$id": "#OrderItem",
+      "description": "An identified part of the order. A product order is decomposed into one or more order items.",
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "description": "Can be \"add\" / \"modify\" / \"no_change\"/ \"delete\""
+        },
+        "id": {
+          "type": "string",
+          "description": "Identifier of the line item (generally it is a sequence number 01, 02, 03, ...)"
+        },
+        "quantity": {
+          "type": "integer",
+          "description": "Quantity ordered"
+        },
+        "state": {
+          "type": "string",
+          "description": "State of the order item : described in the state machine diagram"
+        },
+        "appointment": {
+          "$ref": "../Customer/AppointmentRef.schema.json#AppointmentRef"
+        },
+        "billingAccount": {
+          "$ref": "../Customer/BillingAccountRef.schema.json#BillingAccountRef"
+        },
+        "itemPrice": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/OrderPrice.schema.json#OrderPrice"
+          }
+        },
+        "orderItem": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/OrderItem.schema.json#OrderItem"
+          }
+        },
+        "orderItemRelationship": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/OrderItemRelationship.schema.json#OrderItemRelationship"
+          }
+        },
+        "itemTotalPrice": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/OrderPrice.schema.json#OrderPrice"
+          }
+        },
+        "payment": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/PaymentRef.schema.json#PaymentRef"
+          }
+        },
+        "productOffering": {
+          "$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef"
+        },
+        "product": {
+          "$ref": "../Product/Product.schema.json#Product"
+        },
+        "qualification": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/QualificationRef.schema.json#QualificationRef"
+          }
+        },
+        "itemTerm": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/OrderTerm.schema.json#OrderTerm"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

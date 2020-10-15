@@ -1,26 +1,26 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Object.schema.json",
-    "title": "Object",
-    "definitions": {
-        "Object": {
-            "$id": "#Object",
-            "type": "object",
-            "properties": {
-                "objectType": {
-                    "type": "string",
-                    "description": "The type of object"
-                },
-                "uri": {
-                    "type": "string",
-                    "format": "uri"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Object.schema.json",
+  "title": "Object",
+  "definitions": {
+    "Object": {
+      "$id": "#Object",
+      "type": "object",
+      "properties": {
+        "objectType": {
+          "type": "string",
+          "description": "The type of object"
+        },
+        "uri": {
+          "type": "string",
+          "format": "uri"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

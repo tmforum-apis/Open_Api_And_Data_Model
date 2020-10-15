@@ -1,79 +1,79 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "LoyaltyExecutionPoint.schema.json",
-    "title": "LoyaltyExecutionPoint",
-    "definitions": {
-        "LoyaltyAccount": {
-            "$id": "#LoyaltyAccount",
-            "description": "A record of a loyalty action that was applied.",
-            "type": "object",
-            "title": "LoyaltyExecutionPoint",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier for the loyalty event type."
-                },
-                "href": {
-                    "type": "string",
-                    "description": "A reference to the loyalty event type."
-                },
-                "type": {
-                    "type": "string",
-                    "description": "The type of loyalty action.",
-                    "enum": [
-                        "LoyaltyEarn",
-                        "CustomerOrder",
-                        "BusinessInteraction"
-                    ]
-                },
-                "actionAttributes": {
-                    "type": "object",
-                    "$ref": "../Common/Any.schema.json#/definitions/Any",
-                    "description": "Additional attributes required to perform the action. These attributes will depend on the type of the loyalty action. For example, if it is a LoyaltyEarn action, there will be a “quantity” attribute value pair indicating how many points should be earned."
-                },
-                "body": {
-                    "type": "object",
-                    "$ref": "../Common/Any.schema.json#/definitions/Any",
-                    "description": "The body if the request that is made when this action i executed. The body is assumed to be of type text/json. Any tokens denoted with {} will be replaced by attributes present in: Member profile, actionAttributes or event attributes in the loyalty event request."
-                },
-                "headers": {
-                    "type": "object",
-                    "$ref": "../Common/Any.schema.json#/definitions/Any",
-                    "description": "The HTTP headers that is added to the action call."
-                },
-                "version": {
-                    "type": "string",
-                    "description": "A string that identifies the version of the loyalty action."
-                },
-                "commonName": {
-                    "type": "string",
-                    "description": "A user-friendly identifier of the loyalty execution point."
-                },
-                "description": {
-                    "type": "string",
-                    "description": "A free-form description of the loyalty execution point."
-                },
-                "action": {
-                    "type": "string",
-                    "description": "The HTTP operation to be used when calling the endpoint",
-                    "enum": [
-                        "POST",
-                        "PUT",
-                        "GET",
-                        "PATCH",
-                        "DELETE"
-                    ]
-                },
-                "endpoint": {
-                    "type": "string",
-                    "description": "The endpoint to call to trigger a BusinessInteraction, CustomerOrder or LoyaltyEarn."
-                },
-                "datetime": {
-                    "type": "string",
-                    "description": "The timestamp that the action was applied.",
-                    "format": "date-time"
-                }
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "LoyaltyExecutionPoint.schema.json",
+  "title": "LoyaltyExecutionPoint",
+  "definitions": {
+    "LoyaltyAccount": {
+      "$id": "#LoyaltyAccount",
+      "description": "A record of a loyalty action that was applied.",
+      "type": "object",
+      "title": "LoyaltyExecutionPoint",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the loyalty event type."
+        },
+        "href": {
+          "type": "string",
+          "description": "A reference to the loyalty event type."
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of loyalty action.",
+          "enum": [
+            "LoyaltyEarn",
+            "CustomerOrder",
+            "BusinessInteraction"
+          ]
+        },
+        "actionAttributes": {
+          "type": "object",
+          "$ref": "../Common/Any.schema.json#/definitions/Any",
+          "description": "Additional attributes required to perform the action. These attributes will depend on the type of the loyalty action. For example, if it is a LoyaltyEarn action, there will be a “quantity” attribute value pair indicating how many points should be earned."
+        },
+        "body": {
+          "type": "object",
+          "$ref": "../Common/Any.schema.json#/definitions/Any",
+          "description": "The body if the request that is made when this action i executed. The body is assumed to be of type text/json. Any tokens denoted with {} will be replaced by attributes present in: Member profile, actionAttributes or event attributes in the loyalty event request."
+        },
+        "headers": {
+          "type": "object",
+          "$ref": "../Common/Any.schema.json#/definitions/Any",
+          "description": "The HTTP headers that is added to the action call."
+        },
+        "version": {
+          "type": "string",
+          "description": "A string that identifies the version of the loyalty action."
+        },
+        "commonName": {
+          "type": "string",
+          "description": "A user-friendly identifier of the loyalty execution point."
+        },
+        "description": {
+          "type": "string",
+          "description": "A free-form description of the loyalty execution point."
+        },
+        "action": {
+          "type": "string",
+          "description": "The HTTP operation to be used when calling the endpoint",
+          "enum": [
+            "POST",
+            "PUT",
+            "GET",
+            "PATCH",
+            "DELETE"
+          ]
+        },
+        "endpoint": {
+          "type": "string",
+          "description": "The endpoint to call to trigger a BusinessInteraction, CustomerOrder or LoyaltyEarn."
+        },
+        "datetime": {
+          "type": "string",
+          "description": "The timestamp that the action was applied.",
+          "format": "date-time"
         }
+      }
     }
+  }
 }

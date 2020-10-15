@@ -1,66 +1,66 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "OtherNameIndividual.schema.json",
-    "title": "OtherNameIndividual",
-    "definitions": {
-        "OtherNameIndividual": {
-            "$id": "#OtherNameIndividual",
-            "type": "object",
-            "description": "Keeps track of other names, for example the old name of a woman before marriage or an artist name.",
-            "properties": {
-                "title": {
-                    "type": "string",
-                    "description": "Use for titles (aristrocatic, social, ...): Pr, Dr, Sir,...."
-                },
-                "aristocraticTitle": {
-                    "type": "string",
-                    "description": "e.g. Baron, Graf, Earl,…"
-                },
-                "generation": {
-                    "type": "string",
-                    "description": "e.g. Sr, Jr…"
-                },
-                "givenName": {
-                    "type": "string",
-                    "description": "First name"
-                },
-                "preferredGivenName": {
-                    "type": "string",
-                    "description": "Contains the chosen name by which the person prefers to be addressed. Note: This name may be a name other than a given name, such as a nickname"
-                },
-                "familyNamePrefix": {
-                    "type": "string",
-                    "description": "Family name prefix"
-                },
-                "familyName": {
-                    "type": "string",
-                    "description": "Contains the non-chosen or inherited name. Also known as last name in the Western context"
-                },
-                "legalName": {
-                    "type": "string",
-                    "description": "Legal name or birth name (name one has for official purposes)"
-                },
-                "middleName": {
-                    "type": "string",
-                    "description": "Middle name or initial"
-                },
-                "fullName": {
-                    "type": "string",
-                    "description": "Full name flatten (first, middle, and last names)"
-                },
-                "formattedName": {
-                    "type": "string",
-                    "description": ". A fully formatted name in one string with all of its pieces in their proper place and all of the necessary punctuation. Useful for specific contexts (Chinese, Japanese, Korean,…)"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "OtherNameIndividual.schema.json",
+  "title": "OtherNameIndividual",
+  "definitions": {
+    "OtherNameIndividual": {
+      "$id": "#OtherNameIndividual",
+      "type": "object",
+      "description": "Keeps track of other names, for example the old name of a woman before marriage or an artist name.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Use for titles (aristrocatic, social, ...): Pr, Dr, Sir,...."
+        },
+        "aristocraticTitle": {
+          "type": "string",
+          "description": "e.g. Baron, Graf, Earl,…"
+        },
+        "generation": {
+          "type": "string",
+          "description": "e.g. Sr, Jr…"
+        },
+        "givenName": {
+          "type": "string",
+          "description": "First name"
+        },
+        "preferredGivenName": {
+          "type": "string",
+          "description": "Contains the chosen name by which the person prefers to be addressed. Note: This name may be a name other than a given name, such as a nickname"
+        },
+        "familyNamePrefix": {
+          "type": "string",
+          "description": "Family name prefix"
+        },
+        "familyName": {
+          "type": "string",
+          "description": "Contains the non-chosen or inherited name. Also known as last name in the Western context"
+        },
+        "legalName": {
+          "type": "string",
+          "description": "Legal name or birth name (name one has for official purposes)"
+        },
+        "middleName": {
+          "type": "string",
+          "description": "Middle name or initial"
+        },
+        "fullName": {
+          "type": "string",
+          "description": "Full name flatten (first, middle, and last names)"
+        },
+        "formattedName": {
+          "type": "string",
+          "description": ". A fully formatted name in one string with all of its pieces in their proper place and all of the necessary punctuation. Useful for specific contexts (Chinese, Japanese, Korean,…)"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

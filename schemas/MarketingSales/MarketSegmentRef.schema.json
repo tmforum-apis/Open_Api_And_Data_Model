@@ -1,35 +1,35 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "MarketSegmentRef.schema.json",
-    "title": "MarketSegmentRef",
-    "definitions": {
-        "MarketSegmentRef": {
-            "$id": "#MarketSegmentRef",
-            "type": "object",
-            "description": "provides references to the corresponding market segment as target of product offerings. A market segment is grouping of Parties, GeographicAreas, SalesChannels, and so forth.",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the market segment"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the market segment"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the market segment"
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "(Class) type of the referred market segment"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "MarketSegmentRef.schema.json",
+  "title": "MarketSegmentRef",
+  "definitions": {
+    "MarketSegmentRef": {
+      "$id": "#MarketSegmentRef",
+      "type": "object",
+      "description": "provides references to the corresponding market segment as target of product offerings. A market segment is grouping of Parties, GeographicAreas, SalesChannels, and so forth.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the market segment"
+        },
+        "href": {
+          "type": "string",
+          "description": "Reference of the market segment"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the market segment"
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "(Class) type of the referred market segment"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

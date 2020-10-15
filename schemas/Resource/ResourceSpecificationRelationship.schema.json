@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceSpecificationRelationship.schema.json",
+    "title": "ResourceSpecificationRelationship",
+    "definitions": {
+        "ResourceSpecificationRelationship": {
+            "$id": "#ResourceSpecificationRelationship",
+            "description": "A migration, substitution, dependency or exclusivity relationship between/among resource specifications.",
+            "type": "object",
+            "properties": {
+                "relationshipType": {
+                    "type": "string", 
+                    "description": "Type of relationship such as migration, substitution, dependency, exclusivity"
+                }, 
+                "role": {
+                    "type": "string", 
+                    "description": "The association role for this resource specification"
+                }, 
+                "id": {
+                    "type": "string", 
+                    "description": "Unique identifier of target ResourceSpecification"
+                }, 
+                "href": {
+                    "type": "string", 
+                    "format": "uri",
+                    "description": "Reference of the target ResourceSpecification"
+                }, 
+                "name": {
+                    "type": "string", 
+                    "description": "The name given to the target resource specification instance"
+                },
+                "defaultQuantity": {
+                    "type": "integer",
+                    "description": "The default number of the related resource that should be instantiated, for example a rack would typically have 4 cards, although it could support more."
+                },
+                "maximumQuantity": {
+                    "type": "integer",
+                    "description": "The maximum number of the related resource that should be instantiated, for example a rack supports a maximum of 16 cards"
+                },
+                "minimumQuantity": {
+                    "type": "integer",
+                    "description": "The minimum number of the related resource that should be instantiated, for example a rack must have at least 1 card"
+                },
+                "characteristic": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "ResourceSpecificationCharacteristic.schema.json#ResourceSpecificationCharacteristic"
+                    },
+                    "description": "A characteristic that refines the relationship. For example, consider the relationship between a slot and a card. For a half-height card it is important to know the position at which the card is inserted, so a characteristic Position might be defined on the relationship to allow capturing of this in the inventory"
+                }, 
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod", 
+                    "description": "The period for which the ResourceSpecRelationship is valid"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#Extensible"
+                }
+            ]
+        }
+    }
+}

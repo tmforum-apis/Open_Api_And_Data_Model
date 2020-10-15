@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "EntityValue.schema.json",
+    "title": "EntityValue",
+    "definitions": {
+        "EntityValue": {
+            "$id": "#EntityValue",
+            "type": "object",
+            "description": "Base entity value  schema for use in TMForum Open-APIs",
+            "discriminator":"@type",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#Entity"
+                }
+            ]  
+        }
+    }
+}

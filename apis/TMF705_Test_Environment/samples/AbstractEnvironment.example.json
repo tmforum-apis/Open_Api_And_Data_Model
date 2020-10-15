@@ -1,0 +1,27 @@
+{
+  "id": "f4cfa280-f0d7-45e5-99f8-11ba6059c0dd",
+  "href": "https://mycsp:8080/tmf-api/testEnvironment/v4/abstractEnvironment/f4cfa280-f0d7-45e5-99f8-11ba6059c0dd",
+  "description": "Sample abstract test environment",
+  "version": "1.2.3",
+  "relatedParty": [
+    {
+      "name": "testUser",
+      "role": "Owner",
+      "@referredType": "Individual",
+      "contact": [
+        {
+          "mediumType": "email",
+          "characteristic": {
+            "emailAddress": "testUser@abc.com"
+          }
+        }
+      ]
+    }
+  ],
+  "state": "incomplete",
+  "abstractEnvironmentDefinition": {
+    "attachmentType": "json",
+    "content": "<base64-encoded abstract environment>",
+    "mimeType": "base64"
+  }
+}

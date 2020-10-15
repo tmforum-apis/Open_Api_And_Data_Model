@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Polygon.schema.json",
+  "title": "Polygon",
+  "definitions": {
+    "Polygon": {
+      "$id": "#Polygon",
+      "description": "An array of linear rings",
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Polygon"
+          ]
+        },
+        "coordinates": {
+          "$ref": "../Common/GeoJSON.schema.json#polygon"
+        }
+      },
+      "type": "object"
+    }
+  }
+}

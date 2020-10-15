@@ -1,0 +1,100 @@
+{
+  "id": "5130d5131a23",
+  "href": "http://host/resourceOrder/resourceOrder/5130d5131a23",
+  "category": "Premium",
+  "description": "7000m of Optical Cable",
+  "expectedCompletionDate": "2020-05-31T20:50:27.275Z",
+  "name": "7km Optical Cable for Acme Inc",
+  "orderDate": "2020-03-31T20:50:27.275Z",
+  "priority": 0,
+  "requestedCompletionDate": "2020-03-31T19:50:43.214Z",
+  "requestedStartDate": "2020-03-31T19:50:43.214Z",
+  "startDate": "2020-03-31T19:50:43.214Z",
+  "externalReference": [
+    {
+      "externalReferenceType": "Acme Ordering Number",
+      "name": "8b032c8ca734"
+    }
+  ],
+  "note": [
+    {
+      "id": "9ba1047c38ce",
+      "date": "2020-03-31T19:50:43.214Z",
+      "text": "Cable must be double jacketed as it may be exposed to water"
+    }
+  ],
+  "orderItem": [
+    {
+      "id": "049eb3108ed5",
+      "quantity": 7000,
+      "action": "add",
+      "appointment": {
+        "id": "74da513bdc6c",
+        "href": "https:/host/tmf-api/appointment/v4/appointment/74da513bdc6c",
+        "description": "Site Survey"
+      },
+      "resource": {
+        "category": "Premium",
+        "description": "LG Series: FAA-Compliant Loose Tube Cable - Double Jacket",
+        "name": "LG006-C5111N1",
+        "resourceVersion": "6",
+        "attachment": [
+          {
+            "id": "305f2215715f",
+            "href": "http://host/Attachment/305f2215715f",
+            "attachmentType": "PDF",
+            "description": "Fiber Optic Cable Data Sheet",
+            "mimeType": "application/pdf",
+            "name": "FAA-Compliant_Loose_Tube_Cable_-_Double_Jacket.pdf",
+            "url": "http://host/Content/d08d1967b82f"
+          }
+        ],
+        "operationalState": "disable",
+        "place": {
+          "id": "49c2c42cbd2f",
+          "href": "http://host/GeographicAddress/address/49c2c42cbd2f",
+          "name": "Acme Inc Headquarters",
+          "role": "Customer Site",
+          "@baseType": "Place",
+          "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/GeographicAddress.schema.json",
+          "@referredType": "GeographicAddress"
+        },
+        "relatedParty": [
+          {
+            "role": "Manufacturer",
+            "id": "091b56cc3864",
+            "href": "http://host/PartyManagement/organization/091b56cc3864",
+            "name": "FiberOpticsRUs Inc",
+            "@referredType": "Organization"
+          }
+        ],
+        "resourceSpecification": {
+          "id": "e362d12b54f2",
+          "href": "http://host/ResourceCatalog/resourceSpecification/e362d12b54f2",
+          "name": "LG006-C5111N1",
+          "version": "6"
+        },
+        "@baseType": "Resource",
+        "@type": "PhysicalResource"
+      },
+      "state": "acknowledged"
+    }
+  ],
+  "relatedParty": [
+    {
+      "role": "Customer",
+      "id": "b5bd5f0b9f33",
+      "href": "http://host/PartyManagement/organization/b5bd5f0b9f33",
+      "name": "Acme Inc",
+      "@referredType": "Organization"
+    },
+    {
+      "role": "Account Manager",
+      "id": "8f0585d639f6",
+      "href": "http://host/PartyManagement/organization/8f0585d639f6",
+      "name": "Gwen Howells",
+      "@referredType": "Individual"
+    }
+  ],
+  "state": "acknowledged"
+}

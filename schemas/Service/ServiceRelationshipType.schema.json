@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceRelationshipType.schema.json",
+    "title": "ServiceRelationshipType",
+    "definitions": {
+        "ServiceRelationshipType": {
+            "$id": "#ServiceRelationshipType",
+            "type": "string",
+            "description": "Possible values for service relationship type",
+            "enum": [
+                "migratesTo",
+                "migratesFrom",
+                "reliesOn",
+                "bundles",
+                "bundledBy",
+                "enables",
+                "root",
+                "dependsOn",
+                "hostedOn",
+                "connectsOn",
+                "attachesTo",
+                "routesTo"
+            ]
+        }
+    }
+}

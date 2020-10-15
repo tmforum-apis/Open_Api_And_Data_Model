@@ -1,0 +1,38 @@
+{
+    "id": "4994", 
+    "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/serviceCandidate/4994", 
+    "name": "TVServiceCandidate", 
+    "description": "This service candidate allows provision of TV service", 
+    "version": "2.1", 
+    "validFor": {
+        "startDateTime": "2017-08-23T00:00", 
+        "endDateTime": "2021-03-25T00:00"
+    }, 
+    "lastUpdate": "2020-08-16T00:00", 
+    "lifecycleStatus": "Active", 
+    "category": [
+        {
+            "id": "5980", 
+            "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/serviceCategory/5980", 
+            "version": "3.2", 
+            "name": "TV",
+            "@referredType": "ServiceCategory",
+            "@type": "ServiceCategoryRef", 
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Service/ServiceCategoryRef.schema.json ", 
+            "@baseType": ""
+        }
+    ], 
+    "serviceSpecification": {
+        "id": "9600", 
+        "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/serviceSpecification/9600", 
+        "version": "2.1", 
+        "name": "CFSS_TV", 
+        "@referredType": "CustomerFacingServiceSpecification",
+        "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Service/ServiceSpecificationRef.schema.json ", 
+        "@baseType": "",
+        "@type": "ServiceSpecificationRef"
+    }, 
+    "@type": "ServiceCandidate", 
+    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Service/ServiceCandidate.schema.json ", 
+    "@baseType": ""
+}

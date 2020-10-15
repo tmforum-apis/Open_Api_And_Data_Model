@@ -1,0 +1,12 @@
+{
+  "id": "5130d5131a23",
+  "href": "https:/host/tmf-api/cancelResourceOrder/v4/cancelResourceOrder/5130d5131a23",
+  "cancellationReason": "No longer required",
+  "effectiveCancellationDate": "2020-07-10T18:00:00.000Z",
+  "requestedCancellationDate": "2020-07-10T17:18:14.523Z",
+  "resourceOrder": {
+    "id": "fde8c6a47450",
+    "href": "http://host/resourceOrder/fde8c6a47450"
+  },
+  "state": "assessingCancellation"
+}

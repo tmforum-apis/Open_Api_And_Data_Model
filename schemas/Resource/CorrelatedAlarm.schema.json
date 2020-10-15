@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "CorrelatedAlarm.schema.json",
+  "title": "CorrelatedAlarm",
+  "definitions": {
+    "CorrelatedAlarm": {
+      "$id": "#CorrelatedAlarm",
+      "description": "Indicates the alarms attached to this alarm as correlated alarms from a correlation point of view. An alarm can be correlated to one or more underlying alarms. There might be multiple levels of alarm correlation and an underlying alarm in one relation can be itself a parent alarm for other underlying alarms.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

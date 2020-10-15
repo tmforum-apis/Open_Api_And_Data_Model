@@ -1,77 +1,99 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "QueryProductRecommendation.schema.json",
-    "title": "QueryProductRecommendation",
-    "definitions": {
-        "QueryProductRecommendation": {
-            "$id": "#QueryProductRecommendation",
-            "description": "Recommendation API is used to recommend offering quickly based on the history and real-time context of customer. It is a real-time and personalized recommendation API. It is usually provided by e-commerce or BSS, CRM system in omni-channel.",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of recommendation"
-                },
-                "instantSyncRecommendation": {
-                    "type": "boolean",
-                    "description": "An indicator which when the value is \"true\" means that requester expects to get recommendation result in the response"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Hypertext Reference of the recommendation"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of recommendation"
-                },
-                "recommendationType": {
-                    "type": "string",
-                    "description": "The type of recommendation"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The period in which the recommendation is valid"
-                },
-                "order": {
-                    "$ref": "../Customer/ProductOrderRef.schema.json#ProductOrderRef"
-                },
-                "place": {
-                    "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue",
-                    "description": "The place which the recommendation is related to"
-                },
-                "channel": {
-                    "$ref": "../Common/ChannelRef.schema.json#ChannelRef"
-                },
-                "category": {
-                    "$ref": "../Product/CategoryRef.schema.json#CategoryRef",
-                    "description": "The category for grouping recommendations"
-                },
-                "shoppingCart": {
-                    "$ref": "../Customer/ShoppingCartRef.schema.json#ShoppingCartRef",
-                    "description": "The shopping cart which the recommendation is related to"
-                },
-                "relatedParty": {
-                    "$ref": "../EngagedParty/RelatedPartyRef.schema.json#RelatedPartyRef"
-                },
-                "item": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Product/RecommendationItem.schema.json#RecommendationItem"
-                    }
-                },
-                "state": {
-                    "$ref": "../Common/TaskStateType.schema.json#TaskStateType",
-                    "description": "State of the Recommendation defined in the state engine"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "QueryProductRecommendation.schema.json",
+  "title": "QueryProductRecommendation",
+  "definitions": {
+    "QueryProductRecommendation": {
+      "$id": "#QueryProductRecommendation",
+      "description": "Recommendation API is used to recommend offering quickly based on the history and real-time context of customer. It is a real-time and personalized recommendation API. It is usually provided by e-commerce or BSS, CRM system in omni-channel.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the queryProductRecommendation"
+        },
+        "instantSyncRecommendation": {
+          "type": "boolean",
+          "description": "An indicator which when the value is \"true\" means that requester expects to get recommendation result in the response"
+        },
+        "href": {
+          "type": "string",
+          "description": "Hypertext Reference of the queryProductRecommendation"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the queryProductRecommendation"
+        },
+        "recommendationType": {
+          "type": "string",
+          "description": "The type of the queryProductRecommendation"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period in which the queryProductRecommendation is valid"
+        },
+        "productOrder": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/ProductOrderRef.schema.json#ProductOrderRef"
+          }
+        },
+        "productOrderItem": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/ItemRef.schema.json#ItemRef"
+          }
+        },
+        "place": {
+          "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue",
+          "description": "The place which the queryProductRecommendation is related to"
+        },
+        "channel": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/ChannelRef.schema.json#ChannelRef"
+          }
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "../Product/CategoryRef.schema.json#CategoryRef"
+          }
+        },
+        "shoppingCart": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/ShoppingCartRef.schema.json#ShoppingCartRef"
+          }
+        },
+        "shoppingCartItem": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/ItemRef.schema.json#ItemRef"
+          }
+        },
+        "relatedParty": {
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+        },
+        "recommendationItem": {
+          "type": "array",
+          "items": {
+            "$ref": "../Product/RecommendationItem.schema.json#RecommendationItem"
+          }
+        },
+        "state": {
+          "$ref": "../Common/TaskStateType.schema.json#TaskStateType",
+          "description": "State of the queryProductRecommendation defined in the state engine"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

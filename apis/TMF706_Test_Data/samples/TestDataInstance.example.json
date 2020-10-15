@@ -1,0 +1,27 @@
+{
+  "id": "2db74193-e5fb-462a-98e0-6b1ed970dfc7",
+  "href": "https://mycsp:8080/tmf-api/testData/v4/testDataInstance/2db74193-e5fb-462a-98e0-6b1ed970dfc7",
+  "description": "Input parameters for test case execution",
+  "version": "1.2.3",
+  "relatedParty": [
+    {
+      "name": "testUser",
+      "role": "Owner",
+      "@referredType": "Individual",
+      "contact": [
+        {
+          "mediumType": "email",
+          "characteristic": {
+            "emailAddress": "testUser@abc.com"
+          }
+        }
+      ]
+    }
+  ],
+  "state": "stable",
+  "testDataInstanceDefinition": {
+    "attachmentType": "json",
+    "content": "<base64-encoded test data instance>",
+    "mimeType": "base64"
+  }
+}

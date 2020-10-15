@@ -1,27 +1,27 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "CartItemRelationship.schema.json",
-    "title": "CartItemRelationship",
-    "definitions": {
-        "CartItemRelationship": {
-            "$id": "#CartItemRelationship",
-            "description": "Relationship among cart items mainly other than hierarchical relationships such as \"RelyOn\", \"DependentOn\", \"Shipping\" etc.",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the referred cart item"
-                },
-                "relationshipType": {
-                    "type": "string",
-                    "description": "Type of the cart item relationship"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "CartItemRelationship.schema.json",
+  "title": "CartItemRelationship",
+  "definitions": {
+    "CartItemRelationship": {
+      "$id": "#CartItemRelationship",
+      "description": "Relationship among cart items mainly other than hierarchical relationships such as \"RelyOn\", \"DependentOn\", \"Shipping\" etc.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the referred cart item"
+        },
+        "relationshipType": {
+          "type": "string",
+          "description": "Type of the cart item relationship"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

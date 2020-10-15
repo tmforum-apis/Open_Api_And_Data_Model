@@ -1,0 +1,68 @@
+{
+    "href": "https://host:port/tmf-api/serviceQualityManagement/v4/serviceLevelObjective/3112", 
+    "id": "3112",
+    "conformanceComparator": ">", 
+    "conformanceTarget": "32",
+    "conformancePeriod": 
+    {
+        "endDateTime": "2021-03-00T00:00:00+01:00",
+        "startDateTime": "2020-03-00T00:00:00+01:00" 
+    },
+    "graceTimes": "3",
+    "name": "Upload bandwidth", 
+    "thresholdTarget": "28", 
+    "toleranceTarget": "5", 
+    "tolerancePeriod": 
+    {
+        "endDateTime": "20:00:00",
+        "startDateTime": "06:00:00" 
+    },
+    "serviceLevelObjectiveParameter": 
+    {
+        "name": "bandwidth",
+        "serviceParmCategory": "service specific", 
+        "serviceParmPerspective": "aggregation", 
+        "transformationAlgorithmOfKQI": "KeepTheSame",
+        "parameterType": "KPI",
+        "validFor":
+        {
+            "endDateTime": "2021-03-00T00:00:00+01:00",
+            "startDateTime": "2020-03-00T00:00:00+01:00" 
+        },
+        "relatedEntity": [ 
+            {
+                "id": "1988",
+                "href": "https://host:port/ServiceInventory/service/1988", 
+                "name": "vCPE",
+                "role": "CPE",
+                "@referredType": "CPE" 
+            },
+            {
+                "id": "2988",
+                "href": "https://host:port/ServiceInventory/service/2988", 
+                "name": "GPON",
+                "role": "access",
+                "@referredType": "AccessService" 
+            }
+        ]
+    },
+    "serviceLevelObjectiveConsequence": [ 
+        {
+            "prescribedAction": "https://service.com/vCPEBandwithAction", 
+            "validFor": {
+                "endDateTime": "2021-03-00T00:00:00+01:00",
+                "startDateTime": "2020-03-00T00:00:00+01:00" 
+            }
+        },
+        {
+            "prescribedAction": "https://service.com/AccessBandwithAction", 
+            "validFor": 
+            {
+                "endDateTime": "2021-03-00T00:00:00+01:00",
+                "startDateTime": "2020-03-00T00:00:00+01:00" 
+            }
+        }
+    ]
+}
+
+

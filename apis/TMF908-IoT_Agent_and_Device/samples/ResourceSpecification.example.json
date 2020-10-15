@@ -1,0 +1,7 @@
+{
+    "href": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/v3/resourceSpecification/42",
+    "id": "42",
+    "name": "Firewall",
+    "version": "1.0",
+    "@referredType": "ResourceFunctionSpec"
+}

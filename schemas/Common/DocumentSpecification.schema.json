@@ -1,40 +1,34 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "DocumentSpecification.schema.json",
-    "title": "DocumentSpecification",
-    "definitions": {
-        "DocumentSpecification": {
-            "$id": "#DocumentSpecification",
-            "description": "A document specification reference",
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "The URI for the object itself."
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of the DocumentSpecification"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "a String. Name of the DocumentSpecification"
-                },
-                "URL": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "URL of the Document Specification"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "A string, a version of the DocumentSpecification."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "DocumentSpecification.schema.json",
+  "title": "DocumentSpecification",
+  "definitions": {
+    "DocumentSpecification": {
+      "$id": "#DocumentSpecification",
+      "type": "object",
+      "description": "A document specification reference",
+      "properties": {
+        "URL": {
+          "type": "string",
+          "description": "URL of the Document Specification"
+        },
+        "href": {
+          "type": "string",
+          "description": "The URI for the object itself."
+        },
+        "id": {
+          "type": "string",
+          "description": "Indentifier of the DocumentSpecification"
+        },
+        "name": {
+          "type": "string",
+          "description": "a String. Name of the DocumentSpecification"
+        },
+        "version": {
+          "type": "string",
+          "description": "A string, a version of the DocumentSpecification."
         }
+      }
     }
+  }
 }

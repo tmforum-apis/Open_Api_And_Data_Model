@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "LocationAnalytics.schema.json",
+    "title": "LocationAnalytics",
+    "definitions": {
+        "LocationAnalytics": {
+            "$id": "#LocationAnalytics",
+            "type": "object",
+            "properties": {
+                "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "manufacturedDated": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "manufactoring date"
+                },
+                "purchaseDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "customer purchase date"
+                },
+                "activationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "date the device was activated"
+                },
+                "firstUseDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "date the device was first used on the network"
+                },
+                "guranteeExpirationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "the date the device guarantee expires"
+                },
+                "dataCreationTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data creation (e.g. system dump creation, event generation\u2026)"
+                },
+                "runTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data upload run"
+                },
+                "validFromTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for business validity of entity record"
+                }
+            },
+            "allOf": [{"$ref": "../Common/Entity.schema.json#Extensible"}]
+        }
+    }
+}

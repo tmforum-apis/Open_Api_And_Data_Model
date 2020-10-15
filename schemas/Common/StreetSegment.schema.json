@@ -1,42 +1,42 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "StreetSegment.schema.json",
-    "title": "StreetSegment",
-    "definitions": {
-        "StreetSegment": {
-            "$id": "#StreetSegment",
-            "description": "StreetSegment corresponds to a part of a street referenced by a number or a set of number. Sometimes a suffix is added.",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the Street Segment"
-                },
-                "number": {
-                    "type": "string",
-                    "description": "number identifying a specific property on a public street. It may be combined with streetNrLast for ranged addresses"
-                },
-                "numberLast": {
-                    "type": "string",
-                    "description": "the last number in a range of street numbers allocated to a property"
-                },
-                "numberLastSuffix": {
-                    "type": "string",
-                    "description": "the last street number suffix for a ranged address"
-                },
-                "numberSuffix": {
-                    "type": "string",
-                    "description": "the first street number suffix"
-                },
-                "address": {
-                    "$ref": "../Common/AddressRef.schema.json#AddressRef"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "StreetSegment.schema.json",
+  "title": "StreetSegment",
+  "definitions": {
+    "StreetSegment": {
+      "$id": "#StreetSegment",
+      "description": "StreetSegment corresponds to a part of a street referenced by a number or a set of number. Sometimes a suffix is added.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the Street Segment"
+        },
+        "number": {
+          "type": "string",
+          "description": "number identifying a specific property on a public street. It may be combined with streetNrLast for ranged addresses"
+        },
+        "numberLast": {
+          "type": "string",
+          "description": "the last number in a range of street numbers allocated to a property"
+        },
+        "numberLastSuffix": {
+          "type": "string",
+          "description": "the last street number suffix for a ranged address"
+        },
+        "numberSuffix": {
+          "type": "string",
+          "description": "the first street number suffix"
+        },
+        "address": {
+          "$ref": "../Common/AddressRef.schema.json#AddressRef"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

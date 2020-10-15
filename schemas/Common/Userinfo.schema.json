@@ -1,0 +1,160 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "UserInfo.schema.json",
+  "title": "Userinfo",
+  "definitions": {
+    "Userinfo": {
+      "properties": {
+        "address": {
+          "description": "Structure including the End-User's preferred postal address",
+          "$ref": "GeographicAddress.schema.json#/definitions/GeographicAddress"
+        },
+        "birthdate": {
+          "type": "string",
+          "description": "End-User's birthday, represented as an [ISO8601-2004] YYYY-MM-DD format. The year MAY be 0000, indicating that it is omitted. To represent only the year, YYYY format is allowed. Note that depending on the underlying platform's date related function, providing just year can result in varying month and day, so the implementers need to take this factor into account to correctly process the dates",
+          "examples": [
+            "1970-11-02"
+          ]
+        },
+        "email": {
+          "type": "string",
+          "description": "End-User's preferred e-mail address. Its value MUST conform to the [RFC5322] addr-spec syntax",
+          "example":
+            "jane.doe@email.com"
+
+        },
+        "email_verified": {
+          "type": "boolean",
+          "default": false,
+          "description": "True if the user's email has been verified."
+        },
+        "family_name": {
+          "type": "string",
+          "description": "Surname(s) or last name(s) of the End-User. Note that in some cultures, people can have multiple family names or no family name; all can be present, with the names being separated by space characters",
+          "examples": [
+            "Doe"
+          ]
+        },
+        "gender": {
+          "type": "string",
+          "description": "End-User's gender. Values defined by this specification are female and male. Other values MAY be used when neither of the defined values are applicable",
+          "examples": [
+            "female"
+          ]
+        },
+        "given_name": {
+          "type": "string",
+          "description": "Given name(s) or first name(s) of the End-User. Note that in some cultures, people can have multiple given names; all can be present, with the names being separated by space characters",
+          "examples": [
+            "Jane"
+          ]
+        },
+        "legalId": {
+          "type": "array",
+          "items": {
+            "$ref": "Identification.schema.json#/definitions/Identification"
+          },
+          "description": "Identification documentation of the contact"
+        },
+        "locale": {
+          "type": "string",
+          "description": "End-User's locale, represented as a [RFC5646] language tag. This is typically an [ISO639-1] language code in lowercase and an [ISO3166-1] country code in uppercase, separated by a dash. For example, en-US or fr-CA. As a compatibility note, some implementations have used an underscore as the separator rather than a dash, for example, en_US",
+          "examples": [
+            "en"
+          ]
+        },
+        "middle_name": {
+          "type": "string",
+          "description": "Middle name(s) of the End-User. Note that in some cultures, people can have multiple middle names; all can be present, with the names being separated by space characters. Also note that in some cultures, middle names are not used",
+          "examples": [
+            "Mary"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "description": "End-User's full name in displayable form including all name parts, possibly including titles and suffixes, ordered according to the End-User's locale and preferences",
+          "examples": [
+            "Jane Mary Doe"
+          ]
+        },
+        "nickname": {
+          "type": "string",
+          "description": "Casual name of the End-User that may or may not be the same as the given_name. For instance, a nickname value of Mike might be returned alongside a given_name value of Michael",
+          "examples": [
+            "JaneDoe"
+          ]
+        },
+        "phone_number": {
+          "type": "string",
+          "description": "End-User's preferred telephone number. [E.164] is RECOMMENDED as the format of this Claim, for example, +1 (425) 555-1212 or +56 82) 687 2400. If the phone number contains an extension, it is RECOMMENDED that the extension be represented using the [RFC3966] extension syntax, for example, +1 (604) 555-1234;ext=5678",
+          "examples": [
+            "+1 (425) 555-1212"
+          ]
+        },
+        "phone_number_verified": {
+          "type": "boolean",
+          "default": false,
+          "description": "True if the user's phone number has been verified."
+        },
+        "picture": {
+          "type": "string",
+          "description": "URL of the End-User's profile picture. This URL MUST refer to an image file (for example, a PNG, JPEG, or GIF image file), rather than to a Web page containing an image. Note that this URL SHOULD specifically reference a profile photo of the End-User suitable for displaying when describing the End-User, rather than an arbitrary photo taken by the End-User",
+          "examples": [
+            "https://some.url.com/janeDoe.jpg"
+          ]
+        },
+        "preferred_username": {
+          "type": "string",
+          "description": "Shorthand name by which the End-User wishes to be referred to at the RP, such as janedoe or j.doe. This value MAY be any valid JSON string including special characters such as @, /, or whitespace",
+          "examples": [
+            "janeDoe"
+          ]
+        },
+        "profile": {
+          "type": "string",
+          "description": "URL of the End-User's profile page. The contents of this Web page SHOULD be about the End-User",
+          "examples": [
+            "https://my.blog.com/janeDoe"
+          ]
+        },
+        "sub": {
+          "type": "string",
+          "description": "Subject - Unique Identifier for the End-User",
+          "examples": [
+            "a066ffd5-f685-43bc-ad57-bfb7639decb0"
+          ]
+        },
+        "userAssets": {
+          "type": "array",
+          "items": {
+            "$ref": "UserAsset.schema.json#/definitions/UserAsset"
+          },
+          "description": "List of additional profile information"
+        },
+        "website": {
+          "type": "string",
+          "description": "URL of the End-User's Web page or blog. This Web page SHOULD contain information published by the End-User or an organization that the End-User is affiliated with",
+          "examples": [
+            "https://janedoe.com"
+          ]
+        },
+        "zoneinfo": {
+          "type": "string",
+          "description": "String from zoneinfo time zone database representing the End-User's time zone. For example, Europe/Paris or America/Los_Angeles",
+          "examples": [
+            "America/Los_Angeles"
+          ]
+        }
+      },
+      "required": [
+        "sub",
+        "name"
+      ],
+      "allOf": [
+        {
+          "$ref": "Entity.schema.json#/Entity"
+        }
+      ]
+    }
+  }
+}

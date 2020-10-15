@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ContainedItemRef.schema.json",
+  "title": "ContainedItemRef",
+  "definitions": {
+    "ContainedItemRef": {
+      "$id": "#ContainedItemRef",
+      "description": "Describes a specific item contained in a parent element",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the related entity."
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
+        },
+        "entityHref": {
+          "type": "string",
+          "description": "Hypertext Reference of the parent element."
+        },
+        "entityId": {
+          "type": "string",
+          "description": "Unique identifier of the parent element."
+        },
+        "ItemId": {
+          "type": "string",
+          "description": "Unique identifier of the considered item."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

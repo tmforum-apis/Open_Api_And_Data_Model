@@ -1,43 +1,43 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "BillingCycleSpecificationRef.schema.json",
-    "title": "BillingCycleSpecificationRef",
-    "definitions": {
-        "BillingCycleSpecificationRef": {
-            "$id": "#BillingCycleSpecificationRef",
-            "description": "BillingCycleSpecification reference. A description of when to initiate a billing cycle and the various sub steps of a billing cycle.",
-            "type": "object",
-            "properties": {
-                "dateShift": {
-                    "type": "integer",
-                    "description": "An offset of a billing/settlement date. The offset is expressed as number of days with regard to the start of the billing/settlement period."
-                },
-                "frequency": {
-                    "type": "string",
-                    "description": "Frequency of the billing cycle (monthly for instance)"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the billing cycle specification"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the billing cycle specification"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "A short descriptive name"
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BillingCycleSpecificationRef.schema.json",
+  "title": "BillingCycleSpecificationRef",
+  "definitions": {
+    "BillingCycleSpecificationRef": {
+      "$id": "#BillingCycleSpecificationRef",
+      "description": "BillingCycleSpecification reference. A description of when to initiate a billing cycle and the various sub steps of a billing cycle.",
+      "type": "object",
+      "properties": {
+        "dateShift": {
+          "type": "integer",
+          "description": "An offset of a billing/settlement date. The offset is expressed as number of days with regard to the start of the billing/settlement period."
+        },
+        "frequency": {
+          "type": "string",
+          "description": "Frequency of the billing cycle (monthly for instance)"
+        },
+        "href": {
+          "type": "string",
+          "description": "Reference of the billing cycle specification"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the billing cycle specification"
+        },
+        "name": {
+          "type": "string",
+          "description": "A short descriptive name"
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

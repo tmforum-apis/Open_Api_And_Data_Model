@@ -1,0 +1,45 @@
+{
+    "id":"Prms-jnzgh456",
+    "href": "http://serverlocation:port/userRolePermission/v4/permission/Prms-jnzgh456",
+    "creationDate": "2017-11-01T09:37:29.961Z",
+    "description": "superProfile Granted for user",
+    "validFor": {
+        "startDateTime": "2019-10-01T00:00:00.000Z",
+        "endDateTime": "2019-10-31T23:59:59.000Z"
+    },
+    "@type": "Permission",
+    "granter": {
+        "id": "cclt-456745",
+        "href": "https://host:port/partyManagement/v4/party/cclt-456745",
+        "name": "John Baker",
+        "role": "customer advisor",
+        "@type": "RelatedParty",
+        "@referredType": "Individual"
+    },
+    "user": {
+        "id": "cust-745712-A",
+        "href": "https://host:port/partyManagement/v4/party/cust-745712-A",
+        "name": "Jack Marshall",
+        "role": "client",
+        "@type": "RelatedParty",
+        "@referredType": "Individual"
+    },
+    "assetUserRole": [
+        {
+            "userRole": {
+                "id": "413920",
+                "href": "https://host:port/partyManagement/v4/userRole/413920",
+                "@type": "UserRoleRef"
+            },
+            "manageableAsset": {
+                "id": "12k-47",
+                "@type": "ManageableAsset",
+                "@baseType": "EntityRef",
+                "@referredType": "Product",
+                "product": {
+                    "id": "UJF6-B61654"
+                }
+            }
+        }
+    ]
+}

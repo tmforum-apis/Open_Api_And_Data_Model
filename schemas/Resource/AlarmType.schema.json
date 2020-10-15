@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Alarmtype.schema.json",
+  "title": "AlarmType",
+  "definitions": {
+    "AlarmType": {
+      "$id": "#AlarmType",
+      "description": "Categorizes the alarm (X.733 8.1.1, 3GPP TS 32.111-2 Annex A)",
+      "type": "string",
+      "enum": [
+        "communicationsAlarm",
+        "processingErrorAlarm",
+        "environmentalAlarm",
+        "qualityOfServiceAlarm",
+        "equipmentAlarm",
+        "integrityViolation",
+        "operationalViolation",
+        "physicalViolation",
+        "securityService",
+        "mechanismViolation",
+        "timeDomainViolation"
+      ]
+    }
+  }
+}

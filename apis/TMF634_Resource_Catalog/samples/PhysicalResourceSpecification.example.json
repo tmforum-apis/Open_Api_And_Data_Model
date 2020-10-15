@@ -1,0 +1,161 @@
+{
+    "id": "43", 
+    "href": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceSpecification/43", 
+    "name": "Nokia 7750 SR-s Service Router", 
+    "description": "This resource specification defines an IP router provided by Nokia", 
+    "@type": "PhysicalResourceSpecification", 
+    "@baseType": "ResourceSpecification",
+    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/PhysicalResourceSpecification.schema.json", 
+    "version": "3.2", 
+    "validFor": {
+        "startDateTime": "2017-08-12T00:00:00.000Z", 
+        "endDateTime": "2018-03-07T00:00:00.000Z"
+    }, 
+    "lastUpdate": "2017-08-09T00:00:00.000Z", 
+    "lifecycleStatus": "Active",
+    "isBundle": false,
+    "category": "Router resource",
+    "attachment": [
+        {
+            "id": "25553",
+            "href": "https://mycsp.com:8080/tmf-api/documentManagement/v4/attachment/25553",
+            "name": "Data Sheet",
+            "mimeType": "application/pdf",
+            "url": "https://onestore.nokia.com/asset/205421"
+        }
+    ],
+    "relatedParty": [
+        {
+            "id": "5855", 
+            "href": "https://mycsp.com:8080/tmf-api/partyManagement/organization/5855", 
+            "role": "Supplier", 
+            "name": "Nokia Networks",
+            "@referredType": "Organization"
+        }
+    ],
+    "resourceSpecCharacteristic": [
+        {
+            "name": "Power Supply Option",
+            "description": "The type of power supply that can be chosen",
+            "valueType": "string",
+            "configurable": true,
+            "minCardinality": 1,
+            "maxCardinality": 1,
+            "isUnique": true,
+            "resourceSpecCharacteristicValue": [
+                {
+                    "valueType": "string",
+                    "value": "AC/HVDC"
+                },
+                {
+                    "valueType": "string",
+                    "value": "LVDC"
+                }
+            ]
+        }
+    ],
+    "resourceSpecRelationship": [
+        {
+            "id": "556234",
+            "href": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceSpecification/556234",
+            "name": "SR OS Operating System",
+            "relationshipType": "dependency"
+        }
+    ],
+	"featureSpecification": [
+		{
+			"id": "l22m455f-671a-499d-a95j-8h46fe3bc88c",
+			"name": "log",
+			"validFor": {
+				"startDateTime": "2015-11-21T00:00:00.000Z",
+				"endDateTime": "2019-12-31T23:59:59.999Z"
+			},
+			"featureSpecCharacteristic": [
+				{
+					"name": "logSize",
+					"description": "Log Size in MB",
+					"valueType": "integer",
+					"configurable": true,
+					"validFor": {
+						"startDateTime": "2015-11-22T00:00:00.000Z",
+						"endDateTime": "2019-12-31T23:59:59.999Z"
+					},
+					"@type": "FeatureSpecificationCharacteristic",
+					"minCardinality": 0,
+					"maxCardinality": 1,
+					"isUnique": true,
+					"extensible": false,
+					"featureSpecCharacteristicValue": [
+						{
+							"isDefault": true,
+        					"valueType": "integer",
+							"value": 2000,
+							"validFor": {
+								"startDateTime": "2015-11-22T00:00:00.000Z",
+								"endDateTime": "2019-12-31T23:59:59.999Z"
+							}
+						},
+						{
+							"isDefault": false,
+        					"valueType": "integer",
+							"value": 4000,
+							"validFor": {
+								"startDateTime": "2015-11-22T00:00:00.000Z",
+								"endDateTime": "2019-12-31T23:59:59.999Z"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "db723e27-58d3-4120-b564-af199cb32bd3",
+			"name": "IPAddressing",
+			"isBundle": true,
+			"validFor": {
+				"startDateTime": "2017-05-24T00:00:00.000Z",
+				"endDateTime": "2019-12-31T23:59:59.999Z"
+			},
+			"constraint": [
+				{
+					"id": "34",
+					"version": "1.0",
+					"href": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/v4/constraint/34",
+					"name": "ReliesOnIPv4OrIPv6"
+				}
+			],
+			"featureSpecRelationship": [
+				{
+					"relationshipType": "requires",
+					"featureId": "43883a81-58ef-45af-ace4-993298ae8361",
+					"parentSpecificationId": "755232457686",
+					"parentSpecificationHref": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceSpecification/755232457686",
+					"name": "IPv4Addressing",
+					"validFor": {
+						"startDateTime": "2017-05-24T00:00:00.000Z",
+						"endDateTime": "2019-12-31T23:59:59.999Z"
+					}
+				},
+				{
+					"relationshipType": "requires",
+					"featureId": "b85f845f-011a-468f-a90e-9e07fe3bc90a",
+					"parentSpecificationId": "755232457686",
+					"parentSpecificationHref": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceSpecification/755232457686",
+					"name": "IPv6Addressing",
+					"validFor": {
+						"startDateTime": "2017-05-24T00:00:00.000Z",
+						"endDateTime": "2019-12-31T23:59:59.999Z"
+					}
+				}
+			]
+		}
+	],
+    "targetResourceSchema": {
+        "@type": "NokiaRouter",
+        "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/NokiaRouter.schema.json"
+    },
+    "model": "7750 SR",
+    "part": "2s",
+    "sku": "3HE09264AA",
+    "vendor": "Nokia Networks"
+}

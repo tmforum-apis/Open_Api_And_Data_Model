@@ -1,0 +1,58 @@
+{
+  "id": "103",
+  "href": "http://serverlocation:port/privacyManagement/partyPrivacySpecification/103",
+  "description": "This is the Individual Privacy Specification",
+  "lastUpdate": "2019-07-06T10:36:30.709Z",
+  "name": "Individual Privacy",
+  "status": "active",
+  "version": "1",
+  "applicableRole": [
+    {
+      "name": "owner"
+    }
+  ],
+  "partyPrivacyProfileSpecCharacteristic": [
+    {
+      "id": "42",
+      "criticalityLevel": "low",
+      "description": "Can EmailAddress be used for information purpose",
+      "name": "emailAddress",
+      "privacyType": "InternalPurpose",
+      "privacyUsagePurpose": "ADMIN",
+      "allowedRole": [
+        {
+          "name": "vendor"
+        }
+      ],
+      "partyPrivacyProfileSpecCharacteristicValue": [
+        {
+          "isDefault": true,
+          "valueType": "string",
+          "value":"Yes"
+        },
+        {
+          "isDefault": false,
+          "valueType": "string",
+          "value":"No"
+        }
+      ],
+      "validFor": {
+        "endDateTime": "2019-09-06T10:36:30.709Z",
+        "startDateTime": "2020-09-06T10:36:30.709Z"
+      }
+    }
+  ],
+  "relatedParty": [
+    {
+      "id": "203",
+      "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/individual/203",
+      "name": "Mandy brown",
+      "role": "admin",
+      "@referredType": "Individual"
+    }
+  ],
+  "validFor": {
+    "endDateTime": "2019-09-06T10:36:30.709Z",
+    "startDateTime": "2020-09-06T10:36:30.709Z"
+  }
+}

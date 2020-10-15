@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TestResourceAPIDefinition.schema.json",
+  "title": "TestResourceAPIDefinition",
+  "definitions": {
+    "TestResourceAPIDefinition": {
+      "$id": "#TestResourceAPIDefinition",
+      "type": "object",
+      "description": "Test resource API definition",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/Attachment.schema.json#Attachment"
+        }
+      ]
+    }
+  }
+}

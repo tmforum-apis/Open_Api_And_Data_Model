@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ThresholdCondition.schema.json",
+    "title": "ThresholdCondition",
+    "definitions": {
+        "ThresholdCondition": {
+            "type": "string",
+            "enum": [
+                "Raise",
+                "Clear"
+            ]
+        }
+    }
+}

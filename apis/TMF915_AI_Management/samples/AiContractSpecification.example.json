@@ -1,0 +1,15 @@
+{
+
+    "href": "https://tmforum.com/tmf-api/AIManagment/v4/aiContractSpecification/2435",
+    "id": "2435",
+    "description": "This an AI Management Contract Specification",
+    "lastUpdate": "2020-07-31T00:00:00.000Z",
+    "lifecycleStatus": "Active",
+    "name": "AI Management Contract Specification for PCP",
+    "version": "1.0",
+    "validFor": {
+        "startDateTime": "2020-01-05T12:00:56.982Z",
+        "endDateTime": "9999-12-31T23:59:59.999Z"
+    }
+
+}

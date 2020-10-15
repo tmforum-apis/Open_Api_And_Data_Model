@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BillCycleSpec.schema.json",
+  "title": "BillCycleSpec",
+  "definitions": {
+    "BillCycleSpec": {
+      "$id": "#BillCycleSpec",
+      "type": "object",
+      "description": "A detailed description of a billing cycle and the various sub steps of a billing cycle.",
+      "properties": {
+        "billingDateShift": {
+          "type": "integer",
+          "description": "An offset of a billing/settlement date. The offset is expressed as number of days with regard to the start of the billing/settlement period."
+        },
+        "billingPeriod": {
+          "type": "string",
+          "description": "A billing time period. It can be recurring, for example: week, month, quarter of year, year ."
+        },
+        "chargeDateOffset": {
+          "type": "integer",
+          "description": "An offset of a date through which charges previously received by the billing system will appear on the bill. The offset is expressed as number of days with regard to the start of the BillingPeriod."
+        },
+        "creditDateOffset": {
+          "type": "integer",
+          "description": "An offset of a date through which credits previously received by the billing system will appear on the bill. The offset is expressed as number of days with regard to the start of the BillingPeriod."
+        },
+        "description": {
+          "type": "string",
+          "description": "An explanation regarding this billing cycle. If necessary."
+        },
+        "frequency_redundancy_to_billingPeriod": {
+          "type": "string",
+          "description": "Frequency of the billing cycle (monthly for instance)"
+        },
+        "href": {
+          "type": "string",
+          "description": "Reference of the billing cycle"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the billing cycle."
+        },
+        "mailingDateOffset": {
+          "type": "integer",
+          "description": "An offset of a customer bill mailing date. The offset is expressed as number of days with regard to the start of the BillingPeriod."
+        },
+        "name": {
+          "type": "string",
+          "description": "A short descriptive name of the actual billing cycle"
+        },
+        "paymentDueDateOffset": {
+          "type": "integer",
+          "description": "An offset of a payment due date. The offset is expressed as number of days with regard to the start of the BillingPeriod."
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which the billing cycle is valid, expressed in a formatted structured way."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "WorkforceAnalytics.schema.json",
+    "title": "WorkforceAnalytics",
+    "definitions": {
+        "WorkforceAnalytics": {
+            "$id": "#WorkforceAnalytics",
+            "type": "object",
+            "properties": {
+                "employmentStartDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "yearlySalaryAmt": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "positionTitleStartDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "teamSize": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "dataCreationTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data creation (e.g. system dump creation, event generation\u2026)"
+                },
+                "runTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data upload run"
+                },
+                "validFromTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for business validity of entity record"
+                }
+            }
+        },
+              "allOf": [{"$ref": "../Common/Entity.schema.json#Extensible"}]
+    }
+}

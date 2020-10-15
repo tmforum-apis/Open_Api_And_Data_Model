@@ -1,45 +1,45 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ProblemAcknowledgement.schema.json",
-    "title": "ProblemAcknowledgement",
-    "definitions": {
-        "ProblemAcknowledgement": {
-            "$id": "#ProblemAcknowledgement",
-            "type": "object",
-            "description": "Task resource that requests acknowledgement of problems by the problem handler.",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "Reference to this task resource"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of this task resource"
-                },
-                "problem": {
-                    "description": "The problems to be acknowledged, relevant in the input to this task",
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Service/ServiceProblemRef.schema.json#ServiceProblemRef"
-                    }
-                },
-                "ackProblem": {
-                    "description": "The problems that were acknowledged, populated in the output to this task",
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Service/ServiceProblemRef.schema.json#ServiceProblemRef"
-                    }
-                },
-                "trackingRecord": {
-                    "description": "A record of the action taken in this acknowledgement",
-                    "$ref": "../Service/TrackingRecord.schema.json#TrackingRecord"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ProblemAcknowledgement.schema.json",
+  "title": "ProblemAcknowledgement",
+  "definitions": {
+    "ProblemAcknowledgement": {
+      "$id": "#ProblemAcknowledgement",
+      "type": "object",
+      "description": "Task resource that requests acknowledgement of problems by the problem handler.",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "Reference to this task resource"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of this task resource"
+        },
+        "problem": {
+          "description": "The problems to be acknowledged, relevant in the input to this task",
+          "type": "array",
+          "items": {
+            "$ref": "../Service/ServiceProblemRef.schema.json#ServiceProblemRef"
+          }
+        },
+        "ackProblem": {
+          "description": "The problems that were acknowledged, populated in the output to this task",
+          "type": "array",
+          "items": {
+            "$ref": "../Service/ServiceProblemRef.schema.json#ServiceProblemRef"
+          }
+        },
+        "trackingRecord": {
+          "description": "A record of the action taken in this acknowledgement",
+          "$ref": "../Service/TrackingRecord.schema.json#TrackingRecord"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

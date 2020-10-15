@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ServiceRefOrValue.schema.json",
+  "title": "ServiceRefOrValue",
+  "definitions": {
+      "ServiceRefOrValue": {
+          "$id": "#ServiceRefOrValue",
+          "description": "A Service to be created defined by value or existing defined by reference. The polymorphic attributes @type, @schemaLocation & @referredType are related to the Service entity and not the RelatedServiceRefOrValue class itself",
+          "type": "object",
+          "properties": {
+          },
+          "allOf": [
+              {
+                "$ref": "ServiceRef.schema.json#ServiceRef"
+              },
+              {
+                "$ref": "Service.schema.json#Service"
+              }
+              
+          ]
+      }
+  }
+}

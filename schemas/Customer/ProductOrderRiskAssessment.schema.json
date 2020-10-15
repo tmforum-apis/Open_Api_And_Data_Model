@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProductOrderRiskAssessment.schema.json",
+    "title": "ProductOrderRiskAssessment",
+    "definitions": {
+        "ProductOrderRiskAssessment": {
+            "$id": "#ProductOrderRiskAssessment",
+            "description": "This is a task resource allowing assessment of the risks associated with a product order - presumably submitted by a party role and containing one or more product offerings",
+            "type": "object",
+            "required" : [
+                "productOrder"
+            ],
+            "properties": {
+                "productOrder": {
+                    "$ref": "../Customer/ProductOrderRef.json#ProductOrderRef",
+                    "description": "The product order for which the assessment is to be carried out, must be supplied as input to the task, with the attribute id populated"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "RiskAssessment.schema.json#RiskAssessment"
+                }
+            ]
+        }
+    }
+}

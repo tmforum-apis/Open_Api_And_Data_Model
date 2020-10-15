@@ -1,27 +1,27 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ServiceQualificationItemRelationship.schema.json",
-    "title": "ServiceQualificationItemRelationship",
-    "definitions": {
-        "ServiceQualificationItemRelationship": {
-            "$id": "#ServiceQualificationItemRelationship",
-            "description": "Structure used to describe relationship between serviceQualification items from the same serviceQualification.",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Id of the serviceQualificationItem (from the same serviceQualificationItem)."
-                },
-                "relationshipType": {
-                    "type": "string",
-                    "description": "Type of relationship (ex: reliesOn, connectedTo, etc...)"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ServiceQualificationItemRelationship.schema.json",
+  "title": "ServiceQualificationItemRelationship",
+  "definitions": {
+    "ServiceQualificationItemRelationship": {
+      "$id": "#ServiceQualificationItemRelationship",
+      "description": "Structure used to describe relationship between serviceQualification items from the same serviceQualification.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Id of the serviceQualificationItem (from the same serviceQualificationItem)."
+        },
+        "relationshipType": {
+          "type": "string",
+          "description": "Type of relationship (ex: reliesOn, connectedTo, etc...)"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

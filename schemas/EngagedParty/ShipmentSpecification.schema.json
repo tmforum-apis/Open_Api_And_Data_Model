@@ -1,0 +1,93 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ShipmentSpecification.schema.json",
+    "title": "ShipmentSpecification",
+    "definitions": {
+        "ShipmentSpecification": {
+            "$id": "#ShipmentSpecification",
+            "type": "object",
+            "description": "Definition of the nature of a Shipment. For example, could be a standard ground delivery, overnight express with signature required by an adult, etc.",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of this REST resource"
+                },
+                "signatureRequired": {
+                    "type": "boolean"
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "description": "Date and time of the last update of this REST resource",
+                    "format": "date-time"
+                },
+                "lifecycleStatus": {
+                    "type": "string",
+                    "description": "Used to indicate the current lifecycle status of this catalog item"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name given to this REST resource"
+                },
+                "isBundle": {
+                    "type": "boolean",
+                    "description": "isBundle determines whether an ShipmentSpecification represents a single ShipmentSpecification (false), or a bundle of ShipmentSpecification (true)."
+                },
+                "version": {
+                    "type": "string",
+                    "description": "Entity specification version"
+                },
+                "signatureRequiredBy": {
+                    "$ref": "../EngagedParty/SignatureRequiredByType.schema.json#/definitions/SignatureRequiredByType"
+                },
+                "constraint": {
+                    "type": "array",
+                    "description": "This is a list of constraint references applied to this specification\r\n",
+                    "items": {
+                        "$ref": "../Common/ConstraintRef.schema.json#/definitions/ConstraintRef"
+                    }
+                },
+                "targetShipmentSchema": {
+                    "description": "Pointer to a schema that defines the target shipment",
+                    "$ref": "../EngagedParty/TargetShipmentSchema.schema.json#/definitions/TargetShipmentSchema"
+                },
+                "attachment": {
+                    "type": "array",
+                    "description": "Attachments that may be of relevance to this specification, such as picture, document, media\r\n",
+                    "items": {
+                        "$ref": "../Common/AttachmentRefOrValue.schema.json#/definitions/AttachmentRefOrValue"
+                    }
+                },
+                "specCharacteristic": {
+                    "type": "array",
+                    "description": "List of characteristics that the shipment can take",
+                    "items": {
+                        "$ref": "../Common/CharacteristicSpecification.schema.json#/definitions/CharacteristicSpecification"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "description": "Parties who manage or otherwise have an interest in this shipment specification",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+                    }
+                },
+                "validFor": {
+                    "description": "The period for which this REST resource is valid",
+                    "$ref": "../Common/TimePeriod.schema.json#/definitions/TimePeriod"
+                },
+                "entitySpecRelationship": {
+                    "type": "array",
+                    "description": "Relationship to another shipment specification, might be dependency, substitution, etc.\r\n",
+                    "items": {
+                        "$ref": "../EngagedParty/ShipmentSpecificationRelationship.schema.json#/definitions/ShipmentSpecificationRelationship"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#/definitions/Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,38 +1,38 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Area.schema.json",
-    "title": "Area",
-    "definitions": {
-        "Area": {
-            "$id": "#Area",
-            "description": "Area corresponds to a geographic area as a city, a locality, a district, etc.",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of an Area"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "The defined name of the municipality"
-                },
-                "areaType": {
-                    "type": "string",
-                    "description": "SUBURB, LOCALITY, CITY, TOWN, BOROUGH, ..."
-                },
-                "characteristic": {
-                    "type": "array",
-                    "description": "Any additional characterization of the Area, defined for the Area type",
-                    "items": {
-                        "$ref": "../Common/LocationCharacteristic.schema.json#LocationCharacteristic"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Area.schema.json",
+  "title": "Area",
+  "definitions": {
+    "Area": {
+      "$id": "#Area",
+      "description": "Area corresponds to a geographic area as a city, a locality, a district, etc.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of an Area"
+        },
+        "name": {
+          "type": "string",
+          "description": "The defined name of the municipality"
+        },
+        "areaType": {
+          "type": "string",
+          "description": "SUBURB, LOCALITY, CITY, TOWN, BOROUGH, ..."
+        },
+        "characteristic": {
+          "type": "array",
+          "description": "Any additional characterization of the Area, defined for the Area type",
+          "items": {
+            "$ref": "../Common/LocationCharacteristic.schema.json#LocationCharacteristic"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

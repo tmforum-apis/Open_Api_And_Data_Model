@@ -1,43 +1,43 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "PartyRoleRef.schema.json",
-    "title": "PartyRoleRef",
-    "definitions": {
-        "PartyRoleRef": {
-            "$id": "#PartyRoleRef",
-            "description": "Party role reference. A party role represents the part played by a party in a given context.",
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the product"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the product"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "The name of the referred party role."
-                },
-                "partyId": {
-                    "type": "string",
-                    "description": "The identifier of the engaged party that is linked to the PartyRole object."
-                },
-                "partyName": {
-                    "type": "string",
-                    "description": "The name of the engaged party that is linked to the PartyRole object."
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PartyRoleRef.schema.json",
+  "title": "PartyRoleRef",
+  "definitions": {
+    "PartyRoleRef": {
+      "$id": "#PartyRoleRef",
+      "description": "Party role reference. A party role represents the part played by a party in a given context.",
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "Reference of the product"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the product"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the referred party role."
+        },
+        "partyId": {
+          "type": "string",
+          "description": "The identifier of the engaged party that is linked to the PartyRole object."
+        },
+        "partyName": {
+          "type": "string",
+          "description": "The name of the engaged party that is linked to the PartyRole object."
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

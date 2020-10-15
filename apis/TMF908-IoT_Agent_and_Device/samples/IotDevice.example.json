@@ -1,0 +1,138 @@
+{
+    "dateFirstUsed": "2019-05-13T00:00",
+    "dateInstalled": "2019-05-13T00:00",
+    "dateLastCalibration": "2019-05-13T00:00",
+    "dateLastValueReported": "2019-05-13T00:00",
+    "dateManufactured": "2019-05-13T00:00",
+    "deviceState": "ok",
+    "deviceType": "Temperature",
+    "firmwareVersion": "1.0.0",
+    "hardwareVersion": "1.0.0",
+    "mnc": "01",
+    "osVersion": "1.0.0",
+    "provider": "Mandat International",
+    "serialNumber": "12345",
+    "softwareVersion": "1.0.0",
+    "value": "0041227744222",
+    "alternateName": "CoAP temperature sensor 3",
+    "dataProvider": "https://www.mandint.org",
+    "dateCreated": "2019-05-13T00:00",
+    "dateModified": "2019-05-13T00:00",
+    "description": "This is a temperature sensor using CoAP and 6LoWPAN.",
+    "name": "temp_3",
+    "source": "coap://[2001:41e0:6002:1800:0:0:0:3]:61616/temp ", 
+    "areaServed": "Switzerland ",
+    "category": "Gold ",
+    "endDate ": "2019-05-13T00:00",
+    "href ": "https//host:port/tmf-api/iotDevice/v1/iotDevice/temp_3",
+    "lifecycleState": "InService",
+    "manufactureDate": "2019-05-13T00:00",
+    "powerState": "3",
+    "startDate": "2019-05-13T00:00",
+    "version": "1.0",
+    "versionNumber": "1.0.0",
+    "dataAccessEndPoint": {
+        "category": "Gold",
+        "description": "This is a temperature sensor using CoAP and 6LoWPAN.",
+        "endDate": "2019-05-13T00:00",
+        "href": "https://host:port/tmf-api/iotDevice/v1/iotDevice/temp_3",
+        "id": "3",
+        "lifecycleState": "InService",
+        "name": "temp_3",
+        "startDate": "2019-05-03T00:00",
+        "value": "0041227744222",
+        "version": "1.0",
+        "apiType": "NGSI",
+        "uri": "https://host:port/tmf-api/iotDevice/v1/iotDevice/temp_3/dataAccessEndpoint/3"
+    },
+    "batteryLevel": 1.0,
+    "configuration": {
+        "timeout": 5,
+        "reportingPeriod ": 300
+    },
+    "macAddress": [
+        "02:00:00:00:00:03"
+    ],
+    "$id": "Device.schema.json",
+    "address": {
+         "addressLocality": "Geneva",
+         "postalCode": "1209",
+         "streetAddress": "Chemin du Champ-Baron 3"
+    },
+    "location": {
+        " attrName": "position",
+        "coords": {
+            "type": "Point",
+            "coordinates": [ 46.223064, 6.1305982 ]
+        } 
+    },
+    "characteristic": [
+        {
+            "name": "accuracy",
+            "value": "1.0"
+        }
+    ],
+    "note": [
+        {
+            "author": "Cedric Crettaz",
+            "date": "2019-05-13T00:00",
+            "id": "txt001",
+            "text": "This is a CoAP temperature sensor."
+        }
+    ],
+    "partyRole": [
+        {
+            "@referredType": "temperatureSensor",
+            "href": "https://www.mandint.org/temperatureSensor",
+            "id": "CoapTempSensor",
+            "name": "Mandat International",
+            "partyId": "MI",
+            "partyName": "Mandat International"
+        }
+    ],
+    "place": {
+        "href": "Chemin du Champ-Baron 3",
+        "id": "1209",
+        "name": "Geneva Office"
+    },
+    "relatedParty": [
+        {
+            "@referredType": "temperatureSensor",
+            "href": "https://www.mandint.org/temperatureSensor",
+            "id": "CoapTempSensor",
+            "name": "Mandat International",
+            "role": "vendor"
+        }
+    ],
+    "resourceRelationship": [
+        {
+            "@Type": "IotAgent",
+            "href": "https://www.mandint.org/iotAgent",
+            "id": "MI",
+            "name": "UDG",
+            "value": "0041227744222"
+        }
+    ],
+    "iotAgent": [	
+        {
+            "name": "UDG",
+            "objectId": "udgmi",
+            "href": "https://www.mandint.org/iotAgent",
+            "@referredType": "IotAgent",
+            "dataAccessEndPoint": {
+                "category": "Gold",
+                "description": "This is a temperature sensor using CoAP and 6LoWPAN.",
+                "endDate": "2019-05-13T00:00",
+                "href": "https://host:port/tmf-api/iotDevice/v1/iotDevice/temp_3",
+                "id": "3",
+                "lifecycleState": "InService",
+                "name": "temp_3",
+                "startDate": "2019-05-03T00:00",
+                "value": "0041227744222",
+                "version": "1.0",
+                "apiType": "NGSI",
+                "uri": "https://host:port/tmf-api/iotDevice/v1/iotDevice/temp_3/dataAccessEndpoint/3"
+            }
+        }
+    ]
+}

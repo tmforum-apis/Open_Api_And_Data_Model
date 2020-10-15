@@ -1,36 +1,36 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "AlternateProductOfferingProposal.schema.json",
-    "title": "AlternateProductOfferingProposal",
-    "definitions": {
-        "AlternateProductOfferingProposal": {
-            "$id": "#AlternateProductOfferingProposal",
-            "description": "Alternate product Offering proposal is used when the requested product offering is not available with characteristic and date asked for. An alternate proposal could be a distinct product offering or product Spec close to requested one or same as requested but with a different activation date.",
-            "type": "object",
-            "properties": {
-                "alternateActivationDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Alternate activation date in case seller is not able to meet requested expected activation date."
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of a alternate product offering proposal"
-                },
-                "alternateProduct": {
-                    "$ref": "../Product/ProductRefOrValue.schema.json#ProductRefOrValue",
-                    "description": "Alternate product proposal"
-                },
-                "alternateProductOffering": {
-                    "$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef",
-                    "description": "Alternate product offering proposal"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AlternateProductOfferingProposal.schema.json",
+  "title": "AlternateProductOfferingProposal",
+  "definitions": {
+    "AlternateProductOfferingProposal": {
+      "$id": "#AlternateProductOfferingProposal",
+      "description": "Alternate product Offering proposal is used when the requested product offering is not available with characteristic and date asked for. An alternate proposal could be a distinct product offering or product Spec close to requested one or same as requested but with a different activation date.",
+      "type": "object",
+      "properties": {
+        "alternateActivationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Alternate activation date in case seller is not able to meet requested expected activation date."
+        },
+        "id": {
+          "type": "string",
+          "description": "Identifier of a alternate product offering proposal"
+        },
+        "alternateProduct": {
+          "$ref": "../Product/ProductRefOrValue.schema.json#ProductRefOrValue",
+          "description": "Alternate product proposal"
+        },
+        "alternateProductOffering": {
+          "$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef",
+          "description": "Alternate product offering proposal"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

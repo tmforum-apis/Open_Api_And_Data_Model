@@ -1,35 +1,35 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ContactMedium.schema.json",
-    "title": "ContactMedium",
-    "definitions": {
-        "ContactMedium": {
-            "$id": "#ContactMedium",
-            "description": "Indicates the contact medium that could be used to contact the party.",
-            "type": "object",
-            "properties": {
-                "preferred": {
-                    "type": "boolean",
-                    "description": "If true, indicates that is the preferred contact medium"
-                },
-                "mediumType": {
-                    "type": "string",
-                    "description": "Type of the contact medium, such as: email address, telephone number, postal address"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The time period that the contact medium is valid for"
-                },
-                "characteristic": {
-                    "$ref": "../Common/MediumCharacteristic.schema.json#MediumCharacteristic",
-                    "description": "Any additional characteristic(s) of this contact medium"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ContactMedium.schema.json",
+  "title": "ContactMedium",
+  "definitions": {
+    "ContactMedium": {
+      "$id": "#ContactMedium",
+      "description": "Indicates the contact medium that could be used to contact the party.",
+      "type": "object",
+      "properties": {
+        "preferred": {
+          "type": "boolean",
+          "description": "If true, indicates that is the preferred contact medium"
+        },
+        "mediumType": {
+          "type": "string",
+          "description": "Type of the contact medium, such as: email address, telephone number, postal address"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The time period that the contact medium is valid for"
+        },
+        "characteristic": {
+          "$ref": "../Common/MediumCharacteristic.schema.json#MediumCharacteristic",
+          "description": "Any additional characteristic(s) of this contact medium"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

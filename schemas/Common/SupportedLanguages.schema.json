@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "SupportedLanguages.schema.json",
+  "title": "SupportedLanguages",
+  "definitions": {
+    "SupportedLanguages": {
+      "$id": "#SupportedLanguages",
+      "type": "string",
+      "description": "Enumeration for the supported languages in JADL multilingual support",
+      "enum": [
+        "EN",
+        "ZH"
+      ]
+    }
+  }
+}

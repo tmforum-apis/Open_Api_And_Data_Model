@@ -1,0 +1,33 @@
+{
+  "id": "622815ac-5811-4cb6-b608-5b28d5d73a8d",
+  "href": "https://mycsp:8080/tmf-api/testExecution/v4/testEnvironmentProvisioningExecution/622815ac-5811-4cb6-b608-5b28d5d73a8d",
+  "dataCorrelationId": "29d7832e-9970-4af8-8d80-19444e1973ea",
+  "provisioningArtifact": [{
+    "id": "bd73ed1f-05fa-4a08-a461-835242ee505a",
+    "href": "https://mycsp:8080/tmf-api/testEnvironment/v4/provisioningArtifact/bd73ed1f-05fa-4a08-a461-835242ee505a",
+    "@referredType": "ProvisioningArtifact"
+  }],
+  "testEnvironmentAllocationExecution": {
+    "id": "418b253c-0cf3-4f48-b64e-93f8db9b614a",
+    "href": "https://mycsp:8080/tmf-api/testExecution/v4/testEnvironmentAllocationExecution/418b253c-0cf3-4f48-b64e-93f8db9b614a",
+    "dataCorrelationId": "156cf43a-fd6a-488e-a8dd-6b01ccef12cd",
+    "resourceManagerUrl": "https://myserver.com/resourceManager",
+    "abstractEnvironment": {
+      "id": "f4cfa280-f0d7-45e5-99f8-11ba6059c0dd",
+      "href": "https://mycsp:8080/tmf-api/testEnvironment/v4/abstractEnvironment/f4cfa280-f0d7-45e5-99f8-11ba6059c0dd",
+      "@referredType": "AbstractEnvironment"
+    },
+    "concreteResourceMapping": [{
+      "abstractResource": "phone",
+      "concreteResources": [{
+        "name": "iPhone_1289"
+      }]
+    }],
+    "state": "completed",
+    "@baseType": "Execution",
+    "@type": "TestEnvironmentAllocationExecution"
+  },
+  "state": "completed",
+  "@baseType": "Execution",
+  "@type": "TestEnvironmentProvisioningExecution"
+}

@@ -1,0 +1,42 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ReserveStockItem.schema.json",
+    "title": "ReserveStockItem",
+    "definitions": {
+        "ReserveStockItem": {
+            "$id": "#ReserveStockItem",
+            "description": "ReserveStockItem is used to request a stock reservation for a product",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "Unique identifier of the StockReservationItem",
+                    "type": "string"
+                },
+                "quantityRequested": {
+                    "$ref": "Quantity.schema.json#/definitions/Quantity"
+                },
+                "quantityReserved": {
+                    "$ref": "Quantity.schema.json#/definitions/Quantity"
+                },
+                "reserveStockItemState": {
+                    "$ref": "TaskStateType.schema.json#/definitions/TaskStateType",
+                    "description": "State of the StockReservation (acknowledged, inProgress, failed, done, cancelled)"
+                },
+                "stockLevelRequested": {
+                        "$ref": "StockLevelRef.schema.json#/definitions/StockLevelRef"
+                },
+                "stockLevelReserved": {
+                    "$ref": "StockLevelRef.schema.json#/definitions/StockLevelRef"
+                },
+                "requestedProduct": {
+                    "$ref": "../Product/ProductRefOrValue.schema.json#/definitions/ProductRefOrValue"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Extensible.schema.json#/Extensible"
+                }
+            ]
+        }
+    }
+}

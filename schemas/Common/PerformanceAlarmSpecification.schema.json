@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PerformanceAlarmSpecification.schema.json",
+    "title": "PerformanceAlarmSpecification",
+    "definitions": {
+        "PerformanceAlarmSpecification": {
+            "type": "object",
+            "description": "The specification of how to populate the alarm fields when generating a threshold crossing alarm.",
+            "properties": {
+                "perfAlarmSpecAdditionalText": {
+                    "type": "string"
+                },
+                "perfAlarmSpecAlarmType": {
+                    "type": "string"
+                },
+                "perfAlarmSpecSeverity": {
+                    "$ref": "PerceivedSeverity.schema.json#/definitions/PerceivedSeverity"
+                },
+                "perfAlarmSpecSpecificProblem": {
+                    "type": "string"
+                },
+                "perfAlarmThresholdCrossingDescription": {
+                    "type": "string"
+                },
+                "perfeAlarmSpecProbableCause": {
+                    "type": "string"
+                },
+                "performanceConsequence": {
+                    "$ref": "PerformanceConsequence.schema.json#/definitions/PerformanceConsequence"
+                }
+            }
+        }
+    }
+}

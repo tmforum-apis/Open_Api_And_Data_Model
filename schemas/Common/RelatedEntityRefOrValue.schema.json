@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "RelatedEntityRefOrValue.schema.json",
+    "title": "RelatedEntityRefOrValue",
+    "definitions": {
+        "RelatedEntityRefOrValue": {
+            "$id": "#RelatedEntityRefOrValue",
+            "description": "A reference to an entity, where the type of the entity is not known in advance. A related entity defines a entity described by reference or by value linked to a specific entity. The polymorphic attributes @type, @schemaLocation & @referredType are related to the Entity and not the RelatedEntityRefOrValue class itself",
+            "type": "object",
+            "properties": {
+              "role":{
+                "type": "string"
+              }
+            },
+            "required": [
+              "role"
+            ],
+            "allOf": [
+                {
+                    "$ref": "EntityRef.schema.json#EntityRef"
+                },
+                {
+                    "$ref": "EntityValue.schema.json#EntityValue"
+                }
+                
+            ]
+        }
+    }
+  }

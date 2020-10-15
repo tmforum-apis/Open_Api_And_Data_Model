@@ -1,0 +1,40 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "FeatureRelationship.schema.json",
+	"title": "FeatureRelationship",
+	"definitions": {
+		"FeatureRelationship": {
+			"$id": "#FeatureRelationship",
+			"description": "Configuration feature",
+			"type": "object",
+			"properties": {
+				"relationshipType": {
+					"description": "This is the type of the feature relationship.",
+					"type": "string",
+					"enum": [
+						"excluded",
+						"includes",
+						"may include",
+						"requires"
+					]
+				},
+				"id": {
+					"description": "Unique identifier of the target feature.",
+					"type": "string"
+				},
+				"name": {
+					"description": "This is the name of the target feature.",
+					"type": "string"
+				},
+				"validFor": {
+					"description": "The period for which this feature relationship is valid.",
+					"$ref": "../Common/TimePeriod.schema.json#TimePeriod"
+				}
+			},
+			"required": [
+				"relationshipType",
+				"name"
+			]
+		}
+	}
+}

@@ -1,31 +1,31 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Task.schema.json",
-    "title": "Task",
-    "definitions": {
-        "Task": {
-            "$id": "#Task",
-            "description": "A step or task along in the process of implementation a Change Request.",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "The description of the task."
-                },
-                "name": {
-                    "type": "string",
-                    "description": "The name of the task."
-                },
-                "state": {
-                    "type": "string",
-                    "description": "The state of the task."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Task.schema.json",
+  "title": "Task",
+  "definitions": {
+    "Task": {
+      "$id": "#Task",
+      "description": "A step or task along in the process of implementation a Change Request.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "The description of the task."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the task."
+        },
+        "state": {
+          "type": "string",
+          "description": "The state of the task."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

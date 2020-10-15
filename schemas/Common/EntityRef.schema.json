@@ -1,35 +1,30 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "EntityRef.schema.json",
-    "title": "EntityRef",
-    "definitions": {
-        "EntityRef": {
-            "$id": "#EntityRef",
-            "description": "Entity reference schema to be use for all entityRef class.",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of a related entity."
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the related entity."
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the related entity."
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "EntityRef.schema.json",
+  "title": "EntityRef",
+  "definitions": {
+    "EntityRef": {
+      "$id": "#EntityRef",
+      "description": "Entity reference schema to be use for all entityRef class.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the related entity."
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Addressable.schema.json#Addressable"
+        },
+        {
+          "$ref": "../Common/Extensible.schema.json#Extensible"
+        }   
+      ]
     }
+  }
 }

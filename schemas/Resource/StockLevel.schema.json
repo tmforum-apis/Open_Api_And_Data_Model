@@ -1,0 +1,117 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "StockLevel.schema.json",
+    "title": "StockLevel",
+    "definitions": {
+        "StockLevel": {
+            "$id": "#StockLevel",
+            "description": "StockLevel is a base class for defining a product (or product with value characteristic) stock level.",
+            "required": [
+                "stockLevel",
+                "product"
+            ],
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "Free-text description of the StockLevel",
+                    "type": "string"
+                },
+                "creationDate": {
+                    "description": "Date when the StockLevel was created (whatever its status).",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "lastUpdate": {
+                    "description": "Last date when the StockItemLevel record was updated.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "lastInventoryDate": {
+                    "description": "Last inventory count date for this StockItemLevel.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "replenishmentDate": {
+                    "description": "Planned date for future replenishment for this StockItemLevel.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "id": {
+                    "description": "Unique identifier of the StockItemLevel",
+                    "type": "string"
+                },
+                "href": {
+                    "description": "Reference of the StockItemLevel",
+                    "type": "string"
+                },
+                "stockLevelCategory": {
+                    "description": "Category of the StockItemLevel",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name of the StockItemLevel",
+                    "type": "string"
+                },
+                "state": {
+                    "description": "The life cycle state of the StockLevel, such as onDisplay, inTransit, available, unavailable, reserved, damaged",
+                    "$ref": "StockLevelStateType.schema.json#/definitions/StockLevelStateType"
+                },
+                "stockLevel": {
+                    "$ref": "Quantity.schema.json#/definitions/Quantity"
+                },
+                "minStockLevel": {
+                    "$ref": "Quantity.schema.json#/definitions/Quantity"
+                },
+                "maxStockLevel": {
+                    "$ref": "Quantity.schema.json#/definitions/Quantity"
+                },
+                "stockLevelAlert": {
+                    "$ref": "Quantity.schema.json#/definitions/Quantity"
+                },
+                "reorderQuantity": {
+                    "$ref": "Quantity.schema.json#/definitions/Quantity"
+                },
+                "stockLevelRelationship": {
+                    "type": "array",
+                    "description": "relationship to other stock level",
+                    "items": {
+                        "$ref": "StockLevelRelationship.schema.json#/definitions/StockLevelRelationship"
+                    }
+                },
+                "stockedProduct": {
+                    "description" : "Product stocked in this stock level - could be via a productSpecification, a ProductSpecification + valued characteristic, etc. ",
+                    "$ref": "../Product/ProductRefOrValue.schema.json#/definitions/ProductRefOrValue"
+                },
+                "resource": {
+                    "type": "array",
+                    "description": "The Resource managed through this StockItemLevel is used",
+                    "items": {
+                        "$ref": "../Resource/ResourceRef.schema.json#/definitions/ResourceRef"
+                    }
+                },
+                "channel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "ChannelRef.schema.json#/definitions/ChannelRef"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "description": "A list of related party references (RelatedParty [*]). A related party defines party or party role linked to a specific entity",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+                    }
+                },
+                "place": {
+                    "description": "Used to define a place useful for the StockItemLevel for example a geographical place where the StockItemLevel is located",
+                    "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#/Entity"
+                }
+            ]
+        }
+    }
+}

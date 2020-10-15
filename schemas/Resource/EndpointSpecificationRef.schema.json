@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "EndpointSpecificationRef.schema.json",
+    "title": "EndpointSpecificationRef",
+    "definitions": {
+        "EndpointSpecificationRef": {
+            "$id": "#EndpointSpecificationRef",
+            "description": "A specification for a vertex in a resource graph.",
+            "type": "object",
+            "properties": {
+                "role": {
+                    "description": "Role of the Resource Function.",
+                    "type": "string"
+                },
+                "isRoot": {
+                    "description": "Directionality: true when endpoint is a source, false when a sink. If true for all endpoints connectivity is bidirectional. Default is true.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "connectionPointSpecification": {
+                    "description": "A specification for the connection point (SAP) of the associated resource function (optional).",
+                    "$ref": "ConnectionPointSpecificationRef.schema.json#/definitions/ConnectionPointSpecificationRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "EntityRef.schema.json#EntityRef"
+                }
+            ]
+        }
+    }
+}

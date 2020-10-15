@@ -1,28 +1,28 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "OrderRelationship.schema.json",
-    "title": "OrderRelationship",
-    "definitions": {
-        "OrderRelationship": {
-            "$id": "#OrderRelationship",
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "relationshipType": {
-                    "type": "string",
-                    "description": "The type of order relationship"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "OrderRelationship.schema.json",
+  "title": "OrderRelationship",
+  "definitions": {
+    "OrderRelationship": {
+      "$id": "#OrderRelationship",
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "relationshipType": {
+          "type": "string",
+          "description": "The type of order relationship"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

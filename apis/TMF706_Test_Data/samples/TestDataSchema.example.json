@@ -1,0 +1,27 @@
+{
+  "id": "f7a4914b-e2b0-43db-92ec-5457688a9cde",
+  "href": "https://mycsp:8080/tmf-api/testData/v4/testDataSchema/f7a4914b-e2b0-43db-92ec-5457688a9cde",
+  "description": "Sample test data schema",
+  "version": "1.2.3",
+  "relatedParty": [
+    {
+      "name": "testUser",
+      "role": "Owner",
+      "@referredType": "Individual",
+      "contact": [
+        {
+          "mediumType": "email",
+          "characteristic": {
+            "emailAddress": "testUser@abc.com"
+          }
+        }
+      ]
+    }
+  ],
+  "state": "stable",
+  "testDataSchemaDefinition": {
+    "attachmentType": "json",
+    "content": "<base64-encoded test data schema>",
+    "mimeType": "base64"
+  }
+}

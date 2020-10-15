@@ -1,0 +1,27 @@
+{
+  "id": "35776d4f-1851-435c-8573-802438f41e7a",
+  "href": "https://mycsp:8080/tmf-api/testScenario/v4/testScenario/35776d4f-1851-435c-8573-802438f41e7a",
+  "description": "Sample test scenario",
+  "version": "1.2.3",
+  "relatedParty": [
+    {
+      "name": "testUser",
+      "role": "Owner",
+      "@referredType": "Individual",
+      "contact": [
+        {
+          "mediumType": "email",
+          "characteristic": {
+            "emailAddress": "testUser@abc.com"
+          }
+        }
+      ]
+    }
+  ],
+  "state": "stable",
+  "testScenarioDefinition": {
+    "attachmentType": "testScenario",
+    "content": "<base64-encoded test scenario>",
+    "mimeType": "base64"
+  }
+}

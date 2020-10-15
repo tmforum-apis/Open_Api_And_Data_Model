@@ -5,33 +5,17 @@
     "definitions": {
         "ResourceCandidateRef": {
             "$id": "#ResourceCandidateRef",
-            "description": "ResourceCandidate reference: A resource candidate is an entity that makes a ResourceSpecification available to a catalog.",
+            "description": "ResourceCandidate is an entity that makes a resource specification available to a catalog. A ResourceCandidate and its associated resource specification may be published - made visible - in any number of resource catalogs, or in none.", 
             "type": "object",
             "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the resource candidate"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the resource candidate"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the resource candidate"
-                },
                 "version": {
-                    "type": "string",
-                    "description": "Version of the resource candidate"
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
+                    "type": "string", 
+                    "description": "the version of resource candidate"
                 }
             },
             "allOf": [
                 {
-                    "$ref": "../Common/Entity.schema.json#Entity"
+                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
                 }
             ]
         }

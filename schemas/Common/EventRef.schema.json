@@ -1,40 +1,40 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "EventRef.schema.json",
-    "title": "EventRef",
-    "definitions": {
-        "EventRef": {
-            "$id": "#EventRef",
-            "type": "object",
-            "description": "Events linked with service problem",
-            "properties": {
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                },
-                "eventTime": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Time the event occurred"
-                },
-                "eventType": {
-                    "type": "string",
-                    "description": "Type of the event"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "event reference"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "ID of the event"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "EventRef.schema.json",
+  "title": "EventRef",
+  "definitions": {
+    "EventRef": {
+      "$id": "#EventRef",
+      "type": "object",
+      "description": "Events linked with service problem",
+      "properties": {
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
+        },
+        "eventTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time the event occurred"
+        },
+        "eventType": {
+          "type": "string",
+          "description": "Type of the event"
+        },
+        "href": {
+          "type": "string",
+          "description": "event reference"
+        },
+        "id": {
+          "type": "string",
+          "description": "ID of the event"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

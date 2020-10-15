@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ManagedArtifact.schema.json",
+  "definitions": {
+    "ManagedArtifact": {
+      "$id": "#ManagedArtifact",
+      "type": "object",
+      "description": "General information about a managed artifact",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "The description for the artifact",
+          "example": ""
+        },
+        "version": {
+          "type": "string",
+          "description": "The artifact verion",
+          "example": "1.2.3"
+        },
+        "versionDescription": {
+          "type": "string",
+          "description": "The artifact verion description",
+          "example": "What's changed: ..."
+        },
+        "attribute": {
+          "type": "array",
+          "items": {
+            "$ref": "Attribute.schema.json#/definitions/Attribute"
+          }
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedPartyWithContactInfo.schema.json#/definitions/RelatedPartyWithContactInfo"
+          }
+        },
+        "state": {
+          "$ref": "../Common/ManagedArtifactStateType.schema.json#ManagedArtifactStateType"
+        },
+        "agreement": {
+          "$ref": "TestAgreement.schema.json#/definitions/TestAgreement"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Resource/ResourceEntity.schema.json#/definitions/ResourceEntity"
+        }
+      ]
+    }
+  }
+}

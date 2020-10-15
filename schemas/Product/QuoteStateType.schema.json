@@ -1,20 +1,20 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "QuoteStateType.schema.json",
-    "title": "QuoteStateType",
-    "definitions": {
-        "QuoteStateType": {
-            "$id": "#QuoteStateType",
-            "type": "string",
-            "description": "Possible values for the state of the quote",
-            "enum": [
-                "rejected",
-                "pending",
-                "inProgress",
-                "cancelled",
-                "approved",
-                "accepted"
-            ]
-        }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "QuoteStateType.schema.json",
+  "title": "QuoteStateType",
+  "definitions": {
+    "QuoteStateType": {
+      "$id": "#QuoteStateType",
+      "type": "string",
+      "description": "Possible values for the state of the quote",
+      "enum": [
+        "rejected",
+        "pending",
+        "inProgress",
+        "cancelled",
+        "approved",
+        "accepted"
+      ]
     }
+  }
 }

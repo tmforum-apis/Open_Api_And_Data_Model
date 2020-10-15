@@ -1,66 +1,61 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ServiceCatalog.schema.json",
-    "title": "ServiceCatalog",
-    "definitions": {
-        "ServiceCatalog": {
-            "$id": "#ServiceCatalog",
-            "description": "The root entity for service catalog management.\nA service catalog is a group of service specifications made available through service candidates that an organization provides to the consumers (internal consumers like its employees or B2B customers or B2C customers). \nA service catalog typically includes name, description and time period that is valid for. It will have a list of ServiceCandidate catalog items. A ServiceCandidate is an entity that makes a ServiceSpecification available to a catalog.\nA ServiceCandidate and its associated ServiceSpecification may be \"published\" - made visible -in any number of ServiceCatalogs, or in none.",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the ServiceCatalog"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Unique reference of the service catalog"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the service catalog"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Description of this catalog"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "ServiceCatalog version"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The period for which the service catalog is valid"
-                },
-                "lastUpdate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date and time of the last update"
-                },
-                "lifecycleStatus": {
-                    "type": "string",
-                    "description": "Used to indicate the current lifecycle status"
-                },
-                "category": {
-                    "type": "array",
-                    "description": "List of service categories associated with this catalog",
-                    "items": {
-                        "$ref": "../Service/ServiceCategoryRef.schema.json#ServiceCategoryRef"
-                    }
-                },
-                "relatedParty": {
-                    "type": "array",
-                    "description": "List of parties or party roles related to this category",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ServiceCatalog.schema.json",
+  "title": "ServiceCatalog",
+  "definitions": {
+    "ServiceCatalog": {
+      "$id": "#ServiceCatalog",
+      "type": "object",
+      "description": "The root entity for service catalog management.\nA service catalog is a group of service specifications made available through service candidates that an organization provides to the consumers (internal consumers like its employees or B2B customers or B2C customers). \nA service catalog typically includes name, description and time period that is valid for. It will have a list of ServiceCandidate catalog items. A ServiceCandidate is an entity that makes a ServiceSpecification available to a catalog.\nA ServiceCandidate and its associated ServiceSpecification may be \"published\" - made visible -in any number of ServiceCatalogs, or in none.",
+      "properties": {
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "../Service/ServiceCategoryRef.schema.json#/definitions/ServiceCategoryRef"
+          },
+          "description": "List of service categories associated with this catalog"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of this catalog"
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time of the last update"
+        },  
+        "lifecycleStatus": {
+          "type": "string",
+          "description": "Used to indicate the current lifecycle status"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the service catalog"
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+          },
+          "description": "List of parties or party roles related to this category"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which the service catalog is valid"
+        },
+        "version": {
+          "type": "string",
+          "description": "ServiceCatalog version"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
+        },
+        {
+          "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        }   
+      ]
     }
+  }
 }

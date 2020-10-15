@@ -1,27 +1,24 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "FloatCharacteristic.schema.json",
-    "title": "FloatCharacteristic",
-    "definitions": {
-        "FloatCharacteristic": {
-            "$id": "#FloatCharacteristic",
-            "description": "A characteristic which value is a float number",
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "description": "Name of the characteristic"
-                },
-                "valueType": {
-                    "type": "string",
-                    "description": "Data type of the value of the characteristic"
-                },
-                "value": {
-                    "type": "number",
-                    "format": "float",
-                    "description": "Value of the characteristic"
-                }
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "FloatCharacteristic.schema.json",
+  "title": "FloatCharacteristic",
+  "definitions": {
+    "FloatCharacteristic": {
+      "$id": "#FloatCharacteristic",
+      "description": "A characteristic which value is a float number",
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number",
+          "format": "float",
+          "description": "Value of the characteristic"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "Characteristic.schema.json#Characteristic"
+        }
+      ]
     }
+  }
 }

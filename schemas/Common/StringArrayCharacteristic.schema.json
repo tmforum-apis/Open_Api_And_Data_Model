@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "StringArrayCharacteristic.schema.json",
+    "title": "StringArrayCharacteristic",
+    "definitions": {
+        "StringArrayCharacteristic": {
+            "$id": "#StringArrayCharacteristic",
+            "description": "A characteristic which the value is a string array",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+			"allOf": [
+                {
+                    "$ref": "Characteristic.schema.json#Characteristic"
+                }
+            ]
+        }
+    }
+}

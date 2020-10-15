@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TestContact.schema.json",
+  "title": "TestContact",
+  "definitions": {
+    "TestContact": {
+      "$id": "#TestContact",
+      "type": "object",
+      "required": [
+        "name",
+        "email"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the contact",
+          "example": "Joe Smith"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "The email address of the contact",
+          "example": "joe.smith@mycompany.com"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "aac9969d-219d-4ff1-b256-1765dcf9b342",
+  "href": "https://mycsp:8080/tmf-api/testCase/v4/testCase/aac9969d-219d-4ff1-b256-1765dcf9b342",
+  "description": "Sample test case",
+  "version": "1.2.3",
+  "relatedParty": [
+    {
+      "name": "testUser",
+      "role": "Owner",
+      "@referredType": "Individual",
+      "contact": [
+        {
+          "mediumType": "email",
+          "characteristic": {
+            "emailAddress": "testUser@abc.com"
+          }
+        }
+      ]
+    }
+  ],
+  "state": "stable",
+  "testCaseDefinition": {
+    "attachmentType": "vtpar",
+    "content": "<base64-encoded test case>",
+    "mimeType": "base64"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "GroupAlarms.schema.json",
+  "title": "GroupAlarms",
+  "definitions": {
+    "GroupAlarms": {
+      "$id": "#GroupAlarms",
+      "description": "Task resource for group alarms operation",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The identifier of the task",
+          "type": "string"
+        },
+        "href": {
+          "description": "A reference to the task",
+          "type": "string"
+        },
+        "state": {
+          "description": "Current state of the operation task",
+          "type": "string",
+          "enum": [
+            "acknowledged",
+            "terminatedWithError",
+            "inProgress",
+            "done",
+            "cancel",
+            "canceled"
+          ]
+        },
+        "sourceSystemId": {
+          "description": "Source system identifier",
+          "type": "string"
+        },
+        "alarmChangedTime": {
+          "description": "Time of the correlation",
+          "type": "string",
+          "format": "date-time"
+        },
+        "parentAlarm": {
+          "description": "Root cause alarm",
+          "$ref": "../Resource/AlarmRefOrValue.schema.json#AlarmRefOrValue"
+        },
+        "correlatedAlarm": {
+          "description": "Correlated alarms",
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/AlarmRefOrValue.schema.json#AlarmRefOrValue"
+          }
+        },
+        "groupedAlarm": {
+          "description": "The successfully correlated alarms",
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/AlarmRefOrValue.schema.json#AlarmRefOrValue"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,35 +1,35 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "BillFormatRef.schema.json",
-    "title": "BillFormatRef",
-    "definitions": {
-        "BillFormatRef": {
-            "$id": "#BillFormatRef",
-            "description": "BillFormat reference. A bill format is a description of the way in which a bill is presented.",
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the bill format"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the bill format"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "A short descriptive name"
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BillFormatRef.schema.json",
+  "title": "BillFormatRef",
+  "definitions": {
+    "BillFormatRef": {
+      "$id": "#BillFormatRef",
+      "description": "BillFormat reference. A bill format is a description of the way in which a bill is presented.",
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "Reference of the bill format"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the bill format"
+        },
+        "name": {
+          "type": "string",
+          "description": "A short descriptive name"
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

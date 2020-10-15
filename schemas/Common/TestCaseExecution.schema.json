@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TestCaseExecution.schema.json",
+  "title": "TestCaseExecution",
+  "definitions": {
+    "TestCaseExecution": {
+      "$id": "#TestCaseExecution",
+      "type": "object",
+      "description": "REST resource for the test case execution lifecycle",
+      "properties": {
+        "testCase": {
+          "$ref": "../Common/TestCaseRef.schema.json#TestCaseRef"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/TestExecution.schema.json#TestExecution"
+        }
+      ]
+    }
+  }
+}

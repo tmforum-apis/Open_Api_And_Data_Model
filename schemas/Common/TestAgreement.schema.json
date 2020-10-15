@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TestAgreement.schema.json",
+  "title": "TestAgreement",
+  "definitions": {
+    "TestAgreement": {
+      "$id": "#TestAgreement",
+      "type": "object",
+      "oneOf": [
+        {
+          "required": [
+            "terms"
+          ]
+        },
+        {
+          "required": [
+            "url"
+          ]
+        }
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The agreement name",
+          "example": "My Agreement"
+        },
+        "terms": {
+          "type": "string",
+          "description": "The terms of the agreement",
+          "example": "<EULA>"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "The agreement URL",
+          "example": "http://myagreement.com"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+    "id": "444",
+    "href": "https:/host:port/tmf-api/resource/v1/resource?LogicalResource=444",
+    "description": "This  resource is the Logical Resource MSISDN.",
+    "category": "Premium",
+    "characteristic": [{
+        "name": "premiumValue",
+        "value": "gold"
+
+    }],
+    "startOperatingDate": "2020-07-04T00:00",
+    "endOperatingDate": "2022-07-04T00:00",
+    "name": "07465233456",
+    "administrativeState": "unlock",
+    "operationalState": "disable",
+    "usageState": "idle",
+    "resourceStatus": "available",
+    "note": [{
+        "text": "something about this resource"
+    }],
+    "place": {
+        "id": "9912",
+        "href": "https://host:port/geographicAddressManagement/v4/geographicAddress/9912",
+        "@type": "PlaceRef",
+        "@referredType": "GeographicAddress"
+    },
+    "relatedParty": [{
+        "href": "https://server:port/tmf-api/partyManagement/v4/individual/456",
+        "id": "456",
+        "name": "John Doe",
+        "role": "user",
+        "@referredType": "Individual"
+    }],
+    "resourceRelationship": [{}],
+    "resourceSpecification": {
+        "id": "4",
+        "href": " http://server:port/resourceCatalogManagement/resourceSpecification/4",
+        "@type": "LogicalResourceSpecification"
+    },
+    "version": "v1",
+    "@type": "MSISDN",
+    "@schemaLocation": "http://xx/Resource.schema.json",
+    "@baseType": "Resource"
+}

@@ -1,39 +1,39 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "AgreementItem.schema.json",
-    "title": "AgreementItem",
-    "definitions": {
-        "AgreementItem": {
-            "$id": "#AgreementItem",
-            "description": "A part of the agreement expressed in terms of a product offering and possibly including specific terms and conditions.",
-            "type": "object",
-            "properties": {
-                "productOffering": {
-                    "description": "The list of product offerings referred by this agreement item",
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef"
-                    }
-                },
-                "termOrCondition": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/AgreementTermOrCondition.schema.json#AgreementTermOrCondition"
-                    }
-                },
-                "product": {
-                    "description": "The list of products indirectly referred by this agreement item (since an agreement item refers primarily to product offerings)",
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Product/ProductRef.schema.json#ProductRef"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AgreementItem.schema.json",
+  "title": "AgreementItem",
+  "definitions": {
+    "AgreementItem": {
+      "$id": "#AgreementItem",
+      "description": "A part of the agreement expressed in terms of a product offering and possibly including specific terms and conditions.",
+      "type": "object",
+      "properties": {
+        "productOffering": {
+          "description": "The list of product offerings referred by this agreement item",
+          "type": "array",
+          "items": {
+            "$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef"
+          }
+        },
+        "termOrCondition": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/AgreementTermOrCondition.schema.json#AgreementTermOrCondition"
+          }
+        },
+        "product": {
+          "description": "The list of products indirectly referred by this agreement item (since an agreement item refers primarily to product offerings)",
+          "type": "array",
+          "items": {
+            "$ref": "../Product/ProductRef.schema.json#ProductRef"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

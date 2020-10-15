@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TestSuiteResultDefinition.schema.json",
+  "title": "TestSuiteResultDefinition",
+  "definitions": {
+    "TestSuiteResultDefinition": {
+      "$id": "#TestSuiteResultDefinition",
+      "type": "object",
+      "description": "Test suite result definition",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/Attachment.schema.json#Attachment"
+        }
+      ]
+    }
+  }
+}

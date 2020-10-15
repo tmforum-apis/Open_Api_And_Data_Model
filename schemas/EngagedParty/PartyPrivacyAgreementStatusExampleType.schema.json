@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PartyPrivacyAgreementStatusExampleType.schema.json",
+    "title": "PartyPrivacyAgreementStatusExampleType",
+    "definitions": {
+        "PartyPrivacyAgreementStatusExampleType": {
+            "$id": "#PartyPrivacyAgreementStatusExampleType",
+            "type": "string",
+            "description": "Possible values for the status of party privacy profile agreement (for example: intialized, inProgress, rejected, pendingUpdate, validated)",
+            "enum": [
+                "initialized",
+                "inProgress",
+                "rejected",
+                "pendingUpdate",
+                "validated"
+            ]
+        }
+    }
+}

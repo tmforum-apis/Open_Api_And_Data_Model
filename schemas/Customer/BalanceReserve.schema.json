@@ -1,79 +1,67 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "BalanceReserve.schema.json",
-    "title": "BalanceReserve",
-    "definitions": {
-        "BalanceReserve": {
-            "$id": "#BalanceReserve",
-            "description": "The Balance Reserve Operation resource is a detailed description of a balance reserve operation requested over a subscription",
-            "type": "object",
-            "properties": {
-                "confirmationDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date when the reserve request was confirmed in the server"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Description of the reserve operation"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "A resource URI pointing to the resource in the OB that stores the detailed information about a reserve"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique Identifier within the server for the reserve operation request"
-                },
-                "isAutoDeduct": {
-                    "type": "boolean",
-                    "description": "Indicates if the reserved balance is auto deducted after a time period"
-                },
-                "remainedAmount": {
-                    "type": "number",
-                    "format": "float",
-                    "description": "Amount (can be monetary or non-monetary) to be remained in the bucket"
-                },
-                "requestedDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date when the reserve request was received in the server"
-                },
-                "reservedAmount": {
-                    "type": "number",
-                    "format": "float",
-                    "description": "Amount (can be monetary or non-monetary) to be reserved in the bucket"
-                },
-                "status": {
-                    "type": "string",
-                    "description": "Status of the reserve operation"
-                },
-                "reserveType": {
-                    "type": "string",
-                    "description": "A preconfigured value that describes a reserve type which determines the prepay balance bucket in which the reserve is done"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "Indicates if the reserved balance is auto deducted after a time period"
-                },
-                "requestor": {
-                    "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef"
-                },
-                "product": {
-                    "$ref": "../Product/ProductRef.schema.json#ProductRef"
-                },
-                "relatedParty": {
-                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                },
-                "partyAccount": {
-                    "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BalanceReserve.schema.json",
+  "title": "BalanceReserve",
+  "definitions": {
+    "BalanceReserve": {
+      "$id": "#BalanceReserve",
+      "type": "object",
+      "description": "The Balance Reserve Operation resource is a detailed description of a balance reserve operation requested over a subscription",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of the reserve operation"
+        },
+        "href": {
+          "type": "string",
+          "description": "A resource URI pointing to the resource in the OB that stores the detailed information about a reserve"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique Identifier within the server for the reserve operation request"
+        },
+        "isAutoDeduct": {
+          "type": "boolean",
+          "description": "Indicates if the reserved balance is auto deducted after a time period"
+        },
+        "partyAccount": {
+          "description": "A reference to the account that owns the bucket impacted by the balance related operation",
+          "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef"
+        },
+        "product": {
+          "description": "A reference to the product related to the bucket that is impacted by the balance related operation",
+          "$ref": "../Product/ProductRef.schema.json#ProductRef"
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          },
+          "description": "Used to provide information about any other entity with relation to the operation"
+        },
+        "amount": {
+          "type": "number",
+          "format": "float",
+          "description": "Amount (can be monetary or non-monetary) to be reserved in the bucket"
+        },
+        "requestor": {
+          "description": "Identifier for the user/customer/entity that performs the top-up action. This can be used to indicate the identifier of an agent that performs the operation on behalf of a user via a customer service channel. Structure including at least attributes �role� and �name�.",
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+        },
+        "bucket": {
+          "description": "A reference to the bucket impacted by the request. This is used in scenarios where the requestor knows beforehand the bucket that is going to be impacted instead of just referring to the commercial identifier of the impacted product and the type of bucket created under that product",
+          "$ref": "../Customer/BucketBalanceRef.schema.json#BucketBalanceRef"
+        },
+        "reserveType": {
+          "type": "string",
+          "description": "A preconfigured value that describes a reserve type which determines the prepay balance bucket in which the reserve is done"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Customer/BalanceAction.schema.json#BalanceAction"
+        }
+      ]
     }
+  }
 }

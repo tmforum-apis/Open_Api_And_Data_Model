@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "eUICCUsageAnalytics.schema.json",
+    "title": "eUICCUsageAnalytics",
+    "definitions": {
+        "eUICCUsageAnalytics": {
+            "$id": "#eUICCUsageAnalytics",
+            "type": "object",
+            "properties": {
+                "customerStatusDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when status was set or changed last time"
+                },
+                "customerCreationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when customer was created"
+                },
+                "customerBirthDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date of birth"
+                },
+                "arpuAmount": {
+                    "$ref": "../Common/Money.schema.json"
+                },
+                "dataPeriodStart": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The statrt of the period for which the usage info  is collected"
+                },
+                "dataPeriodEnd": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The end of the period for which the usage info  is collected"
+                },
+                "activityMostRecentDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Most recent activity date indicating recency of information"
+                },
+                "dataCreationTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data creation (e.g. system dump creation, event generation\u2026)"
+                },
+                "runTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data upload run"
+                },
+                "validFromTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for business validity of entity record"
+                }
+            },
+           
+            "allOf": [{"$ref": "../Common/Entity.schema.json#Extensible"}]
+        }
+    }
+}

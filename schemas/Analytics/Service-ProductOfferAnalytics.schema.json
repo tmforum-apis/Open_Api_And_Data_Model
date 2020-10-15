@@ -1,0 +1,122 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Service-ProductOfferAnalytics.schema.json",
+    "title": "Service-ProductOfferAnalytics",
+    "definitions": {
+        "Service-ProductOfferAnalytics": {
+            "$id": "#Service-ProductOfferAnalytics",
+            "type": "object",
+            "properties": {
+                "offerActivationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Activation date of Offer"
+                },
+                "offerOcAmount": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Offering One time amount"
+                },
+                "offerRcAmount": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Offering Recurrent amount"
+                },
+                "offerUsageAmount": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Offering Usage amount"
+                },
+                "offerUnitValue": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Offering Chargeable unit"
+                },
+                "customerStatusDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when status was set or changed last time"
+                },
+                "customerCreationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when customer was created"
+                },
+                "customerBirthDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date of birth"
+                },
+                "arpuAmount": {
+                    "$ref": "../Common/Money.schema.json"
+                },
+                "accountStatusDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Status last change date"
+                },
+                "accountCreationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Account creation Date"
+                },
+                "subscriptionStatusDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Status last change date"
+                },
+                "subscriptionCreationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Subscriber creation date"
+                },
+                "subscriptionActivationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Activation date"
+                },
+                "planActivationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Activation date of billing plan"
+                },
+                "contractStartDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Contract start date"
+                },
+                "contractEndDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Contract end date"
+                },
+                "contractMinimumPeriodDays": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Minimal contract duration specified with number of days"
+                },
+                "priceChargeAmount": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Amount corresponding to the charge type"
+                },
+                "dataCreationTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data creation (e.g. system dump creation, event generation\u2026)"
+                },
+                "runTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data upload run"
+                },
+                "validFromTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for business validity of entity record"
+                }
+            }
+        },
+              "allOf": [{"$ref": "../Common/Entity.schema.json#Extensible"}]
+    }
+}

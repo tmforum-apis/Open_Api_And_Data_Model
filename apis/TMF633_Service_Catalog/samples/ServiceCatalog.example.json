@@ -1,0 +1,39 @@
+{
+    "id": "3830", 
+    "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/serviceCatalog/3830", 
+    "name": "IOT Catalog", 
+    "description": "This service catalog describes IOT services that address the wholesale business segment.", 
+    "version": "1.0", 
+    "validFor": {
+        "startDateTime": "2017-08-29T00:00", 
+        "endDateTime": "2021-03-25T00:00"
+    }, 
+    "lastUpdate": "2020-08-25T00:00", 
+    "lifecycleStatus": "Active",
+    "relatedParty": [
+        {
+            "href":"https:/host:port/tmf-api/partyRoleManagement/v4/partyRole/4079", 
+            "id": "4079", 
+            "name": "Broadly Broad Ltd", 
+            "role": "vendor",
+            "@referredType": "PartyRole",
+            "@type": "RelatedParty", 
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/EngagedParty/RelatedParty.schema.json ", 
+            "@baseType": ""
+        }
+    ], 
+    "category": [
+        {
+            "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/category/7752", 
+            "id": "7752", 
+            "name": "IoT",
+            "@referredType": "ServiceCategory",
+            "@type": "ServiceCategoryRef", 
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Service/ServiceCategoryRef.schema.json ", 
+            "@baseType": ""
+        }
+    ],
+    "@type": "ServiceCatalog", 
+    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Service/ServiceCatalog.schema.json ", 
+    "@baseType": "Catalog" 
+}

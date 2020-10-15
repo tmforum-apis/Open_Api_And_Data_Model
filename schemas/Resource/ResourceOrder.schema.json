@@ -4,88 +4,127 @@
     "title": "ResourceOrder",
     "definitions": {
         "ResourceOrder": {
-            "$id": "#ResourceOrder",
-            "description": "A Resource Order is a request to provision a set of Resources (logical and physical) triggered by the request to provision a Service through a Service Order",
             "type": "object",
+            "description": "A Resource Order is a request to provision a set of Resources (logical and physical) triggered by the request to provision a Service through a Service Order",
             "properties": {
-                "category": {
+                "id": {
                     "type": "string",
-                    "description": "Used to categorize the order from a business perspective that can be useful for the OM system."
-                },
-                "completionDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date when the order was completed"
-                },
-                "correlationId": {
-                    "type": "string",
-                    "description": "ID given by the consumer and only understandable by him (to facilitate his searches afterwards)"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "free-text description of the Resource Order"
+                    "description": "Identifier of an instance of the Resource Order. Required to be unique within the resource type.",
+                    "examples": [ "9ba1047c38ce" ]
                 },
                 "href": {
                     "type": "string",
-                    "description": "Hyperlink to access the order"
+                    "description": "Hyperlink to access the order",
+                    "format": "uri",
+                    "examples": [ "http://host/resourceOrder/9ba1047c38ce" ]
                 },
-                "id": {
+                "cancellationDate": {
                     "type": "string",
-                    "description": "Identifier of an instance of the Resource Order. Required to be unique within the resource type.  Used in URIs as the identifier for specific instances of a type."
+                    "format": "date-time",
+                    "description": "Date when the order is cancelled - if cancelled, in RFC3339 (subset of ISO8601) format",
+                    "examples": [ "2021-11-20T10:19:46+0000" ]
+                },
+                "cancellationReason": {
+                    "type": "string",
+                    "description": "Reason why the order is cancelled - if cancelled",
+                    "examples": [ "Cables no longer required by customer" ]
+                },
+                "externalId": {
+                    "type": "string",
+                    "description": "DEPRECATED: Use externalReference Instead. ID given by the consumer (to facilitate searches afterwards)",
+                    "examples": [ "Customer Ref: 577e6b2be5e5" ]
+                },
+                "externalReference": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "ExternalReference.schema.json#/definitions/ExternalReference"
+                    }
+                },
+                "state": {
+                    "$ref": "ResourceOrderStateType.schema.json#/definitions/ResourceOrderStateType"
                 },
                 "name": {
                     "type": "string",
-                    "description": "A string used to give a name to the Resource Order"
+                    "description": "A string used to give a name to the Resource Order",
+                    "examples": [ "7km of Optical Cable for Acme Inc" ]
                 },
-                "orderDate": {
+                "description": {
                     "type": "string",
-                    "format": "date-time",
-                    "description": "Date when the order was created"
+                    "description": "Free-text description of the Resource Order",
+                    "examples": [ "7km of 6-fiber, double jacketed Optical Cable for Acme Inc" ]
                 },
                 "priority": {
+                    "description": "A way that can be used by consumers to prioritize orders in OM system (such as: 0 is the highest priority, and 4 the lowest)",
                     "type": "integer",
-                    "description": "A way that can be used by consumers to prioritize orders in OM system (from 0 to 4 : 0 is the highest priority, and 4 the lowest)"
-                },
-                "requestedCompletionDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Requested delivery date from the requestor perspective"
-                },
-                "requestedStartDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Order start date wished by the requestor"
-                },
-                "state": {
-                    "type": "string",
-                    "description": "The life cycle state of the resource."
+                    "examples": [ 0, 4 ]
                 },
                 "orderType": {
                     "type": "string",
                     "description": "Name of the Resource Order type"
                 },
-                "orderRelationship": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Resource/ResourceOrderRelationship.schema.json#ResourceOrderRelationship"
-                    }
+                "category": {
+                    "type": "string",
+                    "description": "Used to categorize the order from a business perspective that can be useful for the order management system",
+                    "examples": [ "Premium", "Enterprise" ]
                 },
-                "relatedParty": {
+                "orderDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order was created, in RFC3339 (subset of ISO8601) format",
+                    "examples": [ "2020-11-20T10:19:46+0000" ]
+                },
+                "requestedStartDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Order start date wished by the requestor, in RFC3339 (subset of ISO8601) format",
+                    "examples": [ "2020-11-20T10:19:46+0000" ]
+                },
+                "requestedCompletionDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Requested delivery date from the requestor perspective, in RFC3339 (subset of ISO8601) format",
+                    "examples": [ "2021-07-07T10:19:46+0000" ]
+                },
+                "startDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order was actually started, in RFC3339 (subset of ISO8601) format",
+                    "examples": [ "2020-11-20T10:19:46+0000" ]
+                },
+                "completionDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order was actually completed, in RFC3339 (subset of ISO8601) format",
+                    "examples": [ "2021-07-07T10:19:46+0000" ]
+                },
+                "expectedCompletionDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order is expected to be completed, in RFC3339 (subset of ISO8601) format",
+                    "examples": [ "2021-07-07T10:19:46+0000" ]
+                },
+                "orderItem": {
                     "type": "array",
                     "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                        "$ref": "ResourceOrderItem.schema.json#/definitions/ResourceOrderItem"
                     }
                 },
                 "note": {
                     "type": "array",
                     "items": {
-                        "$ref": "../Common/Note.schema.json#Note"
+                        "$ref": "Note.schema.json#/definitions/Note"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "RelatedParty.schema.json#/definitions/RelatedParty"
                     }
                 }
             },
             "allOf": [
                 {
-                    "$ref": "../Common/Entity.schema.json#Entity"
+                    "$ref": "Entity.schema.json#/Entity"
                 }
             ]
         }

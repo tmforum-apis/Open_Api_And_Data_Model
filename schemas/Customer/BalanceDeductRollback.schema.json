@@ -1,55 +1,55 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "BalanceDeductRollback.schema.json",
-    "title": "BalanceDeductRollback",
-    "definitions": {
-        "BalanceDeductRollback": {
-            "$id": "#BalanceDeductRollback",
-            "description": "The Rollback Balance Deduct task resource is a detailed description of rollback deduction",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "Description of the rollback deduct operation"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "A resource URI pointing to the resource in the OB that stores the detailed information about a rollback deduction"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique Identifier within the server for the rollback deduction  operation request"
-                },
-                "requestedDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date when the rollback deduction request was received in the server"
-                },
-                "status": {
-                    "type": "string",
-                    "description": "Status of the rollback deduction operation"
-                },
-                "relatedParty": {
-                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                },
-                "product": {
-                    "$ref": "../Product/ProductRef.schema.json#ProductRef"
-                },
-                "partyAccount": {
-                    "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef"
-                },
-                "balanceDeduct": {
-                    "$ref": "../Customer/BalanceDeductRef.schema.json#BalanceDeductRef"
-                },
-                "requestor": {
-                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BalanceDeductRollback.schema.json",
+  "title": "BalanceDeductRollback",
+  "definitions": {
+    "BalanceDeductRollback": {
+      "$id": "#BalanceDeductRollback",
+      "description": "The Rollback Balance Deduct task resource is a detailed description of rollback deduction",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of the rollback deduct operation"
+        },
+        "href": {
+          "type": "string",
+          "description": "A resource URI pointing to the resource in the OB that stores the detailed information about a rollback deduction"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique Identifier within the server for the rollback deduction  operation request"
+        },
+        "requestedDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the rollback deduction request was received in the server"
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of the rollback deduction operation"
+        },
+        "relatedParty": {
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+        },
+        "product": {
+          "$ref": "../Product/ProductRef.schema.json#ProductRef"
+        },
+        "partyAccount": {
+          "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef"
+        },
+        "balanceDeduct": {
+          "$ref": "../Customer/BalanceDeductRef.schema.json#BalanceDeductRef"
+        },
+        "requestor": {
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

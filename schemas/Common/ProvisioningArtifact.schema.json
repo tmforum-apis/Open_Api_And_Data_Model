@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ProvisioningArtifact.schema.json",
+  "title": "ProvisioningArtifact",
+  "definitions": {
+    "ProvisioningArtifact": {
+      "$id": "#ProvisioningArtifact",
+      "type": "object",
+      "description": "A managed provisioning artifact resource",
+      "required": [
+        "provisioningArtifactDefinition"
+      ],
+      "properties": {
+        "provisioningArtifactDefinition": {
+          "$ref": "../Common/ProvisioningArtifactDefinition.schema.json#ProvisioningArtifactDefinition"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/ManagedArtifact.schema.json#ManagedArtifact"
+        }
+      ]
+    }
+  }
+}

@@ -1,39 +1,23 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "EntityCatalogItemRef.schema.json",
-    "title": "EntityCatalogItemRef",
-    "definitions": {
-        "EntityCatalogItemRef": {
-            "$id": "#EntityCatalogItemRef",
-            "description": "reference to EntityCatalogItem object",
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "Hyperlink reference to the target EntityCatalogItem"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "reference id to the target EntityCatalogItem"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name given to the EntityCatalogItem"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "EntityCatalogItem version"
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "EntityCatalogItemRef.schema.json",
+  "title": "EntityCatalogItemRef",
+  "definitions": {
+    "EntityCatalogItemRef": {
+      "$id": "#EntityCatalogItemRef",
+      "description": "reference to EntityCatalogItem object",
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "EntityCatalogItem version"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#/definitions/EntityRef"
+        }
+      ]
     }
+  }
 }

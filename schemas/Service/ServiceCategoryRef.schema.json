@@ -1,35 +1,23 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ServiceCategoryRef.schema.json",
-    "title": "ServiceCategoryRef",
-    "definitions": {
-        "ServiceCategoryRef": {
-            "$id": "#ServiceCategoryRef",
-            "description": "The (service) category resource is used to group service candidates in logical containers. Categories can contain other categories.",
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "Hypertext Reference of the category"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of category"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the category."
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ServiceCategoryRef.schema.json",
+  "title": "ServiceCategoryRef",
+  "definitions": {
+    "ServiceCategoryRef": {
+      "$id": "#ServiceCategoryRef",
+      "description": "The (service) category resource is used to group service candidates in logical containers. Categories can contain other categories.",
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "Category version"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#/definitions/EntityRef"
+        }
+      ]
     }
+  }
 }

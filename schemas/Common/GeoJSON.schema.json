@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GeoJSON",
+  "description": "A geometry as defined by GeoJSON. GeoJSON supports the following geometry types: Point, LineString, Polygon, MultiPoint, MultiLineString, and MultiPolygon. Geometric objects with additional properties are Feature objects. Sets of features are contained by FeatureCollection objects.",
+  "type": "object",
+  "definitions": {
+    "position": {
+      "$id": "#position",
+      "description": "GeoJSON: A single position",
+      "type": "array",
+      "minItems": 2,
+      "items": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "additionalItems": false
+    },
+    "positionArray": {
+      "$id": "#positionArray",
+      "description": "GeoJSON: An array of positions",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/position"
+      }
+    },
+    "lineString": {
+      "$id": "#lineString",
+      "description": "GeoJSON: An array of two or more positions",
+      "allOf": [
+        {
+          "$ref": "#/definitions/positionArray"
+        },
+        {
+          "minItems": 2
+        }
+      ]
+    },
+    "linearRing": {
+      "$id": "#linearRing",
+      "description": "GeoJSON: An array of four positions where the first equals the last",
+      "allOf": [
+        {
+          "$ref": "#/definitions/positionArray"
+        },
+        {
+          "minItems": 4
+        }
+      ]
+    },
+    "polygon": {
+      "$id": "#polygon",
+      "description": "GeoJSON: An array of linear rings",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/linearRing"
+      }
+    }
+  }
+}

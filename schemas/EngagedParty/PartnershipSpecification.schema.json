@@ -1,45 +1,45 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "PartnershipSpecification.schema.json",
-    "title": "PartnershipSpecification",
-    "definitions": {
-        "PartnershipSpecification": {
-            "$id": "#PartnershipSpecification",
-            "description": "A partnership specification contains all the information for the setup of a partnership of a given kind. This includes the list of identified role types for the partnership with the corresponding agreement specifications.",
-            "type": "object",
-            "required": [
-                "name"
-            ],
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "An explanatory text regarding this partnership specification"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "The reference url for this partnership specification"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "The identifier of the partnership specification"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "An identifying name for the partnership specification."
-                },
-                "roleSpecification": {
-                    "description": "The list of roles specifications a engaged party will be able to play for this kind of partnership",
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/RoleSpecification.schema.json#RoleSpecification"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PartnershipSpecification.schema.json",
+  "title": "PartnershipSpecification",
+  "definitions": {
+    "PartnershipSpecification": {
+      "$id": "#PartnershipSpecification",
+      "description": "A partnership specification contains all the information for the setup of a partnership of a given kind. This includes the list of identified role types for the partnership with the corresponding agreement specifications.",
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "An explanatory text regarding this partnership specification"
+        },
+        "href": {
+          "type": "string",
+          "description": "The reference url for this partnership specification"
+        },
+        "id": {
+          "type": "string",
+          "description": "The identifier of the partnership specification"
+        },
+        "name": {
+          "type": "string",
+          "description": "An identifying name for the partnership specification."
+        },
+        "roleSpecification": {
+          "description": "The list of roles specifications a engaged party will be able to play for this kind of partnership",
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RoleSpecification.schema.json#RoleSpecification"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

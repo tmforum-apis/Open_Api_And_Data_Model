@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceSpecificationCharacteristicRelationship.schema.json",
+    "title": "ResourceSpecificationCharacteristicRelationship",
+    "definitions": {
+        "ResourceSpecificationCharacteristicRelationship": {
+            "$id": "#ResourceSpecificationCharacteristicRelationship",
+            "description": "An aggregation, migration, substitution, dependency or exclusivity relationship between/among ResourceSpecificationCharacteristics. The specification characteristic is embedded within the specification whose ID and href are in this entity, and identified by its ID.",
+            "type": "object",
+            "properties": {
+                "relationshipType": {
+                    "type": "string", 
+                    "description": "Type of relationship such as aggregation, migration, substitution, dependency, exclusivity"
+                }, 
+                "name": {
+                    "type": "string", 
+                    "description": "Name of the target characteristic within the specification"
+                }, 
+                "characteristicSpecificationId": {
+                    "type": "string", 
+                    "description": "Unique identifier of the characteristic within the specification"
+                }, 
+                "resourceSpecificationId": {
+                    "type": "string", 
+                    "description": "Unique identifier of the resource specification containing the target characteristic"
+                }, 
+                "resourceSpecificationHref": {
+                    "type": "string", 
+                    "format": "uri",
+                    "description": "Hyperlink reference to the resource specification containing the target characteristic"
+                }, 
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period for which the object is valid"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#Extensible"
+                }
+            ]
+        }
+    }
+}

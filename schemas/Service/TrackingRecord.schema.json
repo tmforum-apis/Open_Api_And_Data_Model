@@ -1,47 +1,50 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "TrackingRecord.schema.json",
-    "title": "TrackingRecord",
-    "definitions": {
-        "TrackingRecord": {
-            "$id": "#TrackingRecord",
-            "type": "object",
-            "description": "Tracking records allow the tracking of modifications on the problem. The tracking records should not be embedded in the problem to allow retrieving the problem without the tracking records",
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "Describes the action being done, such as: ack, clear"
-                },
-                "extensionInfo": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/Characteristic.schema.json#Characteristic"
-                    },
-                    "description": "A generic list of any type of elements. Used for vendor Extensions or loose element encapsulation from other namespaces"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of the TrackingRecord"
-                },
-                "systemId": {
-                    "type": "string",
-                    "description": "Describes the system Id from which the action was done"
-                },
-                "time": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Describes the time at which the action was done"
-                },
-                "user": {
-                    "type": "string",
-                    "description": "Describes the user doing the action"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TrackingRecord.schema.json",
+  "title": "TrackingRecord",
+  "definitions": {
+    "TrackingRecord": {
+      "$id": "#TrackingRecord",
+      "type": "object",
+      "description": "Tracking records allow the tracking of modifications on the problem. The tracking records should not be embedded in the problem to allow retrieving the problem without the tracking records",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Describes the action being done, such as: ack, clear"
+        },
+        "extensionInfo": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/Characteristic.schema.json#Characteristic"
+          },
+          "description": "A generic list of any type of elements. Used for vendor Extensions or loose element encapsulation from other namespaces"
+        },
+        "id": {
+          "type": "string",
+          "description": "Identifier of the TrackingRecord"
+        },
+        "systemId": {
+          "type": "string",
+          "description": "Describes the system Id from which the action was done"
+        },
+        "time": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Describes the time at which the action was done"
+        },
+        "user": {
+          "type": "string",
+          "description": "Describes the user doing the action"
         }
+      },
+      "allOf": [
+                {
+                  "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
+                },
+                {
+                  "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                } 
+      ]
     }
+  }
 }

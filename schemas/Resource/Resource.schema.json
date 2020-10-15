@@ -4,9 +4,8 @@
     "title": "Resource",
     "definitions": {
         "Resource": {
-            "$id": "#Resource",
-            "description": "Resource is an abstract entity that describes the common set of attributes shared by all concrete resources (e.g. TPE, EQUIPMENT) in the inventory.",
             "type": "object",
+            "description": "Resource is an abstract entity that describes the common set of attributes shared by all concrete resources (e.g. TPE, EQUIPMENT) in the inventory.",
             "properties": {
                 "category": {
                     "type": "string",
@@ -16,10 +15,10 @@
                     "type": "string",
                     "description": "free-text description of the resource"
                 },
-                "endDate": {
+                "endOperatingDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "A date time( DateTime). The date till the resource is effective"
+                    "description": "A date time( DateTime). The date till the resource is operating"
                 },
                 "href": {
                     "type": "string",
@@ -29,61 +28,87 @@
                     "type": "string",
                     "description": "Identifier of an instance of the resource. Required to be unique within the resource type.  Used in URIs as the identifier for specific instances of a type."
                 },
-                "lifecycleState": {
-                    "type": "string",
-                    "description": "The life cycle state of the resource."
+                "administrativeState": {
+                    "$ref": "ResourceAdministrativeStateType.schema.json#ResourceAdministrativeStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
+                "operationalState": {
+                    "$ref": "ResourceOperationalStateType.schema.json#ResourceOperationalStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
+                "resourceStatus": {
+                    "$ref": "ResourceStatusType.schema.json#ResourceStatusType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
+                "usageState": {
+                    "$ref": "ResourceUsageStateType.schema.json#ResourceUsageStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
                 },
                 "name": {
                     "type": "string",
                     "description": "A string used to give a name to the resource"
                 },
-                "startDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "A date time( DateTime). The date from which the resource is effective"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "A field that identifies the specific version of an instance of a resource."
-                },
-                "resourceRelationship": {
+                "note": {
                     "type": "array",
                     "items": {
-                        "$ref": "../Resource/ResourceRelationship.schema.json#ResourceRelationship"
-                    }
-                },
-                "characteristic": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Resource/ResourceCharacteristic.schema.json#ResourceCharacteristic"
+                        "$ref": "../Common/Note.schema.json#/definitions/Note"
                     }
                 },
                 "place": {
-                    "$ref": "../Common/Place.schema.json#Place"
-                },
-                "partyRole": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/PartyRoleRef.schema.json#PartyRoleRef"
-                    }
+                    "$ref": "RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue"
                 },
                 "relatedParty": {
                     "type": "array",
                     "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                        "$ref": "RelatedParty.schema.json#/definitions/RelatedParty"
                     }
                 },
-                "note": {
+                "resourceRelationship": {
                     "type": "array",
                     "items": {
-                        "$ref": "../Common/Note.schema.json#Note"
+                        "$ref": "ResourceRelationship.schema.json#/definitions/ResourceRelationship"
                     }
-                }
+                },
+                "resourceCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Characteristic.schema.json#/definitions/Characteristic"
+                    }
+                },
+		 "attachment": {
+			 "type": "array",
+                    	"items": {
+                        "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
+     			}
+                },
+                "resourceSpecification": {
+                    "$ref": "ResourceSpecificationRef.schema.json#/definitions/ResourceSpecificationRef"
+                },
+                "startOperatingDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "A date time( DateTime). The date from which the resource is operating"
+                },
+                "resourceVersion": {
+                    "type": "string",
+                    "description": "A field that identifies the specific version of an instance of a resource."
+                },
+ 		"activationFeature": {
+		     "description": "Configuration features",
+		     "type": "array",
+		     "items": {
+			   "$ref": "Feature.schema.json#/definitions/Feature"
+			  }
+		}
             },
-            "allOf": [
+             "allOf": [
                 {
                     "$ref": "../Common/Entity.schema.json#Entity"
                 }
+            ],
+            "required": [
+		"id",
+		"href"
             ]
         }
     }

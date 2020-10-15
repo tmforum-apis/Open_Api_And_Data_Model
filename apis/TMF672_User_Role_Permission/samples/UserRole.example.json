@@ -1,0 +1,20 @@
+{
+    "id": "413920",
+    "href": "http://serverlocation:port/userRolePermission/v4/userRole/413920",
+    "involvementRole": "MyTV familyAdmin Profile",
+    "@type": "UserRole",
+    "entitlement": [
+        {
+            "id": "gdf-1324",
+            "action": "R,W",
+            "function": "SubAccounts creation Granted",
+            "@type": "Entitlement"
+        },
+        {
+            "id": "eq-120",
+            "action": "add",
+            "function": "Downloading is activated",
+            "@type": "Entitlement"
+        }
+    ]
+}

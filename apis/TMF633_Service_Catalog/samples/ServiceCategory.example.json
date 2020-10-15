@@ -1,0 +1,41 @@
+{
+    "id": "1708", 
+    "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/serviceCategory/1708", 
+    "name": "Cloud Services", 
+    "description": "A category to hold all available cloud service offers", 
+    "version": "1.0", 
+    "validFor": {
+        "startDateTime": "2017-08-24T00:00", 
+        "endDateTime": "2021-03-25T00:00"
+    }, 
+    "lifecycleStatus": "Active", 
+    "lastUpdate": "2020-08-25T00:00", 
+    "isRoot": true, 
+    "serviceCandidate": [
+        {
+            "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/serviceCandidate/5850", 
+            "id": "5850", 
+            "name": "Azure Kubernetes Service", 
+            "version": "1.0", 
+            "@referredType": "ServiceCandidate",
+            "@type": "ServiceCandidateRef", 
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Service/ServiceCandidateRef.schema.json ", 
+            "@baseType": ""
+        }
+    ], 
+    "category": [
+        {
+            "id": "5980", 
+            "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/serviceCategory/5980", 
+            "version": "1.0", 
+            "name": "AzureCloudApp",
+            "@referredType": "ServiceCategory",
+            "@type": "ServiceCategoryRef", 
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Service/ServiceCategoryRef.schema.json ", 
+            "@baseType": ""
+        }
+    ], 
+    "@type": "ServiceCategory", 
+    "@schemalLocation": "https://mycsp.com:8080/tmf-api/schema/Service/ServiceCategory.schema.json", 
+    "@baseType": "Category" 
+}

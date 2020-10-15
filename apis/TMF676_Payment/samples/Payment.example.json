@@ -1,0 +1,89 @@
+{
+    "id": "12345",
+    "href": "https://host:port/paymentManagement/v4/payment/12345",
+    "correlatorId": "67890",
+    "paymentDate": "2020-01-08T12:06:38.230Z",
+    "name": "Example",
+    "description": "a payment example",
+    "status": "done",
+    "statusDate": "2020-01-08T12:06:38.230Z",
+    "@type": "Payment",
+    "amount": {
+        "unit": "EUR",
+        "value": 10
+    },
+    "taxAmount": {
+        "unit": "EUR",
+        "value": 1.6
+    },
+    "totalAmount": {
+        "unit": "EUR",
+        "value": 11.6
+    },
+    "channel": {
+        "id": "channel1",
+        "name": "WEB Portal"
+    },
+    "account": {
+        "id": "44444",
+        "href": "https://host:port/accountManagement/v4/account/44444",
+        "name": "Telco fusion account",
+        "description": "Michel Valette's telco account",
+        "@referredType": "PartyAccount"
+    },
+    "paymentItem": [
+        {
+            "id": "1",
+            "amount": {
+                "unit": "EUR",
+                "value": 6
+            },
+            "taxAmount": {
+                "unit": "EUR",
+                "value": 0.96
+            },
+            "totalAmount": {
+                "unit": "EUR",
+                "value": 6.96
+            },
+            "item": {
+                "id": "1234",
+                "@referredType": "CustomerBill",
+                "href": "https://host:port/customerBillManagement/v4/customerBill/1234"
+            }
+        },
+        {
+            "id": "2",
+            "amount": {
+                "unit": "EUR",
+                "value": 4
+            },
+            "taxAmount": {
+                "unit": "EUR",
+                "value": 0.64
+            },
+            "totalAmount": {
+                "unit": "EUR",
+                "value": 4.64
+            },
+            "item": {
+                "id": "666",
+                "href": "https://host:port/productOrdering/v4/productOrder/666",
+                "@referredType": "ProductOrder"
+            }
+        }
+    ],
+    "paymentMethod": {
+        "id": "15492MIFB865654",
+        "href": "https://host:port/paymentMethodManagement/v4/voucher/15492MIFB865654",
+        "@referredType": "Voucher",
+        "@type": "PaymentMethodRef"
+    },
+    "payer": {
+        "id": "3333333333333",
+        "href": "https://host:port/partyManagement/v4/individual/3333333333333",
+        "name": "Jean Pontus",
+        "role": "payer",
+        "@referredType": "Individual"
+    }
+}

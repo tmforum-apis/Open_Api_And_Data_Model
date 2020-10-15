@@ -1,39 +1,40 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ConstraintRef.schema.json",
-    "title": "ConstraintRef",
-    "definitions": {
-        "ConstraintRef": {
-            "$id": "#ConstraintRef",
-            "type": "object",
-            "description": "Constraint reference. The Constraint resource represents a policy/rule applied to an entity or entity spec.",
-            "properties": {
-                "@referredType": {
-                    "type": "string",
-                    "description": "The (class) type of the referred constraint"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Hyperlink reference to the target constraint"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "reference id to the target constraint"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name given to the constraint"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "constraint version"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ConstraintRef.schema.json",
+  "title": "ConstraintRef",
+  "definitions": {
+    "ConstraintRef": {
+      "$id": "#ConstraintRef",
+      "type": "object",
+      "description": "Constraint reference. The Constraint resource represents a policy/rule applied to an entity or entity spec.",
+      "properties": {
+        "@referredType": {
+          "type": "string",
+          "description": "The (class) type of the referred constraint"
+        },
+        "href": {
+          "type": "string",
+          "format": "uri",
+          "description": "Hyperlink reference to the target constraint"
+        },
+        "id": {
+          "type": "string",
+          "description": "reference id to the target constraint"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name given to the constraint"
+        },
+        "version": {
+          "type": "string",
+          "description": "constraint version"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Extensible.schema.json#Extensible"
+        }
+      ]
     }
+  }
 }

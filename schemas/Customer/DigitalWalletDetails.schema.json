@@ -1,32 +1,32 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "DigitalWalletDetails.schema.json",
-    "title": "DigitalWalletDetails",
-    "definitions": {
-        "DigitalWalletDetails": {
-            "$id": "#DigitalWalletDetails",
-            "description": "Detailed information of a check",
-            "type": "object",
-            "properties": {
-                "service": {
-                    "type": "string",
-                    "description": "Organization, platform or currency backing the wallet (e.g.: PayPal, Yandex, BitCoin...)"
-                },
-                "walletId": {
-                    "type": "string",
-                    "description": "account identifier in that service"
-                },
-                "walletUrl": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "URI pointing at the digital wallet (e.g.: https://paypal.me/johndoe)"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "DigitalWalletDetails.schema.json",
+  "title": "DigitalWalletDetails",
+  "definitions": {
+    "DigitalWalletDetails": {
+      "$id": "#DigitalWalletDetails",
+      "description": "Detailed information of a check",
+      "type": "object",
+      "properties": {
+        "service": {
+          "type": "string",
+          "description": "Organization, platform or currency backing the wallet (e.g.: PayPal, Yandex, BitCoin...)"
+        },
+        "walletId": {
+          "type": "string",
+          "description": "account identifier in that service"
+        },
+        "walletUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "URI pointing at the digital wallet (e.g.: https://paypal.me/johndoe)"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

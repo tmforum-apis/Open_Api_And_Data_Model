@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PublictransportationJourneyAnalytics.schema.json",
+    "title": "PublictransportationJourneyAnalytics",
+    "definitions": {
+        "PublictransportationJourneyAnalytics": {
+            "$id": "#PublictransportationJourneyAnalytics",
+            "type": "object",
+            "properties": {
+                "stationArrivalHour": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the arrival to the station"
+                },
+                "stationDepartureHour": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the departure from the station"
+                },
+                "dataCreationTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data creation (e.g. system dump creation, event generation\u2026)"
+                },
+                "runTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data upload run"
+                },
+                "validFromTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for business validity of entity record"
+                }
+            }
+        },
+              "allOf": [{"$ref": "../Common/Entity.schema.json#Extensible"}]
+    }
+}

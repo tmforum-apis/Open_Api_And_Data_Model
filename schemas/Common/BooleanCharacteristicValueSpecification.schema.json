@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BooleanCharacteristicValueSpecification.schema.json",
+    "title": "BooleanCharacteristicValueSpecification",
+    "definitions": {
+        "BooleanCharacteristicValueSpecification": {
+            "$id": "#BooleanCharacteristicValueSpecification",
+            "description": "A specification for a characteristic for which the value is a boolean",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "boolean",
+                    "description": "Value of the characteristic"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/CharacteristicValueSpecification.schema.json#CharacteristicValueSpecification"
+                }
+            ]
+        }
+    }
+}

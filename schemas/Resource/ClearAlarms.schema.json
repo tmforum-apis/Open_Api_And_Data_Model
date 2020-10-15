@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ClearAlarms.schema.json",
+  "title": "ClearAlarms",
+  "definitions": {
+    "ClearAlarms": {
+      "$id": "#ClearAlarms",
+      "description": "Task resource for clear alarms operation",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The identifier of the task",
+          "type": "string"
+        },
+        "href": {
+          "description": "A reference to the task",
+          "type": "string"
+        },
+        "state": {
+          "description": "Current state of the operation task",
+          "type": "string",
+          "enum": [
+            "acknowledged",
+            "terminatedWithError",
+            "inProgress",
+            "done",
+            "cancel",
+            "canceled"
+          ]
+        },
+        "clearSystemId": {
+          "description": "Name of the clearing system",
+          "type": "string"
+        },
+        "clearUserId": {
+          "description": "Name of the clearing user",
+          "type": "string"
+        },
+        "alarmClearedTime": {
+          "description": "Time of the alarm clearing",
+          "type": "string",
+          "format": "date-time"
+        },
+        "alarmPattern": {
+          "description": "Alarm patterns to match target alarms. An alarm will match if all of the sttributes in any of the patterns compare equal to those attributes of the alarm.",
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/Alarm.schema.json#Alarm"
+          }
+        },
+        "clearedAlarm": {
+          "description": "The successfully cleared alarms",
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/AlarmRefOrValue.schema.json#AlarmRefOrValue"
+          }
+        }
+      }
+    }
+  }
+}

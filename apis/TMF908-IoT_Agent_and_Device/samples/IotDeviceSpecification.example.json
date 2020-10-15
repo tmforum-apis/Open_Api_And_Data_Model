@@ -1,0 +1,27 @@
+{
+    "description": "This  iot device specification ...",
+    "href": "https:/host:port/tmf-api/iotDeviceSpecification/v1/iotDeviceSpecification/4976",
+    "id": "4976",
+    "isBundle": true,
+    "lastUpdate": "2019-10-03T00:00",
+    "lifecycleStatus": "a string ...",
+    "name": "a string ...",
+    "version": "a string ...",
+    "attachment": [
+        {}
+    ],
+    "relatedParty": [
+        {}
+    ],
+    "resourceSpecRelationship": [
+        {}
+    ],
+    "resourceSpecCharacteristic": [
+        {}
+    ],
+    "resourceSpecification": [
+        {}
+    ],
+    "targetServiceSchema": {},
+    "validFor": {}
+}

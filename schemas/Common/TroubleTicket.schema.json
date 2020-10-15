@@ -1,135 +1,135 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "TroubleTicket.schema.json",
-    "title": "TroubleTicket",
-    "definitions": {
-        "TroubleTicket": {
-            "$id": "#TroubleTicket",
-            "type": "object",
-            "description": "A trouble ticket is a record of an issue that is created, tracked, and managed by a trouble ticket management system",
-            "properties": {
-                "attachment": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
-                    },
-                    "description": "File(s) attached to the trouble ticket. e.g. pictur of broken device, scaning of a bill or charge"
-                },
-                "channel": {
-                    "$ref": "../Common/ChannelRef.schema.json#ChannelRef",
-                    "description": "The channel that origin the trouble ticket"
-                },
-                "creationDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "The date on which the trouble ticket was created"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Description of the trouble or issue"
-                },
-                "expectedResolutionDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "The expected resolution date determined by the trouble ticket system"
-                },
-                "externalId": {
-                    "type": "string",
-                    "description": "Additional identifier coming from an external system"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Hyperlink, a reference to the trouble ticket entity"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the trouble ticket"
-                },
-                "lastUpdate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "The date and time that the trouble ticked was last updated"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the trouble ticket, typically a short description provided by the user that create the ticket"
-                },
-                "note": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/Note.schema.json#Note"
-                    },
-                    "description": "The note(s) that are associated to the ticket."
-                },
-                "priority": {
-                    "type": "string",
-                    "description": "The priority of the trouble ticket and how quickly the issue should be resolved. Example: Critical, High, Medium, Low. The value is set by the ticket management system considering the severity, ticket type etc..."
-                },
-                "relatedEntity": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/RelatedEntity.schema.json#RelatedEntity"
-                    },
-                    "description": "An entity that is related to the ticket such as a bill, a product, etc. The entity against which the ticket is associated."
-                },
-                "relatedParty": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                    },
-                    "description": "The related party(ies) that are associated to the ticket."
-                },
-                "requestedResolutionDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "The resolution date requested by the user"
-                },
-                "resolutionDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "The date and time the trouble ticket was resolved"
-                },
-                "severity": {
-                    "type": "string",
-                    "description": "The severity of the issue. Indicate the implication of the issue on the expected functionality e.g. of a system, application, service etc.. \nSeverity values can be for example : Critical, Major, Minor"
-                },
-                "status": {
-                    "$ref": "../Common/TroubleTicketStatusType.schema.json#TroubleTicketStatusType",
-                    "description": "The current status of the trouble ticket"
-                },
-                "statusChange": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/StatusChange.schema.json#StatusChange"
-                    },
-                    "description": "The status change history that are associated to the ticket.Populated by the server"
-                },
-                "statusChangeDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "The date and time the status changed."
-                },
-                "statusChangeReason": {
-                    "type": "string",
-                    "description": "The reason for changing the status"
-                },
-                "troubleTicketRelationship": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/TroubleTicketRelationship.schema.json#TroubleTicketRelationship"
-                    },
-                    "description": "A list of trouble ticket relationships (TroubleTicketRelationship [*]). Represents a relationship between trouble tickets"
-                },
-                "ticketType": {
-                    "type": "string",
-                    "description": "represent a business type of the trouble ticket e.g. incident, complain, request"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TroubleTicket.schema.json",
+  "title": "TroubleTicket",
+  "definitions": {
+    "TroubleTicket": {
+      "$id": "#TroubleTicket",
+      "type": "object",
+      "description": "A trouble ticket is a record of an issue that is created, tracked, and managed by a trouble ticket management system",
+      "properties": {
+        "attachment": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
+          },
+          "description": "File(s) attached to the trouble ticket. e.g. pictur of broken device, scaning of a bill or charge"
+        },
+        "channel": {
+          "$ref": "../Common/ChannelRef.schema.json#ChannelRef",
+          "description": "The channel that origin the trouble ticket"
+        },
+        "creationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date on which the trouble ticket was created"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the trouble or issue"
+        },
+        "expectedResolutionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The expected resolution date determined by the trouble ticket system"
+        },
+        "externalId": {
+          "type": "string",
+          "description": "Additional identifier coming from an external system"
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink, a reference to the trouble ticket entity"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the trouble ticket"
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date and time that the trouble ticked was last updated"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the trouble ticket, typically a short description provided by the user that create the ticket"
+        },
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/Note.schema.json#Note"
+          },
+          "description": "The note(s) that are associated to the ticket."
+        },
+        "priority": {
+          "type": "string",
+          "description": "The priority of the trouble ticket and how quickly the issue should be resolved. Example: Critical, High, Medium, Low. The value is set by the ticket management system considering the severity, ticket type etc..."
+        },
+        "relatedEntity": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/RelatedEntity.schema.json#RelatedEntity"
+          },
+          "description": "An entity that is related to the ticket such as a bill, a product, etc. The entity against which the ticket is associated."
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          },
+          "description": "The related party(ies) that are associated to the ticket."
+        },
+        "requestedResolutionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The resolution date requested by the user"
+        },
+        "resolutionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date and time the trouble ticket was resolved"
+        },
+        "severity": {
+          "type": "string",
+          "description": "The severity of the issue. Indicate the implication of the issue on the expected functionality e.g. of a system, application, service etc.. \nSeverity values can be for example : Critical, Major, Minor"
+        },
+        "status": {
+          "$ref": "../Common/TroubleTicketStatusType.schema.json#TroubleTicketStatusType",
+          "description": "The current status of the trouble ticket"
+        },
+        "statusChange": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/StatusChange.schema.json#StatusChange"
+          },
+          "description": "The status change history that are associated to the ticket.Populated by the server"
+        },
+        "statusChangeDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date and time the status changed."
+        },
+        "statusChangeReason": {
+          "type": "string",
+          "description": "The reason for changing the status"
+        },
+        "troubleTicketRelationship": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/TroubleTicketRelationship.schema.json#TroubleTicketRelationship"
+          },
+          "description": "A list of trouble ticket relationships (TroubleTicketRelationship [*]). Represents a relationship between trouble tickets"
+        },
+        "ticketType": {
+          "type": "string",
+          "description": "represent a business type of the trouble ticket e.g. incident, complain, request"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

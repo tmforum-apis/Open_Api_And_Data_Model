@@ -1,0 +1,27 @@
+{
+  "id": "16db32a3-e008-401b-8168-4ebac788f9d8",
+  "href": "https://mycsp:8080/tmf-api/testCase/v4/nonFunctionalTestModel/16db32a3-e008-401b-8168-4ebac788f9d8",
+  "description": "Sample non-functional test model",
+  "version": "1.2.3",
+  "relatedParty": [
+    {
+      "name": "testUser",
+      "role": "Owner",
+      "@referredType": "Individual",
+      "contact": [
+        {
+          "mediumType": "email",
+          "characteristic": {
+            "emailAddress": "testUser@abc.com"
+          }
+        }
+      ]
+    }
+  ],
+  "state": "stable",
+  "nonFunctionalTestModelDefinition": {
+    "attachmentType": "nftestmodel",
+    "content": "<base64-encoded non-functional test model>",
+    "mimeType": "base64"
+  }
+}

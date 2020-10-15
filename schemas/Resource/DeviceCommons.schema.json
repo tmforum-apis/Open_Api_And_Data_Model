@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://fiware.github.io/data-models/specs/Device/device-schema.json",
+  "title": "DeviceCommons",
+  "description": "Common defintions to describe Device and Device Model scemas.",
+  "definitions": {
+    "MacAddressType": {
+      "$id": "#MacAddressType",
+      "type": "string",
+      "pattern": "^([[:xdigit:]]{2}[:.-]?){5}[[:xdigit:]]{2}$"
+    },
+    "CategoryType": {
+      "$id": "#CategoryType",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "sensor",
+          "actuator",
+          "meter",
+          "HVAC",
+          "network",
+          "multimedia",
+          "implement",
+          "irrSystem",
+          "irrSection",
+          "endgun"
+        ]
+      }
+    },
+    "ControlledPropertyType": {
+      "$id": "#ControlledPropertyType",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "temperature",
+          "humidity",
+          "light",
+          "motion",
+          "fillingLevel",
+          "occupancy",
+          "power",
+          "pressure",
+          "smoke",
+          "energy",
+          "airPollution",
+          "noiseLevel",
+          "weatherConditions",
+          "precipitation",
+          "windSpeed",
+          "windDirection",
+          "atmosphericPressure",
+          "solarRadiation",
+          "depth",
+          "pH",
+          "conductivity",
+          "conductance",
+          "tss",
+          "tds",
+          "turbidity",
+          "salinity",
+          "orp",
+          "cdom",
+          "waterPollution",
+          "location",
+          "speed",
+          "heading",
+          "weight",
+          "waterConsumption",
+          "gasComsumption",
+          "electricityConsumption",
+          "eatingActivity",
+          "milking",
+          "movementActivity",
+          "soilMoisture"
+        ]
+      },
+      "SupportedProtocolType": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "ul20",
+            "mqtt",
+            "lwm2m",
+            "http",
+            "websocket",
+            "onem2m",
+            "sigfox",
+            "lora",
+            "nb-iot",
+            "ec-gsm-iot",
+            "lte-m",
+            "cat-m",
+            "3g",
+            "gprs",
+            "coap"
+          ]
+        }
+      }
+    },
+    "DeviceCommons": {
+      "$id": "#DeviceCommons",
+      "type": "object",
+      "category": {
+        "$ref": "/definitions/CategoryType"
+      },
+      "controlledProperty": {
+        "$ref": "/definitions/ControlledPropertyType"
+      },
+      "supportedProtocol": {
+        "$ref": "/definitions/SupportedProtocolType"
+      }
+    }
+  }
+}

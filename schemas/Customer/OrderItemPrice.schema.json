@@ -1,58 +1,58 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "OrderItemPrice.schema.json",
-    "title": "OrderItemPrice",
-    "definitions": {
-        "OrderItemPrice": {
-            "$id": "#OrderItemPrice",
-            "description": "An amount, usually of money, that represents the actual price paid by the Customer for this item or this order",
-            "type": "object",
-            "required": [
-                "priceType",
-                "price"
-            ],
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "A narrative that explains in detail the semantics of this order item price."
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the order item price"
-                },
-                "productOfferingPrice": {
-                    "$ref": "../Product/ProductOfferingPriceRef.schema.json#ProductOfferingPriceRef"
-                },
-                "priceType": {
-                    "type": "string",
-                    "description": "A category that describes the price, such as recurring, discount, allowance, penalty, and so forth"
-                },
-                "recurringChargePeriod": {
-                    "type": "string",
-                    "description": "Could be month, week..."
-                },
-                "unitOfMeasure": {
-                    "type": "string",
-                    "description": "Could be minutes, GB..."
-                },
-                "billingAccount": {
-                    "$ref": "../Customer/BillingAccountRef.schema.json#BillingAccountRef"
-                },
-                "price": {
-                    "$ref": "../Customer/Price.schema.json#Price"
-                },
-                "priceAlteration": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Product/PriceAlteration.schema.json#PriceAlteration"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "OrderItemPrice.schema.json",
+  "title": "OrderItemPrice",
+  "definitions": {
+    "OrderItemPrice": {
+      "$id": "#OrderItemPrice",
+      "description": "An amount, usually of money, that represents the actual price paid by the Customer for this item or this order",
+      "type": "object",
+      "required": [
+        "priceType",
+        "price"
+      ],
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "A narrative that explains in detail the semantics of this order item price."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the order item price"
+        },
+        "productOfferingPrice": {
+          "$ref": "../Product/ProductOfferingPriceRef.schema.json#ProductOfferingPriceRef"
+        },
+        "priceType": {
+          "type": "string",
+          "description": "A category that describes the price, such as recurring, discount, allowance, penalty, and so forth"
+        },
+        "recurringChargePeriod": {
+          "type": "string",
+          "description": "Could be month, week..."
+        },
+        "unitOfMeasure": {
+          "type": "string",
+          "description": "Could be minutes, GB..."
+        },
+        "billingAccount": {
+          "$ref": "../Customer/BillingAccountRef.schema.json#BillingAccountRef"
+        },
+        "price": {
+          "$ref": "../Customer/Price.schema.json#Price"
+        },
+        "priceAlteration": {
+          "type": "array",
+          "items": {
+            "$ref": "../Product/PriceAlteration.schema.json#PriceAlteration"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

@@ -1,0 +1,2389 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Recommendation",
+        "description": "## TMF API Reference : TMF 680 - Customer \n\nRecommendation API is used to recommend offering quickly based on the history and real-time context of customer. It is a real-time and personalized recommendation API.",
+        "version": "4.0.0"
+    },
+    "host": "serverRootserverRoot",
+    "basePath": "/customer/v4/",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json;charset=utf-8"
+    ],
+    "produces": [
+        "application/json;charset=utf-8"
+    ],
+    "tags": [
+        {
+            "name": "queryProductRecommendation"
+        },
+        {
+            "name": "notification listeners (client side)"
+        },
+        {
+            "name": "events subscription"
+        }
+    ],
+    "paths": {
+        "/queryProductRecommendation": {
+            "get": {
+                "operationId": "listQueryProductRecommendation",
+                "summary": "List or find QueryProductRecommendation objects",
+                "description": "This operation list or find QueryProductRecommendation entities",
+                "tags": [
+                    "queryProductRecommendation"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "offset",
+                        "description": "Requested index for start of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "description": "Requested number of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "X-Result-Count": {
+                                "description": "Actual number of items returned in the response body",
+                                "type": "integer"
+                            },
+                            "X-Total-Count": {
+                                "description": "Total number of items matching criteria",
+                                "type": "integer"
+                            }
+                        },
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/QueryProductRecommendation"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "operationId": "createQueryProductRecommendation",
+                "summary": "Creates a QueryProductRecommendation",
+                "description": "This operation creates a QueryProductRecommendation entity.",
+                "tags": [
+                    "queryProductRecommendation"
+                ],
+                "parameters": [
+                    {
+                        "name": "queryProductRecommendation",
+                        "description": "The QueryProductRecommendation to be created",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/QueryProductRecommendation_Create"
+                        },
+                        "in": "body"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/QueryProductRecommendation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/queryProductRecommendation/{id}": {
+            "get": {
+                "operationId": "retrieveQueryProductRecommendation",
+                "summary": "Retrieves a QueryProductRecommendation by ID",
+                "description": "This operation retrieves a QueryProductRecommendation entity. Attribute selection is enabled for all first level attributes.",
+                "tags": [
+                    "queryProductRecommendation"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the QueryProductRecommendation",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    },
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to provide in response",
+                        "required": false,
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/QueryProductRecommendation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/hub": {
+            "post": {
+                "operationId": "registerListener",
+                "summary": "Register a listener",
+                "description": "Sets the communication endpoint address the service instance must use to deliver information about its health state, execution state, failures and metrics.",
+                "tags": [
+                    "events subscription"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscriptionInput"
+                        },
+                        "required": true,
+                        "in": "body",
+                        "description": "Data containing the callback endpoint to deliver the information"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Subscribed",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/hub/{id}": {
+            "delete": {
+                "operationId": "unregisterListener",
+                "summary": "Unregister a listener",
+                "description": "Resets the communication endpoint address the service instance must use to deliver information about its health state, execution state, failures and metrics.",
+                "tags": [
+                    "events subscription"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "description": "The id of the registered listener"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/queryProductRecommendationCreateEvent": {
+            "post": {
+                "operationId": "listenToQueryProductRecommendationCreateEvent",
+                "summary": "Client listener for entity QueryProductRecommendationCreateEvent",
+                "description": "Example of a client listener for receiving the notification QueryProductRecommendationCreateEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/QueryProductRecommendationCreateEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/queryProductRecommendationStateChangeEvent": {
+            "post": {
+                "operationId": "listenToQueryProductRecommendationStateChangeEvent",
+                "summary": "Client listener for entity QueryProductRecommendationStateChangeEvent",
+                "description": "Example of a client listener for receiving the notification QueryProductRecommendationStateChangeEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/QueryProductRecommendationStateChangeEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "AgreementItemRef": {
+            "type": "object",
+            "description": "Agreement reference. An agreement represents a contract or arrangement, either written or verbal and sometimes enforceable by law, such as a service level agreement or a customer price agreement. An agreement involves a number of other business entities, such as products, services, and resources and/or their specifications.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "agreementItemId": {
+                    "type": "string",
+                    "description": "Identifier of the agreement"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "Any": {},
+        "BillingAccountRef": {
+            "type": "object",
+            "description": "BillingAccount reference. A BillingAccount is a detailed description of a bill structure.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the billing account"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the billing account"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the billing account"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "CategoryRef": {
+            "type": "object",
+            "description": "The category for grouping recommendations",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "version": {
+                    "type": "string",
+                    "description": "Category version"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "ChannelRef": {
+            "type": "object",
+            "description": "The channel to which the resource reference to. e.g. channel for selling product offerings, channel for opening a trouble ticket etc..",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the channel."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "Characteristic": {
+            "type": "object",
+            "description": "Describes a given characteristic of an object or entity through a name/value pair.",
+            "required": [
+                "name",
+                "value"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the characteristic"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the characteristic"
+                },
+                "valueType": {
+                    "type": "string",
+                    "description": "Data type of the value of the characteristic"
+                },
+                "characteristicRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CharacteristicRelationship"
+                    }
+                },
+                "value": {
+                    "$ref": "#/definitions/Any",
+                    "description": "The value of the characteristic"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "CharacteristicRelationship": {
+            "type": "object",
+            "description": "Another Characteristic that is related to the current Characteristic;",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the characteristic"
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "The type of relationship"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "EntityRef": {
+            "type": "object",
+            "description": "Entity reference schema to be use for all entityRef class.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "ItemRef": {
+            "type": "object",
+            "description": "Describes a specific item contained in a parent element",
+            "properties": {
+                "entityHref": {
+                    "type": "string",
+                    "description": "Hypertext Reference of the parent element."
+                },
+                "entityId": {
+                    "type": "string",
+                    "description": "Unique identifier of the parent element."
+                },
+                "itemId": {
+                    "type": "string",
+                    "description": "Unique identifier of the considered item."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "Money": {
+            "type": "object",
+            "description": "A base / value business entity used to represent money",
+            "properties": {
+                "unit": {
+                    "type": "string",
+                    "description": "Currency (ISO4217 norm uses 3 letters to define the currency)"
+                },
+                "value": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "A positive floating point number"
+                }
+            }
+        },
+        "Place": {
+            "type": "object",
+            "description": "Place reference. Place defines the places where the products are sold or delivered.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the place"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Unique reference of the place"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A user-friendly name for the place, such as [Paris Store], [London Store], [Main Home]"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "PlaceRef": {
+            "type": "object",
+            "description": "Place reference. PlaceRef defines the placeRefs where the products are sold or delivered.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "Price": {
+            "type": "object",
+            "description": "Provides all amounts (tax included, duty free, tax rate), used currency and percentage to apply for Price Alteration.",
+            "properties": {
+                "percentage": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "Percentage to apply for ProdOfferPriceAlteration"
+                },
+                "taxRate": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "Tax rate"
+                },
+                "dutyFreeAmount": {
+                    "$ref": "#/definitions/Money",
+                    "description": "All taxes excluded amount (expressed in the given currency)"
+                },
+                "taxIncludedAmount": {
+                    "$ref": "#/definitions/Money",
+                    "description": "All taxes included amount (expressed in the given currency)"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "PriceAlteration": {
+            "type": "object",
+            "description": "Is an amount, usually of money, that modifies the price charged for an order item.",
+            "required": [
+                "price",
+                "priceType"
+            ],
+            "properties": {
+                "applicationDuration": {
+                    "type": "integer",
+                    "description": "Duration during which the alteration applies on the order item price (for instance 2 months free of charge for the recurring charge)"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A narrative that explains in detail the semantics of this order item price alteration"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the order item price alteration"
+                },
+                "priceType": {
+                    "type": "string",
+                    "description": "A category that describes the price such as recurring, one time and usage."
+                },
+                "priority": {
+                    "type": "integer",
+                    "description": "Priority level for applying this alteration among all the defined alterations on the order item price"
+                },
+                "recurringChargePeriod": {
+                    "type": "string",
+                    "description": "Could be month, week..."
+                },
+                "unitOfMeasure": {
+                    "type": "string",
+                    "description": "Could be minutes, GB..."
+                },
+                "price": {
+                    "$ref": "#/definitions/Price"
+                },
+                "productOfferingPrice": {
+                    "$ref": "#/definitions/ProductOfferingPriceRef"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "Product": {
+            "type": "object",
+            "description": "A product offering procured by a customer or other interested party playing a party role. A product is realized as one or more service(s) and / or resource(s).",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the product"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the product"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Is the description of the product. It could be copied from the description of the Product Offering."
+                },
+                "isBundle": {
+                    "type": "boolean",
+                    "description": "If true, the product is a ProductBundle which is an instantiation of a BundledProductOffering. If false, the product is a ProductComponent which is an instantiation of a SimpleProductOffering."
+                },
+                "isCustomerVisible": {
+                    "type": "boolean",
+                    "description": "If true, the product is visible by the customer."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the product. It could be the same as the name of the product offering"
+                },
+                "orderDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Is the date when the product was ordered"
+                },
+                "productSerialNumber": {
+                    "type": "string",
+                    "description": "Is the serial number for the product. This is typically applicable to tangible products e.g. Broadband Router."
+                },
+                "startDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Is the date from which the product starts"
+                },
+                "terminationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Is the date when the product was terminated"
+                },
+                "agreement": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementItemRef"
+                    }
+                },
+                "billingAccount": {
+                    "$ref": "#/definitions/BillingAccountRef"
+                },
+                "place": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedPlaceRefOrValue"
+                    }
+                },
+                "product": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductRefOrValue"
+                    }
+                },
+                "productCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    }
+                },
+                "productOffering": {
+                    "$ref": "#/definitions/ProductOfferingRef"
+                },
+                "productOrderItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedProductOrderItem"
+                    }
+                },
+                "productPrice": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductPrice"
+                    }
+                },
+                "productRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductRelationship"
+                    }
+                },
+                "productSpecification": {
+                    "$ref": "#/definitions/ProductSpecificationRef"
+                },
+                "productTerm": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductTerm"
+                    }
+                },
+                "realizingResource": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ResourceRef"
+                    }
+                },
+                "realizingService": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ServiceRef"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    }
+                },
+                "status": {
+                    "$ref": "#/definitions/ProductStatusType",
+                    "description": "Is the lifecycle status of the product."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "ProductOfferingPriceRef": {
+            "type": "object",
+            "description": "ProductPriceOffering reference. An amount, usually of money, that is asked for or allowed when a ProductOffering is bought, rented, or leased",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "ProductOfferingRef": {
+            "type": "object",
+            "description": "ProductOffering reference. A product offering represents entities that are orderable from the provider of the catalog, this resource includes pricing information.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "ProductOrderRef": {
+            "type": "object",
+            "description": "ProductOrder (ProductOrder) .The product order which the recommendation is related with.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "ProductPrice": {
+            "type": "object",
+            "description": "An amount, usually of money, that represents the actual price paid by a Customer for a purchase, a rent or a lease of a Product. The price is valid for a defined period of time.",
+            "required": [
+                "price",
+                "priceType"
+            ],
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "A narrative that explains in detail the semantics of this product price."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A short descriptive name such as \"Subscription price\"."
+                },
+                "priceType": {
+                    "type": "string",
+                    "description": "A category that describes the price, such as recurring, discount, allowance, penalty, and so forth."
+                },
+                "recurringChargePeriod": {
+                    "type": "string",
+                    "description": "Could be month, week..."
+                },
+                "unitOfMeasure": {
+                    "type": "string",
+                    "description": "Could be minutes, GB..."
+                },
+                "billingAccount": {
+                    "$ref": "#/definitions/BillingAccountRef"
+                },
+                "price": {
+                    "$ref": "#/definitions/Price"
+                },
+                "productOfferingPrice": {
+                    "$ref": "#/definitions/ProductOfferingPriceRef"
+                },
+                "productPriceAlteration": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PriceAlteration"
+                    }
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "ProductRef": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "ProductRefOrValue": {
+            "type": "object",
+            "description": "A product to be created defined by value or existing defined by reference. The polymorphic attributes @type, @schemaLocation & @referredType are related to the product entity and not the RelatedProductRefOrValue class itself",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the product"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the product"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Is the description of the product. It could be copied from the description of the Product Offering."
+                },
+                "isBundle": {
+                    "type": "boolean",
+                    "description": "If true, the product is a ProductBundle which is an instantiation of a BundledProductOffering. If false, the product is a ProductComponent which is an instantiation of a SimpleProductOffering."
+                },
+                "isCustomerVisible": {
+                    "type": "boolean",
+                    "description": "If true, the product is visible by the customer."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the product. It could be the same as the name of the product offering"
+                },
+                "orderDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Is the date when the product was ordered"
+                },
+                "productSerialNumber": {
+                    "type": "string",
+                    "description": "Is the serial number for the product. This is typically applicable to tangible products e.g. Broadband Router."
+                },
+                "startDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Is the date from which the product starts"
+                },
+                "terminationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Is the date when the product was terminated"
+                },
+                "agreement": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementItemRef"
+                    }
+                },
+                "billingAccount": {
+                    "$ref": "#/definitions/BillingAccountRef"
+                },
+                "place": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedPlaceRefOrValue"
+                    }
+                },
+                "product": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductRefOrValue"
+                    }
+                },
+                "productCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    }
+                },
+                "productOffering": {
+                    "$ref": "#/definitions/ProductOfferingRef"
+                },
+                "productOrderItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedProductOrderItem"
+                    }
+                },
+                "productPrice": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductPrice"
+                    }
+                },
+                "productRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductRelationship"
+                    }
+                },
+                "productSpecification": {
+                    "$ref": "#/definitions/ProductSpecificationRef"
+                },
+                "productTerm": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductTerm"
+                    }
+                },
+                "realizingResource": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ResourceRef"
+                    }
+                },
+                "realizingService": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ServiceRef"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    }
+                },
+                "status": {
+                    "$ref": "#/definitions/ProductStatusType",
+                    "description": "Is the lifecycle status of the product."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            }
+        },
+        "ProductRelationship": {
+            "type": "object",
+            "description": "Linked products to the one instantiate, such as [bundled] if the product is a bundle and you want to describe the bundled products inside this bundle; [reliesOn] if the product needs another already owned product to rely on (e.g. an option on an already owned mobile access product) [targets] or [isTargeted] (depending on the way of expressing the link) for any other kind of links that may be useful",
+            "required": [
+                "product",
+                "relationshipType"
+            ],
+            "properties": {
+                "relationshipType": {
+                    "type": "string",
+                    "description": "Type of the product relationship, such as [bundled] if the product is a bundle and you want to describe the bundled products inside this bundle; [reliesOn] if the product needs another already owned product to rely on (e.g. an option on an already owned mobile access product) [targets] or [isTargeted] (depending on the way of expressing the link) for any other kind of links that may be useful"
+                },
+                "product": {
+                    "$ref": "#/definitions/ProductRefOrValue"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "ProductSpecificationRef": {
+            "type": "object",
+            "description": "Product specification reference: A ProductSpecification is a detailed description of a tangible or intangible object made available externally in the form of a ProductOffering to customers or other parties playing a party role.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "version": {
+                    "type": "string",
+                    "description": "Version of the product specification"
+                },
+                "targetProductSchema": {
+                    "$ref": "#/definitions/TargetProductSchema",
+                    "description": "A target product schema reference. The reference object to the schema and type of target product which is described by product specification."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "ProductStatusType": {
+            "type": "string",
+            "description": "Possible values for the status of the product",
+            "enum": [
+                "created",
+                "pendingActive",
+                "cancelled",
+                "active",
+                "pendingTerminate",
+                "terminated",
+                "suspended",
+                "aborted "
+            ]
+        },
+        "ProductTerm": {
+            "type": "object",
+            "description": "Description of a productTerm linked to this product. This represent a commitment with a duration",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the productTerm"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the productTerm"
+                },
+                "duration": {
+                    "$ref": "#/definitions/Quantity",
+                    "description": "Duration of the productTerm"
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "productTerm validity period"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "Quantity": {
+            "type": "object",
+            "description": "An amount in a given unit",
+            "properties": {
+                "amount": {
+                    "default": 1,
+                    "type": "number",
+                    "format": "float",
+                    "description": "Numeric value in a given unit"
+                },
+                "units": {
+                    "type": "string",
+                    "description": "Unit"
+                }
+            }
+        },
+        "QueryProductRecommendation": {
+            "type": "object",
+            "description": "Recommendation API is used to recommend offering quickly based on the history and real-time context of customer. It is a real-time and personalized recommendation API. It is usually provided by e-commerce or BSS, CRM system in omni-channel.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the queryProductRecommendation"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hypertext Reference of the queryProductRecommendation"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "instantSyncRecommendation": {
+                    "type": "boolean",
+                    "description": "An indicator which when the value is \"true\" means that requester expects to get recommendation result in the response"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the queryProductRecommendation"
+                },
+                "recommendationType": {
+                    "type": "string",
+                    "description": "The type of the queryProductRecommendation"
+                },
+                "category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CategoryRef"
+                    }
+                },
+                "channel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ChannelRef"
+                    }
+                },
+                "place": {
+                    "$ref": "#/definitions/RelatedPlaceRefOrValue",
+                    "description": "The place which the queryProductRecommendation is related to"
+                },
+                "productOrder": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductOrderRef"
+                    }
+                },
+                "productOrderItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ItemRef"
+                    }
+                },
+                "recommendationItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RecommendationItem"
+                    }
+                },
+                "relatedParty": {
+                    "$ref": "#/definitions/RelatedParty"
+                },
+                "shoppingCart": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ShoppingCartRef"
+                    }
+                },
+                "shoppingCartItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ItemRef"
+                    }
+                },
+                "state": {
+                    "$ref": "#/definitions/TaskStateType",
+                    "description": "State of the queryProductRecommendation defined in the state engine"
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period in which the queryProductRecommendation is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "QueryProductRecommendation_Create": {
+            "type": "object",
+            "description": "Recommendation API is used to recommend offering quickly based on the history and real-time context of customer. It is a real-time and personalized recommendation API. It is usually provided by e-commerce or BSS, CRM system in omni-channel.\nSkipped properties: id,href,validFor,item",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "instantSyncRecommendation": {
+                    "type": "boolean",
+                    "description": "An indicator which when the value is \"true\" means that requester expects to get recommendation result in the response"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the queryProductRecommendation"
+                },
+                "recommendationType": {
+                    "type": "string",
+                    "description": "The type of the queryProductRecommendation"
+                },
+                "category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CategoryRef"
+                    }
+                },
+                "channel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ChannelRef"
+                    }
+                },
+                "place": {
+                    "$ref": "#/definitions/RelatedPlaceRefOrValue",
+                    "description": "The place which the queryProductRecommendation is related to"
+                },
+                "productOrder": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductOrderRef"
+                    }
+                },
+                "productOrderItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ItemRef"
+                    }
+                },
+                "recommendationItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RecommendationItem"
+                    }
+                },
+                "relatedParty": {
+                    "$ref": "#/definitions/RelatedParty"
+                },
+                "shoppingCart": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ShoppingCartRef"
+                    }
+                },
+                "shoppingCartItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ItemRef"
+                    }
+                },
+                "state": {
+                    "$ref": "#/definitions/TaskStateType",
+                    "description": "State of the queryProductRecommendation defined in the state engine"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "RecommendationItem": {
+            "type": "object",
+            "description": "A list of recommendation items. Every item is a product offering and its rank.",
+            "required": [
+                "product"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the product"
+                },
+                "priority": {
+                    "type": "integer",
+                    "description": "The rank of the list of recommended offering."
+                },
+                "product": {
+                    "$ref": "#/definitions/ProductRefOrValue",
+                    "description": "A recommended product."
+                },
+                "productOffering": {
+                    "$ref": "#/definitions/ProductOfferingRef"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "RelatedParty": {
+            "type": "object",
+            "description": "Related Entity reference. A related party defines party or party role linked to a specific entity.",
+            "required": [
+                "@referredType",
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "role": {
+                    "type": "string",
+                    "description": "Role played by the related party"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            }
+        },
+        "RelatedPlaceRefOrValue": {
+            "type": "object",
+            "description": "Related Entity reference. A related place defines a place described by reference or by value linked to a specific entity. The polymorphic attributes @type, @schemaLocation & @referredType are related to the place entity and not the RelatedPlaceRefOrValue class itself",
+            "required": [
+                "role"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the place"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Unique reference of the place"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A user-friendly name for the place, such as [Paris Store], [London Store], [Main Home]"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            }
+        },
+        "RelatedProductOrderItem": {
+            "type": "object",
+            "description": "RelatedProductOrderItem (ProductOrder item) .The product order item which triggered product creation/change/termination.",
+            "required": [
+                "orderItemId",
+                "productOrderId"
+            ],
+            "properties": {
+                "orderItemAction": {
+                    "type": "string",
+                    "description": "Action of the order item for this product"
+                },
+                "orderItemId": {
+                    "type": "string",
+                    "description": "Identifier of the order item where the product was managed"
+                },
+                "productOrderHref": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "productOrderId": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "role": {
+                    "type": "string",
+                    "description": "role of the product order item for this product"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            }
+        },
+        "ResourceRef": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "href": {
+                    "type": "string"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "ServiceRef": {
+            "type": "object",
+            "description": "Service reference, for when Service is used by other entities",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "ShoppingCartRef": {
+            "type": "object",
+            "description": "ShoppingCart (ShoppingCartRef) . The shopping cart which the recommendation is related with.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of shopping cart"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hypertext Reference of the shopping cart."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "TargetProductSchema": {
+            "type": "object",
+            "description": "The reference object to the schema and type of target product which is described by product specification",
+            "required": [
+                "@schemaLocation",
+                "@type"
+            ],
+            "properties": {
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "description": "This field provides a link to the schema describing the target product"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "Class type of the target product"
+                }
+            }
+        },
+        "TaskStateType": {
+            "type": "string",
+            "description": "Possible values for the state of a task",
+            "enum": [
+                "accepted",
+                "terminatedWithError",
+                "inProgress",
+                "done"
+            ]
+        },
+        "TimePeriod": {
+            "type": "object",
+            "description": "A period of time, either as a deadline (endDateTime only) a startDateTime only, or both",
+            "properties": {
+                "endDateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "End of the time period, using IETC-RFC-3339 format"
+                },
+                "startDateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Start of the time period, using IETC-RFC-3339 format. If you define a start, you must also define an end"
+                }
+            }
+        },
+        "EventSubscription": {
+            "type": "object",
+            "description": "Sets the communication endpoint address the service instance must use to deliver notification information",
+            "required": [
+                "id",
+                "callback"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Id of the listener"
+                },
+                "callback": {
+                    "type": "string",
+                    "description": "The callback being registered."
+                },
+                "query": {
+                    "type": "string",
+                    "description": "additional data to be passed"
+                }
+            }
+        },
+        "EventSubscriptionInput": {
+            "type": "object",
+            "description": "Sets the communication endpoint address the service instance must use to deliver notification information",
+            "required": [
+                "callback"
+            ],
+            "properties": {
+                "callback": {
+                    "type": "string",
+                    "description": "The callback being registered."
+                },
+                "query": {
+                    "type": "string",
+                    "description": "additional data to be passed"
+                }
+            }
+        },
+        "QueryProductRecommendationCreateEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the Process flow"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the ProcessFlow"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                },
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/QueryProductRecommendationCreateEventPayload"
+                }
+            }
+        },
+        "QueryProductRecommendationCreateEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "queryProductRecommendation": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/QueryProductRecommendation"
+                }
+            }
+        },
+        "QueryProductRecommendationStateChangeEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the Process flow"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the ProcessFlow"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                },
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/QueryProductRecommendationStateChangeEventPayload"
+                }
+            }
+        },
+        "QueryProductRecommendationStateChangeEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "queryProductRecommendation": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/QueryProductRecommendation"
+                }
+            }
+        },
+        "Error": {
+            "description": "Used when an API throws an Error, typically with a HTTP error response-code (3xx, 4xx, 5xx)",
+            "type": "object",
+            "required": [
+                "code",
+                "reason"
+            ],
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "description": "Application relevant detail, defined in the API or a common list."
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "Explanation of the reason for the error which can be shown to a client user."
+                },
+                "message": {
+                    "type": "string",
+                    "description": "More details and corrective actions related to the error which can be shown to a client user."
+                },
+                "status": {
+                    "type": "string",
+                    "description": "HTTP Error code extension"
+                },
+                "referenceError": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URI of documentation describing the error."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class."
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name."
+                }
+            }
+        }
+    }
+}

@@ -1,52 +1,52 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "QuotePrice.schema.json",
-    "title": "QuotePrice",
-    "definitions": {
-        "QuotePrice": {
-            "$id": "#QuotePrice",
-            "description": "Description of price and discount awarded",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "Description of the quote/quote item price"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the quote /quote item price"
-                },
-                "productOfferingPrice": {
-                    "$ref": "../Product/ProductOfferingPriceRef.schema.json#ProductOfferingPriceRef",
-                    "description": "An amount, usually of money, that is asked for or allowed when a ProductOffering is bought, rented, or leased. The price is valid for a defined period of time."
-                },
-                "priceType": {
-                    "type": "string",
-                    "description": "indicate if the price is for recurrent or no-recurrent charge"
-                },
-                "recurringChargePeriod": {
-                    "type": "string",
-                    "description": "Used for recurring charge to indicate period (month, week, etc..)"
-                },
-                "unitOfMeasure": {
-                    "type": "string",
-                    "description": "Unit of Measure if price depending on it (Gb, SMS volume, etc..)"
-                },
-                "priceAlteration": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Product/PriceAlteration.schema.json#PriceAlteration"
-                    }
-                },
-                "price": {
-                    "$ref": "../Customer/Price.schema.json#Price"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "QuotePrice.schema.json",
+  "title": "QuotePrice",
+  "definitions": {
+    "QuotePrice": {
+      "$id": "#QuotePrice",
+      "description": "Description of price and discount awarded",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of the quote/quote item price"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the quote /quote item price"
+        },
+        "productOfferingPrice": {
+          "$ref": "../Product/ProductOfferingPriceRef.schema.json#ProductOfferingPriceRef",
+          "description": "An amount, usually of money, that is asked for or allowed when a ProductOffering is bought, rented, or leased. The price is valid for a defined period of time."
+        },
+        "priceType": {
+          "type": "string",
+          "description": "indicate if the price is for recurrent or no-recurrent charge"
+        },
+        "recurringChargePeriod": {
+          "type": "string",
+          "description": "Used for recurring charge to indicate period (month, week, etc..)"
+        },
+        "unitOfMeasure": {
+          "type": "string",
+          "description": "Unit of Measure if price depending on it (Gb, SMS volume, etc..)"
+        },
+        "priceAlteration": {
+          "type": "array",
+          "items": {
+            "$ref": "../Product/PriceAlteration.schema.json#PriceAlteration"
+          }
+        },
+        "price": {
+          "$ref": "../Customer/Price.schema.json#Price"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

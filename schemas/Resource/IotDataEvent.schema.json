@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "IotDataEvent.schema.json",
+  "title": "IotDataEvent",
+  "description": "#TODO",
+  "definitions": {
+    "IotDataEvent": {
+      "$id": "#IotDataEvent",
+      "description": "#TODO",
+      "type": "object",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/BaseEvent.json#BaseEvent"
+        }
+      ],
+      "required": []
+    }
+  }
+}

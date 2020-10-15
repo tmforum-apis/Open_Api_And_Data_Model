@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BalanceAction.schema.json",
+  "title": "BalanceAction",
+  "definitions": {
+    "BalanceAction": {
+      "$id": "#BalanceAction",
+      "description": "an abstract resource. example extensions are BalanceTopup, BalanceDeduct",
+      "type": "object",
+      "properties": {
+        "requestedDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the deduction request was received in the server"
+        },
+        "confirmationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the deduction was confirmed in the server"
+        },
+        "validFor": {
+          "type": "string",
+          "description": "Unique identifier for the balancereserve entity"
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of the operation"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

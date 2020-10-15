@@ -1,0 +1,42 @@
+    {
+        "id": "11",
+        "href": "prepayBalanceManagement/v4/bucket/11",
+        "description": "this bucket holds the amount available on the bucket to the consumer. It's type is defined by the usageType and can be monetary or non-monetary",
+        "name": "bucket for prd1",
+	"@type": "Bucket",
+        "remainingValue": {
+            "amount": 50,
+            "units": "EUR"
+        },
+        "remainingValueName": "bucket for prd1",
+	"isShared": false,
+        "usageType": "monetary",
+        "partyAccount": {
+            "id": "acc1",
+            "href": "/accountManagement/v4/account/acc1"
+        },
+        "product": {
+            "id": "prd1",
+            "href": "/productInventory/v4/product/prd1"
+        },
+        "logicalResource": {
+            "id": "4",
+            "href": "/resouceInventoryManagement/logicalResource/4"
+        },
+        "relatedParty": [
+            {
+                "id": "cust1",
+                "href": "/partyManagement/customer/cust1",
+                "name": "jerry watts",
+                "role": "customer" 
+            }
+        ],
+	"status": "active",
+	"reservedValue": 0,
+        "requestedDate": "1985-04-11T23:20:50.52Z",
+        "confirmationDate": "1985-04-12T23:20:50.52Z",
+        "validFor": {
+            "endDateTime": "2020-01-12T23:20:50.52Z",
+            "startDateTime": "2020-03-12T23:20:50.52Z"
+        }
+    }

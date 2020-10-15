@@ -1,0 +1,31 @@
+{
+    "id": "5574", 
+    "href": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceCatalog/5574", 
+    "name": "Cloud Resource Catalog", 
+    "description": "This resource catalog points to entities in the area of cloud management", 
+    "@type": "ResourceCatalog",
+    "version": "1.0", 
+    "validFor": {
+        "startDateTime": "2017-08-23T00:00:22.920Z", 
+        "endDateTime": "2018-03-25T00:00:22.920Z"
+    }, 
+    "lastUpdate": "2018-03-24T00:00:22.920Z", 
+    "lifecycleStatus": "Active", 
+    "relatedParty": [
+        {
+            "id": "5858", 
+            "href": "https://mycsp.com:8080/tmf-api/partyManagement/organization/5858", 
+            "role": "Supplier", 
+            "name": "Gustave Flaubert",
+            "@referredType": "Organization"
+        }
+    ], 
+    "category": [
+        {
+            "id": "4569", 
+            "href": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/resourceCategory/4569", 
+            "version": "1.0", 
+            "name": "Secure Home"
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "195dae44-a433-49bf-a15b-9ab198dad0e2",
+  "href": "https://mycsp:8080/tmf-api/testExecution/v4/nonFunctionalTestExecution/195dae44-a433-49bf-a15b-9ab198dad0e2",
+  "dataCorrelationId": "29d7832e-9970-4af8-8d80-19444e1973ea",
+  "nonFunctionalTestModel": {
+    "id": "16db32a3-e008-401b-8168-4ebac788f9d8",
+    "href": "https://mycsp:8080/tmf-api/testCase/v4/nonFunctionalTestModel/16db32a3-e008-401b-8168-4ebac788f9d8",
+    "@referredType": "NonFunctionalTestModel"
+  },
+  "generalTestArtifact": [{
+    "id": "178ca8bb-81bc-47ef-911e-dd86a40b8974",
+    "href": "https://mycsp:8080/tmf-api/generalTestArtifact/v4/generalTestArtifact/178ca8bb-81bc-47ef-911e-dd86a40b8974",
+    "@referredType": "GeneralTestArtifact"
+  }],
+  "testDataInstance": [{
+    "id": "2db74193-e5fb-462a-98e0-6b1ed970dfc7",
+    "href": "https://mycsp:8080/tmf-api/testData/v4/testDataInstance/2db74193-e5fb-462a-98e0-6b1ed970dfc7",
+    "@referredType": "TestDataInstance"
+  }],
+  "TestEnvironmentProvisioningExecution": {
+    "id": "622815ac-5811-4cb6-b608-5b28d5d73a8d",
+    "href": "https://mycsp:8080/tmf-api/testExecution/v4/testEnvironmentProvisioningExecution/622815ac-5811-4cb6-b608-5b28d5d73a8d",
+    "dataCorrelationId": "29d7832e-9970-4af8-8d80-19444e1973ea",
+    "testEnvironmentAllocationExecution": {
+      "id": "418b253c-0cf3-4f48-b64e-93f8db9b614a",
+      "href": "https://mycsp:8080/tmf-api/testExecution/v4/testEnvironmentAllocationExecution/418b253c-0cf3-4f48-b64e-93f8db9b614a",
+      "dataCorrelationId": "156cf43a-fd6a-488e-a8dd-6b01ccef12cd",
+      "resourceManagerUrl": "https://myserver.com/resourceManager",
+      "testScenario": {
+        "id": "35776d4f-1851-435c-8573-802438f41e7a",
+        "href": "https://mycsp:8080/tmf-api/testScenario/v4/testScenario/35776d4f-1851-435c-8573-802438f41e7a",
+        "@referredType": "TestScenario"
+      },
+      "concreteResourceMapping": [{
+        "abstractResource": "phone",
+        "concreteResources": [{
+          "name": "iPhone_1289"
+        }]
+      }],
+      "state": "completed",
+      "@baseType": "Execution",
+      "@type": "TestEnvironmentAllocationExecution"
+    },
+    "state": "completed",
+    "@baseType": "Execution",
+    "@type": "TestEnvironmentProvisioningExecution"
+  },
+  "state": "completed",
+  "@baseType": "TestExecution",
+  "@type": "NonFunctionalTestExecution"
+}

@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "MeasurementJob.schema.json",
+  "title": "MeasurementJob",
+  "definitions": {
+    "MeasurementJob": {
+      "$id": "MeasurementJob",
+      "description": "A PM measurement job is the administrative entity defined by a client application to perform a periodic activity related to PM data.  The PM activities may be production of measurements, collection of measurements or PM objective monitoring (scheduled evaluation of thresholds).",
+      "type": "object",
+      "properties": {
+        "consumingApplicationId": {
+          "description": "The identifier of the application that consumes performance indicators.",
+          "type": "string"
+        },
+        "producingApplicationId": {
+          "description": "The identifier of the application that produces performance indicators.",
+          "type": "string"
+        },
+        "granularity": {
+          "$ref": "#/definitions/Granularity"
+        },
+        "performanceIndicatorGroupSpecification": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PerformanceIndicatorGroupSpecification"
+          },
+          "minItems": 0
+        },
+        "performanceIndicatorSpecification": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PerformanceIndicatorSpecification"
+          },
+          "minItems": 0
+        },
+        "trackingRecord": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TrackingRecord"
+          },
+          "minItems": 0
+        },
+        "monitoredInstancesCriteria": {
+          "type":"array",
+          "items": {          
+            "$ref": "#/definitions/MonitoredInstancesCriteria"
+          },
+          "minItems":0,
+          "maxItems":1
+        },
+        "monitoredClassCriteria": {
+          "type":"array",
+          "items": {
+            "$ref": "#/definitions/MonitoredClassCriteria"
+          },
+          "minItems":0,
+          "maxItems":1
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "ManagementJob.schema.json#/definitions/ManagementJob"
+        }
+      ]
+    }
+  }
+}

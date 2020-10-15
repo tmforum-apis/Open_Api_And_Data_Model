@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "EligibilityOfferAnalytics.schema.json",
+    "title": "EligibilityOfferAnalytics",
+    "definitions": {
+        "EligibilityOfferAnalytics": {
+            "$id": "#EligibilityOfferAnalytics",
+            "type": "object",
+            "properties": {
+                "eligibilityCreationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when Eligibility Offer was created"
+                },
+                "eligibilityStartDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Eligibility Offer start or effective date"
+                },
+                "eligibilityEndDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Eligibility Offer end or termination date"
+                },
+                "eligibilityValueAmt": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "When required, captures the value, number, percentage, etc. of the Eligibility Offer."
+                },
+                "sizeOfHouseholdCount": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Number of people in household"
+                },
+                "disposableIncomeAmt": {
+                    "$ref": "../Common/Money.schema.json"
+                },
+                "dataCreationTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data creation (e.g. system dump creation, event generation\u2026)"
+                },
+                "runTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data upload run"
+                },
+                "validFromTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for business validity of entity record"
+                }
+            },
+            "allOf": [{"$ref": "../Common/Entity.schema.json#Extensible"}]
+        }
+    }
+}

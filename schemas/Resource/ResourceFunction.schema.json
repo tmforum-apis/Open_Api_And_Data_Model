@@ -1,0 +1,60 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "ResourceFunction.schema.json",
+	"title": "ResourceFunction",
+	"definitions": {
+		"ResourceFunction": {
+		"$id": "#ResourceFunction",
+			"description": "A ResourceFunction is a behavior to transform inputs of any nature into outputs of any nature independently from the way it is provided.",
+			"type": "object",
+			"properties": {
+				"connectionPoint": {
+					"description": "External connection points of the resource function. These are the service access points (SAP) where inputs and outputs of the function are available.",
+					"type": "array",
+					"items": {
+						"$ref": "ConnectionPointRef.schema.json#/definitions/ConnectionPointRef"
+					}
+				},
+				"connectivity": {
+					"description": "Internal connectivity of contained resource functions.",
+					"type": "array",
+					"items": {
+						"$ref": "ResourceGraph.schema.json#/definitions/ResourceGraph"
+					}
+				},
+				"priority": {
+					"description": "Priority of the Resource Function. Decides what happens in a contention scenario.",
+					"type": "integer",
+					"format": "int64"
+				},
+				"role": {
+					"description": "Role of the Resource Function. Used when Resource Function is a component of a composite Resource Function and the exact role of the service within the composite is not clear from descriptor/location.",
+					"type": "string"
+				},
+				"functionType": {
+					"description": "A type of the Resource Function as specified by the provider of the API.",
+					"type": "string"
+				},
+				"autoModification": {
+					"description": "List of the kinds of auto-modifications that are applied to a given network service e.g what can be scaled.",
+					"type": "array",
+					"items": {
+						"$ref": "../Common/Characteristic.schema.json#/definitions/Characteristic"
+					}
+				},
+				"schedule": {
+					"description": "This is a reference to a schedule. Allows consumers to schedule modifications to the service at certain times.",
+					"type": "array",
+					"items": {
+						"$ref": "ScheduleRef.schema.json#/definitions/ScheduleRef"
+					}
+				}
+			},
+			"allOf": [
+				{
+					"$ref": "../Resource/LogicalResource.schema.json#/definitions/LogicalResource"
+				}
+			]
+		}
+	}
+}

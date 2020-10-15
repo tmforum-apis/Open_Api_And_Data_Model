@@ -1,38 +1,38 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "Sender.schema.json",
-    "title": "Sender",
-    "definitions": {
-        "Sender": {
-            "$id": "#Sender",
-            "description": "Sender of the communication message.",
-            "type": "object",
-            "properties": {
-                "email": {
-                    "type": "string",
-                    "description": "Sender address of email, if the communication type is email"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "ID of the sender"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the sender"
-                },
-                "phoneNumber": {
-                    "type": "string",
-                    "description": "Phone number of the sender, if the communication type is SMS."
-                },
-                "party": {
-                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Sender.schema.json",
+  "title": "Sender",
+  "definitions": {
+    "Sender": {
+      "$id": "#Sender",
+      "description": "Sender of the communication message.",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "Sender address of email, if the communication type is email"
+        },
+        "id": {
+          "type": "string",
+          "description": "ID of the sender"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the sender"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number of the sender, if the communication type is SMS."
+        },
+        "party": {
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

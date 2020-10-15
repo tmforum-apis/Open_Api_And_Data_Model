@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "LineString.schema.json",
+  "title": "LineString",
+  "definitions": {
+    "LineString": {
+      "$id": "#LineString",
+      "type": "object",
+      "description": "GeoJSON: A collection of Points forming a connected line",
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "LineString"
+          ]
+        },
+        "coordinates": {
+          "$ref": "../Common/GeoJSON.schema.json#lineString"
+        }
+      }
+    }
+  }
+}

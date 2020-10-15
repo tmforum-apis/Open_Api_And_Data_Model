@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "Configuration.schema.json",
+  "title": "Configuration",
+  "description": "An apparatus (hardware + software + firmware) intended to accomplish a particular task (sensing the environment, actuating, etc.).",
+  "definitions": {
+    "Configuration": {
+      "$id": "#Configuration",
+      "description": "#TODO",
+      "type": "object",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

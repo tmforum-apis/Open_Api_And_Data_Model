@@ -1,0 +1,83 @@
+{
+  "id": "ABR123",
+  "href": "http://server:port/api/appliedCustomerBillingRate/v4.0/ABR123",
+  "appliedBillingRateType": "monthly",
+  "date": "2020-01-19T13:38:18.938Z",
+  "description": "...some description...",
+  "isBilled": true,
+  "name": "...some meaningful name (maybe coming from catalogue?)...",
+  "appliedTax": [
+    {
+      "taxCategory": "VAT",
+      "taxRate": 20,
+      "taxAmount": {
+        "unit": "EUR",
+        "value": 10.00
+      },
+      "@type": "AppliedBillingTaxRate",
+      "@baseType": "AppliedBillingTaxRate",
+      "@schemaLocation": "...href..."
+    }
+  ],
+  "bill": {
+    "id": "B123",
+    "href": "http://server:port/api/bill/v4.0/B123",
+    "name": "customer bill",
+    "@referredType": "CustomerBill",
+    "@type": "CustomerBillRef",
+    "@baseType": "CustomerBillRef",
+    "@schemaLocation": "...href..."
+  },
+  "billingAccount": {
+	"id": "A0815",
+	"href": "http://server:port/api/billingAccount/v4.0/A0815",
+	"name": "BA Peter Retep",
+    "@referredType": "BillingAccount",
+    "@type": "BillingAccountRef",
+    "@baseType": "BillingAccountRef",
+    "@schemaLocation": "...href..."
+  },
+  "characteristic": [
+    {
+      "id": "string",
+      "name": "string",
+      "valueType": "string",
+      "characteristicRelationship": [
+        {
+          "id": "string",
+          "relationshipType": "string",
+          "@type": "CharacteristicRelationship",
+          "@baseType": "CharacteristicRelationship",
+          "@schemaLocation": "...href..."
+        }
+      ],
+      "@type": "Characteristic",
+      "@baseType": "Characteristic",
+      "@schemaLocation": "...href..."
+    }
+  ],
+  "periodCoverage": {
+    "endDateTime": "2019-12-31T23:59:59.999Z",
+    "startDateTime": "2019-12-01T00:00:00.000Z"
+  },
+  "product": {
+    "id": "P-wfs-123",
+    "href": "http://server:port/api/product/v4.0/P-wfs-123",
+    "name": "CSPs wonderful fiber service",
+    "@referredType": "Product",
+    "@type": "ProductRef",
+    "@baseType": "ProductRef",
+    "@schemaLocation": "...href..."
+  },
+  "taxExcludedAmount": {
+    "unit": "EUR",
+    "value": 40.00
+  },
+  "taxIncludedAmount": {
+    "unit": "EUR",
+    "value": 50.00
+  },
+  "@type": "AppliedCustomerBillingRate",
+  "@baseType": "AppliedCustomerBillingRate",
+  "@schemaLocation": "...href..."
+}

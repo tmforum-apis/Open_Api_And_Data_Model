@@ -1,52 +1,58 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "EntityCatalogItem.schema.json",
-    "title": "EntityCatalogItem",
-    "definitions": {
-        "EntityCatalogItem": {
-            "$id": "#EntityCatalogItem",
-            "description": "An EntityCatalogItem is an entity that allows any ProductOffering, ServiceCandidate, ResourceCandidate, or even any object inheriting from RootEntity, to be available to a catalog. The CatalogSpecification and Policy of the catalog governs the content of the EntityCatalogItem. This API addresses only EntitySpecification items extended from RootEntity as EntityCatalogItem.\nThe EntityCatalogItem resource (JSON format) represents a set of characteristics that define the values given by the EntityCatalogItem.",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "Description of this REST resource"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Hyperlink reference to this REST resource"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of this REST resource"
-                },
-                "lastUpdate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date and time of the last update of this REST resource"
-                },
-                "lifecycleStatus": {
-                    "type": "string",
-                    "description": "Used to indicate the current lifecycle status of this catalog item"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name given to this REST resource"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The period for which this REST resource is valid"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "EntityCatalogItem version"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "EntityCatalogItem.schema.json",
+  "title": "EntityCatalogItem",
+  "definitions": {
+    "EntityCatalogItem": {
+      "$id": "#EntityCatalogItem",
+      "description": "An EntityCatalogItem is an entity that allows any ProductOffering, ServiceCandidate, ResourceCandidate, or even any object inheriting from RootEntity, to be available to a catalog. The CatalogSpecification and Policy of the catalog governs the content of the EntityCatalogItem. This API addresses only EntitySpecification items extended from RootEntity as EntityCatalogItem.\nThe EntityCatalogItem resource (JSON format) represents a set of characteristics that define the values given by the EntityCatalogItem.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of this REST resource"
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time of the last update of this REST resource"
+        },
+        "lifecycleStatus": {
+          "type": "string",
+          "description": "Used to indicate the current lifecycle status of this catalog item"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name given to this REST resource"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which this REST resource is valid"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/EntityCategoryRef.schema.json#/definitions/EntityCategoryRef",
+            "description": "The category(ies) if any that refer to this catalog item"
+          }
+        },
+        "specification": {
+          "description": "The specification implied by this candidate",
+          "$ref": "../Common/EntitySpecificationRef.schema.json#/definitions/EntitySpecificationRef"
+        },
+        "version": {
+          "type": "string",
+          "description": "EntityCatalogItem version"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
+        },
+        {
+          "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        }
+      ]
     }
+  }
 }

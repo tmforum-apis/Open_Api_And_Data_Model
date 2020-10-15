@@ -1,0 +1,54 @@
+{
+    "id": "109",
+    "href": "https://mycsp.com:8080/tmf-api/partyPrivacyProfile/109",
+    "creationDate": "2019-09-06T04:54:42.690Z",
+    "description": "Individual Privacy Profile",
+    "name": "individual Consents",
+    "status": "created",
+    "agreedByParty": {
+      "id": "9176",
+      "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/individual/9176",
+      "name": "Sandy Smith",
+      "role": "Individual",
+      "@referredType": "Individual"
+    },
+    "agreement": {
+      "id": "Agreement_5667789jjhbjklb7878",
+      "href": "https://mycsp.com:8080/tmf-api/agreement/Agreement_5667789jjhbjklb7878",
+      "name": "agreement"
+    },
+    "applicableForParty": {
+      "id": "9176",
+      "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/individual/9176",
+      "name": "Sandy Smith",
+      "role": "owner",
+      "@referredType": "Individual"
+    },
+    "partyPrivacyProfileCharacteristic": [
+      {
+        "id": "43",
+        "name": "Can EmailAddress be used for information purpose",
+        "privacyUsagePurpose": "INFORMATION",
+        "valueType": "string",
+        "value":"Yes",
+        "relatedParty": [
+          {
+            "id": "8632",
+      			"href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/individual/8632",
+      			"name": "John Doe",
+      			"role": "Vendor",
+      			"@referredType": "Individual"
+          }
+        ]
+      }
+    ],
+    "partyPrivacyProfileSpecification": {
+      "id": "PartyPrivacySpec_156bjhbjkbk57434",
+      "href": "https://mycsp.com:8080/tmf-api/partyPrivacySpecification/PartyPrivacySpec_156bjhbjkbk57434",
+      "name": "Individual Privacy Spec"
+    },
+    "validFor": {
+      "endDateTime": "2020-09-09T04:54:42.691Z",
+      "startDateTime": "2019-09-06T04:54:42.691Z"
+    }
+}

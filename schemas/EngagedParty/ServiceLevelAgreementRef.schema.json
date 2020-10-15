@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#", 
+    "$id": "ServiceLevelAgreementRef.schema.json", 
+    "title": "ServiceLevelAgreementRef", 
+    "definitions": {
+        "ServiceLevelAgreementRef": {
+            "$id": "#ServiceLevelAgreementRef",
+            "description": "SLA reference: SLA(s) requested in a customer order",
+            "type": "object", 
+            "properties": {
+                "description": {
+                    "type": "string"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,97 @@
+{
+  "id": "44",
+  "href": "http://serverlocation:port/serviceQualificationManagement/v4/checkServiceQualification/456",
+  "checkServiceQualificationDate": "2020-04-10T19:20:39.239Z",
+  "description": "check service qualification illustration",
+  "effectiveQualificationDate": "2020-04-11T15:20:39.239Z",
+  "expectedQualificationDate": "2020-04-11T15:20:39.239Z",
+  "expirationDate": "2020-04-24T19:20:39.239Z",
+  "externalId": "CSQ1",
+  "provideAlternative": true,
+  "provideUnavailabilityReason": true,
+  "instantSyncQualification": false,
+  "qualificationResult": "alternate",
+  "relatedParty": [
+    {
+      "id": "456",
+      "href": "http://serverlocation:port/partyManagement/v4/party/456",
+      "name": "Jean Pontus",
+      "role": "Buyer contact",
+      "@type": "RelatedParty",
+      "@referredType": "Individual"
+    }
+  ],
+  "serviceQualificationItem": [
+    {
+      "id": "1",
+      "expectedActivationDate": "2020-04-16T19:20:39.239Z",
+      "expectedServiceAvailabilityDate": "2020-04-11T19:20:39.239Z",
+      "expirationDate": "2020-04-24T19:20:39.239Z",
+      "qualificationResult": "alternate",
+      "state": "done",
+      "alternateServiceProposal": [
+        {
+          "id": "1",
+          "alternateServiceAvailabilityDate": "2020-04-15T19:20:39.239Z",
+          "alternateService": {
+            "serviceCharacteristic": [
+              {
+                "id": "1",
+                "name": "BroadcastQuality",
+                "valueType": "string",
+                "value": "HD",
+                "@type": "ServiceCharacteristic"
+              }
+            ],
+            "serviceSpecification": {
+                "id": "23",
+                "href": "string",
+                "name": "TVAccess",
+                "@type": "ServiceSpecification"
+            },
+            "@type": "Service"
+          },
+          "@type": "AlternateServiceProposal"
+        }
+      ],
+      "eligibilityUnavailabilityReason": [
+        {
+          "code": "26-001",
+          "label": "not enough bandwith at this place",
+          "@baseType": "string",
+          "@schemaLocation": "string",
+          "@type": "string"
+        }
+      ],
+      "service": {
+        "place": [
+          {
+            "id": "11",
+            "href": "http://serverlocation:port/geographicSiteManagement/v4/geographicSite/11",
+            "name": "Jean Pontus home",
+            "role": "Installation place",
+            "@referredType": "GeographicSite"
+          }
+        ],
+        "serviceCharacteristic": [
+          {
+            "id": "1",
+            "name": "BroadcastQuality",
+            "valueType": "string",
+            "value": "4K"
+          }
+        ],
+        "serviceSpecification": {
+          "id": "23",
+          "href": "string",
+          "name": "TVAccess",
+          "@type": "ServiceSpecification"
+        },
+        "@type": "Service"
+      },
+      "@type": "ServiceQualificationItem"
+    }
+  ],
+  "state": "done",
+  "@type": "CheckServiceQualification"
+}

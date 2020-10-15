@@ -1,49 +1,49 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "NetworkProduct.schema.json",
-    "title": "NetworkProduct",
-    "definitions": {
-        "NetworkProduct": {
-            "$id": "#NetworkProduct",
-            "type": "object",
-            "description": "An instantiated network product (specialization of a product) subscribed by a customer.",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "Reference to the network product"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the network product"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Network product name"
-                },
-                "outOfBucketCounter": {
-                    "type": "array",
-                    "description": "Counters detailing usage consumption out of the buckets",
-                    "items": {
-                        "$ref": "../Product/ConsumptionSummary.schema.json#ConsumptionSummary"
-                    }
-                },
-                "publicIdentifier": {
-                    "type": "string",
-                    "description": "Public number associated to the network product (msisdn number for mobile line for example)"
-                },
-                "user": {
-                    "type": "array",
-                    "description": "References of the users of the network product",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "NetworkProduct.schema.json",
+  "title": "NetworkProduct",
+  "definitions": {
+    "NetworkProduct": {
+      "$id": "#NetworkProduct",
+      "type": "object",
+      "description": "An instantiated network product (specialization of a product) subscribed by a customer.",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "Reference to the network product"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the network product"
+        },
+        "name": {
+          "type": "string",
+          "description": "Network product name"
+        },
+        "outOfBucketCounter": {
+          "type": "array",
+          "description": "Counters detailing usage consumption out of the buckets",
+          "items": {
+            "$ref": "../Product/ConsumptionSummary.schema.json#ConsumptionSummary"
+          }
+        },
+        "publicIdentifier": {
+          "type": "string",
+          "description": "Public number associated to the network product (msisdn number for mobile line for example)"
+        },
+        "user": {
+          "type": "array",
+          "description": "References of the users of the network product",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PerceivedSeverity.schema.json",
+    "title": "PerceivedSeverity",
+    "definitions": {
+        "PerceivedSeverity": {
+            "type": "string",
+            "description": "This datatype lists the possible severities that can be allocated to a Alarm. The values are consistent with ITU-T Recommendation X.733. This specification does not recommend the use of indeterminate.",
+            "enum": [
+                "CRITICAL",
+                "MAJOR",
+                "MINOR",
+                "WARNING",
+                "INDETERMINATE",
+                "CLEARED"
+            ]
+        }
+    }
+}

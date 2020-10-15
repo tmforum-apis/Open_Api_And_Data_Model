@@ -1,0 +1,73 @@
+{
+    "id": "1001",
+    "href": "http://serverlocation:port/recommendation/v1/queryProductRecommendation/1001",
+    "name": " recommendation of the latest TMFone",
+    "description": "Recommendation of the latest TMFone, for the customers with a high level of requirements",
+    "instantSyncRecommendation": "false",
+    "recommendationType": "offer",
+    "@type": "recommendation",
+    "@schemaLocation": "http://serverlocation:port/recommendation/schema/recommendation.schema.json",
+    "state": "done",
+    "validFor": {
+        "startDateTime": "2019-07-03 T04:00:00.0Z",
+        "endDateTime": "2019-07-05 T20:42:23.0Z"
+    },
+    "channel": {
+        "id": "21",
+        "href": "http://serverlocation:port/recommendation/v1/channel/21",
+        "name": "mobile app channel"
+    },
+    "shoppingCart": {
+        "id": "65484jyuty57655",
+        "href": "http://serverlocation:port/shoppingCart/v4/shoppingCart/65484jyuty57655"
+    },
+    "relatedParty": {
+        "id": "34",
+        "href": "http: //serverlocation:port/partyManagement/v1/individual/34",
+        "name": "John Smith",
+        "role": "customer"
+    },
+    "recommendationItem": [
+        {
+            "id": "1",
+            "priority": 1,
+            "product": {
+                "productOffering": {
+                    "id": "6547",
+                    "href": "https://host:port/productOffering/v1/productOffering/6547",
+                    "name": "TMFone "
+                },
+                "productCharacteristic": [
+                    {
+                        "name": "capacity",
+                        "valueType": "string",
+                        "value": "128 Gb"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "2",
+            "priority": 2,
+            "product": {
+                "productOffering": {
+                    "id": "6542",
+                    "href": "https://host:port/productOffering/v1/productOffering/6542",
+                    "name": " TMFone Case"
+                },
+                "productCharacteristic": [
+                    {
+                        "name": "material",
+                        "valueType": "string",
+                        "value": "plastic"
+                    },
+                    {
+                        "name": "material",
+                        "valueType": "string",
+                        "value": "leather"
+                    }
+                ]
+            }
+        }
+    ]
+}

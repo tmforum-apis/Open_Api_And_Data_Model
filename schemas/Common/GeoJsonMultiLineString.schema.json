@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "GeoJsonMultiLineString.schema.json",
+  "title": "GeoJsonMultiLineString",
+  "definitions": {
+    "GeoJsonMultiLineString": {
+      "$id": "#GeoJsonMultiLineString",
+      "description": "A container for GeoJSON MultiLineString: A collection of distinct LineStrings",
+      "required": [
+        "@type",
+        "geoJson"
+      ],
+      "properties": {
+        "@type": {
+          "type": "string",
+          "enum": [
+            "GeoJsonMultiLineString"
+          ],
+          "description": "The name of the GeoJSON structure used in the geometry attribute"
+        },
+        "geoJson": {
+          "$ref": "../Common/MultiLineString.schema.json#MultiLineString"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/GeographicLocation.schema.json#GeographicLocation"
+        }
+      ],
+      "type": "object"
+    }
+  }
+}

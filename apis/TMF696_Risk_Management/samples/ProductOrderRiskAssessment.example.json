@@ -1,0 +1,51 @@
+{
+    "status": "Completed", 
+    "characteristic": [
+        {
+            "name": "CouponType",
+            "valueType": "string",
+            "value": "Discount21"
+        }
+    ],
+    "productOrder": {
+        "id": "267734",
+        "href": "https://mycsp.com:8080/tmf-api/productOrder/v4/productOrder/267734",
+        "@referredType": "ProductOrder"
+    },
+    "place": {
+        "@type": "RelatedPlace",
+        "role": "home address",
+        "id": "234546467567334",
+        "href": "https://mycsp.com:8080/tmf-api/geographicAddress/v4/geographicAddress/234546467567334",
+        "@referredType": "GeographicAddress"
+    },
+    "riskAssessmentResult": {
+        "overallScore": 16,
+        "validFor": {
+            "startDateTime": "2017-08-23T00:00:22.920Z", 
+            "endDateTime": "2018-03-25T00:00:22.920Z"
+        }, 
+        "score": [
+            {
+                "score": 0,
+                "riskName": "IDConfidenceRisk"
+            },
+            {
+                "score": 0,
+                "riskName": "PaymentMethodRisk"
+            },
+            {
+                "score": 15,
+                "riskName": "FraudRisk"
+            },
+            {
+                "score": 14,
+                "riskName": "BadPaymentRisk"
+            },
+            {
+                "score": 7,
+                "riskName": "CreditGamingRisk"
+            }
+        ]
+    }
+}

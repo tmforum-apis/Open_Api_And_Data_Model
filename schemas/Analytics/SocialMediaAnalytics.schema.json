@@ -1,0 +1,159 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "SocialMediaAnalytics.schema.json",
+    "title": "SocialMediaAnalytics",
+    "definitions": {
+        "SocialMediaAnalytics": {
+            "$id": "#SocialMediaAnalytics",
+            "type": "object",
+            "properties": {
+                "startTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The beginning of the measurement interval \r\nSTART_TIMESTAMP to END_TIME_STAMP defines define the period for which the measurement is done"
+                },
+                "endTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The beginning of the measurement interval \r\nSTART_TIMESTAMP to END_TIME_STAMP defines define the period for which the measurement is done"
+                },
+                "twitterFollowers": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total followers at the end of the period"
+                },
+                "twitterFollowersGrowth": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Difference in followers between beginning of period and end of period"
+                },
+                "twitterTweets": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total own tweets in period"
+                },
+                "twitterRetweets": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total retweets to own tweets in period"
+                },
+                "twitterReplies": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total replies to own tweets in period"
+                },
+                "twitterLike": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total likes to own tweets in period"
+                },
+                "facebookPosts": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total facebook posts in period"
+                },
+                "facebookReactions": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total facebook reactions to own posts in period"
+                },
+                "facebookShares": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total facebook shares to own posts in period"
+                },
+                "facebookComments": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total facebook comments to own posts in period"
+                },
+                "facebookFans": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total facebook fans / friends at the end of period"
+                },
+                "facebookFansGrowth": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Difference in fans / friends count between beginning of period and end of period"
+                },
+                "youtubeVideos": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total own youtube videos in period"
+                },
+                "youtubeVisualizations": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total youtube visualizations to own videos in period"
+                },
+                "youtubeLikes": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total youtube likes to own videos in period"
+                },
+                "youtubeDislikes": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total youtube dislikes to own videos in period"
+                },
+                "youtubeComments": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total youtube comments to own videos in period"
+                },
+                "youtubeSubscribers": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total youtube subscribers at the end of the period"
+                },
+                "youtubeSubscribersGrowth": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Difference in subscribers count between beginning of period and end of period"
+                },
+                "instagramPosts": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total own instagram posts in period"
+                },
+                "instagramLikes": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total instagram likes to own posts in period"
+                },
+                "instagramComments": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total instagram comments to own posts in period"
+                },
+                "instagramFollowers": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Total instagram followers  at the end of the period"
+                },
+                "instagramFollowersGrowth": {
+                    "type": "number",
+                    "format": "integer",
+                    "description": "Difference in followers count between beginning of period and end of period"
+                },
+                "dataCreationTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data creation (e.g. system dump creation, event generation\u2026)"
+                },
+                "runTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for data upload run"
+                },
+                "validFromTimestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time stamp for business validity of entity record"
+                }
+            }
+        },
+              "allOf": [{"$ref": "../Common/Entity.schema.json#Extensible"}]
+    }
+}

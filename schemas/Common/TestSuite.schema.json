@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TestSuite.schema.json",
+  "title": "TestSuite",
+  "definitions": {
+    "TestSuite": {
+      "$id": "#TestSuite",
+      "type": "object",
+      "description": "A managed test suite resource",
+      "required": [
+        "testSuiteDefinition"
+      ],
+      "properties": {
+        "testSuiteDefinition": {
+          "$ref": "../Common/TestSuiteDefinition.schema.json#TestSuiteDefinition"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/ManagedArtifact.schema.json#ManagedArtifact"
+        }
+      ]
+    }
+  }
+}

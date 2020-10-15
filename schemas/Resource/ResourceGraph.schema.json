@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceGraph.schema.json",
+    "title": "ResourceGraph",
+    "definitions": {
+        "ResourceGraph": {
+            "$id": "#ResourceGraph",
+            "description": "Resource graph",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "Unique identifier of the resource graph.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Descriptive name for the resource graph.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Description of the resource graph.",
+                    "type": "string"
+                },
+                "graphRelationship": {
+                    "description": "Relationships to other resource graphs.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Resource/ResourceGraphRelationship.schema.json#/definitions/ResourceGraphRelationship"
+                    }
+                },
+                "connection": {
+                    "description": "Resource graph edges.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Resource/Connection.schema.json#/definitions/Connection"
+                    }
+                }
+            },
+            "required": [
+                "connection"
+            ],
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#/definitions/Entity"
+                }
+            ]
+        }
+    }
+}

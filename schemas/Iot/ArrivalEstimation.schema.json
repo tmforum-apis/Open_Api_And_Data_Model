@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/UrbanMobility/ArrivalEstimation/schema.json",
+  "title": "NGSI GTFS Schema",
+  "description": "Arrival Estimation",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons" },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "ArrivalEstimation"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "hasStop": {
+          "type": "string",
+          "format": "uri"
+        },
+        "hasTrip": {
+          "type": "string",
+          "format": "uri"
+        },
+        "remainingTime": {
+          "type": "string",
+          "pattern": "^P(?=\\w*\\d)(?:\\d+Y|Y)?(?:\\d+M|M)?(?:\\d+W|W)?(?:\\d+D|D)?(?:T(?:\\d+H|H)?(?:\\d+M|M)?(?:\\d+(?:\\?.\\d{1,2})?S|S)?)?$"
+        },
+        "remainingDistance": {
+          "type": "number",
+          "minValue": 0
+        },
+        "headsign": {
+          "type": "string"
+        }
+      }  
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "hasStop",
+    "hasTrip",
+    "remainingTime",
+    "headSign"
+  ]
+}

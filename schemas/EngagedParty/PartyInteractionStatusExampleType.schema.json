@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PartyInteractionStatusExampleType.schema.json",
+    "title": "PartyInteractionStatusExampleType",
+    "definitions": {
+        "PartyInteractionStatusExampleType": {
+            "$id": "#PartyInteractionStatusExampleType",
+            "type": "string",
+            "description": "Possible values for the status of party interaction (for example: open,inProgress,completed)",
+            "enum": [
+                "open",
+                "inProgress",
+                "completed"
+            ]
+        }
+    }
+}

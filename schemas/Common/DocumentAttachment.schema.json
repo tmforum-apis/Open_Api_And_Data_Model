@@ -1,56 +1,56 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "DocumentAttachment.schema.json",
-    "title": "DocumentAttachment",
-    "definitions": {
-        "DocumentAttachment": {
-            "$id": "#DocumentAttachment",
-            "description": "Attachment refers to extensions or additional parts that is or may be attached to something (agreements, contracts, appointments) to perform a particular function. They can be communication attachments, documents and other.",
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "The description of the binary attachment"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of the binary attachment"
-                },
-                "mimeType": {
-                    "type": "string",
-                    "description": "mimeType of the Attachment, such as: application/pdf"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the binary attachment"
-                },
-                "size": {
-                    "type": "integer",
-                    "description": "The size of the document or attachment. If this component contains the embedded data then the size is the size of the embedded data; if it is a reference without the data then it is the size of the referenced document"
-                },
-                "sizeUnit": {
-                    "type": "string",
-                    "description": "The unit of measure for the size"
-                },
-                "attachmentType": {
-                    "type": "string",
-                    "description": "Identifies the sub-type of the instance of binary attachment"
-                },
-                "URL": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "URL of the Attachment"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "Validity period of the Attachment"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "DocumentAttachment.schema.json",
+  "title": "DocumentAttachment",
+  "definitions": {
+    "DocumentAttachment": {
+      "$id": "#DocumentAttachment",
+      "description": "Attachment refers to extensions or additional parts that is or may be attached to something (agreements, contracts, appointments) to perform a particular function. They can be communication attachments, documents and other.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "The description of the binary attachment"
+        },
+        "id": {
+          "type": "string",
+          "description": "Identifier of the binary attachment"
+        },
+        "mimeType": {
+          "type": "string",
+          "description": "mimeType of the Attachment, such as: application/pdf"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the binary attachment"
+        },
+        "size": {
+          "type": "integer",
+          "description": "The size of the document or attachment. If this component contains the embedded data then the size is the size of the embedded data; if it is a reference without the data then it is the size of the referenced document"
+        },
+        "sizeUnit": {
+          "type": "string",
+          "description": "The unit of measure for the size"
+        },
+        "attachmentType": {
+          "type": "string",
+          "description": "Identifies the sub-type of the instance of binary attachment"
+        },
+        "URL": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL of the Attachment"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "Validity period of the Attachment"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

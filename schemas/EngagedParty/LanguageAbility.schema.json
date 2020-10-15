@@ -1,50 +1,50 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "LanguageAbility.schema.json",
-    "title": "LanguageAbility",
-    "definitions": {
-        "LanguageAbility": {
-            "$id": "#LanguageAbility",
-            "type": "object",
-            "description": "Ability of an individual to understand or converse in a language.",
-            "properties": {
-                "languageCode": {
-                    "type": "string",
-                    "description": "Language code (RFC 5646)"
-                },
-                "languageName": {
-                    "type": "string",
-                    "description": "Language name"
-                },
-                "isFavouriteLanguage": {
-                    "type": "boolean",
-                    "description": "A “true” value specifies whether the language is considered by the individual as his favourite one"
-                },
-                "writingProficiency": {
-                    "type": "string",
-                    "description": "Writing proficiency evaluated for this language"
-                },
-                "readingProficiency": {
-                    "type": "string",
-                    "description": "Reading proficiency evaluated for this language"
-                },
-                "speakingProficiency": {
-                    "type": "string",
-                    "description": "Speaking proficiency evaluated for this language"
-                },
-                "listeningProficiency": {
-                    "type": "string",
-                    "description": "Listening proficiency evaluated for this language"
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "LanguageAbility.schema.json",
+  "title": "LanguageAbility",
+  "definitions": {
+    "LanguageAbility": {
+      "$id": "#LanguageAbility",
+      "type": "object",
+      "description": "Ability of an individual to understand or converse in a language.",
+      "properties": {
+        "languageCode": {
+          "type": "string",
+          "description": "Language code (RFC 5646)"
+        },
+        "languageName": {
+          "type": "string",
+          "description": "Language name"
+        },
+        "isFavouriteLanguage": {
+          "type": "boolean",
+          "description": "A “true” value specifies whether the language is considered by the individual as his favourite one"
+        },
+        "writingProficiency": {
+          "type": "string",
+          "description": "Writing proficiency evaluated for this language"
+        },
+        "readingProficiency": {
+          "type": "string",
+          "description": "Reading proficiency evaluated for this language"
+        },
+        "speakingProficiency": {
+          "type": "string",
+          "description": "Speaking proficiency evaluated for this language"
+        },
+        "listeningProficiency": {
+          "type": "string",
+          "description": "Listening proficiency evaluated for this language"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

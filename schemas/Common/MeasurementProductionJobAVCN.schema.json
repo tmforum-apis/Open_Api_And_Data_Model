@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "MeasurementProductionJobAVCN.schema.json",
+  "title": "MeasurementProductionJobAVCN",
+  "definitions": {
+    "MeasurementProductionJobAVCN": {
+      "type": "object",
+      "description": "This is a notification generated from the entity MeasurementProductionJob",
+      "properties": {
+        "granularity": {
+          "$ref": "ExecutionState.schema.json#/definitions/Granularity"
+        },
+        "monitoredInstancesCriteria": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MonitoredInstancesCriteria"
+          },
+          "minItems": 0,
+          "maxItems": 1
+        },
+        "monitoredClassCriteria": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MonitoredClassCriteria"
+          },
+          "minItems": 0,
+          "maxItems": 1
+        },
+        "lastModifiedTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The last time that a measurement job was modified."
+        },
+        "adminState": {
+          "$ref": "AdministrativeState.schema.json#/definitions/AdministrativeState"
+        },
+        "jobPriority": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10,
+          "default": 5,
+          "description": "The priority of the management job. The way the management application will use the JobPriority to schedule job execution is application specific and outside the scope. Integer, limited to a range of 1 to 10."
+        },
+        "executionState": {
+          "$ref": "ExecutionState.schema.json#/definitions/ExecutionStateType"
+        },
+        "scheduleDefinition": {
+          "type": "array",
+          "items": {
+            "$ref": "ScheduleDefinition.schema.json#/definitions/ScheduleDefinition"
+          },
+          "minItems": 0,
+          "maxItems": 1
+        }
+      }
+    }
+  }
+}

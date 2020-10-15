@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "FileTransferData.schema.json",
+  "title": "FileTransferData",
+  "definitions": {
+    "FileTransferData": {
+      "$id": "FileTransferData",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "fileLocation": {
+          "type": "string",
+          "format":"uri"
+        },
+        "fileFormat": {
+          "type": "string"
+        },
+        "compressionType": {
+          "$ref": "CompressionType.schema.json#/definitions/CompressionType"
+        },
+        "retentionPeriod": {
+          "$ref": "Duration.schema.json#/definitions/Duration"
+        },
+        "packingType": {
+          "$ref": "PackingType.schema.json#/definitions/PackingType"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "ProtocolTransferData.schema.json#/definitions/ProtocolTransferData"
+        },
+                {
+           "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        } 
+      ]
+    }
+  }
+}

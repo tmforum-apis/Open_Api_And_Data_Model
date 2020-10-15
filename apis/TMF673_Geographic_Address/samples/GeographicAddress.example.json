@@ -1,0 +1,53 @@
+{
+	"id": "9090",
+       	"href": "https://host:port/location/geographicAddress/9090",
+       	"streetNr": "225",
+       	"streetNrSuffix": "B",
+       	"streetNrLast": "",
+       	"streetNrLastSuffix": "",
+       	"streetName": " Strathmore",
+       	"streetType": "Terrace",
+	"streetSuffix": "",
+	"postcode": "5004",
+	"locality": "Brighton.",
+	"city": "Brighton",
+	"stateOrProvince": "SA",
+	"country": "Australia",
+	"@type": "GeographicAddress ",
+	"geographicLocation" :{
+		"id": "abcdef",
+		"href": "https://host:port/location/geographicLocation/abcdef",
+		"name": "Nice Acropolis"
+	},
+	"geographicSubAddress": [
+		{
+			"id": "3833",
+			"href": "https://host:port/location/geographicSubAddress/3833",
+			"type": "SubUnit",
+			"name": "Mimosas",
+			"subUnitType": "flat",
+			"subUnitNumber": "239",
+			"levelType": "floor",
+			"levelNumber": "3",
+			"buildingName": "Catalysts",
+			"privateStreetNumber": "",
+			"privateStreetName": "",
+			"@type": "GeographicSubAddress"
+		},
+		{
+			"id": "3834",
+			"href": "https://host:port/location/geographicSubAddress/3834",
+			"type": "SubUnit",
+			"name": "Heaven",
+			"subUnitType": "flat",
+			"subUnitNumber": "007",
+			"levelType": "floor",
+			"levelNumber": "3",
+			"buildingName": "VIP area",
+			"privateStreetNumber": "",
+			"privateStreetName": "",
+			"@type": "GeographicSubAddress"
+		}
+	]
+
+}

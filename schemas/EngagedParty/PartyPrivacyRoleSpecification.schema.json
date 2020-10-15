@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PartyPrivacyRoleSpecification.schema.json",
+  "title": "PartyPrivacyRoleSpecification",
+  "definitions": {
+    "PartyPrivacyRoleSpecification": {
+      "$id": "#PartyPrivacyRoleSpecification",
+      "description": "A PartyPrivacyRoleSpecification represents a specification of a role defined in the context of a given privacy spesification, such as Customer, User.",
+      "type": "object",
+      "properties": {
+        "agreementSpecification": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/AgreementSpecificationRef.schema.json#AgreementSpecificationRef"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../EngagedParty/RoleSpecification.schema.json#RoleSpecification"
+        }
+      ]
+    }
+  }
+}

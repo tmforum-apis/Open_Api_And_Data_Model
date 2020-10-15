@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "CustomerBillOnDemand.schema.json",
+  "title": "CustomerBillOnDemand",
+  "definitions": {
+    "CustomerBillOnDemand": {
+      "$id": "#CustomerBillOnDemand",
+      "type": "object",
+      "description": "This resource is used to manage the creation request of a customer bill in real-time (on demand).",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Explanation: Unique identifier of the customer bill on demand request given by the server"
+        },
+        "href": {
+          "type": "string",
+          "description": "Reference of the customer bill on demand request"
+        },
+        "name": {
+          "type": "string",
+          "description": "Friendly name to identify the customer bill on demand request"
+        },
+        "state": {
+          "description": "State of the request to produce an off cycle bill: Possible values are: inProgress, rejected, done, terminatedWithError.",
+          "$ref": "../Customer/CustomerBillOnDemandStateType.schema.json#CustomerBillOnDemandStateType"
+        },
+        "billingAccount": {
+          "$ref": "../Customer/BillingAccountRef.schema.json#BillingAccountRef"
+        },
+        "customerBill": {
+          "$ref": "../Customer/CustomerBillRef.schema.json#CustomerBillRef"
+        },
+        "description": {
+          "type": "string",
+          "description": "Additional data describing the customer bill on demand request"
+        },
+        "lastUpdate": {
+          "type": "string",
+          "description": "The last date time when the customer bill on demand has been updated"
+        },
+        "relatedParty": {
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+        }
+      }
+    },
+    "allOf": {
+      "0": {
+        "$ref": "../Common/Entity.schema.json#Entity"
+      },
+      "$id": "#allOf",
+      "type": "object"
+    }
+  }
+}

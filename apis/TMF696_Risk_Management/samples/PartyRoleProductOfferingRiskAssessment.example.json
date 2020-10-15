@@ -1,0 +1,55 @@
+{
+    "status": "Completed", 
+    "characteristic": [
+        {
+            "name": "Bandwidth",
+            "valueType": "string",
+            "value": "500MBps"
+        }
+    ],
+    "partyRole": {
+        "@type": "RelatedParty",
+        "id": "9866",
+        "href": "https://mycsp.com:8080/tmf-api/partyManagement/v1/individual/9866",
+        "name": "Sandy Smith",
+        "@referredType": "Individual"
+    },
+    "productOffering": {
+        "id": "7656", 
+        "href": "https://mycsp.com:8080/tmf-api/productCatalogManagement/v4/productOffering/7656", 
+        "name": "Home Gateway",
+        "@referredType": "ProductOffering"
+    },
+    "place": {
+        "@type":"RelatedPlace",
+        "@referredType": "GeographicalAddress",
+        "role": "home address",
+        "id": "234546467567334",
+        "href": "https://mycsp.com:8080/tmf-api/geographicalAddressManagement/v4/geographicalAddress/234546467567334" 
+    },
+    "riskAssessmentResult": {
+        "overallScore": 21,
+        "validFor": {
+            "startDateTime": "2017-08-23T00:00:22.920Z", 
+            "endDateTime": "2018-03-25T00:00:22.920Z"
+        }, 
+        "score": [
+            {
+                "score": 0,
+                "riskName": "IDConfidenceRisk"
+            },
+            {
+                "score": 32,
+                "riskName": "FraudRisk"
+            },
+            {
+                "score": 8,
+                "riskName": "BadPaymentRisk"
+            },
+            {
+                "score": 16,
+                "riskName": "CreditGamingRisk"
+            }
+        ]
+    }
+}

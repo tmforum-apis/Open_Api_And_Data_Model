@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TestResourceAPI.schema.json",
+  "title": "TestResourceAPI",
+  "definitions": {
+    "TestResourceAPI": {
+      "$id": "#TestResourceAPI",
+      "type": "object",
+      "description": "A managed test resource API resource",
+      "required": [
+        "testResourceAPIDefinition"
+      ],
+      "properties": {
+        "testResourceAPIDefinition": {
+          "$ref": "../Common/TestResourceAPIDefinition.schema.json#TestResourceAPIDefinition"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/ManagedArtifact.schema.json#ManagedArtifact"
+        }
+      ]
+    }
+  }
+}

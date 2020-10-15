@@ -1,0 +1,95 @@
+{
+    "id": "6810",
+    "href": "http://serverlocation:port/privacyManagement/partyPrivacyAgreement/6810",
+    "agreementType": "commercial",
+    "description": "This agreements is ....",
+    "documentNumber": 999,
+    "initialDate": "2019-08-06T09:56:38.679Z",
+    "name": "Customer mass market privacy agreement",
+    "statementOfIntent": "Agreement on customer mass market privacy profile",
+    "status": "validated",
+    "version": "1",
+    "agreementAuthorization": [
+      {
+        "date": "2019-08-06T09:56:38.679Z",
+        "signatureRepresentation": "Digital",
+        "state": "approved"
+      }
+    ],
+    "agreementItem": [
+      {
+        "productOffering": [
+          {
+            "id": "9559",
+            "href": "https://host:port/productOffering/bundledProductOffering/7120",
+            "name": "Magic Offer"
+          }
+        ],
+        "termOrCondition": [
+          {
+            "id": "8905",
+            "description": "This agreement term or condition �",
+            "validFor": {
+              "endDateTime": "2019-09-06T09:56:38.679Z",
+              "startDateTime": "2020-09-06T09:56:38.679Z"
+            }
+          }
+        ]
+       }
+    ],
+    "agreementPeriod": {
+      "endDateTime": "2019-09-06T09:56:38.679Z",
+      "startDateTime": "2020-09-06T09:56:38.679Z"
+    },
+    "agreementSpecification": {
+      "id": "8139",
+      "href": "http://serverlocation:port/privacyManagement/partyPrivacyAgreementSpecification/8139",
+      "description": "This agreement specification defines the rules of privacy to be followed by each party",
+      "name": "General Agreement Specification"
+    },
+    "associatedAgreement": [
+      {
+        "id": "987654",
+        "href": "http://serverlocation:port/privacyManagement/partyPrivacyAgreement/987654",
+        "name": "General Privacy Agreement"
+      }
+    ],
+    "completionDate": {
+      "endDateTime": "2019-09-06T09:56:38.679Z",
+      "startDateTime": "2019-09-06T09:56:38.679Z"
+    },
+    "engagedParty": [
+      {
+        "id": "5467",
+        "href": "http://serverLocation:port/partyManagement/individual/5467",
+        "name": "Jack Smith",
+        "role": "user",
+        "@referredType": "Individual"
+      }
+    ],
+    "partyPrivacyProfile": [
+      {
+        "id": "103",
+        "href": "https://mycsp.com:8080/tmf-api/partyPrivacyProfile/103",
+        "name": "individual Consents"
+      }
+    ],
+    "partyPrivacyProfileCharacteristic": [
+      {
+        "id": "43",
+        "name": "EmailAddress",
+        "privacyUsagePurpose": "INFORMATION",
+        "valueType": "string",
+        "value": "Yes",
+        "relatedParty": [
+          {
+            "id": "8632",
+      			"href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/individual/8632",
+      			"name": "John Doe",
+      			"role": "Vendor",
+      			"@referredType": "Individual"
+          }
+        ]
+      }
+    ]
+}

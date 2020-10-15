@@ -1,0 +1,12 @@
+{
+    "id": "5435",
+    "href": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/v4/exportJob/5435",
+    "contentType": "application/json",
+    "creationDate": "2018-08-27T00:00:00.000Z",
+    "path": "https://mycsp.com:8080/tmf-api/resourceCatalogManagement/v4/Catalog/3830",
+    "query": "category.id=7757",
+    "status": "Running",
+    "url": "https://my-platform/daily/job/EHCFD6",
+    "errorLog": "http://my-platform/logging/errors.log",
+    "@type": "ExportJob"
+}

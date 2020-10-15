@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceCategoryRef.schema.json",
+    "title": "ResourceCategoryRef",
+    "definitions": {
+        "ResourceCategoryRef": {
+            "$id": "#ResourceCategoryRef",
+            "type": "object", 
+            "description": "The (resource) category resource is used to group resource candidates in logical containers. Categories can contain other categories.", 
+            "properties": {
+                "version": {
+                    "type": "string", 
+                    "description": "Category version"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
+                }
+            ]
+        }
+    }
+}

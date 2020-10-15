@@ -1,35 +1,35 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "PartnershipSpecificationRef.schema.json",
-    "title": "PartnershipSpecificationRef",
-    "definitions": {
-        "PartnershipSpecificationRef": {
-            "$id": "#PartnershipSpecificationRef",
-            "description": "PartnershipSpecification reference. A partnership specification contains all the information for the setup of a partnership of a given kind. This includes the list of identified role types for the partnership with the corresponding agreement specifications.",
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "Reference url for the partnership specification"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of the partnership specification"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the partnership specification"
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PartnershipSpecificationRef.schema.json",
+  "title": "PartnershipSpecificationRef",
+  "definitions": {
+    "PartnershipSpecificationRef": {
+      "$id": "#PartnershipSpecificationRef",
+      "description": "PartnershipSpecification reference. A partnership specification contains all the information for the setup of a partnership of a given kind. This includes the list of identified role types for the partnership with the corresponding agreement specifications.",
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "Reference url for the partnership specification"
+        },
+        "id": {
+          "type": "string",
+          "description": "Identifier of the partnership specification"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the partnership specification"
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        }
+      ]
     }
+  }
 }

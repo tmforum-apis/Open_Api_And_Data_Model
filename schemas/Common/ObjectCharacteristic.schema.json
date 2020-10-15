@@ -8,19 +8,16 @@
             "description": "A characteristic which value is an object",
             "type": "object",
             "properties": {
-                "name": {
-                    "type": "string",
-                    "description": "Name of the characteristic"
-                },
-                "valueType": {
-                    "type": "string",
-                    "description": "Data type of the value of the characteristic"
-                },
                 "value": {
-                    "type": "string",
+                    "type": "object",
                     "description": "Value of the characteristic"
                 }
-            }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Characteristic.schema.json#Characteristic"
+                }
+            ]
         }
     }
 }

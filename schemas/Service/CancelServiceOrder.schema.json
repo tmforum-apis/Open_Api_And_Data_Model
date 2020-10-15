@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CancelServiceOrder.schema.json",
+    "title": "CancelServiceOrder",
+    "definitions": {
+        "CancelServiceOrder": {
+            "$id": "#CancelServiceOrder",
+            "description": "Request for cancellation an existing Service order",
+            "type": "object",
+            "required": ["ServiceOrder"],
+            "properties": {
+                "serviceOrder": {
+                        "$ref": "../Service/ServiceOrderRef.schema.json#ServiceOrderRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/CancelOrder.schema.json#CancelOrder"
+                }
+            ]
+        }
+    }
+}

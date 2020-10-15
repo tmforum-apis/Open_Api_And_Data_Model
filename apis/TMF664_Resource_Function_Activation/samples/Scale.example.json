@@ -1,0 +1,20 @@
+{
+	"id": "4a41a328-1cf3-4674-bdd7-c43129fbfa7c",
+	"href": "/resourceFunctionActivation/v4/scale/4a41a328-1cf3-4674-bdd7-c43129fbfa7c",
+	"name": "Increase Memory",
+	"@type": "Scale",
+	"resourceFunction": {
+		"id": "acd6cbde-22a1-4f42-9ed0-52bc72d82386",
+		"href": "/resourceFunctionActivation/v4/resourceFunction/acd6cbde-22a1-4f42-9ed0-52bc72d82386"
+	},
+	"status": "inProgress",
+	"scaleType": "Scale Out",
+	"aspectId": "Quick Access Memory",
+	"numberOfSteps": 2,
+	"schedule": [
+		{
+			"id": "b32c19f3-0297-4dd4-93c7-87c3a4fee14e",
+			"href": "/resourceCatalog/v4/resourceSpecification/b32c19f3-0297-4dd4-93c7-87c3a4fee14e"
+		}
+	]
+}

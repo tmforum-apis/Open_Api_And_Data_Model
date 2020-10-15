@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceSpecificationCharacteristic.schema.json",
+    "title": "ResourceSpecificationCharacteristic",
+    "definitions": {
+        "ResourceSpecificationCharacteristic": {
+            "$id": "#ResourceSpecificationCharacteristic",
+            "description": "This class defines the characteristic features of a resource specification. Every ResourceSpecification has a variety of important attributes, methods, constraints, and\nrelationships, which distinguish a resource specification from other resource specifications.", 
+            "type": "object",
+            "properties": {
+                "resourceSpecCharRelationship": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "ResourceSpecificationCharacteristicRelationship.schema.json#ResourceSpecificationCharacteristicRelationship"
+                    },
+                    "description": "An aggregation, migration, substitution, dependency or exclusivity relationship between/among Specification Characteristics."
+                }, 
+                "resourceSpecCharacteristicValue": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "../Common/CharacteristicValueSpecification.schema.json#CharacteristicValueSpecification"
+                    },
+                    "description": "A ResourceSpecificationCharacteristicValue object is used to define a set of attributes, each of which can be assigned to a corresponding set of attributes in a ResourceSpecificationCharacteristic object. The values of the attributes in the ResourceSpecificationCharacteristicValue object describe the values of the attributes that a corresponding ResourceSpecificationCharacteristic object can take on."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/CharacteristicSpecificationBase.schema.json#CharacteristicSpecificationBase"
+                }
+            ]
+        }
+    }
+}

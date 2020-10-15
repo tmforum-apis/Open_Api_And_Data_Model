@@ -1,58 +1,58 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "ProductRestriction.schema.json",
-    "title": "ProductRestriction",
-    "definitions": {
-        "ProductRestriction": {
-            "$id": "#ProductRestriction",
-            "description": "In the context of a product order or a product offering qualification, this data structure captures the product information useful to order or qualified  an existing subscribed product or to a new one. This is a subset of relevant product attributes for ordering and qualification",
-            "type": "object",
-            "properties": {
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the product"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the product"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "This is the name of the product."
-                },
-                "productCharacteristic": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/Characteristic.schema.json#Characteristic"
-                    }
-                },
-                "productRelationship": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Product/ProductRelationship.schema.json#ProductRelationship"
-                    }
-                },
-                "relatedParty": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedPartyRef.schema.json#RelatedPartyRef"
-                    }
-                },
-                "productSpecification": {
-                    "$ref": "../Product/ProductSpecificationRef.schema.json#ProductSpecificationRef"
-                },
-                "relatedPlace": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/RelatedPlace.schema.json#RelatedPlace"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ProductRestriction.schema.json",
+  "title": "ProductRestriction",
+  "definitions": {
+    "ProductRestriction": {
+      "$id": "#ProductRestriction",
+      "description": "In the context of a product order or a product offering qualification, this data structure captures the product information useful to order or qualified  an existing subscribed product or to a new one. This is a subset of relevant product attributes for ordering and qualification",
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "Reference of the product"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the product"
+        },
+        "name": {
+          "type": "string",
+          "description": "This is the name of the product."
+        },
+        "productCharacteristic": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/Characteristic.schema.json#Characteristic"
+          }
+        },
+        "productRelationship": {
+          "type": "array",
+          "items": {
+            "$ref": "../Product/ProductRelationship.schema.json#ProductRelationship"
+          }
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedPartyRef.schema.json#RelatedPartyRef"
+          }
+        },
+        "productSpecification": {
+          "$ref": "../Product/ProductSpecificationRef.schema.json#ProductSpecificationRef"
+        },
+        "relatedPlace": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/RelatedPlace.schema.json#RelatedPlace"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

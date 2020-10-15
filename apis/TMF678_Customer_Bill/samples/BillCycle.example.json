@@ -1,0 +1,30 @@
+{
+	"id": "BC-1234",
+	"href": "http://server:port/tmf-api/Customer_Bill_Management/v4/billcycle/BC-1234",
+	"name": "december regular bill run",
+	"description": "regular bill run",
+	"billingDate": "2020-01-22T12:00:56.982Z",
+	"billingPeriod": "2019-12",
+	"chargeDate": "2020-01-27T00:00:00.000Z",
+	"creditDate": "2020-01-31T23:59:59.999Z",
+	"mailingDate": "2020-01-23T00:00:00.000Z",
+	"paymentDueDate": "2020-02-03T23:59:59.999Z",
+	"BillCycleSpecification": {
+		"id": "BCSPEC-M",
+		"href": "http://server:port/tmf-api/Customer_Bill_Management/v4/billCycleSpecification/BCSPEC-M",
+		"name": "Regular Bill Cycle",
+		"@referredType": "billCycleSpecification",
+		"@baseType": "billCycleSpecificationRef",
+		"@type":"billCycleSpecificationRef",
+		"@schemalocation":"...some uri..."
+		},
+	"validFor": {
+		"endDateTime": "2020-01-00T00:00:00.000Z",
+		"startDateTime": "2020-12-31T23:59:59:999Z"
+		},
+	"@baseType": "BillCycle",
+	"@type":"BillCycle",
+	"@schemalocation":"...some uri..."
+}
+
+

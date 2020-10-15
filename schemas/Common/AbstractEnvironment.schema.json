@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AbstractEnvironment.schema.json",
+  "title": "AbstractEnvironment",
+  "definitions": {
+    "AbstractEnvironment": {
+      "$id": "#AbstractEnvironment",
+      "type": "object",
+      "description": "A managed abstract environment resource",
+      "required": [
+        "abstractEnvironmentDefinition"
+      ],
+      "properties": {
+        "abstractEnvironmentDefinition": {
+          "$ref": "../Common/AbstractEnvironmentDefinition.schema.json#AbstractEnvironmentDefinition"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/ManagedArtifact.schema.json#ManagedArtifact"
+        }
+      ]
+    }
+  }
+}

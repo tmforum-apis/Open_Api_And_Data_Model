@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ShipmentTrackingRef.schema.json",
+  "title": "ShipmentTrackingRef",
+  "definitions": {
+    "ShipmentTrackingRef": {
+      "$id": "#ShipmentTrackingRef",
+      "description": "A reference to the shipment tracking entity.",
+      "type": "object",
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        }
+      ]
+    }
+  }
+}

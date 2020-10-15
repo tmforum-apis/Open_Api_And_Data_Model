@@ -1,59 +1,59 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "SettlementNoteItem.schema.json",
-    "title": "SettlementNoteItem",
-    "definitions": {
-        "SettlementNoteItem": {
-            "$id": "#SettlementNoteItem",
-            "description": "Concerns a product identified by its catalogue reference. It could also follow a period delimited by a start and an end date.",
-            "type": "object",
-            "properties": {
-                "itemId": {
-                    "type": "string",
-                    "description": "Unique identifier of the settlement note item"
-                },
-                "itemLabel": {
-                    "type": "string",
-                    "description": "A free description text for the settlement note item"
-                },
-                "itemNumber": {
-                    "type": "string",
-                    "description": "Unique number assigned to the settlement note item"
-                },
-                "period": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
-                },
-                "quantity": {
-                    "type": "integer",
-                    "description": "Quantity"
-                },
-                "taxExcludedAmount": {
-                    "type": "number",
-                    "format": "float",
-                    "description": "Tax excluded amount equal to quantity * taxExcludedUnitPrice"
-                },
-                "taxExcludedUnitPrice": {
-                    "type": "number",
-                    "format": "float",
-                    "description": "Tax excluded unit price to be applied on the given quantity"
-                },
-                "taxIncludedAmount": {
-                    "type": "number",
-                    "format": "float",
-                    "description": "All taxes included amount equal to taxExcludedAmount + taxAmount"
-                },
-                "taxItem": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Customer/TaxItem.schema.json#TaxItem"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "SettlementNoteItem.schema.json",
+  "title": "SettlementNoteItem",
+  "definitions": {
+    "SettlementNoteItem": {
+      "$id": "#SettlementNoteItem",
+      "description": "Concerns a product identified by its catalogue reference. It could also follow a period delimited by a start and an end date.",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "type": "string",
+          "description": "Unique identifier of the settlement note item"
+        },
+        "itemLabel": {
+          "type": "string",
+          "description": "A free description text for the settlement note item"
+        },
+        "itemNumber": {
+          "type": "string",
+          "description": "Unique number assigned to the settlement note item"
+        },
+        "period": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
+        },
+        "quantity": {
+          "type": "integer",
+          "description": "Quantity"
+        },
+        "taxExcludedAmount": {
+          "type": "number",
+          "format": "float",
+          "description": "Tax excluded amount equal to quantity * taxExcludedUnitPrice"
+        },
+        "taxExcludedUnitPrice": {
+          "type": "number",
+          "format": "float",
+          "description": "Tax excluded unit price to be applied on the given quantity"
+        },
+        "taxIncludedAmount": {
+          "type": "number",
+          "format": "float",
+          "description": "All taxes included amount equal to taxExcludedAmount + taxAmount"
+        },
+        "taxItem": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/TaxItem.schema.json#TaxItem"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }

@@ -1,0 +1,24 @@
+{
+    "id": "44555",
+    "href": "https://serverlocation:port/AIManagementAPI/v4/monitor/44555",
+    "state": "completed",
+    "request": {
+        "method": "POST",
+        "to": "http://serverlocation:port/AIManagementAPI/v4/AiModel",
+        "body": "AI Model Body from AI Model Resource",
+        "header": [{
+            "name": "locale",
+            "value": "en-us"
+        }]
+    },
+    "response": {
+        "statusCode": "201",
+        "body": " AI Model Body from AI Model Resource ",
+        "header": [{
+            "name": "locale",
+            "value": "en-us"
+        }]
+    },
+    "sourceHref": " http://serverlocation:port/AIManagementAPI/v4/AiModel/42 ",
+    "@type": "Monitor"
+}

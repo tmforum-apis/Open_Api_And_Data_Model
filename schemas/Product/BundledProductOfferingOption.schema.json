@@ -1,31 +1,31 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "BundledProductOfferingOption.schema.json",
-    "title": "BundledProductOfferingOption",
-    "definitions": {
-        "BundledProductOfferingOption": {
-            "$id": "#BundledProductOfferingOption",
-            "type": "object",
-            "description": "A set of numbers that specifies the lower and upper limits for a ProductOffering that can be procured as part of the related BundledProductOffering. Values can range from 0 to unbounded",
-            "properties": {
-                "numberRelOfferDefault": {
-                    "type": "integer",
-                    "description": "Default number of produc offereings that should be procured as part of the related BundledProductOffering"
-                },
-                "numberRelOfferLowerLimit": {
-                    "type": "integer",
-                    "description": "lower limit for a product offering that can be procured as part of the related BundledProductOffering"
-                },
-                "numberRelOfferUpperLimit": {
-                    "type": "integer",
-                    "description": "upper limit for a product offering that can be procured as part of the related BundledProductOffering"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BundledProductOfferingOption.schema.json",
+  "title": "BundledProductOfferingOption",
+  "definitions": {
+    "BundledProductOfferingOption": {
+      "$id": "#BundledProductOfferingOption",
+      "type": "object",
+      "description": "A set of numbers that specifies the lower and upper limits for a ProductOffering that can be procured as part of the related BundledProductOffering. Values can range from 0 to unbounded",
+      "properties": {
+        "numberRelOfferDefault": {
+          "type": "integer",
+          "description": "Default number of produc offereings that should be procured as part of the related BundledProductOffering"
+        },
+        "numberRelOfferLowerLimit": {
+          "type": "integer",
+          "description": "lower limit for a product offering that can be procured as part of the related BundledProductOffering"
+        },
+        "numberRelOfferUpperLimit": {
+          "type": "integer",
+          "description": "upper limit for a product offering that can be procured as part of the related BundledProductOffering"
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Extensible.schema.json#Extensible"
+        }
+      ]
     }
+  }
 }

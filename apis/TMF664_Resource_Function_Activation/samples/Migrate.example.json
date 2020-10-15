@@ -1,0 +1,60 @@
+{
+	"id": "afccfc16-a28e-4f3b-81e0-1cf7ba649ef9",
+	"href": "/resourceFunctionActivation/v4/migrate/afccfc16-a28e-4f3b-81e0-1cf7ba649ef9",
+	"name": "Move Location",
+	"@type": "Migrate",
+	"resourceFunction": {
+		"id": "acd6cbde-22a1-4f42-9ed0-52bc72d82386",
+		"href": "/resourceFunctionActivation/v4/resourceFunction/acd6cbde-22a1-4f42-9ed0-52bc72d82386"
+	},
+	"state": "inProgress",
+	"cause": "planned",
+	"adminStateModification": "locked",
+	"removeConnectionPoint": [
+		{
+			"id": "97111c52-ca05-457b-9980-3783d471f92f",
+			"href": "/resourceInventory/v4/resource/97111c52-ca05-457b-9980-3783d471f92f",
+			"name": "CP1.1"
+		},
+		{
+			"id": "f7647371-74cc-4e2b-b8c3-67746a326ee3",
+			"href": "/resourceInventory/v4/resource/f7647371-74cc-4e2b-b8c3-67746a326ee3",
+			"name": "CP3.3"
+		},
+		{
+			"id": "53fea7a6-2b5d-4ed5-96a8-29ab7be89cf7",
+			"href": "/resourceInventory/v4/resource/53fea7a6-2b5d-4ed5-96a8-29ab7be89cf7",
+			"name": "CP5.3"
+		}
+	],
+	"addConnectionPoint": [
+		{
+			"id": "95ae4067-72af-4495-905d-b92ec5f9c310",
+			"href": "/resourceInventory/v4/resource/95ae4067-72af-4495-905d-b92ec5f9c310",
+			"name": "CP1.1"
+		},
+		{
+			"id": "6b8446c6-3deb-45e7-9e8b-2395db8ae693",
+			"href": "/resourceInventory/v4/resource/6b8446c6-3deb-45e7-9e8b-2395db8ae693",
+			"name": "CP3.3"
+		},
+		{
+			"id": "fb35655e-c6d7-47b3-aff5-6b6eac487290",
+			"href": "/resourceInventory/v4/resource/fb35655e-c6d7-47b3-aff5-6b6eac487290",
+			"name": "CP5.3"
+		}
+	],
+	"priority": 1,
+	"startTime": "2019-08-19T04:00:00Z",
+	"completionMode": "bestEffort",
+	"place": {
+			"id": "72a41352-7a2c-4baa-8df6-cab6845f6369",
+			"href": "/geographicLocation/v4/geographicLocation/72a41352-7a2c-4baa-8df6-cab6845f6369"
+	},
+	"characteristics": [
+		{
+			"name": "zone",
+			"value": 42
+		}
+	]
+}

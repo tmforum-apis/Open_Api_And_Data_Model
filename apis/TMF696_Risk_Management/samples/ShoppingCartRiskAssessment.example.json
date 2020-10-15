@@ -1,0 +1,47 @@
+{
+    "status": "Completed", 
+    "characteristic": [
+        {
+            "name": "ContactPersonName",
+            "valueType": "string",
+            "value": "David Alexander"
+        }
+    ],
+    "shoppingCart": {
+        "id": "1203",
+        "href": "https://mycsp.com:8080/tmf-api/shoppingCart/v4/shoppingCart/1203",
+        "@referredType": "ShoppingCart"
+    },
+    "place": {
+        "@type": "RelatedPlace",
+        "role": "home address",
+        "id": "234546467567334",
+        "href": "https://mycsp.com:8080/tmf-api/geographicAddress/v4/geographicAddress/234546467567334",
+        "@referredType": "GeographicAddress"
+    },
+    "riskAssessmentResult": {
+        "overallScore": 12,
+        "validFor": {
+            "startDateTime": "2017-08-23T00:00:22.920Z", 
+            "endDateTime": "2018-03-25T00:00:22.920Z"
+        }, 
+        "score": [
+            {
+                "score": 0,
+                "riskName": "IDConfidenceRisk"
+            },
+            {
+                "score": 10,
+                "riskName": "FraudRisk"
+            },
+            {
+                "score": 13,
+                "riskName": "BadPaymentRisk"
+            },
+            {
+                "score": 9,
+                "riskName": "CreditGamingRisk"
+            }
+        ]
+    }
+}

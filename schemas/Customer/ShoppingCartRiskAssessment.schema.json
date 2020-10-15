@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ShoppingCartRiskAssessment.schema.json",
+    "title": "ShoppingCartRiskAssessment",
+    "definitions": {
+        "ShoppingCartRiskAssessment": {
+            "$id": "#ShoppingCartRiskAssessment",
+            "description": "This is a task resource allowing assessment of the risks associated with a shopping cart - presumably created by a party role and containing one or more product offerings",
+            "type": "object",
+            "required" : [
+                "shoppingCart"
+            ],
+            "properties": {
+                "shoppingCart": {
+                    "$ref": "../Customer/ShoppingCartRef.json#ShoppingCartRef",
+                    "description": "The shopping cart for which the assessment is to be carried out, must be supplied as input to the task, with the attribute id populated"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "RiskAssessment.schema.json#RiskAssessment"
+                }
+            ]
+        }
+    }
+}

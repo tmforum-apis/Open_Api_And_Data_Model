@@ -1,89 +1,89 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "BaseService.schema.json",
-    "title": "BaseService",
-    "definitions": {
-        "BaseService": {
-            "$id": "#BaseService",
-            "description": "In the context of a service order and depending on the action requested (add/modify/delete/noChange) this data structure captures the configuration to apply to an existing subscribed service or to a new one",
-            "type": "object",
-            "properties": {
-                "id": {
-                    "description": "Unique identifier of the service",
-                    "type": "string"
-                },
-                "href": {
-                    "description": "Reference of the service",
-                    "type": "string"
-                },
-                "serviceType": {
-                    "description": "Business type of the service",
-                    "type": "string"
-                },
-                "name": {
-                    "description": "Name of the service",
-                    "type": "string"
-                },
-                "state": {
-                    "description": "The life cycle state of the service, such as: [feasibilityChecked], [designed]",
-                    "$ref": "../Service/ServiceStateType.schema.json#ServiceStateType"
-                },
-                "category": {
-                    "type": "string",
-                    "description": "Is it a customer facing or resource facing service"
-                },
-                "serviceSpecification": {
-                    "description": "The specification from which this service was instantiated",
-                    "$ref": "../Service/ServiceSpecificationRef.schema.json#ServiceSpecificationRef"
-                },
-                "serviceCharacteristic": {
-                    "type": "array",
-                    "description": "A list of characteristics that characterize this service (ServiceCharacteristic [*]) ",
-                    "items": {
-                        "$ref": "../Common/Characteristic.schema.json#Characteristic"
-                    }
-                },
-                "serviceRelationship": {
-                    "type": "array",
-                    "description": "A list of service relationships (ServiceRelationship [*]). Describes links with other service(s) in the inventory (useful for describing relies-on, relies-from between CFS for example).",
-                    "items": {
-                        "$ref": "../Service/ServiceRelationship.schema.json#ServiceRelationship"
-                    }
-                },
-                "supportingService": {
-                    "type": "array",
-                    "description": "A list of supporting services (SupportingService [*]). A collection of services that support this service (bundling, link CFS to RFS)",
-                    "items": {
-                        "$ref": "../Service/ServiceRef.schema.json#ServiceRef"
-                    }
-                },
-                "supportingResource": {
-                    "type": "array",
-                    "description": "A list of supporting resources (SupportingResource [*]).Note: only Service of type RFS can be associated with Resources",
-                    "items": {
-                        "$ref": "../Resource/ResourceRef.schema.json#ResourceRef"
-                    }
-                },
-                "relatedParty": {
-                    "type": "array",
-                    "description": "A list of related party references (RelatedParty [*]). A related party defines party or party role linked to a specific entity",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-                    }
-                },
-                "place": {
-                    "type": "array",
-                    "description": "A list of places (Place [*]). Used to define a place useful for the service (for example a delivery geographical place)",
-                    "items": {
-                        "$ref": "../Common/Place.schema.json#Place"
-                    }
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BaseService.schema.json",
+  "title": "BaseService",
+  "definitions": {
+    "BaseService": {
+      "$id": "#BaseService",
+      "description": "In the context of a service order and depending on the action requested (add/modify/delete/noChange) this data structure captures the configuration to apply to an existing subscribed service or to a new one",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Unique identifier of the service",
+          "type": "string"
+        },
+        "href": {
+          "description": "Reference of the service",
+          "type": "string"
+        },
+        "serviceType": {
+          "description": "Business type of the service",
+          "type": "string"
+        },
+        "name": {
+          "description": "Name of the service",
+          "type": "string"
+        },
+        "state": {
+          "description": "The life cycle state of the service, such as: [feasibilityChecked], [designed]",
+          "$ref": "../Service/ServiceStateType.schema.json#ServiceStateType"
+        },
+        "category": {
+          "type": "string",
+          "description": "Is it a customer facing or resource facing service"
+        },
+        "serviceSpecification": {
+          "description": "The specification from which this service was instantiated",
+          "$ref": "../Service/ServiceSpecificationRef.schema.json#ServiceSpecificationRef"
+        },
+        "serviceCharacteristic": {
+          "type": "array",
+          "description": "A list of characteristics that characterize this service (ServiceCharacteristic [*]) ",
+          "items": {
+            "$ref": "../Common/Characteristic.schema.json#Characteristic"
+          }
+        },
+        "serviceRelationship": {
+          "type": "array",
+          "description": "A list of service relationships (ServiceRelationship [*]). Describes links with other service(s) in the inventory (useful for describing relies-on, relies-from between CFS for example).",
+          "items": {
+            "$ref": "../Service/ServiceRelationship.schema.json#ServiceRelationship"
+          }
+        },
+        "supportingService": {
+          "type": "array",
+          "description": "A list of supporting services (SupportingService [*]). A collection of services that support this service (bundling, link CFS to RFS)",
+          "items": {
+            "$ref": "../Service/ServiceRef.schema.json#ServiceRef"
+          }
+        },
+        "supportingResource": {
+          "type": "array",
+          "description": "A list of supporting resources (SupportingResource [*]).Note: only Service of type RFS can be associated with Resources",
+          "items": {
+            "$ref": "../Resource/ResourceRef.schema.json#ResourceRef"
+          }
+        },
+        "relatedParty": {
+          "type": "array",
+          "description": "A list of related party references (RelatedParty [*]). A related party defines party or party role linked to a specific entity",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
+        },
+        "place": {
+          "type": "array",
+          "description": "A list of places (Place [*]). Used to define a place useful for the service (for example a delivery geographical place)",
+          "items": {
+            "$ref": "../Common/Place.schema.json#Place"
+          }
         }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
     }
+  }
 }
