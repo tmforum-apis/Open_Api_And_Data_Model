@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "title": "Event Management API",
-        "description": "## TMF API Reference: TMF688 - Event Management \n\n### Release : 19.5 - December 2019\n\nThe TMF688 Event (Streaming) API supports the large scale publication and subscription of events, with multiple event types enabling an Event Driven Architecture.",
+        "description": "## TMF API Reference: TMF688 - Event Management \n\n### Release : 19.5 - December 2019\n\nThe TMF688 Event Management API supports the large scale publication and subscription of events, with multiple event types enabling an Event Driven Architecture. The Event Management API supports all notification types by the polymorphic event payload type.",
         "version": "4.0.0"
     },
     "host": "serverRoot",
@@ -1535,10 +1535,10 @@
                     "type": "string",
                     "description": "A priority."
                 },
-                "timeOcurred": {
+                "timeOccurred": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "The time the event occured."
+                    "description": "The time the event occurred."
                 },
                 "title": {
                     "type": "string",
@@ -1616,10 +1616,10 @@
                     "type": "string",
                     "description": "A priority."
                 },
-                "timeOcurred": {
+                "timeOccurred": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "The time the event occured."
+                    "description": "The time the event occurred."
                 },
                 "title": {
                     "type": "string",

@@ -4326,7 +4326,7 @@
         },
         "AdjustBalance": {
             "type": "object",
-            "description": "The AdjustBalance resource allows adjustments to be made to the original BalanceTopup eg increment the amount, alter the recharge periodicity",
+            "description": "The AdjustBalance resource allows adjustments to be made to the original BalanceTopup e.g. increment the amount, alter the recharge periodicity. Alternatively, an adjustment can be made to an outstanding reservation request, in which case the reservedValue of the bucket will be adjusted, not the remaining value",
             "properties": {
                 "id": {
                     "type": "string",
@@ -4339,7 +4339,7 @@
                 },
                 "adjustType": {
                     "type": "string",
-                    "description": "The type of the adjustment. For example: recurringChargeDebit,oneTimeChargeCredit,oneTimeChargeDebit,goodWillCredit,generalDebit"
+                    "description": "The type of the adjustment. For example: recurringChargeDebit, oneTimeChargeCredit, oneTimeChargeDebit, goodWillCredit, generalDebit, reservationDebit"
                 },
                 "confirmationDate": {
                     "type": "string",
@@ -4408,6 +4408,10 @@
                 "requestor": {
                     "$ref": "#/definitions/RelatedParty",
                     "description": "Identifier for the user/customer/entity that performs the top-up action. This can be used to indicate the identifier of an agent that performs the operation on behalf of a user via a customer service channel. Structure including at least attributes role and name."
+                },
+                "reserveBalance": {
+                    "$ref": "#/definitions/ReserveBalanceRef",
+                    "description": "Should be present for types relating to reservation, such as reservation debit. Means that the adjustment needs to be executed according to this reservation request. The amount of the balance action is optional in this case, and if not supplied the entire reserved amount will be adjusted in the bucket. If a specific implementation can support partial consumption of the reservation, then amount can be supplied, and that amount will be adjusted in the bucket and the reservation request"
                 },
                 "@baseType": {
                     "type": "string",
@@ -4426,14 +4430,14 @@
         },
         "AdjustBalance_Create": {
             "type": "object",
-            "description": "The AdjustBalance resource allows adjustments to be made to the original BalanceTopup eg increment the amount, alter the recharge periodicity\nSkipped properties: id,href",
+            "description": "The AdjustBalance resource allows adjustments to be made to the original BalanceTopup e.g. increment the amount, alter the recharge periodicity. Alternatively, an adjustment can be made to an outstanding reservation request, in which case the reservedValue of the bucket will be adjusted, not the remaining value\nSkipped properties: id,href",
             "required": [
                 "amount"
             ],
             "properties": {
                 "adjustType": {
                     "type": "string",
-                    "description": "The type of the adjustment. For example: recurringChargeDebit,oneTimeChargeCredit,oneTimeChargeDebit,goodWillCredit,generalDebit"
+                    "description": "The type of the adjustment. For example: recurringChargeDebit, oneTimeChargeCredit, oneTimeChargeDebit, goodWillCredit, generalDebit, reservationDebit"
                 },
                 "confirmationDate": {
                     "type": "string",
@@ -4502,6 +4506,10 @@
                 "requestor": {
                     "$ref": "#/definitions/RelatedParty",
                     "description": "Identifier for the user/customer/entity that performs the top-up action. This can be used to indicate the identifier of an agent that performs the operation on behalf of a user via a customer service channel. Structure including at least attributes role and name."
+                },
+                "reserveBalance": {
+                    "$ref": "#/definitions/ReserveBalanceRef",
+                    "description": "Should be present for types relating to reservation, such as reservation debit. Means that the adjustment needs to be executed according to this reservation request. The amount of the balance action is optional in this case, and if not supplied the entire reserved amount will be adjusted in the bucket. If a specific implementation can support partial consumption of the reservation, then amount can be supplied, and that amount will be adjusted in the bucket and the reservation request"
                 },
                 "@baseType": {
                     "type": "string",
@@ -4520,11 +4528,11 @@
         },
         "AdjustBalance_Update": {
             "type": "object",
-            "description": "The AdjustBalance resource allows adjustments to be made to the original BalanceTopup eg increment the amount, alter the recharge periodicity\nSkipped properties: id,href",
+            "description": "The AdjustBalance resource allows adjustments to be made to the original BalanceTopup e.g. increment the amount, alter the recharge periodicity. Alternatively, an adjustment can be made to an outstanding reservation request, in which case the reservedValue of the bucket will be adjusted, not the remaining value\nSkipped properties: id,href",
             "properties": {
                 "adjustType": {
                     "type": "string",
-                    "description": "The type of the adjustment. For example: recurringChargeDebit,oneTimeChargeCredit,oneTimeChargeDebit,goodWillCredit,generalDebit"
+                    "description": "The type of the adjustment. For example: recurringChargeDebit, oneTimeChargeCredit, oneTimeChargeDebit, goodWillCredit, generalDebit, reservationDebit"
                 },
                 "confirmationDate": {
                     "type": "string",
@@ -4593,6 +4601,10 @@
                 "requestor": {
                     "$ref": "#/definitions/RelatedParty",
                     "description": "Identifier for the user/customer/entity that performs the top-up action. This can be used to indicate the identifier of an agent that performs the operation on behalf of a user via a customer service channel. Structure including at least attributes role and name."
+                },
+                "reserveBalance": {
+                    "$ref": "#/definitions/ReserveBalanceRef",
+                    "description": "Should be present for types relating to reservation, such as reservation debit. Means that the adjustment needs to be executed according to this reservation request. The amount of the balance action is optional in this case, and if not supplied the entire reserved amount will be adjusted in the bucket. If a specific implementation can support partial consumption of the reservation, then amount can be supplied, and that amount will be adjusted in the bucket and the reservation request"
                 },
                 "@baseType": {
                     "type": "string",
@@ -4704,6 +4716,45 @@
                 }
             }
         },
+        "BalanceActionRef": {
+            "type": "object",
+            "description": "link to the resource that holds balance-related request information",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
         "Bucket": {
             "type": "object",
             "description": "A bucket (called UsageVolumProduct in the SID Model) represents and tracks a quantity of usage (remaining or consumed). It could be either a quantity or an amount in a currency. It can represent a fixed number of SMS,MMS, call minutes, quantity of data and so on",
@@ -4767,9 +4818,15 @@
                     "$ref": "#/definitions/Quantity",
                     "description": "Indicate the amount on the bucket"
                 },
+                "reserveBalance": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ReserveBalanceRef"
+                    }
+                },
                 "reservedValue": {
                     "$ref": "#/definitions/Quantity",
-                    "description": "Indicate the amount reserved on the bucket"
+                    "description": "Indicate the amount reserved on the bucket; should be the sum of all the valid (i.e. confirmed and not consumed or expired) amounts in the reserveBalance request array"
                 },
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
@@ -4848,9 +4905,15 @@
                     "$ref": "#/definitions/Quantity",
                     "description": "Indicate the amount on the bucket"
                 },
+                "reserveBalance": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ReserveBalanceRef"
+                    }
+                },
                 "reservedValue": {
                     "$ref": "#/definitions/Quantity",
-                    "description": "Indicate the amount reserved on the bucket"
+                    "description": "Indicate the amount reserved on the bucket; should be the sum of all the valid (i.e. confirmed and not consumed or expired) amounts in the reserveBalance request array"
                 },
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
@@ -5473,6 +5536,11 @@
                     "type": "string",
                     "description": "Description of the recharge operation"
                 },
+                "expirationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date on which the reservation will expire, if the amount was not actually used"
+                },
                 "reason": {
                     "type": "string",
                     "description": "Text describing the reason for the action/task"
@@ -5563,6 +5631,11 @@
                     "type": "string",
                     "description": "Description of the recharge operation"
                 },
+                "expirationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date on which the reservation will expire, if the amount was not actually used"
+                },
                 "reason": {
                     "type": "string",
                     "description": "Text describing the reason for the action/task"
@@ -5650,6 +5723,11 @@
                     "type": "string",
                     "description": "Description of the recharge operation"
                 },
+                "expirationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date on which the reservation will expire, if the amount was not actually used"
+                },
                 "reason": {
                     "type": "string",
                     "description": "Text describing the reason for the action/task"
@@ -5723,6 +5801,45 @@
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
+        },
+        "ReserveBalanceRef": {
+            "type": "object",
+            "description": "The ReserveBalance resource allows adjustments to be made to the original BalanceTopup eg increment the amount, alter the recharge periodicity",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
         },
         "ResourceRef": {
             "type": "object",

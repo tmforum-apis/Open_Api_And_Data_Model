@@ -1,0 +1,72 @@
+{
+    "id": "17011", 
+    "href": "https://mycsp.com:8080/tmf-api/entityInventory/v4/association/17011", 
+    "name": "ReliesOn", 
+    "description": "An Uni-directional ReliesOn association from Electrical Fire Protection Managed Entity to Mechanical Fire Protection Managed Entity", 
+    "version": "1.0", 
+    "validFor": {
+        "startDateTime": "2020-12-25T00:00Z", 
+        "endDateTime": "2023-12-31T11:59:59Z"
+    }, 
+    "lastUpdate": "2020-12-25T00:00Z", 
+    "lifecycleStatus": "Active", 
+    "associationSpec": { 
+        "id": "7727",
+        "href": "https://mycsp.com:8080/tmf-api/entityCatalogManagement/v4/associationSpecification/7727",
+        "name": "ReliesOn",
+        "@referredType": "AssociationSpecfication",
+        "@type": "AssociationSpecficationRef",
+        "@baseType": "",
+        "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/AssociationSpecficationRef.schema.json"
+    },
+    "constraint": [
+        {
+            "href": "https://mycsp.com:8080/tmf-api/policyManagement/v4/policy/3947", 
+            "id": "3947", 
+            "name": "protectionDependencyRule", 
+            "version": "1.0",
+            "@referredType": "Constraint",
+            "@type": "ConstraintRef",
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/ConstraintRef.schema.json"
+        }
+    ], 
+    "associationRole": [
+        {
+            "isSource": true,
+            "role": "a_ReliesOn",
+            "@type": "AssociationRole", 
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/AssociationRole.schema.json", 
+            "@baseType": "",
+            "entity" : {
+                    "id": "18041", 
+                    "href": "https://mycsp.com:8080/tmf-api/entityInventory/v4/managedEntity/18041", 
+                    "name": "Fire Protection Electrical", 
+                    "@type": "EntityRef",
+                    "@baseType": "",
+                    "referredType" : "FireProtection",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntityRef.schema.json"
+            }
+            
+        },
+        {
+            "isSource": false,
+            "role": "z_ReliesOn",
+            "@type": "AssociationRole", 
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/AssociationRole.schema.json", 
+            "@baseType": "",
+            "entity" : {
+                    "id": "18013", 
+                    "href": "https://mycsp.com:8080/tmf-api/entityInventory/v4/managedEntity/18013", 
+                    "name": "Fire Protection Mechanical", 
+                    "@type": "EntityRef",
+                    "@baseType": "",
+                    "referredType" : "FireProtection",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntityRef.schema.json"
+            }
+        }
+    ],
+    "@type": "Association", 
+    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/Association.schema.json", 
+    "@baseType": ""
+}

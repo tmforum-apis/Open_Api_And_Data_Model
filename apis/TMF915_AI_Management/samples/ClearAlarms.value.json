@@ -1,0 +1,14 @@
+{
+    "alarmClearedTime": "2020-06-25T00:00",
+    "alarmPattern": [
+        {}
+    ],
+    "clearSystemId": "912",
+    "clearUserId": "309",
+    "clearedAlarm": [
+        {}
+    ],
+    "href": "https:/host:port/tmf-api/clearAlarms/v1/clearAlarms/3012",
+    "id": "3012",
+    "state": "a string ..."
+}

@@ -1,0 +1,45 @@
+{
+    "ackState": "a string ...",
+    "ackSystemId": "773",
+    "ackUserId": "411",
+    "affectedService": [
+        {}
+    ],
+    "alarmChangedTime": "2020-06-25T00:00",
+    "alarmClearedTime": "2020-06-25T00:00",
+    "alarmDetails": "a string ...",
+    "alarmEscalation": true,
+    "alarmRaisedTime": "2020-06-25T00:00",
+    "alarmReportingTime": "2020-06-25T00:00",
+    "alarmType": {},
+    "alarmedObject": {},
+    "alarmedObjectType": "a string ...",
+    "clearSystemId": "380",
+    "clearUserId": "145",
+    "comment": [
+        {}
+    ],
+    "correlatedAlarm": [
+        {}
+    ],
+    "crossedThresholdInformation": {},
+    "externalAlarmId": "820",
+    "href": "https:/host:port/tmf-api/alarm/v1/alarm/8702",
+    "id": 9,
+    "isRootCause": true,
+    "parentAlarm": [
+        {}
+    ],
+    "perceivedSeverity": {},
+    "place": [
+        {}
+    ],
+    "plannedOutageIndicator": "a string ...",
+    "probableCause": "a string ...",
+    "proposedRepairedActions": "a string ...",
+    "reportingSystemId": "522",
+    "serviceAffecting": true,
+    "sourceSystemId": "808",
+    "specificProblem": "a string ...",
+    "state": "a string ..."
+}

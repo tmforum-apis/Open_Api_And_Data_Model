@@ -1,14 +1,63 @@
 {
     "id": "7655",
+<<<<<<< HEAD
+    "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/serviceSpecification/PCPAIModelSpecification",
+    "@type": "AIModelSpecification",
+    "name": "PCPAIModel Specification",
+=======
     "href": "https://mycsp.com:8080/tmf-api/serviceCatalogManagement/v4/serviceSpecification/PCPAIModelAsAServiceSpecification",
     "@type": "AIModelSpecification",
     "name": "PCP AIModelAsAService Specification",
+>>>>>>> ce6b7d4abb1338a9e2ab4f101640fdc4199c8733
     "description": "This service specification describes an AI Model as a Service.",
     "version": "2.1",
     "validFor": {
         "startDateTime": "2017-08-23T00:00",
         "endDateTime": "2018-03-25T00:00"
     },
+<<<<<<< HEAD
+    "lastUpdate": "2017-08-27T00:00",
+    "lifecycleStatus": "Active",
+    "isBundle": false,
+    
+    "modelSpecificationHistory": {
+
+            "description": "Model development history and model specification as preserved in a model repository",
+            "url": "http://link.to.mlflow.server/#/models/pcpsegmentation/versions/1"
+    },
+    "inheritedModel": {
+
+            "description": "Reference to the exact model that was used, via transfer learning, to create this model",
+            "url": "https://link.to.model.repo/modelID=14272.3.1"
+    },
+    "modelTrainingData" : {
+            "description": "A link to a repository where the data used to train the model is preserved",
+            "url": "https://link.to.data.repo/minio/trainingdata/dataID=325215.1"
+     },
+     "modelEvaluationData": {
+            "description": "A link to a repository where the data used to evaluate the model is preserved",
+            "url": "https://link.to.data.repo/minio/trainingdata/dataID=191215.1"
+     },
+     "modelDataSheet": {
+            "description": "Link to a digital document that provide a top level description of this model",
+            "url": "https://mycsp.com:7070/docloader?docnum=3534536",     
+            "mimeType": "application/vnd.ms-excel"
+      },
+      "deploymentRecord": {
+             "description": "Link to a digital document that preserves the deployment approval for this model",
+             "url": "https://link.to.model.repo/deploymentRecordID=57432.1"
+      },
+      "modelContractVersionHistory": {
+            "description": "Link to the model contract for this model, including past versions",
+            "url": "https://gitlab.server/modelcontracts/57432/blob/master/contract"     
+      },
+      
+    "serviceSpecCharacteristic": [
+        {
+            "name": "allowedPCPTypes",
+            "description": "The model uses knowledge of the geometry of different PCP types to mask the image and focus on the internals of the PCP",
+            "valueType": "string",
+=======
     "lastUpdate": "2017-08-27T00:00:00.000Z",
     "lifecycleStatus": "Active",
     "isBundle": false,
@@ -49,16 +98,69 @@
             "name": "trainedPCPTypes",
             "description": "The model uses knowledge of the geometry of different PCP types to mask the image and focus on the internals of the PCP",
             "valueType": "object",
+>>>>>>> ce6b7d4abb1338a9e2ab4f101640fdc4199c8733
             "configurable": false,
             "validFor": {
                 "startDateTime": "2017-08-12T00:00",
                 "endDateTime": "2018-03-07T00:00"
             },
+<<<<<<< HEAD
+            "@valueSchemaLocation": "",
+=======
+>>>>>>> ce6b7d4abb1338a9e2ab4f101640fdc4199c8733
             "minCardinality": 0,
             "maxCardinality": 1,
             "isUnique": true,
             "regex": "",
             "extensible": false,
+<<<<<<< HEAD
+            "serviceSpecCharacteristicValue": [
+                {
+                    "valueType": "string",
+                    "isDefault": false,
+                    "value": "Type_1",
+                    "validFor": {
+                        "startDateTime": "2017-08-06T00:00",
+                        "endDateTime": "2018-03-07T00:00"
+                    }
+                },
+                 {
+                    "valueType": "string",
+                    "isDefault": false,
+                    "value": "Type_2",
+                    "validFor": {
+                        "startDateTime": "2017-08-06T00:00",
+                        "endDateTime": "2018-03-07T00:00"
+                    }
+                },
+                 {
+                    "valueType": "string",
+                    "isDefault": false,
+                    "value": "Type_3",
+                    "validFor": {
+                        "startDateTime": "2017-08-06T00:00",
+                        "endDateTime": "2018-03-07T00:00"
+                    }
+                },
+                 {
+                    "valueType": "string",
+                    "isDefault": false,
+                    "value": "Type_4",
+                    "validFor": {
+                        "startDateTime": "2017-08-06T00:00",
+                        "endDateTime": "2018-03-07T00:00"
+                    }
+                }
+            ],
+           
+            "@type": "ServiceSpecCharacteristic",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Service/ServiceSpecCharacteristic.schema.json"
+        },
+        {
+            "name": "allowedConnectorTypes",
+            "description": "ConnectorType parameters for this resource facing service spec ",
+            "valueType": "string",
+=======
             "serviceSpecCharacteristicValue": [{
                 "valueType": "StringArray",
                 "isDefault": false,
@@ -74,17 +176,75 @@
             "name": "trainedConnectorTypes",
             "description": "ConnectorType parameters for this resource facing service spec ",
             "valueType": "object",
+>>>>>>> ce6b7d4abb1338a9e2ab4f101640fdc4199c8733
             "configurable": true,
             "validFor": {
                 "startDateTime": "2017-08-17T00:00",
                 "endDateTime": "2018-03-12T00:00"
             },
+<<<<<<< HEAD
+            "@valueSchemaLocation": "https://mycsp.com:8080/tmf-api/schema/Service/CapabilityScalable.schema.json",
+=======
 
+>>>>>>> ce6b7d4abb1338a9e2ab4f101640fdc4199c8733
             "minCardinality": 0,
             "maxCardinality": 1,
             "isUnique": true,
             "regex": "",
             "extensible": true,
+<<<<<<< HEAD
+            "serviceSpecCharacteristicValue": [
+                {
+                    "valueType": "string",
+                    "isDefault": false,
+                    "value": "Type_1",
+                    "validFor": {
+                        "startDateTime": "2017-08-06T00:00",
+                        "endDateTime": "2018-03-07T00:00"
+                    }
+                },
+                 {
+                    "valueType": "string",
+                    "isDefault": false,
+                    "value": "Type_2",
+                    "validFor": {
+                        "startDateTime": "2017-08-06T00:00",
+                        "endDateTime": "2018-03-07T00:00"
+                    }
+                },
+                 {
+                    "valueType": "string",
+                    "isDefault": false,
+                    "value": "Type_3",
+                    "validFor": {
+                        "startDateTime": "2017-08-06T00:00",
+                        "endDateTime": "2018-03-07T00:00"
+                    }
+                },
+                 {
+                    "valueType": "string",
+                    "isDefault": false,
+                    "value": "Type_4",
+                    "validFor": {
+                        "startDateTime": "2017-08-06T00:00",
+                        "endDateTime": "2018-03-07T00:00"
+                    }
+                }
+            ],
+            "serviceSpecCharRelationship": [],
+            "@type": "ServiceSpecCharacteristic",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Service/ServiceSpecCharacteristic.schema.json"
+        }
+    ],
+    "relatedParty": [
+        {
+            "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/organization/3643",
+            "id": "3643",
+            "name": "Firewall Express",
+            "role": "Supplier"
+        }
+    ],
+=======
             "serviceSpecCharacteristicValue": [{
                 "valueType": "StringArray",
                 "isDefault": false,
@@ -102,10 +262,15 @@
         "name": "Firewall Express",
         "role": "Supplier"
     }],
+>>>>>>> ce6b7d4abb1338a9e2ab4f101640fdc4199c8733
     "targetServiceSchema": {
         "@type": "AIModel",
         "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/AIM/AIModel.schema.json"
     },
     "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/AIM/AIModelSpecification.schema.json",
     "@baseType": "ServiceSpecification"
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ce6b7d4abb1338a9e2ab4f101640fdc4199c8733

@@ -142,8 +142,20 @@
                     }
                 ],
                 "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/QueryProductRecommendation"
+                        }
+                    },
                     "201": {
                         "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/QueryProductRecommendation"
+                        }
+                    },
+                    "202": {
+                        "description": "Accepted",
                         "schema": {
                             "$ref": "#/definitions/QueryProductRecommendation"
                         }
@@ -1766,7 +1778,7 @@
         },
         "QueryProductRecommendation_Create": {
             "type": "object",
-            "description": "Recommendation API is used to recommend offering quickly based on the history and real-time context of customer. It is a real-time and personalized recommendation API. It is usually provided by e-commerce or BSS, CRM system in omni-channel.\nSkipped properties: id,href,validFor,item",
+            "description": "Recommendation API is used to recommend offering quickly based on the history and real-time context of customer. It is a real-time and personalized recommendation API. It is usually provided by e-commerce or BSS, CRM system in omni-channel.\nSkipped properties: id,href,validFor,recommendationItem",
             "properties": {
                 "description": {
                     "type": "string"
@@ -1809,12 +1821,6 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ItemRef"
-                    }
-                },
-                "recommendationItem": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/RecommendationItem"
                     }
                 },
                 "relatedParty": {

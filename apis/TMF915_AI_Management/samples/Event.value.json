@@ -1,0 +1,22 @@
+{
+    "href": "a Uri ...",
+    "id": "a Uri ...",
+    "analyticCharacteristic": [
+        {}
+    ],
+    "correlationId": "794",
+    "description": "This  event ...",
+    "domain": "a string ...",
+    "event": {},
+    "eventId": "505",
+    "eventTime": "2020-06-25T00:00",
+    "eventType": "a string ...",
+    "priority": "a string ...",
+    "relatedParty": [
+        {}
+    ],
+    "reportingSystem": {},
+    "source": {},
+    "timeOcurred": "2020-06-25T00:00",
+    "title": "a string ..."
+}

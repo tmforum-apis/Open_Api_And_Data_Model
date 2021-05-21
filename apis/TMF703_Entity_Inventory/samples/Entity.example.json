@@ -1,0 +1,7 @@
+{
+    "id": "8999", 
+    "href": "https://mycsp.com:8080/tmf-api/entityInventory/v4/entity/8999",
+    "@type": "ManagedEntity", 
+    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/ManagedEntity.schema.json", 
+    "@baseType": "Entity"
+}

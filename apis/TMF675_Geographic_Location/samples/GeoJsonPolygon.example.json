@@ -1,0 +1,28 @@
+{
+    "id": "eca70497-e161",
+    "href": "https://api.company.com/tmf-api/geographicLocation/v4/geographicLocation/eca70497-e161",
+    "name": "Closed polygon joining Vodafone House, Babbage House, Faraday House and Pavilion",
+    "@baseType": "GeographicLocation",
+    "@type": "GeoJsonPolygon",
+    "geoJson": {
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [-1.3197581470012665,
+                        51.41671197068097
+                    ],
+                    [-1.3200236856937408,
+                        51.41484889182162
+                    ],
+                    [-1.3201913237571716,
+                        51.41561755173973
+                    ],
+                    [-1.3200867176055908,
+                        51.41707412265012
+                    ]
+                ]
+            ]
+        }
+    }
+}

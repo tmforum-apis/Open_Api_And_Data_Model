@@ -1,0 +1,13 @@
+{
+    "adminState": "a string ...",
+    "creationTime": "2020-06-25T00:00",
+    "executionState": "a string ...",
+    "granularity": "a string ...",
+    "id": "1606",
+    "jobPriority": 48,
+    "lastModifiedTime": "2020-06-25T00:00",
+    "monitoredObjectsCriteria": "a string ...",
+    "performanceThreshold": 30,
+    "scheduleDefinition": "a string ...",
+    "trackingRecord": "a string ..."
+}

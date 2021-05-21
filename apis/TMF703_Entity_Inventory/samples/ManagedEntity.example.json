@@ -1,0 +1,224 @@
+{
+    "id": "8951", 
+    "href": "https://mycsp.com:8080/tmf-api/entityInventory/v4/entity/8951", 
+    "name": "XYZ IOT Home Security Zone Hub", 
+    "description": "This entity represents an IOT Home Security Zone Hub instance", 
+    "version": "1.0", 
+    "validFor": {
+        "startDateTime": "2021-03-20T00:00Z", 
+        "endDateTime": "2023-12-31T11:59:59Z"
+    }, 
+    "lastUpdate": "2021-03-20T00:00Z", 
+    "lifecycleStatus": "Active", 
+    "isBundle": false, 
+    "attachment": [
+        {
+            "description": "This attachment gives a user guide for setting of the home sucurity zone hub", 
+            "href": "https://mycsp.com:8080/tmf-api/documentManagement/v4/attachment/6899", 
+            "id": "6899", 
+            "url": "https://mycsp.com:7071/docloader?docnum=6899",
+            "@attachmentType": "Document",
+            "content": "",
+            "mimeType": ".pdf",
+            "validFor": {
+                "startDateTime": "2021-03-20T00:00Z", 
+                "endDateTime": "2023-12-31T11:59:59Z"
+            },
+            "size": {
+                "amount": 1400,
+                "units": "KB"
+            },
+            "name": "XYZ Home Security Zone Hub Configuration",
+            "@type": "Attachment",
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/Attachment.schema.json"
+        }
+    ], 
+    "characteristic": [
+        {
+            "name": "noOfZones", 
+            "id": "4421",
+            "valueType": "number",
+            "value": 4,
+            "charSpecRelationship": [
+            ], 
+            "@type": "Characteristic", 
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/Characteristic.schema.json"
+        },
+        {
+            "name": "ipAddress", 
+            "id": "4423",
+            "valueType": "object",
+             "value": {
+                "address": "193.173.179.21",
+                "netmask": "255.255.255.0",
+                "@type": "IPAddressV4",
+                "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/IPAddressV4.schema.json"
+            },
+            
+            "charSpecRelationship": [
+            ], 
+            "@type": "Characteristic", 
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/Characteristic.schema.json"
+        },
+        {
+            "name": "serialNumber", 
+            "id": "4441",
+            "valueType": "string",
+            "value": "9753-1741-2321A",
+            "charSpecRelationship": [
+            ], 
+            "@type": "Characteristic", 
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/Characteristic.schema.json"
+        },
+        {
+            "name": "softwareVersion", 
+            "id": "4447",
+            "valueType": "string",
+            "value": "version 12.1",
+            "charSpecRelationship": [
+            ], 
+            "@type": "Characteristic", 
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/Characteristic.schema.json"
+        }
+    ], 
+    "relatedParty": [
+        {
+            "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/individual/3023", 
+            "id": "3023", 
+            "name": "Gregory Peck", 
+            "role": "Customer",
+            "@referredType": "PartyRole",
+            "@type": "RelatedParty",
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/EngagedParty/RelatedParty.schema.json"
+        },
+        {
+            "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/organization/3023", 
+            "id": "3023", 
+            "name": "ABC Security Sensor Hub Supplier ", 
+            "role": "Supplier",
+            "@referredType": "PartyRole",
+            "@type": "RelatedParty",
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/EngagedParty/RelatedParty.schema.json"
+        },
+        {
+            "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/organization/3023", 
+            "id": "3023", 
+            "name": "XYZ Security Monitoring Co. ", 
+            "role": "Provider",
+            "@referredType": "PartyRole",
+            "@type": "RelatedParty",
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/EngagedParty/RelatedParty.schema.json"
+        }
+    ],
+    "entitySpecification": {
+                "id": "6599", 
+                "href": "https://mycsp.com:8080/tmf-api/entityCatalogManagement/v4/entitySpecification/6599", 
+                "name": "IoT Security Device Specification",
+                "@referredType": "IoTDeviceSpecification",
+                "@type": "EntitySpecificationRef",
+                "@baseType": "",
+                "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntitySpecificationRef.schema.json"
+            },
+    "entityRelationship": [
+        {
+            "relationshipType": "aggregates", 
+            "role": "hub",
+            "entity": {
+                "id": "8311", 
+                "href": "https://mycsp.com:8080/tmf-api/entityInventory/v4/entity/8887", 
+                "name": "Entrance Door Sensor",
+                "@referredType": "IoTDevice",
+                "@type": "EntityRef",
+                "@baseType": "",
+                "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntityRef.schema.json"
+            },
+            "validFor": {
+                "startDateTime": "2021-03-20T00:00Z", 
+                "endDateTime": "2023-12-31T11:59:59Z"
+            },
+            "associationSpec": {
+            },
+            "@type": "EntityRelationship",
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntityRelationship.schema.json"
+        },
+        {
+            "relationshipType": "aggregates", 
+            "role": "hub",
+            "entity": {
+                "id": "8317", 
+                "href": "https://mycsp.com:8080/tmf-api/entityInventory/v4/entity/8819", 
+                "name": "MotionSensor",
+                "@referredType": "IoTDevice",
+                "@type": "EntityRef",
+                "@baseType": "",
+                "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntityRef.schema.json"
+            },
+            "validFor": {
+                "startDateTime": "2021-03-20T00:00Z", 
+                "endDateTime": "2023-12-31T11:59:59Z"
+            },
+            "associationSpec": {
+            },
+            "@type": "EntityRelationship",
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntityRelationship.schema.json"
+        },
+        {
+            "relationshipType": "aggregates", 
+            "role": "hub",
+            "entity": {
+                "id": "8329", 
+                "href": "https://mycsp.com:8080/tmf-api/entityInventory/v4/entity/8821", 
+                "name": "Glass Break Sensor",
+                "@referredType": "IoTDevice",
+                "@type": "EntityRef",
+                "@baseType": "",
+                "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntityRef.schema.json"
+            },
+            "validFor": {
+                "startDateTime": "2021-03-20T00:00Z", 
+                "endDateTime": "2023-12-31T11:59:59Z"
+            },
+            "associationSpec": {
+            },
+            "@type": "EntityRelationship",
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntityRelationship.schema.json"
+        },
+        {
+            "relationshipType": "aggregates", 
+            "role": "hub",
+            "entity": {
+                "id": "8831", 
+                "href": "https://mycsp.com:8080/tmf-api/entityInventory/v4/entity/8831", 
+                "name": "HD Camera",
+                "@referredType": "IoTDevice",
+                "@type": "EntityRef",
+                "@baseType": "",
+                "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntityRef.schema.json"
+            },
+            "validFor": {
+                "startDateTime": "2021-03-20T00:00Z", 
+                "endDateTime": "2023-12-31T11:59:59Z"
+            },
+            "associationSpec": {
+            },
+            "@type": "EntityRelationship",
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntityRelationship.schema.json"
+        }
+        
+    ],
+    "@type": "IoTDevice", 
+    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/IoT/IoTDevice.schema.json", 
+    "@baseType": "ManagedEntity"
+}

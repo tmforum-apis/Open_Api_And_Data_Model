@@ -2353,7 +2353,7 @@
                 },
                 "conformanceTargetExact": {
                     "type": "string",
-                    "description": "To cater for values that are not numerical test metrics (e.g. a DSL line can be Synchronised or Unsynchronised. If the latter, the test should result in a rule violation). The allowed value can contain a REGEX string."
+                    "description": "To cater for values that are not numerical test metrics (e.g. a DSL line can be Synchronised or Unsynchronised. If the latter, the test should result in a rule violation). The allowed value can contain a REGEX expression."
                 },
                 "conformanceTargetLower": {
                     "type": "string",
@@ -2639,8 +2639,12 @@
             "description": "A service test is an entity that exists for a controlled test invocation on a service. The service \ntest is executed according to a schedule and contains service test configuration parameters that are to be \napplied at execution time, and service test measures that result.\nSkipped properties: id,href",
             "required": [
                 "name",
+<<<<<<< HEAD
+                "relatedService"
+=======
                 "relatedService",
                 "testSpecification"
+>>>>>>> parent of e13b91f9... conformance updates
             ],
             "properties": {
                 "description": {
@@ -2967,8 +2971,7 @@
             "type": "object",
             "description": "The service test specification describes the service test in terms of parameters to be configured and \nmeasures to be taken.\nSkipped properties: id,href",
             "required": [
-                "name",
-                "relatedServiceSpecification"
+                "name"
             ],
             "properties": {
                 "description": {
@@ -3029,7 +3032,6 @@
                     "items": {
                         "$ref": "#/definitions/ServiceSpecificationRef"
                     },
-                    "minItems": 1,
                     "description": "The related service specification may relate to more than one service specification."
                 },
                 "serviceTestSpecRelationship": {

@@ -619,23 +619,12 @@
                 },
                 "href": {
                     "type": "string",
-                    "description": "Hyperlink reference"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
                     "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "Hyperlink reference"
                 }
             }
         },
+        "Any": {},
         "Attachment": {
             "type": "object",
             "description": "Complements the description of an element (for instance a product) through video, pictures...",
@@ -699,7 +688,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -730,18 +719,15 @@
                     "description": "Link to the attachment media/content"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -807,18 +793,15 @@
                     "description": "The period of time for which the attachment is valid"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -828,15 +811,26 @@
                 }
             }
         },
-        "Document": {
+        "CategoryRef": {
             "type": "object",
-            "description": "Document is a tangible output from an activity",
+            "description": "The category for grouping recommendations",
             "properties": {
-                "binaryAttachment": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/AttachmentRefOrValue"
-                    }
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "version": {
+                    "type": "string",
+                    "description": "Category version"
                 },
                 "@baseType": {
                     "type": "string",
@@ -849,7 +843,171 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "Characteristic": {
+            "type": "object",
+            "description": "Describes a given characteristic of an object or entity through a name/value pair.",
+            "required": [
+                "name",
+                "value"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the characteristic"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the characteristic"
+                },
+                "valueType": {
+                    "type": "string",
+                    "description": "Data type of the value of the characteristic"
+                },
+                "characteristicRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CharacteristicRelationship"
+                    }
+                },
+                "value": {
+                    "$ref": "#/definitions/Any",
+                    "description": "The value of the characteristic"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "CharacteristicRelationship": {
+            "type": "object",
+            "description": "Another Characteristic that is related to the current Characteristic;",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the characteristic"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "The type of relationship"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "Document": {
+            "type": "object",
+            "description": "Document is a tangible output from an activity",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of an instance of the document. Required to be unique within the document type.  Used in URIs as the identifier for specific instances of a type."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "The URI for the object itself."
+                },
+                "creationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date and time the document was created. A date and time formatted in compliance with the ISO8601 standard must be used."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "free-text description of the document"
+                },
+                "documentType": {
+                    "type": "string",
+                    "description": "Name of the document type"
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date and time the document was last modified. A date and time formatted in compliance with the ISO8601 standard must be used."
+                },
+                "lifecycleState": {
+                    "type": "string",
+                    "description": "The life cycle state of the document."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A string used to give a name to the document"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "A particular form or variety of an artefact that is different from others or from the original. The form represents differences in properties that characterize an artefact, that are not enough to warrant creating a new artefact"
+                },
+                "binaryAttachment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AttachmentRefOrValue"
+                    }
+                },
+                "category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CategoryRef"
+                    }
+                },
+                "characteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    }
+                },
+                "documentRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DocumentRef"
+                    }
+                },
+                "documentSpecification": {
+                    "$ref": "#/definitions/DocumentSpecification"
+                },
+                "relatedEntity": {
+                    "$ref": "#/definitions/RelatedEntity"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    }
                 }
             }
         },
@@ -857,24 +1015,71 @@
             "type": "object",
             "description": "Document is a tangible output from an activity\nSkipped properties: id,href",
             "properties": {
+                "creationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date and time the document was created. A date and time formatted in compliance with the ISO8601 standard must be used."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "free-text description of the document"
+                },
+                "documentType": {
+                    "type": "string",
+                    "description": "Name of the document type"
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date and time the document was last modified. A date and time formatted in compliance with the ISO8601 standard must be used."
+                },
+                "lifecycleState": {
+                    "type": "string",
+                    "description": "The life cycle state of the document."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A string used to give a name to the document"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "A particular form or variety of an artefact that is different from others or from the original. The form represents differences in properties that characterize an artefact, that are not enough to warrant creating a new artefact"
+                },
                 "binaryAttachment": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/AttachmentRefOrValue"
                     }
                 },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
+                "category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CategoryRef"
+                    }
                 },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                "characteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    }
                 },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                "documentRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DocumentRef"
+                    }
+                },
+                "documentSpecification": {
+                    "$ref": "#/definitions/DocumentSpecification"
+                },
+                "relatedEntity": {
+                    "$ref": "#/definitions/RelatedEntity"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    }
                 }
             }
         },
@@ -882,11 +1087,88 @@
             "type": "object",
             "description": "Document is a tangible output from an activity\nSkipped properties: id,href",
             "properties": {
+                "creationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date and time the document was created. A date and time formatted in compliance with the ISO8601 standard must be used."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "free-text description of the document"
+                },
+                "documentType": {
+                    "type": "string",
+                    "description": "Name of the document type"
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date and time the document was last modified. A date and time formatted in compliance with the ISO8601 standard must be used."
+                },
+                "lifecycleState": {
+                    "type": "string",
+                    "description": "The life cycle state of the document."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A string used to give a name to the document"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "A particular form or variety of an artefact that is different from others or from the original. The form represents differences in properties that characterize an artefact, that are not enough to warrant creating a new artefact"
+                },
                 "binaryAttachment": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/AttachmentRefOrValue"
                     }
+                },
+                "category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CategoryRef"
+                    }
+                },
+                "characteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    }
+                },
+                "documentRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DocumentRef"
+                    }
+                },
+                "documentSpecification": {
+                    "$ref": "#/definitions/DocumentSpecification"
+                },
+                "relatedEntity": {
+                    "$ref": "#/definitions/RelatedEntity"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    }
+                }
+            }
+        },
+        "DocumentRef": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the document"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "The URI for the object itself."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
                 },
                 "@baseType": {
                     "type": "string",
@@ -899,7 +1181,68 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "DocumentSpecification": {
+            "type": "object",
+            "description": "A document specification reference",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Indentifier of the DocumentSpecification"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "The URI for the object itself."
+                },
+                "URL": {
+                    "type": "string",
+                    "description": "URL of the Document Specification"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "a String. Name of the DocumentSpecification"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "A string, a version of the DocumentSpecification."
+                }
+            }
+        },
+        "Entity": {
+            "type": "object",
+            "description": "Base entity schema for use in TMForum Open-APIs",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -913,6 +1256,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -920,18 +1264,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -949,18 +1290,15 @@
             "description": "Base Extensible schema for use in TMForum Open-APIs",
             "properties": {
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -979,6 +1317,34 @@
                 "units": {
                     "type": "string",
                     "description": "Unit"
+                }
+            }
+        },
+        "RelatedEntity": {
+            "type": "object",
+            "description": "A reference to an entity, where the type of the entity is not known in advance.",
+            "required": [
+                "@referredType",
+                "id",
+                "role"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "role": {
+                    "type": "string",
+                    "description": "The role of an entity."
                 },
                 "@baseType": {
                     "type": "string",
@@ -991,7 +1357,55 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            }
+        },
+        "RelatedParty": {
+            "type": "object",
+            "description": "Related Entity reference. A related party defines party or party role linked to a specific entity.",
+            "required": [
+                "@referredType",
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "role": {
+                    "type": "string",
+                    "description": "Role played by the related party"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
                 }
             }
         },
@@ -1009,20 +1423,7 @@
                     "example": "1985-04-12T23:20:50.52Z",
                     "type": "string",
                     "format": "date-time",
-                    "description": "Start of the time period, using IETC-RFC-3339 format. If you define a start, you must also define an end"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "Start of the time period, using IETC-RFC-3339 format"
                 }
             }
         },

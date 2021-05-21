@@ -33,12 +33,7 @@
             },
             "manageableAsset": {
                 "id": "12k-47",
-                "@type": "ManageableAsset",
-                "@baseType": "EntityRef",
-                "@referredType": "Product",
-                "product": {
-                    "id": "UJF6-B61654"
-                }
+                "@referredType": "Product"
             }
         }
     ]

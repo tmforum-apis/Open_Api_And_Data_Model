@@ -1,0 +1,4063 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Service Qualification Management",
+    "description": "## TMF API Reference: TMF645 - Service Qualification\n\n Version 4.0 \n\n Service Qualification API is one of Pre-Ordering Management API Family. Service Qualification API goal is to provide service technical eligibility. Since v4 the API is split in 2 resources to distinguish specific service qualification request to be performed on a described configurated service (or a list of configured services) from a retrieval of services eligible for a given context. The API allows to manage synchronous as asynchronous eligibility response (eligibility provided in POST response or later with an id and state provided ).  \n\n### CheckServiceQualification Resource \n\n This resource is use to check a configured service eligibility (or a list of service). A qualification result is provided in response. Requested could ask for unavailability reason and/or for alternate proposal \n\n### TMF645 performs the following operations on the check service qualification resource :\n- Retrieve a checkServiceQualification or a collection of checkServiceQualification depending on filter criteria\n- Partial update of a checkServiceQualification \n- Create a checkServiceQualification (including default values and creation rules)\n- Delete a checkServiceQualification (for administration purposes)\n- Manage notification on checkServiceQualification\n\n### Query Service Qualification resource\n\n Query Service Qualification is used to retrieve a list of service eligible in a given request provided by requester (via searchCriteria).\n\n### TMF645 performs the following operations on a query service qualification resource:\n\n- Retrieval a queryServiceQualification or a list of queryServiceQualification\n- Partial update of a queryServiceQualification\n- Creation of a queryServiceQualification\n- Deletion of a queryServiceQualification\n- Notification on queryServiceQualification\n\n Copyright (c) TM Forum 2019. All Rights Reserved",
+    "version": "4.0.0"
+  },
+  "host": "serverRoot",
+  "basePath": "/tmf-api/serviceQualificationManagement/v4",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json;charset=utf-8"
+  ],
+  "produces": [
+    "application/json;charset=utf-8"
+  ],
+  "tags": [
+    {
+      "name": "checkServiceQualification"
+    },
+    {
+      "name": "queryServiceQualification"
+    },
+    {
+      "name": "notification listeners (client side)"
+    },
+    {
+      "name": "events subscription"
+    }
+  ],
+  "paths": {
+    "/checkServiceQualification": {
+      "get": {
+        "operationId": "listCheckServiceQualification",
+        "summary": "List or find CheckServiceQualification objects",
+        "description": "This operation list or find CheckServiceQualification entities",
+        "tags": [
+          "checkServiceQualification"
+        ],
+        "parameters": [
+          {
+            "name": "fields",
+            "description": "Comma-separated properties to be provided in response",
+            "required": false,
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "offset",
+            "description": "Requested index for start of resources to be provided in response",
+            "required": false,
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "limit",
+            "description": "Requested number of resources to be provided in response",
+            "required": false,
+            "in": "query",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {
+              "X-Result-Count": {
+                "description": "Actual number of items returned in the response body",
+                "type": "integer"
+              },
+              "X-Total-Count": {
+                "description": "Total number of items matching criteria",
+                "type": "integer"
+              }
+            },
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CheckServiceQualification"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createCheckServiceQualification",
+        "summary": "Creates a CheckServiceQualification",
+        "description": "This operation creates a CheckServiceQualification entity.",
+        "tags": [
+          "checkServiceQualification"
+        ],
+        "parameters": [
+          {
+            "name": "checkServiceQualification",
+            "description": "The CheckServiceQualification to be created",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CheckServiceQualification_Create"
+            },
+            "in": "body"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CheckServiceQualification"
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/CheckServiceQualification"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/checkServiceQualification/{id}": {
+      "get": {
+        "operationId": "retrieveCheckServiceQualification",
+        "summary": "Retrieves a CheckServiceQualification by ID",
+        "description": "This operation retrieves a CheckServiceQualification entity. Attribute selection is enabled for all first level attributes.",
+        "tags": [
+          "checkServiceQualification"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Identifier of the CheckServiceQualification",
+            "required": true,
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name": "fields",
+            "description": "Comma-separated properties to provide in response",
+            "required": false,
+            "type": "string",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CheckServiceQualification"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "patchCheckServiceQualification",
+        "summary": "Updates partially a CheckServiceQualification",
+        "description": "This operation updates partially a CheckServiceQualification entity.",
+        "tags": [
+          "checkServiceQualification"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Identifier of the CheckServiceQualification",
+            "required": true,
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name": "checkServiceQualification",
+            "description": "The CheckServiceQualification to be updated",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CheckServiceQualification_Update"
+            },
+            "in": "body"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "schema": {
+              "$ref": "#/definitions/CheckServiceQualification"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteCheckServiceQualification",
+        "summary": "Deletes a CheckServiceQualification",
+        "description": "This operation deletes a CheckServiceQualification entity.",
+        "tags": [
+          "checkServiceQualification"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Identifier of the CheckServiceQualification",
+            "required": true,
+            "type": "string",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/queryServiceQualification": {
+      "get": {
+        "operationId": "listQueryServiceQualification",
+        "summary": "List or find QueryServiceQualification objects",
+        "description": "This operation list or find QueryServiceQualification entities",
+        "tags": [
+          "queryServiceQualification"
+        ],
+        "parameters": [
+          {
+            "name": "fields",
+            "description": "Comma-separated properties to be provided in response",
+            "required": false,
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "offset",
+            "description": "Requested index for start of resources to be provided in response",
+            "required": false,
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "name": "limit",
+            "description": "Requested number of resources to be provided in response",
+            "required": false,
+            "in": "query",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {
+              "X-Result-Count": {
+                "description": "Actual number of items returned in the response body",
+                "type": "integer"
+              },
+              "X-Total-Count": {
+                "description": "Total number of items matching criteria",
+                "type": "integer"
+              }
+            },
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/QueryServiceQualification"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createQueryServiceQualification",
+        "summary": "Creates a QueryServiceQualification",
+        "description": "This operation creates a QueryServiceQualification entity.",
+        "tags": [
+          "queryServiceQualification"
+        ],
+        "parameters": [
+          {
+            "name": "queryServiceQualification",
+            "description": "The QueryServiceQualification to be created",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/QueryServiceQualification_Create"
+            },
+            "in": "body"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/QueryServiceQualification"
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/QueryServiceQualification"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/queryServiceQualification/{id}": {
+      "get": {
+        "operationId": "retrieveQueryServiceQualification",
+        "summary": "Retrieves a QueryServiceQualification by ID",
+        "description": "This operation retrieves a QueryServiceQualification entity. Attribute selection is enabled for all first level attributes.",
+        "tags": [
+          "queryServiceQualification"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Identifier of the QueryServiceQualification",
+            "required": true,
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name": "fields",
+            "description": "Comma-separated properties to provide in response",
+            "required": false,
+            "type": "string",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/QueryServiceQualification"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "patchQueryServiceQualification",
+        "summary": "Updates partially a QueryServiceQualification",
+        "description": "This operation updates partially a QueryServiceQualification entity.",
+        "tags": [
+          "queryServiceQualification"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Identifier of the QueryServiceQualification",
+            "required": true,
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name": "queryServiceQualification",
+            "description": "The QueryServiceQualification to be updated",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/QueryServiceQualification_Update"
+            },
+            "in": "body"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "schema": {
+              "$ref": "#/definitions/QueryServiceQualification"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteQueryServiceQualification",
+        "summary": "Deletes a QueryServiceQualification",
+        "description": "This operation deletes a QueryServiceQualification entity.",
+        "tags": [
+          "queryServiceQualification"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Identifier of the QueryServiceQualification",
+            "required": true,
+            "type": "string",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/hub": {
+      "post": {
+        "operationId": "registerListener",
+        "summary": "Register a listener",
+        "description": "Sets the communication endpoint address the service instance must use to deliver information about its health state, execution state, failures and metrics.",
+        "tags": [
+          "events subscription"
+        ],
+        "parameters": [
+          {
+            "name": "data",
+            "schema": {
+              "$ref": "#/definitions/EventSubscriptionInput"
+            },
+            "required": true,
+            "in": "body",
+            "description": "Data containing the callback endpoint to deliver the information"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Subscribed",
+            "schema": {
+              "$ref": "#/definitions/EventSubscription"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/hub/{id}": {
+      "delete": {
+        "operationId": "unregisterListener",
+        "summary": "Unregister a listener",
+        "description": "Resets the communication endpoint address the service instance must use to deliver information about its health state, execution state, failures and metrics.",
+        "tags": [
+          "events subscription"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "in": "path",
+            "description": "The id of the registered listener"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Deleted"
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/listener/checkServiceQualificationCreateEvent": {
+      "post": {
+        "operationId": "listenToCheckServiceQualificationCreateEvent",
+        "summary": "Client listener for entity CheckServiceQualificationCreateEvent",
+        "description": "Example of a client listener for receiving the notification CheckServiceQualificationCreateEvent",
+        "tags": [
+          "notification listeners (client side)"
+        ],
+        "parameters": [
+          {
+            "name": "data",
+            "required": true,
+            "in": "body",
+            "description": "The event data",
+            "schema": {
+              "$ref": "#/definitions/CheckServiceQualificationCreateEvent"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Notified",
+            "schema": {
+              "$ref": "#/definitions/EventSubscription"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/listener/checkServiceQualificationAttributeValueChangeEvent": {
+      "post": {
+        "operationId": "listenToCheckServiceQualificationAttributeValueChangeEvent",
+        "summary": "Client listener for entity CheckServiceQualificationAttributeValueChangeEvent",
+        "description": "Example of a client listener for receiving the notification CheckServiceQualificationAttributeValueChangeEvent",
+        "tags": [
+          "notification listeners (client side)"
+        ],
+        "parameters": [
+          {
+            "name": "data",
+            "required": true,
+            "in": "body",
+            "description": "The event data",
+            "schema": {
+              "$ref": "#/definitions/CheckServiceQualificationAttributeValueChangeEvent"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Notified",
+            "schema": {
+              "$ref": "#/definitions/EventSubscription"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/listener/checkServiceQualificationStateChangeEvent": {
+      "post": {
+        "operationId": "listenToCheckServiceQualificationStateChangeEvent",
+        "summary": "Client listener for entity CheckServiceQualificationStateChangeEvent",
+        "description": "Example of a client listener for receiving the notification CheckServiceQualificationStateChangeEvent",
+        "tags": [
+          "notification listeners (client side)"
+        ],
+        "parameters": [
+          {
+            "name": "data",
+            "required": true,
+            "in": "body",
+            "description": "The event data",
+            "schema": {
+              "$ref": "#/definitions/CheckServiceQualificationStateChangeEvent"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Notified",
+            "schema": {
+              "$ref": "#/definitions/EventSubscription"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/listener/checkServiceQualificationDeleteEvent": {
+      "post": {
+        "operationId": "listenToCheckServiceQualificationDeleteEvent",
+        "summary": "Client listener for entity CheckServiceQualificationDeleteEvent",
+        "description": "Example of a client listener for receiving the notification CheckServiceQualificationDeleteEvent",
+        "tags": [
+          "notification listeners (client side)"
+        ],
+        "parameters": [
+          {
+            "name": "data",
+            "required": true,
+            "in": "body",
+            "description": "The event data",
+            "schema": {
+              "$ref": "#/definitions/CheckServiceQualificationDeleteEvent"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Notified",
+            "schema": {
+              "$ref": "#/definitions/EventSubscription"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/listener/checkServiceQualificationInformationRequiredEvent": {
+      "post": {
+        "operationId": "listenToCheckServiceQualificationInformationRequiredEvent",
+        "summary": "Client listener for entity CheckServiceQualificationInformationRequiredEvent",
+        "description": "Example of a client listener for receiving the notification CheckServiceQualificationInformationRequiredEvent",
+        "tags": [
+          "notification listeners (client side)"
+        ],
+        "parameters": [
+          {
+            "name": "data",
+            "required": true,
+            "in": "body",
+            "description": "The event data",
+            "schema": {
+              "$ref": "#/definitions/CheckServiceQualificationInformationRequiredEvent"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Notified",
+            "schema": {
+              "$ref": "#/definitions/EventSubscription"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/listener/queryServiceQualificationCreateEvent": {
+      "post": {
+        "operationId": "listenToQueryServiceQualificationCreateEvent",
+        "summary": "Client listener for entity QueryServiceQualificationCreateEvent",
+        "description": "Example of a client listener for receiving the notification QueryServiceQualificationCreateEvent",
+        "tags": [
+          "notification listeners (client side)"
+        ],
+        "parameters": [
+          {
+            "name": "data",
+            "required": true,
+            "in": "body",
+            "description": "The event data",
+            "schema": {
+              "$ref": "#/definitions/QueryServiceQualificationCreateEvent"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Notified",
+            "schema": {
+              "$ref": "#/definitions/EventSubscription"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/listener/queryServiceQualificationStateChangeEvent": {
+      "post": {
+        "operationId": "listenToQueryServiceQualificationStateChangeEvent",
+        "summary": "Client listener for entity QueryServiceQualificationStateChangeEvent",
+        "description": "Example of a client listener for receiving the notification QueryServiceQualificationStateChangeEvent",
+        "tags": [
+          "notification listeners (client side)"
+        ],
+        "parameters": [
+          {
+            "name": "data",
+            "required": true,
+            "in": "body",
+            "description": "The event data",
+            "schema": {
+              "$ref": "#/definitions/QueryServiceQualificationStateChangeEvent"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Notified",
+            "schema": {
+              "$ref": "#/definitions/EventSubscription"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/listener/queryServiceQualificationDeleteEvent": {
+      "post": {
+        "operationId": "listenToQueryServiceQualificationDeleteEvent",
+        "summary": "Client listener for entity QueryServiceQualificationDeleteEvent",
+        "description": "Example of a client listener for receiving the notification QueryServiceQualificationDeleteEvent",
+        "tags": [
+          "notification listeners (client side)"
+        ],
+        "parameters": [
+          {
+            "name": "data",
+            "required": true,
+            "in": "body",
+            "description": "The event data",
+            "schema": {
+              "$ref": "#/definitions/QueryServiceQualificationDeleteEvent"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Notified",
+            "schema": {
+              "$ref": "#/definitions/EventSubscription"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "405": {
+            "description": "Method Not allowed",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Addressable": {
+      "type": "object",
+      "description": "Base schema for adressable entities",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "unique identifier"
+        },
+        "href": {
+          "type": "string",
+          "format": "uri",
+          "description": "Hyperlink reference"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "AlternateServiceProposal": {
+      "type": "object",
+      "description": "Alternate service proposal is used when the requested service is not available with characteristic and date asked for. An alternate proposal could be a distinct serviceSpecification close to requested one or same as requested but with a different activation date",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identifier of a alternate service proposal"
+        },
+        "alternateServiceAvailabilityDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Alternate availability date in case seller is not able to meet requested expected availability date for the service"
+        },
+        "alternateService": {
+          "$ref": "#/definitions/ServiceRefOrValue"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "Any": {},
+    "Characteristic": {
+      "type": "object",
+      "description": "Describes a given characteristic of an object or entity through a name/value pair.",
+      "required": [
+        "name",
+        "value"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the characteristic"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the characteristic"
+        },
+        "valueType": {
+          "type": "string",
+          "description": "Data type of the value of the characteristic"
+        },
+        "characteristicRelationship": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CharacteristicRelationship"
+          }
+        },
+        "value": {
+          "$ref": "#/definitions/Any",
+          "description": "The value of the characteristic"
+        },
+        "@baseType": {
+          "example": "ResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "example": "LogicalResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class Extensible name"
+        }
+      }
+    },
+    "CharacteristicRelationship": {
+      "type": "object",
+      "description": "Another Characteristic that is related to the current Characteristic;",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the characteristic"
+        },
+        "relationshipType": {
+          "type": "string",
+          "description": "The type of relationship"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "CheckServiceQualification": {
+      "type": "object",
+      "description": "CheckServiceQualification is used to perform a technical eligibility on service configuration(s). It allows to retrieve services that are technically available in the context of the interaction (place, party, service characteristics, ...).",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the serviceQualification resource"
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink to access the serviceQualification"
+        },
+        "checkServiceQualificationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the serviceQualification was submitted"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the serviceQualification"
+        },
+        "effectiveQualificationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Effective date to serviceQualification completion"
+        },
+        "estimatedResponseDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the requester expect to provide an answer for the qualification request."
+        },
+        "expectedQualificationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "A date (DateTime). Deadline date when the requester expected a qualification answer."
+        },
+        "expirationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the qualification response expires"
+        },
+        "externalId": {
+          "type": "string",
+          "description": "Identifier provided by the requester"
+        },
+        "instantSyncQualification": {
+          "type": "boolean",
+          "description": "An indicator which when the value is \"true\" means that requester expects to get qualifcation result immediately in the response. If the indicator is true then the response code of 200 indicates the operation is successful otherwise a task is created with a response 201."
+        },
+        "provideAlternative": {
+          "default": false,
+          "type": "boolean",
+          "description": "When the value is TRUE means that alternative solutions should be provided"
+        },
+        "provideUnavailabilityReason": {
+          "default": false,
+          "type": "boolean",
+          "description": "When the value is TRUE means that unavailability reason are expected for non available service."
+        },
+        "qualificationResult": {
+          "type": "string",
+          "description": "Qualification result for this serviceQualification. It could be:  qualified (all qualification item are qualified), alternate (At least one item alternate and no item with  unqualified), unqualified (At least one item unqualified)"
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedParty"
+          },
+          "description": "A list of related party references, defines party or party role linked to this request."
+        },
+        "serviceQualificationItem": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CheckServiceQualificationItem"
+          },
+          "description": "A list of service qualification items."
+        },
+        "state": {
+          "$ref": "#/definitions/TaskStateType",
+          "description": "State of the serviceQualification (acknowledged, inProgress, terminatedWithError, done)"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "CheckServiceQualification_Create": {
+      "type": "object",
+      "description": "CheckServiceQualification is used to perform a technical eligibility on service configuration(s). It allows to retrieve services that are technically available in the context of the interaction (place, party, service characteristics, ...).\nSkipped properties: id,href,state,effectiveQualificationDate,qualificationResult,expirationDate,checkServiceQualificationDate,estimatedResponseDate,serviceQualificationItem.alternateServiceProposal,serviceQualificationItem.state,serviceQualificationItem.qualificationResult",
+      "required": [
+        "serviceQualificationItem"
+      ],
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of the serviceQualification"
+        },
+        "expectedQualificationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "A date (DateTime). Deadline date when the requester expected a qualification answer."
+        },
+        "externalId": {
+          "type": "string",
+          "description": "Identifier provided by the requester"
+        },
+        "instantSyncQualification": {
+          "type": "boolean",
+          "description": "An indicator which when the value is \"true\" means that requester expects to get qualifcation result immediately in the response. If the indicator is true then the response code of 200 indicates the operation is successful otherwise a task is created with a response 201."
+        },
+        "provideAlternative": {
+          "default": false,
+          "type": "boolean",
+          "description": "When the value is TRUE means that alternative solutions should be provided"
+        },
+        "provideUnavailabilityReason": {
+          "default": false,
+          "type": "boolean",
+          "description": "When the value is TRUE means that unavailability reason are expected for non available service."
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedParty"
+          },
+          "description": "A list of related party references, defines party or party role linked to this request."
+        },
+        "serviceQualificationItem": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CheckServiceQualificationItem"
+          },
+          "minItems": 1,
+          "description": "A list of service qualification items."
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "CheckServiceQualification_Update": {
+      "type": "object",
+      "description": "CheckServiceQualification is used to perform a technical eligibility on service configuration(s). It allows to retrieve services that are technically available in the context of the interaction (place, party, service characteristics, ...).\nSkipped properties: id,href,checkServiceQualificationDate",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of the serviceQualification"
+        },
+        "effectiveQualificationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Effective date to serviceQualification completion"
+        },
+        "estimatedResponseDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the requester expect to provide an answer for the qualification request."
+        },
+        "expectedQualificationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "A date (DateTime). Deadline date when the requester expected a qualification answer."
+        },
+        "expirationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the qualification response expires"
+        },
+        "externalId": {
+          "type": "string",
+          "description": "Identifier provided by the requester"
+        },
+        "instantSyncQualification": {
+          "type": "boolean",
+          "description": "An indicator which when the value is \"true\" means that requester expects to get qualifcation result immediately in the response. If the indicator is true then the response code of 200 indicates the operation is successful otherwise a task is created with a response 201."
+        },
+        "provideAlternative": {
+          "default": false,
+          "type": "boolean",
+          "description": "When the value is TRUE means that alternative solutions should be provided"
+        },
+        "provideUnavailabilityReason": {
+          "default": false,
+          "type": "boolean",
+          "description": "When the value is TRUE means that unavailability reason are expected for non available service."
+        },
+        "qualificationResult": {
+          "type": "string",
+          "description": "Qualification result for this serviceQualification. It could be:  qualified (all qualification item are qualified), alternate (At least one item alternate and no item with  unqualified), unqualified (At least one item unqualified)"
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedParty"
+          },
+          "description": "A list of related party references, defines party or party role linked to this request."
+        },
+        "serviceQualificationItem": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CheckServiceQualificationItem"
+          },
+          "description": "A list of service qualification items."
+        },
+        "state": {
+          "$ref": "#/definitions/TaskStateType",
+          "description": "State of the serviceQualification (acknowledged, inProgress, terminatedWithError, done)"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "CheckServiceQualificationItem": {
+      "type": "object",
+      "description": "A ServiceQualificationItem relates to a specific service being checked in a qualification operation.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Id of the Service Qualification Item"
+        },
+        "expectedActivationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date when the service is expected to be activated"
+        },
+        "expectedServiceAvailabilityDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the requester looks for service availability"
+        },
+        "expirationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the qualification item response expires"
+        },
+        "qualificationResult": {
+          "type": "string",
+          "description": "Qualification result for serviceQualification item. It could be: - qualified (request service are available), - unqualified (requested not available and not alternate available), - alternate (requested not available but proposal available)"
+        },
+        "state": {
+          "type": "string",
+          "description": "State of the serviceQualification item (acknowledged, inProgress, terminatedWithError, done)"
+        },
+        "alternateServiceProposal": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AlternateServiceProposal"
+          },
+          "description": "Alternate service proposal is used when the requested service is not available with characteristic and date asked for. An alternate proposal could be a distinct service Spec close to requested one or same as requested but with a different availability date."
+        },
+        "category": {
+          "$ref": "#/definitions/ServiceCategoryRef",
+          "description": "The category resource is used to group product offerings, service and resource candidates in logical containers. Categories can contain other categories and/or product offerings, resource or service candidates."
+        },
+        "eligibilityUnavailabilityReason": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServiceEligibilityUnavailabilityReason"
+          },
+          "description": "A list of eligibility unavailability reasons (EligibilityUnavailabilityReason [*]). Reason for eligibility result if the serviceQualification result is no (meaning the service is not available)."
+        },
+        "qualificationItemRelationship": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServiceQualificationItemRelationship"
+          },
+          "description": "A list of qualification item relationships used to describe relationship between serviceQualification item from the same serviceQualification."
+        },
+        "qualificationRelationship": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServiceQualificationRelationship"
+          },
+          "description": "Structure used to describe relationship between serviceQualification item from the same serviceQualification."
+        },
+        "service": {
+          "$ref": "#/definitions/ServiceRefOrValue",
+          "description": "Configure the service characteristics (only configurable characteristics and necessary only if a non default value is selected) and/or identify the service that needs to be modified/deleted."
+        },
+        "terminationError": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TerminationError"
+          },
+          "description": "If qualificationItem has not been done properly this lists the error(s) that caused termination of the qualification."
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "ConstraintRef": {
+      "type": "object",
+      "description": "Constraint reference. The Constraint resource represents a policy/rule applied to an entity or entity spec.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "reference id to the target constraint"
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink reference to the target constraint"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name given to the constraint"
+        },
+        "version": {
+          "type": "string",
+          "description": "constraint version"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The (class) type of the referred constraint"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "EntityRef": {
+      "type": "object",
+      "description": "Entity reference schema to be use for all entityRef class.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "unique identifier"
+        },
+        "href": {
+          "type": "string",
+          "format": "uri",
+          "description": "Hyperlink reference"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the related entity."
+        },
+        "@baseType": {
+          "example": "ResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "example": "LogicalResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class Extensible name"
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "EntityValue": {
+      "type": "object",
+      "description": "Base entity value  schema for use in TMForum Open-APIs",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of a related entity."
+        },
+        "href": {
+          "type": "string",
+          "description": "Reference of the related entity."
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "Extensible": {
+      "type": "object",
+      "description": "Base Extensible schema for use in TMForum Open-APIs",
+      "properties": {
+        "@baseType": {
+          "example": "ResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "example": "LogicalResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class Extensible name"
+        }
+      }
+    },
+    "Feature": {
+      "type": "object",
+      "description": "Configuration feature.",
+      "required": [
+        "featureCharacteristic",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the feature."
+        },
+        "isBundle": {
+          "type": "boolean",
+          "description": "True if this is a feature group. Default is false."
+        },
+        "isEnabled": {
+          "type": "boolean",
+          "description": "True if this feature is enabled. Default is true."
+        },
+        "name": {
+          "type": "string",
+          "description": "This is the name for the feature."
+        },
+        "constraint": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ConstraintRef"
+          },
+          "description": "This is a list of feature constraints."
+        },
+        "featureCharacteristic": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Characteristic"
+          },
+          "minItems": 1,
+          "description": "This is a list of Characteristics for a particular feature."
+        },
+        "featureRelationship": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FeatureRelationship"
+          }
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "FeatureRelationship": {
+      "type": "object",
+      "description": "Configuration feature",
+      "required": [
+        "name",
+        "relationshipType"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the target feature."
+        },
+        "name": {
+          "type": "string",
+          "description": "This is the name of the target feature."
+        },
+        "relationshipType": {
+          "type": "string",
+          "description": "This is the type of the feature relationship."
+        },
+        "validFor": {
+          "$ref": "#/definitions/TimePeriod",
+          "description": "The period for which this feature relationship is valid."
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "Note": {
+      "type": "object",
+      "description": "Extra information about a given entity",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identifier of the note within its containing entity (may or may not be globally unique, depending on provider implementation)"
+        },
+        "author": {
+          "type": "string",
+          "description": "Author of the note"
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date of the note"
+        },
+        "text": {
+          "type": "string",
+          "description": "Text of the note"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "OrderItemActionType": {
+      "type": "string",
+      "description": "action to be performed on the product",
+      "enum": [
+        "add",
+        "modify",
+        "delete",
+        "noChange"
+      ]
+    },
+    "Place": {
+      "type": "object",
+      "description": "Place reference. Place defines the places where the products are sold or delivered.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the place"
+        },
+        "href": {
+          "type": "string",
+          "description": "Unique reference of the place"
+        },
+        "name": {
+          "type": "string",
+          "description": "A user-friendly name for the place, such as [Paris Store], [London Store], [Main Home]"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "PlaceRef": {
+      "type": "object",
+      "description": "Place reference. PlaceRef defines the placeRefs where the products are sold or delivered.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "unique identifier"
+        },
+        "href": {
+          "type": "string",
+          "format": "uri",
+          "description": "Hyperlink reference"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the related entity."
+        },
+        "@baseType": {
+          "example": "ResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "example": "LogicalResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class Extensible name"
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "QueryServiceQualification": {
+      "type": "object",
+      "description": "QueryServiceQualification is used to retrieve a list of services that are technically available in the context of the interaction (place, party, service characteristics, ...).",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the serviceQualification resource"
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink to access the serviceQualification"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the serviceQualification"
+        },
+        "effectiveQualificationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Effective date to serviceQualification completion"
+        },
+        "estimatedResponseDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the requester expect to provide an answer for the qualification request."
+        },
+        "expectedQualificationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "A date (DateTime). Deadline date when the requester expected a qualification answer."
+        },
+        "expirationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the qualification response expires"
+        },
+        "externalId": {
+          "type": "string",
+          "description": "Identifier provided by the requester"
+        },
+        "instantSyncQualification": {
+          "type": "boolean",
+          "description": "An indicator which when the value is \"true\" means that requester expects to get qualifcation result immediately in the response. If the indicator is true then the response code of 200 indicates the operation is successful otherwise a task is created with a response 201."
+        },
+        "queryServiceQualificationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the serviceQualification was submitted"
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedParty"
+          },
+          "description": "A list of related party references, defines party or party role linked to this request."
+        },
+        "searchCriteria": {
+          "$ref": "#/definitions/ServiceQualificationItem",
+          "description": "Search structure to retrieve eligible service specification"
+        },
+        "serviceQualificationItem": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServiceQualificationItem"
+          },
+          "description": "A list of service qualification items."
+        },
+        "state": {
+          "$ref": "#/definitions/TaskStateType",
+          "description": "State of the serviceQualification (acknowledged, inProgress, terminatedWithError, done)"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "QueryServiceQualification_Create": {
+      "type": "object",
+      "description": "QueryServiceQualification is used to retrieve a list of services that are technically available in the context of the interaction (place, party, service characteristics, ...).\nSkipped properties: id,href,serviceQualificationItem,state,effectiveQualificationDate,expirationDate,estimatedResponseDate,queryServiceQualificationDate",
+      "required": [
+        "searchCriteria"
+      ],
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of the serviceQualification"
+        },
+        "expectedQualificationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "A date (DateTime). Deadline date when the requester expected a qualification answer."
+        },
+        "externalId": {
+          "type": "string",
+          "description": "Identifier provided by the requester"
+        },
+        "instantSyncQualification": {
+          "type": "boolean",
+          "description": "An indicator which when the value is \"true\" means that requester expects to get qualifcation result immediately in the response. If the indicator is true then the response code of 200 indicates the operation is successful otherwise a task is created with a response 201."
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedParty"
+          },
+          "description": "A list of related party references, defines party or party role linked to this request."
+        },
+        "searchCriteria": {
+          "$ref": "#/definitions/ServiceQualificationItem",
+          "description": "Search structure to retrieve eligible service specification"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "QueryServiceQualification_Update": {
+      "type": "object",
+      "description": "QueryServiceQualification is used to retrieve a list of services that are technically available in the context of the interaction (place, party, service characteristics, ...).\nSkipped properties: id,href,queryServiceQualificationDate",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of the serviceQualification"
+        },
+        "effectiveQualificationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Effective date to serviceQualification completion"
+        },
+        "estimatedResponseDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the requester expect to provide an answer for the qualification request."
+        },
+        "expectedQualificationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "A date (DateTime). Deadline date when the requester expected a qualification answer."
+        },
+        "expirationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the qualification response expires"
+        },
+        "externalId": {
+          "type": "string",
+          "description": "Identifier provided by the requester"
+        },
+        "instantSyncQualification": {
+          "type": "boolean",
+          "description": "An indicator which when the value is \"true\" means that requester expects to get qualifcation result immediately in the response. If the indicator is true then the response code of 200 indicates the operation is successful otherwise a task is created with a response 201."
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedParty"
+          },
+          "description": "A list of related party references, defines party or party role linked to this request."
+        },
+        "searchCriteria": {
+          "$ref": "#/definitions/ServiceQualificationItem",
+          "description": "Search structure to retrieve eligible service specification"
+        },
+        "serviceQualificationItem": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServiceQualificationItem"
+          },
+          "description": "A list of service qualification items."
+        },
+        "state": {
+          "$ref": "#/definitions/TaskStateType",
+          "description": "State of the serviceQualification (acknowledged, inProgress, terminatedWithError, done)"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "RelatedEntityRefOrValue": {
+      "type": "object",
+      "description": "A reference to an entity, where the type of the entity is not known in advance. A related entity defines a entity described by reference or by value linked to a specific entity. The polymorphic attributes @type, @schemaLocation & @referredType are related to the Entity and not the RelatedEntityRefOrValue class itself",
+      "required": [
+        "role"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of a related entity."
+        },
+        "href": {
+          "type": "string",
+          "description": "Reference of the related entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the related entity."
+        },
+        "role": {
+          "type": "string"
+        },
+        "@baseType": {
+          "example": "ResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "example": "LogicalResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class Extensible name"
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
+        }
+      }
+    },
+    "RelatedParty": {
+      "type": "object",
+      "description": "Related Entity reference. A related party defines party or party role linked to a specific entity.",
+      "required": [
+        "@referredType",
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "unique identifier"
+        },
+        "href": {
+          "type": "string",
+          "format": "uri",
+          "description": "Hyperlink reference"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the related entity."
+        },
+        "role": {
+          "type": "string",
+          "description": "Role played by the related party"
+        },
+        "@baseType": {
+          "example": "ResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "example": "LogicalResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class Extensible name"
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
+        }
+      }
+    },
+    "RelatedPlaceRefOrValue": {
+      "type": "object",
+      "description": "Related Entity reference. A related place defines a place described by reference or by value linked to a specific entity. The polymorphic attributes @type, @schemaLocation & @referredType are related to the place entity and not the RelatedPlaceRefOrValue class itself",
+      "required": [
+        "role"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the place"
+        },
+        "href": {
+          "type": "string",
+          "description": "Unique reference of the place"
+        },
+        "name": {
+          "type": "string",
+          "description": "A user-friendly name for the place, such as [Paris Store], [London Store], [Main Home]"
+        },
+        "role": {
+          "type": "string"
+        },
+        "@baseType": {
+          "example": "ResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "example": "LogicalResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class Extensible name"
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
+        }
+      }
+    },
+    "RelatedServiceOrderItem": {
+      "type": "object",
+      "description": "RelatedServiceOrderItem (a ServiceOrder item) .The service order item which triggered service creation/change/termination.",
+      "required": [
+        "itemId",
+        "serviceOrderId"
+      ],
+      "properties": {
+        "itemId": {
+          "type": "string",
+          "description": "Identifier of the order item where the service was managed"
+        },
+        "role": {
+          "type": "string",
+          "description": "role of the service order item for this service"
+        },
+        "serviceOrderHref": {
+          "type": "string",
+          "description": "Reference of the related entity."
+        },
+        "serviceOrderId": {
+          "type": "string",
+          "description": "Unique identifier of a related entity."
+        },
+        "itemAction": {
+          "$ref": "#/definitions/OrderItemActionType",
+          "description": "Action of the order item for this service"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
+        }
+      }
+    },
+    "ResourceRef": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "unique identifier"
+        },
+        "href": {
+          "type": "string",
+          "format": "uri",
+          "description": "Hyperlink reference"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the related entity."
+        },
+        "@baseType": {
+          "example": "ResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "example": "LogicalResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class Extensible name"
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "Service": {
+      "type": "object",
+      "description": "Service is a base class for defining the Service hierarchy. All Services are characterized as either being possibly visible and usable by a Customer or not. This gives rise to the two subclasses of Service: CustomerFacingService and ResourceFacingService.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the service"
+        },
+        "href": {
+          "type": "string",
+          "description": "Reference of the service"
+        },
+        "category": {
+          "type": "string",
+          "description": "Is it a customer facing or resource facing service"
+        },
+        "description": {
+          "type": "string",
+          "description": "Free-text description of the service"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the service ends"
+        },
+        "hasStarted": {
+          "type": "boolean",
+          "description": "If TRUE, this Service has already been started"
+        },
+        "isBundle": {
+          "type": "boolean",
+          "description": "If true, the service is a ServiceBundle which regroup a service hierachy. If false, the service is a 'atomic' service (hierachy leaf)."
+        },
+        "isServiceEnabled": {
+          "type": "boolean",
+          "description": "If FALSE and hasStarted is FALSE, this particular Service has NOT been enabled for use - if FALSE and hasStarted is TRUE then the service has failed "
+        },
+        "isStateful": {
+          "type": "boolean",
+          "description": "If TRUE, this Service can be changed without affecting any other services"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the service"
+        },
+        "serviceDate": {
+          "type": "string",
+          "description": "Date when the service was created (whatever its status)."
+        },
+        "serviceType": {
+          "type": "string",
+          "description": "Business type of the service"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the service starts"
+        },
+        "startMode": {
+          "type": "string",
+          "description": "This attribute is an enumerated integer that indicates how the Service is started, such as: 0: Unknown; 1: Automatically by the managed environment; 2: Automatically by the owning device; 3: Manually by the Provider of the Service; 4: Manually by a Customer of the Provider; 5: Any of the above"
+        },
+        "feature": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Feature"
+          },
+          "description": "A list of feature associated with this service "
+        },
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Note"
+          },
+          "description": "A list of notes made on this service"
+        },
+        "place": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedPlaceRefOrValue"
+          },
+          "description": "A list of places (Place [*]). Used to define a place useful for the service (for example a geographical place whre the service is installed)"
+        },
+        "relatedEntity": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedEntityRefOrValue"
+          },
+          "description": "A list of related  entity in relationship with this service "
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedParty"
+          },
+          "description": "A list of related party references (RelatedParty [*]). A related party defines party or party role linked to a specific entity"
+        },
+        "serviceCharacteristic": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Characteristic"
+          },
+          "description": "A list of characteristics that characterize this service (ServiceCharacteristic [*]) "
+        },
+        "serviceOrderItem": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedServiceOrderItem"
+          },
+          "description": "A list of service order items related to this service"
+        },
+        "serviceRelationship": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServiceRelationship"
+          },
+          "description": "A list of service relationships (ServiceRelationship [*]). Describes links with other service(s) in the inventory."
+        },
+        "serviceSpecification": {
+          "$ref": "#/definitions/ServiceSpecificationRef",
+          "description": "The specification from which this service was instantiated"
+        },
+        "state": {
+          "$ref": "#/definitions/ServiceStateType",
+          "description": "The life cycle state of the service, such as designed, reserved, active, etc..."
+        },
+        "supportingResource": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResourceRef"
+          },
+          "description": "A list of supporting resources (SupportingResource [*]).Note: only Service of type RFS can be associated with Resources"
+        },
+        "supportingService": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServiceRefOrValue"
+          },
+          "description": "A list of supporting services (SupportingService [*]). A collection of services that support this service (bundling, link CFS to RFS)"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "ServiceCategoryRef": {
+      "type": "object",
+      "description": "The (service) category resource is used to group service candidates in logical containers. Categories can contain other categories.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "unique identifier"
+        },
+        "href": {
+          "type": "string",
+          "format": "uri",
+          "description": "Hyperlink reference"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the related entity."
+        },
+        "version": {
+          "type": "string",
+          "description": "Category version"
+        },
+        "@baseType": {
+          "example": "ResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "example": "LogicalResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class Extensible name"
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "ServiceEligibilityUnavailabilityReason": {
+      "type": "object",
+      "description": "Reason for eligibility result if the ServiceQualification result is no (meaning the Service is not available)",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Unavailability reason code"
+        },
+        "label": {
+          "type": "string",
+          "description": "Unavailability reason label"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "ServiceQualification": {
+      "type": "object",
+      "description": "ServiceQualification is used to perform a technical eligibility. It allows to retrieve a list of services that are technically available in the context of the interaction (place, party, service characteristics, ...).",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the serviceQualification resource"
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink to access the serviceQualification"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the serviceQualification"
+        },
+        "effectiveQualificationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Effective date to serviceQualification completion"
+        },
+        "estimatedResponseDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the requester expect to provide an answer for the qualification request."
+        },
+        "expectedQualificationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "A date (DateTime). Deadline date when the requester expected a qualification answer."
+        },
+        "expirationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the qualification response expires"
+        },
+        "externalId": {
+          "type": "string",
+          "description": "Identifier provided by the requester"
+        },
+        "instantSyncQualification": {
+          "type": "boolean",
+          "description": "An indicator which when the value is \"true\" means that requester expects to get qualifcation result immediately in the response. If the indicator is true then the response code of 200 indicates the operation is successful otherwise a task is created with a response 201."
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedParty"
+          },
+          "description": "A list of related party references, defines party or party role linked to this request."
+        },
+        "state": {
+          "$ref": "#/definitions/TaskStateType",
+          "description": "State of the serviceQualification (acknowledged, inProgress, terminatedWithError, done)"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "ServiceQualificationItem": {
+      "type": "object",
+      "description": "A ServiceQualificationItem relates to a specific service being checked in a qualification operation.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Id of the Service Qualification Item"
+        },
+        "expectedActivationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date when the service is expected to be activated"
+        },
+        "expectedServiceAvailabilityDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the requester looks for service availability"
+        },
+        "expirationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the qualification item response expires"
+        },
+        "category": {
+          "$ref": "#/definitions/ServiceCategoryRef",
+          "description": "The category resource is used to group product offerings, service and resource candidates in logical containers. Categories can contain other categories and/or product offerings, resource or service candidates."
+        },
+        "service": {
+          "$ref": "#/definitions/ServiceRefOrValue",
+          "description": "Configure the service characteristics (only configurable characteristics and necessary only if a non default value is selected) and/or identify the service that needs to be modified/deleted."
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "ServiceQualificationItemRelationship": {
+      "type": "object",
+      "description": "Structure used to describe relationship between serviceQualification items from the same serviceQualification.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Id of the serviceQualificationItem (from the same serviceQualificationItem)."
+        },
+        "relationshipType": {
+          "type": "string",
+          "description": "Type of relationship (ex: reliesOn, connectedTo, etc...)"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "ServiceQualificationRelationship": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The id of the target qualification pointed to by this relationship"
+        },
+        "relationshipType": {
+          "type": "string",
+          "description": "The type of relationship"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "ServiceRef": {
+      "type": "object",
+      "description": "Service reference, for when Service is used by other entities",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "unique identifier"
+        },
+        "href": {
+          "type": "string",
+          "format": "uri",
+          "description": "Hyperlink reference"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the related entity."
+        },
+        "@baseType": {
+          "example": "ResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "example": "LogicalResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class Extensible name"
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "ServiceRefOrValue": {
+      "type": "object",
+      "description": "A Service to be created defined by value or existing defined by reference. The polymorphic attributes @type, @schemaLocation & @referredType are related to the Service entity and not the RelatedServiceRefOrValue class itself",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the service"
+        },
+        "href": {
+          "type": "string",
+          "description": "Reference of the service"
+        },
+        "category": {
+          "type": "string",
+          "description": "Is it a customer facing or resource facing service"
+        },
+        "description": {
+          "type": "string",
+          "description": "Free-text description of the service"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the service ends"
+        },
+        "hasStarted": {
+          "type": "boolean",
+          "description": "If TRUE, this Service has already been started"
+        },
+        "isBundle": {
+          "type": "boolean",
+          "description": "If true, the service is a ServiceBundle which regroup a service hierachy. If false, the service is a 'atomic' service (hierachy leaf)."
+        },
+        "isServiceEnabled": {
+          "type": "boolean",
+          "description": "If FALSE and hasStarted is FALSE, this particular Service has NOT been enabled for use - if FALSE and hasStarted is TRUE then the service has failed "
+        },
+        "isStateful": {
+          "type": "boolean",
+          "description": "If TRUE, this Service can be changed without affecting any other services"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the service"
+        },
+        "serviceDate": {
+          "type": "string",
+          "description": "Date when the service was created (whatever its status)."
+        },
+        "serviceType": {
+          "type": "string",
+          "description": "Business type of the service"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the service starts"
+        },
+        "startMode": {
+          "type": "string",
+          "description": "This attribute is an enumerated integer that indicates how the Service is started, such as: 0: Unknown; 1: Automatically by the managed environment; 2: Automatically by the owning device; 3: Manually by the Provider of the Service; 4: Manually by a Customer of the Provider; 5: Any of the above"
+        },
+        "feature": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Feature"
+          },
+          "description": "A list of feature associated with this service "
+        },
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Note"
+          },
+          "description": "A list of notes made on this service"
+        },
+        "place": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedPlaceRefOrValue"
+          },
+          "description": "A list of places (Place [*]). Used to define a place useful for the service (for example a geographical place whre the service is installed)"
+        },
+        "relatedEntity": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedEntityRefOrValue"
+          },
+          "description": "A list of related  entity in relationship with this service "
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedParty"
+          },
+          "description": "A list of related party references (RelatedParty [*]). A related party defines party or party role linked to a specific entity"
+        },
+        "serviceCharacteristic": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Characteristic"
+          },
+          "description": "A list of characteristics that characterize this service (ServiceCharacteristic [*]) "
+        },
+        "serviceOrderItem": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedServiceOrderItem"
+          },
+          "description": "A list of service order items related to this service"
+        },
+        "serviceRelationship": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServiceRelationship"
+          },
+          "description": "A list of service relationships (ServiceRelationship [*]). Describes links with other service(s) in the inventory."
+        },
+        "serviceSpecification": {
+          "$ref": "#/definitions/ServiceSpecificationRef",
+          "description": "The specification from which this service was instantiated"
+        },
+        "state": {
+          "$ref": "#/definitions/ServiceStateType",
+          "description": "The life cycle state of the service, such as designed, reserved, active, etc..."
+        },
+        "supportingResource": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResourceRef"
+          },
+          "description": "A list of supporting resources (SupportingResource [*]).Note: only Service of type RFS can be associated with Resources"
+        },
+        "supportingService": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ServiceRefOrValue"
+          },
+          "description": "A list of supporting services (SupportingService [*]). A collection of services that support this service (bundling, link CFS to RFS)"
+        },
+        "@baseType": {
+          "example": "ResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "example": "LogicalResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class Extensible name"
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
+        }
+      }
+    },
+    "ServiceRelationship": {
+      "type": "object",
+      "required": [
+        "relationshipType"
+      ],
+      "properties": {
+        "relationshipType": {
+          "type": "string"
+        },
+        "service": {
+          "$ref": "#/definitions/ServiceRefOrValue"
+        },
+        "serviceRelationshipCharacteristic": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Characteristic"
+          }
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "ServiceSpecificationRef": {
+      "type": "object",
+      "description": "Service specification reference: ServiceSpecification(s) required to realize a ProductSpecification.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "unique identifier"
+        },
+        "href": {
+          "type": "string",
+          "format": "uri",
+          "description": "Hyperlink reference"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the related entity."
+        },
+        "version": {
+          "type": "string",
+          "description": "Service specification version"
+        },
+        "@baseType": {
+          "example": "ResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "example": "LogicalResourceSpecification",
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class Extensible name"
+        },
+        "@referredType": {
+          "type": "string",
+          "description": "The actual type of the target instance when needed for disambiguation."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "ServiceStateType": {
+      "type": "string",
+      "description": "Valid values for the lifecycle state of the service",
+      "enum": [
+        "feasibilityChecked",
+        "designed",
+        "reserved",
+        "inactive",
+        "active",
+        "terminated"
+      ]
+    },
+    "TaskStateType": {
+      "type": "string",
+      "description": "Possible values for the state of a task",
+      "enum": [
+        "accepted",
+        "terminatedWithError",
+        "inProgress",
+        "done"
+      ]
+    },
+    "TerminationError": {
+      "type": "object",
+      "description": "This indicates an error that caused a qualificationItem to be terminated.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the termination error"
+        },
+        "value": {
+          "type": "string",
+          "description": "Text to describe the termination error - for example: Unable to proceed to qualification because incomplete information provided"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "TimePeriod": {
+      "type": "object",
+      "description": "A period of time, either as a deadline (endDateTime only) a startDateTime only, or both",
+      "properties": {
+        "endDateTime": {
+          "example": "1985-04-12T23:20:50.52Z",
+          "type": "string",
+          "format": "date-time",
+          "description": "End of the time period, using IETC-RFC-3339 format"
+        },
+        "startDateTime": {
+          "example": "1985-04-12T23:20:50.52Z",
+          "type": "string",
+          "format": "date-time",
+          "description": "Start of the time period, using IETC-RFC-3339 format"
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name"
+        }
+      }
+    },
+    "EventSubscription": {
+      "type": "object",
+      "description": "Sets the communication endpoint address the service instance must use to deliver notification information",
+      "required": [
+        "id",
+        "callback"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Id of the listener"
+        },
+        "callback": {
+          "type": "string",
+          "description": "The callback being registered."
+        },
+        "query": {
+          "type": "string",
+          "description": "additional data to be passed"
+        }
+      }
+    },
+    "EventSubscriptionInput": {
+      "type": "object",
+      "description": "Sets the communication endpoint address the service instance must use to deliver notification information",
+      "required": [
+        "callback"
+      ],
+      "properties": {
+        "callback": {
+          "type": "string",
+          "description": "The callback being registered."
+        },
+        "query": {
+          "type": "string",
+          "description": "additional data to be passed"
+        }
+      }
+    },
+    "CheckServiceQualificationCreateEvent": {
+      "type": "object",
+      "description": "The notification data structure",
+      "properties": {
+        "event": {
+          "description": "The event payload linked to the involved resource object",
+          "$ref": "#/definitions/CheckServiceQualificationCreateEventPayload"
+        },
+        "eventId": {
+          "type": "string",
+          "description": "The identifier of the notification."
+        },
+        "eventTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time of the event occurrence."
+        },
+        "eventType": {
+          "type": "string",
+          "description": "The type of the notification."
+        },
+        "correlationId": {
+          "type": "string",
+          "description": "The correlation id for this event."
+        },
+        "domain": {
+          "type": "string",
+          "description": "The domain of the event."
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the event."
+        },
+        "description": {
+          "type": "string",
+          "description": "An explnatory of the event."
+        },
+        "priority": {
+          "type": "string",
+          "description": "A priority."
+        },
+        "timeOcurred": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The time the event occured."
+        }
+      }
+    },
+    "CheckServiceQualificationCreateEventPayload": {
+      "type": "object",
+      "description": "The event data structure",
+      "properties": {
+        "checkServiceQualification": {
+          "description": "The involved resource data for the event",
+          "$ref": "#/definitions/CheckServiceQualification"
+        }
+      }
+    },
+    "CheckServiceQualificationAttributeValueChangeEvent": {
+      "type": "object",
+      "description": "The notification data structure",
+      "properties": {
+        "eventId": {
+          "type": "string",
+          "description": "The identifier of the notification."
+        },
+        "eventTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time of the event occurrence."
+        },
+        "eventType": {
+          "type": "string",
+          "description": "The type of the notification."
+        },
+        "correlationId": {
+          "type": "string",
+          "description": "The correlation id for this event."
+        },
+        "domain": {
+          "type": "string",
+          "description": "The domain of the event."
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the event."
+        },
+        "description": {
+          "type": "string",
+          "description": "An explnatory of the event."
+        },
+        "priority": {
+          "type": "string",
+          "description": "A priority."
+        },
+        "timeOcurred": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The time the event occured."
+        },
+        "fieldPath": {
+          "type": "string",
+          "description": "The path identifying the object field concerned by this notification."
+        },
+        "event": {
+          "description": "The event payload linked to the involved resource object",
+          "$ref": "#/definitions/CheckServiceQualificationAttributeValueChangeEventPayload"
+        }
+      }
+    },
+    "CheckServiceQualificationAttributeValueChangeEventPayload": {
+      "type": "object",
+      "description": "The event data structure",
+      "properties": {
+        "checkServiceQualification": {
+          "description": "The involved resource data for the event",
+          "$ref": "#/definitions/CheckServiceQualification"
+        }
+      }
+    },
+    "CheckServiceQualificationStateChangeEvent": {
+      "type": "object",
+      "description": "The notification data structure",
+      "properties": {
+        "event": {
+          "description": "The event payload linked to the involved resource object",
+          "$ref": "#/definitions/CheckServiceQualificationStateChangeEventPayload"
+        },
+        "eventId": {
+          "type": "string",
+          "description": "The identifier of the notification."
+        },
+        "eventTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time of the event occurrence."
+        },
+        "eventType": {
+          "type": "string",
+          "description": "The type of the notification."
+        },
+        "correlationId": {
+          "type": "string",
+          "description": "The correlation id for this event."
+        },
+        "domain": {
+          "type": "string",
+          "description": "The domain of the event."
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the event."
+        },
+        "description": {
+          "type": "string",
+          "description": "An explnatory of the event."
+        },
+        "priority": {
+          "type": "string",
+          "description": "A priority."
+        },
+        "timeOcurred": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The time the event occured."
+        }
+      }
+    },
+    "CheckServiceQualificationStateChangeEventPayload": {
+      "type": "object",
+      "description": "The event data structure",
+      "properties": {
+        "checkServiceQualification": {
+          "description": "The involved resource data for the event",
+          "$ref": "#/definitions/CheckServiceQualification"
+        }
+      }
+    },
+    "CheckServiceQualificationDeleteEvent": {
+      "type": "object",
+      "description": "The notification data structure",
+      "properties": {
+        "event": {
+          "description": "The event payload linked to the involved resource object",
+          "$ref": "#/definitions/CheckServiceQualificationDeleteEventPayload"
+        },
+        "eventId": {
+          "type": "string",
+          "description": "The identifier of the notification."
+        },
+        "eventTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time of the event occurrence."
+        },
+        "eventType": {
+          "type": "string",
+          "description": "The type of the notification."
+        },
+        "correlationId": {
+          "type": "string",
+          "description": "The correlation id for this event."
+        },
+        "domain": {
+          "type": "string",
+          "description": "The domain of the event."
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the event."
+        },
+        "description": {
+          "type": "string",
+          "description": "An explnatory of the event."
+        },
+        "priority": {
+          "type": "string",
+          "description": "A priority."
+        },
+        "timeOcurred": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The time the event occured."
+        }
+      }
+    },
+    "CheckServiceQualificationDeleteEventPayload": {
+      "type": "object",
+      "description": "The event data structure",
+      "properties": {
+        "checkServiceQualification": {
+          "description": "The involved resource data for the event",
+          "$ref": "#/definitions/CheckServiceQualification"
+        }
+      }
+    },
+    "CheckServiceQualificationInformationRequiredEvent": {
+      "type": "object",
+      "description": "The notification data structure",
+      "properties": {
+        "eventId": {
+          "type": "string",
+          "description": "The identifier of the notification."
+        },
+        "eventTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time of the event occurrence."
+        },
+        "eventType": {
+          "type": "string",
+          "description": "The type of the notification."
+        },
+        "correlationId": {
+          "type": "string",
+          "description": "The correlation id for this event."
+        },
+        "domain": {
+          "type": "string",
+          "description": "The domain of the event."
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the event."
+        },
+        "description": {
+          "type": "string",
+          "description": "An explnatory of the event."
+        },
+        "priority": {
+          "type": "string",
+          "description": "A priority."
+        },
+        "timeOcurred": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The time the event occured."
+        },
+        "fieldPath": {
+          "type": "string",
+          "description": "The path identifying the object field concerned by this notification."
+        },
+        "event": {
+          "description": "The event payload linked to the involved resource object",
+          "$ref": "#/definitions/CheckServiceQualificationInformationRequiredEventPayload"
+        }
+      }
+    },
+    "CheckServiceQualificationInformationRequiredEventPayload": {
+      "type": "object",
+      "description": "The event data structure",
+      "properties": {
+        "checkServiceQualification": {
+          "description": "The involved resource data for the event",
+          "$ref": "#/definitions/CheckServiceQualification"
+        }
+      }
+    },
+    "QueryServiceQualificationCreateEvent": {
+      "type": "object",
+      "description": "The notification data structure",
+      "properties": {
+        "event": {
+          "description": "The event payload linked to the involved resource object",
+          "$ref": "#/definitions/QueryServiceQualificationCreateEventPayload"
+        },
+        "eventId": {
+          "type": "string",
+          "description": "The identifier of the notification."
+        },
+        "eventTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time of the event occurrence."
+        },
+        "eventType": {
+          "type": "string",
+          "description": "The type of the notification."
+        },
+        "correlationId": {
+          "type": "string",
+          "description": "The correlation id for this event."
+        },
+        "domain": {
+          "type": "string",
+          "description": "The domain of the event."
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the event."
+        },
+        "description": {
+          "type": "string",
+          "description": "An explnatory of the event."
+        },
+        "priority": {
+          "type": "string",
+          "description": "A priority."
+        },
+        "timeOcurred": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The time the event occured."
+        }
+      }
+    },
+    "QueryServiceQualificationCreateEventPayload": {
+      "type": "object",
+      "description": "The event data structure",
+      "properties": {
+        "queryServiceQualification": {
+          "description": "The involved resource data for the event",
+          "$ref": "#/definitions/QueryServiceQualification"
+        }
+      }
+    },
+    "QueryServiceQualificationStateChangeEvent": {
+      "type": "object",
+      "description": "The notification data structure",
+      "properties": {
+        "event": {
+          "description": "The event payload linked to the involved resource object",
+          "$ref": "#/definitions/QueryServiceQualificationStateChangeEventPayload"
+        },
+        "eventId": {
+          "type": "string",
+          "description": "The identifier of the notification."
+        },
+        "eventTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time of the event occurrence."
+        },
+        "eventType": {
+          "type": "string",
+          "description": "The type of the notification."
+        },
+        "correlationId": {
+          "type": "string",
+          "description": "The correlation id for this event."
+        },
+        "domain": {
+          "type": "string",
+          "description": "The domain of the event."
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the event."
+        },
+        "description": {
+          "type": "string",
+          "description": "An explnatory of the event."
+        },
+        "priority": {
+          "type": "string",
+          "description": "A priority."
+        },
+        "timeOcurred": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The time the event occured."
+        }
+      }
+    },
+    "QueryServiceQualificationStateChangeEventPayload": {
+      "type": "object",
+      "description": "The event data structure",
+      "properties": {
+        "queryServiceQualification": {
+          "description": "The involved resource data for the event",
+          "$ref": "#/definitions/QueryServiceQualification"
+        }
+      }
+    },
+    "QueryServiceQualificationDeleteEvent": {
+      "type": "object",
+      "description": "The notification data structure",
+      "properties": {
+        "event": {
+          "description": "The event payload linked to the involved resource object",
+          "$ref": "#/definitions/QueryServiceQualificationDeleteEventPayload"
+        },
+        "eventId": {
+          "type": "string",
+          "description": "The identifier of the notification."
+        },
+        "eventTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time of the event occurrence."
+        },
+        "eventType": {
+          "type": "string",
+          "description": "The type of the notification."
+        },
+        "correlationId": {
+          "type": "string",
+          "description": "The correlation id for this event."
+        },
+        "domain": {
+          "type": "string",
+          "description": "The domain of the event."
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the event."
+        },
+        "description": {
+          "type": "string",
+          "description": "An explnatory of the event."
+        },
+        "priority": {
+          "type": "string",
+          "description": "A priority."
+        },
+        "timeOcurred": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The time the event occured."
+        }
+      }
+    },
+    "QueryServiceQualificationDeleteEventPayload": {
+      "type": "object",
+      "description": "The event data structure",
+      "properties": {
+        "queryServiceQualification": {
+          "description": "The involved resource data for the event",
+          "$ref": "#/definitions/QueryServiceQualification"
+        }
+      }
+    },
+    "Error": {
+      "description": "Used when an API throws an Error, typically with a HTTP error response-code (3xx, 4xx, 5xx)",
+      "type": "object",
+      "required": [
+        "code",
+        "reason"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Application relevant detail, defined in the API or a common list."
+        },
+        "reason": {
+          "type": "string",
+          "description": "Explanation of the reason for the error which can be shown to a client user."
+        },
+        "message": {
+          "type": "string",
+          "description": "More details and corrective actions related to the error which can be shown to a client user."
+        },
+        "status": {
+          "type": "string",
+          "description": "HTTP Error code extension"
+        },
+        "referenceError": {
+          "type": "string",
+          "format": "uri",
+          "description": "URI of documentation describing the error."
+        },
+        "@baseType": {
+          "type": "string",
+          "description": "When sub-classing, this defines the super-class."
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+        },
+        "@type": {
+          "type": "string",
+          "description": "When sub-classing, this defines the sub-class entity name."
+        }
+      }
+    }
+  }
+}

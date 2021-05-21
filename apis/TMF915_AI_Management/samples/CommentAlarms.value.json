@@ -1,0 +1,12 @@
+{
+    "alarmPattern": [
+        {}
+    ],
+    "comment": {},
+    "commentedAlarm": [
+        {}
+    ],
+    "href": "https:/host:port/tmf-api/commentAlarms/v1/commentAlarms/3854",
+    "id": "3854",
+    "state": "a string ..."
+}

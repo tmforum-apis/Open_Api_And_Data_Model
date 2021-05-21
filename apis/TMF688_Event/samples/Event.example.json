@@ -1,5 +1,5 @@
 {
-    "@type": "event",
+    "@type": "AlarmCreateEvent",
     "@schemaLocation": "http://xx/Event.schema.json",
     "@baseType": "event",
     "eventId": "256c42f0-7cae-4cfe-8b96-f5773796f8ff",

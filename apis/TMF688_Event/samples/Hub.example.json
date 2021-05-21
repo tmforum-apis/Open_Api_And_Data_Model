@@ -1,5 +1,6 @@
 {
     "callback": "http://www.tmforum.org/aListener",
     "id": "5880",
-    "query": "event.alarm.alarmType=QualityOfServiceAlarm"
+    "query": "event.alarm.alarmType=QualityOfServiceAlarm",
+    "href": "//hub/ 5880"
 }
