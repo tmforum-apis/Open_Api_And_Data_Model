@@ -5,7 +5,7 @@
   "definitions": {
     "CartItemRelationship": {
       "$id": "#CartItemRelationship",
-      "description": "Relationship among cart items mainly other than hierarchical relationships such as \"RelyOn\", \"DependentOn\", \"Shipping\" etc.",
+      "description": "Relationship among cart items mainly other than hierarchical relationships such as \"relyOn\", \"dependentOn\", \"shipping\" etc.",
       "type": "object",
       "properties": {
         "id": {

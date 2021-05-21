@@ -10,35 +10,83 @@
       "properties": {
             "shippingType":{
               "type":"string",
-              "description":"The shipping type, e.g. thick_envelope, small_flat_rate_box, large_package, etc."
-            },
+              "description":"The shipping type, e.g. thick_envelope, small_flat_rate_box, large_package, etc.",
+              "example": "large_package" 
+              },
             "carrierId":{
               "type":"string",
-              "description":"The carrier identifier"
+              "description":"The carrier identifier",
+              "example":  "1010123" 
+            },
+            "carrierName":{
+              "type":"string",
+              "description":"The carrier name",
+              "example":  "On Time Deliveries Ltd" 
             },
             "carrierServiceCode":{
               "type":"string",
-              "description":"The service code used by the carrier to ship the package, royal mail ground, royal mail first class, etc"
+              "description":"The service code used by the carrier to ship the package, royal mail ground, royal mail first class, etc",
+              "example": "XH545554533GB" 
             },
             "deliverySpeed":{
               "type":"string",
-              "description":"Shipping delivery speed, same day, next day, next business day, etc"
+              "description":"Shipping delivery speed, same day, next day, next business day, etc",
+              "example":  "SameDay" 
             },
             "deliveryAttempts":{
               "type":"integer",
-              "description":"Shipping delivery attempts that should be performed"
+              "description":"Shipping delivery attempts that should be performed",
+              "example" : 3
             },
-            "shippingInstructionCharacteristic":{
-              "description":"Additional shipping characteristics that maybe specific to one or another carrier",
-              "$ref":"../Common/Characteristic.schema.json#Characteristic"
+            "deliveryTimeSlot":{
+              "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+              "description":"Shipping delivery time slot",
+              "example": "12-4pm" 
             },
+            "insuredValue":{
+              "$ref": "../Common/Money.schema.json#Money",
+              "description":"Shipping delivery value"
+            },
+            "labelMessage":{
+              "type":"string",
+              "description":"Shipping delivery message label",
+              "example":  "FAO Ink Industries" 
+            },
+            "packageType":{
+              "type":"string",
+              "description":"The type of packaging",
+              "example":  "Bottle, gas"
+            },
+            "instructionCharacteristic": {
+              "type": "array",
+              "description": "Additional shipping characteristics that maybe specific to one or another carrier",
+              "items": {
+                "$ref": "../Common/Characteristic.schema.json#Characteristic"
+              }
+            },            
             "warehouseId":{
               "type":"string",
-              "description":"The identification of the warehouse that the shipment is being shipped from."
+              "description":"The identification of the warehouse that the shipment is being shipped from.",
+              "example":  "wh12345" 
             },
             "receiptConfirmation":{
               "type":"string",
-              "description":"Delivery confirmation required for the shipment (none, signature, over18Signature)"
+              "description":"Delivery confirmation required for the shipment (none, signature, over18Signature)",
+              "example":  "signature"
+            },
+            "note": {
+              "type": "array",
+              "description": "A list of notes made on this shipment item",
+              "items": {
+                "$ref": "../Common/Note.schema.json#Note"
+              }
+            },
+            "signatureRequired": {
+                    "type": "boolean",
+                    "example":  "true" 
+            },
+            "signatureRequiredBy": {
+                  "$ref": "../EngagedParty/SignatureRequiredByType.schema.json#/definitions/SignatureRequiredByType"
             }
       },
       "allOf": [

@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TopologyDiscoveryJob.schema.json",
+  "title": "TopologyDiscoveryJob",
+  "definitions": {
+    "TopologyDiscoveryJob": {
+      "$id": "#TopologyDiscoveryJob",
+      "description": "Represents a task used to discover topology from providers",
+      "type": "object",
+      "properties": {
+        "completionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date at which the job was completed"
+        },
+        "creationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date at which the job was created"
+        },
+        "status": {
+          "description": "Status of the topolology discover job",
+          "$ref": "TaskStateType.schema.json#TaskStateType"
+        },
+        "topologyProvider": {
+          "description": "Source providers of topology",
+          "type": "array",
+          "items": {
+             "type": "object",
+             "properties": {
+                "url": {
+                  "description": "URI with Query string",
+                  "type": "string"
+                }
+             }
+          }
+        },
+        "graph": {
+          "description": "The created topology graph",
+          "$ref": "GraphRefOrValue.schema.json#GraphRefOrValue"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

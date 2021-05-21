@@ -1,0 +1,79 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CheckProductStock.schema.json",
+    "title": "CheckProductStock",
+    "definitions": {
+        "CheckProductStock": {
+            "$id": "#CheckProductStock",
+            "description": "CheckProductStock is used to log and execute check about product stock availability",
+            "type": "object",
+            "properties": {
+                "creationDate": {
+                    "description": "Date when the CheckProductStock was created (whatever its status).",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "requestedCheckProductStockDate": {
+                    "description": "Date when the requester wished to have a response for this product stock check query.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "completedCheckProductStockDate": {
+                    "description": "Date when the CheckProductStock was completed.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "requestedAvailabilityDate": {
+                    "description": "Date when the stock availability should be check.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "id": {
+                    "description": "Unique identifier of the CheckProductStock",
+                    "type": "string"
+                },
+                "href": {
+                    "description": "Reference of the CheckProductStock",
+                    "type": "string"
+                },
+                "instantSyncCheck": {
+                  "type": "boolean",
+                  "description": "An indicator which when the value is \"true\" means that requester expects to get result immediately in the response. If the indicator is true then the response code of 200 indicates the operation is successful otherwise a task is created with a response 201."
+                },
+                "state": {
+                    "$ref": "TaskStateType.schema.json#/definitions/TaskStateType",
+                    "description": "State of the CheckProductStock (acknowledged, inProgress, terminatedWithError, done)"
+                },
+                "provideAlternative": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "When the value is TRUE means that alternative proposal should be provided (from other product stock, different date or quantity)"
+                },
+                "checkProductStockItem": {
+                    "type": "array",
+                    "description": "A list of check product stock  item",
+                    "items": {
+                        "$ref": "../Resource/CheckProductStockItem.schema.json#/definitions/CheckProductStockItem"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "description": "A list of related party references (RelatedParty [*]). A related party defines party or party role linked to this CheckProductStock",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+                    }
+                },
+                "place": {
+                    "description": "Used to define a geographical place where requester wants to check stock availability ",
+                        "$ref": "../Common/PlaceRefOrValue.schema.json#PlaceRefOrValue"
+                }
+
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#/Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "id": "173108eb-954b",
+    "href": "https://api.company.com/tmf-api/geographicLocation/v4/geographicLocation/173108eb-954b",
+    "name": "Vodafone House, Babbage House, Faraday House",
+    "@baseType": "GeographicLocation",
+    "@type": "GeoJsonMultiPoint",
+    "geoJson": {
+        "geometry": {
+            "type": "MultiPoint",
+            "coordinates": [
+                [-1.3197581470012665,
+                    51.41671197068097
+                ],
+                [-1.3200236856937408,
+                    51.41484889182162
+                ],
+                [-1.3201913237571716,
+                    51.41561755173973
+                ]
+            ]
+        }
+    }
+}

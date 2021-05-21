@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "DigitalIdentity.schema.json",
+  "title": "DigitalIdentity",
+  "definitions": {
+    "DigitalIdentity": {
+      "$id": "#DigitalIdentity",
+      "description": "DigitalIdentity is a class that allow to describe a digital identity for an individual or a resource or a specific party role. One of these three MUST be provided. If an individual is provided, this identity will be for all her/his partyRole. To avoid confusion it is recommended in this case to not provide partyRoleIdentified.",
+      "type": "object",
+      "properties": {
+        "creationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time of the Digital Identity creation (timestamp)"
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time of the Digital Identity last update (timestamp)"
+        },
+        "status": {
+          "type": "string",
+          "description": "Used to indicate the current lifecycle status of this digital identity (unknown, active, suspended, archived)."
+        },
+        "nickname": {
+          "type": "string",
+          "description": "Nickname associated to this digital identity (like Juanito17 or the QuebecMoose etc...)."
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The period for which this digial identity is valid."
+        },
+        "credential": {
+          "type": "array",
+          "description": "A list of credential/authentification method that are used for this digital identity.",
+          "items": {
+            "$ref": "../Common/Credential.schema.json#/definitions/Credential"
+          }
+        },
+        "contactMedium": {
+          "type": "array",
+          "description": "List of contact medium associated with the digital identity.",
+          "items": {
+            "$ref": "../Common/DigitalIdentityContactMedium.schema.json#/definitions/DigitalIdentityContactMedium"
+          }
+        },
+        "attachment": {
+          "type": "array",
+          "description": "List of attachment associated with this digital identity. Could be use to link a cute cat or moose picture to a digital identity for example.",
+          "items": {
+            "$ref": "../Common/AttachmentRefOrValue.schema.json#/definitions/AttachmentRefOrValue"
+          }
+        },
+        "relatedParty": {
+          "type": "array",
+          "description": "Parties who have an interest in this digital identity (like the organization in charge of providing identity). This is NOT the party identified by this digital identity.",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+          }
+        },
+        "partyRoleIdentified": {
+          "type": "array",
+          "description": "Related Parties who are identified by this digital identity.",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+          }
+        },
+        "individualIdentified": {
+          "$ref": "../EngagedParty/PartyRef.schema.json#PartyRef",
+          "description": "Individual identified by this digital identity. In this case the digitial identity is for all her/his role. It is recommended to not provide partyRoleIdentified if individualIdentified provided "
+        },
+        "resourceIdentified": {
+          "$ref": "../Resource/ResourceRef.schema.json#ResourceRef",
+          "description": "Resource identified by this digital identity. It is recommended to no provided individualIdentified or partyRoleIdentified if resourceIdentified provided."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        },
+        {
+          "$ref": "../Common/Addressable.schema.json#Addressable"
+        }
+      ]
+    }
+  }
+}

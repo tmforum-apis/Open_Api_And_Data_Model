@@ -43,7 +43,12 @@
 			"required": [
 				"relationshipType",
 				"name"
-			]
+			],
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
 		}
 	}
 }

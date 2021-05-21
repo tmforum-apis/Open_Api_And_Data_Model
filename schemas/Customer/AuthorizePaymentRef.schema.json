@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AuthorizePaymentRef.schema.json",
+  "title": "AuthorizePaymentRef",
+  "definitions": {
+    "AuthorizePaymentRef": {
+      "$id": "#AuthorizePaymentRef",
+      "type": "object",
+      "description": "Operation to payment authorization, prior to payment capture.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "A name for the payment authorization"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        }
+      ]
+    }
+  }
+}

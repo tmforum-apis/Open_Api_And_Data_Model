@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "MonthlyScheduleDayOfWeekDefinition.schema.json",
+  "title": "MonthlyScheduleDayOfWeekDefinition",
+  "definitions": {
+    "MonthlyScheduleDayOfWeekDefinition": {
+      "$id": "#MonthlyScheduleDayOfWeekDefinition",
+      "type": "object",
+      "properties": {
+        "dayOfMonthRecurrence": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/DayOfMonthRecurrence"}
+        },
+        "recurringDaySequence": {
+          "type":"string"
+        }
+      },
+      "allOf": [
+        {
+           "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        } 
+      ]
+    }
+  }
+}

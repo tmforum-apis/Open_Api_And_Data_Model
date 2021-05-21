@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CancelWorkOrder.schema.json",
+    "title": "CancelWorkOrder",
+    "definitions": {
+        "CancelWorkOrder": {
+            "$id": "#CancelWorkOrder",
+            "type": "object",
+            "required": [
+                "workOrder"
+            ],
+            "properties": {
+                "workOrder": {
+                    "$ref": "../EngagedParty/WorkOrderRef.schema.json#/definitions/WorkOrderRef"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/CancelOrder.schema.json#/definitions/CancelOrder"
+                }
+            ]
+        }
+    }
+}

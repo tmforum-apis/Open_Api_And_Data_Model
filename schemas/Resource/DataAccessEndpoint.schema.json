@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "DataAccessEndpoint.schema.json",
+  "title": "DataAccessEndpoint",
+  "definitions": {
+    "DataAccessEndpoint": {
+      "$id": "#DataAccessEndpoint",
+      "description": "This is the endpoint exposed by the IoT Device to authorized users.",
+      "type": "object",
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "uri",
+          "description": "URI for using the data access API"
+        },
+        "apiType": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Resource/LogicalResource.schema.json#LogicalResource"
+        }
+      ]
+    }
+  }
+}

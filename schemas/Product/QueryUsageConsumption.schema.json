@@ -1,0 +1,40 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "QueryUsageConsumption.schema.json",
+	"title": "QueryUsageConsumption",
+	"definitions": {
+		"QueryUsageConsumption": {
+			"$id": "#QueryUsageConsumption",
+			"type": "object",
+			"description": "An QueryUsageConsumption allows to manage the calculation request of an usage consumption",
+			"properties": {
+                "searchCriteria": {
+                    "description": "Search structure to retrieve current value of usage",
+                    "$ref": "UsageConsumption.schema.json#UsageConsumption"
+                },
+                "usageConsumption": {
+                    "type": "array",
+                    "description": "Report with current counters and balances",
+                    "items": {
+                        "$ref": "UsageConsumption.schema.json#UsageConsumption"
+                    }
+                },
+                "queryUsageConsumptionDate": {
+                    "type": "string",
+                    "description": "Date when the query was submitted",
+                    "format": "date-time"
+                },
+                "relatedParty": {
+					"type": "array",
+					"description": "Reference and role of the related parties for which the usage consumption is requested",
+					"items": {
+						"$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+					}
+				}
+            },
+            "allOf": [{
+				"$ref": "../Common/Entity.schema.json#Entity"
+			}]
+		}
+	}
+}

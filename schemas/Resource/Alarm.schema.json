@@ -8,27 +8,7 @@
       "description": "This resource represents an alarm supporting the information model defined in ITU-T X.733.",
       "type": "object",
       "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Identifier of the alarm, determined by the alarm owning system"
-        },
-        "href": {
-          "type": "string",
-          "description": "A reference to the alarm."
-        },
-        "@baseType": {
-          "type": "string",
-          "description": "The base type of this alarm."
-        },
-        "@schemaLocation": {
-          "type": "string",
-          "description": "A reference to the schema describing this alarm."
-        },
-        "@type": {
-          "type": "string",
-          "description": "The type for this alarm."
-        },
+
         "externalAlarmId": {
           "type": "string",
           "description": "An identifier of the alarm in the source system."
@@ -172,7 +152,10 @@
             "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue"
           }
         }
-      }
+      },
+      "allOf": [{
+        "$ref": "../Common/Entity.schema.json#Entity"
+      }]
     }
   }
 }

@@ -23,8 +23,11 @@
                     "description": "A reference to the buckets involved in the aggregation"
                 },
                 "logicalResource": {
+		    "type": "array",
+		    "items" :{
                     "$ref": "../Resource/LogicalResourceRef.schema.json#LogicalResourceRef",
-                    "description": "A reference to the logical resource that can be used to identify the bucket balance for example where product ids are not unique."
+                    "description": "A reference to the logical resources that can be used to identify the bucket balance for example where product ids are not unique."
+		    }
                 },
                 "description": {
                     "type": "string",
@@ -61,12 +64,7 @@
                 {
                     "$ref": "../Common/Entity.schema.json#Entity"
                 } 
-	    ],
-            "required": [
-                "name",
-                "totalBalance",
-                "bucket"
-            ]
+	    ]
         }
     }
 }

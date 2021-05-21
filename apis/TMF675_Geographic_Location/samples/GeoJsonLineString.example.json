@@ -1,0 +1,20 @@
+{
+    "id": "63e8468c-883f",
+    "href": "https://api.company.com/tmf-api/geographicLocation/v4/geographicLocation/63e8468c-883f",
+    "name": "Vodafone House to Babbage House",
+    "@baseType": "GeographicLocation",
+    "@type": "GeoJsonLineString",
+    "geoJson": {
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-1.3197581470012665,
+                    51.41671197068097
+                ],
+                [-1.3200236856937408,
+                    51.41484889182162
+                ]
+            ]
+        }
+    }
+}

@@ -8,9 +8,6 @@
       "type": "object",
       "description": "A product offering procured by a customer or other interested party playing a party role. A product is realized as one or more service(s) and / or resource(s).",
       "properties": {
-        "randomAtt": {
-          "type": "string"
-        },
         "agreement": {
           "type": "array",
           "items": {

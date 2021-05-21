@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AlgorithmThresholdRule.schema.json",
+    "title": "AlgorithmThresholdRule",
+    "definitions": {
+        "AlgorithmThresholdRule": {
+            "type": "object",
+            "description": "A threshold rule that is a reference to an algorithm",
+            "properties": {
+                "algorithmParams": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/AlgorithmParams.schema.json#/definitions/AlgorithmParams"
+                    }
+                },
+                "algorithmRef": {
+                    "type": "string"
+                }
+            },
+            "allOf": [{
+                "$ref": "../Common/ThresholdRule.schema.json#ThresholdRule"
+            }]
+        }
+    }
+}

@@ -1,0 +1,53 @@
+{
+	  "$schema": "http://json-schema.org/draft-07/schema#",
+	  "$id": "BankAccountTransfer.schema.json",
+	  "title": "BankAccountTransfer",
+	  "definitions": {
+	    "BankAccountTransfer": {
+	      "$id": "#BankAccountTransfer",
+	      "description": "A bank transfer method of payment.",
+	      "type": "object",
+	      "required": [
+	        "@type"
+	      ],
+	      "properties": {
+          "accountNumber": {
+            "type": "string",
+            "description": "The bank account number, this could refer to the iban or swift number.",
+            "examples": ["GB74HSBCUK122337754838313"]
+          },
+          "accountNumberType": {
+            "type": "string",
+            "description": "The type of account number (e.g.: IBAN, SWIFT, ...)",
+            "examples": ["IBAN"]
+          },
+          "BIC": {
+            "type": "string",
+            "description": "The Business Identifier Code/Swift code of the financial institution where the account is located.",
+            "examples": ["HBUKGB4BXXX"]
+          },
+          "owner": {
+            "type": "string",
+            "description": "The owner of the bank account. This is also the account name.",
+            "examples": ["Dom Joe Plumbing Ltd"]
+          }, 
+          "bank": {
+            "type": "string",
+            "description": "The display name of the bank.",
+            "examples": ["HSBC BANK UK"]
+          },
+          "@type": {
+            "type": "string",
+            "enum": [
+                "bankAccountTransfer"
+              ]
+          }
+	      },
+	      "allOf": [
+	        {
+	          "$ref": "../Customer/PaymentMethod.schema.json#PaymentMethod"
+	        }
+	      ]
+	    }
+	  }
+ }

@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AdjustProductStock.schema.json",
+    "title": "AdjustProductStock",
+    "definitions": {
+        "AdjustProductStock": {
+            "$id": "#AdjustProductStock",
+            "description": "AdjustProductStock is used to log and execute on or several Product Stock level change",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "Unique identifier of the AdjustProductStock",
+                    "type": "string"
+                },
+                "href": {
+                    "description": "Reference of the AdjustProductStock",
+                    "type": "string"
+                },
+                "state": {
+                    "$ref": "TaskStateType.schema.json#/definitions/TaskStateType",
+                    "description": "State of the AdjustProductStock (acknowledged, inProgress, terminatedWithError, done)"
+                },
+                "instantSyncAdjust": {
+                  "type": "boolean",
+                  "description": "An indicator which when the value is \"true\" means that requester expects the adjustment immediately. If the indicator is true then the response code of 200 indicates the operation is successful otherwise a task is created with a response 201."
+                },
+                "description": {
+                    "description": "Free-text description of the AdjustProductStock",
+                    "type": "string"
+                },
+                "creationDate": {
+                    "description": "Date when the AdjustProductStock was created (whatever its status).",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "requestedAdjustProductStockDate": {
+                    "description": "Date when the AdjustProductStock was created (whatever its status).",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "completedAdjustProductStockDate": {
+                    "description": "Date when the AdjustProductStock was created (whatever its status).",
+                    "type": "string",
+                    "format": "date-time"
+                },
+
+                "adjustReason": {
+                    "description": "A reason for this product stock adjustment like theft or wastage.",
+                    "type": "string"
+                },
+
+                "adjustProductStockItem": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "../Resource/AdjustProductStockItem.schema.json#AdjustProductStockItem"
+                    },
+                    "minItems": 1
+                  }
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#/Entity"
+                }
+            ]
+        }
+    }
+}

@@ -1,49 +1,45 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "PromotionAction.schema.json",
-  "title": "PromotionAction",
-  "definitions": {
-    "PromotionAction": {
-      "$id": "#PromotionAction",
-      "type": "object",
-      "description": "Action of the promotion.When the customer meets the conditions in the promotion pattern, the customer can be given the benefits in the action.",
-      "properties": {
-        "@baseType": {
-          "type": "string",
-          "description": "The base type for use in polymorphic collections"
-        },
-        "@schemaLocation": {
-          "type": "string",
-          "description": "A link to the schema describing a resource (for type extension)."
-        },
-        "@type": {
-          "type": "string",
-          "description": "The class type of the actual resource (for type extension)."
-        },
-        "actionObjectId": {
-          "type": "string",
-          "description": "It refers to the object (entity) ID which is impacted by the promotion action. When the Promotion -&gt; type is 1: Award, the actionObjectId is the sub-account ID; When the Promotion -&gt; type is 2: Discount, it is the offering ID; When the Promotion -&gt; type is 3: reduction, it is the offering ID."
-        },
-        "actionType": {
-          "type": "string",
-          "description": "When the Promotion -&gt; type is 1: Award, the action type can be one of the following:voice (minute),data (MB),data (GB),SMS,bonus point,physical gift,voucher,promotion code,an existing offering,currency. More types of action can be extended in future."
-        },
-        "actionValue": {
-          "type": "number",
-          "format": "float",
-          "description": "When the Promotion -&gt; type is 1: Award, it means the amount or value of the awards decided by actionType, such as:Amount of gift,Amount of bonus,Value of discount; When the Promotion -&gt; type is 2: Discount, it means the value of the discount; When the Promotion -&gt; type is 3: reduction, it means the value of the reduced money ."
-        },
-        "id": {
-          "type": "string",
-          "description": "Unique identifier."
-        }
-      },
-      "required": [
-        "id",
-        "actionType",
-        "actionValue",
-        "actionObjectId"
-      ]
-    }
-  }
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "PromotionAction.schema.json",
+	"title": "PromotionAction",
+	"definitions": {
+		"PromotionAction": {
+			"$id": "#PromotionAction",
+			"type": "object",
+			"description": "Action of the promotion. When the customer meets the conditions in the promotion pattern, the customer can be given the benefits in the action.",
+			"properties": {
+				"@baseType": {
+					"type": "string",
+					"description": "The base type for use in polymorphic collections"
+				},
+				"@schemaLocation": {
+					"type": "string",
+					"description": "A link to the schema describing a resource (for type extension)."
+				},
+				"@type": {
+					"type": "string",
+					"description": "The class type of the actual resource (for type extension)."
+				},
+				"actionEntityRef": {
+					"$ref": "../Common/EntityRef.schema.json#EntityRef",
+					"description": "It refers to the entity which is impacted by the promotion action. \n • When the Promotion type is 1: Award, the actionEntityRef is the party account; \n • When the Promotion type is 2: Discount, it is the product offering; \n • When the Promotion type is 3: Reduction, it is the product offering also."
+				},
+				"actionType": {
+					"type": "string",
+					"description": "Action type can be one of the following: voice (minute), data (MB), data (GB), SMS, bonus point, physical gift, voucher, promotion code, an existing offering, currency."
+				},
+				"actionValue": {
+					"type": "string",
+					"description": "When the Promotion type is 1: Award, it means the amount or value of the awards decided by actionType, such as: Amount of gift, Amount of bonus, Value of discount;  \n • When the Promotion type is 2: Discount, it means the value of the discount;  \n • When the Promotion type is 3: reduction, it means the value of the reduced money."
+				},
+				"id": {
+					"type": "string",
+					"description": "Unique identifier."
+				}
+			},
+			"required": [
+				"actionType"
+			]
+		}
+	}
 }

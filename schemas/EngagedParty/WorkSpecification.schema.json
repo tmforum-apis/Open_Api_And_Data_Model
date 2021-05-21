@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "WorkSpecification.schema.json",
+    "title": "WorkSpecification",
+    "definitions": {
+        "WorkSpecification": {
+            "$id": "#WorkSpecification",
+            "type": "object",
+            "description": "Definition of the nature of a Work Unit. For example, could be wiring, equipment installation, etc.",
+            "properties": {
+                "isAppointmentRequired": {
+                    "type": "boolean"
+                },
+                "workSpecRelationship": {
+                    "type": "array",
+                    "description": "Relationship to another work specification, might be dependency, substitution, etc.\r\n",
+                    "items": {
+                        "$ref": "../EngagedParty/WorkSpecificationRelationship.schema.json#/definitions/WorkSpecificationRelationship"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/EntitySpecification.schema.json#/definitions/EntitySpecification"
+                }
+            ]
+        }
+    }
+}

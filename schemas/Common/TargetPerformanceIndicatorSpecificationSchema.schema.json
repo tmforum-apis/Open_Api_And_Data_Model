@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "TargetPerformanceIndicatorSpecificationSchema.schema.json",
+  "title": "TargetPerformanceIndicatorSpecificationSchema",
+  "definitions": {
+    "TargetPerformanceIndicatorSpecificationSchema": {
+      "$id": "#TargetPerformanceIndicatorSpecificationSchema",
+      "type": "object",
+      "description": "The reference object to the schema and type of target performance indicator specification which is described by performance indicator specification",
+      "properties": {
+        "@type": {
+          "type": "string",
+          "description": "Class type of the target product"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "format": "uri",
+          "description": "This field provides a link to the schema describing the target performance indicator specification"
+        }
+      },
+      "required": [
+        "@type",
+        "@schemaLocation"
+      ]
+    }
+  }
+}

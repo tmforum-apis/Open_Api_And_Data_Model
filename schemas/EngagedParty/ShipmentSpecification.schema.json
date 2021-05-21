@@ -10,34 +10,34 @@
             "properties": {
                 "description": {
                     "type": "string",
-                    "description": "Description of this REST resource"
-                },
-                "signatureRequired": {
-                    "type": "boolean"
+                    "description": "Description of this REST resource",
+                    "example":  "Airmail delivery" 
                 },
                 "lastUpdate": {
                     "type": "string",
                     "description": "Date and time of the last update of this REST resource",
-                    "format": "date-time"
+                    "format": "date-time",
+                    "example":  "2020-11-20T08:00:00Z" 
                 },
                 "lifecycleStatus": {
                     "type": "string",
-                    "description": "Used to indicate the current lifecycle status of this catalog item"
+                    "description": "Used to indicate the current lifecycle status of this catalog item",
+                    "example": "active" 
                 },
                 "name": {
                     "type": "string",
-                    "description": "Name given to this REST resource"
+                    "description": "Name given to this REST resource",
+                    "example": "Shipment Spec" 
                 },
                 "isBundle": {
                     "type": "boolean",
-                    "description": "isBundle determines whether an ShipmentSpecification represents a single ShipmentSpecification (false), or a bundle of ShipmentSpecification (true)."
+                    "description": "isBundle determines whether an ShipmentSpecification represents a single ShipmentSpecification (false), or a bundle of ShipmentSpecification (true).",
+                    "example":  true 
                 },
                 "version": {
                     "type": "string",
-                    "description": "Entity specification version"
-                },
-                "signatureRequiredBy": {
-                    "$ref": "../EngagedParty/SignatureRequiredByType.schema.json#/definitions/SignatureRequiredByType"
+                    "description": "Entity specification version",
+                    "example":  "4.0.1" 
                 },
                 "constraint": {
                     "type": "array",
@@ -57,7 +57,7 @@
                         "$ref": "../Common/AttachmentRefOrValue.schema.json#/definitions/AttachmentRefOrValue"
                     }
                 },
-                "specCharacteristic": {
+                "shipmentSpecificationCharacteristic": {
                     "type": "array",
                     "description": "List of characteristics that the shipment can take",
                     "items": {
@@ -75,7 +75,7 @@
                     "description": "The period for which this REST resource is valid",
                     "$ref": "../Common/TimePeriod.schema.json#/definitions/TimePeriod"
                 },
-                "entitySpecRelationship": {
+                "shipmentSpecRelationship": {
                     "type": "array",
                     "description": "Relationship to another shipment specification, might be dependency, substitution, etc.\r\n",
                     "items": {

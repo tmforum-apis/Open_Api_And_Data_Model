@@ -1,0 +1,173 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "WorkOrder.schema.json",
+    "title": "WorkOrder",
+    "definitions": {
+        "WorkOrder": {
+            "$id": "#WorkOrder",
+            "type": "object",
+            "required": [
+                "workOrderItem"
+            ],
+            "properties": {
+                "agreement": {
+                    "type": "array",
+                    "description": "A reference to an agreement defined in the context of the work order",
+                    "items": {
+                        "$ref": "../EngagedParty/AgreementRef.schema.json#/definitions/AgreementRef"
+                    }
+                },
+                "appointment": {
+                    "$ref": "../Customer/AppointmentRef.schema.json#/definitions/AppointmentRef"
+                },
+                "billingAccount": {
+                    "$ref": "../Customer/BillingAccountRef.schema.json#/definitions/BillingAccountRef"
+                },
+                "cancellationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order is cancelled. This is used when order is cancelled. "
+                },
+                "cancellationReason": {
+                    "type": "string",
+                    "description": "Reason why the order is cancelled. This is used when order is cancelled. "
+                },
+                "category": {
+                    "type": "string",
+                    "description": "Used to categorize the order from a business perspective that can be useful for the OM system (e.g. \"enterprise\", \"residential\", ...)"
+                },
+                "channel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/RelatedChannel.schema.json#/definitions/RelatedChannel"
+                    }
+                },
+                "completionDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order was completed"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A free-text description of the order"
+                },
+                "expectedCompletionDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Expected completion date amended by the provider"
+                },
+                "externalId": {
+                    "type": "string",
+                    "description": "ID given by the consumer to facilitate searches"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hyperlink to access the order"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "ID created on repository side"
+                },
+                "note": {
+                    "$ref": "../Common/Note.schema.json#/definitions/Note"
+                },
+                "notificationContact": {
+                    "type": "string",
+                    "description": "Contact attached to the order to send back information regarding this order"
+                },
+                "order": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/OrderRef.schema.json#/definitions/OrderRef"
+                    }
+                },
+                "orderDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order was created"
+                },
+                "orderTotalPrice": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/OrderPrice.schema.json#/definitions/OrderPrice"
+                    }
+                },
+                "payment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/PaymentRef.schema.json#/definitions/PaymentRef"
+                    }
+                },
+                "place": {
+                    "$ref": "../Common/PlaceRefOrValue.schema.json#/definitions/PlaceRefOrValue"
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A way that can be used by consumers to prioritize orders in OM system (from 0 to 4 : 0 is the highest priority, and 4 the lowest)"
+                },
+                "quote": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/QuoteRef.schema.json#/definitions/QuoteRef"
+                    }
+                },
+                "relatedEntity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/RelatedEntity.schema.json#/definitions/RelatedEntity"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+                    }
+                },
+                "requestedCompletionDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Requested completion date from the requestors perspective"
+                },
+                "requestedStartDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Order fulfillment start date wished by the requestor. This is used when, for any reason, requestor cannot allow provider to begin to operationally begin the fulfillment before a date."
+                },
+                "startDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order started"
+                },
+                "state": {
+                    "$ref": "../EngagedParty/WorkOrderStateType.schema.json#/definitions/WorkOrderStateType"
+                },
+                "stateChangeDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Last change date of the order state."
+                },
+                "version": {
+                    "type": "string",
+                    "description": "The version number allows for the tracking of multiple evolution steps during the lifecycle of the entity.\r\nIt can be correlated to the revision number related to the lifecycle management change of the entity."
+                },
+                "workOrderItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/WorkOrderItem.schema.json#/definitions/WorkOrderItem"
+                    }
+                },
+                "workOrderRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/OrderRelationship.schema.json#/definitions/OrderRelationship"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#/definitions/Entity"
+                }
+            ]
+        }
+    }
+}

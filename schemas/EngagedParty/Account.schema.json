@@ -53,7 +53,7 @@
         "taxExemption": {
           "type": "array",
           "items": {
-            "$ref": "../EngagedParty/AccountTaxExemption.schema.json#AccountTaxExemption"
+            "$ref": "../EngagedParty/TaxExemptionCertificate.schema.json#TaxExemptionCertificate"
           }
         },
         "contact": {

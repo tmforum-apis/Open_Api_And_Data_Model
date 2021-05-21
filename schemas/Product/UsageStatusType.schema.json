@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "UsageStatusType.schema.json",
+  "title": "UsageStatusType",
+  "definitions": {
+    "UsageStatusType": {
+      "$id": "#UsageStatusType",
+      "type": "string",
+      "description": "Possible values for the status of the Usage",
+      "examples": [ "rated", "billed" ],
+      "enum": [
+        "received", 
+        "rejected", 
+        "recycled", 
+        "guided", 
+        "rated", 
+        "rerated", 
+        "billed"
+      ]
+    }
+  }
+}

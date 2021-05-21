@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ServiceOrderMilestone.schema.json",
+  "title": "ServiceOrderMilestone",
+  "definitions": {
+    "ServiceOrderMilestone": {
+      "$id": "#ServiceOrderMilestone",
+      "description": "ServiceOrderMilestone represents an action or event marking a significant change or stage in processing of a service order.",
+      "type": "object",
+      "properties": {
+        "serviceOrderItem": {
+          "type": "array",
+          "description": "A list of order items corresponded to this milestone",
+          "items": {
+             "$ref": "../Service/ServiceOrderItem.schema.json#/definitions/ServiceOrderItem"
+          }
+        } 
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Milestone.schema.json#/definitions/Milestone"
+        }
+      ]
+    }
+  }
+}

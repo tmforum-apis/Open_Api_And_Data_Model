@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "WorkOrderRef.schema.json",
+    "title": "WorkOrderRef",
+    "definitions": {
+        "WorkOrderRef": {
+            "$id": "#WorkOrderRef",
+            "type": "object",
+            "description": "WorkOrder reference",
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#/definitions/EntityRef"
+                }
+            ]
+        }
+    }
+}

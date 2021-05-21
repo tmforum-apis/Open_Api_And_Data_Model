@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "WorkOrderItemStateType.schema.json",
+    "title": "WorkOrderItemStateType",
+    "definitions": {
+        "WorkOrderItemStateType": {
+            "$id": "#WorkOrderItemStateType",
+            "type": "string",
+            "description": "Possible values for the state of the order",
+            "enum": [
+                "acknowledged",
+                "rejected",
+                "pending",
+                "held",
+                "inProgress",
+                "cancelled",
+                "completed",
+                "failed",
+                "partial",
+                "assessingCancellation",
+                "pendingCancellation"
+            ]
+        }
+    }
+}

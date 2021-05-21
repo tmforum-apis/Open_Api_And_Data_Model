@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "EntityRefOrValue.schema.json",
+  "title": "EntityRefOrValue",
+  "definitions": {
+    "EntityRef": {
+      "$id": "#EntityRefOrValue",
+      "description": "Entity reference schema to be use for all entityRef class OrValue to provide information via POST",
+      "type": "object",
+      "properties": {
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        },
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }   
+      ]
+    }
+  }
+}

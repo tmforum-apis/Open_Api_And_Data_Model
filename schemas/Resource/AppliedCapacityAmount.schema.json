@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AppliedCapacityAmount.schema.json",
+    "title": "AppliedCapacityAmount",
+    "definitions": {
+        "AppliedCapacityAmount": {
+            "$id": "#AppliedCapacityAmount",
+            "type": "object",
+            "description": "The amount of ResourceCapacityDemand applied to a CapacityAmount.",
+            "properties": {
+                "appliedDemandAmount": {
+                    "type": "string",
+                    "description": "An amount of demand applied to a CapacityAmount. Note that this is a composite attribute defined by CapacityAmount."
+                },
+                "resource": {
+                    "type": "array",
+                    "description": "A list of resources being referred to in the AppliedCapacityAmount.",
+                    "items": {
+                        "$ref": "../Resource/ResourceRef.schema.json#/definitions/ResourceRef"
+                    }
+                },
+                "resourceCapacityDemand": {
+                    "description": "he amount of capacity that is planned to be consumed or has been consumed.",
+                    "$ref": "../Resource/ResourceCapacityDemand.schema.json#/definitions/ResourceCapacityDemand"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
+        }
+    }
+}

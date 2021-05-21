@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "WorkQualificationItemRelationship.schema.json",
+    "title": "WorkQualificationItemRelationship",
+    "definitions": {
+        "WorkQualificationItemRelationship": {
+            "$id": "#WorkQualificationItemRelationship",
+            "type": "object",
+            "description": "Structure used to describe relationship between WorkQualification items from the same WorkQualification .",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Id of the workQualificationItem (from the same workQualification)."
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "Type of relationship (ex: reliesOn, connectedTo, etc...)"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
+        }
+    }
+}

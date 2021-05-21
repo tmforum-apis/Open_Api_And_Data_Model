@@ -5,17 +5,22 @@
     "definitions": {
         "AdjustBalance": {
             "$id": "#AdjustBalance",
-            "description": "The AdjustBalance resource allows adjustments to be made to the original BalanceTopup eg increment the amount, alter the recharge periodicity",
+            "description": "The AdjustBalance resource allows adjustments to be made to the original BalanceTopup e.g. increment the amount, alter the recharge periodicity. Alternatively, an adjustment can be made to an outstanding reservation request, in which case the reservedValue of the bucket will be adjusted, not the remaining value",
             "properties": {
                 "adjustType": {
-                    "description": "valid values are RecurringCharge or OneTimeCharge",
-                    "$ref": "AdjustType.schema.json#AdjustType"
-                }
-	    },
+                    "description": "The type of the adjustment. For example: recurringChargeDebit, oneTimeChargeCredit, oneTimeChargeDebit, goodWillCredit, generalDebit, reservationDebit",
+                    "type": "string"
+                },
+                "reserveBalance": {
+                    "$ref": "../Customer/ReserveBalanceRef.schema.json#ReserveBalanceRef",
+                    "description": "Should be present for types relating to reservation, such as reservation debit. Means that the adjustment needs to be executed according to this reservation request. The amount of the balance action is optional in this case, and if not supplied the entire reserved amount will be adjusted in the bucket. If a specific implementation can support partial consumption of the reservation, then amount can be supplied, and that amount will be adjusted in the bucket and the reservation request"
+                 }
+    	    },
             "allOf": [
                 {
-                    "$ref": "Action.schema.json#Action"
-                }]
-	}
+                    "$ref": "BalanceAction.schema.json#BalanceAction"
+                }
+            ]
+    	}
     }
 }

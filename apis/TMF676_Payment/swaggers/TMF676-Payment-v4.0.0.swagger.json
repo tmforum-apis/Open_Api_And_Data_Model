@@ -21,6 +21,12 @@
             "name": "payment"
         },
         {
+            "name": "authorizePayment"
+        },
+        {
+            "name": "initiatePayment"
+        },
+        {
             "name": "refund"
         },
         {
@@ -219,6 +225,476 @@
                         "description": "Success",
                         "schema": {
                             "$ref": "#/definitions/Payment"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/authorizePayment": {
+            "get": {
+                "operationId": "listAuthorizePayment",
+                "summary": "List or find AuthorizePayment objects",
+                "description": "This operation list or find AuthorizePayment entities",
+                "tags": [
+                    "authorizePayment"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "offset",
+                        "description": "Requested index for start of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "description": "Requested number of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "X-Result-Count": {
+                                "description": "Actual number of items returned in the response body",
+                                "type": "integer"
+                            },
+                            "X-Total-Count": {
+                                "description": "Total number of items matching criteria",
+                                "type": "integer"
+                            }
+                        },
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/AuthorizePayment"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "operationId": "createAuthorizePayment",
+                "summary": "Creates a AuthorizePayment",
+                "description": "This operation creates a AuthorizePayment entity.",
+                "tags": [
+                    "authorizePayment"
+                ],
+                "parameters": [
+                    {
+                        "name": "authorizePayment",
+                        "description": "The AuthorizePayment to be created",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/AuthorizePayment_Create"
+                        },
+                        "in": "body"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/AuthorizePayment"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/authorizePayment/{id}": {
+            "get": {
+                "operationId": "retrieveAuthorizePayment",
+                "summary": "Retrieves a AuthorizePayment by ID",
+                "description": "This operation retrieves a AuthorizePayment entity. Attribute selection is enabled for all first level attributes.",
+                "tags": [
+                    "authorizePayment"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the AuthorizePayment",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    },
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to provide in response",
+                        "required": false,
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/AuthorizePayment"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/initiatePayment": {
+            "get": {
+                "operationId": "listInitiatePayment",
+                "summary": "List or find InitiatePayment objects",
+                "description": "This operation list or find InitiatePayment entities",
+                "tags": [
+                    "initiatePayment"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "offset",
+                        "description": "Requested index for start of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "description": "Requested number of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "X-Result-Count": {
+                                "description": "Actual number of items returned in the response body",
+                                "type": "integer"
+                            },
+                            "X-Total-Count": {
+                                "description": "Total number of items matching criteria",
+                                "type": "integer"
+                            }
+                        },
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/InitiatePayment"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "operationId": "createInitiatePayment",
+                "summary": "Creates a InitiatePayment",
+                "description": "This operation creates a InitiatePayment entity.",
+                "tags": [
+                    "initiatePayment"
+                ],
+                "parameters": [
+                    {
+                        "name": "initiatePayment",
+                        "description": "The InitiatePayment to be created",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/InitiatePayment_Create"
+                        },
+                        "in": "body"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/InitiatePayment"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/initiatePayment/{id}": {
+            "get": {
+                "operationId": "retrieveInitiatePayment",
+                "summary": "Retrieves a InitiatePayment by ID",
+                "description": "This operation retrieves a InitiatePayment entity. Attribute selection is enabled for all first level attributes.",
+                "tags": [
+                    "initiatePayment"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the InitiatePayment",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    },
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to provide in response",
+                        "required": false,
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/InitiatePayment"
                         }
                     },
                     "400": {
@@ -916,6 +1392,574 @@
                 }
             }
         },
+        "/listener/authorizePaymentCreateEvent": {
+            "post": {
+                "operationId": "listenToAuthorizePaymentCreateEvent",
+                "summary": "Client listener for entity AuthorizePaymentCreateEvent",
+                "description": "Example of a client listener for receiving the notification AuthorizePaymentCreateEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/AuthorizePaymentCreateEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/authorizePaymentAttributeValueChangeEvent": {
+            "post": {
+                "operationId": "listenToAuthorizePaymentAttributeValueChangeEvent",
+                "summary": "Client listener for entity AuthorizePaymentAttributeValueChangeEvent",
+                "description": "Example of a client listener for receiving the notification AuthorizePaymentAttributeValueChangeEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/AuthorizePaymentAttributeValueChangeEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/authorizePaymentStateChangeEvent": {
+            "post": {
+                "operationId": "listenToAuthorizePaymentStateChangeEvent",
+                "summary": "Client listener for entity AuthorizePaymentStateChangeEvent",
+                "description": "Example of a client listener for receiving the notification AuthorizePaymentStateChangeEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/AuthorizePaymentStateChangeEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/authorizePaymentDeleteEvent": {
+            "post": {
+                "operationId": "listenToAuthorizePaymentDeleteEvent",
+                "summary": "Client listener for entity AuthorizePaymentDeleteEvent",
+                "description": "Example of a client listener for receiving the notification AuthorizePaymentDeleteEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/AuthorizePaymentDeleteEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/initiatePaymentCreateEvent": {
+            "post": {
+                "operationId": "listenToInitiatePaymentCreateEvent",
+                "summary": "Client listener for entity InitiatePaymentCreateEvent",
+                "description": "Example of a client listener for receiving the notification InitiatePaymentCreateEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/InitiatePaymentCreateEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/initiatePaymentAttributeValueChangeEvent": {
+            "post": {
+                "operationId": "listenToInitiatePaymentAttributeValueChangeEvent",
+                "summary": "Client listener for entity InitiatePaymentAttributeValueChangeEvent",
+                "description": "Example of a client listener for receiving the notification InitiatePaymentAttributeValueChangeEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/InitiatePaymentAttributeValueChangeEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/initiatePaymentStateChangeEvent": {
+            "post": {
+                "operationId": "listenToInitiatePaymentStateChangeEvent",
+                "summary": "Client listener for entity InitiatePaymentStateChangeEvent",
+                "description": "Example of a client listener for receiving the notification InitiatePaymentStateChangeEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/InitiatePaymentStateChangeEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/initiatePaymentDeleteEvent": {
+            "post": {
+                "operationId": "listenToInitiatePaymentDeleteEvent",
+                "summary": "Client listener for entity InitiatePaymentDeleteEvent",
+                "description": "Example of a client listener for receiving the notification InitiatePaymentDeleteEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/InitiatePaymentDeleteEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
         "/listener/refundCreateEvent": {
             "post": {
                 "operationId": "listenToRefundCreateEvent",
@@ -1233,7 +2277,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
                 "@referredType": {
                     "type": "string",
@@ -1254,6 +2298,152 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                }
+            }
+        },
+        "AuthorizePayment": {
+            "type": "object",
+            "description": "Task resource for operation authorize payment",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The identifier of the task"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "A reference to the task"
+                },
+                "authorizePaymentDate ": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "date of the operation authorize payment"
+                },
+                "authorizedPaymentDate ": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "date when the operation was authorized"
+                },
+                "state": {
+                    "type": "string",
+                    "description": "Current state of the operation task"
+                },
+                "authorizedPayment ": {
+                    "$ref": "#/definitions/PaymentRefOrValue",
+                    "description": "Related payment to this operation."
+                }
+            }
+        },
+        "AuthorizePayment_Create": {
+            "type": "object",
+            "description": "Task resource for operation authorize payment\nSkipped properties: id,href,state,authorizePaymentDate,authorizedPaymentDate",
+            "properties": {
+                "authorizePaymentDate ": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "date of the operation authorize payment"
+                },
+                "authorizedPaymentDate ": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "date when the operation was authorized"
+                },
+                "authorizedPayment ": {
+                    "$ref": "#/definitions/PaymentRefOrValue",
+                    "description": "Related payment to this operation."
+                }
+            }
+        },
+        "AuthorizePaymentRef": {
+            "type": "object",
+            "description": "Operation to payment authorization, prior to payment capture.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A name for the payment authorization"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "ChannelRef": {
+            "type": "object",
+            "description": "The channel to which the resource reference to. e.g. channel for selling product offerings, channel for opening a trouble ticket etc..",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the channel."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "Entity": {
+            "type": "object",
+            "description": "Base entity schema for use in TMForum Open-APIs",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "@baseType": {
@@ -1267,49 +2457,9 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
-        },
-        "ChannelRef": {
-            "type": "object",
-            "description": "The channel to which the resource reference to. e.g. channel for selling product offerings, channel for opening a trouble ticket etc..",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "unique identifier"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Hyperlink reference"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the channel."
-                },
-                "@baseType": {
-                    "example": "Place",
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "example": "http://host/schemas/Subclass.schema.json",
-                    "type": "string",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "example": "VendorProductOffering",
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class Extensible name"
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                }
-            },
-            "required": [
-                "id"
-            ]
         },
         "EntityRef": {
             "type": "object",
@@ -1321,6 +2471,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -1328,17 +2479,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "Place",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "http://host/schemas/Subclass.schema.json",
                     "type": "string",
+                    "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "VendorProductOffering",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -1356,19 +2505,77 @@
             "description": "Base Extensible schema for use in TMForum Open-APIs",
             "properties": {
                 "@baseType": {
-                    "example": "Place",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "http://host/schemas/Subclass.schema.json",
                     "type": "string",
+                    "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "VendorProductOffering",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "InitiatePayment": {
+            "type": "object",
+            "description": "Task resource for operation initiate payment",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The identifier of the task"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "A reference to the task"
+                },
+                "InitiatePaymentDate ": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "date of the operation initiate payment"
+                },
+                "InitiatedPaymentDate ": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "date when the operation was initiated"
+                },
+                "state": {
+                    "type": "string",
+                    "description": "Current state of the operation task"
+                },
+                "authorizedPayment ": {
+                    "$ref": "#/definitions/AuthorizePaymentRef",
+                    "description": "Related authorized payment to this operation."
+                },
+                "initiatedPayment ": {
+                    "$ref": "#/definitions/PaymentRefOrValue",
+                    "description": "Related payment to this operation."
+                }
+            }
+        },
+        "InitiatePayment_Create": {
+            "type": "object",
+            "description": "Task resource for operation initiate payment\nSkipped properties: id,href,state,initiatePaymentDate,initiatedPaymentDate",
+            "properties": {
+                "InitiatePaymentDate ": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "date of the operation initiate payment"
+                },
+                "InitiatedPaymentDate ": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "date when the operation was initiated"
+                },
+                "authorizedPayment ": {
+                    "$ref": "#/definitions/AuthorizePaymentRef",
+                    "description": "Related authorized payment to this operation."
+                },
+                "initiatedPayment ": {
+                    "$ref": "#/definitions/PaymentRefOrValue",
+                    "description": "Related payment to this operation."
                 }
             }
         },
@@ -1384,19 +2591,6 @@
                     "type": "number",
                     "format": "float",
                     "description": "A positive floating point number"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -1456,9 +2650,6 @@
                 "channel": {
                     "$ref": "#/definitions/ChannelRef"
                 },
-                "payer": {
-                    "$ref": "#/definitions/RelatedParty"
-                },
                 "paymentItem": {
                     "type": "array",
                     "items": {
@@ -1467,6 +2658,15 @@
                 },
                 "paymentMethod": {
                     "$ref": "#/definitions/PaymentMethodRefOrValue"
+                },
+                "pointOfInteraction": {
+                    "$ref": "#/definitions/PointOfInteraction"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    }
                 },
                 "taxAmount": {
                     "$ref": "#/definitions/Money",
@@ -1487,7 +2687,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1526,9 +2726,6 @@
                 "channel": {
                     "$ref": "#/definitions/ChannelRef"
                 },
-                "payer": {
-                    "$ref": "#/definitions/RelatedParty"
-                },
                 "paymentItem": {
                     "type": "array",
                     "items": {
@@ -1537,6 +2734,15 @@
                 },
                 "paymentMethod": {
                     "$ref": "#/definitions/PaymentMethodRefOrValue"
+                },
+                "pointOfInteraction": {
+                    "$ref": "#/definitions/PointOfInteraction"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    }
                 },
                 "taxAmount": {
                     "$ref": "#/definitions/Money",
@@ -1557,7 +2763,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1571,6 +2777,11 @@
                 "id": {
                     "type": "string",
                     "description": "Unique identifier of the payment Item"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "amount": {
                     "$ref": "#/definitions/Money",
@@ -1598,49 +2809,77 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
         "PaymentMethod": {
             "type": "object",
             "description": "Defines a specific method of payment (e.g. direct debit with all details associated)",
+            "required": [
+                "@type",
+                "name"
+            ],
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "Unique Identifier within the server for the payment method."
+                    "description": "unique identifier"
                 },
                 "href": {
                     "type": "string",
-                    "description": "A resource URI pointing to the resource in the server that stores the detailed information. This is typically the resource url to retrieve individual details for the specific payment method"
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "authorizationCode": {
+                    "example": "1234567890",
+                    "type": "string",
+                    "description": "Review: Authorization code provided by a financial institution. Typically this would be populated for recurring payments using the method, as payments have an authorization code of their own."
                 },
                 "description": {
+                    "example": "My gold mastercard.",
                     "type": "string",
-                    "description": "Text describing the contents of the payment method"
+                    "description": "Text description of the contents of the payment method"
                 },
                 "isPreferred": {
+                    "example": "True",
                     "type": "boolean",
                     "description": "If the method is the preferred one by the owner. Typically used when querying for the payment methods of a specific customer or account"
                 },
                 "name": {
+                    "example": "Main credit card",
                     "type": "string",
                     "description": "Friendly name assigned to the payment method"
                 },
                 "status": {
-                    "type": "string"
+                    "example": "Active",
+                    "type": "string",
+                    "description": "Status of the payment method"
                 },
                 "statusDate": {
+                    "example": "2020-07-17T10:12:26+0000",
                     "type": "string",
-                    "format": "date-time"
+                    "format": "date-time",
+                    "description": "The last time the payment method status changed."
+                },
+                "statusReason": {
+                    "example": "This payment method has expired, therefore its status is now inactive.",
+                    "type": "string",
+                    "description": "The reason for the last status change."
                 },
                 "account": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/AccountRef"
-                    }
+                    },
+                    "description": "Reference to the accounts that are linked to the payment method. May be a party account or a financial account."
                 },
                 "relatedParty": {
-                    "$ref": "#/definitions/RelatedParty"
+                    "$ref": "#/definitions/RelatedPartyRef",
+                    "description": "Reference to the customer or party that owns that payment method or can use it."
+                },
+                "relatedPlace": {
+                    "$ref": "#/definitions/RelatedPlace",
+                    "description": "Reference to a place for billing or delivery address, if different to that of the related party."
                 },
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
@@ -1657,7 +2896,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "Type of payment method (e.g.: bank card, cash, voucher, etc). The details field type depends on the value assigned to this one."
                 }
             }
         },
@@ -1671,6 +2910,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -1678,17 +2918,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "Place",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "http://host/schemas/Subclass.schema.json",
                     "type": "string",
+                    "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "VendorProductOffering",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -1704,61 +2942,87 @@
         "PaymentMethodRefOrValue": {
             "type": "object",
             "description": "link to the resource that holds information about the payment mean used to complete the operation",
+            "required": [
+                "@type",
+                "name"
+            ],
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "Unique Identifier within the server for the payment method."
+                    "description": "unique identifier"
                 },
                 "href": {
                     "type": "string",
-                    "description": "A resource URI pointing to the resource in the server that stores the detailed information. This is typically the resource url to retrieve individual details for the specific payment method"
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "authorizationCode": {
+                    "example": "1234567890",
+                    "type": "string",
+                    "description": "Review: Authorization code provided by a financial institution. Typically this would be populated for recurring payments using the method, as payments have an authorization code of their own."
                 },
                 "description": {
+                    "example": "My gold mastercard.",
                     "type": "string",
-                    "description": "Text describing the contents of the payment method"
+                    "description": "Text description of the contents of the payment method"
                 },
                 "isPreferred": {
+                    "example": "True",
                     "type": "boolean",
                     "description": "If the method is the preferred one by the owner. Typically used when querying for the payment methods of a specific customer or account"
                 },
                 "name": {
+                    "example": "Main credit card",
                     "type": "string",
                     "description": "Friendly name assigned to the payment method"
                 },
                 "status": {
-                    "type": "string"
+                    "example": "Active",
+                    "type": "string",
+                    "description": "Status of the payment method"
                 },
                 "statusDate": {
+                    "example": "2020-07-17T10:12:26+0000",
                     "type": "string",
-                    "format": "date-time"
+                    "format": "date-time",
+                    "description": "The last time the payment method status changed."
+                },
+                "statusReason": {
+                    "example": "This payment method has expired, therefore its status is now inactive.",
+                    "type": "string",
+                    "description": "The reason for the last status change."
                 },
                 "account": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/AccountRef"
-                    }
+                    },
+                    "description": "Reference to the accounts that are linked to the payment method. May be a party account or a financial account."
                 },
                 "relatedParty": {
-                    "$ref": "#/definitions/RelatedParty"
+                    "$ref": "#/definitions/RelatedPartyRef",
+                    "description": "Reference to the customer or party that owns that payment method or can use it."
+                },
+                "relatedPlace": {
+                    "$ref": "#/definitions/RelatedPlace",
+                    "description": "Reference to a place for billing or delivery address, if different to that of the related party."
                 },
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "Date interval in which the payment method is valid"
                 },
                 "@baseType": {
-                    "example": "Place",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "http://host/schemas/Subclass.schema.json",
                     "type": "string",
+                    "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "VendorProductOffering",
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                    "description": "Type of payment method (e.g.: bank card, cash, voucher, etc). The details field type depends on the value assigned to this one."
                 },
                 "@referredType": {
                     "type": "string",
@@ -1776,6 +3040,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -1783,17 +3048,15 @@
                     "description": "A name for the payment"
                 },
                 "@baseType": {
-                    "example": "Place",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "http://host/schemas/Subclass.schema.json",
                     "type": "string",
+                    "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "VendorProductOffering",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -1805,6 +3068,107 @@
             "required": [
                 "id"
             ]
+        },
+        "PaymentRefOrValue": {
+            "type": "object",
+            "description": "link to the resource information about the payment operation",
+            "required": [
+                "account",
+                "paymentMethod"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of Payment"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Hypertext Reference of the Payment"
+                },
+                "authorizationCode": {
+                    "type": "string",
+                    "description": "Authorization code retrieved from an external payment gateway that could be used for conciliation"
+                },
+                "correlatorId": {
+                    "type": "string",
+                    "description": "Unique identifier in the client for the payment in case it is needed to correlate"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Text describing the contents of the payment"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Screen name of the payment"
+                },
+                "paymentDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the payment was performed"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of the payment"
+                },
+                "statusDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the status was recorded"
+                },
+                "account": {
+                    "$ref": "#/definitions/AccountRef"
+                },
+                "amount": {
+                    "$ref": "#/definitions/Money",
+                    "description": "Amount to be paid (net of taxes)"
+                },
+                "channel": {
+                    "$ref": "#/definitions/ChannelRef"
+                },
+                "paymentItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PaymentItem"
+                    }
+                },
+                "paymentMethod": {
+                    "$ref": "#/definitions/PaymentMethodRefOrValue"
+                },
+                "pointOfInteraction": {
+                    "$ref": "#/definitions/PointOfInteraction"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    }
+                },
+                "taxAmount": {
+                    "$ref": "#/definitions/Money",
+                    "description": "Tax applied"
+                },
+                "totalAmount": {
+                    "$ref": "#/definitions/Money",
+                    "description": "Amount to be paid (including taxes)"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            }
         },
         "PaymentStatusExampleType": {
             "type": "string",
@@ -1818,6 +3182,51 @@
                 "denied",
                 "done"
             ]
+        },
+        "PointOfInteraction": {
+            "type": "object",
+            "description": "POI consists of hardware and software which enables a Cardholder and/or an Acceptor to perform a Local Card transaction. This is also referred to as a Physical/EMV Terminal. It may be Attended or Unattended.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "modeOfEntry": {
+                    "type": "string",
+                    "description": "Key entry code that tells the processor how the transaction was captured."
+                },
+                "retrievalReferenceNumber": {
+                    "type": "string",
+                    "description": "The reference number used to identify a given transaction that allow the Acceptor or Acquirer to keep track of their transactions"
+                },
+                "transactionDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date time related to the POI transaction."
+                },
+                "resource": {
+                    "$ref": "#/definitions/ResourceRef",
+                    "description": "A POI is a Physical POI or a Remote POI, as a resource."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
         },
         "Refund": {
             "type": "object",
@@ -1903,7 +3312,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1975,7 +3384,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2006,6 +3415,7 @@
                 },
                 "href": {
                     "type": "string",
+                    "format": "uri",
                     "description": "Hyperlink reference"
                 },
                 "name": {
@@ -2017,17 +3427,15 @@
                     "description": "Role played by the related party"
                 },
                 "@baseType": {
-                    "example": "Place",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "http://host/schemas/Subclass.schema.json",
                     "type": "string",
+                    "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "VendorProductOffering",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -2036,6 +3444,125 @@
                     "description": "The actual type of the target instance when needed for disambiguation."
                 }
             }
+        },
+        "RelatedPartyRef": {
+            "type": "object",
+            "description": "RelatedParty reference. A related party defines party or party role linked to a specific entity.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related party"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related party, could be a party reference or a party role reference"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related party"
+                },
+                "role": {
+                    "type": "string",
+                    "description": "Role of the related party."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "RelatedPlace": {
+            "type": "object",
+            "description": "A  Place and an associated role as installation adress, delivery address, etc....",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the place"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Unique reference of the place"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A user-friendly name for the place, such as [Paris Store], [London Store], [Main Home]"
+                },
+                "role": {
+                    "type": "string",
+                    "description": "Role of the place, such as: [home delivery], [shop retrieval])"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            }
+        },
+        "ResourceRef": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
         },
         "TimePeriod": {
             "type": "object",
@@ -2051,20 +3578,7 @@
                     "example": "1985-04-12T23:20:50.52Z",
                     "type": "string",
                     "format": "date-time",
-                    "description": "Start of the time period, using IETC-RFC-3339 format. If you define a start, you must also define an end"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "Start of the time period, using IETC-RFC-3339 format"
                 }
             }
         },
@@ -2340,6 +3854,478 @@
                 "payment": {
                     "description": "The involved resource data for the event",
                     "$ref": "#/definitions/Payment"
+                }
+            }
+        },
+        "AuthorizePaymentCreateEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/AuthorizePaymentCreateEventPayload"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                }
+            }
+        },
+        "AuthorizePaymentCreateEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "authorizePayment": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/AuthorizePayment"
+                }
+            }
+        },
+        "AuthorizePaymentAttributeValueChangeEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                },
+                "fieldPath": {
+                    "type": "string",
+                    "description": "The path identifying the object field concerned by this notification."
+                },
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/AuthorizePaymentAttributeValueChangeEventPayload"
+                }
+            }
+        },
+        "AuthorizePaymentAttributeValueChangeEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "authorizePayment": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/AuthorizePayment"
+                }
+            }
+        },
+        "AuthorizePaymentStateChangeEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/AuthorizePaymentStateChangeEventPayload"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                }
+            }
+        },
+        "AuthorizePaymentStateChangeEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "authorizePayment": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/AuthorizePayment"
+                }
+            }
+        },
+        "AuthorizePaymentDeleteEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/AuthorizePaymentDeleteEventPayload"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                }
+            }
+        },
+        "AuthorizePaymentDeleteEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "authorizePayment": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/AuthorizePayment"
+                }
+            }
+        },
+        "InitiatePaymentCreateEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/InitiatePaymentCreateEventPayload"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                }
+            }
+        },
+        "InitiatePaymentCreateEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "initiatePayment": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/InitiatePayment"
+                }
+            }
+        },
+        "InitiatePaymentAttributeValueChangeEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                },
+                "fieldPath": {
+                    "type": "string",
+                    "description": "The path identifying the object field concerned by this notification."
+                },
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/InitiatePaymentAttributeValueChangeEventPayload"
+                }
+            }
+        },
+        "InitiatePaymentAttributeValueChangeEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "initiatePayment": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/InitiatePayment"
+                }
+            }
+        },
+        "InitiatePaymentStateChangeEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/InitiatePaymentStateChangeEventPayload"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                }
+            }
+        },
+        "InitiatePaymentStateChangeEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "initiatePayment": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/InitiatePayment"
+                }
+            }
+        },
+        "InitiatePaymentDeleteEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/InitiatePaymentDeleteEventPayload"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explnatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                }
+            }
+        },
+        "InitiatePaymentDeleteEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "initiatePayment": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/InitiatePayment"
                 }
             }
         },

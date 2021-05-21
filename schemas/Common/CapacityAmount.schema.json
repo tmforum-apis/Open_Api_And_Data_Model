@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CapacityAmount.schema.json",
+    "title": "CapacityAmount",
+    "definitions": {
+        "CapacityAmount": {
+            "$id": "#CapacityAmount",
+            "type": "object",
+            "description": "Quantity that defines the Capacity.",
+            "properties": {
+                "capacityAmount": {
+                    "type": "string",
+                    "description": "A value and units that define the CapacityAmount, such as 10000 ea, 10B Mb. Instance values are mutually exclusive with From and To capacityAmounts and range interval."
+                },
+                "capacityAmountFrom": {
+                    "type": "string",
+                    "description": "The low range value that a Capacity Amount can take on."
+                },
+                "capacityAmountTo": {
+                    "type": "string",
+                    "description": "The upper range value that CapacityAmount can take on."
+                },
+                "rangeInterval": {
+                    "type": "string",
+                    "description": "An indicator that specifies the inclusion or exclusion of the capacityAmount From and capacityAmountTo attributes. \r\nPossible values are \"open\", \"closed\", \"closedBottom\" and \"closedTop\"."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
+        }
+    }
+}

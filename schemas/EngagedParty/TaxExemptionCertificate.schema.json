@@ -1,35 +1,54 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "TaxExemptionCertificate.schema.json",
-  "title": "TaxExemptionCertificate",
-  "definitions": {
-    "TaxExemptionCertificate": {
-      "$id": "#TaxExemptionCertificate",
-      "type": "object",
-      "description": "A tax exemption certificate represents a tax exemption granted to a party (individual or organization) by a tax jurisdiction which may be a city, state, country,... An exemption has a certificate identifier (received from the jurisdiction that levied the tax) and a validity period. An exemption is per tax types and determines for each type of tax what portion of the tax is exempted (partial by percentage or complete) via the tax definition.",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "Unique identifier of the certificate of the tax exemption"
-        },
-        "taxDefinition": {
-          "type": "array",
-          "items": {
-            "$ref": "../Common/TaxDefinition.schema.json#TaxDefinition"
-          }
-        },
-        "validFor": {
-          "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
-        },
-        "attachment": {
-          "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "TaxExemptionCertificate.schema.json",
+    "title": "TaxExemptionCertificate",
+    "definitions": {
+        "TaxExemptionCertificate": {
+            "$id": "#TaxExemptionCertificate",
+            "type": "object",
+            "description": "A tax exemption certificate represents a tax exemption granted to a party (individual or organization) by a tax jurisdiction which may be a city, state, country,... An exemption has a certificate identifier (received from the jurisdiction that levied the tax) and a validity period. An exemption is per tax types and determines for each type of tax what portion of the tax is exempted (partial by percentage or complete) via the tax definition.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the tax exemption within list of the exemptions"
+                },
+                "taxDefinition": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/TaxDefinition.schema.json#TaxDefinition"
+                    },
+                    "description": "A list of taxes that are covered by the exemption, e.g. City Tax, State Tax. The definition would include the exemption (e.g. for a rate exemption 0% would be a full exemption, 5% could be a partial exemption if the actual rate was 10%)."
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period of time for which the exemption is valid"
+                },
+                "certificateNumber": {
+                    "type": "string",
+                    "description": "Identifier of a document that shows proof of exemption from taxes for the taxing jurisdiction"
+                },
+                "issuingJurisdiction": {
+                    "type": "string",
+                    "description": "Name of the jurisdiction that issued the exemption",
+                    "examples": [
+                        "USA",
+                        "Los Angeles"
+                    ]
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "Reason for the tax exemption"
+                },
+                "attachment": {
+                    "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue",
+                    "description": "The actual certificate contents, if such is supplied by the issuing jurisdiction"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#Extensible"
+                }
+            ]
         }
-      },
-      "allOf": [
-        {
-          "$ref": "../Common/Entity.schema.json#Entity"
-        }
-      ]
     }
-  }
 }

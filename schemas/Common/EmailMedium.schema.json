@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "EmailMedium.schema.json",
+  "title": "EmailMedium",
+  "definitions": {
+    "EmailMedium": {
+      "$id": "#EmailMedium",
+      "type": "object",
+      "description": "Describes an email that could be used to contact a party (an individual or an organization)",
+      "properties": {
+        "emailAddress": {
+          "type": "string",
+          "description": "Full email address in standard format"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/DigitalIdentityContactMedium.schema.json#DigitalIdentityContactMedium"
+        }
+      ]
+    }
+  }
+}

@@ -10,104 +10,91 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "Identifier of the Shipping Order"
+          "description": "Identifier of the Shipping Order",
+          "example": "4aafacbd-11ff-4dc8-b445-305f2215715f123"
         },
         "href": {
           "type": "string",
-          "description": "Shipping Order unique reference"
+          "description": "Shipping Order unique reference",
+          "example": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f"
         },
-        "externalIdentifier": {
-          "type": "array",
-          "description": "An identification of an entity that is owned by or originates in a software system different from the current system, for example a ProductOrder handed off from a commerce platform into an order handling system. The structure identifies the system itself, the nature of the entity within the system (e.g. class name) and the unique ID of the entity within the system. It is anticipated that multiple external IDs can be held for a single entity, e.g. if the entity passed through multiple systems on the way to the current system. In this case the consumer is expected to sequence the IDs in the array in reverse order of provenance, i.e. most recent system first in the list.",
-          "items": {
-            "$ref": "../Common/ExternalIdentifier.schema.json#ExternalIdentifier"
-          }
-        },
-        "systemId": {
+        "creationDate": {
           "type": "string",
-          "description": "Describes the system Id from which the action was done"
+          "format": "date-time",
+          "description": "Date of the Shipping Order",
+          "example": "2020-11-10T08:00:00Z"
         },
-        "state":{
-          "type":"string",
-          "enum": ["acknowledged", "inProgress", "scheduledForDelivery", "dispatched", "inTransit", "delivered", "cancelled", "suspended", "returned", "failure", "unknown"],
-          "description":"The possible shipment status values"
+        "lastUpdateDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date of the Shipping Order",
+          "example": "2020-11-10T08:00:00Z"
         },
-        "relatedParty":{
-          "$ref":"../EngagedParty/RelatedPartyWithContactInfo.schema.json#RelatedPartyWithContactInfo"
-        },
-        "productOrder":{
-          "$ref":"../Customer/ProductOrderRef.schema.json#ProductOrderRef"
+        "relatedParty": {
+          "type": "array",
+          "description": "An existing related party that has some form of correlation with the given shipping order. It can be recipient, payer, etc.",
+          "items": {
+            "$ref": "../EngagedParty/RelatedPartyWithContactInfo.schema.json#RelatedPartyWithContactInfo"
+          }
         },
         "relatedShippingOrder": {
-          "$ref": "../EngagedParty/RelatedShippingOrder.schema.json#RelatedShippingOrder"
+          "$ref": "../EngagedParty/RelatedShippingOrder.schema.json#RelatedShippingOrder",
+          "description": "An existing shipping order that has some form of correlation with the given shipping order"
         },
-        "shippingInstruction":{
-          "$ref": "../EngagedParty/ShippingInstruction.schema.json#ShippingInstruction"
+        "productOrder": {
+          "$ref": "../Customer/ProductOrderRef.schema.json#ProductOrderRef",
+          "description": "The product order for which the shipping order is created, if supplied as input the attribute id must be populated"
         },
-        "note": {
+        "shippingInstruction": {
+          "$ref": "../EngagedParty/ShippingInstruction.schema.json#ShippingInstruction",
+          "description": "The product order for which the shipping order is created, if supplied as input the attribute id must be populated"
+        },
+        "shippingOrderItem": {
           "type": "array",
-          "description": "A list of notes made on this shipping order",
-          "items": {
-            "$ref": "../Common/Note.schema.json#Note"
-          }
-        },
-        "shipmentTracking":{
-          "$ref":"../Common/ShipmentTrackingRef.schema.json#ShipmentTrackingRef"
-        },
-        "expectedDeliveryDate":{
-          "type": "string",
-          "format": "date-time",
-          "description": "The date that the shipment will be delivered" 
-        },
-        "actualDeliveryDate":{
-          "type": "string",
-          "format": "date-time",
-          "description": "The actual date that the shipment was delivered" 
-        },  
-        "requestedDeliveryDate":{
-          "type": "string",
-          "format": "date-time",
-          "description": "The date requester by the sender for shipment delivery" 
-        },   
-        "collectionDate":{
-          "type": "string",
-          "format": "date-time",
-          "description": "The date the package was collected from the carrier (Collection scenario) " 
-        },
-        "orderItem": {
-          "type": "array",
-          "description": "List of shipping content items",
+          "description": "A list of shipping order items. Each shipping order item has a corresponding Shipment(e.g. parcel) which has one or multiple products in it",
           "items": {
             "$ref": "../EngagedParty/ShippingOrderItem.schema.json#ShippingOrderItem"
           }
         },
-        "packageType": {
+        "shippingOrderCharacteristic": {
+          "type": "array",
+          "description": "List of characteristics with values",
+          "items": {
+            "$ref": "../Common/Characteristic.schema.json#Characteristic"
+          }
+        },
+        "note": {
+          "type": "array",
+          "description": "A list of notes made on this shipping shipment",
+          "items": {
+            "$ref": "../Common/Note.schema.json#Note"
+          }
+        },
+        "shippingOrderPrice": {
+          "description": "Shipping Order price",
+          "$ref": "../Product/ProductPrice.schema.json#ProductPrice"
+        },
+        "shippingOrderOffering": {
+          "description": "Shipping order can have a corresponding entry in the product catalog (product offering)",
+          "$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef"
+        },
+        "status": {
           "type": "string",
-          "description": "The package type. It is used as an indication for the shipping partner about the parcel overall type(envelope, pacakge, large package, heavy package)"
+          "description": "status of shipping order e.g \"active\" , \"savedForLater\"",
+          "example": "active"
         },
-        "weight": {
-          "$ref":"../Common/Quantity.schema.json#Quantity",
-          "description":"The package weight"
+        "placeFrom": {
+          "description": "Source location of the item. E.g. warehouse or shop location. The location can be specified at the shipping order level or at the shipping order item level if multiple sources are specified part of the same shipping order.",
+          "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue"
         },
-        "insuredValue":{
-          "$ref":"../Common/Money.schema.json#Money",
-          "description":"The insured value of the shipment"
-        },
-        "labelMessage":{
-          "type":"string",
-          "description":"Messages that are printed on the package"
-        },
-        "shippingOrderCharacteristic":{
-          "$ref":"../Common/Characteristic.schema.json#Characteristic"
-        },
-         "paymentMethod": {
-          "description": "Payment method used for the recharge operation (e.g.: cash, credit card, ). Structure including at least attribute name. Notice that the use of a voucher can be managed as a specific methodtype, where he voucher code can be passed as value.",
-          "$ref": "../Customer/PaymentMethodRef.schema.json#PaymentMethodRef"
+        "placeTo": {
+          "description": "Destination of the item. E.g. customer home address. The location can be specified at the shipping order level or at the shipping order item level if multiple destinations are specified part of the same shipping order.",
+          "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue"
         }
       },
       "allOf": [
         {
-          "$ref":"../Common/Entity.schema.json#Entity"
+          "$ref": "../Common/Entity.schema.json#Entity"
         }
       ]
     }

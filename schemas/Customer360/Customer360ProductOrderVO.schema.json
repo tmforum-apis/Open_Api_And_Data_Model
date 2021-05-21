@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Customer360ProductOrderVO.schema.json",
+  "title": "Customer360ProductOrderVO",
+  "definitions": {
+    "Customer360ProductOrderVO": {
+      "type": "object",
+      "$id": "#Customer360ProductOrderVO",
+      "description": "A Product Order is a type of order which  can  be used to place an order between a customer and a service provider or between a service provider and a partner and vice versa,",
+      "properties": {
+        
+        "cancellationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the order is cancelled. This is used when order is cancelled. "
+        },
+        "cancellationReason": {
+          "type": "string",
+          "description": "Reason why the order is cancelled. This is used when order is cancelled. "
+        },
+        "category": {
+          "type": "string",
+          "description": "Used to categorize the order from a business perspective that can be useful for the OM system (e.g. \"enterprise\", \"residential\", ...)"
+        },
+        "completionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the order was completed"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the product order"
+        },
+        "expectedCompletionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Expected delivery date amended by the provider"
+        },
+        "externalId": {
+          "type": "string",
+          "description": "ID given by the consumer and only understandable by him (to facilitate his searches afterwards)"
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink to access the order"
+        },
+        "id": {
+          "type": "string",
+          "description": "ID created on repository side (OM system)"
+        },
+        "notificationContact": {
+          "type": "string",
+          "description": "Contact attached to the order to send back information regarding this order"
+        },
+        "orderDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the order was created"
+        },
+        "priority": {
+          "type": "string",
+          "description": "A way that can be used by consumers to prioritize orders in OM system (from 0 to 4 : 0 is the highest priority, and 4 the lowest)"
+        },
+        "requestedCompletionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Requested delivery date from the requestor perspective"
+        },
+        "requestedStartDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Order fulfillment start date wished by the requestor. This is used when, for any reason, requestor cannot allow seller to begin to operationally begin the fulfillment before a date. "
+        },
+        "state": {
+          "$ref": "../Customer/ProductOrderStateType.schema.json#ProductOrderStateType",
+          "description": "Tracks the lifecycle status of the product order, such as Acknowledged, Rejected, InProgress, Pending and so on."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

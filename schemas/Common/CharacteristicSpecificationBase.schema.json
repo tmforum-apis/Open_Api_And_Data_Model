@@ -42,7 +42,7 @@
                 }, 
                 "isUnique": {
                     "type": "boolean", 
-                    "description": "An indicator that specifies if a value is unique for the specification. Possible values are; \"unique while value is in effect\" and \"unique whether value is in effect or not\""
+                    "description": "Specifies if the value of this characteristic is unique across all entities instantiated from the specification that uses this characteristc. For example, consider a ProductSpecification for a set-top box, with a CharacteristicSpecification cardID. Each set-top box must have a different value for cardID, so this isUnique attribute would be set to true for the characteristic."
                 }, 
                 "regex": {
                     "type": "string", 

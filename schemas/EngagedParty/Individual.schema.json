@@ -121,9 +121,6 @@
           }
         }
       },
-      "required": [
-        "id"
-      ],
       "allOf": [
         {
           "$ref": "../EngagedParty/Party.schema.json#Party"

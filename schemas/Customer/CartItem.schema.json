@@ -42,7 +42,7 @@
             "$ref": "../Common/Note.schema.json#Note"
           }
         },
-        "ItemTotalPrice": {
+        "itemTotalPrice": {
           "type": "array",
           "items": {
             "$ref": "../Customer/CartPrice.schema.json#CartPrice"

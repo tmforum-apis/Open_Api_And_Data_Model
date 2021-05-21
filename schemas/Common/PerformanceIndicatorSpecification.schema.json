@@ -51,14 +51,18 @@
         "indicatorUnit": {
           "description": "The unit by which the indicator is measured. For example, seconds, KBs, rate per second, etc.",
           "type": "string"
+        },
+        "performanceIndicatorSpecRelationship": {
+          "type":"array",
+          "items": {          
+            "$ref": "#/definitions/PerformanceIndicatorSpecRelationship"
+          },
+          "minItems":0
         }
       },
       "allOf": [
         {
-          "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
-        },
-        {
-           "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+           "$ref": "../Common/Extensible.schema.json#/definitions/Entity"
         } 
       ]
     }

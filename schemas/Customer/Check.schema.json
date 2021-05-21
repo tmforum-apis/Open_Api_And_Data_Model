@@ -1,0 +1,54 @@
+{
+	  "$schema": "http://json-schema.org/draft-07/schema#",
+	  "$id": "Check.schema.json",
+	  "title": "Check",
+	  "definitions": {
+	    "Check": {
+	      "$id": "#Check",
+	      "description": "A check method of payment.",
+	      "type": "object",
+	      "required": [
+	        "@type"
+	      ],
+	      "properties": {
+	        "checkId": {
+	            "type": "string",
+				"description": "Unique identifier of the check.",
+				"examples": ["02598636"]
+            },
+            "drawer": {
+                "type": "string",
+				"description": "Person or entity writing the check.",
+				"examples": ["A.D Oyeniran"]
+            },
+            "payee": {
+                "type": "string",
+				"description": "Person or entity the check is addressed to.",
+				"examples": ["Steve Harrop"]
+            },
+            "signedDate": {
+                "type": "string",
+                "description": "Date when the check was signed.",
+				"format": "date-time",
+				"examples": ["2021-11-20T10:19:46+0000" ]
+            },
+            "bank": {
+                "type": "string",
+				"description": "Bank performing the payment of the check.",
+				"examples": ["Barclays Bank."]
+			},
+			"@type": {
+				"type": "string",
+				"enum": [
+					"check"
+				]
+			}
+	      },
+	      "allOf": [
+	        {
+				"$ref": "../Customer/PaymentMethod.schema.json#PaymentMethod"
+	        }
+	      ]
+	    }
+	  }
+ }

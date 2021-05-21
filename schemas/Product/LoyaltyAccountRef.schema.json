@@ -7,16 +7,12 @@
       "$id": "#LoyaltyAccountRef",
       "description": "Reference to a loyalty account.",
       "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "Unique identifier for the account."
-        },
-        "href": {
-          "type": "string",
-          "description": "A reference to the loyalty members loyalty account."
+      "properties": {},
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
         }
-      }
+      ]
     }
   }
 }

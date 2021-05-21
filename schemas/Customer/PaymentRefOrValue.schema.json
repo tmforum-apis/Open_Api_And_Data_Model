@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PaymentRefOrValue.schema.json",
+    "title": "PaymentRefOrValue",
+    "definitions": {
+        "PaymentRefOrValue": {
+            "description": "link to the resource information about the payment operation",
+            "properties": {},
+            "allOf": [
+                {
+                    "$ref": "../Customer/PaymentRef.schema.json#PaymentRef"
+                },
+                {
+                    "$ref": "../Customer/Payment.schema.json#Payment"
+                }
+            ]
+        }
+    }
+}

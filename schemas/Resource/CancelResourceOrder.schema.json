@@ -15,7 +15,7 @@
             },
             "allOf": [
                 {
-                    "$ref": "../Common/EntityRef.schema.json#CancelOrder"
+                    "$ref": "../Common/CancelOrder.schema.json#CancelOrder"
                 }
             ]
         }

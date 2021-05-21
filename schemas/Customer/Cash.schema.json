@@ -1,0 +1,28 @@
+{
+	  "$schema": "http://json-schema.org/draft-07/schema#",
+	  "$id": "Cash.schema.json",
+	  "title": "Cash",
+	  "definitions": {
+	    "Cash": {
+	      "$id": "#Cash",
+	      "description": "A cash method of payment. It has no additional data, but it could be extended to add information e.g.: the cashier who took the payment, the person who paid, etc",
+	      "type": "object",
+	      "required": [
+	        "@type"
+	      ],
+	      "properties": {
+	        "@type": {
+				"type": "string",
+				"enum": [
+					"cash"
+				]	
+			}
+	      },
+	      "allOf": [
+	        {
+				"$ref": "../Customer/PaymentMethod.schema.json#PaymentMethod"
+	        }
+	      ]
+	    }
+	  }
+ }

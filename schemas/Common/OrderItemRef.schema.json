@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "OrderItemRef.schema.json",
+    "title": "OrderItemRef",
+    "definitions": {
+        "OrderItemRef": {
+            "$id": "#OrderItemRef",
+            "type": "object",
+            "description": "ProductOrder (ProductOrder) .The product order which the recommendation is related with.",
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#/definitions/EntityRef"
+                }
+            ]
+        }
+    }
+}

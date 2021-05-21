@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "VertexSpecificationRef.schema.json",
+    "title": "VertexSpecificationRef",
+    "definitions": {
+        "VertexSpecificationRef": {
+            "$id": "#VertexSpecificationRef",
+            "type": "object",
+            "description": "A Vertex is connected by directed Edges to other vertices in a Graph.\nA VertexSpecification is a base class that represents a generic means for implementing a particular type of Vertex. In essence, a VertexSpecification defines the common attributes and relationships of a set of related Vertices, while Vertex defines a specific instance that is based on a particular VertexSpecification.",
+            "properties": {
+                "version": {
+                    "type": "string", 
+                    "description": "Vertex Specification version"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "EdgeRefOrValue.schema.json",
+    "title": "EdgeRefOrValue",
+    "definitions": {
+        "EdgeRefOrValue": {
+            "$id": "#EdgeRefOrValue",
+            "description": "Edge is a directed edge connecting vertices in a directed Graph.",
+            "type": "object",
+            "properties": {
+            },
+            "allOf": [
+                {
+                    "$ref": "EdgeRef.schema.json#EdgeRef"
+                },
+                {
+                    "$ref": "Edge.schema.json#Edge"
+                }
+                
+            ]
+        }
+    }
+  }

@@ -1,27 +1,27 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "MonitoredClassCriteria.schema.json",
-    "title": "MonitoredClassCriteria",
-    "definitions": {
-      "MonitoredClassCriteria": {
-        "description": "",
-        "allOf": [
-          {
-            "$ref": "MonitoredObjectsCriteria.schema.json#/definitions/MonitoredObjectsCriteria"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "monitoredObjectClass": {
-                "type": "string",
-                "description": ""
-              },
-              "objectInstanceFilter": {
-                "$ref": "#/definitions/Filter"
-              }
-            }
-          }
-        ]
-      }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "MonitoredClassCriteria.schema.json",
+  "title": "MonitoredClassCriteria",
+  "definitions": {
+    "MonitoredClassCriteria": {
+      "$id": "#MonitoredClassCriteria",
+      "description": "Specifies a monitored object class (a string) in conjunction with a filter object.",
+      "type": "object",
+      "properties": {
+        "monitoredObjectClass": {
+          "type": "string",
+          "description": "A monitored object class for specifying the set of instances that are referenced by a PM query."
+        },
+        "objectInstanceFilter": {
+          "type": "string",
+          "description": "A filter that can be used in conjunction with the monitored object class for specifying the set of instances that are referenced by a PM query."
+        }
+      },
+     "allOf": [
+        {
+          "$ref": "../Common/Extensible.schema.json#Extensible"
+        }
+      ]
     }
   }
+}

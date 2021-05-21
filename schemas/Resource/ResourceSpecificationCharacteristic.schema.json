@@ -20,7 +20,7 @@
                     "items": {
                         "$ref": "../Common/CharacteristicValueSpecification.schema.json#CharacteristicValueSpecification"
                     },
-                    "description": "A ResourceSpecificationCharacteristicValue object is used to define a set of attributes, each of which can be assigned to a corresponding set of attributes in a ResourceSpecificationCharacteristic object. The values of the attributes in the ResourceSpecificationCharacteristicValue object describe the values of the attributes that a corresponding ResourceSpecificationCharacteristic object can take on."
+                    "description": "A CharacteristicValueSpecification object is used to define a set of attributes, each of which can be assigned to a corresponding set of attributes in a ResourceSpecificationCharacteristic object. The values of the attributes in the CharacteristicValueSpecification object describe the values of the attributes that a corresponding ResourceSpecificationCharacteristic object can take on."
                 }
             },
             "allOf": [

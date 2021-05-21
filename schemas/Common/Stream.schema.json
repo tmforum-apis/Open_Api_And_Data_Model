@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Stream.schema.json",
+  "title": "Stream",
+  "definitions": {
+    "Stream": {
+      "$id": "Stream",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "consumingApplicationId": {
+          "type": "string"
+        },
+        "producingApplicationId": {
+          "type": "string"
+        },
+        "granulatiry": {
+          "$ref": "#/definitions/Granularity"
+        },
+        "outputFormat": {
+          "type": "string"
+        },
+        "collectionPeriod": {
+          "$ref": "#/definitions/TimePeriod"
+        },
+
+
+        "performanceIndicatorSpecification": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PerformanceIndicatorSpecification"
+          },
+          "minItems": 0
+        },
+        "monitoredInstancesCriteria": {
+            "$ref": "#/definitions/MonitoredInstancesCriteria"
+        },
+        "monitoredClassCriteria": {
+            "$ref": "#/definitions/MonitoredClassCriteria"
+        }
+      },
+      "allOf": [
+
+        {
+          "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
+        },
+        {
+           "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        } 
+      ]
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Milestone.schema.json",
+  "title": "Milestone",
+  "definitions": {
+    "Milestone": {
+      "$id": "#Milestone",
+      "description": "Milestone represents an action or event marking a significant change or stage in a process like an order process.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "free-text description of the Milestone"
+        },
+        "id": {
+          "type": "string",
+          "description": "identifier of the Milestone"
+        },
+        "status": {
+          "description": "The milestone status",
+          "type": "string",
+          "enum": [
+             "Yet-To-Reach",
+             "Completed",
+             "Violated" 
+          ]
+        },
+        "milestoneDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "A date time( DateTime). The date that the milestone happens"
+        },
+        "name": {
+          "type": "string",
+          "description": "A string used to give a name to the milestone"
+        },
+        "message": {
+          "type": "string",
+          "description": "A string represents the message of the milestone"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        }
+      ]
+    }
+  }
+}

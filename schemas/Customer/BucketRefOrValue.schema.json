@@ -1,0 +1,114 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "BucketRefOrValue.schema.json",
+    "title": "BucketRefOrValue",
+    "definitions": {
+        "BucketRefOrValue": {
+        "$id": "#BucketRefOrValue",
+    	"type": "object",
+    	"description": "A bucket (called UsageVolumProduct in the SID Model) represents and tracks a quantity of usage (remaining or consumed). It could be either a quantity or an amount in a currency. It can represent a fixed number of SMS,MMS, call minutes, quantity of data and so on",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique Identifier within the server for the bucket"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "A resource URI pointing to the resource in the OB that stores the detailed information for the bucket"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Friendly name to identify the bucket"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Text describing the contents of the balance managed by the bucket"
+                },
+                "usageType": {
+                    "type": "string",
+                    "description": "defines the type of the underlying Balance eg data,voice, any currency eg EUR, USD etc"
+                },
+                "isShared": {
+                    "type": "boolean",
+                    "description": "True if the bucket is shared between several devices or users"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    },
+                    "description": "Used to provide information about any other entity with relation to the balance, for instance to define customer hierarchy for the balance (e.g.: customerId, userId, )"
+                },
+                "partyAccount": {
+                    "description": "A reference to the account that owns the bucket",
+                    "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef"
+                },
+            	"product": {
+    				"type": "array",
+    				"items": {
+    					"description": "a reference to the Product(s) associated to the request",
+    					"$ref": "../Product/UsageConsumptionProductRef.schema.json#UsageConsumptionProductRef"
+    				}
+				},
+				"service": {
+					"type": "array",
+					"items": {
+						"description": "a reference to the Service(s) associated to the request",
+						"$ref": "../Service/ServiceRef.schema.json#ServiceRef"
+					}
+				},
+				"logicalResource": {
+					"type": "array",
+					"items": {
+						"description": "a reference to the Logical Resource(s) associated to the request",
+						"$ref": "../Resource/UsageConsumptionLogicalResourceRef.schema.json#UsageConsumptionLogicalResourceRef"
+					}
+				},
+                 "bucketRelationship": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../customer/BucketRelationship.schema.json#BucketRelationship"
+                  }
+                },
+                 "bucketCounter": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../Product/ConsumptionSummary.schema.json#ConsumptionSummary"
+                  }
+                },
+                "reservedValue": {
+                    "description": "Indicate the amount reserved on the bucket; should be the sum of all the valid (i.e. confirmed and not consumed or expired) amounts in the reserveBalance request array",
+                    "$ref": "../Common/Quantity.schema.json#Quantity"
+                },
+                "reserveBalance": {
+                    "type": "array",
+        		    "items": {
+                        "$ref": "../Customer/ReserveBalanceRef.schema.json#ReserveBalanceRef",
+                        "description": "A reference to an array of outstanding reservation requests against this bucket (i.e. confirmed and not consumed or expired)"
+                    } 
+                },
+                "remainingValue": {
+                    "description": "Indicate the amount on the bucket",
+                    "$ref": "../Common/Quantity.schema.json#Quantity"
+                },
+                "remainingValueName": {
+                    "type": "string",
+                    "description": "Remaining amount in a formatted string for the bucket given in the balance unit (for example 1.9 Gb). This formatted string could be used for display needs for example"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "status for the bucket. active, expired, suspended"
+                },
+                "validFor": {
+                    "description": "The period for which the balance in the bucket is valid",
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
+                }
+            },
+    	    "allOf" :[
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                } 
+    	    ]
+        }
+    }
+}

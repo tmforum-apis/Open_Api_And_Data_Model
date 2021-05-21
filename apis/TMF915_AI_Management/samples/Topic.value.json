@@ -1,0 +1,7 @@
+{
+    "href": "https:/host:port/tmf-api/topic/v1/topic/a Uri ...",
+    "id": "a Uri ...",
+    "contentQuery": "a string ...",
+    "headerQuery": "a string ...",
+    "name": "a string ..."
+}

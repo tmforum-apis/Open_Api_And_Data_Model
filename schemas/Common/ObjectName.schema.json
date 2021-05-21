@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ObjectName.schema.json",
+  "title": "ObjectName",
+  "definitions": {
+    "ObjectName": {
+      "$id": "#ObjectName",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AttributeValuePair"
+          },
+          "maxItems": 1
+        }
+      },
+      "allOf": [
+        {
+           "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        } 
+      ]
+    }
+  }
+}

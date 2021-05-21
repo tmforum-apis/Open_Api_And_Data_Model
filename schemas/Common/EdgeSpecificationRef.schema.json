@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "EdgeSpecificationRef.schema.json",
+    "title": "EdgeSpecificationRef",
+    "definitions": {
+        "EdgeSpecificationRef": {
+            "$id": "#EdgeSpecificationRef",
+				"description": "A directed Edge connects Vertices in a Graph.\nAn EdgeSpecification is a base class that represents a generic means for implementing a particular type of Edge. In essence, an EdgeSpecification defines the common attributes and relationships of a set of related Edges, while Edge defines a specific instance that is based on a particular EdgeSpecification.",
+            "type": "object",
+            "properties": {
+                "version": {
+                    "type": "string", 
+                    "description": "Edge Specification version"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
+                }
+            ]
+        }
+    }
+}

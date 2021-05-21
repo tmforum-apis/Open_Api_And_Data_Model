@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "PerformanceIndicatorSpecificationRef.schema.json",
+  "title": "PerformanceIndicatorSpecificationRef",
+  "definitions": {
+    "PerformanceIndicatorSpecificationRef": {
+      "$id": "#PerformanceIndicatorSpecificationRef",
+      "description": "PerformanceIndicatorSpecification reference: A PerformanceIndicatorSpecification is a detailed description of a tangible or intangible object made available externally in the form of a PerformanceIndicatorSpecification to customers or other parties playing a party role.",
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "Version of the performance indicator specification"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        }
+      ]
+    }
+  }
+}

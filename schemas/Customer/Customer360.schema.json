@@ -1,0 +1,104 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "Customer360.schema.json",
+	"title": "Customer360",
+	"definitions": {
+		"Customer360": {
+			"$id": "#Customer",
+			"type": "object",
+			"properties": {
+				"href": {
+					"description": "Url used to reference the customer.",
+					"type": "string"
+				},
+				"customer": {
+					"type": "object",
+					"$ref": "../Customer360/Customer360CustomerVO.schema.json#Customer360CustomerVO"
+				},
+				"account": {
+					"type": "array",
+					"items": {
+						"$ref": "../Customer360/Customer360AccountVO.schema.json#Customer360AccountVO"
+					}
+				},
+				"agreement": {
+					"type": "array",
+					"items": {
+						"$ref": "../Customer360/Customer360AgreementVO.schema.json#Customer360AgreementVO"
+					}
+				},
+				"appointment": {
+					"type": "array",
+					"items": {
+						"$ref": "../Customer360/Customer360AppointmentVO.schema.json#Customer360AppointmentVO"
+					}
+				},
+				"customerBill": {
+					"type": "array",
+					"items": {
+						"$ref": "../Customer360/Customer360CustomerBillVO.schema.json#Customer360CustomerBillVO"
+					}
+				},
+				"loyaltyBalance": {
+					"type": "array",
+					"items": {
+						"$ref": "../Customer360/Customer360LoyaltyBalanceVO.schema.json#Customer360LoyaltyBalanceVO"
+					}
+				},
+				"interactionItem": {
+					"type": "array",
+					"items": {
+						"$ref": "../Customer360/Customer360InteractionItemVO.schema.json#Customer360InteractionItemVO"
+					}
+				},
+				"productValue": {
+					"type": "array",
+					"items": {
+						"$ref": "../Customer360/Customer360ProductValueVO.schema.json#Customer360ProductValueVO"
+					}
+				},
+				"promotion": {
+					"type": "array",
+					"items": {
+						"$ref": "../Customer360/Customer360PromotionVO.schema.json#Customer360PromotionVO"
+					}
+				},
+				"productOrder": {
+					"type": "array",
+					"items": {
+						"$ref": "../Customer360/Customer360ProductOrderVO.schema.json#Customer360ProductOrderVO"
+					}
+				},
+				"quote": {
+					"type": "array",
+					"items": {
+						"$ref": "../Customer360/Customer360QuoteVO.schema.json#Customer360QuoteVO"
+					}
+				},
+				"serviceProblem": {
+					"type": "array",
+					"items": {
+						"$ref": "../Customer360/Customer360ServiceProblemVO.schema.json#Customer360ServiceProblemVO"
+					}
+				},
+				"troubleTicket": {
+					"type": "array",
+					"items": {
+						"$ref": "../Customer360/Customer360TroubleTicketVO.schema.json#Customer360TroubleTicketVO"
+					}
+				},
+				"usageSpecification": {
+					"type": "array",
+					"items": {
+						"$ref": "../Customer360/Customer360UsageSpecificationVO.schema.json#Customer360UsageSpecificationVO"
+					}
+				}
+			},
+			"allOf": [
+				{
+					"$ref": "../Customer/Customer.schema.json#Customer"
+				}
+			]
+		}
+	}
+}

@@ -1,5 +1,4 @@
-{
-    "$schema": "http://json-schema.org/draft-07/schema#",
+{    "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "ThresholdRule.schema.json",
     "title": "ThresholdRule",
     "definitions": {
@@ -7,20 +6,43 @@
             "type": "object",
             "description": "ThresholdRule A base entity for concrete definition of thresholds.This datatype  is  abstract",
             "properties": {
-                "performanceConsequence": {
+             
+                "measurement": {
+                    "$ref": "../Common/Measurement.schema.json#/definitions/Measurement"
+                },
+                "consequence": {
                     "type": "array",
                     "items": {
-                        "$ref": "PerformanceConsequence.schema.json#/definitions/PerformanceConsequence"
+                        "$ref": "Consequence.schema.json#/definitions/Consequence"
                     },
-                    "description": "A threshold crossing or a threshold ceased to be crossing results in a Performance consequence.This element is generated from an attribute.This attribute  is  optional"
+                    "description": "A threshold crossing or a threshold ceased to be crossing results in a Performance consequence."
+                },
+                "perfAlarmSpecThresholdCrossingDescription": {
+                    "type": "string",
+                    "description": "A specific description of the threshold crossing (intended to be populated e under the alarm under CrossedThreshold structure)."
+                },
+                "performanceAlarmSpecification": {
+                    "$ref": "../Resource/PerformanceAlarmSpecification.schema.json#/definitions/PerformanceAlarmSpecification"
                 },
                 "thresholdRuleCondition": {
-                    "$ref": "ThresholdCondition.schema.json#/definitions/ThresholdCondition"
+                    "type": "string",
+                    "description": "A concrete threshold may have two possible values: \\\"Raise\\\" - a threshold was crossed or \\\"Clear\\\" - a threshold ceased crossing"
+                },
+                "thresholdRuleName": {
+                    "type": "string",
+                    "description": "A word, term, or phrase by which a Performance threshold rule is known and distinguished from other threshold rules"
                 },
                 "thresholdRuleSeverity": {
-                    "$ref": "PerceivedSeverity.schema.json#/definitions/PerceivedSeverity"
+                    "type": "string",
+                    "description": "A threshold can be generated in different severity levels. A crossing for each level may require a different condition and possibly trigger a different consequence. The supported severity levels are equivalent to the possible severity level of alarms."
                 }
-            }
+            },
+            "allOf": [
+                {
+                  "$ref": "../EngagedParty/Rule.schema.json#Rule"
+                }
+              ]
         }
+
     }
 }

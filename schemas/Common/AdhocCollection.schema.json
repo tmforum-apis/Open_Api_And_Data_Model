@@ -23,21 +23,32 @@
         "collectionPeriod": {
           "$ref": "#/definitions/TimePeriod"
         },
-        "monitoredInstancesCriteria": {
+        "trackingRecord": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/MonitoredInstancesCriteria"
+            "$ref": "#/definitions/TrackingRecord"
           },
-          "minItems": 0,
-          "maxItems": 1
+          "minItems": 0
+        },
+        "performanceIndicatorGroupSpecification": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PerformanceIndicatorGroupSpecification"
+          },
+          "minItems": 0
+        },
+        "performanceIndicatorSpecification": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PerformanceIndicatorSpecification"
+          },
+          "minItems": 0
+        },
+        "monitoredInstancesCriteria": {
+            "$ref": "#/definitions/MonitoredInstancesCriteria"
         },
         "monitoredClassCriteria": {
-          "type": "array",
-          "items": {
             "$ref": "#/definitions/MonitoredClassCriteria"
-          },
-          "minItems": 0,
-          "maxItems": 1
         }
       },
       "allOf": [

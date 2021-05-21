@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ReservationStateType.schema.json",
+    "title": "ReservationStateType",
+    "definitions": {
+        "ReservationStateType": {
+            "$id": "#ReservationStateType",
+            "type": "string",
+            "enum": [
+                "acknowledged",
+                "rejected",
+                "pending",
+                "held",
+                "inProgress",
+                "cancelled",
+                "completed",
+                "failed",
+                "partial",
+                "assessingCancellation",
+                "pendingCancellation"
+            ]
+        }
+    }
+}

@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ManagedEntity.schema.json",
+  "title": "ManagedEntity",
+  "definitions": {
+    "ManagedEntity": {
+      "$id": "#ManagedEntity",
+      "description": "ManagedEntity represents an entity that describes the common set of attributes shared by all concrete entities (e.g. Resource, Service, ..) in the Entity Inventory. A ManagedEntity may concern a simple concept, such as a logical point of communication, or a complex concept, such as an Application or System ",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "free-text description of the entity"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod", 
+          "description": "The period for which this REST resource is valid"
+        },
+        "isBundle": {
+          "type": "boolean",
+          "description": "isBundle determines whether an entity represents a single entity (false), or a bundle of entities(true)."
+        },
+        "isExternal": {
+          "type": "boolean",
+          "description": "isExternal determines whether an entity represents an external entity in the inventory."
+        },
+        "lastUpdate": {
+          "type": "string", 
+          "format": "date-time", 
+          "description": "Date and time of the last update of this REST resource"
+        }, 
+        "lifecycleStatus": {
+          "type": "string", 
+          "description": "Used to indicate the current lifecycle status of this managed entity"
+        },
+        "statusChangeDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "A date time( DateTime). The date that the entity status changed to the current one"
+        },
+        "name": {
+          "type": "string",
+          "description": "A string used to give a name to the entity"
+        },
+        "context": {
+          "type": "string",
+          "description": "A string used to give a context to the entity"
+        },
+        "version": {
+          "type": "string",
+          "description": "A field that identifies the specific version of an instance of an entity."
+        },
+        "entitySpecification": {
+          "$ref": "../Common/EntitySpecificationRef.schema.json#/definitions/EntitySpecificationRef"
+        },
+        "entityRelationship": {
+          "type": "array",
+          "items": {
+                  "$ref": "EntityRelationship.schema.json#/definitions/EntityRelationship"
+          },
+          "description": "A list of entities related to this entity"
+        },
+        "characteristic": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/Characteristic.schema.json#/definitions/Characteristic"
+          }
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+          }
+        },
+        "attachment": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/AttachmentRefOrValue.schema.json#/definitions/AttachmentRefOrValue"
+          },
+          "description": "Attachments that may be of relevance to this entity, such as picture, document, media"
+        },
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/Note.schema.json#/definitions/Note"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#/definitions/Entity"
+        }
+      ]
+    }
+  }
+}

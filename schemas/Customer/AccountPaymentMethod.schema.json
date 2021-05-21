@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AccountPaymentMethod.schema.json",
+  "title": "AccountPaymentMethod",
+  "definitions": {
+    "AccountPaymentMethod": {
+      "$id": "#AccountPaymentMethod",
+      "description": "Reference an internal account that could be billed directly to perform the payment.",
+      "type": "object",
+      "required": [
+        "@type"
+      ],
+      "properties": {
+        "billedAccount": {
+            "$ref": "../EngagedParty/AccountRef.schema.json#AccountRef"
+        },
+        "@type": {
+          "type": "string",
+          "enum": [
+            "accountPaymentMethod"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Customer/PaymentMethod.schema.json#PaymentMethod"
+        }
+      ]
+    }
+  }
+}

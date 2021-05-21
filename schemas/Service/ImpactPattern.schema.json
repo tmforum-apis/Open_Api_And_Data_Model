@@ -12,7 +12,7 @@
           "type": "string",
           "description": "Basic description of the impact pattern"
         },
-        "extensionInfo": {
+        "characteristic": {
           "type": "array",
           "items": {
             "$ref": "../Common/Characteristic.schema.json#Characteristic"

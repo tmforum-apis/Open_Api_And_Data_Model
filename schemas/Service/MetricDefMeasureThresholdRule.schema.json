@@ -10,19 +10,23 @@
       "properties": {
         "conformanceComparatorLower": {
           "type": "string",
-          "description": "An operator that when applied on a value specifies whether a \nthreshold is crossed or ceased to be crossed. This operator is used to Service Test Management API REST Specification compare with the conformanceTargetLower."
+          "description": "An operator that when applied on a value specifies whether a \nthreshold is crossed or ceased to be crossed. This operator is used to Service Test Management API REST Specification compare with the conformanceTargetLower if used."
         },
         "conformanceComparatorUpper": {
           "type": "string",
-          "description": "An operator that when applied on a value specifies whether a \nthreshold is crossed or ceased to be crossed. This operator is used to compare with the conformanceTargetUpper."
+          "description": "An operator that when applied on a value specifies whether a \nthreshold is crossed or ceased to be crossed. This operator is used to compare with the conformanceTargetUpper if used."
+        },
+        "conformanceTargetExact": {
+          "type": "string",
+          "description": "To cater for values that are not numerical test metrics (e.g. a DSL line can be Synchronised or Unsynchronised. If the latter, the test should result in a rule violation). The allowed value can contain a REGEX expression."
         },
         "conformanceTargetLower": {
           "type": "string",
-          "description": "A value used to determine if the threshold is crossed or ceases \nto be crossed. It represents the lower limit. The value should be less than the conformanceTargetUpper. The conformance comparators should also be logically defined so as to not lead to a logically impossible condition."
+          "description": "A value used to determine if the threshold is crossed or ceases \nto be crossed. It represents the lower limit. The value should be less than the conformanceTargetUpper if used. The conformance comparators should also be logically defined so as to not lead to a logically impossible condition."
         },
         "conformanceTargetUpper": {
           "type": "string",
-          "description": "A value used to determine if the threshold is crossed or ceases \nto be crossed. It represents the Upper limit. The value should be greater than the conformanceTargetLower. The conformance comparators should also be logically defined so as to not lead to a logically impossible condition."
+          "description": "A value used to determine if the threshold is crossed or ceases \nto be crossed. It represents the Upper limit. The value should be greater than the conformanceTargetLower if used. The conformance comparators should also be logically defined so as to not lead to a logically impossible condition."
         },
         "consequence": {
           "type": "array",

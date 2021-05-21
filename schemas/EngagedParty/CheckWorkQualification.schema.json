@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CheckWorkQualification.schema.json",
+    "title": "CheckWorkQualification",
+    "definitions": {
+        "CheckWorkQualification": {
+            "$id": "#CheckWorkQualification",
+            "type": "object",
+            "description": "CheckWorkQualification is used to validate specific units of work",
+            "required": [
+                "workQualificationItem"
+            ],
+            "properties": {
+                "checkWorkQualificationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the workQualification was submitted"
+                },
+                "provideAlternative": {
+                    "type": "boolean",
+                    "description": "When the value is TRUE means that alternative solutions should be provided",
+                    "default": false
+                },
+                "provideUnavailabilityReason": {
+                    "type": "boolean",
+                    "description": "When the value is TRUE means that unavailability reason are expected for non available units of work.",
+                    "default": false
+                },
+                "qualificationResult": {
+                    "type": "string",
+                    "description": "Qualification result for this workQualification. It could be:  qualified (all qualification item are qualified), alternate (At least one item alternate and no item with  unqualified), unqualified (At least one item unqualified)"
+                },
+                "workQualificationItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/CheckWorkQualificationItem.schema.json#/definitions/CheckWorkQualificationItem"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../EngagedParty/WorkQualification.schema.json#/definitions/WorkQualification"
+                }
+            ]
+        }
+    }
+}

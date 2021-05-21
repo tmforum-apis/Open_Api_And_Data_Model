@@ -1,0 +1,86 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Reservation.schema.json",
+    "title": "Reservation",
+    "definitions": {
+        "Reservation": {
+            "$id": "#Reservation",
+            "type": "object",
+            "description": "reservation api resource",
+            "properties": {
+                "cancellationDate": {
+                    "type": "string",
+                    "description": "Date when the reservation is cancelled."
+                },
+                "cancellationReason": {
+                    "type": "string",
+                    "description": "Reason why the reservation is cancelled."
+                },
+                "channel": {
+                    "$ref": "../Common/ChannelRef.schema.json#/definitions/ChannelRef"
+                },
+                "completionDate": {
+                    "type": "string",
+                    "description": "Date when the reservation was completed"
+                },
+                "creationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the reservation was created"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A string. free-text description of the reservation."
+                },
+                "expectedCompletionDate": {
+                    "type": "string",
+                    "description": "Expected completion date amended by the provider"
+                },
+                "relatedEntity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/RelatedEntity.schema.json#/definitions/RelatedEntity"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedPartyRef.schema.json#/definitions/RelatedPartyRef"
+                    }
+                },
+                "requestedCompletionDate": {
+                    "type": "string",
+                    "description": "Requested completion date from the requestor perspective"
+                },
+                "requestedStartDate": {
+                    "type": "string",
+                    "description": "Reservation fulfillment start date wished by the requestor. This is used when, for any reason, requestor cannot allow the reservation to begin before a specific date. "
+                },
+                "reservationPeriod": {
+                    "description": "Period of time for which the target entity is to be in a reserved state",
+                    "$ref": "../Common/TimePeriod.schema.json#/definitions/TimePeriod"
+                },
+                "state": {
+                    "$ref": "../Common/ReservationStateType.schema.json#/definitions/ReservationStateType"
+                },
+                "stateChangeDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date and time the state changed."
+                },
+                "stateChangeReason": {
+                    "type": "string",
+                    "description": "The reason for changing the state"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#/definitions/TimePeriod"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#/definitions/Entity"
+                }
+            ]
+        }
+    }
+}

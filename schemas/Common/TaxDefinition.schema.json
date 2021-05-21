@@ -1,35 +1,55 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "TaxDefinition.schema.json",
-  "title": "TaxDefinition",
-  "definitions": {
-    "TaxDefinition": {
-      "$id": "#TaxDefinition",
-      "type": "object",
-      "description": "Reference of a tax definition. A tax is levied by an authorized tax jurisdiction. There are many different types of tax (Federal Tax levied by the US Government, State Tax levied by the State of California,…).",
-      "properties": {
-        "@referredType": {
-          "type": "string",
-          "description": "The actual type of the target instance when needed for disambiguation."
-        },
-        "id": {
-          "type": "string",
-          "description": "Unique identifier of the tax."
-        },
-        "name": {
-          "type": "string",
-          "description": "Tax name."
-        },
-        "taxType": {
-          "type": "string",
-          "description": "Type of  the tax."
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "TaxDefinition.schema.json",
+    "title": "TaxDefinition",
+    "definitions": {
+        "TaxDefinition": {
+            "$id": "#TaxDefinition",
+            "type": "object",
+            "description": "Reference of a tax definition. A tax is levied by an authorized tax jurisdiction. There are many different types of tax (Federal Tax levied by the US Government, State Tax levied by the State of California,…).",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the tax."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Tax name."
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "The period of time for which the tax applies, might be set for example if it is known that the jurisdiction will cease to apply the tax after a certain date."
+                },
+                "jurisdictionName": {
+                    "type": "string",
+                    "description": "Name of the jurisdiction that levies the tax",
+                    "examples": [
+                        "USA",
+                        "Los Angeles"
+                    ]
+                },
+                "jurisdictionLevel": {
+                    "type": "string",
+                    "description": "Level of the jurisdiction that levies the tax",
+                    "examples": [
+                        "Country",
+                        "City"
+                    ]
+                },
+                "taxType": {
+                    "type": "string",
+                    "description": "Type of the tax.",
+                    "examples": [
+                        "VAT",
+                        "Sales Tax"
+                    ]
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#Extensible"
+                }
+            ]
         }
-      },
-      "allOf": [
-        {
-          "$ref": "../Common/Entity.schema.json#Entity"
-        }
-      ]
     }
-  }
 }

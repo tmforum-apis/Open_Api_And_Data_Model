@@ -10,25 +10,29 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "Identifier of the note within its containing entity (may or may not be globally unique, depending on provider implementation)"
+          "description": "Identifier of the note within its containing entity",
+          "example": [ "afa9-3d90aaa8da0f" ]
         },
         "author": {
           "type": "string",
-          "description": "Author of the note"
+          "description": "Author of the note",
+          "example": [ "Mr. N. Bene" ]
         },
         "date": {
           "type": "string",
           "format": "date-time",
-          "description": "Date of the note"
+          "description": "Date of the note",
+          "example": [ "2020-11-20T08:00:00Z" ]
         },
         "text": {
           "type": "string",
-          "description": "Text of the note"
+          "description": "Text of the note",
+          "example": [ "This is important" ]
         }
       },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
+          "$ref": "../Common/Extensible.schema.json#Extensible"
         }
       ]
     }

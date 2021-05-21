@@ -1,4 +1,50 @@
 {
+<<<<<<< HEAD
+    "thresholdRuleName": "ImageQuality",
+    "thresholdRuleSeverity": "MAJOR",
+    "thresholdRuleCondition": "Raise",
+    "@type": "simpleThresholdRule",
+    "Measurement": {
+        "id": "",
+        "name": "ImageQualityPCP",
+        "href": "",
+        "description": "Input image quality proportion % of usable image",
+        "measurementType": "MovingAverage",
+        "measurementUnit": "percentage",
+        "collectionType": "COUNTER",
+        "measurementFormula": "X%"
+    },
+    "conformanceTargetUpper": 10,
+    "conformanceTargetLower": 0,
+    "conformanceComparatorUpper": "GT",
+    "conformanceComparatorLower": 0,
+    "conformancePeriod": {
+        "startDateTime": "",
+        "endDateTime": ""
+    },
+    "tolerancePeriod": {
+        "startDateTime": "",
+        "endDateTime": ""
+    },
+    "thresholdTarget": 0,
+    "gracePeriods": 0,
+    "performanceConsequence": [
+        {
+            "name": "",
+            "Description": "",
+            "prescribedAction": "",
+            "alarmSpecification": {
+                "perfAlarmSpecSeverity": "MAJOR",
+                "perfeAlarmProbableCause": "Threshold Crossed",
+                "perfAlarmSpecAlarmType": "",
+                "perfAlarmSpecSpecificProblem": "",
+                "perfAlarmSpecAdditionalText": "Dropped Packets per second are over the limit",
+                "perfAlarmSpecThresholdCrossingDescription": " Dropped Packets per second are over the limit "
+            }
+        }
+    ]
+}
+=======
     "id": "1920",
     "thresholdRuleName": "DropPacketsHighRule",
     "@type": "AlgorithmThresholdRule ",
@@ -35,3 +81,4 @@
     "thresholdRuleCondition": "Raise",
     "thresholdRuleSeverity": "MAJOR"
 }
+>>>>>>> ce6b7d4abb1338a9e2ab4f101640fdc4199c8733

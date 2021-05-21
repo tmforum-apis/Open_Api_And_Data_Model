@@ -1,0 +1,63 @@
+{
+	  "$schema": "http://json-schema.org/draft-07/schema#",
+	  "$id": "TokenizedCard.schema.json",
+	  "title": "TokenizedCard",
+	  "definitions": {
+	    "TokenizedCard": {
+	      "$id": "#TokenizedCard",
+	      "description": "A Tokenized Card method of payment.",
+	      "type": "object",
+	      "required": [
+	        "@type"
+	      ],
+	      "properties": {
+	        "brand": {
+	            "type": "string",
+				"description": "Card brand. Might be used for display purposes",
+				"examples": ["Visa", "MasterCard", "AmericanExpress"]
+            },
+            "cardType": {
+                "type": "string",
+				"description": "Card type. Might be used for display purposes.",
+				"examples": ["Credit", "Debit"]
+            },
+            "lastFourDigits": {
+                "type": "string",
+				"description": "The last four digits of the credit card.",
+				"examples": ["0000"]
+            },
+            "tokenType": {
+                "type": "string",
+				"description": "Token type (e.g.: emv).",
+				"examples": ["emv"]
+            },  
+            "token": {
+                "type": "string",
+				"description": "The token. A series of randomly generated numbers."
+            },
+            "issuer": {
+              "type": "string",
+			  "description": "The entity that issued the token.",
+			  "examples": ["Visa","Mastercard"]
+			},
+			"expirationDate": {
+                "type": "string",
+                "description": "The tokenised card's expiration date.",
+				"format": "date-time",
+				"examples": ["2025-11-20T10:19:46+0000" ]
+            },
+		   "@type": {
+				"type": "string",
+				"enum": [
+					"tokenizedCard"   
+				]
+			}
+	      },
+	      "allOf": [
+	        {
+				"$ref": "../Customer/PaymentMethod.schema.json#PaymentMethod"
+	        }
+	      ]
+	    }
+	  }
+ }

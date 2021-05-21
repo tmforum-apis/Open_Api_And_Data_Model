@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "LoyaltyPaymentMethod.schema.json",
+  "title": "LoyaltyPaymentMethod",
+  "definitions": {
+    "LoyaltyPaymentMethod": {
+      "$id": "#LoyaltyPaymentMethod",
+      "description": "Reference to an account in a loyalty system that could be used to perform the payment.",
+      "type": "object",
+      "required": [
+        "@type"
+      ],
+      "properties": {
+        "loyaltyAccount": {
+            "$ref": "../Product/LoyaltyAccountRef.schema.json#LoyaltyAccountRef"
+        },
+        "@type": {
+          "type": "string",
+          "enum": [
+            "loyaltyPaymentMethod"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Customer/PaymentMethod.schema.json#PaymentMethod"
+        }
+      ]
+    }
+  }
+}

@@ -68,9 +68,6 @@
         {
           "$ref": "../Common/Entity.schema.json#Entity"
         }
-      ],
-      "required": [
-        "id"
       ]
     }
   }

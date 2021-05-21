@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "WorkQualification.schema.json",
+    "title": "WorkQualification",
+    "definitions": {
+        "WorkQualification": {
+            "$id": "#WorkQualification",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the qualification"
+                },
+                "effectiveQualificationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Effective date to qualification completion"
+                },
+                "estimatedResponseDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the requester expect to provide an answer for the qualification request."
+                },
+                "expectedQualificationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "A date (DateTime). Deadline date when the requester expected a qualification answer."
+                },
+                "expirationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the qualification response expires"
+                },
+                "externalId": {
+                    "type": "string",
+                    "description": "Identifier provided by the requester"
+                },
+                "place": {
+                    "$ref": "../Common/PlaceRefOrValue.schema.json#/definitions/PlaceRefOrValue"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "description": "A list of related party references, defines party or party role linked to this request.",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+                    }
+                },
+                "state": {
+                    "description": "State of the workQualification (acknowledged, inProgress, terminatedWithError, done)",
+                    "$ref": "../Common/TaskStateType.schema.json#/definitions/TaskStateType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#/definitions/Entity"
+                }
+            ]
+        }
+    }
+}

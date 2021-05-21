@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ImpactedBucket.schema.json",
+    "title": "ImpactedBucket",
+    "definitions": {
+        "ImpactedBucket": {
+        "$id": "#ImpactedBucket",
+	"type": "object",
+	"description": "A resource that references other buckets that have been impacted by the action of type TopupBalance,AdjustBalance,TransferBalance or ReserveBalance",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Friendly name to identify the bucket"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Text describing the contents of the balance managed by the bucket"
+                },
+                "amountBefore": {
+                    "description": "Indicates the amount remaiing on the impacted bucket",
+                    "$ref": "../Common/Quantity.schema.json#Quantity"
+                },
+                "amountAfter": {
+                    "$ref": "../Common/Quantity.schema.json#Quantity",
+                    "description": "Indicates the amount after on the impacted bucket after the action has completed."
+                },
+                "requestedDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the deduction request was received in the server"
+                },
+                "confirmationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the deduction was confirmed in the server"
+                },
+                 "bucket": {
+                    "description": "A reference to the bucket impacted by the request or the value itself.",
+                    "$ref": "BucketRef.schema.json#BucketRef"
+                }, 
+                 "item": {
+	            "type": "array",
+		    "items":{
+                      "description": "A reference to an array of ImpactedBucketItem that capture the details of the changes to the ImpactedBucket.",
+                      "$ref": "ImpactedBucketItem.schema.json#ImpactedBucketItem"
+		    },
+		    "minItems": 1
+                }	
+            },
+	    "allOf" :[
+                {
+                    "$ref": "../Common/Entity.schema.json#Extensible"
+                } 
+	    ]
+        }
+    }
+}

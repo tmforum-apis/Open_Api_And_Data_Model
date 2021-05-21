@@ -22,7 +22,7 @@
           "description": "A recurring frequency to run a job within day that is included in schedule definition, for example: every 5 minutes, 15 minute, 30 minutes, 1 hour",
           "type": "string"
         },
-        "excludedDates": {
+        "excludedDate": {
           "description": "A list of specific dates that should be excluded from the Schedule Definition.",
           "type": "array",
           "items": {
@@ -30,7 +30,7 @@
             "format":"date-time"
           }
         },
-        "scheduleDefinitionHoursRange": {
+        "scheduleDefinitionHourRange": {
           "description": "A list of time ranges within a specific day that the schedule will be active on, for example 08:00-12:00, 16:00-19:00.",
           "type": "string"
         },
@@ -38,10 +38,10 @@
           "description": "The weekly schedule is used to define a schedule that is based on the days of the week, e.g. a schedule that will be active only on Monday and Tuesday.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/DaysOfWeekRecurrence"
+            "$ref": "#/definitions/DayOfWeekRecurrence"
           }
         },
-        "monthlyScheduleDaysOfMonthDefinition": {
+        "monthlyScheduleDayOfMonthDefinition": {
           "description": "The schedule definition for running the threshold job",
           "type":"array",
           "items": {
@@ -49,8 +49,8 @@
             "format":"date-time"
           }
         },
-        "MonthlyScheduleDaysOfWeekDefinition": {
-          "$ref": "#/definitions/MonthlyScheduleDaysOfWeekDefinition"
+        "MonthlyScheduleDayOfWeekDefinition": {
+          "$ref": "#/definitions/MonthlyScheduleDayOfWeekDefinition"
         },
         "dateScheduleDefintion": {
           "description": "The date schedule is used to define a schedule that is based on specific dates, such as December 31st 2015, Feberaury 28th 2013",

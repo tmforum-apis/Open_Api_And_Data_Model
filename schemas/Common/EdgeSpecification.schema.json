@@ -1,0 +1,62 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "EdgeSpecification.schema.json",
+    "title": "EdgeSpecification",
+    "definitions": {
+        "EdgeSpecification": {
+            "type": "object",
+				"description": "A directed Edge connects Vertices in a Graph.\nAn EdgeSpecification is a base class that represents a generic means for implementing a particular type of Edge. In essence, an EdgeSpecification defines the common attributes and relationships of a set of related Edges, while Edge defines a specific instance that is based on a particular EdgeSpecification.",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string", 
+                    "description": "Name given to this REST resource"
+                }, 
+                "description": {
+                    "type": "string", 
+                    "description": "Description of this REST resource"
+                }, 
+                "version": {
+                    "type": "string", 
+                    "description": "Edge Specification version"
+                }, 
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod", 
+                    "description": "The period for which this REST resource is valid"
+                }, 
+                "lastUpdate": {
+                    "type": "string", 
+                    "format": "date-time", 
+                    "description": "Date and time of the last update of this REST resource"
+                }, 
+                "lifecycleStatus": {
+                    "type": "string", 
+                    "description": "Used to indicate the current lifecycle status of the edge specification"
+                }, 
+                "relatedParty": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    },
+                    "description": "A related party defines party or party role linked to a specific entity."
+                }, 
+                "edgeSpecCharacteristic": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "EdgeSpecificationCharacteristic.schema.json#EdgeSpecificationCharacteristic"
+                    },
+                    "description": "A characteristic quality or distinctive feature of an EdgeSpecification."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#Extensible"
+
+                },
+                {
+                    "$ref": "../Common/Addressable.schema.json#Addressable"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "WorkforceEmployeeAssignmentStateType.schema.json",
+    "title": "WorkforceEmployeeAssignmentStateType",
+    "definitions": {
+        "WorkforceEmployeeAssignmentStateType": {
+            "$id": "#WorkforceEmployeeAssignmentStateType",
+            "type": "string",
+            "enum": [
+                "acknowledged",
+                "rejected",
+                "pending",
+                "held",
+                "inProgress",
+                "cancelled",
+                "completed",
+                "failed",
+                "partial"
+            ]
+        }
+    }
+}

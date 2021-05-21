@@ -9,14 +9,15 @@
       "type": "object",
       "properties": {
         "dataAccessEndPoint": {
-          "$ref": "DataAccessEndpoint.schema.json#DataAccessEndpoint"
+          "type": "array",
+          "items": {
+            "$ref": "../Resource/DataAccessEndpoint.schema.json#DataAccessEndpoint"
+          }
         }
       },
-      "allOf": [
-        {
-          "$ref": "../Service/Service.schema.json#Service"
-        }
-      ]
+      "allOf": [{
+        "$ref": "../Service/Service.schema.json#Service"
+      }]
     }
   }
 }

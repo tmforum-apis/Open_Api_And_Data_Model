@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ServiceOrderErrorMessage.schema.json",
+  "title": "ServiceOrderErrorMessage",
+  "definitions": {
+    "ServiceOrderErrorMessage": {
+      "$id": "#ServiceOrderErrorMessage",
+      "description": "A ServiceOrderErrorMessage represents an error that causes a status change in a service order.",
+      "type": "object",
+      "properties": {
+        "serviceOrderItem": {
+          "type": "array",
+          "description": "A list of order items corresponded to this error",
+          "items": {
+             "$ref": "../Service/ServiceOrderItem.schema.json#/definitions/ServiceOrderItem"
+          }
+        } 
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/ErrorMessage.schema.json#/definitions/ErrorMessage"
+        }
+      ]
+    }
+  }
+}

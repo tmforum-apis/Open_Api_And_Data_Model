@@ -29,8 +29,8 @@
         "performanceIndicatorSpecification": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PerformanceIndicatorSpecification"
-          },
+            "$ref": "#/definitions/PerformanceIndicatorSpecificationRefOrValue"
+          },                     
           "minItems": 0
         },
         "trackingRecord": {
@@ -41,20 +41,10 @@
           "minItems": 0
         },
         "monitoredInstancesCriteria": {
-          "type":"array",
-          "items": {          
             "$ref": "#/definitions/MonitoredInstancesCriteria"
-          },
-          "minItems":0,
-          "maxItems":1
         },
         "monitoredClassCriteria": {
-          "type":"array",
-          "items": {
             "$ref": "#/definitions/MonitoredClassCriteria"
-          },
-          "minItems":0,
-          "maxItems":1
         }
       },
       "allOf": [

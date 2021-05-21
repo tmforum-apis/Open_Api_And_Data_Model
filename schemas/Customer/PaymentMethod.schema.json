@@ -5,48 +5,85 @@
     "definitions": {
         "PaymentMethod": {
             "$id": "#PaymentMethod",
-            "description": "Defines a specific method of payment (e.g. direct debit with all details associated)",
+            "description": "A Payment Method is a pure-virtual super-class that defines a specific method of payment such as Direct Debit, Cash, Digital Wallet,Tokenized Card, Bank Account Transfer, Bank Account Debit, Bank Card, Voucher, Check, Bucket PaymentMethod, Account PaymentMethod, and Loyalty PaymentMethod with all details associated. Use the @type attribute to specify the concrete type in the API calls.",
             "type": "object",
+            "required": [
+                "@type",
+                "name"
+              ],
             "properties": {
-                "description": {
-                    "type": "string",
-                    "description": "Text describing the contents of the payment method"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "A resource URI pointing to the resource in the server that stores the detailed information. This is typically the resource url to retrieve individual details for the specific payment method"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "Unique Identifier within the server for the payment method."
-                },
                 "name": {
                     "type": "string",
-                    "description": "Friendly name assigned to the payment method"
+                    "description": "Friendly name assigned to the payment method",
+                    "examples": ["Main credit card"]
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Text description of the contents of the payment method",
+                    "examples": ["My gold mastercard."]
                 },
                 "isPreferred": {
                     "type": "boolean",
-                    "description": "If the method is the preferred one by the owner. Typically used when querying for the payment methods of a specific customer or account"
+                    "description": "If the method is the preferred one by the owner. Typically used when querying for the payment methods of a specific customer or account",
+                    "examples": ["True","False"]
+                },
+                "authorizationCode": {
+                    "type": "string",
+                    "description": "Review: Authorization code provided by a financial institution. Typically this would be populated for recurring payments using the method, as payments have an authorization code of their own.",
+                    "examples": ["1234567890"]
                 },
                 "status": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Status of the payment method",
+                    "examples": ["Active", "InActive", "New"]
                 },
                 "statusDate": {
                     "type": "string",
-                    "format": "date-time"
+                    "format": "date-time",
+                    "description": "The last time the payment method status changed.",
+                    "examples": [ "2020-07-17T10:12:26+0000" ]
+                },
+                "statusReason": {
+                    "type": "string",
+                    "description": "The reason for the last status change.",
+                    "examples": [ "This payment method has expired, therefore its status is now inactive." ]
                 },
                 "validFor": {
                     "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
                     "description": "Date interval in which the payment method is valid"
                 },
+                "@type": {
+                    "type": "string",
+                    "enum": [
+                        "cash",
+                        "digitalWallet",
+                        "tokenizedCard",
+                        "bankAccountTransfer",
+                        "bankAccountDebit",
+                        "bankCard",
+                        "voucher",
+                        "check",
+                        "bucketPaymentMethod",
+                        "accountPaymentMethod",
+                        "loyaltyPaymentMethod",
+                        "directDebit"
+                      ],
+                    "description": "Type of payment method (e.g.: bank card, cash, voucher, etc)."
+                },
                 "relatedParty": {
-                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty",
+                    "description": "Reference to the customer or party that owns that payment method or can use it."
+                },
+                "relatedPlace": {
+                    "$ref": "../Common/RelatedPlace.schema.json#RelatedPlace",
+                    "description": "Reference to a place for billing or delivery address, if different to that of the related party."
                 },
                 "account": {
                     "type": "array",
                     "items": {
                         "$ref": "../EngagedParty/AccountRef.schema.json#AccountRef"
-                    }
+                    },
+                    "description": "Reference to the accounts that are linked to the payment method. May be a party account or a financial account."
                 }
             },
             "allOf": [

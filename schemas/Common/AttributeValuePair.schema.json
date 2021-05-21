@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AttributeValuePair.schema.json",
+  "title": "AttributeValuePair",
+  "definitions": {
+    "AttributeValuePair": {
+      "$id": "#AttributeValuePair",
+      "type": "object",
+      "properties": {
+        "attributeName": {
+          "type":"string"
+        },
+        "attributeValue": {
+          "type":"string"
+        }
+      },
+      "allOf": [
+        {
+           "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        } 
+      ]
+    }
+  }
+}

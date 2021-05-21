@@ -1,0 +1,38 @@
+{
+    "agreementType": "a string ...",
+    "description": "This  ai contract ...",
+    "documentNumber": 60,
+    "href": "https:/host:port/tmf-api/aiContract/v1/aiContract/a Uri ...",
+    "id": "a Uri ...",
+    "initialDate": "2020-06-25T00:00",
+    "name": "a string ...",
+    "statementOfIntent": "a string ...",
+    "status": "a string ...",
+    "version": "a string ...",
+    "relatedParty": [
+        {}
+    ],
+    "rule": [
+        {}
+    ],
+    "template": {},
+    "validFor": {},
+    "agreementAuthorization": [
+        {}
+    ],
+    "agreementItem": [
+        {}
+    ],
+    "agreementPeriod": {},
+    "agreementSpecification": {},
+    "associatedAgreement": [
+        {}
+    ],
+    "characteristic": [
+        {}
+    ],
+    "completionDate": {},
+    "engagedParty": [
+        {}
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PerformanceAlarmSpecification.schema.json",
+    "title": "PerformanceAlarmSpecification",
+    "definitions": {
+        "PerformanceAlarmSpecification": {
+            "type": "object",
+            "description": "The specification of how to populate the alarm fields when generating a threshold crossing alarm",
+            "properties": {
+                "perfAlarmSpecAdditionalText": {
+                    "type": "string",
+                    "description": "A value for the AdditionalText attribute as part of a threshold crossing alarm definition."
+                },
+                "perfAlarmSpecAlarmType": {
+                    "type": "string",
+                    "description": "A value for the AlarmType attribute as part of a threshold crossing alarm definition."
+                },
+                "perfAlarmSpecSeverity": {
+                    "type": "string",
+                    "description": "A value for the Severity attribute as part of a threshold crossing alarm definition"
+                },
+                "perfAlarmSpecSpecificProblem": {
+                    "type": "string",
+                    "description": "A value for the SpecificProblem attribute as part of a threshold crossing alarm definition"
+                },
+                "perfeAlarmProbableCause": {
+                    "type": "string",
+                    "description": "A value for the ProbableCause attribute as part of a threshold crossing alarm definition."
+                }
+            }
+        }
+    }
+}

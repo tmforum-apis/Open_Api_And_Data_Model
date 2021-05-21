@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ErrorMessage.schema.json",
+  "title": "ErrorMessage",
+  "definitions": {
+    "ErrorMessage": {
+      "$id": "#ErrorMessage",
+      "description": "represents an Error",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "description": "error code"
+        },
+        "reason": {
+          "type": "string",
+          "description": "Explanation of the reason for the error"
+        },
+        "message": {
+          "type": "string",
+          "description": "More details and corrective actions related to the error"
+        },
+        "referenceError": {
+          "type": "string",
+          "format": "uri",
+          "description": "URI of documentation describing the error"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        }
+      ]
+    }
+  }
+}

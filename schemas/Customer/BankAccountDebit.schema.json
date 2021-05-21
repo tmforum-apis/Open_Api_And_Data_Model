@@ -1,0 +1,53 @@
+{
+	  "$schema": "http://json-schema.org/draft-07/schema#",
+	  "$id": "BankAccountDebit.schema.json",
+	  "title": "BankAccountDebit",
+	  "definitions": {
+	    "BankAccountDebit": {
+	      "$id": "#BankAccountDebit",
+	      "description": "A bank account debit method of payment. This could be extended to add any required authorization fields to allow recurring payments",
+	      "type": "object",
+	      "required": [
+	        "@type"
+	      ],
+	      "properties": {
+	        "accountNumber": {
+            "type": "string",
+			"description": "The Bank Account Number (this could refer to the IBAN or SWIFT number)",
+			"examples": ["GB74NATWEST122337754838313"]
+          },
+          "accountNumberType": {
+            "type": "string",
+			"description": "The type of account number (e.g.: IBAN, SWIFT, ...)",
+			"examples": ["IBAN"]
+          },
+          "BIC": {
+            "type": "string",
+			"description": "The Business Identifier Code/Swift code of the financial institution where the account is located.",
+			"examples": ["NATWEST74GB"]
+          },
+          "owner": {
+            "type": "string",
+			"description": "The owner of the bank account. This is also the account name.",
+			"examples": ["Dominic Oyeniran"]
+          }, 
+          "bank": {
+            "type": "string",
+			"description": "The display name of the bank.",
+			"examples": ["Natwest Bank Limited."]
+		  },
+		  "@type": {
+			"type": "string",
+			"enum": [
+				"bankAccountDebit"
+			  ]
+		  	}
+	      },
+	      "allOf": [
+	        {
+				"$ref": "../Customer/PaymentMethod.schema.json#PaymentMethod"
+	        }
+	      ]
+	    }
+	  }
+ }

@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "RelatedWorkOrderItem.schema.json",
+    "title": "RelatedWorkOrderItem",
+    "definitions": {
+        "RelatedWorkOrderItem": {
+            "$id": "#RelatedWorkOrderItem",
+            "type": "object",
+            "description": "RelatedWorkOrderItem (WorkOrder item). The work order item which triggered this unit of work's creation/change/termination.",
+            "required": [
+                "workOrderId",
+                "orderItemId"
+            ],
+            "properties": {
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                },
+                "orderItemAction": {
+                    "type": "string",
+                    "description": "Action of the order item for this unit of work\r\n"
+                },
+                "orderItemId": {
+                    "type": "string",
+                    "description": "Identifier of the work order item where the unit of work was managed"
+                },
+                "role": {
+                    "type": "string",
+                    "description": "Role of the work order item for this unitof work\r\n"
+                },
+                "workOrderHref": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "workOrderId": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceReservationItem.schema.json",
+    "title": "ResourceReservationItem",
+    "definitions": {
+        "ResourceReservationItem": {
+            "$id": "#ResourceReservationItem",
+            "type": "object",
+            "properties": {
+                "reservationItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Resource/ResourceReservationItem.schema.json#/definitions/ResourceReservationItem"
+                    }
+                },
+                "resource": {
+                    "$ref": "../Resource/ResourceRefOrValue.schema.json#/definitions/ResourceRefOrValue"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/ReservationItem.schema.json#/definitions/ReservationItem"
+                }
+            ]
+        }
+    }
+}

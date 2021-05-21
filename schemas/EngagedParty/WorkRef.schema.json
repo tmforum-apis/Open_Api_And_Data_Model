@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "WorkRef.schema.json",
+    "title": "WorkRef",
+    "definitions": {
+        "WorkRef": {
+            "$id": "#WorkRef",
+            "type": "object",
+            "description": "Unit of Work reference",
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#/definitions/EntityRef"
+                }
+            ]
+        }
+    }
+}

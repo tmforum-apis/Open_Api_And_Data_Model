@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Customer360CustomerBillVO.schema.json",
+  "title": "Customer360CustomerBillVO",
+  "definitions": {
+    "Customer360CustomerBillVO": {
+      "$id": "#Customer360CustomerBillVO",
+      "type": "object",
+      "description": "The customer bill. Can be a regular recurring bill or an extra bill on demand by the customer or the csp.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Explanation: Unique identifier of he bill"
+        },
+        "href": {
+          "type": "string",
+          "description": "Bill unique reference"
+        },
+        "amountDue": {
+          "$ref": "../Common/Money.schema.json#Money"
+        },
+        "billDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Bill date, external customer view (in consequence: different to the production date of the bill)"
+        },
+        "billNo": {
+          "type": "string",
+          "description": "Bill reference known by the customer or the party and displayed on the bill. Could be different from the id"
+        },
+        "billingPeriod": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
+        },
+        "billCycle": {
+          "$ref": "../Customer/BillCycleRef.schema.json#BillCycleRef"
+        },
+        "category": {
+          "type": "string",
+          "description": "Category of the bill produced : normal, duplicate, interim, last, trial customer or credit note for example"
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date of bill last update"
+        },
+        "nextBillDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "). Approximate date of  the next bill production given for information (only used/meaningful for on cycle / regular bills)"
+        },
+        "paymentDueDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date at which the amount due should have been paid"
+        },
+        "paymentMethod": {
+          "description": "paymentMethod here is recognized to be not really necessary in a STANDARD. It could be obtained by a GET request on the billing account. Conclusion: paymentMethod is marked to DEPRECIATED and will be removed in one of the next versions.",
+          "$ref": "../Customer/PaymentMethodRef.schema.json#PaymentMethodRef"
+        },
+        
+        "remainingAmount": {
+          "$ref": "../Common/Money.schema.json#Money"
+        },
+        "runType": {
+          "description": "onCycle (a bill can be created as a result of a cycle run) or offCycle (a bill can be created as a result of other events such as customer request or account close)",
+          "$ref": "../Customer/CustomerBillRunType.schema.json#CustomerBillRunType"
+        },
+        "taxExcludedAmount": {
+          "$ref": "../Common/Money.schema.json#Money"
+        },
+        "taxIncludedAmount": {
+          "$ref": "../Common/Money.schema.json#Money"
+        },
+        "state": {
+          "description": "Status of the bill",
+          "$ref": "../Customer/CustomerBillStateType.schema.json#CustomerBillStateType"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

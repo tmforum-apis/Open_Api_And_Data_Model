@@ -1357,7 +1357,7 @@
         },
         "Any": {},
         "Association": {
-            "description": "Association is the class that describes a relationship between two or more entities or entity specifications based on a given association specification. The role of each endpoint in the relationship is given by an association role. The type of endpoints in the relationship should match the ones as defined in the corresponding association role specification. A relationship between entity specifications may be governed by conditions and rules which are addressed by constraint references in this resource. Constraints for a relationship may include new rules and conditions in addition to those defined for the corresponding association specification",
+            "description": "Association is the class that describes a relationship between two or more entities or entity specifications based on a given association specification (relationship type). The role of each endpoint in the relationship is given by an association role. The type of endpoints in the relationship should match the ones as defined in the corresponding association role specification.\n A relationship between entity/ entity specifications may be governed by conditions and rules which are addressed by constraint references in this resource. Constraints for a relationship may include new rules and conditions in addition to those defined for the corresponding association specification",
             "type": "object",
             "properties": {
                 "description": {
@@ -1430,7 +1430,7 @@
         },
         "Association_Create": {
             "type": "object",
-            "description": "Association is the class that describes a relationship between two or more entities or entity specifications based on a given association specification. The role of each endpoint in the relationship is given by an association role. The type of endpoints in the relationship should match the ones as defined in the corresponding association role specification. A relationship between entity specifications may be governed by conditions and rules which are addressed by constraint references in this resource. Constraints for a relationship may include new rules and conditions in addition to those defined for the corresponding association specification\nSkipped properties: id,href",
+            "description": "Association is the class that describes a relationship between two or more entities or entity specifications based on a given association specification (relationship type). The role of each endpoint in the relationship is given by an association role. The type of endpoints in the relationship should match the ones as defined in the corresponding association role specification.\n A relationship between entity/ entity specifications may be governed by conditions and rules which are addressed by constraint references in this resource. Constraints for a relationship may include new rules and conditions in addition to those defined for the corresponding association specification\nSkipped properties: id,href",
             "required": [
                 "name",
                 "associationRole"
@@ -1493,16 +1493,11 @@
         },
         "Association_Update": {
             "type": "object",
-            "description": "Association is the class that describes a relationship between two or more entities or entity specifications based on a given association specification. The role of each endpoint in the relationship is given by an association role. The type of endpoints in the relationship should match the ones as defined in the corresponding association role specification. A relationship between entity specifications may be governed by conditions and rules which are addressed by constraint references in this resource. Constraints for a relationship may include new rules and conditions in addition to those defined for the corresponding association specification\nSkipped properties: id,href",
+            "description": "Association is the class that describes a relationship between two or more entities or entity specifications based on a given association specification (relationship type). The role of each endpoint in the relationship is given by an association role. The type of endpoints in the relationship should match the ones as defined in the corresponding association role specification.\n A relationship between entity/ entity specifications may be governed by conditions and rules which are addressed by constraint references in this resource. Constraints for a relationship may include new rules and conditions in addition to those defined for the corresponding association specification\nSkipped properties: id,href,@type,@baseType,lastUpdate",
             "properties": {
                 "description": {
                     "type": "string",
                     "description": "Description of the association"
-                },
-                "lastUpdate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "The last modified date of this association object"
                 },
                 "lifecycleStatus": {
                     "type": "string",
@@ -1535,18 +1530,10 @@
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period for which this association is valid"
                 },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
                 "@schemaLocation": {
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1675,6 +1662,19 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period of time for which the attachment is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1850,9 +1850,27 @@
                     "type": "string",
                     "description": "Unique identifier of the characteristic"
                 },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "relationshipType": {
                     "type": "string",
                     "description": "The type of relationship"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1952,20 +1970,12 @@
         },
         "Entity_Update": {
             "type": "object",
-            "description": "Base entity schema for use in TMForum Open-APIs\nSkipped properties: id,href",
+            "description": "Base entity schema for use in TMForum Open-APIs\nSkipped properties: id,href,@type,@baseType",
             "properties": {
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
                 "@schemaLocation": {
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2132,10 +2142,9 @@
                     "type": "string",
                     "description": "free-text description of the entity"
                 },
-                "endDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "A date time( DateTime). The date till the entity is effective"
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period for which this REST resource is valid"
                 },
                 "isBundle": {
                     "type": "boolean",
@@ -2149,14 +2158,14 @@
                     "type": "string",
                     "description": "A string used to give a name to the entity"
                 },
-                "startDate": {
+                "lastUpdate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "A date time( DateTime). The date from which the entity is effective"
+                    "description": "Date and time of the last update of this REST resource"
                 },
-                "status": {
+                "lifecycleStatus": {
                     "type": "string",
-                    "description": "The life cycle state of the entity."
+                    "description": "Used to indicate the current lifecycle status of this managed entity"
                 },
                 "statusChangeDate": {
                     "type": "string",
@@ -2222,21 +2231,46 @@
             "description": "Extra information about a given entity",
             "properties": {
                 "id": {
+                    "example": [
+                        "afa9-3d90aaa8da0f"
+                    ],
                     "type": "string",
-                    "description": "Identifier of the note within its containing entity (may or may not be globally unique, depending on provider implementation)"
+                    "description": "Identifier of the note within its containing entity"
                 },
                 "author": {
+                    "example": [
+                        "Mr. N. Bene"
+                    ],
                     "type": "string",
                     "description": "Author of the note"
                 },
                 "date": {
+                    "example": [
+                        "2020-11-20T08:00:00Z"
+                    ],
                     "type": "string",
                     "format": "date-time",
                     "description": "Date of the note"
                 },
                 "text": {
+                    "example": [
+                        "This is important"
+                    ],
                     "type": "string",
                     "description": "Text of the note"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },

@@ -4,7 +4,7 @@
     "title": "ResourceStatusType", 
     "definitions": {
         "ResourceStatusType": {
-            "id": "#ResourceStatusType",
+            "$id": "#ResourceStatusType",
             "type": "string", 
             "description": "ResourceStatusType enumerations", 
             "enum": [

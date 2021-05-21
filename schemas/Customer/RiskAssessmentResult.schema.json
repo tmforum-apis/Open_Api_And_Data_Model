@@ -20,6 +20,10 @@
                         "$ref": "RiskScore.schema.json#RiskScore"
                     },                        
                     "description": "Additional characteristics for which the risk might be assessed, optional input to the task"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "Period for which this result is considered valid and not stale"
                 }
             },
             "allOf": [

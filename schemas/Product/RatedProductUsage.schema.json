@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "RatedProductUsage.schema.json",
+  "title": "RatedProductUsage",
+  "definitions": {
+    "RatedProductUsage": {
+      "$id": "#RatedProductUsage",
+      "description": "An occurrence of employing a product for its intended purpose with all rating details",
+      "type": "object",
+      "properties": {
+        "bucketValueConvertedInAmount": {
+          "$ref": "../Common/Money.schema.json#Money"
+        },
+        "isBilled": {
+          "type": "boolean",
+          "description": "Boolean indicating if usage have been billed or not"
+        },
+        "isTaxExempt": {
+          "type": "boolean",
+          "description": "Indicates if the rated amount is exempt of tax"
+        },
+        "offerTariffType": {
+          "type": "string",
+          "description": "Type of tariff applied"
+        },
+        "productRef": {
+          "$ref": "../Product/ProductRef.schema.json#ProductRef"
+        },
+        "ratingAmountType": {
+          "type": "string",
+          "description": "Type of amount"
+        },
+        "ratingDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date of usage rating"
+        },
+        "taxExcludedRatingAmount": {
+          "$ref": "../Common/Money.schema.json#Money"
+        },
+        "taxIncludedRatingAmount": {
+          "$ref": "../Common/Money.schema.json#Money"
+        },
+        "taxRate": {
+          "type": "number",
+          "format": "float",
+          "description": "Tax rate"
+        },
+        "usageRatingTag": {
+          "type": "string",
+          "description": "Tag value: [usage]: the usage is always rated outside a usage bundle\n[included usage]: the usage is rated inside a usage bundle\n[non included usage]: the usage bundle is exhausted. The usage is rated outside the usage bundle"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Addressable.schema.json#Addressable",
+          "$ref": "../Common/Extensible.schema.json#Extensible"
+        }
+      ]
+    }
+  }
+}

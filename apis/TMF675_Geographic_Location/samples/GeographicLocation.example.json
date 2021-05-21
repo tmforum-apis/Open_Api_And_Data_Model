@@ -1,0 +1,16 @@
+{
+    "id": "10c5f5b5-e408",
+    "href": "https://api.company.com/tmf-api/geographicLocation/v4/geographicLocation/10c5f5b5-e408",
+    "name": "Vodafone House",
+    "@baseType": "GeographicLocation",
+    "@type": "GeoJsonPoint",
+    "geoJson": {
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -1.3197581470012665,
+                51.41671197068097
+            ]
+        }
+    }
+}

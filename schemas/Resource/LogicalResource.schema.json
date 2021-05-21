@@ -1,94 +1,21 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "LogicalResource.schema.json",
-  "title": "LogicalResource",
-  "definitions": {
-    "LogicalResource": {
-      "$id": "#LogicalResource",
-      "description": "Logic resource is a type of resource that describes the common set of attributes shared by all concrete logical resources (e.g. TPE, MSISDN, IP Addresses) in the inventory.",
-      "type": "object",
-      "properties": {
-        "value": {
-          "type": "string",
-          "description": "The value of the logical resource, such as: 0044746712345 for an MSISDN"
-        },
-        "category": {
-          "type": "string",
-          "description": "Category of the concrete resource, such as: Gold, Silver for MSISDN concrete resource"
-        },
-        "description": {
-          "type": "string",
-          "description": "Free-text description of the resource"
-        },
-        "endDate": {
-          "type": "string",
-          "format": "date-time",
-          "description": "The date till the resource is effective"
-        },
-        "href": {
-          "type": "string",
-          "description": "The URI for the object itself."
-        },
-        "id": {
-          "type": "string",
-          "description": "Identifier of an instance of the resource. Required to be unique within the resource type.  Used in URIs as the identifier for specific instances of a type"
-        },
-        "lifecycleState": {
-          "type": "string",
-          "description": "The life cycle state of the resource"
-        },
-        "name": {
-          "type": "string",
-          "description": "A string used to give a name to the resource"
-        },
-        "startDate": {
-          "type": "string",
-          "format": "date-time",
-          "description": "A date time( DateTime). The date from which the resource is effective"
-        },
-        "version": {
-          "type": "string",
-          "description": "A field that identifies the specific version of an instance of a resource"
-        },
-        "resourceRelationship": {
-          "type": "array",
-          "items": {
-            "$ref": "../Resource/ResourceRelationship.schema.json#ResourceRelationship"
-          }
-        },
-        "characteristic": {
-          "type": "array",
-          "items": {
-            "$ref": "../Resource/ResourceCharacteristic.schema.json#ResourceCharacteristic"
-          }
-        },
-        "place": {
-          "$ref": "../Common/Place.schema.json#Place"
-        },
-        "partyRole": {
-          "type": "array",
-          "items": {
-            "$ref": "../EngagedParty/PartyRoleRef.schema.json#PartyRoleRef"
-          }
-        },
-        "relatedParty": {
-          "type": "array",
-          "items": {
-            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
-          }
-        },
-        "note": {
-          "type": "array",
-          "items": {
-            "$ref": "../Common/Note.schema.json#Note"
-          }
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "LogicalResource.schema.json",
+    "title": "LogicalResource",
+    "definitions": {
+        "LogicalResource": {
+            "type": "object",
+            "description": "Logic resource is a type of resource that describes the common set of attributes shared by all concrete logical resources (e.g. TPE, MSISDN, IP Addresses) in the inventory.",
+            "properties": {
+                "value": {
+                    "type": "string",
+                    "description": "the value of the logical resource. E.g '0746712345' for  MSISDN's"
+                }
+            },
+            "allOf": [{
+                    "$ref": "./Resource.schema.json#Resource"
+                }
+                ]
+            }
         }
-      },
-      "allOf": [
-        {
-          "$ref": "../Common/Entity.schema.json#Entity"
-        }
-      ]
     }
-  }
-}

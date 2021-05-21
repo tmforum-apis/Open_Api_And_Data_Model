@@ -4,18 +4,21 @@
   "title": "MonitoredInstancesCriteria",
   "definitions": {
     "MonitoredInstancesCriteria": {
-      "description": "",
+      "$id": "#MonitoredInstancesCriteria",
+      "description": "List of monitored instances",
+      "type": "object",
+      "properties": {
+        "monitoredObjectInstances": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems":0
+        }
+      },
       "allOf": [
         {
-          "$ref": "MonitoredObjectsCriteria.schema.json#/definitions/MonitoredObjectsCriteria"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "monitoredObjectInstances": {
-              "$ref": "#/definitions/ObjectName"
-            }
-          }
+          "$ref": "../Common/Extensible.schema.json#Extensible"
         }
       ]
     }

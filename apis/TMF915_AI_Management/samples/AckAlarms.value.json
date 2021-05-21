@@ -1,0 +1,14 @@
+{
+    "ackSystemId": "743",
+    "ackTime": "2020-06-25T00:00",
+    "ackUserId": "942",
+    "ackedAlarm": [
+        {}
+    ],
+    "alarmPattern": [
+        {}
+    ],
+    "href": "https:/host:port/tmf-api/ackAlarms/v1/ackAlarms/9657",
+    "id": "9657",
+    "state": "a string ..."
+}

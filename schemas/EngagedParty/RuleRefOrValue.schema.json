@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "RuleRefOrValue.schema.json",
+  "title": "RuleRefOrValue",
+  "definitions": {
+    "RuleRefOrValue": {
+      "$id": "#RuleRefOrValue",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../EngagedParty/Rule.schema.json#Rule"
+        },
+        {
+          "$ref": "../EngagedParty/RuleRef.schema.json#RuleRef"
+        }
+      ]
+    }
+  }
+}

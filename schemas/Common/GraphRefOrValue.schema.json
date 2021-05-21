@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "GraphRefOrValue.schema.json",
+    "title": "GraphRefOrValue",
+    "definitions": {
+        "GraphRefOrValue": {
+            "$id": "#GraphRefOrValue",
+            "description": "Graph is a directed graph representing edges connecting vertices.",
+            "type": "object",
+            "properties": {
+            },
+            "allOf": [
+                {
+                    "$ref": "GraphRef.schema.json#GraphRef"
+                },
+                {
+                    "$ref": "Graph.schema.json#Graph"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "alarmChangedTime": "2020-06-25T00:00",
+    "correlatedAlarm": [
+        {}
+    ],
+    "href": "https:/host:port/tmf-api/unGroupAlarms/v1/unGroupAlarms/4567",
+    "id": "4567",
+    "parentAlarm": {},
+    "sourceSystemId": "824",
+    "state": "a string ...",
+    "unGroupedAlarm": [
+        {}
+    ]
+}

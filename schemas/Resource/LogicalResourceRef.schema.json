@@ -8,10 +8,14 @@
             "description": "reference to the LogicalResource eg MSISDN",
             "type": "object",
             "properties": {
+                "value": {
+                    "type": "string",
+                    "description": "The value of the logical resource"
+                }
             },
             "allOf": [
                 {
-                    "$ref": "../Common/EntityRef.schema.json#EntityRef"
+                    "$ref": "ResourceRef.schema.json#ResourceRef"
                 }
             ]
 

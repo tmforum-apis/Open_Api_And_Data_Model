@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "WorkPrice.schema.json",
+    "title": "WorkPrice",
+    "definitions": {
+        "WorkPrice": {
+            "$id": "#WorkPrice",
+            "type": "object",
+            "description": "An amount, usually of money, that represents the actual price paid by the Customer for this item or this order.",
+            "properties": {
+                "billingAccount": {
+                    "$ref": "../Customer/BillingAccountRef.schema.json#/definitions/BillingAccountRef"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A narrative that explains in detail the semantics of this shipment price."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A short descriptive name such as \"Subscription price\"."
+                },
+                "price": {
+                    "$ref": "../Customer/Price.schema.json#/definitions/Price"
+                },
+                "priceAlteration": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/PriceAlteration.schema.json#/definitions/PriceAlteration"
+                    }
+                },
+                "priceType": {
+                    "$ref": "../Customer/PriceType.schema.json#/definitions/PriceType"
+                },
+                "recurringChargePeriod": {
+                    "type": "string",
+                    "description": "Could be month, week..."
+                },
+                "unitOfMeasure": {
+                    "type": "string",
+                    "description": "Could be minutes, GB..."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#/definitions/Entity"
+                }
+            ]
+        }
+    }
+}

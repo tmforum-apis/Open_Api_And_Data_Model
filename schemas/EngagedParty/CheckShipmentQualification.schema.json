@@ -14,12 +14,12 @@
                 "provideAlternative": {
                     "type": "boolean",
                     "description": "When the value is TRUE means that alternative solutions should be provided",
-                    "default": "false"
+                    "default": false
                 },
                 "provideUnavailabilityReason": {
                     "type": "boolean",
                     "description": "When the value is TRUE means that unavailability reason are expected for non available shipments.",
-                    "default": "false"
+                    "default": false
                 },
                 "qualificationResult": {
                     "type": "string",

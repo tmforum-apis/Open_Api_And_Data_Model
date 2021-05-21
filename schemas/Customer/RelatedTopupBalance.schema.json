@@ -7,10 +7,6 @@
       "$id": "#RelatedTopupBalance",
       "description": "Related Entity reference. A related balance topup defines a relationship via a role to another balance topup. Used in the PrepayBalanceManagement API to track child topups that are related to the parent (initiating balance topup resource). PrepayBalanceManagement defines the child role",
       "type": "object",
-      "required": [
-        "id",
-        "@referredType"
-      ],
       "properties": {
         "role": {
           "type": "string",

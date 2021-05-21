@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ReservationItemActionType.schema.json",
+    "title": "ReservationItemActionType",
+    "definitions": {
+        "ReservationItemActionType": {
+            "$id": "#ReservationItemActionType",
+            "type": "string",
+            "description": "action to be performed on the entity",
+            "enum": [
+                "add",
+                "modify",
+                "delete",
+                "noChange"
+            ]
+        }
+    }
+}
