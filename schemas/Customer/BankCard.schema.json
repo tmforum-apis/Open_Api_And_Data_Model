@@ -1,0 +1,69 @@
+{
+	  "$schema": "http://json-schema.org/draft-07/schema#",
+	  "$id": "BankCard.schema.json",
+	  "title": "BankCard",
+	  "definitions": {
+	    "BankCard": {
+	      "$id": "#BankCard",
+	      "description": "A bank card method of payment.",
+	      "type": "object",
+	      "required": [
+	        "@type"
+	      ],
+	      "properties": {
+	        "brand": {
+	            "type": "string",
+              "description": "The card brand",
+              "examples": ["Visa", "MasterCard", "AmericanExpress","..."]
+            },
+            "cardType": {
+                "type": "string",
+                "description": "The type of card e.g. Credit, debit etc.",
+                "examples": ["Credit", "Debit"]
+            },
+            "cardNumber": {
+                "type": "string",
+                "description": "The bank card number.",
+                "examples": ["0000-0000-0000-0000"]
+            },
+            "expirationDate": {
+                "type": "string",
+                "description": "Expiration date of the bank card.",
+                "format": "date-time",
+                "examples": ["2025-11-20T10:19:46+0000"]
+            },
+            "cvv": {
+                "type": "string",
+                "description": "The security code (e.g.: CVV, CVV2) of the card.",
+                "examples": ["123"]
+            },
+            "lastFourDigits": {
+                "type": "string",
+                "description": "The last four digits of the credit card.",
+                "examples": ["0000"]
+            },
+            "nameOnCard": {
+                "type": "string",
+                "description": "The name on the card.",
+                "examples": ["Abbey S King."]
+            },  
+            "bank": {
+                "type": "string",
+                "description": "The bank that issued the card.",
+                "examples": ["Your Bank Inc."]
+            },
+            "@type": {
+               "type": "string",
+               "enum": [
+                  "bankCard"
+                ]  
+            }
+	      },
+	      "allOf": [
+	        {
+	          "$ref": "../Customer/PaymentMethod.schema.json#PaymentMethod"
+	        }
+	      ]
+	    }
+	  }
+ }

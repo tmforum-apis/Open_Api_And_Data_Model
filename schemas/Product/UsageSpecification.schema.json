@@ -7,37 +7,10 @@
       "$id": "#UsageSpecification",
       "description": "A detailed description of a usage event that are of interest to the business and can have charges applied to it. It is comprised of characteristics, which define all attributes known for a particular type of usage.",
       "type": "object",
-      "properties": {
-        "description": {
-          "type": "string",
-          "description": "A narrative that explains in detail what the usage specification is"
-        },
-        "href": {
-          "type": "string",
-          "description": "Reference of usage specification"
-        },
-        "id": {
-          "type": "string",
-          "description": "Usage specification unique identifier"
-        },
-        "name": {
-          "type": "string",
-          "description": "The name of the usage specification."
-        },
-        "validFor": {
-          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-          "description": "The period for which the usage specification is valid"
-        },
-        "usageSpecCharacteristic": {
-          "type": "array",
-          "items": {
-            "$ref": "../Product/UsageSpecCharacteristic.schema.json#UsageSpecCharacteristic"
-          }
-        }
-      },
+      "properties": { },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
+          "$ref": "../Common/EntitySpecification.schema.json#EntitySpecification"
         }
       ]
     }

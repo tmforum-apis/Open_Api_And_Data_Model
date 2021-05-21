@@ -1,0 +1,43 @@
+{
+	  "$schema": "http://json-schema.org/draft-07/schema#",
+	  "$id": "DigitalWallet.schema.json",
+	  "title": "DigitalWallet",
+	  "definitions": {
+	    "DigitalWallet": {
+	      "$id": "#DigitalWallet",
+	      "description": "A digital wallet method of payment.",
+	      "type": "object",
+	      "required": [
+	        "@type"
+	      ],
+	      "properties": {
+	        "service": {
+	            "type": "string",
+				"description": "Organization, platform or currency backing the wallet (e.g.: PayPal, Yandex, BitCoin…).",
+				"examples": ["PayPal", "Apple Pay", "Google Pay", "Samsung Pay","BitCoin"]
+            },
+            "walletId": {
+                "type": "string",
+				"description": "Account identifier in that service.",
+				"examples": ["#124#XTYC#7N4LK-12"]
+            },
+            "walletUrl": {
+                "type": "string",
+				"description": "URI pointing at the digital wallet (e.g.: //paypal.me/johndoe).",
+				"examples": ["//paypal.me/johndoe"]
+			},
+			"@type": {
+				"type": "string",
+				"enum": [
+					"digitalWallet"
+				]
+			}
+	      },
+	      "allOf": [
+	        {
+				"$ref": "../Customer/PaymentMethod.schema.json#PaymentMethod"
+	        }
+	      ]
+	    }
+	  }
+ }

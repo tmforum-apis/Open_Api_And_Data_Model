@@ -1,0 +1,31 @@
+{
+	  "$schema": "http://json-schema.org/draft-07/schema#",
+	  "$id": "BucketPaymentMethod.schema.json",
+	  "title": "BucketPaymentMethod",
+	  "definitions": {
+	    "Cash": {
+	      "$id": "#BucketPaymentMethod",
+	      "description": "Reference to a bucket that could be used to perform the payment, especially in the pre-paid environment.",
+	      "type": "object",
+	      "required": [
+	        "@type"
+	      ],
+	      "properties": {
+			"bucket": {
+				"$ref": "../Customer/BucketRef.schema.json#BucketRef"
+			},
+	        "@type": {
+				"type": "string",
+				"enum": [
+					"bucketPaymentMethod"
+				]	
+			}
+	      },
+	      "allOf": [
+	        {
+				"$ref": "../Customer/PaymentMethod.schema.json#PaymentMethod"
+	        }
+	      ]
+	    }
+	  }
+ }

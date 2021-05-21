@@ -1,0 +1,63 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "Customer360AppointmentVO.schema.json",
+	"title": "Customer360AppointmentVO",
+	"definitions": {
+		"Customer360AppointmentVO": {
+			"$id": "#Customer360AppointmentVO",
+			"description": "An Appointment is an arrangement to do something or meet someone at a particular time, at a place (for face to face appointment) or in a contact medium (for phone appointment).",
+			"type": "object",
+			"properties": {
+				"calendarEvent": {
+					"$ref": "../Common/CalendarEventRef.schema.json#CalendarEventRef",
+					"description": "A calendar event reference (CalendarEventRef). The appointment is associated with a calendar event (an happening at a point of time) associated to a calendar entry."
+				},
+				"category": {
+					"description": "Business category : intervention for example or to be more precise after SalesIntervention, orderDeliveryIntervention,...",
+					"type": "string"
+				},
+				"creationDate": {
+					"description": "Appointment creation date",
+					"type": "string",
+					"format": "date-time"
+				},
+				"description": {
+					"description": "Short free text describing the appointment",
+					"type": "string"
+				},
+				"externalId": {
+					"description": "External reference known by the customer",
+					"type": "string"
+				},
+				"href": {
+					"description": "Unique URI used to access to the appointment resource",
+					"type": "string"
+				},
+				"id": {
+					"description": "Unique identifier of the appointment",
+					"type": "string"
+				},
+				"lastUpdate": {
+					"description": "Date of last appointment update",
+					"type": "string",
+					"format": "date-time"
+				},
+				"status": {
+					"$ref": "../Customer/AppointmentStateType.schema.json#AppointmentStateType"
+				},
+				"validFor": {
+					"$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+					"description": "A time period (TimePeriod). Appointment beginning date time and end date time."
+				}
+			},
+			"required": [
+				"validFor"
+			],
+			"allOf": [
+				{
+					"$ref": "../Common/Entity.schema.json#Entity"
+				}
+			]
+		}
+	}
+}

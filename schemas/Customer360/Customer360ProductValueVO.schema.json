@@ -1,0 +1,86 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "Customer360ProductValueVO.schema.json",
+	"title": "Customer360ProductValueVO",
+	"definitions": {
+		"Customer360ProductValueVO": {
+			"$id": "#Customer360ProductValueVO",
+			"description": "A product offering procured by a customer or other interested party playing a party role. A product is realized as one or more service(s) and / or resource(s).",
+			"type": "object",
+			"properties": {
+				"randomAtt": {
+					"type": "string"
+				},
+				"billingAccount": {
+					"$ref": "../Customer/BillingAccountRef.schema.json#BillingAccountRef"
+				},
+				"description": {
+					"description": "Is the description of the product. It could be copied from the description of the Product Offering.",
+					"type": "string"
+				},
+				"href": {
+					"description": "Reference of the product",
+					"type": "string"
+				},
+				"id": {
+					"description": "Unique identifier of the product",
+					"type": "string"
+				},
+				"isBundle": {
+					"description": "If true, the product is a ProductBundle which is an instantiation of a BundledProductOffering. If false, the product is a ProductComponent which is an instantiation of a SimpleProductOffering.",
+					"type": "boolean"
+				},
+				"isCustomerVisible": {
+					"description": "If true, the product is visible by the customer.",
+					"type": "boolean"
+				},
+				"name": {
+					"description": "Name of the product. It could be the same as the name of the product offering",
+					"type": "string"
+				},
+				"orderDate": {
+					"description": "Is the date when the product was ordered",
+					"type": "string",
+					"format": "date-time"
+				},
+
+				"productOffering": {
+					"$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef"
+				},
+				"product": {
+					"type": "array",
+					"items": {
+						"$ref": "../Product/ProductRefOrValue.schema.json#ProductRefOrValue"
+					}
+				},
+				"productSerialNumber": {
+					"description": "Is the serial number for the product. This is typically applicable to tangible products e.g. Broadband Router.",
+					"type": "string"
+				},
+				"productSpecification": {
+					"$ref": "../Product/ProductSpecificationRef.schema.json#ProductSpecificationRef"
+				},
+
+				"startDate": {
+					"description": "Is the date from which the product starts",
+					"type": "string",
+					"format": "date-time"
+				},
+				"status": {
+					"$ref": "../Product/ProductStatusType.schema.json#ProductStatusType",
+					"description": "Is the lifecycle status of the product."
+				},
+				"terminationDate": {
+					"description": "Is the date when the product was terminated",
+					"type": "string",
+					"format": "date-time"
+				}
+			},
+			"allOf": [
+				{
+					"$ref": "../Common/Entity.schema.json#Entity"
+				}
+			]
+		}
+	}
+}

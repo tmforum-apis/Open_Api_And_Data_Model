@@ -1,26 +1,21 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "HourPeriod.schema.json",
-  "title": "HourPeriod",
-  "definitions": {
-    "HourPeriod": {
-      "$id": "#HourPeriod",
-      "type": "object",
-      "properties": {
-        "endHour": {
-          "type": "string",
-          "description": "The time when the status ends applying"
-        },
-        "startHour": {
-          "type": "string",
-          "description": "The time when the status starts applying"
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "HourPeriod.schema.json",
+    "title": "HourPeriod",
+    "definitions": {
+        "HourPeriod": {
+            "$id": "#HourPeriod",
+            "type": "object",
+            "properties": {
+                "endHour": {
+                    "type": "string",
+                    "description": "The time when the status ends applying"
+                },
+                "startHour": {
+                    "type": "string",
+                    "description": "The time when the status starts applying"
+                }
+            }
         }
-      },
-      "allOf": [
-        {
-          "$ref": "../Common/Entity.schema.json#Entity"
-        }
-      ]
     }
-  }
 }

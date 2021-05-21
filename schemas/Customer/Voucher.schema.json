@@ -1,0 +1,58 @@
+{
+	  "$schema": "http://json-schema.org/draft-07/schema#",
+	  "$id": "Voucher.schema.json",
+	  "title": "Voucher",
+	  "definitions": {
+	    "Voucher": {
+	      "$id": "#Voucher",
+	      "description": "A voucher method of payment.",
+	      "type": "object",
+	      "required": [
+	        "@type"
+	      ],
+	      "properties": {
+	        "code": {
+	            "type": "string",
+				"description": "Code that identifies the voucher.",
+				"examples": ["VCJLP0000"]
+            },
+            "description": {
+                "type": "string",
+				"description": "Description of the voucher i.e.: get one and receive one free.",
+				"examples": ["Buy one and receive one free."]
+			},
+			"value": {
+				"$ref": "../Common/Quantity.schema.json#Quantity",
+				"description": "The value of the voucher."
+			},
+            "discount": {
+                "type": "string",
+				"description": "The discount that the voucher applies when it's a discount voucher.",
+				"examples": ["50%", "25%", "70%"]
+			},
+            "expirationDate": {
+                "type": "string",
+                "description": "The voucher's expiration date.",
+				"format": "date-time",
+				"examples": ["2025-11-20T10:19:46+0000" ]
+            },
+            "campaign": {
+                "type": "string",
+				"description": "Campaign this voucher belongs to.",
+				"examples": ["Black Friday mega sale."]
+			},
+			"@type": {
+				"type": "string",
+				"enum": [
+					"voucher"
+				  ]
+			}
+	      },
+	      "allOf": [
+	        {
+				"$ref": "../Customer/PaymentMethod.schema.json#PaymentMethod"
+	        }
+	      ]
+	    }
+	  }
+ }

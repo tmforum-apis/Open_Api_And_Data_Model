@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AlternateProductStock.schema.json",
+    "title": "AlternateProductStock",
+    "definitions": {
+        "AlternateProductStock": {
+            "$id": "#AlternateProductStock",
+            "description": "AlternateProductStock is used to log and execute Alternate about product  stock availability",
+            "type": "object",
+            "properties": {
+                "alternateAvailabilityDate": {
+                    "description": "Alternate date when the product stock is available.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "id": {
+                    "description": "identifier of the Alternate product stock ",
+                    "type": "string"
+                },
+                "alternateQuantity": {
+                    "description": "Alternate quantity available",
+                    "$ref": "Quantity.schema.json#/definitions/Quantity"
+                },
+                "alternatePlace": {
+                    "description": "Alternate place where product stock is available",
+                    "$ref": "../Common/PlaceRefOrValue.schema.json#PlaceRefOrValue"
+                },
+                "alternateStock": {
+                    "description": "Alternate product stock available",
+                    "$ref": "ProductStockRef.schema.json#/definitions/ProductStockRef"
+                },
+                "alternateProduct": {
+                    "$ref": "../Product/ProductRefOrValue.schema.json#/definitions/ProductRefOrValue",
+                    "description" : "Alternat product available"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Extensible.schema.json#/Extensible"
+                }
+            ]
+        }
+    }
+}

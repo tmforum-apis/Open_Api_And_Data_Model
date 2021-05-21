@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceReservationItemRef.schema.json",
+    "title": "ResourceReservationItemRef",
+    "definitions": {
+        "ResourceReservationItemRef": {
+            "$id": "#ResourceReservationItemRef",
+            "type": "object",
+            "description": "Reference to a reservation item that can typically be queried with another API.",
+            "properties": {
+                "resourceReservationId": {
+                    "type": "string",
+                    "description": "Identifier of the reservation of which the item is a part of"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#/definitions/EntityRef"
+                }
+            ]
+        }
+    }
+}

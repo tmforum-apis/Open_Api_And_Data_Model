@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ShipmentItemActionType.schema.json",
+  "title": "ShipmentItemActionType",
+  "definitions": {
+    "ShipmentItemActionType": {
+      "$id": "#ShipmentItemActionType",
+      "description": "action to be performed on the shipment item",
+      "type": "string",
+      "enum": [
+        "add",
+        "modify",
+        "delete",
+        "noChange"
+      ]
+    }
+  }
+} 

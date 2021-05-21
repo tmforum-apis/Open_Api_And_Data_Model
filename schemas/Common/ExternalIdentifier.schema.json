@@ -32,7 +32,12 @@
                         "MC2255771199555"
                     ]
                 }
-            }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
         }
     }
 }

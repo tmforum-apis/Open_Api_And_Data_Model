@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "DayOfMonthRecurrence.schema.json",
+  "title": "DayOfMonthRecurrence",
+  "definitions": {
+    "DayOfMonthRecurrence": {
+      "$id": "#DayOfMonthRecurrence",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "dates": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "allOf": [
+        {
+           "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        } 
+      ]
+    }
+  }
+}

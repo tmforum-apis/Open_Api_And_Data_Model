@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AlternateWorkProposal.schema.json",
+    "title": "AlternateWorkProposal",
+    "definitions": {
+        "AlternateWorkProposal": {
+            "$id": "#AlternateWorkProposal",
+            "type": "object",
+            "description": "Alternate work proposal is used when the requested unit of work is not valid as specified in the request. An alternate proposal could be a distinct workSpecification close to the requested one or the same specification as requested but with a different parameters.",
+            "properties": {
+                "alternateWork": {
+                    "$ref": "../EngagedParty/WorkRefOrValue.schema.json#/definitions/WorkRefOrValue"
+                },
+                "alternateWorkDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Alternate date where the work could take place in case the expected date cannot be met."
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of an alternate work proposal"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
+        }
+    }
+}

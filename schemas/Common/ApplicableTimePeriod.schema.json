@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ApplicableTimePeriod.schema.json",
+    "title": "ApplicableTimePeriod",
+    "definitions": {
+        "ApplicableTimePeriod": {
+            "$id": "#ApplicableTimePeriod",
+            "type": "object",
+            "description": "The period of time for which Capacity or CapacityDemand applies.",
+            "properties": {
+                "dayOfWeek": {
+                    "type": "string",
+                    "description": "A day or days representing when the schedule is applicable. For example 2, 3 represent Monday and Tuesday."
+                },
+                "fromToDateTime": {
+                    "description": "The period of time for which the schedule is applicable. \r\nInstance values are mutually exclusive with daysOfWeek values.",
+                    "$ref": "../Common/TimePeriod.schema.json#/definitions/TimePeriod"
+                },
+                "rangeInterval": {
+                    "type": "string",
+                    "description": "An indicator that specifies the inclusion or exclusion of the from and to DateTime attributes. \r\nPossible values are \"open\", \"closed\", \"closedBottom\" and \"closedTop\"."
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#/definitions/TimePeriod"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
+        }
+    }
+}

@@ -6,7 +6,7 @@
     "PromotionPattern": {
       "$id": "#PromotionPattern",
       "type": "object",
-      "description": "Detailed pattern of the promotion.The pattern decides the conditions of promotion and the benefit of the promotion to be given to the eligible customer.",
+      "description": "Contains the conditions and benefits of the promotion toan eligible party",
       "properties": {
         "@baseType": {
           "type": "string",
@@ -34,32 +34,33 @@
         },
         "description": {
           "type": "string",
-          "description": "Description"
+          "description": "Small description to clarify the pattern details."
         },
         "id": {
           "type": "string",
-          "description": "Unique identifier."
+          "description": "Unique identifier of promotion pattern."
         },
         "name": {
           "type": "string",
-          "description": "Name"
+          "description": "Alias to promotion pattern. This way is easily mentioned."
         },
         "priority": {
           "type": "integer",
           "description": "Priority. Smaller number means high."
         },
-        "relationTypeAmongGroup": {
+        "criteriaGroupLogicalRelationship": {
           "type": "string",
-          "description": "AND/OR ,The logical relation type amongst the promotion criteria group."
+          "description": "Logical relation followed by the criteria group.",
+          "enum": ["AND","OR"]
         },
         "validFor": {
-          "description": "The period  for which the promotion pattern  is valid.",
+          "description": "The period  for which the promotion pattern is valid.",
           "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
         }
       },
       "required": [
-        "id",
-        "name"
+        "action",
+        "criteriaGroup"
       ]
     }
   }

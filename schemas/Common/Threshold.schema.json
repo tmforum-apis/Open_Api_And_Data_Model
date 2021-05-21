@@ -9,27 +9,23 @@
             "properties": {
                 "description": {
                     "type": "string",
-                    "description": "A narrative that explains in detail what the Performance threshold is.This element is generated from an attribute.This attribute  is  invariantThis attribute  is  optionalThis attribute  is  AVC disabled (NA)"
-                },
-                "id": {
-                    "type": "integer",
-                    "format": "int64",
-                    "description": "The entity instance identifier (EID).This element is generated from an attribute.This attribute  is  invariantThis attribute  is  optionalThis attribute  is  AVC disabled"
+                    "description": "A description of the threshold"
                 },
                 "name": {
                     "type": "string",
-                    "description": "A word, term, or phrase by which a Performance threshold is known and distinguished from other thresholds.This element is generated from an attribute.This attribute  is  invariantThis attribute  is  mandatoryThis attribute  is  AVC disabled (NA)"
+                    "description": "A word, term, or phrase by which a Performance threshold is known and distinguished from other thresholds."
                 },
                 "thresholdRule": {
                     "type": "array",
                     "items": {
-                        "$ref": "ThresholdRule.schema.json#/definitions/ThresholdRule"
-                    }
-                },
-                "thresholdType": {
-                    "$ref": "ThresholdType.schema.json#/definitions/ThresholdType"
+                        "$ref": "../Common/ThresholdRule.schema.json#/definitions/ThresholdRule"
+                    },
+                    "description": "A Performance Threshold contains a set of Performance threshold rules of different conditions (Raise, Clear) and different severities"
                 }
-            }
+            },
+            "allOf": [{
+                "$ref": "../Common/Entity.schema.json#Entity"
+            }]
         }
     }
 }

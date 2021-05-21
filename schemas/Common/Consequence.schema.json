@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Consequence.schema.json",
+    "title": "Consequence",
+    "definitions": {
+        "Consequence": {
+            "type": "object",
+            "description": "A threshold crossing or a threshold ceased to be crossing results in a Performance consequence.",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "A description of a Consequence"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A word, term, or phrase by which a Consequence is known and distinguished from other measurements"
+                },
+                "prescribedAction": {
+                    "type": "string",
+                    "description": "The suggested action"
+                }
+            },
+            "allOf": [
+                {"$ref":"../Common/Entity.schema.json#/definitions/Entity"}
+            ]
+        }
+    }
+}

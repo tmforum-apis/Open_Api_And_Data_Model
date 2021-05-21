@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Edge.schema.json",
+    "title": "Edge",
+    "definitions": {
+        "Edge": {
+            "type": "object",
+            "description": "Edge is a directed edge connecting vertices in a directed Graph.",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name given to this REST resource"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of this REST resource"
+                },
+                "edgeSpecification": {
+                    "$ref": "EdgeSpecificationRef.schema.json#EdgeSpecificationRef"
+                },
+                "graph": {
+                    "description": "Graph which this Edge is contained in.",
+                    "$ref": "GraphRef.schema.json#GraphRef"
+                },
+                "subGraph": {
+                    "description": "SubGraph which this Edge represents.",
+                    "$ref": "GraphRefOrValue.schema.json#GraphRefOrValue"
+                },
+                "bidirectional": {
+                    "type": "boolean",
+                    "description": "Indicates if this Edge is birectional (true) or unidirection originating from the first vertex (false)."
+                },
+                "entity": {
+                    "description": "Entity which this Edge represents.",
+                    "$ref": "EntityRef.schema.json#EntityRef"
+                },
+                "vertex": {
+                    "description": "Graph Vertices connected by this Edge.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "VertexRef.schema.json#VertexRef"
+                    }
+                },
+                "edgeCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Characteristic.schema.json#Characteristic"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

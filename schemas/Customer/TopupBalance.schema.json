@@ -19,12 +19,15 @@
                     "description": "For autotopup indicates the number of occurrences of the period the recharge operation must be executed. If not included then no limit is set to stop the execution of the topup every period"
                 },
                 "recurringPeriod": {
-                    "$ref": "RecurringPeriodType.schema.json#RecurringPeriodType",
+                    "type": "string",
                     "description": "For autotopup indicates the periodicity for the recharge operation (monthly, weekly, )"
                 },
                 "paymentMethod": {
                     "description": "Payment method used for the recharge operation (e.g.: cash, credit card). Structure including at least attribute dname. Notice that the use of a voucher can be managed as a specific methodtype, where he voucher code can be passed as value.",
                     "$ref": "../Customer/PaymentMethodRef.schema.json#PaymentMethodRef"
+                },
+                "payment": {
+                  "$ref": "../Customer/PaymentRef.schema.json#PaymentRef"
                 },
                 "voucher": {
                     "type": "string",
@@ -33,7 +36,7 @@
             },
             "allOf": [
                 {
-                    "$ref": "Action.schema.json#Action"
+                    "$ref": "BalanceAction.schema.json#BalanceAction"
                 }
             ]
         }

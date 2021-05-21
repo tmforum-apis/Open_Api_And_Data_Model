@@ -10,7 +10,7 @@
       "enum": [
         "initialized",
         "validated",
-        "deceaded"
+        "deceased"
       ]
     }
   }

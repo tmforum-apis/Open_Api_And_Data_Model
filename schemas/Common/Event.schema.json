@@ -41,10 +41,10 @@
           "type": "string",
           "description": "A priority."
         },
-        "timeOcurred": {
+        "timeOccurred": {
           "type": "string",
           "format": "date-time",
-          "description": "The time the event occured."
+          "description": "The time the event occurred."
         },
         "source": {
           "$ref": "../Common/EntityRef.schema.json#EntityRef",

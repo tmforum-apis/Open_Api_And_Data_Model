@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "VertexRefOrValue.schema.json",
+    "title": "VertexRefOrValue",
+    "definitions": {
+        "VertexRefOrValue": {
+            "$id": "#VertexRefOrValue",
+            "description": "A Vertex is connected by directed Edges to other vertices in a Graph.",
+            "type": "object",
+            "properties": {
+            },
+            "allOf": [
+                {
+                    "$ref": "VertexRef.schema.json#VertexRef"
+                },
+                {
+                    "$ref": "Vertex.schema.json#Vertex"
+                }
+                
+            ]
+        }
+    }
+  }

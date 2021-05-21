@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "VertexSpecificationCharacteristic.schema.json",
+    "title": "VertexSpecificationCharacteristic",
+    "definitions": {
+        "VertexSpecificationCharacteristic": {
+            "$id": "#VertexSpecificationCharacteristic",
+            "description": "This class defines the characteristic features of a vertex specification. Every VertexSpecification has a variety of important attributes, methods, constraints, and relationships, which distinguish a vertex specification from other vertex specifications.", 
+            "type": "object",
+            "properties": {
+                "vertexSpecCharRelationship": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "VertexSpecificationCharacteristicRelationship.schema.json#VertexSpecificationCharacteristicRelationship"
+                    },
+                    "description": "An aggregation, migration, substitution, dependency or exclusivity relationship between/among Specification Characteristics."
+                }, 
+                "vertexSpecCharacteristicValue": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "../Common/CharacteristicValueSpecification.schema.json#CharacteristicValueSpecification"
+                    },
+                    "description": "A CharacteristicValueSpecification object is used to define a set of attributes, each of which can be assigned to a corresponding set of attributes in a VertexSpecificationCharacteristic object. The values of the attributes in the CharacteristicValueSpecification object describe the values of the attributes that a corresponding VertexSpecificationCharacteristic object can take on."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/CharacteristicSpecificationBase.schema.json#CharacteristicSpecificationBase"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,124 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProductStock.schema.json",
+    "title": "ProductStock",
+    "definitions": {
+        "ProductStock": {
+            "$id": "#ProductStock",
+            "description": "ProductStock is a base class for defining a product (or configured product with values characteristic) stock level.",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "Free-text description of the ProductStock",
+                    "type": "string"
+                },
+                "creationDate": {
+                    "description": "Date when the ProductStock was created (whatever its status).",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "lastUpdate": {
+                    "description": "Last date when the ProductStock record was updated.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "lastInventoryDate": {
+                    "description": "Last inventory count date for this ProductStock.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "replenishmentDate": {
+                    "description": "Planned date for future replenishment for this ProductStock.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "id": {
+                    "description": "Unique identifier of the ProductStock",
+                    "type": "string"
+                },
+                "href": {
+                    "description": "Reference of the ProductStock",
+                    "type": "string"
+                },
+                "stockLevelCategory": {
+                    "description": "Category of the ProductStock",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name of the ProductStock",
+                    "type": "string"
+                },
+                "productStockStatusType": {
+                    "description": "The status of the ProductStock, such as available, unavailable, reserved, unknown",
+                    "$ref": "ProductStockStatusType.schema.json#/definitions/ProductStockStatusType"
+                },
+                "productStockUsageType": {
+                    "description": "The usage type of the  ProductStock, such as inTransit, damaged, onDisplay, etc..",
+                    "$ref": "ProductStockUsageType.schema.json#/definitions/ProductStockUsageType"
+                },
+                "productStockLevel": {
+                    "$ref": "Quantity.schema.json#/definitions/Quantity"
+                },
+                "minStockLevel": {
+                    "$ref": "Quantity.schema.json#/definitions/Quantity"
+                },
+                "maxStockLevel": {
+                    "$ref": "Quantity.schema.json#/definitions/Quantity"
+                },
+                "stockLevelAlert": {
+                    "$ref": "Quantity.schema.json#/definitions/Quantity"
+                },
+                "reorderQuantity": {
+                    "$ref": "Quantity.schema.json#/definitions/Quantity"
+                },
+                "productStockRelationship": {
+                    "type": "array",
+                    "description": "relationship to other product stock",
+                    "items": {
+                        "$ref": "ProductStockRelationship.schema.json#/definitions/ProductStockRelationship"
+                    }
+                },
+                "stockedProduct": {
+                    "description" : "Product stocked in this product stock  - could be via a productSpecification, a ProductSpecification + valued characteristic, etc. ",
+                    "$ref": "../Product/ProductRefOrValue.schema.json#/definitions/ProductRefOrValue"
+                },
+                "resource": {
+                    "type": "array",
+                    "description": "The Resource managed through this ProductStock is used",
+                    "items": {
+                        "$ref": "../Resource/ResourceRef.schema.json#/definitions/ResourceRef"
+                    }
+                },
+                "channel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "ChannelRef.schema.json#/definitions/ChannelRef"
+                    }
+                },
+                "marketSegment": {
+                   "type": "array",
+                    "items": {
+                            "$ref": "../MarketingSales/MarketSegmentRef.schema.json#MarketSegmentRef"
+                     },
+                    "description": "provides references to the corresponding market segment as target of a product stock. A market segment is grouping of Parties, GeographicAreas, SalesChannels, and so forth."
+        },
+                "relatedParty": {
+                    "type": "array",
+                    "description": "A list of related party references (RelatedParty [*]). A related party defines party or party role linked to a specific entity",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+                    }
+                },
+                "place": {
+                    "description": "Used to define a place useful for the ProductStock for example a geographical place where the Product Stock is located",
+                    "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#/Entity"
+                }
+            ]
+        }
+    }
+}

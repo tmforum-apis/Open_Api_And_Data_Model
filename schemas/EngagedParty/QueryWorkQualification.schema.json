@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "QueryWorkQualification.schema.json",
+    "title": "QueryWorkQualification",
+    "definitions": {
+        "QueryWorkQualification": {
+            "$id": "#QueryWorkQualification",
+            "type": "object",
+            "description": "QueryWorkQualification is used to retrieve a list of units of work that are valid in the context of the interaction",
+            "properties": {
+                "queryWorkQualificationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the workQualification was submitted"
+                },
+                "searchCriteria": {
+                    "$ref": "../EngagedParty/WorkQualificationItem.schema.json#/definitions/WorkQualificationItem"
+                },
+                "workQualificationItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/WorkQualificationItem.schema.json#/definitions/WorkQualificationItem"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../EngagedParty/WorkQualification.schema.json#/definitions/WorkQualification"
+                }
+            ]
+        }
+    }
+}

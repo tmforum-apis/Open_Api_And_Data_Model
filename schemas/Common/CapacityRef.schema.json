@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CapacityRef.schema.json",
+    "title": "CapacityRef",
+    "definitions": {
+        "CapacityRef": {
+            "$id": "#CapacityRef",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#/definitions/EntityRef"
+                }
+            ]
+        }
+    }
+}

@@ -8,45 +8,29 @@
             "type": "object",
             "description": "An Ai Contract represents a contract or arrangement, either written or verbal and sometimes enforceable by law, such as a service level agreement or a customer price agreement. An agreement involves a number of other business entities, such as products, services, and resources and/or their specifications.",
             "properties": {
-                "description": {
-                    "type": "string"
+
+                "aiModel": {
+                    "description": "Reference to the AI Model ",
+                    "$ref": "../Common/EntityRef.schema.json#/definitions/EntityRef"
+
                 },
-                "href": {
-                    "type": "string"
+                "aiContractSpecification": {
+                    "description": "Reference to the AI Model Specification",
+                    "$ref": "../Common/EntityRef.schema.json#/definitions/EntityRef"
+
                 },
-                "id": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "relatedParty": {
+                "characteristic": {
                     "type": "array",
                     "items": {
-                        "$ref": "RelatedParty.schema.json#/definitions/RelatedParty"
+                        "$ref": "../Common/Characteristic.schema.json#Characteristic"
                     }
-                },
-                "rule": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "Rule.schema.json#/definitions/Rule"
-                    }
-                },
-                "template": {
-                    "$ref": "Template.schema.json#/definitions/Template"
-                },
-                "validFor": {
-                    "$ref": "ValidFor.schema.json#/definitions/ValidFor"
-                },
-                "version": {
-                    "type": "string"
+
+
                 }
             },
-            "allOf": [
-                {
-                    "$ref": "Agreement.schema.json#/Agreement"
-                }
-            ]
+            "allOf": [{
+                "$ref": "../EngagedParty/SLA.schema.json#SLA"
+            }]
         }
     }
 }

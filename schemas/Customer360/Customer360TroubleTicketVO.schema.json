@@ -1,0 +1,101 @@
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Customer360TroubleTicketVO.schema.json",
+  "title": "Customer360TroubleTicketVO",
+  "definitions": {
+    "Customer360TroubleTicketVO": {
+      "$id": "#Customer360TroubleTicketVO",
+      "type": "object",
+      "description": "A trouble ticket is a record of an issue that is created, tracked, and managed by a trouble ticket management system",
+      "properties": {
+        "channel": {
+          "$ref": "../Common/ChannelRef.schema.json#ChannelRef",
+          "description": "The channel that origin the trouble ticket"
+        },
+        "creationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date on which the trouble ticket was created"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the trouble or issue"
+        },
+        "expectedResolutionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The expected resolution date determined by the trouble ticket system"
+        },
+        "externalId": {
+          "type": "string",
+          "description": "Additional identifier coming from an external system"
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink, a reference to the trouble ticket entity"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the trouble ticket"
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date and time that the trouble ticked was last updated"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the trouble ticket, typically a short description provided by the user that create the ticket"
+        },
+        "priority": {
+          "type": "string",
+          "description": "The priority of the trouble ticket and how quickly the issue should be resolved. Example: Critical, High, Medium, Low. The value is set by the ticket management system considering the severity, ticket type etc..."
+        },
+        "requestedResolutionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The resolution date requested by the user"
+        },
+        "resolutionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date and time the trouble ticket was resolved"
+        },
+        "severity": {
+          "type": "string",
+          "description": "The severity of the issue. Indicate the implication of the issue on the expected functionality e.g. of a system, application, service etc.. \nSeverity values can be for example : Critical, Major, Minor"
+        },
+        "status": {
+          "$ref": "../Common/TroubleTicketStatusType.schema.json#TroubleTicketStatusType",
+          "description": "The current status of the trouble ticket"
+        },
+        "statusChange": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/StatusChange.schema.json#StatusChange"
+          },
+          "description": "The status change history that are associated to the ticket.Populated by the server"
+        },
+        "statusChangeDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date and time the status changed."
+        },
+        "statusChangeReason": {
+          "type": "string",
+          "description": "The reason for changing the status"
+        },
+        "ticketType": {
+          "type": "string",
+          "description": "represent a business type of the trouble ticket e.g. incident, complain, request"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Work.schema.json",
+    "title": "Work",
+    "definitions": {
+        "Work": {
+            "$id": "#Work",
+            "type": "object",
+            "properties": {
+                "actualDuration": {
+                    "$ref": "../Common/Quantity.schema.json#/definitions/Quantity"
+                },
+                "agreement": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/AgreementRef.schema.json#/definitions/AgreementRef"
+                    }
+                },
+                "appointment": {
+                    "$ref": "../Customer/AppointmentRef.schema.json#/definitions/AppointmentRef"
+                },
+                "completionDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the order was completed"
+                },
+                "currentDuration": {
+                    "$ref": "../Common/Quantity.schema.json#/definitions/Quantity"
+                },
+                "deliveryTimeSlot": {
+                    "$ref": "../Common/TimePeriod.schema.json#/definitions/TimePeriod"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Is the description of the work unit. It could be the same as the description of the work specification."
+                },
+                "expectedCompletionDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the requester expects the work to be completed"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the work unit. It could be the same as the name of the work specification."
+                },
+                "note": {
+                    "$ref": "../Common/Note.schema.json#/definitions/Note"
+                },
+                "orderDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date at which the work order which triggered this unit of work's creation/change/termination was created."
+                },
+                "percentageComplete": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "place": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#/definitions/RelatedPlaceRefOrValue"
+                    }
+                },
+                "plannedDuration": {
+                    "$ref": "../Common/Quantity.schema.json#/definitions/Quantity"
+                },
+                "quantity": {
+                    "$ref": "../Common/Quantity.schema.json#/definitions/Quantity"
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+                    }
+                },
+                "scheduledDuration": {
+                    "$ref": "../Common/Quantity.schema.json#/definitions/Quantity"
+                },
+                "state": {
+                    "$ref": "../EngagedParty/WorkStateType.schema.json#/definitions/WorkStateType"
+                },
+                "work": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/WorkRefOrValue.schema.json#/definitions/WorkRefOrValue"
+                    }
+                },
+                "workCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Characteristic.schema.json#/definitions/Characteristic"
+                    }
+                },
+                "workOrderItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedWorkOrderItem.schema.json#/definitions/RelatedWorkOrderItem"
+                    }
+                },
+                "workPrice": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/WorkPrice.schema.json#/definitions/WorkPrice"
+                    }
+                },
+                "workPriority": {
+                    "type": "string"
+                },
+                "workRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/WorkRelationship.schema.json#/definitions/WorkRelationship"
+                    }
+                },
+                "workSpecification": {
+                    "$ref": "../EngagedParty/WorkSpecificationRef.schema.json#/definitions/WorkSpecificationRef"
+                },
+                "workType": {
+                    "type": "string"
+                },
+                "workforceEmployeeAssignment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/WorkforceEmployeeAssignment.schema.json#/definitions/WorkforceEmployeeAssignment"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#/definitions/Entity"
+                }
+            ]
+        }
+    }
+}

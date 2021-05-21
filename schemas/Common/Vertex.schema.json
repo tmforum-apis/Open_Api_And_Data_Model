@@ -1,0 +1,54 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Vertex.schema.json",
+    "title": "Vertex",
+    "definitions": {
+        "Vertex": {
+            "type": "object",
+            "description": "A Vertex is connected by directed Edges to other vertices in a Graph.",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name given to this REST resource"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of this REST resource"
+                },
+                "vertexSpecification": {
+                    "$ref": "VertexSpecificationRef.schema.json#VertexSpecificationRef"
+                },
+                "graph": {
+                    "description": "Graph which this Vertex is contained in.",
+                    "$ref": "GraphRef.schema.json#GraphRef"
+                },
+                "subGraph": {
+                    "description": "SubGraph which this Vertex represents.",
+                    "$ref": "GraphRefOrValue.schema.json#GraphRefOrValue"
+                },
+                "entity": {
+                    "description": "Entity which this Vertex represents.",
+                    "$ref": "EntityRef.schema.json#EntityRef"
+                },
+                "edge": {
+                    "description": "Directed Edges which this Vertex is connected by.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "EdgeRef.schema.json#EdgeRef"
+                    }
+                },
+                "vertexCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Characteristic.schema.json#Characteristic"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

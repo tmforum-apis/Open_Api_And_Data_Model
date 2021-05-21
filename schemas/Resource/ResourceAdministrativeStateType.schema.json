@@ -4,7 +4,7 @@
     "title": "ResourceAdministrativeStateType", 
     "definitions": {
         "ResourceAdministrativeStateType": {
-            "id": "#ResourceAdministrativeStateType",
+            "$id": "#ResourceAdministrativeStateType",
             "type": "string", 
             "description": "ResourceAdministrativeStateType enumerations", 
             "enum": [

@@ -10,9 +10,10 @@
       "properties": {
         "description": {
           "type": "string",
-          "description": "Describes the action being done, such as: ack, clear"
+          "description": "Describes the action being done, such as: ack, clear",
+          "example": [ "acknowledge", "clear" ]
         },
-        "extensionInfo": {
+        "characteristic": {
           "type": "array",
           "items": {
             "$ref": "../Common/Characteristic.schema.json#Characteristic"
@@ -38,12 +39,9 @@
         }
       },
       "allOf": [
-                {
-                  "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
-                },
-                {
-                  "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
-                } 
+          {
+            "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+          } 
       ]
     }
   }

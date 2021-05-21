@@ -5,42 +5,70 @@
   "definitions": {
     "ShippingOrderItem": {
       "$id": "#ShippingOrderItem",
-      "description": "Description for the shipping content items",
+      "description": "A list of shipping order items",
       "type": "object",
       "properties": {
-         "id": {
+        "id": {
           "type": "string",
-          "description": "Identifier of the Shipping Order"
+          "description": "Identifier of the Shipping Order Item",
+          "example": "4aafacbd-11ff-4dc8-b445-305f2215715f"
         },
-        "externalIdentifier": {
+        "action": {
+          "$ref": "../EngagedParty/ShippingOrderItemActionType.schema.json#ShippingOrderItemActionType",
+          "description": "The action to be carried out on the Product. Can be: add, modify, delete, noChange"
+        },
+        "productOrderItem": {
+          "$ref": "../Customer/ProductOrderItemRef.schema.json#ProductOrderItemRef",
+          "description": "The product order item for which the shipping order is created, if supplied as input the attribute id must be populated"
+        },
+        "product": {
+          "$ref": "../Product/ProductRef.schema.json#ProductRef",
+          "description": "The product for which the shipping order is created, if supplied as input the attribute id must be populated"
+        },
+        "relatedParty": {
           "type": "array",
-          "description": "An identification of an entity that is owned by or originates in a software system different from the current system, for example a ProductOrder handed off from a commerce platform into an order handling system. The structure identifies the system itself, the nature of the entity within the system (e.g. class name) and the unique ID of the entity within the system. It is anticipated that multiple external IDs can be held for a single entity, e.g. if the entity passed through multiple systems on the way to the current system. In this case the consumer is expected to sequence the IDs in the array in reverse order of provenance, i.e. most recent system first in the list.",
+          "description": "A party which is involved in this shipment and the role they are playing and address. In case of shipping to addresses where a geo location is needed than then PlaceTo,PlaceFrom can be used.",
           "items": {
-            "$ref": "../Common/ExternalIdentifier.schema.json#ExternalIdentifier"
+            "$ref": "../EngagedParty/RelatedPartyWithContactInfo.schema.json#RelatedPartyWithContactInfo"
           }
         },
-        "quantity":{
-          "description": "Item quantity. Needs to be greater than 1",
-          "$ref":"../Common/Quantity.schema.json#Quantity"
+        "quantity": {
+          "type": "string",
+          "description": "Quantity the individual shipment line item",
+          "example": "10 units"
         },
-        "sku":{
-          "type":"string",
-          "description": "A stock-keeping unit (SKU) is a scannable bar code, most often seen printed on product labels in a retail store. The label allows vendors to automatically track the movement of inventory. The SKU is composed of an alphanumeric combination of eight-or-so characters"
+        "status": {
+          "type": "string",
+          "description": "status of shipping order item. e.g \"active\" , \"savedForLater\"",
+          "example": "active"
         },
-        "note": {
-          "type": "array",
-          "description": "A list of notes made on this shipping order",
-          "items": {
-            "$ref": "../Common/Note.schema.json#Note"
-          }
+        "shippingInstruction": {
+          "description": "Shipping instructions, usually relevant for the carrier.",
+          "$ref": "../EngagedParty/ShippingInstruction.schema.json#ShippingInstruction"
         },
-        "price": {
-          "description": "Item price details",
-          "$ref":"../Customer/Price.schema.json#Price"
+        "shippingOrderItemOffering": {
+          "description": "Each shipping order item can have a corresponding product offer in the product catalog.",
+          "$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef"
         },
-        "product":{
-          "description": "Product details",
-          "$ref": "../EngagedParty/ShippingOrderProduct.schema.json#ShippingOrderProduct"
+        "productOffering": {
+          "description": "Item has a corresponding offering in the product catalog.",
+          "$ref": "../Product/ProductOfferingRef.schema.json#ProductOfferingRef"
+        },        
+        "shipment": {
+          "description": "A set of goods to be shipped",
+          "$ref": "../EngagedParty/ShipmentRefOrValue.schema.json#ShipmentRefOrValue"
+        },
+        "shippingOrderItemPrice": {
+          "description": "Shipping Order Item price. The price of shipping this item. It depends if there is a ShippingOrder level price or per each individual item.",
+          "$ref": "../Product/ProductPrice.schema.json#ProductPrice"
+        },
+        "placeFrom": {
+          "description": "Source location of the item. E.g. warehouse or shop location",
+          "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue"
+        },
+        "placeTo": {
+          "description": "Destination of the item. E.g. customer home address. ",
+          "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue"
         }
       },
       "allOf": [

@@ -7,27 +7,9 @@
       "$id": "#ServiceLevelSpecificationRef",
       "description": "A Service Level Specification represents a pre-defined or negotiated set of Service Level \nObjectives. In addition, certain consequences are associated with not meeting the Service Level \nObjectives. Service Level Agreements are expressed in terms of Service Level Specifications.",
       "type": "object",
-      "properties": {
-        "href": {
-          "type": "string",
-          "description": "The hyperlink to access a service level specification."
-        },
-        "id": {
-          "type": "string",
-          "description": "The identifier to a service level specification."
-        },
-        "name": {
-          "type": "string",
-          "description": "The name of Service Level Specification"
-        },
-        "@referredType": {
-          "type": "string",
-          "description": "The actual type of the target instance when needed for disambiguation."
-        }
-      },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
+          "$ref": "../Common/EntityRef.schema.json#/definitions/EntityRef"
         }
       ]
     }

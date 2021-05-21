@@ -5,8 +5,8 @@
   "definitions": {
     "PromotionCriteriaGroup": {
       "$id": "#PromotionCriteriaGroup",
-      "type": "object",
-      "description": "The group of the criteria of the promotion. The logical relationship between different groups is decided by the relationTypeInGroup.",
+      "type": "object", 
+      "description": "Set of group criteria to promotion. Fulfilling these criteria, parties will receice benefits",
       "properties": {
         "@baseType": {
           "type": "string",
@@ -28,21 +28,20 @@
         },
         "groupName": {
           "type": "string",
-          "description": "Name of the group."
+          "description": "Name of the group to be easily identified"
         },
         "id": {
           "type": "string",
           "description": "Unique Identifier"
         },
-        "relationTypeInGroup": {
+        "criteriaLogicalRelationship": {
           "type": "string",
-          "description": "AND/OR,The logical relation type amongst the various criteria inside a promotion criteria group."
+          "description": "Logical relation followed by all criteria.",
+          "enum": ["AND","OR"]
         }
       },
       "required": [
-        "id",
-        "relationTypeInGroup",
-        "groupName"
+        "criteria"
       ]
     }
   }

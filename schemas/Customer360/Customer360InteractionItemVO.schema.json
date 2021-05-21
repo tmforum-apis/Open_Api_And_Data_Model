@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Customer360InteractionItemVO.schema.json",
+    "title": "Customer360InteractionItemVO",
+    "definitions": {
+        "Customer360InteractionItemVO": {
+            "$id": "#Customer360InteractionItemVO",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the interaction item"
+                },
+                "itemDate": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                    "description": "Moment this item is referred"
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "Reason why this item is referred"
+                },
+                "resolution": {
+                    "type": "string",
+                    "description": "Resolution of the interaction item"
+                },
+				"creationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the interaction item is created in the system"
+                }
+            },
+            "allOf": [
+                {	
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

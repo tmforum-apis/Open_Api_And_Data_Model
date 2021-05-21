@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "DistributedLedger.schema.json",
+  "title": "DistributedLedger",
+  "definitions": {
+    "DistributedLedger": {
+      "$id": "#DistributedLedger",
+      "type": "object",
+      "description": "Document is a tangible output from an activity",
+      "properties": {
+        "binaryAttachment": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
+          }
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "../Product/CategoryRef.schema.json#CategoryRef"
+          }
+        },
+        "characteristic": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/Characteristic.schema.json#Characteristic"
+          }
+        },
+        "creationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date and time the document was created. A date and time formatted in compliance with the ISO8601 standard must be used."
+        },
+        "description": {
+          "type": "string",
+          "description": "free-text description of the document"
+        },
+        "documentRelationship": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/DocumentRef.schema.json#DocumentRef"
+          }
+        },
+        "documentSpecification": {
+          "$ref": "../Common/DocumentSpecification.schema.json#DocumentSpecification"
+        },
+        "href": {
+          "type": "string",
+          "description": "The URI for the object itself."
+        },
+        "id": {
+          "type": "string",
+          "description": "Identifier of an instance of the document. Required to be unique within the document type.  Used in URIs as the identifier for specific instances of a type."
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date and time the document was last modified. A date and time formatted in compliance with the ISO8601 standard must be used."
+        },
+        "lifecycleState": {
+          "type": "string",
+          "description": "The life cycle state of the document."
+        },
+        "name": {
+          "type": "string",
+          "description": "A string used to give a name to the document"
+        },
+        "relatedEntity": {
+          "$ref": "../Common/RelatedEntity.schema.json#RelatedEntity"
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
+        },
+        "documentType": {
+          "type": "string",
+          "description": "Name of the document type"
+        },
+        "version": {
+          "type": "string",
+          "description": "A particular form or variety of an artefact that is different from others or from the original. The form represents differences in properties that characterize an artefact, that are not enough to warrant creating a new artefact"
+        }
+      }
+    }
+  }
+}

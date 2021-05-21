@@ -9,24 +9,54 @@
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "Identifier of the individual shipment line item"
-                },
-                "quantity": {
-                    "type": "number",
                     "description": "Identifier of the individual shipment line item",
-                    "format": "integer"
+                    "example":  "4aafacbd-11ff-4dc8-b445-305f2215715f789" 
                 },
-                "resource": {
-                    "$ref": "../Resource/ResourceRefOrValue.schema.json#/definitions/ResourceRefOrValue"
+                "action": {
+                  "$ref": "../EngagedParty/ShipmentItemActionType.schema.json#ShipmentItemActionType",
+                  "description": "The action to be carried out on the shipment item. Can be: add, modify, delete, noChange"
+                },                
+                "quantity": {
+                    "type": "string",
+                    "description": "Quantity the individual shipment line item",
+                    "example":  "10 units" 
                 },
-                "product": {
-                    "$ref": "../Product/ProductRefOrValue.schema.json#/definitions/ProductRefOrValue"
-                },
+                "sku": {
+                    "type":"string",
+                    "description":"SKU (Stock Keeping Unit) is a unique code that you use to identify every inventory item in your warehouse",
+                    "example": "UGG-BB-PUR-06" 
+                }, 
                 "weight": {
+                    "description":"Weight of the shipping item package/parcel",
                     "$ref": "../Common/Quantity.schema.json#/definitions/Quantity"
                 },
-                "productStockReservation": {
-                    "$ref": "../Product/ProductStockReservationRef.schema.json#/definitions/ProductStockReservationRef"
+                "productReservationRef": {
+                    "$ref": "../Resource/ReserveProductStockRef.schema.json#ReserveProductStockRef"
+                },
+                "productStockRef": {
+                    "$ref": "../Resource/ProductStockRef.schema.json#ProductStockRef"
+                },
+                "externalIdentifier": {
+                  "type": "array",
+                  "description": "An identification of an entity that is owned by or originates in a software system different from the current system, for example a ProductOrder handed off from a commerce platform into an order handling system. The structure identifies the system itself, the nature of the entity within the system (e.g. class name) and the unique ID of the entity within the system. It is anticipated that multiple external IDs can be held for a single entity, e.g. if the entity passed through multiple systems on the way to the current system. In this case the consumer is expected to sequence the IDs in the array in reverse order of provenance, i.e. most recent system first in the list.",
+                   "items": {
+                         "$ref": "../Common/ExternalIdentifier.schema.json#/definitions/ExternalIdentifier"
+                    }
+                },
+                "shipmentItemPrice": {
+                  "description": "Item price details",
+                  "$ref":"../Customer/Price.schema.json#Price"
+                },
+                "characteristic": {
+                  "type": "array",
+                  "description": "List of characteristics with values that define the test run",
+                  "items": {
+                    "$ref": "../Common/Characteristic.schema.json#Characteristic"
+                  }
+                },
+                "product": {
+                    "description":"This data structure captures the product information.",
+                    "$ref": "../Product/ProductRefOrValue.schema.json#/definitions/ProductRefOrValue"
                 }
             },
             "allOf": [

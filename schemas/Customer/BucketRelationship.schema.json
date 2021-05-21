@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "BucketRelationship.schema.json",
+  "title": "ProductRelationship",
+  "definitions": {
+    "BucketRelationship": {
+      "$id": "#BucketRelationship",
+      "description": "Linked bucket to the one instantiate, such as [isAggregated] if the bucket is a part of other or [aggregator] is the bucket holds others ",
+      "type": "object",
+      "required": [
+        "relationshipType",
+        "bucketRefOrValue"
+      ],
+      "properties": {
+        "relationshipType": {
+          "type": "string",
+          "description": "Type of the bucket relationship, such as [isAggregated] if the bucket is a part of other or [aggregator] is the bucket holds others"
+        },
+        "bucketRefOrValue": {
+          "$ref": "../Customer/BucketRefOrValue.schema.json#BucketRefOrValue"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Extensible.schema.json#Extensible"
+        }
+      ]
+    }
+  }
+}

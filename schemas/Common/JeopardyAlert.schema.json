@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "JeopardyAlert.schema.json",
+  "title": "JeopardyAlert",
+  "definitions": {
+    "JeopardyAlert": {
+      "$id": "#JeopardyAlert",
+      "description": "A JeopardyAlert represents a predicted exception during a process that may cause a risk to complete successfully the process.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "identifier of the JeopardyAlert"
+        },
+        "alertDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "A date time( DateTime). The date that the alert issued"
+        },
+        "name": {
+          "type": "string",
+          "description": "A string used to give a name to the jeopardy alert"
+        },
+        "jeopardyType": {
+          "type": "string",
+          "description": "A string represents the type of jeopardy/risk like Normal, Hazard, Critical, ..."
+        },
+        "exception": {
+          "type": "string",
+          "description": " The exception associated with this jeopardy alert"
+        },
+        "message": {
+          "type": "string",
+          "description": "A string represents the message of the alert"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+        }
+      ]
+    }
+  }
+}

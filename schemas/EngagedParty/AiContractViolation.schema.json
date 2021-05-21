@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AiContractViolation.schema.json",
+  "title": "AiContractViolation",
+  "definitions": {
+    "AiContractViolation": {
+      "$id": "#AiContractViolation",
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "href": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
+        },
+        "violation": {
+          "$ref": "../EngagedParty/Violation.schema.json#Violation"
+        },
+        "aiContract": {
+          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

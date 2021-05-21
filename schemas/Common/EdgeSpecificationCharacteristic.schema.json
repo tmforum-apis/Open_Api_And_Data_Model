@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "EdgeSpecificationCharacteristic.schema.json",
+    "title": "EdgeSpecificationCharacteristic",
+    "definitions": {
+        "EdgeSpecificationCharacteristic": {
+            "$id": "#EdgeSpecificationCharacteristic",
+            "description": "This class defines the characteristic features of an edge specification. Every EdgeSpecification has a variety of important attributes, methods, constraints, and relationships, which distinguish an edge specification from other edge specifications.", 
+            "type": "object",
+            "properties": {
+                "edgeSpecCharRelationship": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "EdgeSpecificationCharacteristicRelationship.schema.json#EdgeSpecificationCharacteristicRelationship"
+                    },
+                    "description": "An aggregation, migration, substitution, dependency or exclusivity relationship between/among Specification Characteristics."
+                }, 
+                "edgeSpecCharacteristicValue": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "../Common/CharacteristicValueSpecification.schema.json#CharacteristicValueSpecification"
+                    },
+                    "description": "A CharacteristicValueSpecification object is used to define a set of attributes, each of which can be assigned to a corresponding set of attributes in a EdgeSpecificationCharacteristic object. The values of the attributes in the CharacteristicValueSpecification object describe the values of the attributes that a corresponding EdgeSpecificationCharacteristic object can take on."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/CharacteristicSpecificationBase.schema.json#CharacteristicSpecificationBase"
+                }
+            ]
+        }
+    }
+}

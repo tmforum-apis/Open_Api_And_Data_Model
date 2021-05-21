@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Measurement.schema.json",
+    "title": "Measurement",
+    "definitions": {
+        "Measurement": {
+            "type": "object",
+            "description": "A counter/KPI to be used by the threshold rule",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "A description of the measurement"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A word, term, or phrase by which a measurement is known and distinguished from other measurements"
+                },
+                "collectionType": {
+                    "type": "string",
+                    "description": "This attribute indicates different forms in which the measurement data can be captured (please see details below)"
+                },
+                "measurementFormula": {
+                    "type": "string",
+                    "description": "A formula that is used to calculate a measurement (a string)"
+                },
+                "measurementType": {
+                    "type": "string",
+                    "description": "A category of the measurement (different SDOs may be using different categories)"
+                },
+                "measurementUnit": {
+                    "type": "string",
+                    "description": "The unit of the measurement (e.g. second, bytes, Celsius, etc.)"
+                }
+            },
+            "allOf": [
+                {"$ref": "../Common/Entity.schema.json#Entity"}
+            ]
+        }
+        
+    }
+}

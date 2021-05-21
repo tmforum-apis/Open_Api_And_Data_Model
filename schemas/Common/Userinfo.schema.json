@@ -7,7 +7,7 @@
       "properties": {
         "address": {
           "description": "Structure including the End-User's preferred postal address",
-          "$ref": "GeographicAddress.schema.json#/definitions/GeographicAddress"
+          "$ref": "../Common/GeographicAddress.schema.json#/definitions/GeographicAddress"
         },
         "birthdate": {
           "type": "string",
@@ -52,7 +52,7 @@
         "legalId": {
           "type": "array",
           "items": {
-            "$ref": "Identification.schema.json#/definitions/Identification"
+            "$ref": "../Common/IndividualIdentification.schema.json#/definitions/IndividualIdentification"
           },
           "description": "Identification documentation of the contact"
         },
@@ -127,7 +127,7 @@
         "userAssets": {
           "type": "array",
           "items": {
-            "$ref": "UserAsset.schema.json#/definitions/UserAsset"
+            "$ref": "../Common/UserAsset.schema.json#/definitions/UserAsset"
           },
           "description": "List of additional profile information"
         },
@@ -152,7 +152,7 @@
       ],
       "allOf": [
         {
-          "$ref": "Entity.schema.json#/Entity"
+          "$ref": "../Common/Entity.schema.json#/Entity"
         }
       ]
     }

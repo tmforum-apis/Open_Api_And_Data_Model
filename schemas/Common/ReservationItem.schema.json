@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ReservationItem.schema.json",
+    "title": "ReservationItem",
+    "definitions": {
+        "ReservationItem": {
+            "$id": "#ReservationItem",
+            "type": "object",
+            "description": "An identified part of the reservation. A reservation is decomposed into one or more reservation items.",
+            "properties": {
+                "action": {
+                    "$ref": "../Common/ReservationItemActionType.schema.json#/definitions/ReservationItemActionType"
+                },
+                "appliedCapacity": {
+                    "$ref": "../Common/Capacity.schema.json#/definitions/Capacity"
+                },
+                "capacityDemand": {
+                    "$ref": "../Common/Capacity.schema.json#/definitions/Capacity"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "A string. Identifier of the item."
+                },
+                "quantity": {
+                    "type": "integer"
+                },
+                "relatedEntity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/RelatedEntity.schema.json#/definitions/RelatedEntity"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedPartyRef.schema.json#/definitions/RelatedPartyRef"
+                    }
+                },
+                "reservationPeriod": {
+                    "description": "Period of time for which the target entity is to be in a reserved state",
+                    "$ref": "../Common/TimePeriod.schema.json#/definitions/TimePeriod"
+                },
+                "state": {
+                    "$ref": "../Common/ReservationItemStateType.schema.json#/definitions/ReservationItemStateType"
+                },
+                "stateChangeDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date and time the state changed."
+                },
+                "stateChangeReason": {
+                    "type": "string",
+                    "description": "The reason for changing the state"
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#/definitions/TimePeriod"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
+        }
+    }
+}

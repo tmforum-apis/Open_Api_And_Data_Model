@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "EdgeRef.schema.json",
+    "title": "EdgeRef",
+    "definitions": {
+        "EdgeRef": {
+            "$id": "#EdgeRef",
+            "type": "object",
+            "properties": {
+            },
+            "allOf": [
+                {
+                    "$ref": "EntityRef.schema.json#EntityRef"
+                }
+            ]
+        }
+    }
+}

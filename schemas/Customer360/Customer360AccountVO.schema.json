@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Customer360AccountVO.schema.json",
+  "title": "Customer360AccountVO",
+  "definitions": {
+    "Customer360AccountVO": {
+      "$id": "#Customer360AccountVO",
+      "description": "Generic Account structure used to define commonalities between sub concepts of PartyAccount and Financial Account.",
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "creditLimit": {
+          "$ref": "../Common/Money.schema.json#Money",
+          "description": "The maximum amount of money that may be charged on an account"
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of the party account"
+        },
+        "href": {
+          "type": "string",
+          "description": "Unique reference of the account"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the account"
+        },
+        "lastModified": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date of last modification of the account"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the account"
+        },
+        "state": {
+          "type": "string",
+          "description": "Contains the lifecycle state such as: Active, Closed, Suspended and so on."
+        },
+        "accountType": {
+          "type": "string",
+          "description": "A categorization of an account, such as individual, joint, and so forth, whose instances share some of the same characteristics. Note: for flexibility we use a String here but an implementation may use an enumeration with a limited list of valid values."
+        },
+        "accountRelationship": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/AccountRelationship.schema.json#AccountRelationship"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

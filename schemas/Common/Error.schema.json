@@ -13,7 +13,7 @@
       ],
       "properties": {
         "code": {
-          "type": "integer",
+          "type": "string",
           "description": "Application relevant detail, defined in the API or a common list",
           "examples": [
             "1",
@@ -56,7 +56,7 @@
       },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
+          "$ref": "../Common/Extensible.schema.json#Extensible"
         }
       ]
     }

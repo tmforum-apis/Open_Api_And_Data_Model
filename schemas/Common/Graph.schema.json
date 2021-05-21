@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Graph.schema.json",
+    "title": "Graph",
+    "definitions": {
+        "Graph": {
+            "type": "object",
+            "description": "Graph is a directed graph representing edges connecting vertices.",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name given to this REST resource"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of this REST resource"
+                },
+                "graphRelationship": {
+                    "type": "array",
+                    "description": "Relationship to another Graph.",
+                    "items": {
+                        "$ref": "GraphRelationship.schema.json#GraphRelationship"
+                    }
+                },
+                "vertex": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "VertexRefOrValue.schema.json#VertexRefOrValue"
+                    }
+                },
+                "edge": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "EdgeRefOrValue.schema.json#EdgeRefOrValue"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

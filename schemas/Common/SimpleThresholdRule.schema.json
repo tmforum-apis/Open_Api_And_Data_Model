@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "SimpleThresholdRule.schema.json",
+    "title": "SimpleThresholdRule",
+    "definitions": {
+        "SimpleThresholdRule": {
+            "type": "object",
+            "description": "A threshold rule that is based on explicit definition of attributes that represent a Boolean expression",
+            "properties": {
+                "conformanceComparatorLower": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "An operator that when applied on a value (of conformanceTargetLower) specifies whether a Performance threshold rule is crossed or ceased to be crossed."
+                },
+                "conformanceComparatorUpper": {
+                    "type": "string",
+                    "description": "An operator that when applied on a value (of conformanceTargetUpper) specifies whether a Performance threshold rule is crossed or ceased to be crossed."
+                },
+                "conformancePeriod": {
+                    "$ref": "#/definitions/TimePeriod"
+                },
+                "conformanceTargetLower": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "A value used to determine if the Performance threshold is crossed or ceased to be crossed, serving as an lower value"
+                },
+                "conformanceTargetUpper": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "A value used to determine if the Performance threshold is crossed or ceased to be crossed, serving as an upper value"
+                },
+                "gracePeriods": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "The number of times an objective can remain un-updated in reference to the conformancePeriod without a Performance threshold Consequence being initiated"
+                },
+                "thresholdTarget": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "A percent that is used to specify when a warning should be used that indicates a Performance threshold is in danger of not being met."
+                },
+                "tolerancePeriod": {
+                    "$ref": "#/definitions/TimePeriod"
+                }
+            },
+            "allOf": [{"$ref":"../Common/ThresholdRule.schema.json#ThresholdRule"}]
+        }
+    }
+}

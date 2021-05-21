@@ -8,11 +8,11 @@
         
             "type": "object",
             "description": "A template of an agreement that can be used when establishing partnerships",
-            
+            "properties": {},
             
             "allOf": [
                 {
-                    "$ref": "AgreementSpecification.schema.json#/AgreementSpecification"
+                     "$ref": "../Common/EntitySpecification.schema.json#EntitySpecification"
                 }
             ]
         }

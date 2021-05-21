@@ -8,7 +8,7 @@
             "description": "The TransferBalance resource is a detailed description of credit transfer operation requested between two buckets (reference to products owned by customers and consuming credit when using a service).",
             "properties": {
                 "receiverBucketUsageType": {
-                    "$ref": "UsageType.schema.json#UsageType",
+                    "type": "string",
                     "description": "Type of prepay balance bucket (e.g.: roaming-data, data, roaming-voice etc)"
                 },
                 "requestor": {
@@ -20,8 +20,8 @@
                     "description": "Identifier for the user/customer/entity that receives the transfer when it is required to indicate additional customer hierarchy information regarding the entity receiving the balance transfer Structure including at least attributes “role” and “name”"
                 },
                 "costOwner": {
-                    "description": "Indicates which related party will bear the costs of the transfer",
-                    "$ref": "CostOwnerType.schema.json#CostOwnerType"
+                    "description": "Indicates which related party will bear the costs of the transfer. eg originator or receiver",
+                    "type": "string"
                 },
                 "receiverProduct": {
                     "$ref": "../Product/ProductRef.schema.json#ProductRef"
@@ -34,24 +34,20 @@
                     "$ref": "../Resource/LogicalResourceRef.schema.json#LogicalResourceRef",
                     "description": "A reference to the logical resource that can be used to identify the bucket balance for example where product ids are not unique."
                 },
+                "receiverPartyAccount": {
+                    "description": "A reference to the receiver account that owns the receiverlbucket impacted by the balance related operation",
+                    "$ref": "../EngagedParty/PartyAccountRef.schema.json#PartyAccountRef"
+                },
                 "transferCost": {
                     "description": "Associated cost to be charged for the transfer operation (can be monetary or non-monetary)",
-                    "$ref": "../Common/Money.schema.json#Money"
+                    "$ref": "../Common/Quantity.schema.json#Quantity"
                 }
 	    },
             "allOf": [
                 {
-                    "$ref": "Action.schema.json#Action"
+                    "$ref": "BalanceAction.schema.json#BalanceAction"
                 }
-            ],
-            "required": [
-		"id",
-	        "href",
-		"reason",
-		"channel",
-                "receiverLogicalResource",
-                "logicalResource"
-            ]
+	    ] 
         }
     }
 }

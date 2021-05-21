@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Customer360PromotionVO.schema.json",
+  "title": "Customer360PromotionVO",
+  "definitions": {
+    "Customer360PromotionVO": {
+      "$id": "#Customer360PromotionVO",
+      "type": "object",
+      "description": "Promotion Resource is used to provide the additional discount, voucher, bonus or gift to the customer who meets the pre-defined criteria. Using promotion, the enterprise is able to attract the users and encourage more consumption, especially continuous purchases.   Normally Promotion is not regarded as one type of product or product offering. It is often applied when the customer buys the product offerings with the price or amount surpassing the certain limit.",
+      "properties": {
+        "@baseType": {
+          "type": "string",
+          "description": "The base type for use in polymorphic collections"
+        },
+        "@schemaLocation": {
+          "type": "string",
+          "description": "A link to the schema describing a resource (for type extension)."
+        },
+        "@type": {
+          "type": "string",
+          "description": "The class type of the actual resource (for type extension)."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of Promotion"
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink to access the promotion."
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of Promotion."
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Latest update date of Promotion"
+        },
+        "lifecycleStatus": {
+          "type": "string",
+          "description": "Status of Promotion, including draft/Test/WaitForApproval/Release/Suspend/Retirement."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of Promotion."
+        },
+        "type": {
+          "type": "string",
+          "description": "Type of promotion.The basic type is Award/Discount/Reduction. More types can be extended in future."
+        },
+        "validFor": {
+          "description": "The period for which the promotion is valid.",
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    }
+  }
+}

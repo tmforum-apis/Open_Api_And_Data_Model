@@ -13,13 +13,6 @@
         },
         "reportingPeriod": {
           "$ref": "#/definitions/ReportingPeriod"
-        },
-        "measurementProductionJob": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MeasurementProductionJob"
-          },
-          "minItems": 0
         }
       },
       "allOf": [

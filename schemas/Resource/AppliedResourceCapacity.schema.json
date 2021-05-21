@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "AppliedResourceCapacity.schema.json",
+    "title": "AppliedResourceCapacity",
+    "definitions": {
+        "AppliedResourceCapacity": {
+            "$id": "#AppliedResourceCapacity",
+            "type": "object",
+            "properties": {
+                "applicableTimePeriod": {
+                    "$ref": "../Common/ApplicableTimePeriod.schema.json#/definitions/ApplicableTimePeriod"
+                },
+                "appliedDemandAmount": {
+                    "type": "string",
+                    "description": "An amount of demand applied to a CapacityAmount. Note that this is a composite attribute defined by CapacityAmount."
+                },
+                "resource": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Resource/ResourceRefOrValue.schema.json#/definitions/ResourceRefOrValue"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
+        }
+    }
+}

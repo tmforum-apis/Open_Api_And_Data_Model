@@ -9,7 +9,7 @@
       "description": "Reference to Party Privacy Agreement resource",
       "allOf": [
         {
-          "$ref": "../Common/EntityRef.schema.json#EntityRef"
+          "$ref": "../EngagedParty/AgreementRef.schema.json#AgreementRef"
         }
       ]
     }

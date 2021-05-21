@@ -6,11 +6,11 @@
     "Promotion": {
       "$id": "#Promotion",
       "type": "object",
-      "description": "Promotion Resource is used to provide the additional discount, voucher, bonus or gift to the customer who meets the pre-defined criteria. Using promotion, the enterprise is able to attract the users and encourage more consumption, especially continuous purchases.   Normally Promotion is not regarded as one type of product or product offering. It is often applied when the customer buys the product offerings with the price or amount surpassing the certain limit.",
+      "description": "Promotion is used to provide the additional discount, voucher, bonus or gift to the customer who meets the pre-defined criteria. Using promotion, the enterprise is able to attract the users and encourage more consumption, especially continuous purchases. Normally Promotion is not regarded as one type of product or product offering. It is often applied when the customer buys the product offerings with the price or amount surpassing the certain limit.",
       "properties": {
         "@baseType": {
           "type": "string",
-          "description": "The base type for use in polymorphic collections"
+          "description": "The base type for use in polymorphic collections."
         },
         "@schemaLocation": {
           "type": "string",
@@ -22,7 +22,7 @@
         },
         "description": {
           "type": "string",
-          "description": "Description of Promotion"
+          "description": "Details about the purpose of this promotion."
         },
         "href": {
           "type": "string",
@@ -30,20 +30,20 @@
         },
         "id": {
           "type": "string",
-          "description": "Unique identifier of Promotion."
+          "description": "Unique identifier of promotion."
         },
         "lastUpdate": {
           "type": "string",
           "format": "date-time",
-          "description": "Latest update date of Promotion"
+          "description": "Latest update date of promotion."
         },
         "lifecycleStatus": {
           "type": "string",
-          "description": "Status of Promotion, including draft/Test/WaitForApproval/Release/Suspend/Retirement."
+          "description": "Value of promotion status. Our suggestion would be: draft/test/waitForApproval/release/suspend/retirement."
         },
         "name": {
           "type": "string",
-          "description": "Name of Promotion."
+          "description": "Name of promotion."
         },
         "pattern": {
           "type": "array",
@@ -51,13 +51,19 @@
             "$ref": "../Product/PromotionPattern.schema.json#PromotionPattern"
           }
         },
-        "type": {
+        "promotionType": {
           "type": "string",
-          "description": "Type of promotion.The basic type is Award/Discount/Reduction. More types can be extended in future."
+          "description": "Type of promotion. The basic type are Award/Discount/Reduction."
         },
         "validFor": {
           "description": "The period for which the promotion is valid.",
           "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
+        },
+        "attachment": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
+          }
         }
       },
       "required": [

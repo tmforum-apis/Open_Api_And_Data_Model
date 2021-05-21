@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "DLImplementation.schema.json",
+  "title": "DLImplementation",
+  "definitions": {
+    "DLImplementation": {
+      "$id": "#DLImplementation",
+      "description": "Provides the definition of a Distributed Ledger technology implemementation",
+      "type": "object",
+      "required": [
+        "@type"
+      ],
+      "properties": {
+          "href": {
+          "type": "string",
+          "description": "Unique reference of the Distributed Ledger implementation"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the Distributed Ledger implementation"
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the Distributed Ledger implementation"
+        },
+        "description": {
+            "type": "string",
+            "description": "Description of the Distributed Ledger implementation"
+        },
+        "url": {
+            "type": "string",
+            "description": "URL where information pertaining to the implementation can be found"
+        },
+        "characteristic": {
+            "type": "array",
+            "items": {
+            "$ref": "../Common/Characteristic.schema.json#Characteristic"
+            },
+            "description": "Characteristic of the Distributed Ledger implementation"
+        },
+        "@type": {
+          "type": "string",
+          "enum": [
+            "financialLedger",
+            "smartContractLedger",
+            "financialAndSmartContracLedger",
+            "offNetLedger"
+          ]
+        }
+      }
+    }
+  }
+}

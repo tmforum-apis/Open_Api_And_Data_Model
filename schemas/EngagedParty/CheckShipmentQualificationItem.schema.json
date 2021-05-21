@@ -27,7 +27,7 @@
                     "type": "array",
                     "description": "Structure used to describe relationship between shipementQualification item from the same shipementQualification .",
                     "items": {
-                        "$ref": "../Service/ServiceQualificationRelationship.schema.json#/definitions/ServiceQualificationRelationship"
+                        "$ref": "../EngagedParty/ShipmentQualificationRelationship.schema.json#/definitions/ShipmentQualificationRelationship"
                     }
                 },
                 "qualificationItemRelationship": {

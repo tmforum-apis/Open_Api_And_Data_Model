@@ -4,13 +4,13 @@
     "title": "ServiceLevelAgreement", 
     "definitions": {
         "ServiceLevelAgreement": {
-            "$id": "#ShoppingCart",
+            "$id": "#ServiceLevelAgreement",
             "description": "Service Level Agreement",
             "type": "object", 
             "properties": {
                 "description": {
                     "type": "string",
-                    "description": "verbald description of the SLA"
+                    "description": "verbal description of the SLA"
                 }, 
                 "href": {
                     "type": "string",
@@ -33,7 +33,7 @@
                 "rule": {
                     "type": "array", 
                     "items": {
-                        "$ref": "../EngagedParty/Rule.schema.json#/definitions/Rule"
+                        "$ref": "../EngagedParty/RuleRefOrValue.schema.json#/definitions/RuleRefOrValue"
                     }
                 }, 
                 "template": {

@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "GraphRelationship.schema.json",
+    "title": "GraphRelationship",
+    "definitions": {
+        "GraphRelationship": {
+            "$id": "#GraphRelationship",
+            "description": "A relationship between Graphs.",
+            "type": "object",
+            "properties": {
+                "relationshipType": {
+                    "type": "string",
+                    "description": "Type of relationship such as adjacency, connectivity"
+                },
+                "role": {
+                    "type": "string",
+                    "description": "The association role for this Graph"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of target Graph"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the target Graph"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name given to the target Grapph instance"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

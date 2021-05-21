@@ -14,12 +14,12 @@
         },
         "version": {
           "type": "string",
-          "description": "The artifact verion",
+          "description": "The artifact version",
           "example": "1.2.3"
         },
         "versionDescription": {
           "type": "string",
-          "description": "The artifact verion description",
+          "description": "The artifact version description",
           "example": "What's changed: ..."
         },
         "attribute": {

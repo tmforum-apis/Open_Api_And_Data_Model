@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "WorkSpecificationRefOrValue.schema.json",
+    "title": "WorkSpecificationRefOrValue",
+    "definitions": {
+        "WorkSpecificationRefOrValue": {
+            "$id": "#WorkSpecificationRefOrValue",
+            "type": "object",
+            "description": "A work specification defined by value or existing defined by reference. The polymorphic attributes @type, @schemaLocation &amp; @referredType are related to the work specification entity and not the related WorkSpecificationRefOrValue class itself",
+            "allOf": [
+                {
+                    "$ref": "../EngagedParty/WorkSpecificationRef.schema.json#/definitions/WorkSpecificationRef"
+                },
+                {
+                    "$ref": "../EngagedParty/WorkSpecification.schema.json#/definitions/WorkSpecification"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Customer360CustomerVO.schema.json",
+  "title": "Customer360CustomerVO",
+  "definitions": {
+    "Customer360CustomerVO": {
+      "$id": "#Customer360CustomerVO",
+      "type": "object",
+      "required": [
+        "engagedParty"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "A word, term, or phrase by which the Customer is known and distinguished from other Customers."
+        },
+        "status": {
+          "type": "string",
+          "description": "Used to track the lifecycle status of the customer."
+        },
+        "statusReason": {
+          "type": "string",
+          "description": "A string providing an explanation on the value of the status lifecycle. For instance if the status is Rejected, statusReason will provide the reason for rejection."
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The time period that the Customer is valid for."
+        },
+        "engagedParty": {
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty",
+          "description": "The party - an organization or an individual - that is engaged as a customer."
+        },
+        "account": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/AccountRef.schema.json#AccountRef"
+          }
+        },
+        "paymentMethod": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/PaymentMethodRef.schema.json#PaymentMethodRef"
+          }
+        },
+        "contactMedium": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/ContactMedium.schema.json#ContactMedium"
+          }
+        },
+        "characteristic": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/Characteristic.schema.json#Characteristic"
+          },
+          "description": "Describes the characteristic of a customer."
+        },
+        "creditProfile": {
+          "type": "array",
+          "items": {
+            "$ref": "../Customer/CreditProfile.schema.json#CreditProfile"
+          }
+        },
+        "agreement": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/AgreementRef.schema.json#AgreementRef"
+          }
+        },
+        "relatedParty": {
+          "type": "array",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

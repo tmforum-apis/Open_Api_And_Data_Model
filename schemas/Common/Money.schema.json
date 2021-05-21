@@ -1,28 +1,23 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "Money.schema.json",
-  "title": "Money",
-  "definitions": {
-    "Money": {
-      "$id": "#Money",
-      "description": "A base / value business entity used to represent money",
-      "type": "object",
-      "properties": {
-        "unit": {
-          "type": "string",
-          "description": "Currency (ISO4217 norm uses 3 letters to define the currency)"
-        },
-        "value": {
-          "type": "number",
-          "format": "float",
-          "description": "A positive floating point number"
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Money.schema.json",
+    "title": "Money",
+    "definitions": {
+        "Money": {
+            "$id": "#Money",
+            "description": "A base / value business entity used to represent money",
+            "type": "object",
+            "properties": {
+                "unit": {
+                    "type": "string",
+                    "description": "Currency (ISO4217 norm uses 3 letters to define the currency)"
+                },
+                "value": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "A signed floating point number, the meaning of the sign is according to the context of the API that uses this Data type"
+                }
+            }
         }
-      },
-      "allOf": [
-        {
-          "$ref": "../Common/Entity.schema.json#Entity"
-        }
-      ]
     }
-  }
 }

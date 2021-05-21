@@ -1,0 +1,86 @@
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Customer360QuoteVO.schema.json",
+  "title": "Customer360QuoteVO",
+  "definitions": {
+    "Customer360QuoteVO": {
+      "$id": "#Customer360QuoteVO",
+      "type": "object",
+      "required": [
+        "quoteItem"
+      ],
+      "description": "Quote can be used to negotiate service and product acquisition or modification between a customer and a service provider. Quote contain list of quote items, a reference to customer (partyRole), a list of productOffering and attached prices and conditions.",
+      "properties": {
+        
+        
+        "category": {
+          "type": "string",
+          "description": "Used to categorize the quote from a business perspective that can be useful for the CRM system (e.g. \"enterprise\", \"residential\", ...)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the quote"
+        },
+        "effectiveQuoteCompletionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date when the quote has been completed"
+        },
+        "expectedFulfillmentStartDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "this is the date wished by the requester to have the requested quote item delivered"
+        },
+        "expectedQuoteCompletionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "This is expected date - from quote supplier - to be able to send back  a response for this quote"
+        },
+        "externalId": {
+          "type": "string",
+          "description": "ID given by the consumer and only understandable by him (to facilitate his searches afterwards)"
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink to access the quote"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier - attributed by quoting system"
+        },
+        "instantSyncQuote": {
+          "type": "boolean",
+          "description": "An indicator which when the value is \"true\" means that requester expects to get quoting result immediately in the response. If the indicator is true then the response code of 200 indicates the operation is successful otherwise a task is created with a response 201. "
+        },
+        "quoteDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time when the quote was created"
+        },
+        "requestedQuoteCompletionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "This is requested date - from quote requester - to get a complete response for this quote"
+        },
+        "state": {
+          "$ref": "../Product/QuoteStateType.schema.json#QuoteStateType",
+          "description": "State of the quote : described in the state-machine diagram"
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "Quote validity period"
+        },
+        "version": {
+          "type": "string",
+          "description": "Quote version - if the customer rejected the quote but  negotiations still open a new version of the quote is managed"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

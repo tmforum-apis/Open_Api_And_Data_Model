@@ -10,12 +10,12 @@
       "properties": {
         "description": {
           "type": "string",
-          "description": "Description of this REST resource"
+          "description": "Description of the specification"
         },
         "lastUpdate": {
           "type": "string",
           "format": "date-time",
-          "description": "Date and time of the last update of this REST resource"
+          "description": "Date and time of the last update of the specification"
         },
         "lifecycleStatus": {
           "type": "string",
@@ -23,11 +23,11 @@
         },
         "name": {
           "type": "string",
-          "description": "Name given to this REST resource"
+          "description": "Name given to the specification"
         },
         "isBundle": {
           "type": "boolean",
-          "description": "isBundle determines whether an EntitySpecification represents a single EntitySpecification (false), or a bundle of EntitySpecifications (true)."
+          "description": "isBundle determines whether specification represents a single specification (false), or a bundle of specifications (true)."
         },
         "validFor": {
           "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
@@ -35,7 +35,7 @@
         },
         "version": {
           "type": "string",
-          "description": "Entity specification version"
+          "description": "specification version"
         },
         "attachment": {
           "type": "array",
@@ -54,10 +54,10 @@
           "items": {
             "$ref": "../Common/CharacteristicSpecification.schema.json#/definitions/CharacteristicSpecification"
           }
-        },
+        }, 
         "relatedParty": {
           "type": "array",
-          "description": "Parties who manage or otherwise have an interest in this entity specification",
+          "description": "Parties who manage or otherwise have an interest in this specification",
           "items": {
             "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
           }
@@ -71,7 +71,7 @@
 				},
         "entitySpecRelationship": {
           "type": "array",
-          "description": "Relationship to another entity specification, might be dependency, substitution, etc.",
+          "description": "Relationship to another specification",
           "items": {
             "$ref": "../Common/EntitySpecificationRelationship.schema.json#/definitions/EntitySpecificationRelationship"
           }
@@ -79,10 +79,7 @@
       },
       "allOf": [
         {
-          "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
-        },
-        {
-          "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+          "$ref": "../Common/Entity.schema.json#Entity"
         }
       ]
     }

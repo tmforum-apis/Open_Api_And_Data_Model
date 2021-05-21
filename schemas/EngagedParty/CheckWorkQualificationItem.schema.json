@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "CheckWorkQualificationItem.schema.json",
+    "title": "CheckWorkQualificationItem",
+    "definitions": {
+        "CheckWorkQualificationItem": {
+            "$id": "#CheckWorkQualificationItem",
+            "type": "object",
+            "description": "A WorkQualificationItem relates to a specific unit of work being checked in a qualification operation.",
+            "properties": {
+                "alternateWorkProposal": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/AlternateWorkProposal.schema.json#/definitions/AlternateWorkProposal"
+                    }
+                },
+                "eligibilityUnavailabilityReason": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/WorkEligibilityUnavailabilityReason.schema.json#/definitions/WorkEligibilityUnavailabilityReason"
+                    }
+                },
+                "qualificationItemRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/WorkQualificationItemRelationship.schema.json#/definitions/WorkQualificationItemRelationship"
+                    }
+                },
+                "qualificationRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/WorkQualificationRelationship.schema.json#/definitions/WorkQualificationRelationship"
+                    }
+                },
+                "qualificationResult": {
+                    "type": "string",
+                    "description": "Qualification result for workQualification item. It could be: - qualified (requested unit of work is valid), - unqualified (requested unit of work not valid and not alternative available), - alternate (requested unit of work not valid but alternate proposal available)"
+                },
+                "state": {
+                    "type": "string",
+                    "description": "State of the qualification item (acknowledged, inProgress, terminatedWithError, done)"
+                },
+                "terminationError": {
+                    "type": "array",
+                    "description": "If qualificationItem has not been done properly this lists the error(s) that caused termination of the qualification.",
+                    "items": {
+                        "$ref": "../Service/TerminationError.schema.json#/definitions/TerminationError"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../EngagedParty/WorkQualificationItem.schema.json#/definitions/WorkQualificationItem"
+                }
+            ]
+        }
+    }
+}

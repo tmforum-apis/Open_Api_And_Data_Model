@@ -7,19 +7,10 @@
       "$id": "#UsageCharacteristic",
       "description": "Provides the value of a given characteristic",
       "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "The name of the usage characteristic"
-        },
-        "value": {
-          "type": "string",
-          "description": "A discrete value that the characteristic can take on"
-        }
-      },
+      "properties": { },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Entity"
+          "$ref": "../Common/Characteristic.schema.json#Characteristic"
         }
       ]
     }

@@ -22,7 +22,8 @@
                 "perfAlarmThresholdCrossingDescription": {
                     "type": "string"
                 },
-                "perfeAlarmSpecProbableCause": {
+                "perfAlarmSpecProbableCause": {
+                    
                     "type": "string"
                 },
                 "performanceConsequence": {

@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "RelatedShipment.schema.json",
+  "title": "RelatedShipment",
+  "definitions": {
+    "RelatedShipment": {
+      "$id": "#RelatedShipment",
+      "description": "A related shipment addressable entity",
+      "type": "object",
+      "properties": {
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/RelatedEntity.schema.json#RelatedEntity"
+        }
+      ]
+    }
+  }
+}

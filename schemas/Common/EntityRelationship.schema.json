@@ -30,7 +30,7 @@
           "description": "The period for which the entityRelationship is valid"
         },
         "associationSpec": {
-          "$ref": "../Common/AssociationSpecRef.schema.json#AssociationSpecRef"
+          "$ref": "../Common/AssociationSpecificationRef.schema.json#AssociationSpecificationRef"
         }
       },
       "allOf": [

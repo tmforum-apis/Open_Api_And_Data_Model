@@ -7,11 +7,17 @@
             "$id": "#ReserveBalance",
             "description": "The ReserveBalance resource allows adjustments to be made to the original BalanceTopup eg increment the amount, alter the recharge periodicity",
             "properties": {
-	    },
+                "expirationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date on which the reservation will expire, if the amount was not actually used"
+                }
+    	    },
             "allOf": [
                 {
-                    "$ref": "Action.schema.json#Action"
-                }]
-	}
+                    "$ref": "BalanceAction.schema.json#BalanceAction"
+                }
+            ]
+    	}
     }
 }

@@ -11,7 +11,7 @@
       },
       "allOf": [
         {
-          "$ref": "../Common/Entity.schema.json#Addressable"
+          "$ref": "../Common/RelatedEntity.schema.json#RelatedEntity"
         }
       ]
     }

@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "Capacity.schema.json",
+    "title": "Capacity",
+    "definitions": {
+        "Capacity": {
+            "$id": "#Capacity",
+            "type": "object",
+            "description": "Specific ability of an entity measured in quantity and units of quantity over an extended period.",
+            "properties": {
+                "applicableTimePeriod": {
+                    "type": "array",
+                    "description": "The period of time for which Capacity or CapacityDemand applies.",
+                    "items": {
+                        "$ref": "../Common/ApplicableTimePeriod.schema.json#/definitions/ApplicableTimePeriod"
+                    }
+                },
+                "capacityAmount": {
+                    "description": "quantity that defines the Capacity.",
+                    "$ref": "../Common/CapacityAmount.schema.json#/definitions/CapacityAmount"
+                },
+                "capacitySpec": {
+                    "description": "capacity specification.",
+                    "$ref": "../Common/CapacitySpecRef.schema.json#/definitions/CapacitySpecRef"
+                },
+                "place": {
+                    "description": "Used to define a place useful for the resource. \r\nUsed to indicate reserved resources.",
+                    "$ref": "../Common/PlaceRefOrValue.schema.json#/definitions/PlaceRefOrValue"
+                },
+                "plannedOrActualCapacity": {
+                    "type": "string",
+                    "description": "An indicator that specifies whether the capacity is planned or actual."
+                },
+                "relatedCapacity": {
+                    "type": "array",
+                    "description": "related capacity.",
+                    "items": {
+                        "$ref": "../Common/CapacityRef.schema.json#/definitions/CapacityRef"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
+        }
+    }
+}

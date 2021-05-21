@@ -12,7 +12,7 @@
             ],
             "properties": {
                 "shoppingCart": {
-                    "$ref": "../Customer/ShoppingCartRef.json#ShoppingCartRef",
+                    "$ref": "../Customer/ShoppingCartRef.schema.json#ShoppingCartRef",
                     "description": "The shopping cart for which the assessment is to be carried out, must be supplied as input to the task, with the attribute id populated"
                 }
             },

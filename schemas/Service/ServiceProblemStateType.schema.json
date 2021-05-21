@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ServiceProblemStateType.schema.json",
+    "title": "ServiceProblemStateType",
+    "definitions": {
+        "ServiceProblemStateType": {
+            "$id": "#ServiceProblemStateType",
+            "type": "string",
+            "description": "Possible values for the state of the ServiceProblem",
+            "enum": [
+                "acknowledged",
+                "rejected",
+                "pending",
+                "held",
+                "inProgress",
+                "resolved",
+                "cancelled",
+                "closed"
+            ]
+        }
+    }
+}

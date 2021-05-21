@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "AuthorizePayment.schema.json",
+  "title": "AuthorizePayment",
+  "definitions": {
+    "AuthorizePayment": {
+      "$id": "#AuthorizePayment",
+      "required": [
+          "authorizedPayment" 
+      ],
+      "description": "Task resource for operation authorize payment",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The identifier of the task",
+          "type": "string"
+        },
+        "href": {
+          "description": "A reference to the task",
+          "type": "string"
+        },
+        "state": {
+          "description": "Current state of the operation task",
+          "type": "string",
+          "enum": [
+            "acknowledged",
+            "terminatedWithError",
+            "inProgress",
+            "done",
+            "cancel",
+            "canceled"
+          ]
+        },
+        "authorizePaymentDate ": {
+          "description": "date of the operation authorize payment",
+          "type": "string",
+          "format": "date-time"
+        },
+        "authorizedPaymentDate ": {
+          "description": "date when the operation was authorized",
+          "type": "string",
+          "format": "date-time"
+        },
+        "authorizedPayment ": {
+          "$ref": "../Customer/PaymentRefOrValue.schema.json#PaymentRefOrValue",
+          "description": "Related payment to this operation."
+        }
+      }
+    }
+  }
+}

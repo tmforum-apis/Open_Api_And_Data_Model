@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ProductStockRelationship.schema.json",
+    "title": "ProductStockRelationship",
+    "definitions": {
+        "ProductStockRelationship": {
+            "$id": "#ProductStockRelationship",
+            "type": "object",
+            "description": "Linked product stock  with a type relationship.",
+            "required": ["relationshipType"],
+            "properties": {
+                "stockLevel": {
+                    "description": "A product stock  in relationship with this product stock",
+                    "$ref": "../Resource/ProductStockRef.schema.json#/definitions/ProductStockRef"
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "The type of relationship between product stock"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#Extensible"
+                }
+            ]
+        }
+    }
+}

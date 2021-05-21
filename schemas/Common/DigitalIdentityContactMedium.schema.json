@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "DigitalIdentityContactMedium.schema.json",
+  "title": "DigitalIdentityContactMedium",
+  "definitions": {
+    "DigitalIdentityContactMedium": {
+      "$id": "#DigitalIdentityContactMedium",
+      "description": "Indicates the contact medium that could be used to contact the party.",
+      "required" : ["@type"],
+      "type": "object",
+      "properties": {
+        "id": {
+            "type": "string",
+            "description": "Identifier for this contact medium."
+          },
+        "preferred": {
+          "type": "boolean",
+          "description": "If true, indicates that is the preferred contact medium"
+        },
+        "contactType": {
+          "type": "string",
+          "description": "Type of the contact medium to qualifiy it like pro email / personal email. This is not used to define the contact medium used."
+        },
+        "validFor": {
+          "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+          "description": "The time period that the contact medium is valid for"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Extensible.schema.json#Extensible"
+        }
+      ]
+    }
+  }
+}

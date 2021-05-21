@@ -29,19 +29,19 @@
                     "description": "Identifier of an instance of the resource. Required to be unique within the resource type.  Used in URIs as the identifier for specific instances of a type."
                 },
                 "administrativeState": {
-                    "$ref": "ResourceAdministrativeStateType.schema.json#ResourceAdministrativeStateType",
+                    "$ref": "../Resource/ResourceAdministrativeStateType.schema.json#ResourceAdministrativeStateType",
                     "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
                 },
                 "operationalState": {
-                    "$ref": "ResourceOperationalStateType.schema.json#ResourceOperationalStateType",
+                    "$ref": "../Resource/ResourceOperationalStateType.schema.json#ResourceOperationalStateType",
                     "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
                 },
                 "resourceStatus": {
-                    "$ref": "ResourceStatusType.schema.json#ResourceStatusType",
+                    "$ref": "../Resource/ResourceStatusType.schema.json#ResourceStatusType",
                     "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
                 },
                 "usageState": {
-                    "$ref": "ResourceUsageStateType.schema.json#ResourceUsageStateType",
+                    "$ref": "../Resource/ResourceUsageStateType.schema.json#ResourceUsageStateType",
                     "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
                 },
                 "name": {
@@ -55,18 +55,18 @@
                     }
                 },
                 "place": {
-                    "$ref": "RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue"
+                    "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue"
                 },
                 "relatedParty": {
                     "type": "array",
                     "items": {
-                        "$ref": "RelatedParty.schema.json#/definitions/RelatedParty"
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
                     }
                 },
                 "resourceRelationship": {
                     "type": "array",
                     "items": {
-                        "$ref": "ResourceRelationship.schema.json#/definitions/ResourceRelationship"
+                        "$ref": "../Resource/ResourceRelationship.schema.json#/definitions/ResourceRelationship"
                     }
                 },
                 "resourceCharacteristic": {
@@ -75,14 +75,14 @@
                         "$ref": "../Common/Characteristic.schema.json#/definitions/Characteristic"
                     }
                 },
-		 "attachment": {
-			 "type": "array",
-                    	"items": {
+                "attachment": {
+                    "type": "array",
+                    "items": {
                         "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
-     			}
+                    }
                 },
                 "resourceSpecification": {
-                    "$ref": "ResourceSpecificationRef.schema.json#/definitions/ResourceSpecificationRef"
+                    "$ref": "../Resource/ResourceSpecificationRef.schema.json#/definitions/ResourceSpecificationRef"
                 },
                 "startOperatingDate": {
                     "type": "string",
@@ -93,22 +93,20 @@
                     "type": "string",
                     "description": "A field that identifies the specific version of an instance of a resource."
                 },
- 		"activationFeature": {
-		     "description": "Configuration features",
-		     "type": "array",
-		     "items": {
-			   "$ref": "Feature.schema.json#/definitions/Feature"
-			  }
-		}
-            },
-             "allOf": [
-                {
-                    "$ref": "../Common/Entity.schema.json#Entity"
+                "activationFeature": {
+                    "description": "Configuration features",
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Feature.schema.json#/definitions/Feature"
+                    }
                 }
-            ],
+            },
+            "allOf": [{
+                "$ref": "../Common/Entity.schema.json#Entity"
+            }],
             "required": [
-		"id",
-		"href"
+                "id",
+                "href"
             ]
         }
     }

@@ -7,9 +7,6 @@
             "$id": "#RiskAssessment",
             "description": "This is a generalized task resource allowing assessment of risks - it is expected that the resource will be specialized to reflect specific risks, such as risks associated with a party, or with an order, etc.",
             "type": "object",
-            "required" : [
-                "productOrder"
-            ],
             "properties": {
                 "place": {
                     "$ref": "../Common/RelatedPlace.schema.json#RelatedPlace",

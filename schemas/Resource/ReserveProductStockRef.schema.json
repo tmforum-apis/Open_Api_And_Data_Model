@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ReserveProductStockRef.schema.json",
+    "title": "ReserveProductStockRef",
+    "definitions": {
+        "ReserveProductStockRef": {
+            "$id": "#ReserveProductStockRef",
+            "type": "object",
+            "description": "Product Stock Reservation reference",
+            "allOf": [
+                {
+                    "$ref": "../Common/EntityRef.schema.json#/definitions/EntityRef"
+                }
+            ]
+        }
+    }
+}

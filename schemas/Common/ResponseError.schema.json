@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ResponseError.schema.json",
+  "title": "ResponseError",
+  "definitions": {
+    "ResponseError": {
+      "$id": "#ResponseError",
+      "description": "Used when an API throws an Error, typically with a HTTP error response-code (3xx, 4xx, 5xx)",
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "HTTP Error code extension",
+          "examples": [
+            "400-2",
+            "500-4"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/ErrorMessage.schema.json#/definition/ErrorMessage"
+        }
+      ]
+    }
+  }
+}

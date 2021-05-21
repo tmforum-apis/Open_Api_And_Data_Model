@@ -1,0 +1,85 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ReserveProductStock.schema.json",
+    "title": "ReserveProductStock",
+    "definitions": {
+        "ReserveProductStock": {
+            "$id": "#ReserveProductStock",
+            "description": "ReserveProductStock is used to request a product stock reservation",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "Unique identifier of the ReserveProductStock",
+                    "type": "string"
+                },
+                "href": {
+                    "description": "Reference of the ReserveProductStock",
+                    "type": "string"
+                },
+                "creationDate": {
+                    "description": "Date when the ReserveProductStock was created (whatever its status).",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "requiredAvailabilityDate": {
+                    "description": "Requested product availability date for the reservation.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "reserveProductStockState": {
+                    "$ref": "TaskStateType.schema.json#/definitions/TaskStateType",
+                    "description": "State of the ReserveProductStock (acknowledged, inProgress, failed, done, cancelled)"
+                },
+                "reserveProductStockItem": {
+                    "type": "array",
+                    "description": "A list of product stock item reservation ",
+                    "items": {
+                        "$ref": "../Resource/ReserveProductStockItem.schema.json#/definitions/ReserveProductStockItem"
+                    }
+                },
+                "relatedEntity": {
+                    "type": "array",
+                    "description": "A list of related  entity in relationship with this stock reservation (trouble ticket, quote, product order, etc...) ",
+                    "items": {
+                        "$ref": "../Common/RelatedEntity.schema.json#/definitions/RelatedEntity"
+                    }
+                },
+                "channel": {
+                    "type": "array",
+                    "description": "Channel(s) beneficiary(ies) for this reservation",
+                    "items": {
+                        "$ref": "ChannelRef.schema.json#/definitions/ChannelRef"
+                    }
+                },
+                "marketSegment": {
+                    "type": "array",
+                    "description": "Market segment(s) beneficiary(ies) for this reservation",
+                    "items": {
+                        "$ref": "MarketSegmentRef.schema.json#/definitions/MarketSegmentRef"
+                    }
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "description": "A list of related party references (RelatedParty [*]). A related party defines party or party role linked to a specific entity",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+                    }
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
+                     "description": "Reservation validity period"
+                },
+                "place": {
+                    "description": "Used to define a place where the product stock must be reserved",
+                        "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue"
+                }
+
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#/Entity"
+                }
+            ]
+        }
+    }
+}

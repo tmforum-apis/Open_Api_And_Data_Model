@@ -1,0 +1,87 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "WorkOrderItem.schema.json",
+    "title": "WorkOrderItem",
+    "definitions": {
+        "WorkOrderItem": {
+            "$id": "#WorkOrderItem",
+            "type": "object",
+            "description": "An identified part of the order. A work order is decomposed into one or more order items.",
+            "properties": {
+                "action": {
+                    "$ref": "../Customer/OrderItemActionType.schema.json#/definitions/OrderItemActionType"
+                },
+                "appointment": {
+                    "$ref": "../Customer/AppointmentRef.schema.json#/definitions/AppointmentRef"
+                },
+                "billingAccount": {
+                    "$ref": "../Customer/BillingAccountRef.schema.json#/definitions/BillingAccountRef"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the Order Item"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the line item (generally it is a sequence number 01, 02, 03, ...)"
+                },
+                "itemPrice": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/OrderItemPrice.schema.json#/definitions/OrderItemPrice"
+                    }
+                },
+                "itemTotalPrice": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/OrderItemPrice.schema.json#/definitions/OrderItemPrice"
+                    }
+                },
+                "note": {
+                    "$ref": "../Common/Note.schema.json#/definitions/Note"
+                },
+                "orderItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/OrderItemRef.schema.json#/definitions/OrderItemRef"
+                    }
+                },
+                "payment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/PaymentRef.schema.json#/definitions/PaymentRef"
+                    }
+                },
+                "relatedEntity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/RelatedEntity.schema.json#/definitions/RelatedEntity"
+                    }
+                },
+                "state": {
+                    "$ref": "../EngagedParty/WorkOrderItemStateType.schema.json#/definitions/WorkOrderItemStateType"
+                },
+                "work": {
+                    "$ref": "../EngagedParty/WorkRefOrValue.schema.json#/definitions/WorkRefOrValue"
+                },
+                "workOrderItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/WorkOrderItem.schema.json#/definitions/WorkOrderItem"
+                    }
+                },
+                "workOrderItemRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/OrderItemRelationship.schema.json#/definitions/OrderItemRelationship"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
+        }
+    }
+}

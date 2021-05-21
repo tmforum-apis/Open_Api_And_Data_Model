@@ -7,41 +7,7 @@
             "type": "object",
             "description": "ServiceSpecification is a class that offers characteristics to describe a type of service.\nFunctionally, it acts as a template by which Services may be instantiated. By sharing the same specification, these services would therefore share the same set of characteristics.",
             "properties": {
-                "attachment": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/AttachmentRefOrValue.schema.json#/definitions/AttachmentRefOrValue"
-                    },
-                    "description": "A list of attachments (Attachment [*]). Complements the description of the specification through video, pictures..."
-                },
-                "description": {
-                    "type": "string",
-                    "description": "A narrative that explains in detail what the service specification is"
-                },
-                "isBundle": {
-                    "type": "boolean",
-                    "description": "isBundle determines whether a ServiceSpecification represents a single ServiceSpecification (false), or a bundle of ServiceSpecification (true)."
-                },
-                "lastUpdate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date and time of the last update of the service specification"
-                },
-                "lifecycleStatus": {
-                    "type": "string",
-                    "description": "Used to indicate the current lifecycle status of the service specification"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Name of the service specification"
-                },
-                "relatedParty": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
-                    },
-                    "description": "A list of related party references (RelatedParty [*]). A related party defines party or party role linked to a specific entity."
-                },
+                
                 "resourceSpecification": {
                     "type": "array",
                     "items": {
@@ -56,13 +22,6 @@
                     },
                     "description": "A list of service level specifications related to this service specification, and which will need to be satisifiable for corresponding service instances; e.g. Gold, Platinum"
                 },
-                "serviceSpecCharacteristic": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/CharacteristicSpecification.schema.json#/definitions/CharacteristicSpecification"
-                    },
-                    "description": "A list of service spec characteristics (ServiceSpecCharacteristic [*]). This class represents the key features of this service specification."
-                },
                 "serviceSpecRelationship": {
                     "type": "array",
                     "items": {
@@ -70,40 +29,19 @@
                     },
                     "description": "A list of service specifications related to this specification, e.g. migration, substitution, dependency or exclusivity relationship"
                 },
-                "entitySpecRelationship": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/EntitySpecificationRelationship.schema.json#/definitions/EntitySpecificationRelationship"
-                    },
-                    "description": "A list of entity specifications related to this specification with given role, e.g. dependency on test specification, usage specification and so on"
-                },
                 "featureSpecification": {
                     "type": "array", 
                     "description": "A list of Features for this specification.",
                     "items": {
-                        "$ref": "../Common/FeatureSpecification.schema.json#/definitions/FeatureSpecification"
+                        "$ref": "../Service/ServiceFeatureSpecification.schema.json#/definitions/ServiceFeatureSpecification"
                     }
-                }, 
-                "targetServiceSchema": {
-                    "$ref": "../Service/TargetServiceSchema.schema.json#/definitions/TargetServiceSchema",
-                    "description": "A target service schema reference (TargetServiceSchemaRef). The reference object to the schema and type of target service which is described by service specification."
-                },
-                "validFor": {
-                    "$ref": "../Common/TimePeriod.schema.json#TimePeriod",
-                    "description": "The period for which the service specification is valid"
-                },
-                "version": {
-                    "type": "string",
-                    "description": "Service specification version"
                 }
+              
             },
             "allOf": [
                 {
-                  "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
-                },
-                {
-                  "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
-                }   
+                  "$ref": "../Common/EntitySpecification.schema.json#/definitions/EntitySpecification"
+                }
               ]
         }
     }

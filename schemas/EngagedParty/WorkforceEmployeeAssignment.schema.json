@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "WorkforceEmployeeAssignment.schema.json",
+    "title": "WorkforceEmployeeAssignment",
+    "definitions": {
+        "WorkforceEmployeeAssignment": {
+            "$id": "#WorkforceEmployeeAssignment",
+            "type": "object",
+            "description": "Represents an assignment of a particular WorforceEmployeeRole for a particular unit of work in a specific timeframe. For example, assignment of a person in a network engineer role to a trouble shooting unit of work for at least 2 hours. The assignment is associated with a TimeSlot.",
+            "required": [
+                "id",
+                "skillType",
+                "description",
+                "workforceEmployee"
+            ],
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "skillType": {
+                    "type": "string",
+                    "description": "Ex: primarySkill, secondarySkill"
+                },
+                "state": {
+                    "description": "Ex: primarySkill, secondarySkill",
+                    "$ref": "../EngagedParty/WorkforceEmployeeAssignmentStateType.schema.json#/definitions/WorkforceEmployeeAssignmentStateType"
+                },
+                "timeSlot": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Customer/TimeSlot.schema.json#/definitions/TimeSlot"
+                    }
+                },
+                "workforceEmployee": {
+                    "$ref": "../EngagedParty/PartyRefOrValue.schema.json#/definitions/PartyRefOrValue"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
+        }
+    }
+}

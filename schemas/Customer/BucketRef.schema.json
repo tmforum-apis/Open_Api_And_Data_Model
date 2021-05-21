@@ -8,6 +8,10 @@
             "description": "link to the resource that holds bucket information",
             "type": "object",
             "properties": {
+                "usageType": {
+                    "type": "string",
+                    "description": "defines the type of the underlying Balance eg data,voice, any currency eg EUR, USD etc"
+                }
             },
             "allOf": [
                 {

@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ServiceOrderJeopardyAlert.schema.json",
+  "title": "ServiceOrderJeopardyAlert",
+  "definitions": {
+    "ServiceOrderJeopardyAlert": {
+      "$id": "#ServiceOrderJeopardyAlert",
+      "description": "A ServiceOrderJeopardyAlert represents a predicted exception during a service order processing that would brings risk to complete successfully the ordetr.",
+      "type": "object",
+      "properties": {
+        "serviceOrderItem": {
+          "type": "array",
+          "description": "A list of order items corresponded to this alert",
+          "items": {
+             "$ref": "../Service/ServiceOrderItem.schema.json#/definitions/ServiceOrderItem"
+          }
+        } 
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/JeopardyAlert.schema.json#/definitions/JeopardyAlert"
+        }
+      ]
+    }
+  }
+}

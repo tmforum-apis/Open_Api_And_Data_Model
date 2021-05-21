@@ -1,0 +1,46 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "WorkSpecificationRelationship.schema.json",
+    "title": "WorkSpecificationRelationship",
+    "definitions": {
+        "WorkSpecificationRelationship": {
+            "$id": "#WorkSpecificationRelationship",
+            "type": "object",
+            "description": "A migration, substitution, dependency or exclusivity relationship between/among entity specifications.",
+            "required": [
+                "relationshipType"
+            ],
+            "properties": {
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                },
+                "associationSpec": {
+                    "description": "A specification for an association used by this relationship\r\n",
+                    "$ref": "../Common/AssociationSpecificationRef.schema.json#/definitions/AssociationSpecificationRef"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name given to the target entity specification instance"
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "Type of relationship such as migration, substitution, dependency, exclusivity"
+                },
+                "role": {
+                    "type": "string",
+                    "description": "The association role for this entity specification"
+                },
+                "validFor": {
+                    "description": "The period for which this REST resource is valid",
+                    "$ref": "../Common/TimePeriod.schema.json#/definitions/TimePeriod"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#/definitions/Entity"
+                }
+            ]
+        }
+    }
+}

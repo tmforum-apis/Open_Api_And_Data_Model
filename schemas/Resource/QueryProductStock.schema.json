@@ -1,0 +1,73 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "QueryProductStock.schema.json",
+    "title": "QueryProductStock",
+    "definitions": {
+        "QueryProductStock": {
+            "$id": "#QueryProductStock",
+            "description": "QueryProductStock is used to query product stock availability",
+            "type": "object",
+            "properties": {
+                "creationDate": {
+                    "description": "Date when the QueryProductStock was created.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "requestedQueryProductStockDate": {
+                    "description": "Date when the requester wished to have a response for this product stock query.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "completedQueryProductStockDate": {
+                    "description": "Date when the QueryProductStock was completed.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "requestedAvailabilityDate": {
+                    "description": "Date when the stock availability should be query.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "id": {
+                    "description": "Unique identifier of the QueryProductStock",
+                    "type": "string"
+                },
+                "href": {
+                    "description": "Reference of the QueryProductStock",
+                    "type": "string"
+                },
+                "instantSyncCheck": {
+                  "type": "boolean",
+                  "description": "An indicator which when the value is \"true\" means that requester expects to get result immediately in the response. If the indicator is true then the response code of 200 indicates the operation is successful otherwise a task is created with a response 201."
+                },
+                "state": {
+                    "$ref": "TaskStateType.schema.json#/definitions/TaskStateType",
+                    "description": "State of the CheckProductStock (acknowledged, inProgress, terminatedWithError, done)"
+                },
+                "queryProductStockItem": {
+                    "type": "array",
+                    "description": "A list of query product stock item - only present in response",
+                    "items": {
+                        "$ref": "..Resource/ProductStock.schema.json#/definitions/ProductStock"
+                    }
+                },
+                "searchCriteria": {
+                    "$ref": "../Resource/ProductStock.schema.json#/definitions/ProductStock",
+                    "description": "Criterias used to perform the query product stock - To be provided in the request."
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "description": "A list of related party references (RelatedParty [*]). A related party defines party or party role linked to this QueryProductStock",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Entity.schema.json#/Entity"
+                }
+            ]
+        }
+    }
+}

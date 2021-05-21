@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "WorkRelationship.schema.json",
+    "title": "WorkRelationship",
+    "definitions": {
+        "WorkRelationship": {
+            "$id": "#WorkRelationship",
+            "type": "object",
+            "required": [
+                "relationshipType"
+            ],
+            "properties": {
+                "relationshipType": {
+                    "type": "string"
+                },
+                "work": {
+                    "$ref": "../EngagedParty/WorkRefOrValue.schema.json#/definitions/WorkRefOrValue"
+                },
+                "workRelationshipCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Common/Characteristic.schema.json#/definitions/Characteristic"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#/definitions/Entity"
+                }
+            ]
+        }
+    }
+}

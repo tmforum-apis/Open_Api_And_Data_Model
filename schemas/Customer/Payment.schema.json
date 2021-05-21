@@ -71,15 +71,22 @@
                         "$ref": "../Customer/PaymentItem.schema.json#PaymentItem"
                     }
                 },
-                "payer": {
-                    "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+                    }
                 },
                 "paymentMethod": {
                     "$ref": "../Customer/PaymentMethodRefOrValue.schema.json#PaymentMethodRefOrValue"
                 },
                 "account": {
                     "$ref": "../EngagedParty/AccountRef.schema.json#AccountRef"
-                }            },
+                },
+                "pointOfInteraction": {
+                    "$ref": "../Customer/PointOfInteraction.schema.json#PointOfInteraction"
+                }
+            },
             "allOf": [
                 {
                     "$ref": "../Common/Entity.schema.json#Entity"

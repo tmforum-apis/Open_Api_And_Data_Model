@@ -12,11 +12,18 @@
           "description": "Name of Group specification",
           "type": "string"
         },
-        "performanceIndicationSpecification": {
-          "$ref": "#/definitions/PerformanceIndicatorSpecification"
+        "performanceIndicatorSpecification": {
+            "type":"array",
+            "items": {
+              "$ref": "#/definitions/PerformanceIndicatorSpecificationRef"
+            },
+            "minItems":1
         }
       },
       "allOf": [
+        {
+          "$ref": "../Common/Addressable.schema.json#/definitions/Addressable"
+        },
         {
            "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
         } 

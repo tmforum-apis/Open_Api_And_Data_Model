@@ -6,7 +6,12 @@
     "Rule": {
       "type": "object",
       "$id": "#Rule",
-      "properties": {},
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the rule."
+        }
+      },
       "allOf": [
         {
           "$ref": "../Common/Entity.json#Entity"

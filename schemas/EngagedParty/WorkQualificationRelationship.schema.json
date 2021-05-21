@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "WorkQualificationRelationship.schema.json",
+    "title": "WorkQualificationRelationship",
+    "definitions": {
+        "WorkQualificationRelationship": {
+            "$id": "#WorkQualificationRelationship",
+            "type": "object",
+            "description": "Structure used to describe relationship between WorkQualification item from the same WorkQualification.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The id of the target qualification pointed to by this relationship"
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "The type of relationship"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#/definitions/Entity"
+                }
+            ]
+        }
+    }
+}

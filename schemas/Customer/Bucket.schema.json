@@ -25,7 +25,7 @@
                     "description": "Text describing the contents of the balance managed by the bucket"
                 },
                 "usageType": {
-                    "$ref": "UsageType.schema.json#UsageType",
+                    "type": "string",
                     "description": "defines the type of the underlying Balance eg data,voice, any currency eg EUR, USD etc"
                 },
                 "isShared": {
@@ -45,21 +45,28 @@
                 },
                 "product": {
                     "type": "array",
-		    "items":{
-                       "description": "a reference to the Product(s) associated to the BucketReserve",
-                       "$ref": "../Product/ProductRef.schema.json#ProductRef"
-		    }
+        		    "items": {
+                               "description": "a reference to the Product(s) associated to the BucketReserve",
+                               "$ref": "../Product/ProductRef.schema.json#ProductRef"
+        		    }
                 },
                 "logicalResource": {
                     "type": "array",
-		    "items":{
-                    "$ref": "../Resource/LogicalResourceRef.schema.json#LogicalResourceRef",
-                    "description": "A reference to an array of logical resource that can be used to identify the bucket balance for example where product ids are not unique.Enables the devices to be shared by multiple users"
+        		    "items": {
+                        "$ref": "../Resource/LogicalResourceRef.schema.json#LogicalResourceRef",
+                        "description": "A reference to an array of logical resource that can be used to identify the bucket balance for example where product ids are not unique.Enables the devices to be shared by multiple users"
                     } 
-		},
+        		},
                 "reservedValue": {
-                    "description": "Indicate the amount reserved on the bucket",
+                    "description": "Indicate the amount reserved on the bucket; should be the sum of all the valid (i.e. confirmed and not consumed or expired) amounts in the reserveBalance request array",
                     "$ref": "../Common/Quantity.schema.json#Quantity"
+                },
+                "reserveBalance": {
+                    "type": "array",
+        		    "items": {
+                        "$ref": "../Customer/ReserveBalanceRef.schema.json#ReserveBalanceRef",
+                        "description": "A reference to an array of outstanding reservation requests against this bucket (i.e. confirmed and not consumed or expired)"
+                    } 
                 },
                 "remainingValue": {
                     "description": "Indicate the amount on the bucket",
@@ -69,18 +76,8 @@
                     "type": "string",
                     "description": "Remaining amount in a formatted string for the bucket given in the balance unit (for example 1.9 Gb). This formatted string could be used for display needs for example"
                 },
-                "requestedDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date when the deduction request was received in the server"
-                },
-                "confirmationDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Date when the deduction was confirmed in the server"
-                },
                 "status": {
-                    "$ref": "BucketStatusType.schema.json#BucketStatusType",
+                    "type": "string",
                     "description": "status for the bucket. active, expired, suspended"
                 },
                 "validFor": {
@@ -88,11 +85,11 @@
                     "$ref": "../Common/TimePeriod.schema.json#TimePeriod"
                 }
             },
-	    "allOf" :[
+    	    "allOf" :[
                 {
                     "$ref": "../Common/Entity.schema.json#Entity"
                 } 
-	    ]
+    	    ]
         }
     }
 }

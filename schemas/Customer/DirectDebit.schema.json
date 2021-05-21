@@ -1,0 +1,118 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "DirectDebit.schema.json",
+  "title": "DirectDebit",
+  "definitions": {
+    "DirectDebit": {
+      "$id": "#DirectDebit",
+      "description": "Direct Debit is a fully automated payment instrument which is generally used for recurrent payments. It allows a creditor to initiate the payment order. In doing so, it exempts the debtor from having to send a separate payment order at each due date",
+      "type": "object",
+      "required": [
+        "@type"
+      ],
+      "properties": {
+          "mandateId":{
+            "type":"string",
+            "description":"Unique mandate reference. Further information can be found on EPC002-09",
+            "examples": ["M-123456789-A79ZH34KJZ"]
+          },
+          "mandateStatus":{
+            "type":"string",
+            "description":"The status of the mandate(Active/Inactive/Pending)",
+            "examples": ["Active", "Inactive", "Pending"]
+          },
+          "mandateType":{
+            "type":"string",
+            "description":"The type of mandate",
+            "examples": ["single", "recurring"]
+          },
+          "mandateCategory":{
+            "type":"string",
+            "description":"The identification code of the Scheme",
+            "examples": ["core","b2b"]
+          },
+          "signature":{
+            "type":"string",
+            "description":"The (e)Mandate electronic signature data"
+          },
+          "signatureDate":{
+            "type":"string",
+            "description":"The date of signing of the (e)Mandate",
+            "format": "date-time",
+            "examples": ["2021-11-20T10:19:46+0000"]
+          },     
+          "mandateStatusDate":{
+            "type":"string",
+            "description":"The date of the mandate status change",
+            "format": "date-time",
+            "examples": ["2021-11-20T10:19:46+0000"]
+          },          
+          "firstDebitDate":{
+            "type":"string",
+            "description":"The first debit date. The debit date of the collection is the day when the payment of the Debtor is due to the Creditor",
+            "format": "date-time",
+            "examples": ["2021-11-20T10:20:00+0000"]     
+          },
+          "lastDebitDate":{
+            "type":"string",
+            "description":"The last debit date. The debit date of the collection is the day when the payment of the Debtor is due to the Creditor",
+            "format":"date-time",
+            "examples": ["2021-11-20T10:20:00+0000"]
+          },      
+          "cancellationDate":{
+            "type":"string",
+            "description":"The date on which the (e)Mandate has been cancelled by the Debtor or the Creditor.",
+            "format":"date-time",
+            "examples": ["2021-11-20T10:20:00+0000"]
+          },
+          "accountNumber": {
+            "type": "string",
+            "description": "The bank account number, this could refer to the iban or swift number.",
+            "examples": ["GB74HSBCUK122232323238313"]
+          },
+          "accountNumberType": {
+              "type": "string",
+              "description": "The type of account number (e.g.: IBAN, SWIFT, ...)",
+              "examples": ["IBAN"]
+          },
+          "reference":{
+            "type":"string",
+            "description":"A reference that the party can later use to identify the direct debit.",
+            "examples": ["Telco Bill Direct Debit"]
+          },
+          "BIC": {
+            "type": "string",
+            "description": "The Business Identifier Code/Swift code of the financial institution where the account is located.",
+            "examples": ["HBUKGB4BXXX"]
+          },
+          "owner": {
+              "type": "string",
+              "description": "The owner of the bank account. This is also the account name.",
+              "examples": ["Dom Joe Plumbing Ltd"]
+          }, 
+          "bank": {
+              "type": "string",
+              "description": "The display name of the bank.",
+              "examples": ["LOCAL BANK"]
+          },
+          "attachment": {
+            "type": "array",
+            "items": {
+                "$ref": "../Common/AttachmentRefOrValue.schema.json#AttachmentRefOrValue"
+            }
+          },
+          "@type": {
+      "type": "string",
+      "enum": [
+        "directDebit"
+      ]
+    }
+        },
+      "allOf": [
+        {
+            "$ref": "../Customer/PaymentMethod.schema.json#PaymentMethod"
+        }
+      ]
+    }
+  }
+}

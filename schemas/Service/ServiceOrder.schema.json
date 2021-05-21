@@ -111,6 +111,24 @@
                 "state": {
                     "description": "State of the order: described in the state-machine diagram",
                     "$ref": "../Service/ServiceOrderStateType.schema.json#/definitions/ServiceOrderStateType"
+                },
+                "milestone": {
+                    "type": "array",
+                    "description": "A list of milestones related to this order",
+                    "items": {
+                        "$ref": "../Service/ServiceOrderMilestone.schema.json#/definitions/ServiceOrderMilestone"
+                    }
+                },
+                "jeopardyAlert": {
+                    "type": "array",
+                    "description": "A list of jeopardy alerts related to this order",
+                    "items": {
+                        "$ref": "../Service/ServiceOrderJeopardyAlert.schema.json#/definitions/ServiceOrderJeopardyAlert"
+                    }
+                },
+                "errorMessage": {
+                    "description": "the error message if the order closed by an error",
+                    "$ref": "../Service/ServiceOrderErrorMessage.schema.json#/definitions/ServiceOrderErrorMessage"
                 }
             },
             "allOf": [

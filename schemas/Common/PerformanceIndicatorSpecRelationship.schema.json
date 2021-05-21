@@ -5,21 +5,42 @@
   "definitions": {
     "PerformanceIndicatorSpecRelationship": {
       "$id": "#PerformanceIndicatorSpecRelationship",
-      "description": "",
+      "description": "Type of relationship such as aggregation, migration, substitution, dependency, exclusivity",
       "type": "object",
       "properties": {
         "relationshipType": {
           "description": "",
           "type": "string"
         },
+        "role": {
+          "type": "string",
+          "description": "The association role for this service specification"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the target specification"
+        },
+        "href": {
+          "type": "string",
+          "description": "Hyperlink reference to the target specification"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the targetcharacteristic"
+        },
         "validFor": {
-          "description": "",
+          "description": "The period for which the performanceIndicatorSpecRelationship is valid",
           "$ref": "#/definitions/TimePeriod"
         }
       },
       "required":[
         "relationshipType",
         "validFor"
+      ],
+            "allOf": [
+        {
+           "$ref": "../Common/Extensible.schema.json#/definitions/Entity"
+        } 
       ]
     }
   }

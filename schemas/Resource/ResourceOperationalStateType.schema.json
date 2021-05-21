@@ -4,7 +4,7 @@
     "title": "ResourceOperationalStateType", 
     "definitions": {
         "ResourceOperationalStateType": {
-	        "id": "#ResourceOperationalStateType",
+	        "$id": "#ResourceOperationalStateType",
             "type": "string", 
             "description": "ResourceOperationalStateType enumerations", 
             "enum": [

@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "RequestedPeriod.schema.json",
+    "title": "RequestedPeriod",
+    "definitions": {
+        "RequestedPeriod": {
+            "$id": "#RequestedPeriod",
+            "type": "object",
+            "description": "The period of time for which user requested to use the resources.\r\nThe user can request on the start date without the end date.",
+            "properties": {
+                "daysOfWeek": {
+                    "type": "string",
+                    "description": "A day or days representing when the schedule is applicable. For example 2, 3 represent Monday and Tuesday."
+                },
+                "fromToDateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The period of time for which the schedule is applicable. \r\nInstance values are mutually exclusive with daysOfWeek values."
+                },
+                "rangeInterval": {
+                    "type": "string",
+                    "description": "An indicator that specifies the inclusion or exclusion of the from and to DateTime attributes. \r\nPossible values are \"open\", \"closed\", \"closedBottom\" and \"closedTop\"."
+                },
+                "validFor": {
+                    "$ref": "../Common/TimePeriod.schema.json#/definitions/TimePeriod"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
+        }
+    }
+}

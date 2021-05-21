@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ResourceReservation.schema.json",
+    "title": "ResourceReservation",
+    "definitions": {
+        "ResourceReservation": {
+            "$id": "#ResourceReservation",
+            "type": "object",
+            "properties": {
+                "reservationItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Resource/ResourceReservationItem.schema.json#/definitions/ResourceReservationItem"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Reservation.schema.json#/definitions/Reservation"
+                }
+            ]
+        }
+    }
+}

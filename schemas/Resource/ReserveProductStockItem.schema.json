@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "ReserveProductStockItem.schema.json",
+    "title": "ReserveProductStockItem",
+    "definitions": {
+        "ReserveProductStockItem": {
+            "$id": "#ReserveProductStockItem",
+            "description": "ReserveProductStockItem is used to request a stock reservation item for a product",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "Unique identifier of the ReserveProductStockItem.",
+                    "type": "string"
+                },
+                "quantityRequested": {
+                    "$ref": "Quantity.schema.json#/definitions/Quantity",
+                    "description" : "Quantity requested for this Product"
+                },
+                "quantityReserved": {
+                    "$ref": "Quantity.schema.json#/definitions/Quantity",
+                    "description" : "Quantity reserved for this Product"
+                },
+                "reserveProductStockState": {
+                    "$ref": "TaskStateType.schema.json#/definitions/TaskStateType",
+                    "description": "State of the ReserveProductStockItem (acknowledged, inProgress, failed, done, cancelled)."
+                },
+                "productStockRequested": {
+                    "$ref": "ProductStockRef.schema.json#/definitions/ProductStockRef",
+                    "description": "Identifier of the Product Stock requested for this reservation item."
+                },
+                "productStockReserved": {
+                    "$ref": "ProductStockRef.schema.json#/definitions/ProductStockRef",
+                    "description": "Identifier of the Product Stock used for this reservation item."
+                },
+                "requestedProduct": {
+                    "$ref": "../Product/ProductRefOrValue.schema.json#/definitions/ProductRefOrValue",
+                    "description": "Requested product for reservation - a Product configuration could be passed"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Extensible.schema.json#/Extensible"
+                }
+            ]
+        }
+    }
+}

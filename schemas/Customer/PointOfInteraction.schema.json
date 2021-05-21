@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "PointOfInteraction.schema.json",
+    "title": "PointOfInteraction",
+    "definitions": {
+        "PointOfInteraction": {
+            "$id": "#PointOfInteraction",
+            "description": "POI consists of hardware and software which enables a Cardholder and/or an Acceptor to perform a Local Card transaction. This is also referred to as a Physical/EMV Terminal. It may be Attended or Unattended.",
+            "type": "object",
+            "properties": {
+                "resource": {
+                    "$ref": "../Resource/ResourceRef.schema.json#ResourceRef",
+                    "description": "A POI is a Physical POI or a Remote POI, as a resource."
+                },
+                "modeOfEntry": {
+                    "type": "string",
+                    "description": "Key entry code that tells the processor how the transaction was captured."
+                },
+                "retrievalReferenceNumber": {
+                    "type": "string",
+                    "description": "The reference number used to identify a given transaction that allow the Acceptor or Acquirer to keep track of their transactions"
+                },
+                "transactionDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date time related to the POI transaction."
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Entity.schema.json#Entity"
+                }
+            ]
+        }
+    }
+}

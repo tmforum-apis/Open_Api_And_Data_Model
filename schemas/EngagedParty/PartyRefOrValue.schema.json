@@ -8,10 +8,10 @@
             "type": "object",
             "allOf": [
                 {
-                    "$ref": "../EngagedParty/Party.schema.json#/definitions/Party"
+                    "$ref": "../EngagedParty/PartyRef.schema.json#/definitions/PartyRef"
                 },
                 {
-                    "$ref": "../EngagedParty/PartyRef.schema.json#/definitions/PartyRef"
+                    "$ref": "../EngagedParty/Party.schema.json#/definitions/Party"
                 }
             ]
         }

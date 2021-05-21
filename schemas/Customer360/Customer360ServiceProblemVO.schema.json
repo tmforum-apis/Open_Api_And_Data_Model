@@ -1,0 +1,146 @@
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Customer360ServiceProblemVO.schema.json",
+  "title": "Customer360ServiceProblemVO",
+  "definitions": {
+    "Customer360ServiceProblemVO": {
+      "$id": "#Customer360ServiceProblemVO",
+      "type": "object",
+      "description": "The problem information for Middle B which is abstracted in the service layer from the issued event information by First B",
+      "properties": {
+        "affectedLocation": {
+          "type": "array",
+          "description": "A list of the locations affected by the problem. At least one of affectedResource, affectedService or affectedLocation should be present.",
+          "items": {
+            "$ref": "../Common/Place.schema.json#Place"
+          }
+        },
+        "affectedNumberOfServices": {
+          "type": "integer",
+          "description": "Number of affected services"
+        },
+        "affectedService": {
+          "type": "array",
+          "description": "List of affected services. At least one of affectedResource, affectedService or affectedLocation should be present.",
+          "items": {
+            "$ref": "../Service/ServiceRef.schema.json#ServiceRef"
+          }
+        },
+        "category": {
+          "type": "string",
+          "description": "Classifier for the problem. Settable. For example, this is used for distinguish the category of problem originator in [role].[category] format. Example: serviceProvider.declarer, supplier.originated, system.originated"
+        },
+        "correlationId": {
+          "type": "string",
+          "description": "Additional identifier coming from an external system"
+        },
+        "description": {
+          "type": "string",
+          "description": "Free form text describing the Service Problem"
+        },
+        "extensionInfo": {
+          "type": "array",
+          "items": {
+            "$ref": "../Common/Characteristic.schema.json#Characteristic"
+          },
+          "description": "A generic list of any type of elements. Used for vendor Extensions or loose element encapsulation from other namespaces"
+        },
+        "href": {
+          "type": "string",
+          "description": "Reference to the Service Problem"
+        },
+        "id": {
+          "type": "string",
+          "description": "Identifier of the service problem"
+        },
+        "impactImportanceFactor": {
+          "type": "string",
+          "description": "Impact Importance is characterized by an Impact Importance Factor: overall importance of the impact of all the affected services, e.g. 0 (zero impact) to 100 (worst impact). The Impact Importance is a calculated field which is set by the OSS determining the impact."
+        },
+        "originatingSystem": {
+          "type": "string",
+          "description": "Indicates where the problem was generated"
+        },
+        "priority": {
+          "type": "integer",
+          "description": "An indication varying from 1 (highest) to 10 (lowest) of how important it is for the service provider to correct the Service Problem."
+        },
+        "problemEscalation": {
+          "type": "string",
+          "description": "Indicates if this service problem has been escalated or not. Possible values are 0 to 10. A value of zero means no escalation. The meanings of values 1-10 are to be determined by the user of the interface, but they show increasing levels of escalation."
+        },
+        "reason": {
+          "type": "string",
+          "description": "Free text or optionally structured text. It can be Unknown."
+        },
+        "relatedObject": {
+          "type": "array",
+          "description": "List of objects associated to this problem",
+          "items": {
+            "$ref": "../Common/RelatedEntityRef.schema.json#RelatedEntityRef"
+          }
+        },
+        "responsibleParty": {
+          "description": "Individual or organization responsible for handling this problem",
+          "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+        },
+        "relatedParty": {
+          "type": "array",
+          "description": "List of parties or party roles playing a role within the service problem",
+          "items": {
+            "$ref": "../EngagedParty/RelatedParty.schema.json#RelatedParty"
+          }
+        },
+        "rootCauseResource": {
+          "type": "array",
+          "description": "Resource(s) that are associated to the underlying service problems that are the Root Cause of this one if any (used only if applicable).",
+          "items": {
+            "$ref": "../Resource/ResourceRef.schema.json#ResourceRef"
+          }
+        },
+       
+        "resolutionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time the problem was resolved"
+        },
+        "status": {
+          "type": "string",
+          "description": "The current status of the service problem. Possible values are Submitted, Rejected, Acknowledged, In Progress [Held, Pending], Resolved, Closed, and Cancelled."
+        },
+        "statusChangeDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time the problem was last status changed"
+        },
+        "statusChangeReason": {
+          "type": "string",
+          "description": "The reason of state change"
+        },
+        "timeChanged": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time the problem was last changed"
+        },
+        "timeRaised": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time the problem was raised"
+        },
+        "underlyingProblem": {
+          "type": "array",
+          "description": "A list of underlying problems. Relevant only if this problem is derived from other problems.",
+          "items": {
+            "$ref": "../Service/ServiceProblemRef.schema.json#ServiceProblemRef"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../Common/Entity.schema.json#Entity"
+        }
+      ]
+    }
+  }
+}

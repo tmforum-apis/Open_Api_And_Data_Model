@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "GraphRef.schema.json",
+    "title": "GraphRef",
+    "definitions": {
+        "GraphRef": {
+            "$id": "#GraphRef",
+            "type": "object",
+            "properties": {
+            },
+            "allOf": [
+                {
+                    "$ref": "EntityRef.schema.json#EntityRef"
+                }
+            ]
+        }
+    }
+}

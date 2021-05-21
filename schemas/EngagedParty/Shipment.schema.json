@@ -9,108 +9,140 @@
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "Unique identifier of the shipment"
+                    "description": "Unique identifier of the shipment",
+                    "example":  "4aafacbd-11ff-4dc8-b445-305f2215715f456" 
                 },
                 "href": {
                     "type": "string",
-                    "description": "Reference of the shipment"
-                },
-                "orderDate": {
-                    "type": "string",
-                    "description": "Is the date when the shipment order was created",
-                    "format": "date-time"
-                },
-                "completionDate": {
-                    "type": "string",
-                    "description": "Date when the order was completed",
-                    "format": "date-time"
+                    "description": "Reference of the shipment",
+                    "example":  "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f"
                 },
                 "description": {
                     "type": "string",
-                    "description": "Is the description of the shipment. It could be the same as the description of the shipment specification."
+                    "description": "Description of the shipment. It could be the same as the description of the shipment specification.",
+                    "example":  "Cartridges for Ink Ltd" 
                 },
                 "name": {
                     "type": "string",
-                    "description": "Name of the shipment. It could be the same as the name of the shipment specification."
+                    "description": "Name of the shipment. It could be the same as the name of the shipment specification.",
+                    "example":  "Shipment" 
                 },
-                "shipmentTrackingCode": {
-                    "type": "string"
+                "state":{
+                  "type":"string",
+                  "description":"The current status of the shipment.",
+                  "examples":["labelPrinted", "attemptedDelivery", "readyForPickup", "confirmed", "inTransit", "outForDelivery", "delivered", "failure"]
+                },
+                "completionDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Effective delivery date amended by the provider",
+                    "example": "2020-11-20T08:00:00Z" 
                 },
                 "deliveryDate": {
                     "type": "string",
                     "description": "Is the date at which the shipment was completed (customer has taken ownership of the package)",
-                    "format": "date-time"
+                    "format": "date-time",
+                    "example":  "2020-11-20T08:00:00Z" 
                 },
-                "deliveryInstruction": {
-                    "type": "string",
-                    "description": "Is the description of the shipment. It could be the same as the description of the shipment specification."
+                "collectionDate":{
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date the package was collected from the carrier (Collection scenario)" ,
+                  "example":  "2020-11-18T08:00:00Z" 
                 },
-                "deliveryTimeSlot": {
-                    "$ref": "../Common/TimePeriod.schema.json#/definitions/TimePeriod"
+                "expectedDeliveryDate":{
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date that the shipment will be delivered",
+                  "example": "2020-11-20T08:00:00Z" 
                 },
-                "placeFrom": {
-                    "$ref": "../Common/PlaceRefOrValue.schema.json#/definitions/PlaceRefOrValue"
-                },
-                "placeTo": {
-                    "$ref": "../Common/PlaceRefOrValue.schema.json#/definitions/PlaceRefOrValue"
-                },
-                "shipmentCharacteristic": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/Characteristic.schema.json#/definitions/Characteristic"
-                    }
-                },
+                "requestedDeliveryDate":{
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date requester by the sender for shipment delivery",
+                  "example": "2020-11-20T08:00:00Z" 
+                },  
                 "weight": {
+                    "description":"Weight of the shipping package/parcel",
                     "$ref": "../Common/Quantity.schema.json#/definitions/Quantity"
                 },
-                "note": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../Common/Note.schema.json#/definitions/Note"
-                    }
+                "shippingInstruction":{
+                    "description":"Shipping instructions, usually relevant for the carrier.",
+                    "$ref":"../EngagedParty/ShippingInstruction.schema.json#ShippingInstruction"
                 },
-                "agreement": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/AgreementRef.schema.json#/definitions/AgreementRef"
-                    }
-                },
-                "relatedParty": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedParty.schema.json#/definitions/RelatedParty"
-                    }
-                },
-                "billingAccount": {
-                    "$ref": "../Customer/BillingAccountRef.schema.json#/definitions/BillingAccountRef"
-                },
-                "shipmentTracking": {
-                    "$ref": "../EngagedParty/ShipmentTrackingRef.schema.json#/definitions/ShipmentTrackingRef"
-                },
-                "state": {
-                    "$ref": "../EngagedParty/ShipmentStateType.schema.json#/definitions/ShipmentStateType"
+                "shipmentCharacteristic": {
+                  "type": "array",
+                  "description": "List of characteristics with values",
+                  "items": {
+                    "$ref": "../Common/Characteristic.schema.json#Characteristic"
+                  }
                 },
                 "shipmentItem": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/ShipmentItem.schema.json#/definitions/ShipmentItem"
-                    }
-                },
-                "shipmentOrderItem": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "../EngagedParty/RelatedShipmentOrderItem.schema.json#/definitions/RelatedShipmentOrderItem"
-                    }
+                  "type": "array",
+                  "description": "List of items that are part of the shipment (parcel/package)",
+                  "items": {
+                    "$ref": "../EngagedParty/ShipmentItem.schema.json#ShipmentItem"
+                  }
                 },
                 "shipmentPrice": {
-                    "$ref": "../EngagedParty/ShipmentPrice.schema.json#/definitions/ShipmentPrice"
+                  "description": "Shipment price",
+                  "$ref":"../Product/ProductPrice.schema.json#ProductPrice"
+                },
+                "note": {
+                  "type": "array",
+                  "description": "A list of notes made on this shipment",
+                  "items": {
+                    "$ref": "../Common/Note.schema.json#Note"
+                  }
+                },
+                "shipmentTracking": {
+                    "description":"A reference number usually provided by the delivery partner(carrier) used to identify and track shipments across the delivery network",
+                    "$ref": "../EngagedParty/ShipmentTrackingRef.schema.json#/definitions/ShipmentTrackingRef"
+                },
+                "placeFrom":{
+                    "description":"Source location of the package. E.g. warehouse or shop location",
+                    "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue"
+                },
+                "placeTo":{
+                    "description":"Destination of the package. E.g. customer home address",
+                    "$ref": "../Common/RelatedPlaceRefOrValue.schema.json#RelatedPlaceRefOrValue"
+                },
+                "relatedShipment": {
+                    "type": "array",
+                    "description":"A list of existing shipments that has some form of correlation with the given shipment",
+                    "items":{
+                        "$ref": "../EngagedParty/RelatedShipment.schema.json#RelatedShipment"
+                    }
+                },
+                "paymentMethod": {
+                    "description": "Payment method to be used when delivering the package(e.g.: cash, credit card, ). Structure including at least attribute name. Notice that the use of a voucher can be managed as a specific methodtype, where he voucher code can be passed as value.",
+                    "$ref": "../Customer/PaymentMethodRef.schema.json#PaymentMethodRef"
+                },
+                "externalIdentifier": {
+                  "type": "array",
+                  "description": "An identification of an entity that is owned by or originates in a software system different from the current system, for example a ProductOrder handed off from a commerce platform into an order handling system. The structure identifies the system itself, the nature of the entity within the system (e.g. class name) and the unique ID of the entity within the system. It is anticipated that multiple external IDs can be held for a single entity, e.g. if the entity passed through multiple systems on the way to the current system. In this case the consumer is expected to sequence the IDs in the array in reverse order of provenance, i.e. most recent system first in the list.",
+                   "items": {
+                         "$ref": "../Common/ExternalIdentifier.schema.json#/definitions/ExternalIdentifier"
+                    }
                 },
                 "shipmentSpecification": {
+                    "description":"A set of characteristics to describe the shipment",
                     "$ref": "../EngagedParty/ShipmentSpecificationRefOrValue.schema.json#/definitions/ShipmentSpecificationRefOrValue"
                 },
-                "carrier": {
-                    "$ref": "../EngagedParty/PartyRefOrValue.schema.json#/definitions/PartyRefOrValue"
-                }
+                "relatedParty":{
+                    "type": "array",
+                    "description": "A list of parties which are involved in this shipment and the role they are playing",
+                    "items": {
+                        "$ref": "../EngagedParty/RelatedPartyWithContactInfo.schema.json#RelatedPartyWithContactInfo"
+                    }
+                },
+                "attachment": {
+                    "type": "array",
+                    "description": "Attachments that may be of relevance to this shipment, such as shippingLabels, Signature or photos of the delivery\r\n",
+                    "items": {
+                        "$ref": "../Common/AttachmentRefOrValue.schema.json#/definitions/AttachmentRefOrValue"
+                    }
+                }                
             },
             "allOf": [
                 {

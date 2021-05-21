@@ -8,14 +8,6 @@
       "description": "Monitored objects are specified by the MonitoredObjectsCriteria.",
       "type": "object",
       "properties": {
-        "monitoredObjectInstances": {
-            "description": "A list of object identifiers for specifying what monitored objects need to be referencenced",
-            "type": "string"
-        },
-        "monitoredObjectClass": {
-            "description": "A monitored object class for specifying the set of instances that are referenced",
-            "type": "string"
-        },
         "monitoredObjectFilter": {
             "description": "A filter that can be used in conjunction with the monitored object class for specifying the set of instances that are referenced",
             "type": "string"

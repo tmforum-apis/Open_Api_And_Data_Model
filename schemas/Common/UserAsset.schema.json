@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "UserAsset.schema.json",
+  "title": "UserAsset",
+  "definitions": {
+    "UserAsset": {
+      "properties": {
+        "assetType": {
+          "type": "string",
+          "description": "Second level to define the type of managed element for product/service/resource managed entities (e.g.: mobile line subscription, video platform license, mobile equipment, etc). Allows identifying the specific asset within the server referenced. Supported values are implementation and application specific. Other values can be added if those listed are not enough",
+          "enum": [
+            "mobile",
+            "landline",
+            "iptv",
+            "broadband",
+            "email",
+            "invoicing"
+          ]
+        },
+        "entitlement": {
+          "type": "array",
+          "items": {
+            "$ref": "Entitlement.schema.json#/definitions/Entitlement"
+          },
+          "description": "information about individual entitlements to define access levels to operate over different functions that can be defined in an asset"
+        },
+        "entityType": {
+          "type": "string",
+          "description": "Type of managed entity (e.g.: product, resource, service, customer, account)",
+          "enum": [
+            "customer",
+            "account",
+            "product",
+            "service",
+            "resource"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of referenced entity within the entity/asset pair (customerId, accountId, mobile line number, ...)",
+          "examples": [
+            "f066ffd5-e685-43bc-ad57-bfb7639decb1"
+          ]
+        },
+        "role": {
+          "type": "string",
+          "description": "Represents the part played by an individual in relation to being granted a set of entitlements for manageable assets (e.g.: owner, user, viewer, ...)",
+          "examples": [
+            "owner"
+          ]
+        }
+      },
+      "required": [
+        "entityType",
+        "id"
+      ],
+      "allOf": [
+        {
+          "$ref": "Entity.schema.json#/Entity"
+        }
+      ]
+    }
+  }
+}

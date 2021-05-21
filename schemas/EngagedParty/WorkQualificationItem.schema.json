@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "WorkQualificationItem.schema.json",
+    "title": "WorkQualificationItem",
+    "definitions": {
+        "WorkQualificationItem": {
+            "$id": "#WorkQualificationItem",
+            "type": "object",
+            "description": "A WorkQualificationItem relates to a specific unit of work being checked in a qualification operation.",
+            "properties": {
+                "eligibilityUnavailabilityReason": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "../Product/EligibilityUnavailabilityReason.schema.json#/definitions/EligibilityUnavailabilityReason"
+                    }
+                },
+                "expectedWorkDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date when the work is expected to take place"
+                },
+                "expirationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date when the qualification item response expires"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Id of the Work Qualification Item"
+                },
+                "work": {
+                    "description": "Work structure that allows to identify the unit of work'S composition, its Specification and Characteristics.",
+                    "$ref": "../EngagedParty/WorkRefOrValue.schema.json#/definitions/WorkRefOrValue"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "../Common/Extensible.schema.json#/definitions/Extensible"
+                }
+            ]
+        }
+    }
+}
