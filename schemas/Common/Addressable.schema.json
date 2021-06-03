@@ -11,11 +11,11 @@
         "href": {
           "type": "string",
           "format": "uri",
-          "description": "Hyperlink reference"
+          "description": "Property. Hyperlink reference"
         },
         "id": {
           "type": "string",
-          "description": "unique identifier"
+          "description": "Property. unique identifier"
         }
       }
     }

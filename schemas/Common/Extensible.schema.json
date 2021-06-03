@@ -11,15 +11,15 @@
         "@schemaLocation": {
           "type": "string",
           "format": "uri",
-          "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+          "description": "Property. A URI to a JSON-Schema file that defines additional attributes and relationships"
         },
         "@baseType": {
           "type": "string",
-          "description": "When sub-classing, this defines the super-class"
+          "description": "Property. When sub-classing, this defines the super-class"
         },
         "@type": {
           "type": "string",
-          "description": "When sub-classing, this defines the sub-class Extensible name"
+          "description": "Property. When sub-classing, this defines the sub-class Extensible name"
         }
       },
       "dependencies": {
