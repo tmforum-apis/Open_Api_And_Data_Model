@@ -1,0 +1,171 @@
+{
+  "id": "1203",
+  "href": "https://mycsp.com:8080/tmf-api/shoppingCart/v4/shoppingCart/1203",
+  "cartItem": [
+    {
+      "id": "1203-100",
+      "action": "add",
+      "quantity": 1,
+      "status": "active",
+      "itemTotalPrice": [
+        {
+          "description": "Total Recurring Price.",
+          "name": "Monthly Price",
+          "priceType": "recurring",
+          "recurringChargePeriod": "month",
+          "price": {
+            "taxRate": 10,
+            "dutyFreeAmount": {
+              "unit": "EUR",
+              "value": 29
+            },
+            "taxIncludedAmount": {
+              "unit": "EUR",
+              "value": 31.9
+            }
+          },
+          "priceAlteration": [
+            {
+              "applicationDuration": 3,
+              "description": "First 3 month get 50% off",
+              "name": "WelcomeDiscount",
+              "priceType": "recurring",
+              "priority": 1,
+              "recurringChargePeriod": "month",
+              "price": {
+                "percentage": 50
+              }
+            }
+          ]
+        }
+      ],
+      "itemPrice": [
+        {
+          "description": "Total Recurring Price.",
+          "name": "Monthly Price",
+          "priceType": "recurring",
+          "recurringChargePeriod": "month",
+          "unitOfMeasure": "string",
+          "price": {
+            "taxRate": 10,
+            "dutyFreeAmount": {
+              "unit": "EUR",
+              "value": 29
+            },
+            "taxIncludedAmount": {
+              "unit": "EUR",
+              "value": 31.9
+            }
+          },
+          "priceAlteration": [
+              {
+                "applicationDuration": 3,
+                "description": "First 3 month get 50% off",
+                "name": "WelcomeDiscount",
+                "priceType": "recurring",
+                "priority": 1,
+                "recurringChargePeriod": "month",
+                "unitOfMeasure": "string",
+                "price": {
+                  "percentage": 50
+                }
+              }
+          ],
+          "productOfferingPrice": {
+            "id": "1788",
+            "href": "https://mycsp.com:8080/tmf-api/productCatalogManagement/v4/productOfferingPrice/1788",
+            "name": "Recurring Monthly Price for Talk Simple 25"
+          }
+        }
+      ],
+      "itemTerm": [
+        {
+          "description": "Tariff plan 12 Months commitment",
+          "name": "12Months",
+          "duration": {
+            "amount": 12,
+            "units": "month"
+          }
+        }
+      ],
+      "note": [
+        {
+          "id": "88",
+          "author": "Jack Smith",
+          "date": "2019-05-28T12:02:41.791Z",
+          "text": "Please wrap with double bag"
+        }
+      ],
+      "product": {
+        "isBundle": false,
+        "name": "Talk Simple 25",
+        "productCharacteristic": [
+          {
+          "name": "TEL_MSISDN",
+          "valueType": "string",
+          "value": "415 279 7439"
+          }
+        ],
+        "relatedParty": [
+          {
+            "id": "9866",
+            "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/individual/9866",
+            "name": "Sandy Smith",
+            "role": "member",
+            "@referredType": "Individual"
+          }
+        ]
+      },
+      "productOffering": {
+        "id": "142456",
+        "href": "https://mycsp.com:8080/tmf-api/productCatalogManagement/v4/productOffering/142456",
+        "name": "Talk Simple 25"
+      }
+    }
+  ],
+  "cartTotalPrice": [
+    {
+      "description": "Total Recurring Price.",
+      "name": "Monthly Price",
+      "priceType": "recurring",
+      "recurringChargePeriod": "month",
+      "price": {
+        "taxRate": 10,
+        "dutyFreeAmount": {
+          "unit": "EUR",
+          "value": 29
+        },
+        "taxIncludedAmount": {
+          "unit": "EUR",
+          "value": 31.9
+        }
+      },
+      "priceAlteration": [
+        {
+          "applicationDuration": 3,
+          "description": "Total Discount",
+          "name": "WelcomeDiscount",
+          "priceType": "recurring",
+          "priority": 1,
+          "recurringChargePeriod": "month",
+          "price": {
+            "percentage": 50
+          }
+        }
+      ]
+    }
+  ],
+  "relatedParty": [
+    {
+      "id": "9176",
+      "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/customer/9176",
+      "name": "Jack Smith",
+      "role": "customer",
+      "@referredType": "Customer"
+    }
+  ],
+  "validFor": {
+    "endDateTime": "2019-05-28T12:02:41.791Z",
+    "startDateTime": "2019-08-28T12:02:41.791Z"
+  }
+}

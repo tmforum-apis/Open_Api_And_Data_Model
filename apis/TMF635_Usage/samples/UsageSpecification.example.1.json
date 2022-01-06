@@ -1,0 +1,134 @@
+{
+  "id": "9943-701cc5de8f7c",
+  "href": "https:/host:port/tmf-api/usageSpecification/v4/usageSpecification/9943-701cc5de8f7c",
+  "name": "Voice-Call-Specification",
+  "description": "Specification for voice calls usage",
+  "version": "1",
+  "isBundle": false,
+  "specCharacteristic": [
+    {
+      "name": "originatingCountryCode",
+      "description": "Country code of the caller",
+      "configurable": "true",
+      "extensible": false,
+      "usageSpecCharacteristicValue": [
+        {
+          "valueType": "number",
+          "default": "false",
+          "value": "",
+          "valueFrom": "0",
+          "valueTo": ""
+        }
+      ]
+    },
+    {
+      "name": "originatingNumber",
+      "description": "Phone number of the caller",
+      "configurable": "true",
+      "extensible": false,
+      "usageSpecCharacteristicValue": [
+        {
+          "valueType": "number",
+          "default": "false",
+          "value": "",
+          "valueFrom": "",
+          "valueTo": ""
+        }
+      ]
+    },
+    {
+      "name": "destinationCountryCode",
+      "description": "Country code of the called party",
+      "configurable": "true",
+      "extensible": false,
+      "usageSpecCharacteristicValue": [
+        {
+          "valueType": "number",
+          "default": "false",
+          "value": "",
+          "valueFrom": "",
+          "valueTo": ""
+        }
+      ]
+    },
+    {
+      "name": "destinationNumber",
+      "description": "Phone number of the called party",
+      "configurable": "true",
+      "extensible": false,
+      "usageSpecCharacteristicValue": [
+        {
+          "valueType": "number",
+          "default": "false",
+          "value": "",
+          "valueFrom": "",
+          "valueTo": ""
+        }
+      ]
+    },
+    {
+      "name": "duration",
+      "description": "Duration of the call",
+      "configurable": "true",
+      "extensible": false,
+      "usageSpecCharacteristicValue": [
+        {
+          "valueType": "number",
+          "default": "false",
+          "value": "",
+          "valueFrom": "0",
+          "valueTo": ""
+        }
+      ]
+    },
+    {
+      "name": "unit",
+      "description": "Unit of the duration",
+      "configurable": "true",
+      "extensible": false,
+      "usageSpecCharacteristicValue": [
+        {
+          "valueType": "string",
+          "default": "true",
+          "value": "SEC",
+          "valueFrom": "",
+          "valueTo": ""
+        }
+      ]
+    },
+    {
+      "name": "startDateTime",
+      "description": "Start-date and start-time of the call",
+      "configurable": "true",
+      "extensible": false,
+      "usageSpecCharacteristicValue": [
+        {
+          "valueType": "dateTime",
+          "default": "false",
+          "value": "",
+          "valueFrom": "",
+          "valueTo": ""
+        }
+      ]
+    },
+    {
+      "name": "endDateTime",
+      "description": "End-date and end-time of the call",
+      "configurable": "true",
+      "extensible": false,
+      "usageSpecCharacteristicValue": [
+        {
+          "valueType": "dateTime",
+          "default": "false",
+          "value": "",
+          "valueFrom": "",
+          "valueTo": ""
+        }
+      ]
+    }
+  ],
+  "validFor": {
+    "startDateTime": "2020-07-07T17:00:00-01:00",
+    "endDateTime": "2099-01-01T00:00:00-01:00"
+  }
+}

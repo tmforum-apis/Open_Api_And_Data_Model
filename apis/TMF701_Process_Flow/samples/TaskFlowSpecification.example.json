@@ -1,0 +1,126 @@
+{
+  "id": "tfs2",
+  "href": ".../processFlowManagement/v4/TaskFlowSpecification/tfs2",
+  "description": "Shopping cart configuration",
+  "lastUpdate": "2021-12-30T13:03:57.839Z",
+  "lifecycleStatus": "active",
+  "name": "configureSC",
+  "taskFlowSpecificationType": "manual",
+  "version": "1",
+
+  "TaskFlowSpecificationCharacteristic": [
+    {
+      "id": "tfs2-1",
+      "configurable": true,
+      "description": "A object defining an array of simplified Shopping cart item(s)",
+      "extensible": true,
+      "isUnique": false,
+      "maxCardinality": 1,
+      "minCardinality": 1,
+      "name": "SimplifiedShoppingCartItem",
+      "characteristicValueSpecification": [
+        {
+          "valueType": "SimplifiedShoppingCartItemSchema",
+          "validFor": {
+            "startDateTime": "1985-04-12T23:20:50.52Z"
+          },
+          "@type": "ObjectCharacteristicValueSpecification",
+          "value": {
+            "simplifiedCartItem": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["id", "action"],
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Identifier of the shopping cart item"
+                  },
+                  "product.id": {
+                    "type": "string",
+                    "description": "Identifier of the Product from the inventory."
+                  },
+                  "productOffering.id": {
+                    "type": "string",
+                    "description": "Identifier of the Product Offering from the catalog."
+                  },
+                  "action": {
+                    "type": "string",
+                    "description": "Action to be performed on this item - could be add, change or remove."
+                  },
+                  "quantity": {
+                    "type": "integer",
+                    "description": "Quantity associated with this item - by default 1 is considered."
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "validFor": {
+        "startDateTime": "1985-04-12T23:20:50.52Z"
+      },
+      "@type": "TaskFlowSpecificationCharacteristic"
+    }
+  ],
+  "taskFlowSpecificationRelationship": [
+    {
+      "id": "tfs3",
+      "href": ".../processFlowManagement/v4/TaskFlowSpecification/tfs3",
+      "name": "checkSC",
+      "relationshipType": "next",
+      "validFor": {
+        "startDateTime": "1985-04-12T23:20:50.52Z"
+      },
+      "@type": "TaskFlowSpecificationRelationship"
+    }
+  ],
+  "channel": [
+    {
+      "id": "1",
+      "name": "TMFWebStore"
+    },
+    {
+      "id": "2",
+      "name": "TMFRetailStore"
+    },
+    {
+      "id": "3",
+      "name": "TMFMobileAppStore"
+    }
+  ],
+  "relatedEntitySpecification": [
+    {
+      "id": "24",
+      "href": "../entityCatalogManagement/v4/entitySpecification/24",
+      "name": "ShoppingCart",
+      "role": "Support",
+      "version": "1",
+      "@type": "RelatedEntitySpecification",
+      "@referredType": "ShoppingCart"
+    }
+  ],
+  "relatedParty": [
+    {
+      "id": "45",
+      "href": "../partyManagement/v4/individual/45",
+      "name": "Jean Pontus",
+      "role": "ProcessFlowDesigner",
+      "@type": "RelatedParty",
+      "@referredType": "Individual"
+    },
+    {
+      "id": "99",
+      "href": "../partyManagement/v4/organization/99",
+      "name": "TMF",
+      "role": "ProcessFlowOwner",
+      "@type": "RelatedParty",
+      "@referredType": "Organization"
+    }
+  ],
+  "validFor": {
+    "startDateTime": "1985-04-12T23:20:50.52Z"
+  },
+  "@type": "TaskFlowSpecification"
+}

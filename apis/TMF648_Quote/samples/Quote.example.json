@@ -1,0 +1,266 @@
+{
+  "id": "12dd-78hg",
+  "href": "https://host:port/quoteManagement/v4/quote/12dd-78hg",
+  "category": "BSBS Quote",
+  "description": "Quote illustration",
+  "effectiveQuoteCompletionDate": "2019-05-013T12:45:12.028Z",
+  "expectedFulfillmentStartDate": "2019-05-21T12:45:12.028Z",
+  "expectedQuoteCompletionDate": "2019-05-14T12:45:12.028Z",
+  "externalId": "QO-tr-89",
+  "instantSyncQuote": false,
+  "quoteDate": "2019-05-06T12:45:12.028Z",
+  "requestedQuoteCompletionDate": "2019-05-14T12:45:12.028Z",
+  "version": "1",
+  "agreement": [
+    {
+      "id": "7778-jj56",
+      "href": "https://host:port/agreementManagement/v4/agreement/7778-jj56",
+      "name": "Global Agrrement",
+      "@type": "Agreement",
+      "@referredType": "MassAgreement"
+    }
+  ],
+  "billingAccount": [
+    {
+      "id": "BA4569",
+      "href": "https://host:port/accountManagement/v4/billingAccount/BA4569",
+      "@type": "BillingAccount"
+    }
+  ],
+  "contactMedium": [
+    {
+      "mediumType": "email",
+      "preferred": true,
+      "characteristic": {
+        "emailAddress": "jean.pontus@PerfectCustomer.com",
+      },
+      "validFor": {
+        "startDateTime": "2019-05-06T12:45:12.028Z"
+      }
+    }
+  ],
+  "note": [
+    {
+      "id": "1",
+      "author": "Jean Pontus",
+      "date": "2019-05-06T12:45:12.031Z",
+      "text": "This is a quote request following today call",
+      "@type": "Note"
+    }
+  ],
+  "productOfferingQualification": [
+    {
+      "id": "22ds-ty55",
+      "href": "https://host:port/productOfferingQualificationManagement/v4/productOfferingQualification/22ds-ty55"
+    }
+  ],
+  "authorization": [
+    {
+      "givenDate": "2019-05-08T12:45:12.031Z",
+      "name": "Discount validation",
+      "requestedDate": "2019-05-09T12:45:12.031Z",
+      "signatureRepresentation": "Manager approval",
+      "state": "validated",
+      "approver": [
+        {
+          "name": "Joe Doe",
+          "role": "B2B Discount approver"
+        }
+      ]
+    }
+  ],
+  "quoteItem": [
+    {
+      "id": "1",
+      "@type": "QuoteItem",
+      "action": "add",
+      "quantity": 10,
+      "state": "approved",
+      "product": {
+        "@type": "product",
+        "productCharacteristic": [
+          {
+            "name": "Voice Bundle",
+            "valueType": "string",
+            "value": "unlimited"
+          },
+          {
+            "name": "Data Bundle",
+            "valueType": "object",
+            "value": {
+              "volume": 50,
+              "unit": "Gb/month"
+            }
+          }
+        ],
+        "productSpecification": {
+          "id": "ssp7-ty89",
+          "href": "https://host:port/productCatalogManagement/v4/productSpecification/ssp7-ty89",
+          "name": "TMF Tariff Plan"
+        }
+      },
+      "productOffering": {
+        "id": "54gg-zza1",
+        "href": "https://host:port/productCatalogManagement/v4/productSpecification/54gg-zza1",
+        "name": "TMF Tarif Plan 25"
+      },
+      "quoteItemPrice": [
+        {
+          "description": "Tariff plan 25 fee",
+          "name": "Tariff Plan 25 tariff",
+          "priceType": "recurring",
+          "recurringChargePeriod": "month",
+          "price": {
+            "taxRate": 16,
+            "dutyFreeAmount": {
+              "unit": "EUR",
+              "value": 30
+            },
+            "taxIncludedAmount": {
+              "unit": "EUR",
+              "value": 34.8
+            }
+          },
+          "priceAlteration": [
+            {
+              "applicationDuration": 0,
+              "description": "Specific Discount for PerfectCustomer company",
+              "name": "10% off",
+              "priceType": "recurring",
+              "priority": 1,
+              "recurringChargePeriod": "month",
+              "price": {
+                "percentage": 10
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "@type": "QuoteItem",
+      "action": "add",
+      "quantity": 10,
+      "state": "approved",
+      "attachment": [
+        {
+          "attachmentType": "brochure",
+          "description": "handset brochure",
+          "mimeType": "pdf",
+          "name": "Handset commercial brochure.pdf",
+          "url": "www.tmf_hanset/contentMangement/brochure.pdf",
+          "size": {
+            "amount": 3.7,
+            "units": "Mb"
+          },
+          "validFor": {
+            "startDateTime": "2019-05-06T12:45:12.031Z"
+          }
+        }
+      ],
+      "product": {
+        "@type": "Product",
+        "productSpecification": {
+          "id": "qq45-ytr7",
+          "href": "https://host:port/productCatalogManagement/v4/productSpecification/qq45-ytr7",
+          "name": "Handset",
+          "version": "1"
+        }
+      },
+      "productOffering": {
+        "id": "z789-78ga",
+        "href": "https://host:port/productCatalogManagement/v4/productOffering/z789-78ga",
+        "name": "TMF handset T9+"
+      },
+      "quoteItemPrice": [
+        {
+          "description": "Handset",
+          "name": "Handset Fee",
+          "priceType": "nonRecurring",
+          "price": {
+            "taxRate": 16,
+            "dutyFreeAmount": {
+              "unit": "EUR",
+              "value": 350
+            },
+            "taxIncludedAmount": {
+              "unit": "EUR",
+              "value": 406
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "@type": "QuoteItem",
+      "action": "add",
+      "quantity": 1,
+      "state": "approved",
+      "productOffering": {
+        "id": "ssdd-4dfd",
+        "href": "https://host:port/productCatalogManagement/v4/productOffering/ssdd-4dfd",
+        "name": "Gold Support"
+      },
+      "quoteItemPrice": [
+        {
+          "description": "Gold support annual fee",
+          "name": "GoldAnnualFee",
+          "priceType": "recurring",
+          "recurringChargePeriod": "year",
+          "price": {
+            "taxRate": 16,
+            "dutyFreeAmount": {
+              "unit": "EUR",
+              "value": 100
+            },
+            "taxIncludedAmount": {
+              "unit": "EUR",
+              "value": 116
+            }
+          },
+          "priceAlteration": [
+            {
+              "applicationDuration": 1,
+              "description": "First year free",
+              "name": "FreeYear",
+              "priceType": "recurring",
+              "priority": 1,
+              "recurringChargePeriod": "year",
+              "price": {
+                "percentage": 100
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "relatedParty": [
+    {
+      "name": "Jean Pontus",
+      "role": "Buyer Contact",
+      "id": "qsdd-9888",
+      "@referredType": "Individual"
+    },
+    {
+      "name": "PerfectCustomer",
+      "role": "Buyer organization",
+      "id": "55",
+      "@referredType": "Organization"
+    },
+    {
+      "name": "Joe Doe",
+      "role": "Seller Contact",
+      "id": "45gh-gh89",
+      "@referredType": "Individual"
+    }
+  ],
+  "state": "approved",
+  "validFor": {
+    "endDateTime": "2019-05-06T12:45:12.033Z",
+    "startDateTime": "2019-05-06T12:45:12.033Z"
+  },
+  "@type": "Quote"
+}

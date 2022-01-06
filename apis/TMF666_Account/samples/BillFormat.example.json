@@ -1,0 +1,7 @@
+{
+    "@type": "BillFormat",
+    "description": "This  bill format ...", 
+    "href": "https://host:port/tmf-api/accountManagement/v4/billFormat/8718", 
+    "id": "8718", 
+    "name": "Detailed invoice"
+}

@@ -1,0 +1,201 @@
+{
+    "id": "42",
+    "href": "https://serverRoot/tmf-api/party/v4/individual/42",
+    "@type": "individual",
+    "gender": "female",
+    "countryOfBirth": "United States",
+    "nationality": "American",
+    "maritalStatus": "married",
+    "birthDate": "1967-09-26T05:00:00.246Z",
+    "givenName": "Jane",
+    "preferredGivenName": "Lamborgizzia",
+    "familyName": "Lamborgizzia",
+    "legalName": "Smith",
+    "middleName": "JL",
+    "fullName": "Jane Smith ep Lamborgizzia",
+    "formattedName": "Jane Smith ep Lamborgizzia",
+    "status": "validated",
+    "externalReference": [
+        {
+            "name": "http://facebook.com/17263635",
+            "externalReferenceType": "facebookId"
+        },
+        {
+            "name": "http://google.com/17263635",
+            "externalReferenceType": "googleId"
+        }
+    ],
+    "partyCharacteristic": [
+        {
+            "name": "hobby",
+            "value": "Modern Jazz",
+            "valueType": "string"
+        },
+        {
+            "name": "hobby",
+            "value": "Cinema",
+            "valueType": "string"
+        },
+        {
+            "name": "childrenNumber",
+            "value": "1",
+            "valueType": "number"
+        }
+    ],
+    "otherName": [
+        {
+            "givenName": "Jane",
+            "familyName": "Smith",
+            "validFor": {
+                "startDateTime": "1967-09-26T00:00:00.246Z",
+                "endDateTime": "2015-06-15T00:00:00.246Z"
+            }
+        }
+    ],
+    "individualIdentification": [
+    {
+      "identificationType": "passport",
+      "identificationId": "51DD1234",
+      "issuingAuthority": "US Government",
+      "issuingDate": "2017-10-22T07:49:25.246Z",
+      "validFor": {
+        "startDateTime": "2017-10-22T07:49:25.246Z",
+        "endDateTime": "2027-10-21T07:49:25.246Z"
+      },
+      "attachment":
+        {
+          "attachmentType": "passportCopy",
+          "name": "PassportCopy321.pdf",
+          "description": "Scanned copy of the passport",
+          "mimeType": "application/pdf",
+          "url": "http://DocumentManager/321/PassportCopy321.pdf"
+        }
+    }
+  ],
+    "taxExemptionCertificate": [
+        {
+            "id": "1",
+            "validFor": {
+                "startDateTime": "2018-10-22T07:49:25.246Z"
+            },
+            "certificateNumber": "98765432345", 
+            "issuingJurisdiction": "USA", 
+            "taxDefinition": [
+                {
+                    "id": "96",
+                    "name": "Value Added Tax",
+                    "taxType": "federalVat"
+                }
+            ],
+            "attachment": {
+                "attachmentType": "taxExemptionCertificate",
+                "name": "TaxExemptionCertificate-566655.pdf",
+                "description": "Electronic version of the tax exemption certificate",
+                "mimeType": "application/pdf",
+                "url": "https://mycsp.com:8080/DocumentManager/666/TaxExemptionCertificate-566655.pdf"
+            }
+        }
+    ],
+  "creditRating": [
+    {
+      "creditAgencyName": "Experian",
+      "creditAgencyType": "externalAgency",
+      "ratingReference": "ref123",
+      "ratingScore": 680,
+      "validFor": {
+        "startDateTime": "2018-10-22T07:49:25.246Z"
+      }
+    }
+  ],
+  "relatedParty": [
+    {
+      "id": "128",
+      "href": "https://serverRoot/tmf-api/party/v4/organization/128",
+      "role": "employee",
+      "name": "Coffee Do Brazil Fair Trade Marketing Department",
+      "@referredType": "organization"
+    }
+  ],
+  "contactMedium": [
+    {
+      "preferred": true,
+      "mediumType": "email",
+      "validFor": {
+        "startDateTime": "2017-03-15T07:49:25.246Z"
+      },
+      "characteristic": {
+        "emailAddress": "jane.lamborgizzia@gmail.com"
+      }
+    },
+    {
+      "preferred": false,
+      "mediumType": "postalAddress",
+      "validFor": {
+        "startDateTime": "2017-03-15T07:49:25.246Z"
+      },
+      "characteristic": {
+        "city": "Morristown",
+        "country": "USA",
+        "postCode": "07960",
+        "stateOrProvince": "New Jersey",
+        "street1": "240 Headquarters Plazza",
+        "street2": "East Tower - 10th Floor"
+      }
+    }
+  ],
+  "disability": [
+    {
+      "disabilityCode": "BLD",
+      "disabilityName": "Blind",
+      "validFor": {
+        "startDateTime": "1967-09-26T07:49:25.246Z"
+      }
+    }
+  ],
+  "languageAbility": [
+    {
+      "languageCode": "FR",
+      "languageName": "French",
+      "isFavouriteLanguage": true,
+      "writingProficiency": "advanced",
+      "readingProficiency": "advanced",
+      "speakingProficiency": "intermediate",
+      "listeningProficiency": "intermediate",
+      "validFor": {
+        "startDateTime": "2018-10-22T07:49:25.246Z"
+      }
+    },
+    {
+      "languageCode": "SP",
+      "languageName": "Spanish",
+      "isFavouriteLanguage": false,
+      "writingProficiency": "scholar",
+      "readingProficiency": "scholar",
+      "speakingProficiency": "scholar",
+      "listeningProficiency": "scholar",
+      "validFor": {
+        "startDateTime": "2018-10-22T07:49:25.246Z"
+      }
+    }
+  ],
+  "skill": [
+    {
+      "skillCode": "SK001",
+      "skillName": "marketing",
+      "evaluatedLevel": "Advanced",
+      "comment": "Ten years experience",
+      "validFor": {
+        "startDateTime": "2018-10-22T07:49:25.246Z"
+      }
+    },
+    {
+      "skillCode": "SK002",
+      "skillName": "Project Management",
+      "evaluatedLevel": "newbie",
+      "comment": "First work experience",
+      "validFor": {
+        "startDateTime": "2018-10-22T07:49:25.246Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+    "@type":"SettlementAccount",
+    "paymentStatus": "In Collection", 
+    "creditLimit": {
+        "unit": "USD",
+        "value": 20000     
+    }, 
+    "description": "This  settlement account ...", 
+    "href": "https://host:port/tmf-api/accountManagement/v4/account/8790", 
+    "id": "8790", 
+    "lastModified": "2018-06-14T00:00:00.000Z", 
+    "name": "Per Usage Account", 
+    "state": "inactive", 
+    "accountType": "Business", 
+    "billStructure": {
+        "presentationMedia": [
+            {
+                "href": "https://host:port/tmf-api/accountManagement/v4/billPresentationMedia/1451", 
+                "id": "1451", 
+                "name": "Web Page"
+            }
+        ], 
+        "format": {
+            "href": "https://host:port/tmf-api/accountManagement/v4/billFormat/8128", 
+            "id": "8128", 
+            "name": "Detailed invoice"
+        }, 
+        "cycleSpecification": {
+            "dateShift": 62, 
+            "frequency": "monthly", 
+            "href": "https://host:port/tmf-api/accountManagement/v4/billingCycleSpecification/1361", 
+            "id": "1361", 
+            "name": "Annual billing"
+        }
+    }, 
+    "paymentPlan": [
+        {
+            "numberOfPayments": 4, 
+            "paymentFrequency": "monthly", 
+            "priority": 3, 
+            "status": "Effective", 
+            "totalAmount": {
+                "unit": "USD",
+                "value": 543.8
+            }, 
+            "planType": "regular", 
+            "validFor": {
+                "startDateTime": "2018-06-17T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }, 
+            "paymentMethod": {
+                "href": "https://host:port/tmf-api/paymentMethods/v4/paymentMethod/1534", 
+                "id": "1534", 
+                "name": "professional payment"
+            }
+        }
+    ], 
+    "financialAccount": {
+	"@referredType" : "FinantialAccount",
+        "href": "https://host:port/tmf-api/accountManagement/v4/account/3408", 
+        "id": "3408", 
+        "name": "Partnership account", 
+        "accountBalance": {
+            "amount": {
+                "unit": "USD",
+                "value": 55.14 
+            }, 
+            "balanceType": "ReceivableBalance", 
+            "validFor": {
+                "startDateTime": "2018-06-12T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }
+        }
+    }, 
+    "defaultPaymentMethod": {
+        "href": "https://host:port/tmf-api/paymentMethods/v4/paymentMethod/9124", 
+        "id": "9124", 
+        "name": "family payment"
+    }, 
+    "relatedParty": [
+        {
+	        "@referredType": "Organization",
+            "href": "https://host:port/tmf-api/partyManagement/v4/organization/5965", 
+            "id": "5965", 
+            "name": "Jimmy Doe", 
+            "role": "employee"
+        }
+    ], 
+    "taxExemption": [
+        {
+            "id": "1",
+            "certificateNumber": "98765432345", 
+            "issuingJurisdiction": "USA", 
+            "reason": "Embassy", 
+            "taxDefinition": [
+                {
+                  "id": "96",
+                  "name": "Value Added Tax",
+                  "taxType": "federalVat"
+                }
+            ],
+              "attachment": {
+                "attachmentType": "taxExemptionCertificate",
+                "name": "TaxExemptionCertificate-555.pdf",
+                "description": "Electronic version of the tax exemption certificate",
+                "mimeType": "application/pdf",
+                "url": "http://host:port/DocumentManager/666/TaxExemptionCertificate-555.pdf"
+              },
+            "validFor": {
+                "startDateTime": "2018-06-17T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }
+        }
+    ], 
+    "contact": [
+        {
+            "contactName": "Virginie Cork", 
+            "contactType": "primary", 
+            "partyRoleType": "Publisher", 
+            "validFor": {
+                "startDateTime": "2018-06-11T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }, 
+            "contactMedium": [
+                {
+                    "preferred": false, 
+                    "mediumType": "PostalAddress", 
+                    "validFor": {
+                        "startDateTime": "2018-06-14T00:00:00.000Z", 
+                        "endDateTime": "2019-01-10T00:00:00.000Z"
+                    }, 
+                    "characteristic": {
+                        "city": "Paris", 
+                        "street1": "15 Rue des Canards", 
+                        "postCode": "75014", 
+                        "country": "France"
+                    }
+                }
+            ], 
+            "relatedParty": {
+        		"@referredType": "Organization",
+                "href": "https://host:port/tmf-api/partyManagement/v4/organization/6310", 
+                "id": "6310", 
+                "name": "Gustave Flaubert", 
+                "role": "bill receiver"
+            }
+        }
+    ], 
+    "accountBalance": [
+        {
+            "amount": {
+                "unit": "USD",
+                "value": 55.28 
+            }, 
+            "balanceType": "DepositBalance", 
+            "validFor": {
+                "startDateTime": "2018-06-10T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }
+        }
+    ], 
+    "accountRelationship": [
+        {
+            "relationshipType": "contains", 
+            "validFor": {
+                "startDateTime": "2018-06-16T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }, 
+            "account": {
+		"@referredType": "BillingAccount",
+                "description": "This  account ...", 
+                "href": "https://host:port/tmf-api/accountManagement/v4/account/7550", 
+                "id": "7550", 
+                "name": "Travel Account"
+            }
+        }
+    ]
+}

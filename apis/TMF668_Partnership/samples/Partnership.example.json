@@ -1,0 +1,58 @@
+{
+    "@type": "Partnership",
+    "description": "This  partnership ...", 
+    "href": "https://host:port/tmf-api/partnershipManagement/v4/partnership/54", 
+    "id": "54", 
+    "name": "Dream Partnership",
+    "specification" : {
+	"href": "https://host:port/tmf-api/partnershipManagement/v4/partnershipSpecification/9047",
+	"name": "Dream Partnership template"
+    },
+    "partner": [
+        {
+	    "engagedParty" : {
+		"@referredType": "Organization",
+		"href": "https://host:port/tmf-api/partyManagement/v4/organization/12", 
+		"name": "SuperdataCompany",
+		"role": "ContentProvider"
+	    },
+	    "account" : [{
+		"@referredType": "BillingAccount",
+		"href": "https://host:port/tmf-api/accountManagement/v4/account/10", 
+		"name" : "Superdata Bahamas Account"
+	    }]
+	},
+        {
+	    "engagedParty" : {
+		"@referredType": "Organization",
+		"href": "https://host:port/tmf-api/partyManagement/v4/organization/13", 
+		"name": "IslandGovernment",
+		"role": "ContentProvider"
+	    }
+	},
+        {
+	    "engagedParty" : {
+		"@referredType": "Organization",
+		"href": "https://host:port/tmf-api/partyManagement/v4/organization/14", 
+		"name": "BestCloudCompany",
+		"role" : "CloudProvider"
+            }
+	},
+        {
+	    "engagedParty" : {
+		"@type": "Individual",
+		"href": "https://host:port/tmf-api/partyManagement/v4/individual/66", 
+		"name" : "Doctor Hack",
+		"role": "Developer"
+            }
+	},
+        {
+	    "engagedParty" : {
+		"@type": "Individual",
+		"href": "https://host:port/tmf-api/partyManagement/v4/individual/62", 
+		"name" : "Joe Doe",
+		"name" : "Tester"
+            }
+	}
+    ]
+}

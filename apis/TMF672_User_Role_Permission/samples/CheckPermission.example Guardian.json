@@ -1,0 +1,14 @@
+{
+    "__comment": "SteffiApf is a legal guardian for Hans, she needs permissions to read Hans' products, in this example product prod1",
+	"entitlement": {
+	    "function": "Product",
+	    "action": "read"
+	},
+	"partyRole": {
+	    "id": "SteffiApfForHans"
+	},
+	"entity": {
+	    "id": "prod1",
+	    "@type": "Product"
+	}
+}

@@ -1,0 +1,130 @@
+{
+  "id": "74",
+  "href": "http://serverlocation:port/stockManagement/v4/QueryProductStock/74",
+  "completedQueryProductStockDate": "2020-09-24T10:24:04.602Z",
+  "creationDate": "2020-09-24T10:24:04.602Z",
+  "instantSyncCheck": true,
+  "requestedAvailabilityDate": "2020-09-24T10:24:04.602Z",
+  "requestedQueryProductStockDate": "2020-09-24T10:24:04.602Z",
+  "queryProductStockItem": [
+    {
+      "id": "42",
+      "href": "http://serverlocation:port/stockManagement/v4/productStock/42",
+      "place": {
+        "id": "89",
+        "href": "http://serverlocation:port/geographicSiteManagement/v4/geographicSite/89",
+        "role": "Lyon Shop",
+        "@type": "PlaceRef",
+        "@referredType": "GeographicSite"
+      },
+      "productStockLevel": {
+        "amount": 24,
+        "units": "string"
+      },
+      "productStockStatusType": "available",
+      "stockedProduct": {
+        "productCharacteristic": [
+            {
+                "id" : "1",
+                "valueType": "string",
+                "name":"Color",
+                "value" : "Orange"
+              },
+              {
+                "id" : "2",
+                "valueType": "string",
+                "name":"Memory Size",
+                "value" : "256 GB"
+              }
+        ],
+        "productSpecification": {
+            "id": "23",
+            "href": "http://serverlocation:port/productCatalogManagement/v4/productSpecification/23",
+            "name": "TMFPhone",
+            "version": "x-9",
+            "@type": "ProductSpecification"
+        },
+        "@type": "Product"
+      },
+      "@type": "ProductStock"
+    },
+    {
+        "id": "52",
+        "href": "http://serverlocation:port/stockManagement/v4/productStock/52",
+        "place": {
+          "id": "123",
+          "href": "http://serverlocation:port/geographicSiteManagement/v4/geographicSite/123",
+          "role": "Ecully Shop",
+          "@type": "PlaceRef",
+          "@referredType": "GeographicSite"
+        },
+        "productStockLevel": {
+          "amount": 15,
+          "units": "string"
+        },
+        "productStockStatusType": "available",
+        "stockedProduct": {
+          "productCharacteristic": [
+              {
+                  "id" : "1",
+                  "valueType": "string",
+                  "name":"Color",
+                  "value" : "Orange"
+                },
+                {
+                  "id" : "2",
+                  "valueType": "string",
+                  "name":"Memory Size",
+                  "value" : "256 GB"
+                }
+          ],
+          "productSpecification": {
+              "id": "23",
+              "href": "http://serverlocation:port/productCatalogManagement/v4/productSpecification/23",
+              "name": "TMFPhone",
+              "version": "x-9",
+              "@type": "ProductSpecification"
+          },
+          "@type": "Product"
+        },
+        "@type": "ProductStock"
+      }
+  ],
+  "searchCriteria": {
+    "place": {
+      "id": "98",
+      "href": "http://serverlocation:port/geographicLocationManagement/v4/geographicLocation/98",
+      "role": "Search zone",
+      "@type": "PlaceRef",
+      "@referredType": "GeographicLocation"
+    },
+    "productStockStatusType": "available",
+    "stockedProduct": {
+      "productCharacteristic": [
+        {
+            "id" : "1",
+            "valueType": "string",
+            "name":"Color",
+            "value" : "Orange"
+          },
+          {
+            "id" : "2",
+            "valueType": "string",
+            "name":"Memory Size",
+            "value" : "256 GB"
+          }
+      ],
+      "productSpecification": {
+        "id": "23",
+        "href": "http://serverlocation:port/productCatalogManagement/v4/productSpecification/23",
+        "name": "TMFPhone",
+        "version": "x-9",
+        "@type": "ProductSpecification"
+      },
+      "@type": "Product"
+    },
+    "@type": "ProductStock"
+  },
+  "state": "done",
+  "@type": "QueryProductStock"
+}

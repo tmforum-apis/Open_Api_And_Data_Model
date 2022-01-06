@@ -1,0 +1,50 @@
+{
+    "id": "7717", 
+    "href": "https://mycsp.com:8080/tmf-api/entityCatalogManagement/v4/associationSpecification/7717", 
+    "name": "HostedOn", 
+    "description": "An uni-directional association from TOSCA NodeDbmsSpec A to Tosca NodeComputeSpec Z indicating an instance of A hosted on an instance of B", 
+    "version": "1.0", 
+    "validFor": {
+        "startDateTime": "2020-12-05T00:00-04:00", 
+        "endDateTime": "2023-12-31T11:59:59-04:00"
+    }, 
+    "lastUpdate": "2020-12-05T00:00-04:00", 
+    "lifecycleStatus": "Active", 
+    "constraint": [
+        {
+            "href": "https://mycsp.com:8080/tmf-api/policyManagement/v4/policy/3989", 
+            "id": "3989", 
+            "name": "EligibilityConstraint", 
+            "version": "1.0",
+            "@referredType": "Constraint",
+            "@type": "ConstraintRef",
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/ConstraintRef.schema.json"
+        }
+    ], 
+    "associationRoleSpec": [
+        {
+            "entityType": "NodeDbmsSpec", 
+            "isNavigable": true, 
+            "isSource": true,
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "role": "a_host",
+            "defaultQuantity": 1,
+            "aggregation": "None"
+        },
+        {
+            "entityType": "NodeComputeSpec", 
+            "isNavigable": true, 
+            "isSource": false,
+            "maxQuantity": 1,
+            "minQuantity": 0,
+            "role": "z_host",
+            "defaultQuantity": 1,
+            "aggregation": "None"
+        }
+    ],
+    "@type": "AssociationSpecification", 
+    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/AssociationSpecification.schema.json", 
+    "@baseType": ""
+}

@@ -1,0 +1,108 @@
+{
+    "@type":"FinantialAccount",
+    "creditLimit": {
+        "unit": "USD",
+        "value": 3500     
+    }, 
+    "description": "This  financial account ...", 
+    "href": "https://host:port/tmf-api/accountManagement/v4/account/1041", 
+    "id": "1041", 
+    "lastModified": "2018-06-14T00:00:00.000Z", 
+    "name": "Administration account", 
+    "state": "Active", 
+    "accountType": "Global", 
+    "relatedParty": [
+        {
+    	    "@referredType" : "Individual",
+            "href": "https://host:port/tmf-api/partyManagement/v4/organization/9442", 
+            "id": "9442", 
+            "name": "Gustave Flaubert", 
+            "role": "bill receiver"
+        }
+    ], 
+    "taxExemption": [
+        {
+            "certificateNumber": "45678909876", 
+            "issuingJurisdiction": "Prefecture", 
+            "reason": "Social", 
+            "taxDefinition": [
+                {
+                  "id": "96",
+                  "name": "Value Added Tax",
+                  "taxType": "federalVat"
+                }
+            ],
+            "attachment": {
+                "attachmentType": "taxExemptionCertificate",
+                "name": "TaxExemptionCertificate-54321.pdf",
+                "description": "Electronic version of the tax exemption certificate",
+                "mimeType": "application/pdf",
+                "url": "http://host:port/DocumentManager/666/TaxExemptionCertificate-54321.pdf"
+            },
+            "validFor": {
+                "startDateTime": "2018-06-13T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }
+        }
+    ], 
+    "contact": [
+        {
+            "contactName": "Ludwig Borgia", 
+            "contactType": "secondary", 
+            "partyRoleType": "CustomerAccountRepresentative", 
+            "validFor": {
+                "startDateTime": "2018-06-11T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }, 
+            "contactMedium": [
+                {
+                    "preferred": false, 
+                    "mediumType": "Email", 
+                    "validFor": {
+                        "startDateTime": "2018-06-12T00:00:00.000Z", 
+                        "endDateTime": "2019-01-10T00:00:00.000Z"
+                    }, 
+                    "characteristic": {
+                        "emailAddress": "alain.delon@best-actor.fr", 
+                        "country": "France"
+                    }
+                }
+            ], 
+            "relatedParty": {
+    	        "@referredType" : "Individual",
+                "href": "https://host:port/tmf-api/partyManagement/v4/organization/2186", 
+                "id": "2186", 
+                "name": "Gustave Flaubert", 
+                "role": "employee"
+            }
+        }
+    ], 
+    "accountBalance": [
+        {
+            "amount": {
+                "unit": "USD",
+                "value": 50.58 
+            }, 
+            "balanceType": "ReceivableBalance", 
+            "validFor": {
+                "startDateTime": "2018-06-15T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }
+        }
+    ], 
+    "accountRelationship": [
+        {
+            "relationshipType": "contains", 
+            "validFor": {
+                "startDateTime": "2018-06-13T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }, 
+            "account": {
+                "description": "This  account ...", 
+                "href": "https://host:port/tmf-api/accountManagement/v4/account/7688", 
+                "id": "7688", 
+                "name": "Travel Account"
+            }
+        }
+    ]
+}

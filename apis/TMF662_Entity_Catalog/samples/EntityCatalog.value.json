@@ -1,0 +1,50 @@
+{
+    "id": "6421", 
+    "href": "https://mycsp.com:8080/tmf-api/entityCatalogManagement/v4/entityCatalog/6421", 
+    "name": "Home Security Catalog", 
+    "description": "This catalog describes home security entities that address both wholesale/retailer business segment.", 
+    "version": "2.0", 
+    "validFor": {
+        "startDateTime": "2020-11-24T00:00", 
+        "endDateTime": "2023-12-05T00:00"
+    }, 
+    "lastUpdate": "2020-11-24T00:00", 
+    "lifecycleStatus": "Active",
+    "relatedParty": [
+        {
+            "href":"https:/host:port/tmf-api/partyRoleManagement/v4/partyRole/6733", 
+            "id": "6733", 
+            "name": "Home Security Ltd", 
+            "role": "vendor",
+            "@referredType": "Supplier",
+            "@type": "RelatedParty", 
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/EngagedParty/RelatedParty.schema.json", 
+            "@baseType": ""
+        }
+    ], 
+    "category": [
+        {
+            "id": "6073", 
+            "href": "https://mycsp.com:8080/tmf-api/entityCatalogManagement/v4/entityCategory/6073", 
+            "version": "1.0", 
+            "name": "SmartHome Security",
+            "@referredType": "EntityCategory",
+            "@type": "EntityCategoryRef", 
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntityCategoryRef.schema.json", 
+            "@baseType": ""
+        },
+        {
+            "id": "6079", 
+            "href": "https://mycsp.com:8080/tmf-api/entityCatalogManagement/v4/entityCategory/6079", 
+            "version": "1.0", 
+            "name": "Sensors",
+            "@referredType": "EntityCategory",
+            "@type": "EntityCategoryRef", 
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntityCategoryRef.schema.json", 
+            "@baseType": ""
+        }
+    ],
+    "@type": "EntityCatalog", 
+    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntityCatalog.schema.json", 
+    "@baseType": "Catalog" 
+}

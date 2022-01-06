@@ -1,0 +1,3396 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Agreement Management",
+        "description": "This is Swagger UI environment generated for the TMF Agreement Management specification",
+        "version": "4.0.0"
+    },
+    "host": "serverRoot",
+    "basePath": "/tmf-api/agreementManagement/v4/",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json;charset=utf-8"
+    ],
+    "produces": [
+        "application/json;charset=utf-8"
+    ],
+    "tags": [
+        {
+            "name": "agreement"
+        },
+        {
+            "name": "agreementSpecification"
+        },
+        {
+            "name": "notification listeners (client side)"
+        },
+        {
+            "name": "events subscription"
+        }
+    ],
+    "paths": {
+        "/agreement": {
+            "get": {
+                "operationId": "listAgreement",
+                "summary": "List or find Agreement objects",
+                "description": "This operation list or find Agreement entities",
+                "tags": [
+                    "agreement"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "offset",
+                        "description": "Requested index for start of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "description": "Requested number of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "X-Result-Count": {
+                                "description": "Actual number of items returned in the response body",
+                                "type": "integer"
+                            },
+                            "X-Total-Count": {
+                                "description": "Total number of items matching criteria",
+                                "type": "integer"
+                            }
+                        },
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Agreement"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "operationId": "createAgreement",
+                "summary": "Creates a Agreement",
+                "description": "This operation creates a Agreement entity.",
+                "tags": [
+                    "agreement"
+                ],
+                "parameters": [
+                    {
+                        "name": "agreement",
+                        "description": "The Agreement to be created",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Agreement_Create"
+                        },
+                        "in": "body"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/Agreement"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/agreement/{id}": {
+            "get": {
+                "operationId": "retrieveAgreement",
+                "summary": "Retrieves a Agreement by ID",
+                "description": "This operation retrieves a Agreement entity. Attribute selection is enabled for all first level attributes.",
+                "tags": [
+                    "agreement"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the Agreement",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    },
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to provide in response",
+                        "required": false,
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Agreement"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "operationId": "patchAgreement",
+                "summary": "Updates partially a Agreement",
+                "description": "This operation updates partially a Agreement entity.",
+                "tags": [
+                    "agreement"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the Agreement",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    },
+                    {
+                        "name": "agreement",
+                        "description": "The Agreement to be updated",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Agreement_Update"
+                        },
+                        "in": "body"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Updated",
+                        "schema": {
+                            "$ref": "#/definitions/Agreement"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "deleteAgreement",
+                "summary": "Deletes a Agreement",
+                "description": "This operation deletes a Agreement entity.",
+                "tags": [
+                    "agreement"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the Agreement",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/agreementSpecification": {
+            "get": {
+                "operationId": "listAgreementSpecification",
+                "summary": "List or find AgreementSpecification objects",
+                "description": "This operation list or find AgreementSpecification entities",
+                "tags": [
+                    "agreementSpecification"
+                ],
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "offset",
+                        "description": "Requested index for start of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "description": "Requested number of resources to be provided in response",
+                        "required": false,
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "headers": {
+                            "X-Result-Count": {
+                                "description": "Actual number of items returned in the response body",
+                                "type": "integer"
+                            },
+                            "X-Total-Count": {
+                                "description": "Total number of items matching criteria",
+                                "type": "integer"
+                            }
+                        },
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/AgreementSpecification"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "operationId": "createAgreementSpecification",
+                "summary": "Creates a AgreementSpecification",
+                "description": "This operation creates a AgreementSpecification entity.",
+                "tags": [
+                    "agreementSpecification"
+                ],
+                "parameters": [
+                    {
+                        "name": "agreementSpecification",
+                        "description": "The AgreementSpecification to be created",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/AgreementSpecification_Create"
+                        },
+                        "in": "body"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/AgreementSpecification"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/agreementSpecification/{id}": {
+            "get": {
+                "operationId": "retrieveAgreementSpecification",
+                "summary": "Retrieves a AgreementSpecification by ID",
+                "description": "This operation retrieves a AgreementSpecification entity. Attribute selection is enabled for all first level attributes.",
+                "tags": [
+                    "agreementSpecification"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the AgreementSpecification",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    },
+                    {
+                        "name": "fields",
+                        "description": "Comma-separated properties to provide in response",
+                        "required": false,
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/AgreementSpecification"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "operationId": "patchAgreementSpecification",
+                "summary": "Updates partially a AgreementSpecification",
+                "description": "This operation updates partially a AgreementSpecification entity.",
+                "tags": [
+                    "agreementSpecification"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the AgreementSpecification",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    },
+                    {
+                        "name": "agreementSpecification",
+                        "description": "The AgreementSpecification to be updated",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/AgreementSpecification_Update"
+                        },
+                        "in": "body"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Updated",
+                        "schema": {
+                            "$ref": "#/definitions/AgreementSpecification"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "deleteAgreementSpecification",
+                "summary": "Deletes a AgreementSpecification",
+                "description": "This operation deletes a AgreementSpecification entity.",
+                "tags": [
+                    "agreementSpecification"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "Identifier of the AgreementSpecification",
+                        "required": true,
+                        "type": "string",
+                        "in": "path"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/hub": {
+            "post": {
+                "operationId": "registerListener",
+                "summary": "Register a listener",
+                "description": "Sets the communication endpoint address the service instance must use to deliver information about its health state, execution state, failures and metrics.",
+                "tags": [
+                    "events subscription"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscriptionInput"
+                        },
+                        "required": true,
+                        "in": "body",
+                        "description": "Data containing the callback endpoint to deliver the information"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Subscribed",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/hub/{id}": {
+            "delete": {
+                "operationId": "unregisterListener",
+                "summary": "Unregister a listener",
+                "description": "Resets the communication endpoint address the service instance must use to deliver information about its health state, execution state, failures and metrics.",
+                "tags": [
+                    "events subscription"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "description": "The id of the registered listener"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/agreementCreateEvent": {
+            "post": {
+                "operationId": "listenToAgreementCreateEvent",
+                "summary": "Client listener for entity AgreementCreateEvent",
+                "description": "Example of a client listener for receiving the notification AgreementCreateEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/AgreementCreateEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/agreementAttributeValueChangeEvent": {
+            "post": {
+                "operationId": "listenToAgreementAttributeValueChangeEvent",
+                "summary": "Client listener for entity AgreementAttributeValueChangeEvent",
+                "description": "Example of a client listener for receiving the notification AgreementAttributeValueChangeEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/AgreementAttributeValueChangeEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/agreementStateChangeEvent": {
+            "post": {
+                "operationId": "listenToAgreementStateChangeEvent",
+                "summary": "Client listener for entity AgreementStateChangeEvent",
+                "description": "Example of a client listener for receiving the notification AgreementStateChangeEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/AgreementStateChangeEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/agreementDeleteEvent": {
+            "post": {
+                "operationId": "listenToAgreementDeleteEvent",
+                "summary": "Client listener for entity AgreementDeleteEvent",
+                "description": "Example of a client listener for receiving the notification AgreementDeleteEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/AgreementDeleteEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/agreementSpecificationCreateEvent": {
+            "post": {
+                "operationId": "listenToAgreementSpecificationCreateEvent",
+                "summary": "Client listener for entity AgreementSpecificationCreateEvent",
+                "description": "Example of a client listener for receiving the notification AgreementSpecificationCreateEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/AgreementSpecificationCreateEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/agreementSpecificationAttributeValueChangeEvent": {
+            "post": {
+                "operationId": "listenToAgreementSpecificationAttributeValueChangeEvent",
+                "summary": "Client listener for entity AgreementSpecificationAttributeValueChangeEvent",
+                "description": "Example of a client listener for receiving the notification AgreementSpecificationAttributeValueChangeEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/AgreementSpecificationAttributeValueChangeEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/agreementSpecificationStateChangeEvent": {
+            "post": {
+                "operationId": "listenToAgreementSpecificationStateChangeEvent",
+                "summary": "Client listener for entity AgreementSpecificationStateChangeEvent",
+                "description": "Example of a client listener for receiving the notification AgreementSpecificationStateChangeEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/AgreementSpecificationStateChangeEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/listener/agreementSpecificationDeleteEvent": {
+            "post": {
+                "operationId": "listenToAgreementSpecificationDeleteEvent",
+                "summary": "Client listener for entity AgreementSpecificationDeleteEvent",
+                "description": "Example of a client listener for receiving the notification AgreementSpecificationDeleteEvent",
+                "tags": [
+                    "notification listeners (client side)"
+                ],
+                "parameters": [
+                    {
+                        "name": "data",
+                        "required": true,
+                        "in": "body",
+                        "description": "The event data",
+                        "schema": {
+                            "$ref": "#/definitions/AgreementSpecificationDeleteEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Notified",
+                        "schema": {
+                            "$ref": "#/definitions/EventSubscription"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Agreement": {
+            "type": "object",
+            "description": "An agreement represents a contract or arrangement, either written or verbal and sometimes enforceable by law, such as a service level agreement or a customer price agreement. An agreement involves a number of other business entities, such as products, services, and resources and/or their specifications.",
+            "required": [
+                "agreementItem",
+                "agreementType",
+                "engagedParty",
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier for the agreement"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Unique url identifying the agreement as a resource"
+                },
+                "agreementType": {
+                    "type": "string",
+                    "description": "The type of the agreement. For example commercial"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Narrative that explains the agreement and details about the it , such as why the agreement is taking place."
+                },
+                "documentNumber": {
+                    "type": "integer",
+                    "description": "A reference number assigned to an Agreement that follows a prescribed numbering system."
+                },
+                "initialDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date at which the agreement was initialized"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A human-readable name for the agreement"
+                },
+                "statementOfIntent": {
+                    "type": "string",
+                    "description": "An overview and goals of the Agreement"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The current status of the agreement. Typical values are: in process, approved and rejected"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "A string identifying the version of the agreement"
+                },
+                "agreementAuthorization": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementAuthorization"
+                    }
+                },
+                "agreementItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementItem"
+                    },
+                    "minItems": 1
+                },
+                "agreementPeriod": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The time period during which the Agreement is in effect."
+                },
+                "agreementSpecification": {
+                    "$ref": "#/definitions/AgreementSpecificationRef"
+                },
+                "associatedAgreement": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementRef"
+                    }
+                },
+                "characteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    }
+                },
+                "completionDate": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "Date at which the agreement is completed"
+                },
+                "engagedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    },
+                    "minItems": 1
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "Agreement_Create": {
+            "type": "object",
+            "description": "An agreement represents a contract or arrangement, either written or verbal and sometimes enforceable by law, such as a service level agreement or a customer price agreement. An agreement involves a number of other business entities, such as products, services, and resources and/or their specifications.\nSkipped properties: id,href",
+            "required": [
+                "agreementItem",
+                "agreementType",
+                "engagedParty",
+                "name"
+            ],
+            "properties": {
+                "agreementType": {
+                    "type": "string",
+                    "description": "The type of the agreement. For example commercial"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Narrative that explains the agreement and details about the it , such as why the agreement is taking place."
+                },
+                "documentNumber": {
+                    "type": "integer",
+                    "description": "A reference number assigned to an Agreement that follows a prescribed numbering system."
+                },
+                "initialDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date at which the agreement was initialized"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A human-readable name for the agreement"
+                },
+                "statementOfIntent": {
+                    "type": "string",
+                    "description": "An overview and goals of the Agreement"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The current status of the agreement. Typical values are: in process, approved and rejected"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "A string identifying the version of the agreement"
+                },
+                "agreementAuthorization": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementAuthorization"
+                    }
+                },
+                "agreementItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementItem"
+                    },
+                    "minItems": 1
+                },
+                "agreementPeriod": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The time period during which the Agreement is in effect."
+                },
+                "agreementSpecification": {
+                    "$ref": "#/definitions/AgreementSpecificationRef"
+                },
+                "associatedAgreement": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementRef"
+                    }
+                },
+                "characteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    }
+                },
+                "completionDate": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "Date at which the agreement is completed"
+                },
+                "engagedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    },
+                    "minItems": 1
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "Agreement_Update": {
+            "type": "object",
+            "description": "An agreement represents a contract or arrangement, either written or verbal and sometimes enforceable by law, such as a service level agreement or a customer price agreement. An agreement involves a number of other business entities, such as products, services, and resources and/or their specifications.\nSkipped properties: id,href,completionDate",
+            "required": [
+                "agreementItem",
+                "agreementType",
+                "engagedParty",
+                "name"
+            ],
+            "properties": {
+                "agreementType": {
+                    "type": "string",
+                    "description": "The type of the agreement. For example commercial"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Narrative that explains the agreement and details about the it , such as why the agreement is taking place."
+                },
+                "documentNumber": {
+                    "type": "integer",
+                    "description": "A reference number assigned to an Agreement that follows a prescribed numbering system."
+                },
+                "initialDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date at which the agreement was initialized"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A human-readable name for the agreement"
+                },
+                "statementOfIntent": {
+                    "type": "string",
+                    "description": "An overview and goals of the Agreement"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The current status of the agreement. Typical values are: in process, approved and rejected"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "A string identifying the version of the agreement"
+                },
+                "agreementAuthorization": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementAuthorization"
+                    }
+                },
+                "agreementItem": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementItem"
+                    },
+                    "minItems": 1
+                },
+                "agreementPeriod": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The time period during which the Agreement is in effect."
+                },
+                "agreementSpecification": {
+                    "$ref": "#/definitions/AgreementSpecificationRef"
+                },
+                "associatedAgreement": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementRef"
+                    }
+                },
+                "characteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    }
+                },
+                "engagedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    },
+                    "minItems": 1
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "AgreementAuthorization": {
+            "type": "object",
+            "description": "A business participant that is responsible for approving the agreement.",
+            "properties": {
+                "date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date associated with the authorization state."
+                },
+                "signatureRepresentation": {
+                    "type": "string",
+                    "description": "Indication that represents whether the signature is a physical paper signature or a digital signature."
+                },
+                "state": {
+                    "type": "string",
+                    "description": "Current status of the authorization, for example in process, approved, rejected."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "AgreementItem": {
+            "type": "object",
+            "description": "A part of the agreement expressed in terms of a product offering and possibly including specific terms and conditions.",
+            "properties": {
+                "product": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductRef"
+                    },
+                    "description": "The list of products indirectly referred by this agreement item (since an agreement item refers primarily to product offerings)"
+                },
+                "productOffering": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductOfferingRef"
+                    },
+                    "description": "The list of product offerings referred by this agreement item"
+                },
+                "termOrCondition": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementTermOrCondition"
+                    }
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "AgreementRef": {
+            "type": "object",
+            "description": "Agreement reference. An agreement represents a contract or arrangement, either written or verbal and sometimes enforceable by law, such as a service level agreement or a customer price agreement. An agreement involves a number of other business entities, such as products, services, and resources and/or their specifications.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the agreement"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "AgreementSpecCharacteristic": {
+            "type": "object",
+            "description": "A characteristic quality or distinctive feature of an agreement.",
+            "properties": {
+                "configurable": {
+                    "type": "boolean",
+                    "description": "If true, the Boolean indicates that the characteristic is configurable"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A narrative that explains in detail what the characteristic is"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the characteristic being specified."
+                },
+                "valueType": {
+                    "type": "string",
+                    "description": "A kind of value that the characteristic can take on, such as numeric, text and so forth"
+                },
+                "specCharacteristicValue": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementSpecCharacteristicValue"
+                    }
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period for which the specification characteristic is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "AgreementSpecCharacteristicValue": {
+            "type": "object",
+            "description": "A number or text that can be assigned to an agreement specification characteristic.",
+            "properties": {
+                "default": {
+                    "type": "boolean",
+                    "description": "Indicates if the value is the default value for a characteristic"
+                },
+                "unitOfMeasure": {
+                    "type": "string",
+                    "description": "Unit of measure for the characteristic, such as minutes, gigabytes (GB) and so on."
+                },
+                "valueFrom": {
+                    "type": "string",
+                    "description": "The low range value that a characteristic can take on"
+                },
+                "valueTo": {
+                    "type": "string",
+                    "description": "The upper range value that a characteristic can take on"
+                },
+                "valueType": {
+                    "type": "string",
+                    "description": "A kind of value that the characteristic can take on, such as numeric, text, and so forth"
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period of time for which a value is applicable"
+                },
+                "value": {
+                    "$ref": "#/definitions/Any",
+                    "description": "A discrete value that the characteristic can take on"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "AgreementSpecification": {
+            "type": "object",
+            "description": "A template of an agreement that can be used when establishing partnerships",
+            "required": [
+                "attachment",
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the agreement specification"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the agreement specification"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A narrative that explains in detail what the agreement specification is about"
+                },
+                "isBundle": {
+                    "type": "boolean",
+                    "description": "If true, this agreement specification is a grouping of other agreement specifications. The list of bundled agreement specifications is provided by the specificationRelationship property"
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time of the last update"
+                },
+                "lifecycleStatus": {
+                    "type": "string",
+                    "description": "Indicates the current lifecycle status"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the agreement specification"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "Agreement specification version"
+                },
+                "attachment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AttachmentRefOrValue"
+                    },
+                    "minItems": 1
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    }
+                },
+                "serviceCategory": {
+                    "$ref": "#/definitions/CategoryRef"
+                },
+                "specificationCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementSpecCharacteristic"
+                    }
+                },
+                "specificationRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementSpecificationRelationship"
+                    }
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period for which the agreement specification is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "AgreementSpecification_Create": {
+            "type": "object",
+            "description": "A template of an agreement that can be used when establishing partnerships\nSkipped properties: id,href",
+            "required": [
+                "attachment",
+                "name"
+            ],
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "A narrative that explains in detail what the agreement specification is about"
+                },
+                "isBundle": {
+                    "type": "boolean",
+                    "description": "If true, this agreement specification is a grouping of other agreement specifications. The list of bundled agreement specifications is provided by the specificationRelationship property"
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time of the last update"
+                },
+                "lifecycleStatus": {
+                    "type": "string",
+                    "description": "Indicates the current lifecycle status"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the agreement specification"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "Agreement specification version"
+                },
+                "attachment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AttachmentRefOrValue"
+                    },
+                    "minItems": 1
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    }
+                },
+                "serviceCategory": {
+                    "$ref": "#/definitions/CategoryRef"
+                },
+                "specificationCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementSpecCharacteristic"
+                    }
+                },
+                "specificationRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementSpecificationRelationship"
+                    }
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period for which the agreement specification is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "AgreementSpecification_Update": {
+            "type": "object",
+            "description": "A template of an agreement that can be used when establishing partnerships\nSkipped properties: id,href",
+            "required": [
+                "attachment",
+                "name"
+            ],
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "A narrative that explains in detail what the agreement specification is about"
+                },
+                "isBundle": {
+                    "type": "boolean",
+                    "description": "If true, this agreement specification is a grouping of other agreement specifications. The list of bundled agreement specifications is provided by the specificationRelationship property"
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Date and time of the last update"
+                },
+                "lifecycleStatus": {
+                    "type": "string",
+                    "description": "Indicates the current lifecycle status"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the agreement specification"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "Agreement specification version"
+                },
+                "attachment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AttachmentRefOrValue"
+                    },
+                    "minItems": 1
+                },
+                "relatedParty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RelatedParty"
+                    }
+                },
+                "serviceCategory": {
+                    "$ref": "#/definitions/CategoryRef"
+                },
+                "specificationCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementSpecCharacteristic"
+                    }
+                },
+                "specificationRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgreementSpecificationRelationship"
+                    }
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period for which the agreement specification is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "AgreementSpecificationRef": {
+            "type": "object",
+            "description": "AgreementSpecification reference. An AgreementSpecification represents a template of an agreement that can be used when establishing partnerships.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A narrative that explains in detail what the agreement specification is about."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the agreement specification"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "AgreementSpecificationRelationship": {
+            "type": "object",
+            "description": "A relationship between agreement specifications. Typical relationships are substitution and dependency.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "Type of relationship such as, substitution or dependency."
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period for which the relationship is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            }
+        },
+        "AgreementTermOrCondition": {
+            "type": "object",
+            "description": "Aspects of the agreement not formally specified elsewhere in the agreement and that cannot be captured elsewhere in a formal notation, or automatically monitored and require a more human level of management.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique number assigned for reference."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Text that explains the term or condition of the agreement."
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period of time during which the term or condition of the agreement applies."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "Any": {},
+        "Attachment": {
+            "type": "object",
+            "description": "Complements the description of an element (for instance a product) through video, pictures...",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier for this particular attachment"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "URI for this Attachment"
+                },
+                "attachmentType": {
+                    "type": "string",
+                    "description": "Attachment type such as video, picture"
+                },
+                "content": {
+                    "type": "string",
+                    "description": "The actual contents of the attachment object, if embedded, encoded as base64"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A narrative text describing the content of the attachment"
+                },
+                "mimeType": {
+                    "type": "string",
+                    "description": "Attachment mime type such as extension file for video, picture and document"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the attachment"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "Uniform Resource Locator, is a web page address (a subset of URI)"
+                },
+                "size": {
+                    "$ref": "#/definitions/Quantity",
+                    "description": "The size of the attachment."
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period of time for which the attachment is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "AttachmentRef": {
+            "type": "object",
+            "description": "Attachment reference. An attachment complements the description of an element (for instance a product) through video, pictures",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique-Identifier for this attachment"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "URL serving as reference for the attachment resource"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A narrative text describing the content of the attachment"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "url": {
+                    "type": "string",
+                    "description": "Link to the attachment media/content"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "AttachmentRefOrValue": {
+            "type": "object",
+            "description": "An attachment by value or by reference. An attachment complements the description of an element, for example through a document, a video, a picture.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier for this particular attachment"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "URI for this Attachment"
+                },
+                "attachmentType": {
+                    "type": "string",
+                    "description": "Attachment type such as video, picture"
+                },
+                "content": {
+                    "type": "string",
+                    "description": "The actual contents of the attachment object, if embedded, encoded as base64"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A narrative text describing the content of the attachment"
+                },
+                "mimeType": {
+                    "type": "string",
+                    "description": "Attachment mime type such as extension file for video, picture and document"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the attachment"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "Uniform Resource Locator, is a web page address (a subset of URI)"
+                },
+                "size": {
+                    "$ref": "#/definitions/Quantity",
+                    "description": "The size of the attachment."
+                },
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod",
+                    "description": "The period of time for which the attachment is valid"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            }
+        },
+        "CategoryRef": {
+            "type": "object",
+            "description": "The category for grouping recommendations",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "version": {
+                    "type": "string",
+                    "description": "Category version"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "Characteristic": {
+            "type": "object",
+            "description": "Describes a given characteristic of an object or entity through a name/value pair.",
+            "required": [
+                "name",
+                "value"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of the characteristic"
+                },
+                "valueType": {
+                    "type": "string",
+                    "description": "Data type of the value of the characteristic"
+                },
+                "value": {
+                    "$ref": "#/definitions/Any",
+                    "description": "The value of the characteristic"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                }
+            }
+        },
+        "EntityRef": {
+            "type": "object",
+            "description": "Entity reference schema to be use for all entityRef class.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "ProductOfferingRef": {
+            "type": "object",
+            "description": "ProductOffering reference. A product offering represents entities that are orderable from the provider of the catalog, this resource includes pricing information.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "ProductRef": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "Quantity": {
+            "type": "object",
+            "description": "An amount in a given unit",
+            "properties": {
+                "amount": {
+                    "default": 1,
+                    "type": "number",
+                    "format": "float",
+                    "description": "Numeric value in a given unit"
+                },
+                "units": {
+                    "type": "string",
+                    "description": "Unit"
+                }
+            }
+        },
+        "RelatedParty": {
+            "type": "object",
+            "description": "Related Entity reference. A related party defines party or party role linked to a specific entity.",
+            "required": [
+                "@referredType",
+                "id",
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of a related entity."
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the related entity."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "role": {
+                    "type": "string",
+                    "description": "Role played by the related party"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            }
+        },
+        "TimePeriod": {
+            "type": "object",
+            "description": "A period of time, either as a deadline (endDateTime only) a startDateTime only, or both",
+            "properties": {
+                "endDateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "End of the time period, using IETC-RFC-3339 format"
+                },
+                "startDateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Start of the time period, using IETC-RFC-3339 format. If you define a start, you must also define an end"
+                }
+            }
+        },
+        "EventSubscription": {
+            "type": "object",
+            "description": "Sets the communication endpoint address the service instance must use to deliver notification information",
+            "required": [
+                "id",
+                "callback"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Id of the listener"
+                },
+                "callback": {
+                    "type": "string",
+                    "description": "The callback being registered."
+                },
+                "query": {
+                    "type": "string",
+                    "description": "additional data to be passed"
+                }
+            }
+        },
+        "EventSubscriptionInput": {
+            "type": "object",
+            "description": "Sets the communication endpoint address the service instance must use to deliver notification information",
+            "required": [
+                "callback"
+            ],
+            "properties": {
+                "callback": {
+                    "type": "string",
+                    "description": "The callback being registered."
+                },
+                "query": {
+                    "type": "string",
+                    "description": "additional data to be passed"
+                }
+            }
+        },
+        "AgreementCreateEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the resource involved in the event"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the resource involved in the event"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explanatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                },
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/AgreementCreateEventPayload"
+                }
+            }
+        },
+        "AgreementCreateEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "agreement": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/Agreement"
+                }
+            }
+        },
+        "AgreementAttributeValueChangeEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explanatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                },
+                "fieldPath": {
+                    "type": "string",
+                    "description": "The path identifying the object field concerned by this notification."
+                },
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/AgreementAttributeValueChangeEventPayload"
+                }
+            }
+        },
+        "AgreementAttributeValueChangeEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "agreement": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/Agreement"
+                }
+            }
+        },
+        "AgreementStateChangeEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the resource involved in the event"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the resource involved in the event"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explanatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                },
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/AgreementStateChangeEventPayload"
+                }
+            }
+        },
+        "AgreementStateChangeEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "agreement": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/Agreement"
+                }
+            }
+        },
+        "AgreementDeleteEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the resource involved in the event"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the resource involved in the event"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explanatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                },
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/AgreementDeleteEventPayload"
+                }
+            }
+        },
+        "AgreementDeleteEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "agreement": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/Agreement"
+                }
+            }
+        },
+        "AgreementSpecificationCreateEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the resource involved in the event"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the resource involved in the event"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explanatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                },
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/AgreementSpecificationCreateEventPayload"
+                }
+            }
+        },
+        "AgreementSpecificationCreateEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "agreementSpecification": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/AgreementSpecification"
+                }
+            }
+        },
+        "AgreementSpecificationAttributeValueChangeEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explanatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                },
+                "fieldPath": {
+                    "type": "string",
+                    "description": "The path identifying the object field concerned by this notification."
+                },
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/AgreementSpecificationAttributeValueChangeEventPayload"
+                }
+            }
+        },
+        "AgreementSpecificationAttributeValueChangeEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "agreementSpecification": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/AgreementSpecification"
+                }
+            }
+        },
+        "AgreementSpecificationStateChangeEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the resource involved in the event"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the resource involved in the event"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explanatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                },
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/AgreementSpecificationStateChangeEventPayload"
+                }
+            }
+        },
+        "AgreementSpecificationStateChangeEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "agreementSpecification": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/AgreementSpecification"
+                }
+            }
+        },
+        "AgreementSpecificationDeleteEvent": {
+            "type": "object",
+            "description": "The notification data structure",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the resource involved in the event"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the resource involved in the event"
+                },
+                "eventId": {
+                    "type": "string",
+                    "description": "The identifier of the notification."
+                },
+                "eventTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Time of the event occurrence."
+                },
+                "eventType": {
+                    "type": "string",
+                    "description": "The type of the notification."
+                },
+                "correlationId": {
+                    "type": "string",
+                    "description": "The correlation id for this event."
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The domain of the event."
+                },
+                "title": {
+                    "type": "string",
+                    "description": "The title of the event."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An explanatory of the event."
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "A priority."
+                },
+                "timeOcurred": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The time the event occured."
+                },
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/AgreementSpecificationDeleteEventPayload"
+                }
+            }
+        },
+        "AgreementSpecificationDeleteEventPayload": {
+            "type": "object",
+            "description": "The event data structure",
+            "properties": {
+                "agreementSpecification": {
+                    "description": "The involved resource data for the event",
+                    "$ref": "#/definitions/AgreementSpecification"
+                }
+            }
+        },
+        "Error": {
+            "description": "Used when an API throws an Error, typically with a HTTP error response-code (3xx, 4xx, 5xx)",
+            "type": "object",
+            "required": [
+                "code",
+                "reason"
+            ],
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "description": "Application relevant detail, defined in the API or a common list."
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "Explanation of the reason for the error which can be shown to a client user."
+                },
+                "message": {
+                    "type": "string",
+                    "description": "More details and corrective actions related to the error which can be shown to a client user."
+                },
+                "status": {
+                    "type": "string",
+                    "description": "HTTP Error code extension"
+                },
+                "referenceError": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URI of documentation describing the error."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class."
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class entity name."
+                }
+            }
+        }
+    }
+}

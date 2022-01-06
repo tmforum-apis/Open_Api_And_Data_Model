@@ -1,0 +1,105 @@
+{
+    "id": "21",
+    "href": "https://serverRoot/tmf-api/appointment/v4/appointment/21",
+    "@type": "Appointment",
+    "category": "intervention",
+    "creationDate": "2018-02-01T14:40:43.000Z",
+    "description": "Fix an internet connexion problem for a customer",
+    "status": "accepted",
+    "externalId": "432113",
+    "lastUpdate": "2018-02-04T14:40:43.000Z",
+    "validFor": {
+        "startDateTime": "2018-02-15T14:00:00.000Z",
+        "endDateTime": "2018-02-15T16:00:00.000Z"
+    },
+    "attachment": [
+        {
+            "id": "4444",
+            "href": "https://serverRoot/tmf-api/documentManagement/v4/customerContract/4444",
+            "@referredType": "CustomerContract"
+        },
+        {
+            "name": "customer agreement for intervention",
+            "description": "The customer authorizes the technician to modify his installation",
+            "agreementDate": "2018-02-03T10:28:35.000Z",
+            "url": "https://documentManager/85745/customerAgreement325.pdf",
+            "@type": "CustomerAgreement",
+            "@schemaLocation": "../CustomerAgreement.schema.json"
+        }
+    ],
+    "calendarEvent": {
+        "id": "33",
+        "href": "https://serverRoot/tmf-api/timeManagement/v4/calendarEvent/33",
+        "name": "Intervention calendar event"
+    },
+    "contactMedium": [
+        {
+            "mediumType": "phoneNumber",
+            "preferred": true,
+            "characteristic": {
+                "phoneNumber": "+33650981065",
+                "type": "mobile"
+            },
+            "validFor": {
+                "startDateTime": "2018-02-01T14:40:43.000Z",
+                "endDateTime": ""
+            }
+        }
+    ],
+    "note": [
+        {
+            "date": "2018-02-04T11:00:18.000Z",
+            "author": "Ludovic Robert",
+            "text": "Problem explained to the technician"
+        },
+        {
+            "date": "2018-02-04T14:40:43.000Z",
+            "author": "Ludovic Robert",
+            "text": "Work order generated"
+        }
+    ],
+    "relatedEntity": [
+        {
+            "id": "789",
+            "href": "https://serverRoot/tmf-api/troubleTicket/v4/troubleTicket/789",
+            "role": "Problem description",
+            "name": "Internet connexion problem to solve",
+            "@referredType": "TroubleTicket"
+        },
+        {
+            "id": "465",
+            "href": "https://serverRoot/tmf-api/workForceManagement/v4/workOrder/465",
+            "role": "work order description",
+            "name": "Work order generated for technician intervention",
+            "@referredType": "WorkOrder"
+        }
+    ],
+    "relatedParty": [
+        {
+            "id": "32",
+            "href": "https://serverRoot/tmf-api/partyManagement/v4/individual/32",
+            "role": "customer",
+            "name": "Kate Smith",
+            "@referredType": "Individual"
+        },
+        {
+            "id": "56",
+            "href": "https://serverRoot/tmf-api/partyManagement/v4/individual/56",
+            "role": "technician",
+            "name": "John Doe",
+            "@referredType": "Individual"
+        }
+    ],
+    "relatedPlace": {
+        "name": "client's address",
+        "role": "interventionAddress",
+        "streetNr": "96",
+        "streetType": "avenue",
+        "streetName": "de Versailles",
+        "postCode": "75016",
+        "city": "Paris",
+        "country": "France",
+        "@type": "GeographicAddress",
+        "@schemaLocation": "../geographicAddress.schema.json"
+    }
+}

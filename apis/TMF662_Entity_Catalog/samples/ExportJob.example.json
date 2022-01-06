@@ -1,0 +1,12 @@
+{
+    "completionDate": "2020-08-25T00:05", 
+    "contentType": "application/json", 
+    "creationDate": "2020-08-25T00:00", 
+    "errorLog": "http://my-platform/daily/logging/exportJobErrors.log", 
+    "href": "https://mycsp.com:8080/tmf-api/entityCatalogManagement/v4/exportJob/2003", 
+    "id": "2003", 
+    "path": "entityCatalogManagement/", 
+    "query": "@type=JobSpecification", 
+    "status": "completed", 
+    "url": "ftp://ftp.mycsp.com/entityCatalogManagement/exportJob.json"
+}

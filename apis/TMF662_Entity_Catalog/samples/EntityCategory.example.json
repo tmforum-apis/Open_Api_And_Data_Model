@@ -1,0 +1,20 @@
+{
+    "id": "2027", 
+    "href": "https://mycsp.com:8080/tmf-api/entityCatalogManagement/v4/entityCategory/2027", 
+    "name": "Tosca Node Types", 
+    "description": "A category to hold all available Tosca Node Types", 
+    "version": "1.0", 
+    "validFor": {
+        "startDateTime": "2020-08-25T00:00", 
+        "endDateTime": "2023-11-24T00:00"
+    }, 
+    "lifecycleStatus": "Active", 
+    "lastUpdate": "2020-08-25T00:00", 
+    "isRoot": true, 
+    "parentId": "",
+    "entityCatalogItem": [], 
+    "childCategory": [], 
+    "@type": "EntityCategory", 
+    "@schemalLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntityCategory.schema.json", 
+    "@baseType": "Category" 
+}

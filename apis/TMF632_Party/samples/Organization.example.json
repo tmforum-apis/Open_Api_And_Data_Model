@@ -1,0 +1,163 @@
+{
+  "id": "128",
+  "href": "https://serverRoot/tmf-api/party/v4/organization/128",
+  "@type": "organization",
+  "isLegalEntity": true,
+  "isHeadOffice": true,
+  "organizationType": "company",
+  "existsDuring": {
+    "startDateTime": "2015-10-22T08:31:52.026Z"
+  },
+  "tradingName": "Coffee Do Brazil Fair Trade",
+  "nameType": "inc",
+  "status": "validated",
+  "externalReference": [
+    {
+      "name": "http://coffeedobrazil.com",
+      "externalReferenceType": "internetSite"
+    }
+  ],
+  "partyCharacteristic": [
+    {
+      "name": "number of employees",
+      "value": "125",
+      "valueType": "number"
+    },
+    {
+      "name": "market segment",
+      "value": "Food wholesale",
+      "valueType": "string"
+    }
+  ],
+  "otherName": [
+  {
+        "nameType": "inc",
+        "tradingName": "General Coffee",
+        "validFor": {
+          "startDateTime": "2015-10-22T08:31:52.026Z",
+          "endDateTime": "2017-10-22T08:31:52.026Z"
+        }
+    }
+  ],
+  "organizationIdentification": [
+    {
+      "identificationType": "commercialRegistration",
+      "identificationId": "12345678",
+      "issuingAuthority": "US Government",
+      "issuingDate": "2015-10-22T08:31:52.028Z",
+      "validFor": {
+        "startDateTime": "2015-10-22T08:31:52.028Z"
+      },
+      "attachment":
+        {
+          "attachmentType": "documentCopy",
+          "name": "RegistrationCertificate421.pdf",
+          "description": "Scanned copy of the registration certificate",
+          "mimeType": "application/pdf",
+          "url": "http://DocumentManager/421/RegistrationCertificate421.pdf"
+        }
+    }
+  ],
+    "taxExemptionCertificate": [
+        {
+            "id": "1",
+            "validFor": {
+                "startDateTime": "2018-10-22T07:49:25.246Z"
+            },
+            "certificateNumber": "9875755432345", 
+            "issuingJurisdiction": "USA", 
+            "reason": "Voluntary Body", 
+            "taxDefinition": [
+                {
+                    "id": "96",
+                    "name": "Value Added Tax",
+                    "taxType": "federalVat"
+                }
+            ],
+            "attachment": {
+                "attachmentType": "taxExemptionCertificate",
+                "name": "TaxExemptionCertificate-233322.pdf",
+                "description": "Electronic version of the tax exemption certificate",
+                "mimeType": "application/pdf",
+                "url": "https://mycsp.com:8080/DocumentManager/666/TaxExemptionCertificate-233322.pdf"
+            }
+        }
+    ],
+  "creditRating": [
+    {
+      "creditAgencyName": "Experian",
+      "creditAgencyType": "externalAgency",
+      "ratingReference": "ref456",
+      "ratingScore": 400,
+      "validFor": {
+        "startDateTime": "2018-10-22T08:31:52.028Z"
+      }
+    }
+  ],
+  "relatedParty": [
+    {
+      "id": "54",
+      "href": "https://serverRoot/tmf-api/party/v4/individual/54",
+      "name": "Carlos Mafalda",
+      "role": "director",
+      "@referredType": "individual"
+    },
+    {
+      "id": "42",
+      "href": "https://serverRoot/tmf-api/party/v4/individual/42",
+      "name": "Jane Lamborgizzia",
+      "role": "employer",
+      "@referredType": "individual"
+    }
+  ],
+  "contactMedium": [
+    {
+      "preferred": true,
+      "mediumType": "email",
+      "validFor": {
+        "startDateTime": "2018-10-22T08:31:52.028Z"
+      },
+      "characteristic": {
+        "emailAddress": "jane.lamborgizzia@coffeedobrazil.com"
+      }
+    },
+    {
+      "preferred": false,
+      "mediumType": "postalAddress",
+      "validFor": {
+        "startDateTime": "2018-10-22T08:31:52.028Z"
+      },
+      "characteristic": {
+        "city": "Morristown",
+        "country": "USA",
+        "postCode": "07960",
+        "stateOrProvince": "New Jersey",
+        "street1": "240 Headquarters Plazza",
+        "street2": "East Tower 10th Floor"
+      }
+    }
+  ],
+  "organizationParentRelationship": {
+    "relationshipType": "juridical",
+    "organization": {
+      "id": "800",
+      "href": "https://serverRoot/tmf-api/party/v4/organization/800"
+    }
+  },
+  "organizationChildRelationship": [
+    {
+      "relationshipType": "juridical",
+      "organization": {
+        "id": "149",
+        "href": "https://serverRoot/tmf-api/party/v4/organization/149"
+      }
+    },
+    {
+      "relationshipType": "juridical",
+      "organization": {
+        "id": "150",
+        "href": "https://serverRoot/tmf-api/party/v4/organization/150"
+      }
+    }
+  ]
+}

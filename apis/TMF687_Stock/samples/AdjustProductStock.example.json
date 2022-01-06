@@ -1,0 +1,28 @@
+{
+  "id": "23",
+  "href": "http://serverlocation:port/stockManagement/v4/adjustStock/23",
+  "adjustReason": "Inventory check",
+  "completedAdjustProductStockDate": "2020-09-24T08:53:33.954Z",
+  "creationDate": "2020-09-24T08:53:33.954Z",
+  "description": "inventory check update",
+  "instantSyncAdjust": true,
+  "requestedAdjustProductStockDate": "2020-09-24T08:53:33.954Z",
+  "adjustProductStockItem": [
+    {
+      "id": "1",
+      "adjustProductStockQuantity": {
+        "amount": 26,
+        "units": "box"
+      },
+      "productStockTarget": {
+        "id": "42",
+        "href": "http://serverlocation:port/stockManagement/v4/productStock/42",
+        "@type": "ProductStock"
+      },
+      "state": "accepted",
+      "@type": "AdjustProductStockItem"
+    }
+  ],
+  "state": "accepted",
+  "@type": "AdjustProductStock"
+}

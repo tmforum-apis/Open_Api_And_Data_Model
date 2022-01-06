@@ -1,0 +1,38 @@
+{
+    "id": "6007", 
+    "href": "https://mycsp.com:8080/tmf-api/entityCatalogManagement/v4/entityCatalogItem/6007", 
+    "name": "ProjectTemplate", 
+    "description": "This object Offers provision of a project template", 
+    "version": "1.0", 
+    "validFor": {
+        "startDateTime": "2020-11-06T00:00", 
+        "endDateTime": "2023-09-10T00:00"
+    }, 
+    "lastUpdate": "2020-11-06T00:00", 
+    "lifecycleStatus": "Active", 
+    "category": [
+        {
+            "id": "6043", 
+            "href": "https://mycsp.com:8080/tmf-api/entityCatalogManagement/v4/entityCategory/6043", 
+            "version": "1.0", 
+            "name": "Template",
+            "@referredType": "Template",
+            "@type": "EntityCategoryRef", 
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntityCategoryRef.schema.json", 
+            "@baseType": ""
+        }
+    ], 
+    "specification": {
+        "id": "6823", 
+        "href": "https://mycsp.com:8080/tmf-api/entityCatalogManagement/v4/entitySpecification/6823", 
+        "version": "1.0", 
+        "name": "Task-focused project Specification", 
+        "@referredType": "EntitySpecificationRef",
+        "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntitySpecificationRef.schema.json", 
+        "@baseType": "",
+        "@type": "EntitySpecificationRef"
+    }, 
+    "@type": "EntityCatalogItem", 
+    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntityCatalogItem.schema.json", 
+    "@baseType": ""
+}

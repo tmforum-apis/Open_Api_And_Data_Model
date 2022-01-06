@@ -1,0 +1,37 @@
+{
+  "id" : "4fd-ty56-gg55-3",
+  "href": ".../processFlowManagement/v4/processFlow/4fd-ty56-gg55/taskFlow/4fd-ty56-gg55-3",
+  "completionMethod": "automatic",
+  "isMandatory": true,
+  "priority": 0,
+  "taskFlowSpecificationRef": {
+        "id": "tfs1",
+        "href": ".../processFlowManagement/v4/TaskFlowSpecification/tfs1",
+        "name": "SCinit",
+        "@type": "TaskFlowSpecificationRef",
+        "@referredType": "TaskFlowSpecification"
+  },
+  "relatedEntity": [
+    {
+        "id": "qq12-gg22",
+        "href": ".../shoppingCartManagement/v4/shoppingCart/qq12-gg22",
+        "name": "web ShoppingCart for Jean Pontus",
+        "role": "shoppingCart",
+        "@referredType": "ShoppingCart",
+        "@type": "RelatedEntity"
+    }
+  ],
+  "state": "completed",
+  "taskFlowRelationship": [
+    {
+      "relationshipType": "nextTask",
+      "taskFlow": {
+        "id": "4fd-ty56-gg55-4",
+        "href": ".../processFlowManagement/v1/taskFlow/4fd-ty56-gg55-4",
+        "@type": "TaskFlow"
+      }
+    }
+  ],
+  "@type": "TaskFlow",
+  "@baseType": "TaskFlow"
+}

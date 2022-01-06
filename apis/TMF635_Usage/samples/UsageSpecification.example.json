@@ -1,0 +1,86 @@
+{
+  "id": "9aa3-3e7737dd5080",
+  "href": "https://api.csp.com/tmf-api/usageManagement/v4/usageSpecification/9aa3-3e7737dd5080",
+  "description": "Specification for voice calls usage",
+  "name": "Voice-Call-Specification",
+  "usageSpecCharacteristic": [
+    {
+      "name": "originatingCountryCode",
+      "description": "country code of the caller",
+      "configurable": "true",
+      "valueType": "number",
+      "minCardinality": 1,
+      "maxCardinality": 1,
+      "isUnique": true
+    },
+    {
+      "name": "originatingNumber",
+      "description": "phone number of the caller",
+      "configurable": "true",
+      "valueType": "number",
+      "minCardinality": 1,
+      "maxCardinality": 1,
+      "isUnique": true
+    },
+    {
+      "name": "destinationCountryCode",
+      "description": "country code of the called party",
+      "configurable": "true",
+      "valueType": "number",
+      "minCardinality": 1,
+      "maxCardinality": 1,
+      "isUnique": true
+    },
+    {
+      "name": "destinationNumber",
+      "description": "phone number of the called party",
+      "configurable": "true",
+      "valueType": "number",
+      "minCardinality": 1,
+      "maxCardinality": 1,
+      "isUnique": true
+    },
+    {
+      "name": "duration",
+      "description": "duration of the call",
+      "configurable": "true",
+      "valueType": "number",
+      "minCardinality": 1,
+      "maxCardinality": 1
+    },
+    {
+      "name": "unit",
+      "description": "unit of the duration",
+      "configurable": "true",
+      "valueType": "string",
+      "minCardinality": 0,
+      "maxCardinality": 1,
+      "usageSpecCharacteristicValue": [
+        {
+          "isDefault": true,
+          "value": "SEC"
+        }
+      ]
+    },
+    {
+      "name": "startDateTime",
+      "description": "startdate and starttime of the call",
+      "configurable": "true",
+      "valueType": "dateTime",
+      "minCardinality": 1,
+      "maxCardinality": 1
+    },
+    {
+      "name": "endDateTime",
+      "description": "enddate and endtime of the call",
+      "configurable": "true",
+      "valueType": "dateTime",
+      "minCardinality": 1,
+      "maxCardinality": 1
+    }
+  ],
+  "validFor": {
+    "startDateTime": "2022-02-20T17:00:00.000Z",
+    "endDateTime": "2099-01-11T00:00:00.000Z"
+  }
+}

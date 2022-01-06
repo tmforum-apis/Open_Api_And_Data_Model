@@ -1,0 +1,22 @@
+{
+    "__comment": "User Jane Doe is a product marketeer for mobile, she can create mobile offerings and prices, but not in other lines of business. No LoB explicit field in ProductOffering so using category to signify",
+	"entitlement": {
+	    "function": "ProductOffering",
+	    "action": "create"
+	},
+	"entity": {
+        "@type": "ProductOffering",
+        "name": "Basic Firewall for Business", 
+        "category": [
+            {
+                "id": "2645", 
+                "href": "https://mycsp.com:8080/tmf-api/productCatalogManagement/v4/category/2645", 
+                "version": "2.1", 
+                "name": "Mobile"
+            }
+        ] 
+	},
+	"user": {
+	    "userID": "JaneDoe"
+	}
+}
