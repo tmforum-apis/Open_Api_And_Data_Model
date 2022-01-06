@@ -1,0 +1,210 @@
+{
+  "id": "problemxxxx0000",
+  "href": "https://mycsp.com:8080/tmf-api/serviceProblemManagement/v4/serviceProblem/problemxxxx0000",
+  "@type": "ServiceProblem",
+  "affectedNumberOfServices": 2,
+  "category": "supplier.originated",
+  "creationDate": "2020-12-14T08:20:00.123Z",
+  "description": "connection failure between Tokyo and Osaka",
+  "impactImportanceFactor": "0",
+  "lastUpdate": "2020-12-14T08:20:00.123Z",
+  "name": "My Service Problem",
+  "originatingSystem": "System_001",
+  "priority": 1,
+  "problemEscalation": "0",
+  "reason": "Failure of resource NP1_Resource_1 in NP1",
+  "resolutionDate": "2020-12-28T08:20:00.123Z",
+  "status": "resolved",
+  "statusChangeDate": "2020-12-28T08:20:00.123Z",
+  "statusChangeReason": "problem analysis has been completed in NP1",
+  "externalIdentifier": [
+    {
+      "id": "MC2255771199555",
+      "href": "https://MagentoCommerce.com:8080/productOrderingManagement/v4/productOrder/MC2255771199555",
+      "externalIdentifierType": "ProductOrder",
+      "owner": "MagentoCommerce"
+    }
+  ],
+  "parentProblem": [
+    {
+      "id": "problemxxxx0001",
+      "href": "https://mycsp.com:8080/tmf-api/serviceProblemManagement/v4/serviceProblem/problemxxxx0001"
+    }
+  ],
+  "underlyingProblem": [
+    {
+      "id": "problemxxxx0001",
+      "href": "https://mycsp.com:8080/tmf-api/serviceProblemManagement/v4/serviceProblem/problemxxxx0001"
+    }
+  ],
+  "affectedService": [
+    {
+      "id": "NP1_Tokyo_Osaka",
+      "href": "https://mycsp.com:8080/tmf-api/serviceInventoryManagement/v4/service/NW1_Tokyo_Osaka"
+    },
+    {
+      "id": "NP1_Tokyo_xxxx",
+      "href": "https://mycsp.com:8080/tmf-api/serviceInventoryManagement/v4/service/NW1_Tokyo_xxxx"
+    }
+  ],
+  "affectedLocation": [
+    {
+      "id": "Loc000000",
+      "href": "https://mycsp.com:8080/tmf-api/geographicAddressManagement/v4/geographicAddress/Loc000000",
+      "name": "144 Main Street Tokyo 51663556",
+      "role": "VPN Endpoint",
+      "@referredType": "GeographicAddress"
+    },
+    {
+      "id": "Loc000001",
+      "href": "https://mycsp.com:8080/tmf-api/geographicAddressManagement/v4/geographicAddress/Loc000001",
+      "name": "351 Main Street Osaka 3546365",
+      "role": "VPN Endpoint",
+      "@referredType": "GeographicAddress"
+    }
+  ],
+  "firstAlert": {
+    "id": "NP1_TT_0000000",
+    "href": "https://mycsp.com:8080/tmf-api/troubleTicket/v4/troubleTicket/NP1_TT_000000",
+    "name": "Escalated Trouble Ticket",
+    "role": "First Alert",
+    "@referredType": "TroubleTicket"
+  },
+  "relatedEntity": [
+    {
+      "id": "product0001",
+      "href": "https://mycsp.com:8080/tmf-api/productInventoryManagement/v4/product/product0001",
+      "name": "Related Product",
+      "role": "Affected Product",
+      "@referredType": "Product"
+    }
+  ],
+  "relatedEvent": [
+    {
+      "@referredType": "prediction",
+      "id": "prediction_0001",
+      "href": "https://mycsp.com:8080/tmf-api/eventManagement/v4/event/prediction_0001",
+      "eventTime": "2020-12-14T08:20:00.123Z"
+    }
+  ],
+  "note": [
+    {
+      "author": "SPM It Team",
+      "date": "2020-12-14T08:20:00.123Z",
+      "id": "SPM_handler_01",
+      "text": "receive trouble ticket from NP1, and created this Service Problem"
+    },
+    {
+      "author": "NP It Team",
+      "date": "2020-12-14T08:20:00.123Z",
+      "id": "NP1_handler_11",
+      "text": "status changed to Progress-Held"
+    }
+  ],
+  "trackingRecord": [
+    {
+      "description": "yyy cleared the problem",
+      "id": "TR_0001",
+      "systemId": "xxxx",
+      "time": "2020-12-14T08:20:00.123Z",
+      "user": "NPUSER1",
+      "characteristic": [
+        {
+          "id": "CH_001",
+          "name": "vendorComment",
+          "value": "Watch out for the dog",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "characteristic": [
+    {
+      "id": "CH_002",
+      "name": "EstimatedCost",
+      "value": "20",
+      "valueType": "string"
+    }
+  ],
+  "impactPattern": {
+    "description": "Many services are at risk in this problem",
+    "id": "TR_0002",
+    "characteristic": [
+      {
+        "id": "CH_003",
+        "name": "ImpactProbability",
+        "value": true,
+        "valueType": "boolean"
+      }
+    ]
+  },
+  "responsibleParty": {
+    "role": "Supplier",
+    "id": "NP1",
+    "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/organization/NP1",
+    "@referredType": "Organization"
+  },
+  "originatorParty": {
+    "role": "Supplier",
+    "id": "NP1",
+    "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/organization/NP1",
+    "@referredType": "Organization"
+  },
+  "relatedParty": [
+    {
+      "role": "Supplier",
+      "id": "NP1",
+      "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/organization/NP1",
+      "@referredType": "Organization"
+    },
+    {
+      "role": "Partner",
+      "id": "SP1",
+      "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/organization/SP1",
+      "@referredType": "Organization"
+    },
+    {
+      "role": "Partner",
+      "id": "SP3",
+      "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/organization/SP3",
+      "@referredType": "Organization"
+    }
+  ],
+  "affectedResource": [
+    {
+      "id": "NP1_RES_0001",
+      "href": "https://mycsp.com:8080/tmf-api/resourceInventoryManagement/v4/resource/NW1_RES_0001"
+    }
+  ],
+  "troubleTicket": [
+    {
+      "id": "NP1_TT_0000000",
+      "href": "https://mycsp.com:8080/tmf-api/troubleTicket/v4/troubleTicket/NP1_TT_000000"
+    }
+  ],
+  "underlyingAlarm": [
+    {
+      "id": "NP1_A_0000000",
+      "href": "https://mycsp.com:8080/tmf-api/alarmManagement/v4/alarm/8675309",
+      "@referredType": "ResourceAlarm"
+    }
+  ],
+  "slaViolation": [
+    {
+      "id": "NP1_SLA_0000000",
+      "href": "https://mycsp.com:8080/tmf-api/slaManagement/v4/serviceLevelAgreementViolation/4504"
+    }
+  ],
+  "rootCauseService": [
+    {
+      "id": "NP1_Tokyo_Osaka",
+      "href": "https://mycsp.com:8080/tmf-api/serviceInventoryManagement/v4/service/NW1_Tokyo_Osaka"
+    }
+  ],
+  "rootCauseResource": [
+    {
+      "id": "NP1_Resource_1",
+      "href": "https://mycsp.com:8080/tmf-api/resourceInventoryManagement/v4/resource/NP1_Resource_1"
+    }
+  ]
+}

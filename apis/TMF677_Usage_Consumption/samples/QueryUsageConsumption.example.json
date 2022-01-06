@@ -1,0 +1,108 @@
+{
+	"id": "Q1USER11333",
+	"searchCriteria": {
+		"logicalResource": [{
+			"id": "963161043",
+			"name": "Lara's phone number"
+		}]
+	},
+	"relatedParty": [{
+		"id": "USER11333",
+		"role": "agent",
+		"@referredType": "Individual"
+	}],
+	"usageConsumption": [{
+		"id": "UC1",
+		"creationDate": "2021-06-18T16:04:09.084Z",
+		"lastUpdate": "2021-06-18T16:04:09.084Z",
+		"logicalResource": [{
+			"id": "963161043",
+			"name": "Lara's phone number",
+			"consumptionSummary": [{
+					"id": "CT1",
+					"counterType": "voice",
+					"level": "global",
+					"valueName": "Unlimited",
+					"consumptionPeriod": {
+						"endDateTime": "2021-06-01T16:04:09.084Z",
+						"startDateTime": "2021-06-30T16:04:09.084Z"
+					}
+				},
+				{
+					"id": "CT2",
+					"counterType": "sms",
+					"level": "global",
+					"valueName": "Unlimited",
+					"consumptionPeriod": {
+						"endDateTime": "2021-06-01T16:04:09.084Z",
+						"startDateTime": "2021-06-30T16:04:09.084Z"
+					}
+				}
+			]
+		}],
+		"bucketRefOrValue": [{
+				"id": "BK1",
+				"description": "Bucket related to MMS",
+				"isShared": false,
+				"name": "RED MMS Plus Bucket - MMS",
+				"usageType": "mms",
+				"bucketCounter": [{
+					"id": "CT3",
+					"counterType": "used",
+					"level": "global",
+					"consumptionPeriod": {
+						"endDateTime": "2021-06-01T16:04:09.084Z",
+						"startDateTime": "2021-06-18T16:04:09.084Z"
+					},
+					"value": {
+						"amount": 0,
+						"units": "mms"
+					}
+				}],
+				"product": [{
+					"id": "PR1",
+					"name": "RED MMS Plus"
+				}],
+				"relatedParty": [{
+					"id": "CUST34",
+					"role": "Customer",
+					"@referredType": "Individual"
+				}]
+			},
+			{
+				"id": "BK2",
+				"description": "Bucket related to data",
+				"isShared": false,
+				"name": "RED Data Plus Bucket - Data",
+				"remainingValue": {
+						"amount": 3,
+						"units": "GB"
+				},
+				"remainingValueName": "3 GB",
+				"usageType": "data",
+				"bucketCounter": [{
+					"id": "CT4",
+					"counterType": "used",
+					"level": "global",
+					"consumptionPeriod": {
+						"endDateTime": "2021-06-01T16:04:09.084Z",
+						"startDateTime": "2021-06-18T16:04:09.084Z"
+					},
+					"value": {
+						"amount": 2,
+						"units": "GB"
+					}
+				}],
+				"product": [{
+					"id": "PR2",
+					"name": "RED Data Plus"
+				}],
+				"relatedParty": [{
+					"id": "CUST34",
+					"role": "Customer",
+					"@referredType": "Individual"
+				}]
+			}
+		]
+	}]
+}

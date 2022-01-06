@@ -1,0 +1,182 @@
+{
+    "id": "6599", 
+    "href": "https://mycsp.com:8080/tmf-api/entityCatalogManagement/v4/entitySpecification/6599", 
+    "name": "TOSCA Node Template", 
+    "description": "This entity specification represents a Tosca Node template that describes the (software) components that are used to compose cloud applications", 
+    "version": "1.0", 
+    "validFor": {
+        "startDateTime": "2020-12-05T00:00", 
+        "endDateTime": "2023-12-31T11:59:59"
+    }, 
+    "lastUpdate": "2020-12-05T00:00", 
+    "lifecycleStatus": "Active", 
+    "isBundle": false, 
+    "attachment": [
+        {
+            "description": "This attachment gives a description of the this entity specification with examples", 
+            "href": "https://mycsp.com:8080/tmf-api/documentManagement/v4/attachment/6991", 
+            "id": "6991", 
+            "url": "https://mycsp.com:7070/docloader?docnum=3534536",
+            "@attachmentType": "Document",
+            "content": "",
+            "mimeType": ".pdf",
+            "validFor": {
+                "startDateTime": "2020-12-05T00:00", 
+                "endDateTime": "2021-03-25T00:00"
+            },
+            "size": {
+                "amount": 1741,
+                "units": "KB"
+            },
+            "name": "TOSCA Node Template",
+            "@type": "Attachment",
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/Attachment.schema.json"
+        }
+    ], 
+    "specCharacteristic": [
+        {
+            "name": "Platform", 
+            "id": "4441",
+            "description": "This characteristic describes the platform of the node", 
+            "valueType": "string",
+            "configurable": true, 
+            "validFor": {
+                "startDateTime": "2020-12-05T00:00", 
+                "endDateTime": "2023-12-31T11:59:59"
+            }, 
+            "@valueSchemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/StringCharacteristic.schema.json", 
+            "minCardinality": 0, 
+            "maxCardinality": 1, 
+            "isUnique": true, 
+            "regex": "", 
+            "extensible": false, 
+            "characteristicValueSpecification": [
+                {
+                    "valueType": "string",
+                    "isDefault": true, 
+                    "value": "Windows", 
+                    "validFor": {
+                           "startDateTime": "2020-12-05T00:00", 
+                           "endDateTime": "2023-12-31T11:59:59"
+                    },
+                    "regex": "",
+                    "valueFrom": "",
+                    "valueTo": "",
+                    "unitOfMeasure": "",
+                    "rangeInterval": "open",
+                    "@type": "CharacteristicValueSpecification", 
+                    "@baseType": "",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/CharacteristicValueSpecification.schema.json"
+                }
+            ],
+            "charSpecRelationship": [
+            ], 
+            "@type": "SpecCharacteristic", 
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/SpecCharacteristic.schema.json"
+        }
+    ], 
+    "relatedParty": [
+        {
+            "href": "https://mycsp.com:8080/tmf-api/partyManagement/v4/individual/3001", 
+            "id": "3001", 
+            "name": "charles aznavour", 
+            "role": "Creator",
+            "@referredType": "PartyRole",
+            "@type": "RelatedParty",
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/EngagedParty/RelatedParty.schema.json"
+        }
+    ],
+    "targetEntitySchema": {
+        "@type": "ManagedEntity", 
+        "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/ManagedEntity.schema.json"
+    },
+    "constraint": [
+        {
+            "href": "https://mycsp.com:8080/tmf-api/policyManagement/v4/policy/3779", 
+            "id": "3779", 
+            "name": "Node Filter", 
+            "version": "1.0",
+            "@referredType": "Constraint",
+            "@type": "ConstraintRef",
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/ConstraintRef.schema.json"
+        }
+    ], 
+    "entitySpecRelationship": [
+        {
+            "relationshipType": "Includes", 
+            "role": "nodeType", 
+            "id": "8039", 
+            "href": "https://mycsp.com:8080/tmf-api/entityCatalogManagement/v4/entitySpecification/8039", 
+            "name": "Node Type Capability Definition", 
+            "validFor": {
+                "startDateTime": "2020-12-05T00:00", 
+                "endDateTime": "2023-12-31T11:59:59"
+            },
+            "associationSpec": {
+            },
+            "@referredType": "CapabilitySpecification",
+            "@type": "EntitySpecRelationship",
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntitySpecRelationship.schema.json"
+        },
+        {
+            "relationshipType": "Includes", 
+            "role": "nodeType", 
+            "id": "8053", 
+            "href": "https://mycsp.com:8080/tmf-api/entityCatalogManagement/v4/entitySpecification/8053", 
+            "name": "Node Type Requirement Definition", 
+            "validFor": {
+                "startDateTime": "2020-12-05T00:00", 
+                "endDateTime": "2023-12-31T11:59:59"
+            },
+            "associationSpec": {
+            },
+            "@referredType": "RequirementSpecification",
+            "@type": "EntitySpecRelationship",
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntitySpecRelationship.schema.json"
+        },
+        {
+            "relationshipType": "Includes", 
+            "role": "nodeType", 
+            "id": "8059", 
+            "href": "https://mycsp.com:8080/tmf-api/entityCatalogManagement/v4/entitySpecification/8059", 
+            "name": "Node Type Interface Definition", 
+            "validFor": {
+                "startDateTime": "2020-12-05T00:00", 
+                "endDateTime": "2023-12-31T11:59:59"
+            },
+            "associationSpec": {
+            },
+            "@referredType": "InterfaceSpecification",
+            "@type": "EntitySpecRelationship",
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntitySpecRelationship.schema.json"
+        },
+        {
+            "relationshipType": "Includes", 
+            "role": "nodeType", 
+            "id": "8069", 
+            "href": "https://mycsp.com:8080/tmf-api/entityCatalogManagement/v4/entitySpecification/8069", 
+            "name": "Node Type Artifact Definition", 
+            "validFor": {
+                "startDateTime": "2020-12-05T00:00", 
+                "endDateTime": "2023-12-31T11:59:59"
+            },
+            "associationSpec": {
+            },
+            "@referredType": "ArtifactSpecification",
+            "@type": "EntitySpecRelationship",
+            "@baseType": "",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/EntitySpecRelationship.schema.json"
+        }
+        
+    ],
+    "@type": "ToscaNodeTemplate", 
+    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Common/ToscaNodeTemplate.schema.json", 
+    "@baseType": "EntitySpecification"
+}

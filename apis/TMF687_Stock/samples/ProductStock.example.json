@@ -1,0 +1,80 @@
+{
+  "id": "42",
+  "href": "http://serverlocation:port/stockManagement/v4/productStock/42",
+  "creationDate": "2020-01-14T08:31:48.243Z",
+  "description": "Product Stock for shop",
+  "lastInventoryDate": "2020-09-24T08:31:48.243Z",
+  "lastUpdate": "2020-09-24T08:31:48.243Z",
+  "name": "phone stock 42",
+  "replenishmentDate": "2020-09-28T08:31:48.243Z",
+  "stockLevelCategory": "retail - stock for the Lyon shop",
+  "channel": [
+    {
+      "id": "11",
+      "name": "retail"
+    }
+  ],
+  "maxStockLevel": {
+    "amount": 40,
+    "units": "box"
+  },
+  "minStockLevel": {
+    "amount": 5,
+    "units": "box"
+  },
+  "place": {
+    "id": "89",
+    "href": "http://serverlocation:port/geographicSiteManagement/v4/geographicSite/89",
+    "role": "Lyon Shop",
+    "@type": "PlaceRef",
+    "@referredType": "GeographicSite"
+  },
+  "productStockLevel": {
+    "amount": 24,
+    "units": "box"
+  },
+  "productStockStatusType": "available",
+  "productStockUsageType": "inShop",
+  "relatedParty": [
+    {
+      "id": "111",
+      "href": "http://serverlocation:port/partyManagement/v4/organization/111",
+      "role": "stock owner",
+      "@type": "OrganizationRef",
+      "@referredType": "Organization"
+    }
+  ],
+  "reorderQuantity": {
+    "amount": 10,
+    "units": "box"
+  },
+  "stockLevelAlert": {
+    "amount": 10,
+    "units": "box"
+  },
+  "stockedProduct": {
+    "productCharacteristic": [
+      {
+        "id" : "1",
+        "valueType": "string",
+        "name":"Color",
+        "value" : "Orange"
+      },
+      {
+        "id" : "2",
+        "valueType": "string",
+        "name":"Memory Size",
+        "value" : "256 GB"
+      }
+    ],
+    "productSpecification": {
+      "id": "23",
+      "href": "http://serverlocation:port/productCatalogManagement/v4/productSpecification/23",
+      "name": "TMFPhone",
+      "version": "x-9",
+      "@type": "ProductSpecification"
+    },
+    "@type": "Product"
+  },
+  "@type": "ProductStock"
+}

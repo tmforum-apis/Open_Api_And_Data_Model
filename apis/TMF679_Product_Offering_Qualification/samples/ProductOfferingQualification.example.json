@@ -1,0 +1,84 @@
+{
+  "id": "9ffg-ze56-ed51",
+  "href": "https://host:port/productOfferingQualificationManagement/v4/productOfferingQualification/9ffg-ze56-ed51",
+  "description": "Illustration of a POQ resource",
+  "effectiveQualificationDate": "2019-05-03T09:37:23.429Z",
+  "expectedPOQCompletionDate": "2019-05-03T09:37:23.429Z",
+  "expirationDate": "2019-05-12T09:37:23.429Z",
+  "instantSyncQualification": false,
+  "productOfferingQualificationDate": "2019-05-02T09:37:23.429Z",
+  "provideAlternative": true,
+  "provideOnlyAvailable": true,
+  "provideUnavailabilityReason": false,
+  "qualificationResult": "qualified",
+  "requestedPOQCompletionDate": "2019-05-03T09:37:23.429Z",
+  "channel": {
+    "id": "1",
+    "name": "Online chanel"
+  },
+  "note": [
+    {
+      "id": "1",
+      "author": "Jean Pontus",
+      "date": "2019-05-02T09:37:23.429Z",
+      "text": "This is an illustration of the POQ resource"
+    }
+  ],
+  "productOfferingQualificationItem": [
+    {
+      "id": "1",
+      "expectedActivationDate": "2019-05-02T09:37:23.429Z",
+      "qualificationItemResult": "qualified",
+      "action": "add",
+      "note": [
+        {
+          "id": "2",
+          "author": "Jean Pontus",
+          "date": "2019-05-02T09:37:23.429Z",
+          "text": "home address is provided"
+        }
+      ],
+      "product": {
+        "@type": "Product",
+        "relatedPlace": [
+          {
+            "id": "459-fgr-t78",
+            "href": "https://host:port/geographicAddressManagement/v4/geographicAddress/459-fgr-t78",
+            "@type": "PlaceRef",
+            "name": "Home address",
+            "role": "install adress",
+            "@referredType": "geographicAddress"
+          }
+        ]
+      },
+      "productOffering": {
+        "id": "142789",
+        "href": "https://host:port/productCatalogManagement/v4/productOffering/142789",
+        "name": "TMF Broadband Offer",
+        "@referredType": "ProductOffering"
+      },
+      "state": "done",
+      "@type": "ProductOfferingQualificationItem"
+    }
+  ],
+  "relatedParty": [
+    {
+        "id": "45",
+        "href": "https://host:port/partyManagement/v4/individual/45",
+        "name": "Jean Pustomer",
+        "role": "prospect",
+        "@type": "RelatedParty",
+        "@referredType": "individual"
+    },
+    {
+        "id": "dftr-fg455",
+        "href": "https://host:port/partyManagement/v4/organization/dftr-fg455",
+        "name": "TMF Provided",
+        "role": "qualifier",
+        "@type": "RelatedParty",
+        "@referredType": "Organization"
+      }
+  ],
+  "state": "done",
+  "@type": "ProductOfferingQualification"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "42",
+    "href": "https://mycsp.com:8080/tmf-api/serviceProblemManagement/v4/serviceProblemEventRecord/42",
+    "recordTime": "2020-12-14T08:20:00.123Z",
+    "eventType": "ServiceProblemCreateEvent",
+    "eventTime": "2020-12-14T08:20:00.123Z",
+    "notification": {
+      "eventType": "AlarmCreateNotification",
+      "eventTime": "2020-12-14T08:20:00.123Z",
+      "eventId": "92775",
+      "event": {
+        "alarm": {
+          "id": "8485b078-7e43-43e9-b3de-e562b3b9abaa",
+          "href": ".../alarm/8485b078-7e43-43e9-b3de-e562b3b9abaa",
+          "externalAlarmId": "cisco-7609-1937465789",
+          "alarmType": "QualityOfServiceAlarm",
+          "perceivedSeverity": "CRITICAL",
+          "probableCause": "Threshold crossed",
+          "specificProblem": "Inbound Traffic threshold crossed"
+        }
+      }
+    },
+    "serviceProblem": {
+      "id": "problemxxxx0000",
+      "href": "https://mycsp.com:8080/tmf-api/serviceProblemManagement/v4/serviceProblem/problemxxxx0000",
+      "name": "My Service Problem"
+    }
+  }
+]

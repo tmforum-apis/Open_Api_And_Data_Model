@@ -1,0 +1,83 @@
+{
+    "id": "99",
+    "href": "https://serverRoot/tmf-api/appointment/v4/searchTimeSlot/99",
+    "searchDate": "2018-02-01T14:40:43.000Z",
+    "searchResult": "success",
+    "status": "done",
+    "relatedPlace": {
+        "name": "client's address",
+        "role": "interventionAddress",
+        "streetNr": "96",
+        "streetType": "avenue",
+        "streetName": "de Versailles",
+        "postCode": "75016",
+        "city": "Paris",
+        "country": "France",
+        "@type": "GeographicAddress",
+        "@schemaLocation": "../geographicAddress.schema.json"
+    },
+    "relatedEntity": [
+        {
+            "id": "789",
+            "href": "https://serverRoot/tmf-api/troubleTicket/v4/troubleTicket/789",
+            "name": "Internet connexion problem to solve",
+            "role": "Problem description",
+            "@referredType": "TroubleTicket"
+        }
+    ],
+    "requestedTimeSlot": [
+        {
+            "validFor": {
+                "startDateTime": "2018-02-15T00:00:00.000Z",
+                "endDateTime": "2018-02-18T00:00:00.000Z"
+            }
+        }
+    ],
+    "availableTimeSlot": [
+        {
+            "id": "365",
+            "href": "https://serverRoot/tmf-api/appointment/v4/searchtimeslot/99/availableTimeSlot/365",
+            "validFor": {
+                "startDateTime": "2018-02-15T14:00:00.000Z",
+                "endDateTime": "2018-02-15T16:00:00.000Z"
+            },
+            "relatedParty": {
+                "id": "56",
+                "href": "https://serverRoot/tmf-api/partyManagement/v4/individual/56",
+                "name": "John Doe",
+                "role": "technician",
+                "@referredType": "Individual"
+            }
+        },
+        {
+            "id": "921",
+            "href": "https://serverRoot/tmf-api/appointment/v4/searchtimeslot/99/availableTimeSlot/921",
+            "validFor": {
+                "startDateTime": "2018-02-16T16:30:00.000Z",
+                "endDateTime": "2018-02-16T18:00:00.000Z"
+            },
+            "relatedParty": {
+                "id": "56",
+                "href": "https://serverRoot/tmf-api/partyManagement/v4/individual/56",
+                "name": "John Doe",
+                "role": "technician",
+                "@referredType": "Individual"
+            }
+        },
+        {
+            "id": "325",
+            "href": "https://serverRoot/tmf-api/appointment/v4/searchtimeslot/99/availableTimeSlot/325",
+            "validFor": {
+                "startDateTime": "2018-02-15T16:00:00.000Z",
+                "endDateTime": "2018-02-15T17:00:00.000Z"
+            },
+            "relatedParty": {
+                "id": "58",
+                "href": "https://serverRoot/tmf-api/partyManagement/v4/individual/58",
+                "name": "Adam Smith",
+                "role": "technician",
+                "@referredType": "Individual"
+            }
+        }
+    ]
+}

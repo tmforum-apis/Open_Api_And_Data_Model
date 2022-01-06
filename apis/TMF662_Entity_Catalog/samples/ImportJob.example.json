@@ -1,0 +1,11 @@
+{
+    "completionDate": "2020-09-23T00:03", 
+    "contentType": "application/json", 
+    "creationDate": "2020-09-23T00:00", 
+    "errorLog": "http://my-platform/daily/logging/ImportJobErrors.log", 
+    "href": "https://mycsp.com:8080/tmf-api/entityCatalogManagement/v4/importJob/2011", 
+    "id": "2011", 
+    "path": "entityCatalogManagement/", 
+    "status": "completed", 
+    "url": "ftp://ftp.mycsp.com/entityCatalogManagement/ImportJob.json"
+}

@@ -1,0 +1,178 @@
+{
+    "@type":"SpecialAccount",
+    "@schemaLocation":"https://myschemas/SpecialAccount.schema.json",
+    "@baseType":"PartyAccount",
+    "creditLimit": {
+        "unit": "USD",
+        "value": 20000     
+    }, 
+    "description": "This  party account ...", 
+    "href": "https://host:port/tmf-api/accountManagement/v4/account/4458", 
+    "id": "4458", 
+    "lastModified": "2018-06-14T00:00:00.000Z", 
+    "name": "Travel account", 
+    "state": "Suspended", 
+    "accountType": "Business", 
+    "paymentStatus": "In Arrears", 
+    "billStructure": {
+        "presentationMedia": [
+            {
+                "href": "https://host:port/tmf-api/accountManagement/v4/billPresentationMedia/8800", 
+                "id": "8800", 
+                "name": "Electronic"
+            }
+        ], 
+        "format": {
+            "href": "https://host:port/tmf-api/accountManagement/v4/billFormat/4824", 
+            "id": "4824", 
+            "name": "Summary invoice"
+        }, 
+        "cycleSpecification": {
+            "dateShift": 8, 
+            "frequency": "monthly", 
+            "href": "https://host:port/tmf-api/accountManagement/v4/billingCycleSpecification/1309", 
+            "id": "1309", 
+            "name": "Monthly billing"
+        }
+    }, 
+    "paymentPlan": [
+        {
+            "numberOfPayments": 12, 
+            "paymentFrequency": "monthly", 
+            "priority": 2, 
+            "status": "Ineffective", 
+            "totalAmount": {
+                "unit": "USD",
+                "value": 100.0
+            }, 
+            "planType": "regular", 
+            "validFor": {
+                "startDateTime": "2018-06-17T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }, 
+            "paymentMethod": {
+                "href": "https://host:port/tmf-api/paymentMethods/v4/paymentMethod/6895", 
+                "id": "6895", 
+                "name": "family payment"
+            }
+        }
+    ], 
+    "financialAccount": {
+	"@referredType" : "FinantialAccount",
+        "href": "https://host:port/tmf-api/accountManagement/v4/account/2209", 
+        "id": "2209", 
+        "name": "Travel account", 
+        "accountBalance": {
+            "amount": {
+                "unit": "USD",
+                "value": 58.97 
+            }, 
+            "balanceType": "ReceivableBalance", 
+            "validFor": {
+                "startDateTime": "2018-06-14T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }
+        }
+    }, 
+    "defaultPaymentMethod": {
+        "href": "https://host:port/tmf-api/paymentMethods/v4/paymentMethod/6514", 
+        "id": "6514", 
+        "name": "family payment"
+    }, 
+    "relatedParty": [
+        {
+	       "@referredType": "Organization",
+            "href": "https://host:port/tmf-api/partyManagement/v4/organization/4665", 
+            "id": "4665", 
+            "name": "John Doe", 
+            "role": "owner"
+        }
+    ], 
+    "taxExemption": [
+        {
+            "certificateNumber": "45678889876", 
+            "issuingJurisdiction": "USA", 
+            "reason": "Embassy", 
+            "taxDefinition": [
+                {
+                  "id": "96",
+                  "name": "Value Added Tax",
+                  "taxType": "federalVat"
+                }
+            ],
+            "attachment": {
+                "attachmentType": "taxExemptionCertificate",
+                "name": "TaxExemptionCertificate-654321.pdf",
+                "description": "Electronic version of the tax exemption certificate",
+                "mimeType": "application/pdf",
+                "url": "http://host:port/DocumentManager/666/TaxExemptionCertificate-654321.pdf"
+            },
+            "validFor": {
+                "startDateTime": "2018-06-13T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }
+        }
+    ],     "contact": [
+        {
+            "contactName": "Anna Cristal", 
+            "contactType": "primary", 
+            "partyRoleType": "Publisher", 
+            "validFor": {
+                "startDateTime": "2018-06-11T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }, 
+            "contactMedium": [
+                {
+                    "preferred": false, 
+                    "mediumType": "PostalAddress", 
+                    "validFor": {
+                        "startDateTime": "2018-06-14T00:00:00.000Z", 
+                        "endDateTime": "2019-01-10T00:00:00.000Z"
+                    }, 
+                    "characteristic": {
+                        "city": "Paris", 
+                        "street1": "15 Rue des Canards", 
+                        "postCode": "75014", 
+                        "country": "France"
+                    }
+                }
+            ], 
+            "relatedParty": {
+    	       "@referredType" : "Individual",
+                "href": "https://host:port/tmf-api/partyManagement/v4/organization/1850", 
+                "id": "1850", 
+                "name": "Gustave Flaubert", 
+                "role": "owner"
+            }
+        }
+    ], 
+    "accountBalance": [
+        {
+            "amount": {
+                "unit": "USD",
+                "value": 53.29 
+            }, 
+            "balanceType": "DepositBalance", 
+            "validFor": {
+                "startDateTime": "2018-06-13T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }
+        }
+    ], 
+    "accountRelationship": [
+        {
+            "relationshipType": "contains", 
+            "validFor": {
+                "startDateTime": "2018-06-10T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }, 
+            "account": {
+		"@referredType": "BillingAccount",
+                "description": "This  account ...", 
+                "href": "https://host:port/tmf-api/accountManagement/v4/account/9522", 
+                "id": "9522", 
+                "name": "Travel Account"
+            }
+        }
+    ]
+}

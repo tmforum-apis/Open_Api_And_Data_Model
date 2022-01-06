@@ -1,0 +1,20 @@
+{
+    "childProblem": [
+        {
+            "id": "41",
+            "href": "https://mycsp.com:8080/tmf-api/serviceProblemManagement/v4/serviceProblem/41"
+        },
+        {
+            "id": "42",
+            "href": "https://mycsp.com:8080/tmf-api/serviceProblemManagement/v4/serviceProblem/42"
+        },
+        {
+            "id": "43",
+            "href": "https://mycsp.com:8080/tmf-api/serviceProblemManagement/v4/serviceProblem/43"
+        }
+    ],
+    "parentProblem": {
+        "id": "43",
+        "href": "https://mycsp.com:8080/tmf-api/serviceProblemManagement/v4/serviceProblem/43"
+    }
+}

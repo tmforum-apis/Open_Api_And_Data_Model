@@ -1,0 +1,35 @@
+{
+    "@type": "PartnershipSpecification",
+    "description": "This  partnership specification gives the template for defining a partnership with a content provider", 
+    "href": "https://host:port/tmf-api/partnershipManagement/v4/partnershipSpecification/9047", 
+    "id": "9047", 
+    "name": "Dream Partnership template", 
+    "roleSpecification": [
+        [
+            {
+		"@type": "RoleSpecification",
+		"name": "ContentProvider", 
+		"agreementSpecification": [{
+		    "name": "ContentLicenseAgreement", 
+		    "id": "33"
+		}]
+	    }, 
+            {
+		"@type": "RoleSpecification",
+		"name" : "CloudProvider"
+            }, 
+            {
+		"@type": "RoleSpecification",
+		"name" : "Developer",
+		"agreementSpecification": [{
+			"name": "ProfitShareAgreement", 
+			"id": "32"
+		}]
+            }, 
+            {
+		"@type": "RoleSpecification",
+		"name" : "Tester"
+            }
+        ]
+    ]
+}

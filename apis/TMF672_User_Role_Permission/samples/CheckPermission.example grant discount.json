@@ -1,0 +1,21 @@
+{
+    "__comment": "Verify that the user is allowed to give an ad-hoc price reduction of 10% in a product order.",
+	"entitlement": {
+	    "function": "ProductOrder",
+	    "action": "grantAlteration"
+	},
+	"characteristic": [
+	    {
+	        "name": "reductionPercentage",
+	        "value": "10"
+	    }
+	],
+	"entity": {
+	    "@type": "ProductOrder",
+	    "id": "PO555333313",
+	    "href":"https://bla.com/postore/34336"
+	},
+	"user": {
+	    "id": "Jonathan.Goldberg"
+	}
+}

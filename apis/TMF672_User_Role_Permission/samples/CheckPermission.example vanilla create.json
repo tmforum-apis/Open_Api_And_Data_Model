@@ -1,0 +1,10 @@
+{
+    "__comment": "Basic verification that the user is allowed to create any product offering",
+	"entitlement": {
+	    "function": "ProductOffering",
+	    "action": "create"
+	},
+	"user": {
+	    "id": "Jonathan.Goldberg"
+	}
+}

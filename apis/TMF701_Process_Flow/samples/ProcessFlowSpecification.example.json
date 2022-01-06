@@ -1,0 +1,179 @@
+{
+    "id": "1",
+    "href": ".../processFlowManagement/v4/ProcessFlowSpecification/1",
+    "description": "Description of the order capture process for all channels",
+    "lastUpdate": "2021-12-30T09:42:25.747Z",
+    "lifecycleStatus": "active",
+    "name": "orderCapture",
+    "version": "v2.3",
+    "attachment": [
+      {
+        "id": "4aafacbd-11ff-4dc8-b445-305f2215715f",
+        "href": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
+        "attachmentType": "pdf",
+        "content": "business process pdf",
+        "description": "description of the business process with examples",
+        "mimeType": "pdf",
+        "name": "pfs-1-doc",
+        "url": "http://host/Content/4aafacbd-11ff-4dc8-b445-305f2215715f",
+        "size": {
+          "amount": 2423,
+          "units": "Mb"
+        },
+        "validFor": {
+          "startDateTime": "1985-04-12T23:20:50.52Z"
+        },
+        "@type": "Attachment"
+      }
+    ],
+    "channel": [
+      {
+        "id": "1",
+        "name": "TMFWebStore"
+      },
+      {
+        "id": "2",
+        "name": "TMFRetailStore"
+      },
+      {
+        "id": "3",
+        "name": "TMFMobileAppStore"
+      }
+    ],
+    "processFlowSpecificationCharacteristic": [
+      {
+        "id": "pfs-1-chat-1",
+        "configurable": true,
+        "description": "identification of product offering",
+        "extensible": false,
+        "isUnique": false,
+        "maxCardinality": 99,
+        "minCardinality": 0,
+        "name": "productOfferingId",
+        "valueType": "string",
+        "validFor": {
+          "startDateTime": "1985-04-12T23:20:50.52Z"
+        },
+        "@type": "ProcessFlowSpecificationCharacteristic"
+      },
+      {
+        "id": "pfs-1-chat-2",
+        "configurable": true,
+        "description": "identification of product from the inventory",
+        "extensible": false,
+        "isUnique": false,
+        "maxCardinality": 1,
+        "minCardinality": 0,
+        "name": "productId",
+        "valueType": "string",
+        "validFor": {
+          "startDateTime": "1985-04-12T23:20:50.52Z"
+        },
+        "@type": "ProcessFlowSpecificationCharacteristic"
+      }
+    ],
+    "processFlowSpecificationRelationship": [
+      {
+        "id": "2",
+        "href": ".../processFlowManagement/v4/ProcessFlowSpecification/2",
+        "name": "orderCompletion",
+        "relationshipType": "triggers",
+        "validFor": {
+          "startDateTime": "1985-04-12T23:20:50.52Z"
+        },
+        "@type": "ProcessFlowSpecificationRelationship"
+      }
+    ],
+    "relatedEntitySpecification": [
+      {
+        "id": "24",
+        "href": "../entityCatalogManagement/v4/entitySpecification/24",
+        "name": "ShoppingCart",
+        "role": "Support",
+        "version": "1",
+        "@type": "RelatedEntitySpecification",
+        "@referredType": "ShoppingCart"
+      },
+      {
+        "id": "17",
+        "href": "../entityCatalogManagement/v4/entitySpecification/17",
+        "name": "party interation",
+        "role": "interacts",
+        "version": "1",
+        "@type": "RelatedEntitySpecification",
+        "@referredType": "PartyInteraction"
+      },
+      {
+        "id": "1",
+        "href": "../entityCatalogManagement/v4/entitySpecification/1",
+        "name": "requester as individual",
+        "role": "requester",
+        "version": "1",
+        "@type": "RelatedEntitySpecification",
+        "@referredType": "Individual"
+      },
+      {
+        "id": "3",
+        "href": "../entityCatalogManagement/v4/entitySpecification/3",
+        "name": "requester as organization",
+        "role": "requester",
+        "version": "1",
+        "@type": "RelatedEntitySpecification",
+        "@referredType": "Organization"
+      }
+    ],
+    "relatedParty": [
+      {
+        "id": "45",
+        "href": "../partyManagement/v4/individual/45",
+        "name": "Jean Pontus",
+        "role": "ProcessFlowDesigner",
+        "@type": "RelatedParty",
+        "@referredType": "Individual"
+      },
+      {
+        "id": "99",
+        "href": "../partyManagement/v4/organization/99",
+        "name": "TMF",
+        "role": "ProcessFlowOwner",
+        "@type": "RelatedParty",
+        "@referredType": "Organization"
+      }
+    ],
+    "taskFlowSpecification": [
+      {
+        "id": "tfs1",
+        "href": ".../processFlowManagement/v4/TaskFlowSpecification/tfs1",
+        "name": "SCinit",
+        "@type": "TaskFlowSpecification"
+      },
+      {
+        "id": "tfs99",
+        "href": ".../processFlowManagement/v4/TaskFlowSpecification/tfs99",
+        "name": "selectMainOffer",
+        "@type": "TaskFlowSpecification"
+      },
+      {
+        "id": "tfs0",
+        "href": ".../processFlowManagement/v4/TaskFlowSpecification/tfs0",
+        "name": "checkEligibility",
+        "@type": "TaskFlowSpecification"
+      },
+      {
+        "id": "tfs2",
+        "href": ".../processFlowManagement/v4/TaskFlowSpecification/tfs2",
+        "name": "configureSC",
+        "@type": "TaskFlowSpecification"
+      },
+      {
+        "id": "tfs3",
+        "href": ".../processFlowManagement/v4/TaskFlowSpecification/tfs3",
+        "name": "checkSC",
+        "@type": "TaskFlowSpecification"
+      }
+    ],
+    "validFor": {
+      "startDateTime": "1985-04-12T23:20:50.52Z"
+    },
+    "@type": "ProcessFlowSpecification"
+  }

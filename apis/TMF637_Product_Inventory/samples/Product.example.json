@@ -1,0 +1,78 @@
+[
+  {
+    "id": "g265-tf85",
+    "href": "https://host:port/productInventoryManagement/v4/product/g265-tf85",
+    "description": "product description",
+    "isBundle": false,
+    "isCustomerVisible": true,
+    "name": "Voice Over IP Basic instance for Jean",
+    "productSerialNumber": "N/A",
+    "startDate": "2017-11-01T09:37:29.961Z",
+    "status": "active",
+    "@baseType": "Product",
+    "@type": "Product",
+    "@schemaLocation": "https:://host:port/standardProduct.json",
+    "realizingService": [
+      {
+        "id": "123t-78k",
+        "href": "https...",
+        "role": "RealizingService",
+        "@referredType": "Service"
+      }
+    ],
+    "productOffering": {
+      "id": "PO-101-1",
+      "href": "https...",
+      "name": "Voice Over IP Basic",
+      "@referredType": "ProductOffering"
+    },
+    "productOrderItem": [
+      {
+        "productOrderId": "1023-98gh",
+        "productOrderHref": "https...",
+        "orderItemId": "2",
+        "orderItemAction": "add",
+        "@referredType": "ProductOrder",
+        "role" : "Install order"
+      },
+	  {
+        "productOrderId": "df65-gh12",
+        "productOrderHref": "https...",
+        "orderItemId": "2",
+        "orderItemAction": "change",
+        "@referredType": "ProductOrder",
+        "role" : "change management order"
+      },
+      {
+        "productOrderId": "5ghh-sd12",
+        "productOrderHref": "https...",
+        "orderItemId": "3",
+        "orderItemAction": "change",
+        "@referredType": "ProductOrder",
+        "role" : "change management order"
+      }	  
+    ],
+    "productCharacteristic": [
+      {
+        "name": "Number",
+        "valueType": "string",
+        "value": "415 279 7439"
+      }
+    ],
+    "relatedParty": [
+      {
+        "id": "45hj-8888",
+        "href": "https...",
+        "name": "Jean",
+        "role": "User",
+        "@referredType": "Individual"
+      }
+    ],
+    "productSpecification": {
+      "id": "PS-101",
+      "href": "https...",
+      "@referredType": "ProductSpecification",
+      "version": "1"
+    }
+  }
+]

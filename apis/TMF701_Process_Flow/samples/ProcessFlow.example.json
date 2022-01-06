@@ -1,0 +1,71 @@
+{
+    "id": "4fd-ty56-gg55",
+    "href": ".../processFlowManagement/v4/processFlow/4fd-ty56-gg55",
+    "processFlowSpecificationRef": {
+      "id": "1",
+      "href": ".../processFlowManagement/v4/ProcessFlowSpecification/1",
+      "name": "orderCapture",
+      "@type": "ProcessFlowSpecificationRef",
+      "@referredType": "ProcessFlowSpecification"
+    },
+    "processFlowDate": "2019-04-11T14:52:21.823Z",
+    "channel": [
+      {
+        "id": "1",
+        "name": "TMFWebStore",
+        "@type": "Channel"
+      }
+    ],
+    "characteristic": [
+      {
+        "name": "productOfferingId",
+        "valueType": "string",
+        "value": "TMF Mobile 20"
+      }
+    ],
+    "relatedEntity": [
+      {
+        "id": "qq12-gg22",
+        "href": ".../shoppingCartManagement/v4/shoppingCart/qq12-gg22",
+        "name": "web ShoppingCart for Jean Pontus",
+        "role": "shoppingCart",
+        "@referredType": "ShoppingCart",
+        "@type": "RelatedEntity"
+      }
+    ],
+    "relatedParty": [
+      {
+        "id": "456-f69",
+        "href": ".../partyManagement/v4/individual/456-f69",
+        "name": "Jean Pontus",
+        "role": "Customer",
+        "@type": "RelatedParty",
+        "@referredType": "Individual"
+      }
+    ],
+    "state": "active",
+    "taskFlow": [
+      {
+        "id": "4fd-ty56-gg55-1",
+        "href": ".../processFlowManagement/v4/processFlow/4fd-ty56-gg55/taskFlow/4fd-ty56-gg55-1",
+        "@type": "TaskFlow"
+      },
+      {
+        "id": "4fd-ty56-gg55-2",
+        "href": ".../processFlowManagement/v4/processFlow/4fd-ty56-gg55/taskFlow/4fd-ty56-gg55-2",
+        "@type": "TaskFlow"
+      },
+      {
+        "id": "4fd-ty56-gg55-3",
+        "href": ".../processFlowManagement/v4/processFlow/4fd-ty56-gg55/taskFlow/4fd-ty56-gg55-3",
+        "@type": "TaskFlow"
+      },
+      {
+        "id": "4fd-ty56-gg55-4",
+        "href": ".../processFlowManagement/v4/processFlow/4fd-ty56-gg55/taskFlow/4fd-ty56-gg55-4",
+        "@type": "TaskFlow"
+      }
+    ],
+    "@type": "ProcessFlow",
+    "@baseType": "ProcessFlow"
+  }

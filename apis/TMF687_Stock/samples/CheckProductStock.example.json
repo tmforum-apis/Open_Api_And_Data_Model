@@ -1,0 +1,117 @@
+{
+  "id": "32",
+  "href": "http://serverlocation:port/stockManagement/v4/checkProductStock/32",
+  "completedCheckProductStockDate": "2020-09-24T09:54:41.127Z",
+  "creationDate": "2020-09-24T09:54:41.127Z",
+  "instantSyncCheck": true,
+  "provideAlternative": true,
+  "requestedAvailabilityDate": "2020-09-24T09:54:41.127Z",
+  "requestedCheckProductStockDate": "2020-09-24T09:54:41.127Z",
+  "checkProductStockItem": [
+    {
+      "id": "1",
+      "availabilityResult": "alternate",
+      "provideAlternative": true,
+      "alternate": [
+        {
+          "id": "1",
+          "alternateAvailabilityDate": "2020-09-24T09:54:41.127Z",
+          "alternateProduct": {
+            "place": [
+              {
+                "id": "89",
+                "href": "http://serverlocation:port/geographicSiteManagement/v4/geographicSite/89",
+                "role": "Lyon Shop",
+                "@type": "PlaceRef",
+                "@referredType": "GeographicSite"
+              }
+            ],
+            "productCharacteristic": [
+                {
+                    "id" : "1",
+                    "valueType": "string",
+                    "name":"Color",
+                    "value" : "Orange"
+                  },
+                  {
+                    "id" : "2",
+                    "valueType": "string",
+                    "name":"Memory Size",
+                    "value" : "256 GB"
+                  }
+            ],
+            "productSpecification": {
+                "id": "23",
+                "href": "http://serverlocation:port/productCatalogManagement/v4/productSpecification/23",
+                "name": "TMFPhone",
+                "version": "x-9",
+                "@type": "ProductSpecification"
+            },
+            "@type": "AlternateProduct"
+          },
+          "alternateQuantity": {
+            "amount": 1,
+            "units": "box"
+          },
+          "alternateStock": {
+            "id": "42",
+            "href": "http://serverlocation:port/stockManagement/v4/productStock/42",
+            "@type": "ProductStockRef"
+          },
+          "@type": "AlternateProductStock"
+        }
+      ],
+      "checkedProductStock": {
+        "stockedProduct": {
+          "productCharacteristic": [
+            {
+                "id" : "1",
+                "valueType": "string",
+                "name":"Color",
+                "value" : "Orange"
+              },
+              {
+                "id" : "2",
+                "valueType": "string",
+                "name":"Memory Size",
+                "value" : "128 GB"
+              }
+          ],
+          "productSpecification": {
+            "id": "23",
+            "href": "http://serverlocation:port/productCatalogManagement/v4/productSpecification/23",
+            "name": "TMFPhone",
+            "version": "x-9",
+            "@type": "ProductSpecification"
+          },
+          "@type": "Product"
+        },
+        "@type": "CheckedProductStock"
+      },
+      "requestedQuantity": {
+        "amount": 1,
+        "units": "box"
+      },
+      "state": "done",
+      "@type": "CheckProductStockItem"
+    }
+  ],
+  "place": {
+    "id": "89",
+    "href": "http://serverlocation:port/geographicSiteManagement/v4/geographicSite/89",
+    "role": "Lyon Shop",
+    "@type": "PlaceRef",
+    "@referredType": "GeographicSite"
+  },
+  "relatedParty": [
+    {
+      "id": "45",
+      "href": "http://serverlocation:port/partyManagement/v4/individual/45",
+      "role": "requester",
+      "@type": "PartyRef",
+      "@referredType": "Individual"
+    }
+  ],
+  "state": "done",
+  "@type": "CheckProductStock"
+}

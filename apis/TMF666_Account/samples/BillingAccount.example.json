@@ -1,0 +1,178 @@
+{
+    "@type":"BillingAccount",
+    "paymentStatus": "In Arrears", 
+    "creditLimit": {
+        "unit": "USD",
+        "value": 10000     
+    }, 
+    "description": "This  billing account ...", 
+    "href": "https://host:port/tmf-api/accountManagement/v4/account/5430", 
+    "id": "5430", 
+    "lastModified": "2018-06-14T00:00:00.000Z", 
+    "name": "Home Account", 
+    "state": "Inactive", 
+    "accountType": "Business", 
+    "billStructure": {
+        "presentationMedia": [
+            {
+                "href": "https://host:port/tmf-api/accountManagement/v4/billPresentationMedia/9968", 
+                "id": "9968", 
+                "name": "Post Mail"
+            }
+        ], 
+        "format": {
+            "href": "https://host:port/tmf-api/accountManagement/v4/billFormat/3555", 
+            "id": "3555", 
+            "name": "Detailed invoice"
+        }, 
+        "cycleSpecification": {
+            "dateShift": 54, 
+            "frequency": "monthly", 
+            "href": "https://host:port/tmf-api/accountManagement/v4/billingCycleSpecification/3828", 
+            "id": "3828", 
+            "name": "Annual billing"
+        }
+    }, 
+    "paymentPlan": [
+        {
+            "numberOfPayments": 4, 
+            "paymentFrequency": "monthly", 
+            "priority": 1, 
+            "status": "Effective", 
+            "totalAmount": {
+                "unit": "USD",
+                "value": 100.0
+            }, 
+            "paymentType": "regular", 
+            "validFor": {
+                "startDateTime": "2018-06-11T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }, 
+            "paymentMethod": {
+                "href": "https://host:port/tmf-api/paymentMethods/v4/paymentMethod/2452", 
+                "id": "2452", 
+                "name": "professional payment"
+            }
+        }
+    ], 
+    "financialAccount": {
+	"@referredType" : "FinantialAccount",
+        "href": "https://host:port/tmf-api/accountManagement/v4/account/2063", 
+        "id": "2063", 
+        "name": "Partnership account", 
+        "accountBalance": {
+            "amount": {
+                "unit": "USD",
+                "value": 55.56 
+            }, 
+            "accountType": "ReceivableBalance", 
+            "validFor": {
+                "startDateTime": "2018-06-13T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }
+        }
+    }, 
+    "defaultPaymentMethod": {
+        "href": "https://host:port/tmf-api/paymentMethods/v4/paymentMethod/3537", 
+        "id": "3537", 
+        "name": "family payment"
+    }, 
+    "relatedParty": [
+        {
+	    "@referredType": "Organization",
+            "href": "https://host:port/tmf-api/partyManagement/v4/organization/6838", 
+            "id": "6838", 
+            "name": "Richard Cole", 
+            "role": "service provider"
+        }
+    ], 
+    "taxExemption": [
+        {
+            "id": "1",
+            "certificateNumber": "9665432345", 
+            "issuingJurisdiction": "USA", 
+            "reason": "Embassy", 
+            "taxDefinition": [
+                {
+                  "id": "96",
+                  "name": "Value Added Tax",
+                  "taxType": "federalVat"
+                }
+            ],
+              "attachment": {
+                "attachmentType": "taxExemptionCertificate",
+                "name": "TaxExemptionCertificate-888.pdf",
+                "description": "Electronic version of the tax exemption certificate",
+                "mimeType": "application/pdf",
+                "url": "http://host:port/DocumentManager/666/TaxExemptionCertificate-888.pdf"
+              },
+            "validFor": {
+                "startDateTime": "2018-06-17T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }
+        }
+    ], 
+    "contact": [
+        {
+            "contactName": "Rachel Douglas", 
+            "contactType": "secondary", 
+            "partyRoleType": "Vendor", 
+            "validFor": {
+                "startDateTime": "2018-06-17T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }, 
+            "contactMedium": [
+                {
+                    "preferred": true, 
+                    "mediumType": "PostalAddress", 
+                    "validFor": {
+                        "startDateTime": "2018-06-14T00:00:00.000Z", 
+                        "endDateTime": "2019-01-10T00:00:00.000Z"
+                    }, 
+                    "characteristic": {
+                        "city": "Paris", 
+                        "street1": "15 Rue des Canards", 
+                        "postCode": "75014", 
+                        "country": "France" 
+                    }
+                }
+            ], 
+            "relatedParty": {
+        		"@type": "Organization",
+                "href": "https://host:port/tmf-api/partyManagement/v4/organization/9947", 
+                "id": "9947", 
+                "name": "Richard Cole", 
+                "role": "owner"
+            }
+        }
+    ], 
+    "accountBalance": [
+        {
+            "amount": {
+                "unit": "USD",
+                "value": 58.33 
+            }, 
+            "balanceType": "ReceivableBalance", 
+            "validFor": {
+                "startDateTime": "2018-06-10T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }
+        }
+    ], 
+    "accountRelationship": [
+        {
+            "relationshipType": "contains", 
+            "validFor": {
+                "startDateTime": "2018-06-13T00:00:00.000Z", 
+                "endDateTime": "2019-01-10T00:00:00.000Z"
+            }, 
+            "account": {
+		"@type":"BillingAccount",
+                "description": "This  account ...", 
+                "href": "https://host:port/tmf-api/accountManagement/v4/account/9327", 
+                "id": "9327", 
+                "name": "Paradise Account"
+            }
+        }
+    ]
+}

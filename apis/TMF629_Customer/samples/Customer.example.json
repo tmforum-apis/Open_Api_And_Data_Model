@@ -1,0 +1,96 @@
+{
+    "@type": "Customer",
+    "href": "https://host:port/tmf-api/customerManagement/v4/customer/1140", 
+    "id": "1140", 
+    "name": "Moon Football Club", 
+    "status": "Approved", 
+    "statusReason": "Account details checked", 
+    "validFor": {
+        "startDateTime": "2018-06-12T00:00:00.000Z", 
+        "endDateTime": "2019-01-11T00:00:00.000Z"
+    }, 
+    "engagedParty":
+    {
+	    "@referredType": "Organization",
+        "href": "https://host:port/tmf-api/partyManagement/v4/organization/500", 
+        "id": "500", 
+        "name": "Happy Travellers"
+    }, 
+    "account": [
+        {
+    	    "@referredType": "BillingAccount",
+            "description": "Primary billing account", 
+            "href": "https://host:port/tmf-api/accountManagement/v4/account/8251", 
+            "id": "8251", 
+            "name": "Travel Account"
+        }
+    ], 
+    "paymentMethod": [
+        {
+     	    "@referredType": "CreditCardPayment",
+            "href": "https://host:port/tmf-api/paymentMethods/v1/paymentMethod/9562", 
+            "id": "9562", 
+            "name": "professional payment"
+        }
+    ], 
+    "contactMedium": [
+        {
+            "preferred": true, 
+            "mediumType": "TelephoneNumber", 
+            "validFor": {
+                "startDateTime": "2018-06-13T00:00:00.000Z", 
+                "endDateTime": "2019-01-11T00:00:00.000Z"
+            }, 
+            "characteristic": {
+                "phoneNumber": "01 09 75 83 51", 
+                "contactType": "homePhone"
+            }
+        },
+        {
+            "preferred": false, 
+            "mediumType": "MailingAddress", 
+            "validFor": {
+                "startDateTime": "2018-06-13T00:00:00.000Z", 
+                "endDateTime": "2019-01-11T00:00:00.000Z"
+            }, 
+            "characteristic": {
+                "city": "Paris", 
+                "street1": "15 Rue des Canards", 
+                "postCode": "75014", 
+                "country": "France", 
+                "contactType": "homeAddress"
+            }
+        }
+    ], 
+    "characteristic": [
+        {"name":"fidelityProgram","value":"premium","valueType":"string"}
+    ], 
+    "creditProfile": [
+        {
+            "creditProfileDate": "2018-06-15T00:00:00.000Z", 
+            "creditRiskRating": 4, 
+            "creditScore": 5, 
+            "validFor": {
+                "startDateTime": "2018-06-13T00:00:00.000Z", 
+                "endDateTime": "2019-01-11T00:00:00.000Z"
+            }
+        }
+    ], 
+    "agreement": [
+        {
+	        "@referredType": "Agreement",
+            "href": "https://host:port/tmf-api/agreementManagement/v4/agreement/4721", 
+            "id": "4721", 
+            "name": "Summer Contract Agreement"
+        }
+    ], 
+    "relatedParty": [
+        {
+	        "@referredType": "Organization",
+            "href": "https://host:port/tmf-api/partyManagement/v4/organization/2777", 
+            "id": "2777", 
+            "name": "John Doe (Accounting) Ltd", 
+            "role": "bill receiver"
+        }
+    ]
+}

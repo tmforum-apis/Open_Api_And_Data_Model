@@ -24,6 +24,9 @@
             "name": "userRole"
         },
         {
+            "name": "checkPermission"
+        },
+        {
             "name": "notification listeners (client side)"
         },
         {
@@ -628,6 +631,71 @@
                     },
                     "404": {
                         "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "405": {
+                        "description": "Method Not allowed",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/checkPermission": {
+            "post": {
+                "operationId": "createCheckPermission",
+                "summary": "Creates a CheckPermission",
+                "description": "This operation creates a CheckPermission entity.",
+                "tags": [
+                    "checkPermission"
+                ],
+                "parameters": [
+                    {
+                        "name": "checkPermission",
+                        "description": "The CheckPermission to be created",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CheckPermission_Create"
+                        },
+                        "in": "body"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/CheckPermission"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
                         "schema": {
                             "$ref": "#/definitions/Error"
                         }
@@ -1354,6 +1422,50 @@
         }
     },
     "definitions": {
+        "Addressable": {
+            "type": "object",
+            "description": "Base schema for adressable entities",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                }
+            }
+        },
+        "Any": {},
+        "AssetGroup": {
+            "type": "object",
+            "description": "Defines a group of assets (entities) to which access can be controlled. Specific subclasses allow definition in various ways (list of entities, queries, ownership by customer, etc.)",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
         "AssetUserRole": {
             "type": "object",
             "description": "The AssetUserRole is the detailed information concerning an individual user role",
@@ -1362,8 +1474,21 @@
                 "userRole"
             ],
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "manageableAsset": {
                     "$ref": "#/definitions/EntityRef"
+                },
+                "managedAssetGroup": {
+                    "$ref": "#/definitions/AssetGroup",
+                    "description": "List (explicit or implied) of entities managed by this user role assignment."
                 },
                 "userRole": {
                     "$ref": "#/definitions/UserRoleRef"
@@ -1379,7 +1504,180 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "Characteristic": {
+            "type": "object",
+            "description": "Describes a given characteristic of an object or entity through a name/value pair.",
+            "required": [
+                "name",
+                "value"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the characteristic"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the characteristic"
+                },
+                "valueType": {
+                    "type": "string",
+                    "description": "Data type of the value of the characteristic"
+                },
+                "characteristicRelationship": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CharacteristicRelationship"
+                    }
+                },
+                "value": {
+                    "$ref": "#/definitions/Any",
+                    "description": "The value of the characteristic"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "CharacteristicRelationship": {
+            "type": "object",
+            "description": "Another Characteristic that is related to the current Characteristic;",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the characteristic"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "relationshipType": {
+                    "type": "string",
+                    "description": "The type of relationship"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "CheckPermission": {
+            "type": "object",
+            "description": "The CheckPermission task entity verifies that the security principal in context can carry out the action. If permission is granted, 200 is returned, if denied, 403 is returned. If party role or user is present in input, these are used, otherwise the security principal is deduced from the HTTP Authorization header.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "characteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    },
+                    "description": "Consider defining characteristic spec on Entitlement. Input: Additional information that might be needed for a particular entitlement. For example, if Action is GiveDiscount on Function: ProductOrderItem, a characteristic could be used to transmit the percentage discount being asked for."
+                },
+                "entitlement": {
+                    "$ref": "#/definitions/Entitlement",
+                    "description": "Input: the action and function whose permission is being tested. e.g. Action: Create, Function: ProductOffering"
+                },
+                "entity": {
+                    "$ref": "#/definitions/EntityRefValue",
+                    "description": "Input: The specific entity for which permission is being tested. For example, if Action is Update and Function is Customer, this could hold reference to specific customer to be updated. Or, if Action is Create and Function is ProductOffering, this could hold the entire entity, so that the permission could be checked against the line of business"
+                },
+                "partyRole": {
+                    "$ref": "#/definitions/PartyRoleRef",
+                    "description": "Input: The party role whose permission is being tested, this is preferable to user, since permissions can apply to party roles even when they are not logged into a software system, such as on an IVR, or in a voice call to a service rep"
+                },
+                "user": {
+                    "$ref": "#/definitions/UserinfoRef",
+                    "description": "Input: Information about the security principal whose permission is being tested. Ignored if partyRole is supplied"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "CheckPermission_Create": {
+            "type": "object",
+            "description": "The CheckPermission task entity verifies that the security principal in context can carry out the action. If permission is granted, 200 is returned, if denied, 403 is returned. If party role or user is present in input, these are used, otherwise the security principal is deduced from the HTTP Authorization header.\nSkipped properties: id,href",
+            "required": [
+                "entitlement"
+            ],
+            "properties": {
+                "characteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    },
+                    "description": "Consider defining characteristic spec on Entitlement. Input: Additional information that might be needed for a particular entitlement. For example, if Action is GiveDiscount on Function: ProductOrderItem, a characteristic could be used to transmit the percentage discount being asked for."
+                },
+                "entitlement": {
+                    "$ref": "#/definitions/Entitlement",
+                    "description": "Input: the action and function whose permission is being tested. e.g. Action: Create, Function: ProductOffering"
+                },
+                "entity": {
+                    "$ref": "#/definitions/EntityRefValue",
+                    "description": "Input: The specific entity for which permission is being tested. For example, if Action is Update and Function is Customer, this could hold reference to specific customer to be updated. Or, if Action is Create and Function is ProductOffering, this could hold the entire entity, so that the permission could be checked against the line of business"
+                },
+                "partyRole": {
+                    "$ref": "#/definitions/PartyRoleRef",
+                    "description": "Input: The party role whose permission is being tested, this is preferable to user, since permissions can apply to party roles even when they are not logged into a software system, such as on an IVR, or in a voice call to a service rep"
+                },
+                "user": {
+                    "$ref": "#/definitions/UserinfoRef",
+                    "description": "Input: Information about the security principal whose permission is being tested. Ignored if partyRole is supplied"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1390,6 +1688,11 @@
                 "id": {
                     "type": "string",
                     "description": "Identifier of the entitlement."
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "action": {
                     "type": "string",
@@ -1410,7 +1713,35 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "Entity": {
+            "type": "object",
+            "description": "Base entity schema for use in TMForum Open-APIs",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1420,11 +1751,12 @@
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "Unique identifier of a related entity."
+                    "description": "unique identifier"
                 },
                 "href": {
                     "type": "string",
-                    "description": "Reference of the related entity."
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "name": {
                     "type": "string",
@@ -1441,7 +1773,72 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "Extensible": {
+            "type": "object",
+            "description": "Base Extensible schema for use in TMForum Open-APIs",
+            "properties": {
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
+        },
+        "PartyRoleRef": {
+            "type": "object",
+            "description": "Party role reference. A party role represents the part played by a party in a given context.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique identifier of the product"
+                },
+                "href": {
+                    "type": "string",
+                    "description": "Reference of the product"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the referred party role."
+                },
+                "partyId": {
+                    "type": "string",
+                    "description": "The identifier of the engaged party that is linked to the PartyRole object."
+                },
+                "partyName": {
+                    "type": "string",
+                    "description": "The name of the engaged party that is linked to the PartyRole object."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
                 "@referredType": {
                     "type": "string",
@@ -1510,7 +1907,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1559,7 +1956,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1608,7 +2005,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1625,6 +2022,11 @@
                     "type": "string",
                     "description": "Identifier of the privilege."
                 },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "action": {
                     "type": "string",
                     "description": "Level of access granted as part of the permission."
@@ -1635,6 +2037,10 @@
                 },
                 "manageableAsset": {
                     "$ref": "#/definitions/EntityRef"
+                },
+                "managedAssetGroup": {
+                    "$ref": "#/definitions/AssetGroup",
+                    "description": "List (explicit or implied) of entities managed by this privilege."
                 },
                 "@baseType": {
                     "type": "string",
@@ -1647,7 +2053,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1661,11 +2067,12 @@
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "Unique identifier of a related entity."
+                    "description": "unique identifier"
                 },
                 "href": {
                     "type": "string",
-                    "description": "Reference of the related entity."
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "name": {
                     "type": "string",
@@ -1686,7 +2093,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
                 "@referredType": {
                     "type": "string",
@@ -1708,7 +2115,7 @@
                     "example": "1985-04-12T23:20:50.52Z",
                     "type": "string",
                     "format": "date-time",
-                    "description": "Start of the time period, using IETC-RFC-3339 format. If you define a start, you must also define an end"
+                    "description": "Start of the time period, using IETC-RFC-3339 format"
                 }
             }
         },
@@ -1745,7 +2152,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1753,7 +2160,6 @@
             "type": "object",
             "description": "A UserRole defines access levels to operate over a given function that can be included in an asset.\nSkipped properties: id,href",
             "required": [
-                "involvementRole",
                 "entitlement"
             ],
             "properties": {
@@ -1779,7 +2185,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1808,7 +2214,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -1835,7 +2241,46 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                },
+                "@referredType": {
+                    "type": "string",
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "UserinfoRef": {
+            "type": "object",
+            "description": "TBD need to add description to entity",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the related entity."
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
                 "@referredType": {
                     "type": "string",
@@ -1889,13 +2334,9 @@
             "type": "object",
             "description": "The notification data structure",
             "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of the Process flow"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the ProcessFlow"
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/PermissionCreateEventPayload"
                 },
                 "eventId": {
                     "type": "string",
@@ -1934,10 +2375,6 @@
                     "type": "string",
                     "format": "date-time",
                     "description": "The time the event occured."
-                },
-                "event": {
-                    "description": "The event payload linked to the involved resource object",
-                    "$ref": "#/definitions/PermissionCreateEventPayload"
                 }
             }
         },
@@ -2017,13 +2454,9 @@
             "type": "object",
             "description": "The notification data structure",
             "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of the Process flow"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the ProcessFlow"
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/PermissionStateChangeEventPayload"
                 },
                 "eventId": {
                     "type": "string",
@@ -2062,10 +2495,6 @@
                     "type": "string",
                     "format": "date-time",
                     "description": "The time the event occured."
-                },
-                "event": {
-                    "description": "The event payload linked to the involved resource object",
-                    "$ref": "#/definitions/PermissionStateChangeEventPayload"
                 }
             }
         },
@@ -2083,13 +2512,9 @@
             "type": "object",
             "description": "The notification data structure",
             "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of the Process flow"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the ProcessFlow"
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/PermissionDeleteEventPayload"
                 },
                 "eventId": {
                     "type": "string",
@@ -2128,10 +2553,6 @@
                     "type": "string",
                     "format": "date-time",
                     "description": "The time the event occured."
-                },
-                "event": {
-                    "description": "The event payload linked to the involved resource object",
-                    "$ref": "#/definitions/PermissionDeleteEventPayload"
                 }
             }
         },
@@ -2149,13 +2570,9 @@
             "type": "object",
             "description": "The notification data structure",
             "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of the Process flow"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the ProcessFlow"
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/UserRoleCreateEventPayload"
                 },
                 "eventId": {
                     "type": "string",
@@ -2194,10 +2611,6 @@
                     "type": "string",
                     "format": "date-time",
                     "description": "The time the event occured."
-                },
-                "event": {
-                    "description": "The event payload linked to the involved resource object",
-                    "$ref": "#/definitions/UserRoleCreateEventPayload"
                 }
             }
         },
@@ -2277,13 +2690,9 @@
             "type": "object",
             "description": "The notification data structure",
             "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of the Process flow"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the ProcessFlow"
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/UserRoleStateChangeEventPayload"
                 },
                 "eventId": {
                     "type": "string",
@@ -2322,10 +2731,6 @@
                     "type": "string",
                     "format": "date-time",
                     "description": "The time the event occured."
-                },
-                "event": {
-                    "description": "The event payload linked to the involved resource object",
-                    "$ref": "#/definitions/UserRoleStateChangeEventPayload"
                 }
             }
         },
@@ -2343,13 +2748,9 @@
             "type": "object",
             "description": "The notification data structure",
             "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Identifier of the Process flow"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the ProcessFlow"
+                "event": {
+                    "description": "The event payload linked to the involved resource object",
+                    "$ref": "#/definitions/UserRoleDeleteEventPayload"
                 },
                 "eventId": {
                     "type": "string",
@@ -2388,10 +2789,6 @@
                     "type": "string",
                     "format": "date-time",
                     "description": "The time the event occured."
-                },
-                "event": {
-                    "description": "The event payload linked to the involved resource object",
-                    "$ref": "#/definitions/UserRoleDeleteEventPayload"
                 }
             }
         },

@@ -1,0 +1,69 @@
+{
+    "id": "22",
+    "href": "https://serverRoot/tmf-api/appointment/v4/appointment/22",
+    "@type": "Appointment",
+    "externalId": "432114",
+    "category": "customerProblem",
+    "description": "Customer bill problem explanation",
+    "status": "accepted",
+    "creationDate": "2018-02-01T14:40:43.000Z",
+    "lastUpdate": "2018-02-04T14:40:43.000Z",
+    "validFor": {
+        "startDateTime": "2018-02-15T14:00:00.000Z",
+        "endDateTime": "2018-02-15T15:00:00.000Z"
+    },
+    "attachment": [
+        {
+            "id": "123456",
+            "href": "https://serverRoot/tmf-api/customerBillManagement/v4/customerBill/123456",
+            "@referredType": "CustomerBill"
+        }
+    ],
+    "calendarEvent": {
+        "id": "33",
+        "href": " https://serverRoot/tmf-api/timeManagement/v4/calendarEvent/33",
+        "name": "Outlook calendar event"
+    },
+    "relatedParty": [
+        {
+            "id": "32",
+            "href": "https://serverRoot/tmf-api/partyManagement/v4/individual/32",
+            "name": "Kate Smith",
+            "role": "customer",
+            "@referredType": "Individual"
+        },
+        {
+            "id": "62",
+            "href": "https://serverRoot/tmf-api/partyManagement/v4/individual/62",
+            "name": "Adam Smith",
+            "role": "customerRepresentative",
+            "@referredType": "Individual"
+        }
+    ],
+    "contactMedium": [
+        {
+            "mediumType": "phoneNumber",
+            "preferred": true,
+            "characteristic": {
+                "phoneNumber": "+33650981065",
+                "type": "mobile"
+            }
+        }
+    ],
+    "relatedEntity": [
+        {
+            "id": "789",
+            "href": "https://serverRoot/tmf-api/troubleTicket/v4/troubleTicket/789",
+            "name": "Customer bill amount disputed by the customer",
+            "role": "Problem description",
+            "@referredType": "TroubleTicket"
+        }
+    ],
+    "note": [
+        {
+            "date": "2018-02-04T11:00:18.000Z",
+            "author": "Ludovic Robert",
+            "text": "Customer bill amount analyzed – reason found"
+        }
+    ]
+}

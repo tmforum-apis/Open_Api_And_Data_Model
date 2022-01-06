@@ -2857,19 +2857,6 @@
                     "type": "string",
                     "format": "uri",
                     "description": "Hyperlink reference"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -2937,7 +2924,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -2968,18 +2955,15 @@
                     "description": "Link to the attachment media/content"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -3045,18 +3029,15 @@
                     "description": "The period of time for which the attachment is valid"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -3097,18 +3078,15 @@
                     "description": "The value of the characteristic"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -3121,6 +3099,11 @@
                 "id": {
                     "type": "string",
                     "description": "Unique identifier of the characteristic"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "relationshipType": {
                     "type": "string",
@@ -3137,7 +3120,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3152,6 +3135,11 @@
                 "id": {
                     "type": "string",
                     "description": "Unique identifier for graph edge."
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "associationType": {
                     "type": "string",
@@ -3176,7 +3164,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3202,18 +3190,15 @@
                     "description": "Connection point version"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -3232,15 +3217,16 @@
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "reference id to the target constraint"
+                    "description": "unique identifier"
                 },
                 "href": {
                     "type": "string",
-                    "description": "Hyperlink reference to the target constraint"
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "name": {
                     "type": "string",
-                    "description": "Name given to the constraint"
+                    "description": "Name of the related entity."
                 },
                 "version": {
                     "type": "string",
@@ -3257,11 +3243,11 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
                 "@referredType": {
                     "type": "string",
-                    "description": "The (class) type of the referred constraint"
+                    "description": "The actual type of the target instance when needed for disambiguation."
                 }
             },
             "required": [
@@ -3295,18 +3281,15 @@
                     "description": "The connection point (SAP) of the associated resource function (optional)."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -3318,6 +3301,34 @@
             "required": [
                 "id"
             ]
+        },
+        "Entity": {
+            "type": "object",
+            "description": "Base entity schema for use in TMForum Open-APIs",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
+                "@baseType": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the super-class"
+                },
+                "@schemaLocation": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
+                },
+                "@type": {
+                    "type": "string",
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
+                }
+            }
         },
         "EntityRef": {
             "type": "object",
@@ -3337,18 +3348,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -3366,18 +3374,15 @@
             "description": "Base Extensible schema for use in TMForum Open-APIs",
             "properties": {
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
@@ -3427,19 +3432,6 @@
                     "items": {
                         "$ref": "#/definitions/FeatureRelationship"
                     }
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -3466,19 +3458,6 @@
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod",
                     "description": "The period for which this feature relationship is valid."
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -3497,19 +3476,6 @@
                 "value": {
                     "type": "string",
                     "description": "The value of the header item, e.g. en-us"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -3580,7 +3546,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3642,7 +3608,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3664,18 +3630,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -3691,53 +3654,65 @@
         "LogicalResource": {
             "type": "object",
             "description": "Logic resource is a type of resource that describes the common set of attributes shared by all concrete logical resources (e.g. TPE, MSISDN, IP Addresses) in the inventory.",
+            "required": [
+                "href",
+                "id"
+            ],
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "Identifier of an instance of the resource. Required to be unique within the resource type.  Used in URIs as the identifier for specific instances of a type"
+                    "description": "unique identifier"
                 },
                 "href": {
                     "type": "string",
-                    "description": "The URI for the object itself."
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "category": {
                     "type": "string",
-                    "description": "Category of the concrete resource, such as: Gold, Silver for MSISDN concrete resource"
+                    "description": "Category of the concrete resource. e.g Gold, Silver for MSISDN concrete resource"
                 },
                 "description": {
                     "type": "string",
-                    "description": "Free-text description of the resource"
+                    "description": "free-text description of the resource"
                 },
-                "endDate": {
+                "endOperatingDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "The date till the resource is effective"
-                },
-                "lifecycleState": {
-                    "type": "string",
-                    "description": "The life cycle state of the resource"
+                    "description": "A date time( DateTime). The date till the resource is operating"
                 },
                 "name": {
                     "type": "string",
                     "description": "A string used to give a name to the resource"
                 },
-                "startDate": {
+                "resourceVersion": {
+                    "type": "string",
+                    "description": "A field that identifies the specific version of an instance of a resource."
+                },
+                "startOperatingDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "A date time( DateTime). The date from which the resource is effective"
+                    "description": "A date time( DateTime). The date from which the resource is operating"
                 },
                 "value": {
                     "type": "string",
-                    "description": "The value of the logical resource, such as: 0044746712345 for an MSISDN"
+                    "description": "the value of the logical resource. E.g '0746712345' for  MSISDN's"
                 },
-                "version": {
-                    "type": "string",
-                    "description": "A field that identifies the specific version of an instance of a resource"
-                },
-                "characteristic": {
+                "activationFeature": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/ResourceCharacteristic"
+                        "$ref": "#/definitions/Feature"
+                    },
+                    "description": "Configuration features"
+                },
+                "administrativeState": {
+                    "$ref": "#/definitions/ResourceAdministrativeStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
+                "attachment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AttachmentRefOrValue"
                     }
                 },
                 "note": {
@@ -3746,14 +3721,12 @@
                         "$ref": "#/definitions/Note"
                     }
                 },
-                "partyRole": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PartyRoleRef"
-                    }
+                "operationalState": {
+                    "$ref": "#/definitions/ResourceOperationalStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
                 },
                 "place": {
-                    "$ref": "#/definitions/Place"
+                    "$ref": "#/definitions/RelatedPlaceRefOrValue"
                 },
                 "relatedParty": {
                     "type": "array",
@@ -3761,11 +3734,28 @@
                         "$ref": "#/definitions/RelatedParty"
                     }
                 },
+                "resourceCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
+                    }
+                },
                 "resourceRelationship": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ResourceRelationship"
                     }
+                },
+                "resourceSpecification": {
+                    "$ref": "#/definitions/ResourceSpecificationRef"
+                },
+                "resourceStatus": {
+                    "$ref": "#/definitions/ResourceStatusType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
+                "usageState": {
+                    "$ref": "#/definitions/ResourceUsageStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
                 },
                 "@baseType": {
                     "type": "string",
@@ -3778,7 +3768,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3866,7 +3856,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3945,7 +3935,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3988,7 +3978,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -3997,19 +3987,31 @@
             "description": "Extra information about a given entity",
             "properties": {
                 "id": {
+                    "example": [
+                        "afa9-3d90aaa8da0f"
+                    ],
                     "type": "string",
-                    "description": "Identifier of the note within its containing entity (may or may not be globally unique, depending on provider implementation)"
+                    "description": "Identifier of the note within its containing entity"
                 },
                 "author": {
+                    "example": [
+                        "Mr. N. Bene"
+                    ],
                     "type": "string",
                     "description": "Author of the note"
                 },
                 "date": {
+                    "example": [
+                        "2020-11-20T08:00:00Z"
+                    ],
                     "type": "string",
                     "format": "date-time",
                     "description": "Date of the note"
                 },
                 "text": {
+                    "example": [
+                        "This is important"
+                    ],
                     "type": "string",
                     "description": "Text of the note"
                 },
@@ -4024,55 +4026,9 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
-        },
-        "PartyRoleRef": {
-            "type": "object",
-            "description": "Party role reference. A party role represents the part played by a party in a given context.",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Unique identifier of the product"
-                },
-                "href": {
-                    "type": "string",
-                    "description": "Reference of the product"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "The name of the referred party role."
-                },
-                "partyId": {
-                    "type": "string",
-                    "description": "The identifier of the engaged party that is linked to the PartyRole object."
-                },
-                "partyName": {
-                    "type": "string",
-                    "description": "The name of the engaged party that is linked to the PartyRole object."
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
-                },
-                "@referredType": {
-                    "type": "string",
-                    "description": "The actual type of the target instance when needed for disambiguation."
-                }
-            },
-            "required": [
-                "id"
-            ]
         },
         "Place": {
             "type": "object",
@@ -4101,7 +4057,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -4123,18 +4079,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -4160,19 +4113,6 @@
                 "units": {
                     "type": "string",
                     "description": "Unit"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -4202,18 +4142,15 @@
                     "description": "Role played by the related party"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -4246,18 +4183,15 @@
                     "type": "string"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -4294,19 +4228,6 @@
                     },
                     "minItems": 1,
                     "description": "Items included in the header of the request. For example for an HTTP request might contain requested locale, basic authentication."
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -4422,7 +4343,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -4435,64 +4356,39 @@
                 "shutdown"
             ]
         },
-        "ResourceCharacteristic": {
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "description": "name of the characteristic"
-                },
-                "value": {
-                    "type": "string",
-                    "description": "value of the characteristic"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
-                }
-            }
-        },
         "ResourceFunction": {
             "type": "object",
             "description": "A ResourceFunction is a behavior to transform inputs of any nature into outputs of any nature independently from the way it is provided.",
+            "required": [
+                "href",
+                "id"
+            ],
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "Identifier of an instance of the resource. Required to be unique within the resource type.  Used in URIs as the identifier for specific instances of a type"
+                    "description": "unique identifier"
                 },
                 "href": {
                     "type": "string",
-                    "description": "The URI for the object itself."
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "category": {
                     "type": "string",
-                    "description": "Category of the concrete resource, such as: Gold, Silver for MSISDN concrete resource"
+                    "description": "Category of the concrete resource. e.g Gold, Silver for MSISDN concrete resource"
                 },
                 "description": {
                     "type": "string",
-                    "description": "Free-text description of the resource"
+                    "description": "free-text description of the resource"
                 },
-                "endDate": {
+                "endOperatingDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "The date till the resource is effective"
+                    "description": "A date time( DateTime). The date till the resource is operating"
                 },
                 "functionType": {
                     "type": "string",
                     "description": "A type of the Resource Function as specified by the provider of the API."
-                },
-                "lifecycleState": {
-                    "type": "string",
-                    "description": "The life cycle state of the resource"
                 },
                 "name": {
                     "type": "string",
@@ -4502,22 +4398,39 @@
                     "type": "integer",
                     "description": "Priority of the Resource Function. Decides what happens in a contention scenario."
                 },
+                "resourceVersion": {
+                    "type": "string",
+                    "description": "A field that identifies the specific version of an instance of a resource."
+                },
                 "role": {
                     "type": "string",
                     "description": "Role of the Resource Function. Used when Resource Function is a component of a composite Resource Function and the exact role of the service within the composite is not clear from descriptor/location."
                 },
-                "startDate": {
+                "startOperatingDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "A date time( DateTime). The date from which the resource is effective"
+                    "description": "A date time( DateTime). The date from which the resource is operating"
                 },
                 "value": {
                     "type": "string",
-                    "description": "The value of the logical resource, such as: 0044746712345 for an MSISDN"
+                    "description": "the value of the logical resource. E.g '0746712345' for  MSISDN's"
                 },
-                "version": {
-                    "type": "string",
-                    "description": "A field that identifies the specific version of an instance of a resource"
+                "activationFeature": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Feature"
+                    },
+                    "description": "Configuration features"
+                },
+                "administrativeState": {
+                    "$ref": "#/definitions/ResourceAdministrativeStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
+                "attachment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AttachmentRefOrValue"
+                    }
                 },
                 "autoModification": {
                     "type": "array",
@@ -4525,12 +4438,6 @@
                         "$ref": "#/definitions/Characteristic"
                     },
                     "description": "List of the kinds of auto-modifications that are applied to a given network service e.g what can be scaled."
-                },
-                "characteristic": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/ResourceCharacteristic"
-                    }
                 },
                 "connectionPoint": {
                     "type": "array",
@@ -4552,19 +4459,23 @@
                         "$ref": "#/definitions/Note"
                     }
                 },
-                "partyRole": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PartyRoleRef"
-                    }
+                "operationalState": {
+                    "$ref": "#/definitions/ResourceOperationalStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
                 },
                 "place": {
-                    "$ref": "#/definitions/Place"
+                    "$ref": "#/definitions/RelatedPlaceRefOrValue"
                 },
                 "relatedParty": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RelatedParty"
+                    }
+                },
+                "resourceCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
                     }
                 },
                 "resourceRelationship": {
@@ -4573,12 +4484,23 @@
                         "$ref": "#/definitions/ResourceRelationship"
                     }
                 },
+                "resourceSpecification": {
+                    "$ref": "#/definitions/ResourceSpecificationRef"
+                },
+                "resourceStatus": {
+                    "$ref": "#/definitions/ResourceStatusType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
                 "schedule": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ScheduleRef"
                     },
                     "description": "This is a reference to a schedule. Allows consumers to schedule modifications to the service at certain times."
+                },
+                "usageState": {
+                    "$ref": "#/definitions/ResourceUsageStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
                 },
                 "@baseType": {
                     "type": "string",
@@ -4591,7 +4513,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -4600,29 +4522,25 @@
             "description": "A ResourceFunction is a behavior to transform inputs of any nature into outputs of any nature independently from the way it is provided.\nSkipped properties: id,href",
             "required": [
                 "name",
-                "lifecycleState"
+                "resourceSpecification"
             ],
             "properties": {
                 "category": {
                     "type": "string",
-                    "description": "Category of the concrete resource, such as: Gold, Silver for MSISDN concrete resource"
+                    "description": "Category of the concrete resource. e.g Gold, Silver for MSISDN concrete resource"
                 },
                 "description": {
                     "type": "string",
-                    "description": "Free-text description of the resource"
+                    "description": "free-text description of the resource"
                 },
-                "endDate": {
+                "endOperatingDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "The date till the resource is effective"
+                    "description": "A date time( DateTime). The date till the resource is operating"
                 },
                 "functionType": {
                     "type": "string",
                     "description": "A type of the Resource Function as specified by the provider of the API."
-                },
-                "lifecycleState": {
-                    "type": "string",
-                    "description": "The life cycle state of the resource"
                 },
                 "name": {
                     "type": "string",
@@ -4632,22 +4550,39 @@
                     "type": "integer",
                     "description": "Priority of the Resource Function. Decides what happens in a contention scenario."
                 },
+                "resourceVersion": {
+                    "type": "string",
+                    "description": "A field that identifies the specific version of an instance of a resource."
+                },
                 "role": {
                     "type": "string",
                     "description": "Role of the Resource Function. Used when Resource Function is a component of a composite Resource Function and the exact role of the service within the composite is not clear from descriptor/location."
                 },
-                "startDate": {
+                "startOperatingDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "A date time( DateTime). The date from which the resource is effective"
+                    "description": "A date time( DateTime). The date from which the resource is operating"
                 },
                 "value": {
                     "type": "string",
-                    "description": "The value of the logical resource, such as: 0044746712345 for an MSISDN"
+                    "description": "the value of the logical resource. E.g '0746712345' for  MSISDN's"
                 },
-                "version": {
-                    "type": "string",
-                    "description": "A field that identifies the specific version of an instance of a resource"
+                "activationFeature": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Feature"
+                    },
+                    "description": "Configuration features"
+                },
+                "administrativeState": {
+                    "$ref": "#/definitions/ResourceAdministrativeStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
+                "attachment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AttachmentRefOrValue"
+                    }
                 },
                 "autoModification": {
                     "type": "array",
@@ -4655,12 +4590,6 @@
                         "$ref": "#/definitions/Characteristic"
                     },
                     "description": "List of the kinds of auto-modifications that are applied to a given network service e.g what can be scaled."
-                },
-                "characteristic": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/ResourceCharacteristic"
-                    }
                 },
                 "connectionPoint": {
                     "type": "array",
@@ -4682,19 +4611,23 @@
                         "$ref": "#/definitions/Note"
                     }
                 },
-                "partyRole": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PartyRoleRef"
-                    }
+                "operationalState": {
+                    "$ref": "#/definitions/ResourceOperationalStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
                 },
                 "place": {
-                    "$ref": "#/definitions/Place"
+                    "$ref": "#/definitions/RelatedPlaceRefOrValue"
                 },
                 "relatedParty": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RelatedParty"
+                    }
+                },
+                "resourceCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
                     }
                 },
                 "resourceRelationship": {
@@ -4703,12 +4636,23 @@
                         "$ref": "#/definitions/ResourceRelationship"
                     }
                 },
+                "resourceSpecification": {
+                    "$ref": "#/definitions/ResourceSpecificationRef"
+                },
+                "resourceStatus": {
+                    "$ref": "#/definitions/ResourceStatusType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
                 "schedule": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ScheduleRef"
                     },
                     "description": "This is a reference to a schedule. Allows consumers to schedule modifications to the service at certain times."
+                },
+                "usageState": {
+                    "$ref": "#/definitions/ResourceUsageStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
                 },
                 "@baseType": {
                     "type": "string",
@@ -4721,7 +4665,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -4731,24 +4675,20 @@
             "properties": {
                 "category": {
                     "type": "string",
-                    "description": "Category of the concrete resource, such as: Gold, Silver for MSISDN concrete resource"
+                    "description": "Category of the concrete resource. e.g Gold, Silver for MSISDN concrete resource"
                 },
                 "description": {
                     "type": "string",
-                    "description": "Free-text description of the resource"
+                    "description": "free-text description of the resource"
                 },
-                "endDate": {
+                "endOperatingDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "The date till the resource is effective"
+                    "description": "A date time( DateTime). The date till the resource is operating"
                 },
                 "functionType": {
                     "type": "string",
                     "description": "A type of the Resource Function as specified by the provider of the API."
-                },
-                "lifecycleState": {
-                    "type": "string",
-                    "description": "The life cycle state of the resource"
                 },
                 "name": {
                     "type": "string",
@@ -4758,22 +4698,39 @@
                     "type": "integer",
                     "description": "Priority of the Resource Function. Decides what happens in a contention scenario."
                 },
+                "resourceVersion": {
+                    "type": "string",
+                    "description": "A field that identifies the specific version of an instance of a resource."
+                },
                 "role": {
                     "type": "string",
                     "description": "Role of the Resource Function. Used when Resource Function is a component of a composite Resource Function and the exact role of the service within the composite is not clear from descriptor/location."
                 },
-                "startDate": {
+                "startOperatingDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "A date time( DateTime). The date from which the resource is effective"
+                    "description": "A date time( DateTime). The date from which the resource is operating"
                 },
                 "value": {
                     "type": "string",
-                    "description": "The value of the logical resource, such as: 0044746712345 for an MSISDN"
+                    "description": "the value of the logical resource. E.g '0746712345' for  MSISDN's"
                 },
-                "version": {
-                    "type": "string",
-                    "description": "A field that identifies the specific version of an instance of a resource"
+                "activationFeature": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Feature"
+                    },
+                    "description": "Configuration features"
+                },
+                "administrativeState": {
+                    "$ref": "#/definitions/ResourceAdministrativeStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
+                "attachment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AttachmentRefOrValue"
+                    }
                 },
                 "autoModification": {
                     "type": "array",
@@ -4781,12 +4738,6 @@
                         "$ref": "#/definitions/Characteristic"
                     },
                     "description": "List of the kinds of auto-modifications that are applied to a given network service e.g what can be scaled."
-                },
-                "characteristic": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/ResourceCharacteristic"
-                    }
                 },
                 "connectionPoint": {
                     "type": "array",
@@ -4808,19 +4759,23 @@
                         "$ref": "#/definitions/Note"
                     }
                 },
-                "partyRole": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/PartyRoleRef"
-                    }
+                "operationalState": {
+                    "$ref": "#/definitions/ResourceOperationalStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
                 },
                 "place": {
-                    "$ref": "#/definitions/Place"
+                    "$ref": "#/definitions/RelatedPlaceRefOrValue"
                 },
                 "relatedParty": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RelatedParty"
+                    }
+                },
+                "resourceCharacteristic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Characteristic"
                     }
                 },
                 "resourceRelationship": {
@@ -4829,12 +4784,23 @@
                         "$ref": "#/definitions/ResourceRelationship"
                     }
                 },
+                "resourceSpecification": {
+                    "$ref": "#/definitions/ResourceSpecificationRef"
+                },
+                "resourceStatus": {
+                    "$ref": "#/definitions/ResourceStatusType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
+                },
                 "schedule": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ScheduleRef"
                     },
                     "description": "This is a reference to a schedule. Allows consumers to schedule modifications to the service at certain times."
+                },
+                "usageState": {
+                    "$ref": "#/definitions/ResourceUsageStateType",
+                    "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
                 },
                 "@baseType": {
                     "type": "string",
@@ -4847,7 +4813,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -4873,18 +4839,15 @@
                     "description": "Resource function version"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -4907,6 +4870,11 @@
                 "id": {
                     "type": "string",
                     "description": "Unique identifier of the resource graph."
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
                 },
                 "description": {
                     "type": "string",
@@ -4942,7 +4910,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -4964,18 +4932,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -4992,6 +4957,15 @@
             "type": "object",
             "description": "Describes links between resource graphs.",
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "relationshipType": {
                     "type": "string",
                     "description": "Semantic of the relationship."
@@ -5011,7 +4985,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -5040,18 +5014,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -5166,18 +5137,15 @@
                     "description": "Tracks the lifecycle status of the resource, such as planning, installing, opereating, retiring and so on."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -5195,6 +5163,15 @@
                 "resource"
             ],
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "unique identifier"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Hyperlink reference"
+                },
                 "relationshipType": {
                     "example": "bundled",
                     "type": "string",
@@ -5214,7 +5191,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -5240,18 +5217,15 @@
                     "description": "Resource Specification version"
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -5308,19 +5282,6 @@
                     },
                     "minItems": 1,
                     "description": "Items included in the header of the response. For example for an HTTP response might contain negotiated locale."
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },
@@ -5384,7 +5345,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -5440,7 +5401,7 @@
                 },
                 "@type": {
                     "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
+                    "description": "When sub-classing, this defines the sub-class Extensible name"
                 }
             }
         },
@@ -5462,18 +5423,15 @@
                     "description": "Name of the related entity."
                 },
                 "@baseType": {
-                    "example": "ResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the super-class"
                 },
                 "@schemaLocation": {
-                    "example": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
                     "type": "string",
                     "format": "uri",
                     "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
                 },
                 "@type": {
-                    "example": "LogicalResourceSpecification",
                     "type": "string",
                     "description": "When sub-classing, this defines the sub-class Extensible name"
                 },
@@ -5511,19 +5469,6 @@
                     "type": "string",
                     "format": "date-time",
                     "description": "Start of the time period, using IETC-RFC-3339 format"
-                },
-                "@baseType": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the super-class"
-                },
-                "@schemaLocation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "A URI to a JSON-Schema file that defines additional attributes and relationships"
-                },
-                "@type": {
-                    "type": "string",
-                    "description": "When sub-classing, this defines the sub-class entity name"
                 }
             }
         },

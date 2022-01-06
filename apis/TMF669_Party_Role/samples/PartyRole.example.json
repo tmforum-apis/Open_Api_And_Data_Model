@@ -1,0 +1,71 @@
+{
+    "@type": "PartyRole",
+    "href": "https:/host:port/tmf-api/partyRoleManagement/v4/partyRole/4079", 
+    "id": "4079", 
+    "name": "Global Pirates", 
+    "status": "Approved", 
+    "statusReason": "NDA has been signed", 
+    "validFor": {
+        "startDateTime": "2018-06-16T00:00Z", 
+        "endDateTime": "2019-01-13T00:00Z"
+    }, 
+    "engagedParty": {
+	"@referredType": "Organization",
+	"href" : "https:/host:port/tmf-api/partyManagement/v2/organization/99",
+	"id":"99",
+	"name": "Global Pirates",
+        "role": "Provider"
+    }, 
+    "account": [
+        {
+	    "@referredType": "SettlementAccount",
+            "description": "This  account ...", 
+            "href": "https:/host:port/tmf-api/accountManagement/v4/account/5713", 
+            "id": "5713", 
+            "name": "Paradise Account"
+        }
+    ], 
+    "paymentMethod": [
+        {
+	    "@referredType": "CreditCardPayment",
+            "href": "https:/host:port/tmf-api/paymentMethods/v1/paymentMethod/9206", 
+            "id": "9206", 
+            "name": "family payment"
+        }
+    ], 
+    "characteristic": [
+        {
+            "name": "mainSkill", 
+            "value": "analytics",
+	    "valueType" : "string"
+        }
+    ], 
+    "creditProfile": [
+        {
+            "creditProfileDate": "2018-06-17T00:00Z", 
+            "creditRiskRating": 4, 
+            "creditScore": 1, 
+            "validFor": {
+                "startDateTime": "2018-06-14T00:00Z", 
+                "endDateTime": "2019-01-13T00:00Z"
+            }
+        }
+    ], 
+    "agreement": [
+        {
+	    "@referredType": "Agreement",
+            "href": "https:/host:port/tmf-api/agreementManagement/v4/agreement/5091", 
+            "id": "5091", 
+            "name": "Winter Contract Agreement"
+        }
+    ], 
+    "relatedParty": [
+        {
+	    "@referredType": "Organization",
+            "href": "https:/host:port/tmf-api/partyManagement/v4/organization/3658", 
+            "id": "3658", 
+            "name": "Gustave Flaubert", 
+            "role": "customer"
+        }
+    ]
+}

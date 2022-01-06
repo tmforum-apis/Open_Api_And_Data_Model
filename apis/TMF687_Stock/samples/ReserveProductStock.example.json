@@ -1,0 +1,88 @@
+{
+  "id": "87",
+  "href": "http://serverlocation:port/stockManagement/v4/reserveProductStock/87",
+  "creationDate": "2020-09-24T10:12:23.664Z",
+  "requiredAvailabilityDate": "2020-09-25T10:12:23.664Z",
+  "channel": [
+    {
+        "id": "11",
+        "name": "retail"
+      }
+  ],
+  "place": {
+    "id": "89",
+    "href": "http://serverlocation:port/geographicSiteManagement/v4/geographicSite/89",
+    "role": "Lyon Shop",
+    "@type": "PlaceRef",
+    "@referredType": "GeographicSite"
+  },
+  "relatedEntity": [
+    {
+      "id": "56",
+      "href": "http://serverlocation:port/productOrderManagement/v4/productOrder/56",
+      "role": "order triggering the reservation",
+      "@type": "EntityRef",
+      "@referredType": "ProductOrder"
+    }
+  ],
+  "relatedParty": [
+    {
+        "id": "45",
+        "href": "http://serverlocation:port/partyManagement/v4/individual/45",
+        "role": "requester",
+        "@type": "PartyRef",
+        "@referredType": "Individual"
+    }
+  ],
+  "reserveProductStockItem": [
+    {
+      "id": "1",
+      "productStockReserved": {
+        "id": "43",
+        "href": "http://serverlocation:port/stockManagement/v4/productStock/43",
+        "@type": "ProductStockRef"
+      },
+      "quantityRequested": {
+        "amount": 1,
+        "units": "box"
+      },
+      "quantityReserved": {
+        "amount": 1,
+        "units": "box"
+      },
+      "requestedProduct": {
+        "productCharacteristic": [
+            {
+                "id" : "1",
+                "valueType": "string",
+                "name":"Color",
+                "value" : "Orange"
+              },
+              {
+                "id" : "2",
+                "valueType": "string",
+                "name":"Memory Size",
+                "value" : "256 GB"
+              }
+        ],
+        "productSpecification": {
+            "id": "23",
+            "href": "http://serverlocation:port/productCatalogManagement/v4/productSpecification/23",
+            "name": "TMFPhone",
+            "version": "x-9",
+            "@type": "ProductSpecification"
+        },
+        "@type": "Product"
+      },
+      "reserveProductStockState": "accepted",
+      "@type": "ReserveProductStockItem"
+    }
+  ],
+  "reserveProductStockState": "accepted",
+  "validFor": {
+    "endDateTime": "2020-09-24T23:20:50.52Z",
+    "startDateTime": "2020-09-26T23:20:50.52Z",
+    "@type": "TimePeriod"
+  },
+  "@type": "ReserveProductStock"
+}
