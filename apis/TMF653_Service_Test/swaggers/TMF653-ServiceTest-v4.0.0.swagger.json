@@ -2639,12 +2639,8 @@
             "description": "A service test is an entity that exists for a controlled test invocation on a service. The service \ntest is executed according to a schedule and contains service test configuration parameters that are to be \napplied at execution time, and service test measures that result.\nSkipped properties: id,href",
             "required": [
                 "name",
-<<<<<<< HEAD
-                "relatedService"
-=======
                 "relatedService",
                 "testSpecification"
->>>>>>> parent of e13b91f9... conformance updates
             ],
             "properties": {
                 "description": {
